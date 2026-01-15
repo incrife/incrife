@@ -5,7 +5,383 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artista Techno Barcelona | Estilo Años 60</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Efecto de TV antigua */
+        .tv-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(0deg, 
+                    rgba(0, 0, 0, 0.15) 0px, 
+                    rgba(0, 0, 0, 0.15) 1px, 
+                    transparent 1px, 
+                    transparent 2px);
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.3;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(0, 0, 0, 0.2) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 1001;
+            animation: scanline 10s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 100%;
+            }
+        }
+
+        /* Contenedor principal estilo TV */
+        .tv-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #2a2a2a;
+            border: 15px solid #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 
+                0 0 0 5px #333,
+                0 0 30px rgba(0, 0, 0, 0.8),
+                inset 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tv-frame {
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Cabecera */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 3px dashed #ccc;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .tv-knobs {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            width: 100%;
+            top: 10px;
+            padding: 0 20px;
+        }
+
+        .knob {
+            width: 20px;
+            height: 20px;
+            background-color: #555;
+            border-radius: 50%;
+            box-shadow: inset 0 0 5px #000;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px 0 #555;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            background-color: #444;
+            color: #fff;
+            border: 2px solid #666;
+            padding: 10px 20px;
+            margin: 5px 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover, .nav-button.active {
+            background-color: #666;
+            color: #fff;
+            border-color: #888;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Secciones de contenido */
+        .content-section {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Sección Inicio */
+        .artist-intro {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .artist-photo {
+            flex: 1;
+            min-width: 300px;
+            margin-right: 30px;
+        }
+
+        .artist-photo img {
+            width: 100%;
+            border: 5px solid #555;
+            border-radius: 3px;
+            filter: grayscale(30%) contrast(1.1);
+        }
+
+        .artist-bio {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .artist-bio h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #666;
+            padding-bottom: 5px;
+        }
+
+        .location, .genre {
+            display: inline-block;
+            background-color: #444;
+            padding: 5px 15px;
+            margin: 10px 10px 10px 0;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+
+        /* Sección Galería */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            border: 3px solid #555;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            border-color: #777;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Sección Short Film */
+        .film-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 5px solid #555;
+            background-color: #000;
+        }
+
+        .film-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .film-description {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #333;
+            border-left: 5px solid #666;
+        }
+
+        /* Sección Contacto */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #333;
+            border-left: 5px solid #666;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: #aaa;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            border: 1px solid #555;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #777;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 3px dashed #ccc;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: #aaa;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .tv-container {
+                margin: 10px;
+                border-width: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .artist-intro {
+                flex-direction: column;
+            }
+            
+            .artist-photo {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Efectos de TV antigua -->
@@ -40,32 +416,187 @@
             <main>
                 <!-- Sección Inicio -->
                 <section id="inicio" class="content-section active">
-                    <!-- Contenido de la sección inicio -->
+                    <div class="artist-intro">
+                        <div class="artist-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Javier Moles - Artista Techno">
+                        </div>
+                        <div class="artist-bio">
+                            <h2>Sobre el Artista</h2>
+                            <div class="location">Barcelona, España</div>
+                            <div class="genre">Techno Experimental</div>
+                            <p>Javier Moles es un productor y DJ de techno con base en Barcelona, cuya música fusiona elementos del techno industrial con matices de la escena electrónica experimental de los años 60. Su sonido evoca la estética retro-futurista, creando paisajes sonoros que transportan al oyente a una dimensión donde lo analógico y lo digital convergen.</p>
+                            <p>Con una formación en ingeniería de sonido y una pasión por la era espacial de los 60, Javier crea sets que son verdaderos viajes sónicos. Sus presentaciones en vivo incorporan elementos visuales inspirados en el cine experimental de la época, creando una experiencia inmersiva única.</p>
+                            <p>Ha actuado en los principales clubes de Barcelona como Razzmatazz, INPUT High Fidelity Dance Club y Moog, además de participar en festivales como Sónar y Off-Sónar. Su música ha sido publicada en sellos como Token, Semantica y PoleGroup.</p>
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Sección Galería -->
                 <section id="galeria" class="content-section">
-                    <!-- Contenido de la sección galería -->
+                    <h2>Galería Visual</h2>
+                    <p>Instantáneas de presentaciones en vivo, estudio de producción y visuales característicos del universo sonoro de Javier Moles.</p>
+                    
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Presentación en vivo">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Equipo de estudio">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Sesión de DJ">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Visuales en concierto">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Equipo vintage">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1571266028243-43d4c6c5c56a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w-870&q=80" alt="Sintetizadores">
+                        </div>
+                    </div>
                 </section>
 
                 <!-- Sección Short Film -->
                 <section id="shortfilm" class="content-section">
-                    <!-- Contenido de la sección short film -->
+                    <h2>Short Film: "Resonancia Analógica"</h2>
+                    <p>Un viaje audiovisual a través del sonido techno inspirado en la estética retro-futurista de los años 60. Filmado en localizaciones industriales de Barcelona y editado con técnicas de collage analógico-digital.</p>
+                    
+                    <div class="film-container">
+                        <!-- Video placeholder - en un caso real aquí iría el embed de YouTube/Vimeo -->
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; background-color: #000; color: #fff; font-size: 1.5rem;">
+                            <div style="text-align: center;">
+                                <i class="fas fa-play-circle" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                                <p>SHORT FILM: "RESONANCIA ANALÓGICA"</p>
+                                <p style="font-size: 1rem; color: #aaa;">(En un sitio real aquí se incrustaría el video)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="film-description">
+                        <h3>Sinopsis</h3>
+                        <p>"Resonancia Analógica" es una exploración cinematográfica del proceso creativo de Javier Moles. El film sigue al artista a través de espacios industriales abandonados de Barcelona mientras recoge sonidos, graba samples y construye una pieza musical en tiempo real. La narrativa visual está inspirada en el cine experimental de los años 60, con efectos de cámara manipulados químicamente y una paleta de color reducida a tonos grises y blancos rotos.</p>
+                        <p>Duración: 12 minutos | Año: 2023 | Director: Carla Ventura</p>
+                    </div>
                 </section>
 
                 <!-- Sección Contacto -->
                 <section id="contacto" class="content-section">
-                    <!-- Contenido de la sección contacto -->
+                    <h2>Contacto & Booking</h2>
+                    <p>Para contrataciones, colaboraciones o información sobre próximos eventos.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <strong>Ubicación:</strong> Barcelona, España
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <strong>Email:</strong> booking@javiermoles.com
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <strong>Teléfono:</strong> +34 633 112 233
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <strong>Próximos shows:</strong> 
+                                <ul style="margin-left: 20px; margin-top: 10px;">
+                                    <li>15 Oct - Razzmatazz, Barcelona</li>
+                                    <li>22 Oct - Nitsa Club, Barcelona</li>
+                                    <li>5 Nov - Sónar Barcelona</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h3>Formulario de contacto</h3>
+                            <form id="contactForm">
+                                <div class="form-group">
+                                    <label for="name">Nombre:</label>
+                                    <input type="text" id="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Asunto:</label>
+                                    <input type="text" id="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Mensaje:</label>
+                                    <textarea id="message" required></textarea>
+                                </div>
+                                <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
                 </section>
             </main>
 
             <!-- Footer -->
             <footer>
-                <!-- Contenido del footer -->
+                <p>Javier Moles © 2023 - Techno Experimental desde Barcelona</p>
+                <p>Estética inspirada en la televisión analógica de los años 60</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-soundcloud"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-bandcamp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </footer>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Navegación entre secciones
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover clase active de todos los botones
+                document.querySelectorAll('.nav-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Añadir clase active al botón clickeado
+                this.classList.add('active');
+                
+                // Ocultar todas las secciones
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Mostrar la sección correspondiente
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Manejo del formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // En un caso real aquí se enviaría el formulario a un servidor
+            alert('Mensaje enviado. Gracias por contactar con Javier Moles. Te responderemos pronto.');
+            this.reset();
+        });
+
+        // Efecto de parpadeo aleatorio para simular TV vieja
+        function randomFlicker() {
+            const overlay = document.querySelector('.tv-overlay');
+            const intensity = Math.random() * 0.2 + 0.1;
+            overlay.style.opacity = intensity;
+            
+            // Frecuencia aleatoria entre 0.1 y 0.5 segundos
+            setTimeout(randomFlicker, Math.random() * 400 + 100);
+        }
+        
+        // Iniciar efecto de parpadeo después de un breve retraso
+        setTimeout(randomFlicker, 1000);
+    </script>
 </body>
 </html>
