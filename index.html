@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCRIFE | Productor Musical & Artista Visual</title>
     
-    <!-- SEO para INCRIFE -->
-    <title>INCRIFE | Productor · Artista · Filmaker · Techno Experimental</title>
-    <meta name="description" content="INCRIFE - Artista y productor de techno experimental. Filmaker y creador de experiencias audiovisuales. Donde el caos y el orden se encuentran, allí está la belleza.">
-    <meta name="keywords" content="INCRIFE, techno, productor musical, artista, filmaker, techno experimental, audiovisual, música electrónica">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="INCRIFE - Productor musical, artista visual y filmmaker experimental. Fusionando techno, glitch art y experiencias audiovisuales disruptivas.">
+    <meta name="keywords" content="INCRIFE, productor musical, artista visual, filmmaker, techno, glitch, experimental, música electrónica, arte digital">
     <meta name="author" content="INCRIFE">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="INCRIFE | Productor · Artista · Filmaker · Techno">
-    <meta property="og:description" content="Entre el caos y el orden hay un símbolo. En ese punto intermedio, la belleza. Dentro de esa belleza la libertad.">
+    <meta property="og:title" content="INCRIFE | Productor Musical & Artista Visual">
+    <meta property="og:description" content="Experiencias audiovisuales experimentales en la frontera entre el caos y el orden.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://incrife.com">
+    <meta property="og:image" content="https://incrife.com/og-image.jpg">
     
-    <!-- Fonts -->
+    <!-- Fonts Modernas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,25 +31,23 @@
         }
 
         :root {
+            --blood: #FF003C;
+            --blood-dark: #CC002F;
+            --blood-light: #FF3366;
+            --glitch-blue: #00FFF0;
+            --glitch-pink: #FF00FF;
+            --glitch-green: #00FF00;
             --black: #000000;
             --dark: #0A0A0A;
             --darker: #050505;
-            --gray-900: #111111;
-            --gray-800: #222222;
-            --gray-700: #333333;
-            --gray-600: #444444;
-            --gray-500: #666666;
+            --gray: #111111;
             --white: #FFFFFF;
+            --neon-red: #FF003C;
+            --neon-blue: #00FFF0;
             
-            --red-glitch: #FF2A2A;
-            --red-dark: #CC0000;
-            --red-light: #FF5555;
-            --cyan: #00FFFF;
-            --magenta: #FF00FF;
-            --orange: #FF6B35;
-            
-            --font-primary: 'Archivo', sans-serif;
+            --font-primary: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
+            --font-display: 'Orbitron', sans-serif;
         }
 
         html {
@@ -69,67 +64,45 @@
             line-height: 1.6;
         }
 
-        /* ===== GLITCH BACKGROUND EFFECTS ===== */
-        .glitch-bg {
+        /* ===== GLITCH EFFECTS ===== */
+        .glitch-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: 
+                linear-gradient(rgba(255, 0, 60, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 240, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
             pointer-events: none;
             z-index: 1;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        .glitch-line {
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--red-glitch), transparent);
-            animation: glitch-line 4s linear infinite;
-            opacity: 0.3;
-        }
-
-        .glitch-dot {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: var(--cyan);
-            border-radius: 50%;
-            animation: glitch-dot 3s linear infinite;
             opacity: 0.2;
+            animation: glitch-bg 20s linear infinite;
         }
 
-        .glitch-scan {
+        @keyframes glitch-bg {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 60px; }
+        }
+
+        .scanlines {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                to bottom,
-                transparent 50%,
-                rgba(255, 42, 42, 0.05) 50%
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15) 0px,
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
             );
-            background-size: 100% 4px;
             pointer-events: none;
             z-index: 2;
+            animation: scanline 10s linear infinite;
             opacity: 0.3;
-            animation: scanline 8s linear infinite;
-        }
-
-        @keyframes glitch-line {
-            0% { transform: translateX(-100%) translateY(var(--random-y, 0)); opacity: 0; }
-            10% { opacity: 0.4; }
-            90% { opacity: 0.4; }
-            100% { transform: translateX(100%) translateY(var(--random-y, 0)); opacity: 0; }
-        }
-
-        @keyframes glitch-dot {
-            0% { transform: translateY(-100px) scale(0); opacity: 0; }
-            50% { opacity: 0.3; }
-            100% { transform: translateY(100vh) scale(1); opacity: 0; }
         }
 
         @keyframes scanline {
@@ -137,11 +110,9 @@
             100% { background-position: 0 100%; }
         }
 
-        /* ===== TYPOGRAPHY & GLITCH TEXT ===== */
         .glitch-text {
             position: relative;
             display: inline-block;
-            color: var(--white);
         }
 
         .glitch-text::before,
@@ -152,35 +123,128 @@
             left: 0;
             width: 100%;
             height: 100%;
+            opacity: 0.8;
         }
 
         .glitch-text::before {
             left: 2px;
-            color: var(--cyan);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
+            text-shadow: -1px 0 var(--glitch-blue);
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-1 3s infinite linear alternate-reverse;
         }
 
         .glitch-text::after {
             left: -2px;
-            color: var(--magenta);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
+            text-shadow: 1px 0 var(--glitch-pink);
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim-2 4s infinite linear alternate-reverse;
         }
 
-        @keyframes glitch-anim {
-            0% { clip: rect(31px, 9999px, 94px, 0); }
-            5% { clip: rect(112px, 9999px, 76px, 0); }
-            10% { clip: rect(85px, 9999px, 77px, 0); }
-            15% { clip: rect(27px, 9999px, 97px, 0); }
-            100% { clip: rect(79px, 9999px, 88px, 0); }
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(20px, 9999px, 15px, 0); }
+            5% { clip: rect(85px, 9999px, 90px, 0); }
+            10% { clip: rect(66px, 9999px, 115px, 0); }
+            15% { clip: rect(92px, 9999px, 100px, 0); }
+            20% { clip: rect(120px, 9999px, 80px, 0); }
+            25% { clip: rect(60px, 9999px, 110px, 0); }
+            30% { clip: rect(42px, 9999px, 130px, 0); }
+            35% { clip: rect(75px, 9999px, 95px, 0); }
+            40% { clip: rect(110px, 9999px, 120px, 0); }
+            45% { clip: rect(30px, 9999px, 85px, 0); }
+            50% { clip: rect(90px, 9999px, 150px, 0); }
+            55% { clip: rect(50px, 9999px, 125px, 0); }
+            60% { clip: rect(100px, 9999px, 70px, 0); }
+            65% { clip: rect(35px, 9999px, 105px, 0); }
+            70% { clip: rect(80px, 9999px, 135px, 0); }
+            75% { clip: rect(25px, 9999px, 75px, 0); }
+            80% { clip: rect(115px, 9999px, 95px, 0); }
+            85% { clip: rect(45px, 9999px, 145px, 0); }
+            90% { clip: rect(70px, 9999px, 100px, 0); }
+            95% { clip: rect(95px, 9999px, 120px, 0); }
+            100% { clip: rect(55px, 9999px, 90px, 0); }
         }
 
-        @keyframes glitch-anim2 {
-            0% { clip: rect(129px, 9999px, 36px, 0); }
-            5% { clip: rect(36px, 9999px, 4px, 0); }
-            10% { clip: rect(85px, 9999px, 4px, 0); }
-            100% { clip: rect(138px, 9999px, 98px, 0); }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(125px, 9999px, 30px, 0); }
+            5% { clip: rect(45px, 9999px, 80px, 0); }
+            10% { clip: rect(100px, 9999px, 50px, 0); }
+            15% { clip: rect(25px, 9999px, 120px, 0); }
+            20% { clip: rect(85px, 9999px, 140px, 0); }
+            25% { clip: rect(65px, 9999px, 95px, 0); }
+            30% { clip: rect(40px, 9999px, 130px, 0); }
+            35% { clip: rect(115px, 9999px, 75px, 0); }
+            40% { clip: rect(55px, 9999px, 110px, 0); }
+            45% { clip: rect(95px, 9999px, 125px, 0); }
+            50% { clip: rect(35px, 9999px, 85px, 0); }
+            55% { clip: rect(80px, 9999px, 145px, 0); }
+            60% { clip: rect(120px, 9999px, 60px, 0); }
+            65% { clip: rect(50px, 9999px, 135px, 0); }
+            70% { clip: rect(105px, 9999px, 95px, 0); }
+            75% { clip: rect(30px, 9999px, 115px, 0); }
+            80% { clip: rect(90px, 9999px, 140px, 0); }
+            85% { clip: rect(45px, 9999px, 100px, 0); }
+            90% { clip: rect(110px, 9999px, 80px, 0); }
+            95% { clip: rect(70px, 9999px, 125px, 0); }
+            100% { clip: rect(40px, 9999px, 105px, 0); }
+        }
+
+        .glitch-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glitch-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--neon-red), 
+                var(--neon-blue), 
+                var(--glitch-pink), 
+                var(--neon-red));
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.7;
+            animation: border-glitch 3s infinite linear;
+        }
+
+        @keyframes border-glitch {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .inferno-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inferno-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 60, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 240, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+            animation: inferno-pulse 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes inferno-pulse {
+            0%, 100% { 
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
         }
 
         /* ===== NAVIGATION ===== */
@@ -188,11 +252,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(5, 5, 5, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 42, 42, 0.2);
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 0, 60, 0.3);
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.1);
         }
 
         .nav-container {
@@ -205,23 +270,38 @@
         }
 
         .logo {
-            font-family: var(--font-mono);
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 3px;
             position: relative;
+            color: var(--white);
         }
 
         .logo span {
-            color: var(--red-glitch);
+            color: var(--neon-red);
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.7);
+            animation: logo-pulse 2s infinite;
         }
 
-        .logo::after {
-            content: '//';
-            color: var(--cyan);
-            margin-left: 10px;
-            font-weight: 300;
-            opacity: 0.5;
+        @keyframes logo-pulse {
+            0%, 100% { 
+                text-shadow: 0 0 10px rgba(255, 0, 60, 0.7);
+            }
+            50% { 
+                text-shadow: 0 0 20px rgba(255, 0, 60, 1), 
+                           0 0 30px rgba(255, 0, 60, 0.5);
+            }
+        }
+
+        .logo-subtitle {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--neon-blue);
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            opacity: 0.7;
         }
 
         .nav-links {
@@ -232,46 +312,55 @@
         .nav-link {
             color: var(--white);
             text-decoration: none;
-            font-size: 13px;
+            font-family: var(--font-mono);
+            font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all 0.3s;
             position: relative;
-            font-family: var(--font-mono);
+            padding: 5px 0;
+            opacity: 0.8;
         }
 
         .nav-link::before {
-            content: '>';
+            content: '';
             position: absolute;
-            left: -15px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            color: var(--red-glitch);
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--neon-red), var(--neon-blue));
+            transition: width 0.3s;
         }
 
         .nav-link:hover::before,
         .nav-link.active::before {
-            opacity: 1;
+            width: 100%;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--red-glitch);
+        .nav-link:hover {
+            color: var(--neon-red);
+            opacity: 1;
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
         }
 
         .mobile-menu-btn {
             display: none;
             background: none;
-            border: none;
+            border: 2px solid var(--neon-red);
             color: var(--white);
-            font-size: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            font-size: 20px;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .mobile-menu-btn:hover {
-            color: var(--red-glitch);
+            background: var(--neon-red);
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
         }
 
         /* ===== HERO SECTION ===== */
@@ -281,25 +370,33 @@
             align-items: center;
             padding-top: 80px;
             position: relative;
-            background: linear-gradient(45deg, var(--darker) 0%, var(--black) 100%);
             overflow: hidden;
+            background: var(--black);
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 42, 42, 0.1) 0%, transparent 70%);
-            animation: pulse 6s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 60, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 240, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+            animation: hero-glow 15s ease-in-out infinite alternate;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.3; }
+        @keyframes hero-glow {
+            0% { 
+                filter: hue-rotate(0deg);
+                opacity: 0.3;
+            }
+            100% { 
+                filter: hue-rotate(180deg);
+                opacity: 0.7;
+            }
         }
 
         .hero-container {
@@ -312,81 +409,99 @@
 
         .hero-content {
             text-align: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-family: var(--font-primary);
-            font-size: 72px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 30px;
+            font-family: var(--font-display);
+            font-size: 96px;
+            font-weight: 800;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            line-height: 1;
         }
 
-        .philosophy {
+        .hero-subtitle {
             font-family: var(--font-mono);
             font-size: 18px;
-            color: var(--cyan);
+            color: var(--neon-blue);
             margin-bottom: 40px;
-            line-height: 1.8;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 255, 240, 0.5);
+            text-transform: uppercase;
+        }
+
+        .hero-philosophy {
+            font-family: var(--font-primary);
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            border-left: 2px solid var(--red-glitch);
-            padding-left: 20px;
-            text-align: left;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 0, 60, 0.05);
+            border-left: 2px solid var(--neon-red);
+            border-right: 2px solid var(--neon-blue);
+            position: relative;
         }
 
-        .philosophy span {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--white);
+        .hero-philosophy::before {
+            content: '🎭';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 24px;
         }
 
-        .hero-tags {
+        .hero-philosophy::after {
+            content: '🪐';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            font-size: 24px;
+        }
+
+        .hero-roles {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
             flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .tag {
-            padding: 10px 20px;
-            background: rgba(255, 42, 42, 0.1);
-            border: 1px solid rgba(255, 42, 42, 0.3);
-            border-radius: 20px;
+        .role-tag {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 0, 60, 0.3);
+            border-radius: 25px;
             font-family: var(--font-mono);
-            font-size: 12px;
+            font-size: 14px;
+            color: var(--white);
+            transition: all 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--red-glitch);
-            transition: all 0.3s;
         }
 
-        .tag:hover {
-            background: rgba(255, 42, 42, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 42, 42, 0.2);
+        .role-tag:hover {
+            background: var(--neon-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 0, 60, 0.3);
         }
 
         .social-hero {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             margin-top: 60px;
-            flex-wrap: wrap;
         }
 
         .social-hero a {
             width: 50px;
             height: 50px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 42, 42, 0.3);
-            border-radius: 50%;
+            border: 1px solid rgba(255, 0, 60, 0.5);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -398,33 +513,38 @@
             overflow: hidden;
         }
 
-        .social-hero a::before {
+        .social-hero a:hover {
+            background: var(--neon-red);
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 10px 20px rgba(255, 0, 60, 0.5);
+        }
+
+        .social-hero a::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 42, 42, 0.3), transparent);
-            transition: left 0.5s;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.1), 
+                transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
         }
 
-        .social-hero a:hover::before {
+        .social-hero a:hover::after {
             left: 100%;
-        }
-
-        .social-hero a:hover {
-            background: var(--red-glitch);
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 20px rgba(255, 42, 42, 0.3);
         }
 
         /* ===== ABOUT SECTION ===== */
         .about {
-            padding: 100px 0;
-            background: var(--dark);
+            padding: 120px 0;
+            background: var(--black);
             position: relative;
-            border-top: 1px solid rgba(255, 42, 42, 0.2);
+            border-top: 1px solid rgba(255, 0, 60, 0.1);
+            border-bottom: 1px solid rgba(255, 0, 60, 0.1);
         }
 
         .section-container {
@@ -435,186 +555,162 @@
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
         .section-title {
-            font-family: var(--font-primary);
-            font-size: 48px;
+            font-family: var(--font-display);
+            font-size: 52px;
             margin-bottom: 20px;
-            color: var(--white);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
+            position: relative;
+            display: inline-block;
         }
 
         .accent {
-            color: var(--red-glitch);
+            color: var(--neon-red);
+            text-shadow: 0 0 15px rgba(255, 0, 60, 0.7);
         }
 
         .section-subtitle {
-            color: var(--cyan);
-            font-size: 18px;
+            color: var(--neon-blue);
+            font-family: var(--font-mono);
+            font-size: 16px;
             max-width: 600px;
             margin: 0 auto;
-            font-family: var(--font-mono);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.8;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
         }
 
         .about-text {
+            font-family: var(--font-primary);
             font-size: 18px;
             line-height: 1.8;
-            color: #CCCCCC;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .about-text p {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
         }
 
-        .about-text strong {
-            color: var(--red-glitch);
-            font-weight: 600;
+        .about-text p::before {
+            content: '⟩';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--neon-red);
+            font-family: var(--font-mono);
+            font-size: 20px;
         }
 
-        .stats-grid {
+        .about-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 40px;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .stat-item {
+        .about-stat {
             text-align: center;
-            padding: 30px;
-            background: rgba(255, 42, 42, 0.1);
-            border: 1px solid rgba(255, 42, 42, 0.3);
-            border-radius: 10px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 0, 60, 0.2);
+            border-radius: 15px;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
         }
 
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--red-glitch);
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-
-        .stat-item:hover::before {
-            transform: scaleX(1);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(255, 42, 42, 0.2);
+        .about-stat:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-red);
+            box-shadow: 0 15px 30px rgba(255, 0, 60, 0.2);
         }
 
         .stat-number {
+            font-family: var(--font-display);
             font-size: 48px;
-            font-weight: 900;
+            font-weight: 800;
             margin-bottom: 10px;
-            color: var(--red-glitch);
-            font-family: var(--font-mono);
+            color: var(--neon-red);
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
         }
 
         .stat-label {
+            font-family: var(--font-mono);
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--white);
-            font-family: var(--font-mono);
-        }
-
-        .about-visual {
-            height: 400px;
-            background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 42, 42, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-visual::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 42, 42, 0.05) 10px,
-                rgba(255, 42, 42, 0.05) 20px
-            );
+            opacity: 0.8;
         }
 
         /* ===== MUSIC SECTION ===== */
         .music {
-            padding: 100px 0;
-            background: var(--darker);
-            border-top: 1px solid rgba(255, 42, 42, 0.2);
+            padding: 120px 0;
+            background: var(--black);
+            position: relative;
+        }
+
+        .music::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--neon-red), 
+                var(--neon-blue), 
+                transparent);
+            animation: line-glow 3s infinite linear;
+        }
+
+        @keyframes line-glow {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
         }
 
         .music-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             margin-top: 60px;
         }
 
         .track-card {
-            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s;
-            border: 1px solid transparent;
+            border: 1px solid rgba(255, 0, 60, 0.1);
             position: relative;
         }
 
-        .track-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--red-glitch), var(--cyan), var(--magenta), var(--red-glitch));
-            border-radius: 17px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .track-card:hover::before {
-            opacity: 1;
-            animation: border-glow 2s linear infinite;
-        }
-
-        @keyframes border-glow {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-
         .track-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            border-color: var(--neon-red);
+            box-shadow: 0 20px 40px rgba(255, 0, 60, 0.2);
         }
 
-        .track-visual {
-            height: 200px;
-            background: linear-gradient(135deg, var(--black) 0%, var(--gray-900) 100%);
+        .track-cover {
+            height: 250px;
+            background: linear-gradient(135deg, 
+                rgba(255, 0, 60, 0.1) 0%, 
+                rgba(0, 255, 240, 0.1) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -622,42 +718,51 @@
             overflow: hidden;
         }
 
-        .track-visual::before {
+        .track-cover::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 42, 42, 0.1) 2px,
-                rgba(255, 42, 42, 0.1) 4px
-            );
-            animation: scan 10s linear infinite;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 0, 60, 0.1) 2px,
+                    rgba(255, 0, 60, 0.1) 4px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 255, 240, 0.1) 2px,
+                    rgba(0, 255, 240, 0.1) 4px
+                );
+            animation: grid-move 20s linear infinite;
         }
 
-        @keyframes scan {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100%); }
+        @keyframes grid-move {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(40px) translateY(40px); }
         }
 
         .track-number {
-            font-size: 64px;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.1);
+            font-family: var(--font-display);
+            font-size: 120px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
             position: absolute;
             top: 20px;
             left: 20px;
-            font-family: var(--font-mono);
+            line-height: 1;
         }
 
         .play-btn {
-            width: 60px;
-            height: 60px;
-            background: var(--red-glitch);
+            width: 70px;
+            height: 70px;
+            background: var(--neon-red);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -665,14 +770,16 @@
             color: var(--white);
             cursor: pointer;
             transition: all 0.3s;
-            border: 2px solid var(--white);
+            border: 3px solid var(--white);
             z-index: 2;
+            font-size: 24px;
         }
 
         .play-btn:hover {
             background: var(--white);
-            color: var(--red-glitch);
-            transform: scale(1.1);
+            color: var(--neon-red);
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 0 30px rgba(255, 0, 60, 0.8);
         }
 
         .track-info {
@@ -680,52 +787,57 @@
         }
 
         .track-title {
+            font-family: var(--font-display);
             font-size: 24px;
             margin-bottom: 10px;
-            font-family: var(--font-primary);
             color: var(--white);
         }
 
         .track-meta {
-            color: var(--cyan);
+            font-family: var(--font-mono);
+            color: var(--neon-blue);
             font-size: 14px;
             margin-bottom: 20px;
             letter-spacing: 1px;
-            font-family: var(--font-mono);
+            text-transform: uppercase;
         }
 
         .track-links {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .stream-link {
-            flex: 1;
-            padding: 12px;
-            background: rgba(255, 42, 42, 0.2);
+            padding: 10px 20px;
+            background: rgba(255, 0, 60, 0.1);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             color: var(--white);
             text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 42, 42, 0.5);
             font-family: var(--font-mono);
+            font-size: 12px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 0, 60, 0.3);
+            flex: 1;
+            min-width: 120px;
         }
 
         .stream-link:hover {
-            background: var(--red-glitch);
+            background: var(--neon-red);
             transform: translateY(-2px);
         }
 
-        /* ===== FILMS SECTION ===== */
-        .films {
-            padding: 100px 0;
-            background: var(--dark);
-            border-top: 1px solid rgba(255, 42, 42, 0.2);
+        /* ===== VIDEOS SECTION ===== */
+        .videos {
+            padding: 120px 0;
+            background: var(--black);
+            position: relative;
+            border-top: 1px solid rgba(255, 0, 60, 0.1);
+            border-bottom: 1px solid rgba(255, 0, 60, 0.1);
         }
 
         .video-main {
@@ -734,14 +846,20 @@
 
         .video-container {
             height: 500px;
-            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+            background: linear-gradient(135deg, 
+                rgba(255, 0, 60, 0.1) 0%, 
+                rgba(0, 255, 240, 0.1) 100%);
             border-radius: 20px;
             overflow: hidden;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(255, 42, 42, 0.3);
+            border: 2px solid rgba(255, 0, 60, 0.3);
+        }
+
+        .video-container:hover {
+            border-color: var(--neon-red);
         }
 
         .video-container::before {
@@ -751,200 +869,263 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 50px,
-                rgba(255, 42, 42, 0.1) 50px,
-                rgba(255, 42, 42, 0.1) 100px
-            );
-            animation: glitch-bg 20s linear infinite;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 0, 60, 0.1) 2px,
+                    rgba(255, 0, 60, 0.1) 4px
+                );
+            animation: glitch-scan 10s linear infinite;
         }
 
-        @keyframes glitch-bg {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(100px); }
+        @keyframes glitch-scan {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         .video-overlay {
             text-align: center;
             color: var(--white);
             z-index: 2;
+            padding: 40px;
         }
 
         .video-overlay i {
             font-size: 80px;
             margin-bottom: 20px;
-            color: var(--red-glitch);
+            color: var(--neon-red);
+            text-shadow: 0 0 20px rgba(255, 0, 60, 0.5);
         }
 
         .video-overlay h3 {
+            font-family: var(--font-display);
             font-size: 32px;
             margin-bottom: 10px;
-            font-family: var(--font-primary);
+        }
+
+        .video-overlay p {
+            font-family: var(--font-mono);
+            color: var(--neon-blue);
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .video-thumbnails {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            gap: 30px;
         }
 
         .video-thumb {
             height: 200px;
-            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
+            font-family: var(--font-display);
             font-size: 18px;
-            border: 1px solid rgba(255, 42, 42, 0.3);
+            border: 1px solid rgba(255, 0, 60, 0.2);
             transition: all 0.3s;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            font-family: var(--font-mono);
+        }
+
+        .video-thumb:hover {
+            border-color: var(--neon-red);
+            color: var(--neon-red);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 60, 0.2);
         }
 
         .video-thumb::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 42, 42, 0.3), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 0, 60, 0.1) 50%, 
+                transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
         }
 
         .video-thumb:hover::before {
-            left: 100%;
+            transform: translateX(100%);
         }
 
-        .video-thumb:hover {
-            border-color: var(--cyan);
-            color: var(--cyan);
-            transform: translateY(-5px);
-        }
-
-        /* ===== EVENTS SECTION ===== */
-        .events {
-            padding: 100px 0;
-            background: var(--darker);
-            border-top: 1px solid rgba(255, 42, 42, 0.2);
-        }
-
-        .events-timeline {
-            max-width: 800px;
-            margin: 60px auto 0;
-        }
-
-        .event-card {
-            display: grid;
-            grid-template-columns: 100px 1fr 150px;
-            gap: 30px;
-            align-items: center;
-            padding: 30px;
-            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 42, 42, 0.3);
-            transition: all 0.3s;
+        /* ===== SHOWS SECTION ===== */
+        .shows {
+            padding: 120px 0;
+            background: var(--black);
             position: relative;
-            overflow: hidden;
         }
 
-        .event-card::before {
+        .shows-timeline {
+            max-width: 800px;
+            margin: 80px auto 0;
+            position: relative;
+        }
+
+        .shows-timeline::before {
             content: '';
             position: absolute;
+            left: 50px;
             top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--red-glitch);
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, 
+                transparent, 
+                var(--neon-red), 
+                var(--neon-blue), 
+                transparent);
+            transform: translateX(-50%);
         }
 
-        .event-card:hover {
-            transform: translateX(10px);
-            border-color: var(--cyan);
-            box-shadow: 0 10px 30px rgba(255, 42, 42, 0.2);
+        .show-card {
+            display: grid;
+            grid-template-columns: 100px 1fr 150px;
+            gap: 40px;
+            align-items: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 0, 60, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            margin-left: 80px;
         }
 
-        .event-date {
+        .show-card:hover {
+            transform: translateX(20px);
+            border-color: var(--neon-red);
+            box-shadow: 0 20px 40px rgba(255, 0, 60, 0.2);
+        }
+
+        .show-card::before {
+            content: '';
+            position: absolute;
+            left: -80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--neon-red);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.8);
+        }
+
+        .show-date {
             text-align: center;
         }
 
         .date-day {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--red-glitch);
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--neon-red);
             display: block;
-            font-family: var(--font-mono);
+            line-height: 1;
         }
 
         .date-month {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--white);
             font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--white);
+            opacity: 0.8;
         }
 
-        .event-info h3 {
-            font-size: 20px;
+        .show-info h3 {
+            font-family: var(--font-display);
+            font-size: 24px;
             margin-bottom: 10px;
-            font-family: var(--font-primary);
-        }
-
-        .event-location {
-            color: var(--cyan);
-            font-size: 14px;
-            font-family: var(--font-mono);
-        }
-
-        .event-location i {
-            margin-right: 8px;
-        }
-
-        .ticket-btn {
-            padding: 12px 24px;
-            background: var(--red-glitch);
             color: var(--white);
-            border: none;
-            border-radius: 8px;
+        }
+
+        .show-location {
             font-family: var(--font-mono);
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
+            color: var(--neon-blue);
+            font-size: 14px;
             letter-spacing: 1px;
         }
 
+        .show-location i {
+            margin-right: 10px;
+        }
+
+        .ticket-btn {
+            padding: 15px 30px;
+            background: var(--neon-red);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
         .ticket-btn:hover {
-            background: var(--red-light);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 42, 42, 0.5);
+            background: var(--white);
+            color: var(--neon-red);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 0, 60, 0.5);
+        }
+
+        .ticket-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent);
+            transition: left 0.5s;
+        }
+
+        .ticket-btn:hover::before {
+            left: 100%;
         }
 
         /* ===== CONTACT SECTION ===== */
         .contact {
-            padding: 100px 0;
-            background: var(--dark);
-            border-top: 1px solid rgba(255, 42, 42, 0.2);
+            padding: 120px 0;
+            background: var(--black);
+            position: relative;
+            border-top: 1px solid rgba(255, 0, 60, 0.1);
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-top: 60px;
+            gap: 80px;
+            margin-top: 80px;
         }
 
         .contact-info h3 {
+            font-family: var(--font-display);
             font-size: 32px;
-            margin-bottom: 30px;
-            font-family: var(--font-primary);
+            margin-bottom: 40px;
+            color: var(--white);
         }
 
         .contact-item {
@@ -952,50 +1133,52 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(255, 42, 42, 0.1);
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
-            border: 1px solid rgba(255, 42, 42, 0.3);
+            border: 1px solid rgba(255, 0, 60, 0.2);
             transition: all 0.3s;
         }
 
         .contact-item:hover {
-            transform: translateX(5px);
-            border-color: var(--cyan);
+            transform: translateX(10px);
+            border-color: var(--neon-red);
+            background: rgba(255, 0, 60, 0.05);
         }
 
         .contact-item i {
-            width: 50px;
-            height: 50px;
-            background: var(--red-glitch);
+            width: 60px;
+            height: 60px;
+            background: var(--neon-red);
             color: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 24px;
+            flex-shrink: 0;
         }
 
         /* ===== FORM STYLES ===== */
         .contact-form {
-            background: linear-gradient(135deg, rgba(255, 42, 42, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+            background: rgba(255, 255, 255, 0.03);
             padding: 40px;
             border-radius: 20px;
-            border: 1px solid rgba(255, 42, 42, 0.3);
+            border: 1px solid rgba(255, 0, 60, 0.2);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--cyan);
+            margin-bottom: 10px;
             font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--neon-blue);
         }
 
         .form-group input,
@@ -1003,11 +1186,12 @@
         .form-group select {
             width: 100%;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 42, 42, 0.3);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 0, 60, 0.3);
+            border-radius: 10px;
             color: var(--white);
-            font-family: var(--font-mono);
+            font-family: var(--font-primary);
+            font-size: 16px;
             transition: all 0.3s;
         }
 
@@ -1015,50 +1199,59 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--cyan);
-            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+            border-color: var(--neon-red);
+            box-shadow: 0 0 0 3px rgba(255, 0, 60, 0.1);
+            background: rgba(255, 0, 60, 0.05);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.3);
+            font-family: var(--font-mono);
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            gap: 20px;
         }
 
         .form-radio-group {
             display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 30px;
+            margin-bottom: 25px;
         }
 
         .form-radio-label {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             cursor: pointer;
             color: var(--white);
             font-family: var(--font-mono);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .form-radio-label:hover {
+            color: var(--neon-blue);
         }
 
         .form-radio-label input[type="radio"] {
             appearance: none;
             width: 20px;
             height: 20px;
-            border: 2px solid var(--cyan);
+            border: 2px solid var(--neon-blue);
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.5);
+            background: transparent;
             cursor: pointer;
             position: relative;
             transition: all 0.3s;
         }
 
         .form-radio-label input[type="radio"]:checked {
-            background: var(--red-glitch);
+            border-color: var(--neon-red);
+            background: var(--neon-red);
         }
 
         .form-radio-label input[type="radio"]:checked::after {
@@ -1074,32 +1267,55 @@
 
         .form-submit {
             width: 100%;
-            padding: 16px;
-            background: var(--red-glitch);
+            padding: 18px;
+            background: var(--neon-red);
             color: var(--white);
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-family: var(--font-mono);
             font-weight: 600;
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             cursor: pointer;
             transition: all 0.3s;
-            margin-top: 20px;
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
         .form-submit:hover {
-            background: var(--red-light);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 42, 42, 0.5);
+            background: var(--white);
+            color: var(--neon-red);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 0, 60, 0.4);
+        }
+
+        .form-submit i {
+            margin-right: 10px;
         }
 
         /* ===== FOOTER ===== */
         .footer {
-            padding: 60px 0;
+            padding: 80px 0 40px;
             background: var(--black);
             color: var(--white);
-            border-top: 1px solid rgba(255, 42, 42, 0.2);
+            border-top: 1px solid rgba(255, 0, 60, 0.1);
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--neon-red), 
+                var(--neon-blue), 
+                transparent);
         }
 
         .footer-content {
@@ -1108,35 +1324,42 @@
             padding: 0 20px;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-about {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .footer-logo {
-            font-family: var(--font-mono);
-            font-size: 24px;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            font-family: var(--font-display);
+            font-size: 28px;
+            letter-spacing: 3px;
+            color: var(--white);
         }
 
         .footer-logo span {
-            color: var(--red-glitch);
+            color: var(--neon-red);
         }
 
         .footer-text {
-            color: #CCCCCC;
-            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
             font-size: 14px;
-            font-family: var(--font-mono);
+            font-family: var(--font-primary);
         }
 
         .footer-links h4 {
-            margin-bottom: 20px;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--white);
+            margin-bottom: 25px;
             font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--white);
+            opacity: 0.8;
         }
 
         .footer-links ul {
@@ -1144,10 +1367,1134 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .footer-links a {
-            color: #CCCCCC;
+            color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            font
+            font-family: var(--font-primary);
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--neon-red);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 0, 60, 0.3);
+        }
+
+        .social-link:hover {
+            background: var(--neon-red);
+            transform: translateY(-3px) rotate(5deg);
+            border-color: var(--neon-red);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 0, 60, 0.1);
+            color: rgba(255, 255, 255, 0.4);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 72px;
+            }
+            
+            .footer-content {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 60px;
+            }
+            
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .music-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+            }
+            
+            .video-container {
+                height: 400px;
+            }
+            
+            .show-card {
+                margin-left: 60px;
+                gap: 30px;
+            }
+            
+            .shows-timeline::before {
+                left: 40px;
+            }
+            
+            .show-card::before {
+                left: -60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 5, 5, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 30px;
+                gap: 25px;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s;
+                border-bottom: 1px solid rgba(255, 0, 60, 0.3);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: 5px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .hero-philosophy {
+                font-size: 18px;
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 40px;
+            }
+            
+            .show-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 25px;
+                margin-left: 40px;
+                padding: 30px;
+            }
+            
+            .shows-timeline::before {
+                left: 30px;
+            }
+            
+            .show-card::before {
+                left: -40px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            
+            .hero-roles {
+                gap: 20px;
+            }
+            
+            .role-tag {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+            
+            .social-hero {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .music-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .video-thumbnails {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+                letter-spacing: 3px;
+            }
+            
+            .hero-subtitle {
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+            
+            .hero-philosophy {
+                font-size: 16px;
+                padding: 15px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .section-subtitle {
+                font-size: 14px;
+            }
+            
+            .social-hero a {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .video-thumbnails {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-container {
+                height: 300px;
+            }
+            
+            .video-overlay h3 {
+                font-size: 24px;
+            }
+            
+            .video-overlay i {
+                font-size: 60px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .track-links {
+                flex-direction: column;
+            }
+            
+            .stream-link {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Glitch Effects -->
+    <div class="glitch-overlay"></div>
+    <div class="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                INC<span>RIFE</span>
+                <div class="logo-subtitle">EXPERIMENTAL</div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">INICIO</a>
+                <a href="#about" class="nav-link">SOBRE</a>
+                <a href="#music" class="nav-link">MÚSICA</a>
+                <a href="#videos" class="nav-link">VIDEOS</a>
+                <a href="#shows" class="nav-link">SHOWS</a>
+                <a href="#contact" class="nav-link">CONTACTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="glitch-text" data-text="INCRIFE">INCRIFE</h1>
+                
+                <p class="hero-subtitle">
+                    PRODUCTOR MUSICAL • ARTISTA VISUAL • FILMMAKER
+                </p>
+                
+                <div class="hero-philosophy">
+                    🎭 Entre el caos y el orden hay un símbolo
+                    <br>🎼 En ese punto intermedio, la belleza
+                    <br>🪐 Dentro de esa belleza la libertad
+                </div>
+                
+                <div class="hero-roles">
+                    <div class="role-tag">TECHNO EXPERIMENTAL</div>
+                    <div class="role-tag">GLITCH ART</div>
+                    <div class="role-tag">VISUALES GENERATIVOS</div>
+                    <div class="role-tag">PERFORMANCE AUDIOVISUAL</div>
+                </div>
+                
+                <div class="social-hero">
+                    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" title="Spotify">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="https://x.com/incrife" target="_blank" title="X (Twitter)">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/incrife/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@incrife" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Incrife" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">SOBRE <span class="accent">MÍ</span></h2>
+                <p class="section-subtitle">
+                    Artista experimental especializado en techno, glitch art y experiencias audiovisuales disruptivas
+                </p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Soy INCRIFE, creador en la frontera entre lo digital y lo orgánico. 
+                        Mi trabajo explora la tensión entre el caos y el orden, utilizando 
+                        el glitch como lenguaje y el techno como ritual.
+                    </p>
+                    
+                    <p>
+                        Como productor musical, me especializo en techno experimental con 
+                        elementos industriales y atmósferas inmersivas. Como artista visual, 
+                        trabajo con glitch art, visuales generativos y performance ritualístico, 
+                        creando experiencias que desdibujan los límites entre lo real y lo digital.
+                    </p>
+                    
+                    <p>
+                        Cada performance es un viaje sensorial donde el sonido, la imagen y 
+                        el espacio se fusionan en una experiencia única. Mi filosofía se 
+                        centra en encontrar la belleza en el punto intermedio entre el control 
+                        y la aleatoriedad, entre el código y la emoción.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <div class="stat-number">75+</div>
+                            <div class="stat-label">PERFORMANCES</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="stat-number">120K</div>
+                            <div class="stat-label">IMPRESIONES</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="stat-number">32</div>
+                            <div class="stat-label">PROYECTOS</div>
+                        </div>
+                        <div class="about-stat">
+                            <div class="stat-number">18</div>
+                            <div class="stat-label">COLABORACIONES</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="inferno-bg" style="height: 500px; border-radius: 20px; border: 2px solid rgba(255, 0, 60, 0.3); position: relative; display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center; padding: 40px; z-index: 2;">
+                        <div style="font-family: var(--font-display); font-size: 24px; margin-bottom: 20px; color: var(--neon-red);">TECHNO • GLITCH • RITUAL</div>
+                        <div style="font-family: var(--font-mono); font-size: 14px; color: var(--neon-blue); letter-spacing: 2px;">EXPERIENCIAS AUDIOVISUALES</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="music">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">PROYECTOS <span class="accent">SONOROS</span></h2>
+                <p class="section-subtitle">
+                    Techno experimental, sonidos industriales y atmósferas glitch
+                </p>
+            </div>
+            
+            <div class="music-grid">
+                <!-- Track 1 -->
+                <div class="track-card">
+                    <div class="track-cover">
+                        <div class="track-number">01</div>
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <h3 class="track-title">GLITCH MANIFEST</h3>
+                        <p class="track-meta">2024 • TECHNO EXPERIMENTAL • 8 TRACKS</p>
+                        <div class="track-links">
+                            <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="stream-link">
+                                <i class="fab fa-spotify"></i>
+                                SPOTIFY
+                            </a>
+                            <a href="https://www.youtube.com/@Incrife" target="_blank" class="stream-link">
+                                <i class="fab fa-youtube"></i>
+                                YOUTUBE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Track 2 -->
+                <div class="track-card">
+                    <div class="track-cover">
+                        <div class="track-number">02</div>
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <h3 class="track-title">INFERNO TECHNO</h3>
+                        <p class="track-meta">2023 • INDUSTRIAL • SINGLE</p>
+                        <div class="track-links">
+                            <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="stream-link">
+                                <i class="fab fa-spotify"></i>
+                                SPOTIFY
+                            </a>
+                            <a href="https://www.youtube.com/@Incrife" target="_blank" class="stream-link">
+                                <i class="fab fa-youtube"></i>
+                                YOUTUBE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Track 3 -->
+                <div class="track-card">
+                    <div class="track-cover">
+                        <div class="track-number">03</div>
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="track-info">
+                        <h3 class="track-title">DIGITAL RITUAL</h3>
+                        <p class="track-meta">2023 • LIVE PERFORMANCE • 45MIN</p>
+                        <div class="track-links">
+                            <a href="https://soundcloud.com" target="_blank" class="stream-link">
+                                <i class="fab fa-soundcloud"></i>
+                                SOUNDCLOUD
+                            </a>
+                            <a href="https://www.youtube.com/@Incrife" target="_blank" class="stream-link">
+                                <i class="fab fa-youtube"></i>
+                                YOUTUBE
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">EXPERIENCIAS <span class="accent">VISUALES</span></h2>
+                <p class="section-subtitle">
+                    Glitch art, visuales generativos y performance audiovisual
+                </p>
+            </div>
+            
+            <div class="video-main">
+                <div class="video-container">
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>"DIGITAL SACRIFICE"</h3>
+                        <p>PERFORMANCE AUDIOVISUAL EXPERIMENTAL</p>
+                        <p style="margin-top: 20px; font-size: 12px; color: rgba(255,255,255,0.6);">TECHNO • GLITCH • RITUAL</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-thumbnails">
+                <div class="video-thumb">GLITCH RITUAL</div>
+                <div class="video-thumb">INFERNO VISUALS</div>
+                <div class="video-thumb">ERROR MANIFEST</div>
+                <div class="video-thumb">DIGITAL SHAMAN</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shows Section -->
+    <section id="shows" class="shows">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">EXPERIENCIAS <span class="accent">EN VIVO</span></h2>
+                <p class="section-subtitle">
+                    Performances inmersivas y experiencias multisensoriales de techno experimental
+                </p>
+            </div>
+            
+            <div class="shows-timeline">
+                <!-- Show 1 -->
+                <div class="show-card">
+                    <div class="show-date">
+                        <span class="date-day">25</span>
+                        <span class="date-month">OCT</span>
+                    </div>
+                    <div class="show-info">
+                        <h3>DIGITAL RITUAL</h3>
+                        <p class="show-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            ESPACIO EXPERIMENTAL, BARCELONA
+                        </p>
+                        <p>Performance audiovisual con visuales glitch generativos y techno industrial.</p>
+                    </div>
+                    <button class="ticket-btn">RESERVAR</button>
+                </div>
+                
+                <!-- Show 2 -->
+                <div class="show-card">
+                    <div class="show-date">
+                        <span class="date-day">08</span>
+                        <span class="date-month">NOV</span>
+                    </div>
+                    <div class="show-info">
+                        <h3>GLITCH MANIFEST</h3>
+                        <p class="show-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            GALERÍA DE ARTE DIGITAL, MADRID
+                        </p>
+                        <p>Instalación interactiva + performance en vivo de techno experimental.</p>
+                    </div>
+                    <button class="ticket-btn">RESERVAR</button>
+                </div>
+                
+                <!-- Show 3 -->
+                <div class="show-card">
+                    <div class="show-date">
+                        <span class="date-day">15</span>
+                        <span class="date-month">DIC</span>
+                    </div>
+                    <div class="show-info">
+                        <h3>INFERNO TECHNO</h3>
+                        <p class="show-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            FESTIVAL EXPERIMENTAL, VALENCIA
+                        </p>
+                        <p>Experiencia multisensorial con visuales y sonido espacial 360°.</p>
+                    </div>
+                    <button class="ticket-btn">PRÓXIMO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">CONEXIÓN <span class="accent">DIGITAL</span></h2>
+                <p class="section-subtitle">
+                    Colaboraciones, proyectos y experiencias de techno experimental
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>CONTACTO DIRECTO</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4 style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 2px; color: var(--neon-blue);">EMAIL</h4>
+                            <p style="font-size: 16px;">contact@incrife.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h4 style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 2px; color: var(--neon-blue);">BOOKING</h4>
+                            <p style="font-size: 16px;">Disponible para performances y festivales</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-music"></i>
+                        <div>
+                            <h4 style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 2px; color: var(--neon-blue);">COLABORACIONES</h4>
+                            <p style="font-size: 16px;">Artistas, productores, visualistas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="social-link" title="Spotify">
+                            <i class="fab fa-spotify"></i>
+                        </a>
+                        <a href="https://x.com/incrife" target="_blank" class="social-link" title="X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/incrife/" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@incrife" target="_blank" class="social-link" title="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Incrife" target="_blank" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/mvzgdnay" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">NOMBRE COMPLETO *</label>
+                                <input type="text" name="nombre" id="name" required placeholder="TU NOMBRE">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">EMAIL *</label>
+                                <input type="email" name="email" id="email" required placeholder="TU@EMAIL.COM">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipo_cliente">TIPO DE PROYECTO *</label>
+                            <select name="tipo_cliente" id="tipo_cliente" required>
+                                <option value="">SELECCIONAR...</option>
+                                <option value="festival">FESTIVAL</option>
+                                <option value="collaborator">COLABORADOR</option>
+                                <option value="performance">PERFORMANCE</option>
+                                <option value="other">OTRO</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>INTERÉS PRINCIPAL</label>
+                            <div class="form-radio-group">
+                                <label class="form-radio-label">
+                                    <input type="radio" name="interes" value="performance" required>
+                                    PERFORMANCE
+                                </label>
+                                <label class="form-radio-label">
+                                    <input type="radio" name="interes" value="collaboration">
+                                    COLABORACIÓN
+                                </label>
+                                <label class="form-radio-label">
+                                    <input type="radio" name="interes" value="festival">
+                                    FESTIVAL
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">MENSAJE *</label>
+                            <textarea name="mensaje" id="message" rows="5" required placeholder="DESCRIBE TU PROYECTO O IDEA..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-paper-plane"></i> ENVIAR MENSAJE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">INC<span>RIFE</span></div>
+                <p class="footer-text">
+                    Productor musical, artista visual y filmmaker especializado en techno experimental, 
+                    glitch art y experiencias audiovisuales disruptivas. Explorando la frontera entre 
+                    el caos y el orden, entre el código y la emoción.
+                </p>
+                <div class="social-links">
+                    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="social-link">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="https://x.com/incrife" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/incrife/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@incrife" target="_blank" class="social-link">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Incrife" target="_blank" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>NAVEGACIÓN</h4>
+                <ul>
+                    <li><a href="#home">INICIO</a></li>
+                    <li><a href="#about">SOBRE MÍ</a></li>
+                    <li><a href="#music">MÚSICA</a></li>
+                    <li><a href="#videos">VIDEOS</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>REDES</h4>
+                <ul>
+                    <li><a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank">SPOTIFY</a></li>
+                    <li><a href="https://x.com/incrife" target="_blank">X (TWITTER)</a></li>
+                    <li><a href="https://www.instagram.com/incrife/" target="_blank">INSTAGRAM</a></li>
+                    <li><a href="https://www.tiktok.com/@incrife" target="_blank">TIKTOK</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">PRIVACIDAD</a></li>
+                    <li><a href="#">TÉRMINOS</a></li>
+                    <li><a href="#">COOKIES</a></li>
+                    <li><a href="#contact">CONTACTO</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2024 INCRIFE. TODAS LAS EXPERIENCIAS RESERVADAS.
+            <br>🎭 ENTRE EL CAOS Y EL ORDEN HAY UN SÍMBOLO
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+            
+            // Add glitch effect
+            if (navLinks.classList.contains('active')) {
+                document.querySelector('.logo span').style.animation = 'logo-pulse 0.5s infinite';
+                setTimeout(() => {
+                    document.querySelector('.logo span').style.animation = 'logo-pulse 2s infinite';
+                }, 1000);
+            }
+        });
+
+        // Smooth Scrolling for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll to section
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    
+                    // Trigger glitch effect
+                    triggerGlitch();
+                }
+            });
+        });
+
+        // Random Glitch Effect Function
+        function triggerGlitch() {
+            const glitchTexts = document.querySelectorAll('.glitch-text');
+            glitchTexts.forEach(text => {
+                text.style.animation = 'none';
+                text.style.filter = 'hue-rotate(' + Math.random() * 360 + 'deg)';
+                setTimeout(() => {
+                    text.style.animation = '';
+                    text.style.filter = 'none';
+                }, 100);
+            });
+            
+            // Add random noise effect to background
+            const overlay = document.querySelector('.glitch-overlay');
+            overlay.style.opacity = Math.random() * 0.3 + 0.1;
+        }
+
+        // Random glitch every 3-8 seconds
+        setInterval(() => {
+            if (Math.random() > 0.6) {
+                triggerGlitch();
+                
+                // Randomly trigger logo pulse
+                if (Math.random() > 0.7) {
+                    document.querySelector('.logo span').style.animation = 'logo-pulse 0.1s 3';
+                    setTimeout(() => {
+                        document.querySelector('.logo span').style.animation = 'logo-pulse 2s infinite';
+                    }, 300);
+                }
+            }
+        }, 3000);
+
+        // Play Button Functionality
+        document.querySelectorAll('.play-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const trackTitle = this.closest('.track-card').querySelector('.track-title').textContent;
+                
+                // Glitch effect on play
+                triggerGlitch();
+                
+                // Show playing message with glitch style
+                const message = document.createElement('div');
+                message.textContent = `▶ ${trackTitle}`;
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.95);
+                    color: var(--neon-red);
+                    padding: 25px 50px;
+                    font-family: var(--font-display);
+                    font-size: 28px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    border: 2px solid var(--neon-red);
+                    border-radius: 15px;
+                    z-index: 9999;
+                    animation: glitch-anim-1 0.3s;
+                    box-shadow: 0 0 50px rgba(255, 0, 60, 0.5);
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.style.opacity = '0';
+                    message.style.transform = 'translate(-50%, -50%) scale(0.9)';
+                    setTimeout(() => {
+                        message.remove();
+                    }, 300);
+                }, 1500);
+                
+                // Toggle play/pause icon
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-play')) {
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                } else {
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                }
+            });
+        });
+
+        // Ticket Button Functionality
+        document.querySelectorAll('.ticket-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const showTitle = this.closest('.show-card').querySelector('h3').textContent;
+                
+                // Glitch effect
+                triggerGlitch();
+                
+                // Show message
+                const message = document.createElement('div');
+                message.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 20px; color: var(--neon-red);">⚡</div>
+                        <div style="font-family: var(--font-display); font-size: 24px; margin-bottom: 10px;">ACCESO A:</div>
+                        <div style="font-family: var(--font-mono); font-size: 18px; color: var(--neon-blue); margin-bottom: 30px;">${showTitle}</div>
+                        <div style="font-size: 14px; opacity: 0.7;">Redirigiendo a reserva...</div>
+                    </div>
+                `;
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.95);
+                    color: white;
+                    padding: 40px;
+                    border: 2px solid var(--neon-blue);
+                    border-radius: 20px;
+                    z-index: 9999;
+                    animation: glitch-anim-2 0.3s;
+                    box-shadow: 0 0 50px rgba(0, 255, 240, 0.3);
+                    min-width: 300px;
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.style.opacity = '0';
+                    setTimeout(() => {
+                        message.remove();
+                    }, 300);
+                }, 2000);
+            });
+        });
+
+        // Video Thumbnail Click
+        document.querySelectorAll('.video-thumb').forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const videoTitle = this.textContent;
+                
+                // Glitch effect
+                triggerGlitch();
+                
+                const message = document.createElement('div');
+                message.textContent = `▶▶ ${videoTitle}`;
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.95);
+                    color: var(--neon-blue);
+                    padding: 20px 40px;
+                    font-family: var(--font-display);
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    border: 2px solid var(--neon-blue);
+                    z-index: 9999;
+                    animation: glitch-anim-2 0.3s;
+                    box-shadow: 0 0 40px rgba(0, 255, 240, 0.4);
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 1500);
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = sectionId;
+                }
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Random glitch effect on scroll
+            if (Math.random() > 0.97) {
+                triggerGlitch();
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    // Add glitch effect on entry
+                    if (Math.random() > 0.5) {
+                        entry.target.style.filter = 'hue-rotate(90deg)';
+                        setTimeout(() => {
+                            entry.target.style.filter = 'none';
+                        }, 300);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.track-card, .show-card, .contact-item, .video-thumb, .about-stat').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s';
+            observer.observe(el);
+        });
+
+        // Initialize with glitch effect and console message
+        window.addEventListener('load', () => {
+            console.log('%c⚡ INCRIFE | TECHNO EXPERIMENTAL ⚡', 
+                'color: #FF003C; font-size: 24px; font-weight: bold; text-shadow: 0 0 10px #FF003C; font-family: monospace;');
+            console.log('%cGLITCH MODE ACTIVATED | INFERNO TECHNO ONLINE', 
+                'color: #00FFF0; font-size: 14px; font-family: monospace;');
+            console.log('%c🎭 Entre el caos y el orden hay un símbolo', 
+                'color: #FFFFFF; font-size: 12px; font-family: monospace;');
+            
+            // Initial glitch
+            setTimeout(() => {
+                triggerGlitch();
+                document.querySelector('.logo span').style.animation = 'logo-pulse 0.1s 5';
+                setTimeout(() => {
+                    document.querySelector('.logo span').style.animation = 'logo-pulse 2s infinite';
+                }, 500);
+            }, 1000);
+            
+            // Add inferno effect to hero
+            setInterval(() => {
+                if (Math.random() > 0.8) {
+                    const hero = document.querySelector('.hero');
+                    hero.style.filter = 'hue-rotate(' + Math.random() * 60 + 'deg)';
+                    setTimeout(() => {
+                        hero.style.filter = 'none';
+                    }, 200);
+                }
+            }, 5000);
+        });
+
+        // Form submission effect
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Glitch effect
+            triggerGlitch();
+            
+            // Show success message
+            const form = this;
+            const submitBtn = form.querySelector('.form-submit');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ENVIANDO...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Success animation
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> ENVIADO';
+                submitBtn.style.background = 'var(--neon-blue)';
+                submitBtn.style.color = 'var(--black)';
+                
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.innerHTML = `
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 20px; color: var(--neon-blue);">⚡</div>
+                        <div style="font-family: var(--font-display); font-size: 24px; margin-bottom: 10px;">MENSAJE ENVIADO</div>
+                        <div style="font-family: var(--font-mono); font-size: 14px; opacity: 0.8;">Te responderé pronto</div>
+                    </div>
+                `;
+                successMsg.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.95);
+                    color: white;
+                    padding: 50px;
+                    border: 2px solid var(--neon-blue);
+                    border-radius: 20px;
+                    z-index: 9999;
+                    animation: glitch-anim-1 0.3s;
+                    box-shadow: 0 0 60px rgba(0, 255, 240, 0.5);
+                `;
+                document.body.appendChild(successMsg);
+                
+                setTimeout(() => {
+                    successMsg.remove();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = 'var(--neon-red)';
+                    submitBtn.style.color = 'var(--white)';
+                    submitBtn.disabled = false;
+                    form.reset();
+                }, 2000);
+            }, 1500);
+            
+            // Actually submit the form
+            setTimeout(() => {
+                form.submit();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
