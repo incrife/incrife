@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INCRIFE | Artista Techno Barcelona</title>
+    <title>INCRIFE | Artista Visual</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,45 +22,148 @@
         }
 
         :root {
-            --white: #FFFFFF;
+            --blood: #8B0000;
+            --blood-dark: #660000;
+            --blood-light: #B30000;
+            --glitch-blue: #00FFFF;
+            --glitch-pink: #FF00FF;
             --black: #000000;
-            --red: #FF0000;
-            --red-dark: #CC0000;
-            --red-light: #FF3333;
-            --gray-50: #FAFAFA;
-            --gray-100: #F5F5F5;
-            --gray-200: #EEEEEE;
-            --gray-300: #E0E0E0;
-            --gray-400: #BDBDBD;
-            --gray-500: #9E9E9E;
-            --gray-600: #757575;
-            --gray-700: #616161;
-            --gray-800: #424242;
-            --gray-900: #212121;
+            --dark: #0A0A0A;
+            --darker: #050505;
+            --gray: #222222;
+            --white: #FFFFFF;
             
-            --font-primary: 'Inter', sans-serif;
+            --font-primary: 'Chakra Petch', sans-serif;
             --font-display: 'Space Grotesk', sans-serif;
         }
 
         html {
             scroll-behavior: smooth;
+            background: var(--black);
         }
 
         body {
             font-family: var(--font-primary);
-            background: var(--white);
-            color: var(--black);
+            background: var(--darker);
+            color: var(--white);
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* ===== TYPOGRAPHY ===== */
-        h1, h2, h3, h4 {
-            font-family: var(--font-display);
-            font-weight: 700;
+        /* ===== GLITCH EFFECTS ===== */
+        .glitch-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(rgba(139, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 0, 0, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
         }
 
-        .accent {
-            color: var(--red);
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.2) 0px,
+                rgba(0, 0, 0, 0.2) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 2;
+            animation: scanline 10s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 100%; }
+        }
+
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -1px 0 var(--glitch-blue);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: 1px 0 var(--glitch-pink);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            5% { clip: rect(112px, 9999px, 76px, 0); }
+            10% { clip: rect(85px, 9999px, 77px, 0); }
+            15% { clip: rect(27px, 9999px, 97px, 0); }
+            20% { clip: rect(64px, 9999px, 98px, 0); }
+            25% { clip: rect(61px, 9999px, 85px, 0); }
+            30% { clip: rect(99px, 9999px, 114px, 0); }
+            35% { clip: rect(1px, 9999px, 60px, 0); }
+            40% { clip: rect(56px, 9999px, 104px, 0); }
+            45% { clip: rect(28px, 9999px, 115px, 0); }
+            50% { clip: rect(100px, 9999px, 117px, 0); }
+            55% { clip: rect(67px, 9999px, 122px, 0); }
+            60% { clip: rect(23px, 9999px, 94px, 0); }
+            65% { clip: rect(52px, 9999px, 149px, 0); }
+            70% { clip: rect(90px, 9999px, 91px, 0); }
+            75% { clip: rect(1px, 9999px, 13px, 0); }
+            80% { clip: rect(78px, 9999px, 123px, 0); }
+            85% { clip: rect(114px, 9999px, 18px, 0); }
+            90% { clip: rect(115px, 9999px, 12px, 0); }
+            95% { clip: rect(129px, 9999px, 10px, 0); }
+            100% { clip: rect(79px, 9999px, 88px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(129px, 9999px, 36px, 0); }
+            5% { clip: rect(36px, 9999px, 4px, 0); }
+            10% { clip: rect(85px, 9999px, 4px, 0); }
+            15% { clip: rect(91px, 9999px, 29px, 0); }
+            20% { clip: rect(148px, 9999px, 37px, 0); }
+            25% { clip: rect(38px, 9999px, 84px, 0); }
+            30% { clip: rect(69px, 9999px, 103px, 0); }
+            35% { clip: rect(87px, 9999px, 143px, 0); }
+            40% { clip: rect(6px, 9999px, 39px, 0); }
+            45% { clip: rect(16px, 9999px, 82px, 0); }
+            50% { clip: rect(71px, 9999px, 103px, 0); }
+            55% { clip: rect(149px, 9999px, 140px, 0); }
+            60% { clip: rect(45px, 9999px, 134px, 0); }
+            65% { clip: rect(4px, 9999px, 67px, 0); }
+            70% { clip: rect(98px, 9999px, 62px, 0); }
+            75% { clip: rect(115px, 9999px, 91px, 0); }
+            80% { clip: rect(15px, 9999px, 21px, 0); }
+            85% { clip: rect(89px, 9999px, 53px, 0); }
+            90% { clip: rect(141px, 9999px, 34px, 0); }
+            95% { clip: rect(25px, 9999px, 90px, 0); }
+            100% { clip: rect(138px, 9999px, 98px, 0); }
         }
 
         /* ===== NAVIGATION ===== */
@@ -68,12 +171,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--white);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 20px 0;
-            border-bottom: 1px solid var(--gray-200);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--blood);
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
         }
 
         .nav-container {
@@ -87,13 +190,25 @@
 
         .logo {
             font-family: var(--font-display);
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 800;
-            letter-spacing: -1px;
+            letter-spacing: 2px;
+            position: relative;
         }
 
         .logo span {
-            color: var(--red);
+            color: var(--blood);
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blood), transparent);
         }
 
         .nav-links {
@@ -102,38 +217,50 @@
         }
 
         .nav-link {
-            color: var(--gray-800);
+            color: var(--white);
             text-decoration: none;
             font-size: 14px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            letter-spacing: 2px;
+            transition: all 0.3s;
             position: relative;
+            padding: 5px 0;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--black);
-        }
-
-        .nav-link.active::after {
+        .nav-link::before {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--blood);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
             width: 100%;
-            height: 2px;
-            background: var(--red);
+        }
+
+        .nav-link:hover {
+            color: var(--blood);
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
         }
 
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            color: var(--black);
+            color: var(--white);
             font-size: 24px;
             cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--blood);
         }
 
         /* ===== HERO SECTION ===== */
@@ -144,120 +271,109 @@
             padding-top: 80px;
             position: relative;
             overflow: hidden;
-            background: var(--gray-50);
+            background: linear-gradient(45deg, var(--darker) 0%, var(--black) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
         }
 
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            position: relative;
+            z-index: 3;
         }
 
-        .hero-content h1 {
-            font-size: 64px;
-            line-height: 1.1;
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 80px;
+            font-weight: 800;
+            letter-spacing: 5px;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .hero-subtitle {
-            font-size: 20px;
-            color: var(--gray-700);
-            margin-bottom: 30px;
-            max-width: 500px;
+            font-size: 24px;
+            color: var(--blood);
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
         }
 
-        .hero-cta {
+        .social-hero {
             display: flex;
-            gap: 20px;
-            margin-top: 40px;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .btn {
-            padding: 16px 32px;
-            font-family: var(--font-primary);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-flex;
+        .social-hero a {
+            width: 60px;
+            height: 60px;
+            background: rgba(139, 0, 0, 0.1);
+            border: 2px solid var(--blood);
+            border-radius: 50%;
+            display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .btn-primary {
-            background: var(--red);
+            justify-content: center;
             color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: var(--red-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--black);
-            border: 2px solid var(--gray-300);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--red);
-            color: var(--red);
-        }
-
-        .hero-visual {
+            font-size: 24px;
+            text-decoration: none;
+            transition: all 0.3s;
             position: relative;
-        }
-
-        .visual-image {
-            width: 100%;
-            height: 500px;
-            background: linear-gradient(135deg, var(--white) 0%, var(--gray-100) 100%);
-            border-radius: 20px;
             overflow: hidden;
-            position: relative;
-            border: 2px solid var(--gray-200);
         }
 
-        .visual-grid {
+        .social-hero a::before {
+            content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(6, 1fr);
-            gap: 1px;
-            padding: 20px;
+            background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.3), transparent);
+            transition: left 0.5s;
         }
 
-        .grid-cell {
-            background: rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+        .social-hero a:hover::before {
+            left: 100%;
         }
 
-        .grid-cell:nth-child(3n) {
-            background: rgba(255, 0, 0, 0.05);
-        }
-
-        .grid-cell:nth-child(7n) {
-            background: rgba(255, 0, 0, 0.1);
+        .social-hero a:hover {
+            background: var(--blood);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.5);
         }
 
         /* ===== ABOUT SECTION ===== */
         .about {
             padding: 100px 0;
-            background: var(--white);
+            background: var(--dark);
+            position: relative;
+            border-top: 1px solid var(--blood);
+            border-bottom: 1px solid var(--blood);
         }
 
         .section-container {
@@ -272,15 +388,24 @@
         }
 
         .section-title {
+            font-family: var(--font-display);
             font-size: 48px;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .accent {
+            color: var(--blood);
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
         }
 
         .section-subtitle {
-            color: var(--gray-700);
+            color: var(--blood);
             font-size: 18px;
             max-width: 600px;
             margin: 0 auto;
+            letter-spacing: 1px;
         }
 
         .about-content {
@@ -293,55 +418,75 @@
         .about-text {
             font-size: 18px;
             line-height: 1.8;
-            color: var(--gray-800);
+            color: #CCCCCC;
         }
 
         .about-text p {
             margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--blood);
         }
 
-        .about-stats {
+        .blood-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            gap: 20px;
             margin-top: 40px;
         }
 
-        .stat {
+        .blood-stat {
             text-align: center;
             padding: 30px;
-            background: var(--gray-50);
+            background: rgba(139, 0, 0, 0.1);
+            border: 1px solid var(--blood);
             border-radius: 10px;
-            border: 1px solid var(--gray-200);
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .stat:hover {
+        .blood-stat::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--blood);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .blood-stat:hover::before {
+            transform: scaleX(1);
+        }
+
+        .blood-stat:hover {
             transform: translateY(-5px);
-            border-color: var(--red);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);
         }
 
         .stat-number {
-            font-size: 40px;
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--red);
+            color: var(--blood);
+            font-family: var(--font-display);
         }
 
         .stat-label {
             font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--gray-600);
+            letter-spacing: 2px;
+            color: var(--white);
         }
 
         /* ===== MUSIC SECTION ===== */
         .music {
             padding: 100px 0;
-            background: var(--gray-50);
-            border-top: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
+            background: var(--darker);
+            position: relative;
         }
 
         .music-grid {
@@ -352,27 +497,73 @@
         }
 
         .track-card {
-            background: var(--white);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
             border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s;
-            border: 1px solid var(--gray-200);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        .track-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--blood), var(--glitch-blue), var(--glitch-pink), var(--blood));
+            border-radius: 17px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .track-card:hover::before {
+            opacity: 1;
+            animation: border-glow 2s linear infinite;
+        }
+
+        @keyframes border-glow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
         }
 
         .track-card:hover {
             transform: translateY(-10px);
-            border-color: var(--red);
-            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.1);
+            border-color: var(--blood);
         }
 
         .track-cover {
             height: 200px;
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--black) 100%);
+            background: linear-gradient(135deg, var(--black) 0%, var(--blood-dark) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            overflow: hidden;
+        }
+
+        .track-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(139, 0, 0, 0.1) 2px,
+                rgba(139, 0, 0, 0.1) 4px
+            );
+            animation: scan 10s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100%); }
         }
 
         .track-number {
@@ -382,26 +573,28 @@
             position: absolute;
             top: 20px;
             left: 20px;
+            font-family: var(--font-display);
         }
 
         .play-btn {
             width: 60px;
             height: 60px;
-            background: var(--white);
+            background: var(--blood);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--red);
+            color: var(--white);
             cursor: pointer;
             transition: all 0.3s;
             border: 2px solid var(--white);
+            z-index: 2;
         }
 
         .play-btn:hover {
+            background: var(--white);
+            color: var(--blood);
             transform: scale(1.1);
-            background: var(--red);
-            color: var(--white);
         }
 
         .track-info {
@@ -411,12 +604,14 @@
         .track-title {
             font-size: 24px;
             margin-bottom: 10px;
+            font-family: var(--font-display);
         }
 
         .track-meta {
-            color: var(--gray-600);
+            color: var(--blood);
             font-size: 14px;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
         .track-links {
@@ -427,29 +622,30 @@
         .stream-link {
             flex: 1;
             padding: 12px;
-            background: var(--gray-50);
+            background: rgba(139, 0, 0, 0.2);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            color: var(--gray-800);
+            color: var(--white);
             text-decoration: none;
             font-size: 14px;
             transition: all 0.3s;
-            border: 1px solid var(--gray-200);
+            border: 1px solid rgba(139, 0, 0, 0.5);
         }
 
         .stream-link:hover {
-            background: var(--red);
-            color: var(--white);
-            border-color: var(--red);
+            background: var(--blood);
+            transform: translateY(-2px);
         }
 
         /* ===== VIDEOS SECTION ===== */
         .videos {
             padding: 100px 0;
-            background: var(--white);
+            background: var(--dark);
+            border-top: 1px solid var(--blood);
+            border-bottom: 1px solid var(--blood);
         }
 
         .video-main {
@@ -458,34 +654,55 @@
 
         .video-container {
             height: 500px;
-            background: var(--gray-50);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);
             border-radius: 20px;
             overflow: hidden;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid var(--gray-200);
+            border: 2px solid var(--blood);
+        }
+
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 50px,
+                rgba(139, 0, 0, 0.1) 50px,
+                rgba(139, 0, 0, 0.1) 100px
+            );
+            animation: glitch-bg 20s linear infinite;
+        }
+
+        @keyframes glitch-bg {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100px); }
         }
 
         .video-overlay {
             text-align: center;
-            color: var(--black);
+            color: var(--white);
+            z-index: 2;
         }
 
         .video-overlay i {
             font-size: 80px;
             margin-bottom: 20px;
-            color: var(--red);
+            color: var(--blood);
+            text-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
         }
 
         .video-overlay h3 {
             font-size: 32px;
             margin-bottom: 10px;
-        }
-
-        .video-overlay p {
-            color: var(--gray-600);
+            font-family: var(--font-display);
         }
 
         .video-thumbnails {
@@ -496,29 +713,45 @@
 
         .video-thumb {
             height: 200px;
-            background: var(--gray-50);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gray-800);
+            color: var(--white);
             font-size: 18px;
-            border: 2px solid var(--gray-200);
+            border: 1px solid var(--blood);
             transition: all 0.3s;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .video-thumb:hover::before {
+            left: 100%;
         }
 
         .video-thumb:hover {
-            border-color: var(--red);
-            color: var(--red);
+            border-color: var(--glitch-blue);
+            color: var(--glitch-blue);
             transform: translateY(-5px);
         }
 
         /* ===== SHOWS SECTION ===== */
         .shows {
             padding: 100px 0;
-            background: var(--gray-50);
-            border-top: 1px solid var(--gray-200);
+            background: var(--darker);
         }
 
         .shows-timeline {
@@ -532,18 +765,29 @@
             gap: 30px;
             align-items: center;
             padding: 30px;
-            background: var(--white);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
             border-radius: 15px;
             margin-bottom: 20px;
-            border: 1px solid var(--gray-200);
+            border: 1px solid var(--blood);
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .show-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--blood);
         }
 
         .show-card:hover {
-            border-color: var(--red);
             transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.1);
+            border-color: var(--glitch-pink);
+            box-shadow: 0 10px 30px rgba(139, 0, 0, 0.3);
         }
 
         .show-date {
@@ -553,35 +797,36 @@
         .date-day {
             font-size: 32px;
             font-weight: 700;
-            color: var(--red);
+            color: var(--blood);
             display: block;
+            font-family: var(--font-display);
         }
 
         .date-month {
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--gray-600);
+            color: var(--white);
         }
 
         .show-info h3 {
             font-size: 20px;
             margin-bottom: 10px;
+            font-family: var(--font-display);
         }
 
         .show-location {
-            color: var(--gray-600);
+            color: var(--blood);
             font-size: 14px;
         }
 
         .show-location i {
             margin-right: 8px;
-            color: var(--red);
         }
 
         .ticket-btn {
             padding: 12px 24px;
-            background: var(--red);
+            background: var(--blood);
             color: var(--white);
             border: none;
             border-radius: 8px;
@@ -589,18 +834,21 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .ticket-btn:hover {
-            background: var(--red-dark);
+            background: var(--blood-light);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.5);
         }
 
         /* ===== CONTACT SECTION ===== */
         .contact {
             padding: 100px 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
+            background: var(--dark);
+            border-top: 1px solid var(--blood);
         }
 
         .contact-grid {
@@ -613,6 +861,7 @@
         .contact-info h3 {
             font-size: 32px;
             margin-bottom: 30px;
+            font-family: var(--font-display);
         }
 
         .contact-item {
@@ -621,21 +870,21 @@
             gap: 20px;
             margin-bottom: 30px;
             padding: 20px;
-            background: var(--gray-50);
+            background: rgba(139, 0, 0, 0.1);
             border-radius: 15px;
-            border: 1px solid var(--gray-200);
+            border: 1px solid var(--blood);
             transition: all 0.3s;
         }
 
         .contact-item:hover {
-            border-color: var(--red);
             transform: translateX(5px);
+            border-color: var(--glitch-blue);
         }
 
         .contact-item i {
             width: 50px;
             height: 50px;
-            background: var(--red);
+            background: var(--blood);
             color: var(--white);
             border-radius: 10px;
             display: flex;
@@ -644,11 +893,12 @@
             font-size: 20px;
         }
 
+        /* ===== FORM STYLES ===== */
         .contact-form {
-            background: var(--gray-50);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
             padding: 40px;
             border-radius: 20px;
-            border: 1px solid var(--gray-200);
+            border: 1px solid var(--blood);
         }
 
         .form-group {
@@ -661,46 +911,101 @@
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--gray-600);
+            color: var(--blood);
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 15px;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--blood);
             border-radius: 8px;
-            color: var(--black);
+            color: var(--white);
             font-family: var(--font-primary);
             transition: all 0.3s;
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
-            border-color: var(--red);
-            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
+            border-color: var(--glitch-blue);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .form-radio-group {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--white);
+        }
+
+        .form-radio-label input[type="radio"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--blood);
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .form-radio-label input[type="radio"]:checked {
+            background: var(--blood);
+        }
+
+        .form-radio-label input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            background: var(--white);
+            border-radius: 50%;
         }
 
         .form-submit {
             width: 100%;
             padding: 16px;
-            background: var(--red);
+            background: var(--blood);
             color: var(--white);
             border: none;
             border-radius: 8px;
             font-family: var(--font-primary);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             cursor: pointer;
             transition: all 0.3s;
+            margin-top: 20px;
         }
 
         .form-submit:hover {
-            background: var(--red-dark);
+            background: var(--blood-light);
             transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.5);
         }
 
         /* ===== FOOTER ===== */
@@ -708,9 +1013,13 @@
             padding: 60px 0;
             background: var(--black);
             color: var(--white);
+            border-top: 1px solid var(--blood);
         }
 
         .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 40px;
@@ -721,15 +1030,17 @@
             font-family: var(--font-display);
             font-size: 24px;
             margin-bottom: 20px;
+            letter-spacing: 2px;
         }
 
         .footer-logo span {
-            color: var(--red);
+            color: var(--blood);
         }
 
         .footer-text {
-            color: var(--gray-400);
+            color: #CCCCCC;
             line-height: 1.6;
+            font-size: 14px;
         }
 
         .footer-links h4 {
@@ -738,6 +1049,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--white);
+            font-family: var(--font-display);
         }
 
         .footer-links ul {
@@ -749,25 +1061,26 @@
         }
 
         .footer-links a {
-            color: var(--gray-400);
+            color: #CCCCCC;
             text-decoration: none;
+            font-size: 14px;
             transition: color 0.3s;
         }
 
         .footer-links a:hover {
-            color: var(--red);
+            color: var(--blood);
         }
 
         .social-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
         }
 
         .social-link {
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(139, 0, 0, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -775,23 +1088,29 @@
             color: var(--white);
             text-decoration: none;
             transition: all 0.3s;
+            border: 1px solid rgba(139, 0, 0, 0.5);
         }
 
         .social-link:hover {
-            background: var(--red);
+            background: var(--blood);
             transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
             padding-top: 40px;
-            border-top: 1px solid var(--gray-800);
-            color: var(--gray-400);
-            font-size: 14px;
+            border-top: 1px solid rgba(139, 0, 0, 0.3);
+            color: #666666;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 60px;
+            }
+            
             .hero-container,
             .about-content,
             .contact-grid {
@@ -799,16 +1118,12 @@
                 gap: 40px;
             }
             
-            .hero-content h1 {
-                font-size: 48px;
-            }
-            
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
             
-            .visual-image {
-                height: 400px;
+            .video-container {
+                height: 300px;
             }
         }
 
@@ -822,7 +1137,7 @@
                 top: 80px;
                 left: 0;
                 width: 100%;
-                background: var(--white);
+                background: var(--dark);
                 flex-direction: column;
                 align-items: center;
                 padding: 20px;
@@ -830,8 +1145,9 @@
                 transform: translateY(-100%);
                 opacity: 0;
                 transition: all 0.3s;
-                border-bottom: 1px solid var(--gray-200);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid var(--blood);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                z-index: 1000;
             }
             
             .nav-links.active {
@@ -839,8 +1155,9 @@
                 opacity: 1;
             }
             
-            .hero-content h1 {
-                font-size: 36px;
+            .hero h1 {
+                font-size: 40px;
+                letter-spacing: 3px;
             }
             
             .section-title {
@@ -853,27 +1170,37 @@
                 gap: 20px;
             }
             
-            .hero-cta {
-                flex-direction: column;
+            .social-hero {
+                flex-wrap: wrap;
+                gap: 20px;
             }
             
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .video-container {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .about-stats {
+            .blood-stats {
                 grid-template-columns: 1fr;
             }
             
             .music-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .social-hero a {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
             
             .footer-content {
@@ -887,10 +1214,14 @@
     </style>
 </head>
 <body>
+    <!-- Glitch Effects -->
+    <div class="glitch-overlay"></div>
+    <div class="scanlines"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">INC<span class="accent">RIFE</span></div>
+            <div class="logo">INC<span>RIFE</span></div>
             
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -898,7 +1229,7 @@
             
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Inicio</a>
-                <a href="#about" class="nav-link">Sobre mí</a>
+                <a href="#about" class="nav-link">Sobre</a>
                 <a href="#music" class="nav-link">Música</a>
                 <a href="#videos" class="nav-link">Videos</a>
                 <a href="#shows" class="nav-link">Shows</a>
@@ -911,69 +1242,28 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>
-                    <span class="accent">INCRIFE</span><br>
-                    ARTISTA TECHNO<br>
-                    BARCELONA
-                </h1>
+                <h1 class="glitch-text" data-text="INCRIFE">INCRIFE</h1>
                 
                 <p class="hero-subtitle">
-                    Fusión de sonidos industriales con estética minimalista. 
-                    Experiencias sonoras que exploran la frontera entre lo digital y lo analógico.
+                    EXPERIMENTAL • VISUAL • SONORO
                 </p>
                 
-                <div class="hero-cta">
-                    <a href="#music" class="btn btn-primary">
-                        <i class="fas fa-play-circle"></i>
-                        Escuchar Música
+                <div class="social-hero">
+                    <a href="https://x.com/incrife" target="_blank">
+                        <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#shows" class="btn btn-secondary">
-                        <i class="fas fa-calendar-alt"></i>
-                        Próximos Shows
+                    <a href="https://instagram.com/incrife" target="_blank">
+                        <i class="fab fa-instagram"></i>
                     </a>
-                </div>
-            </div>
-            
-            <div class="hero-visual">
-                <div class="visual-image">
-                    <div class="visual-grid">
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                        <div class="grid-cell"></div>
-                    </div>
+                    <a href="https://tiktok.com/@incrife" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://youtube.com/@incrife" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://spotify.com/artist/incrife" target="_blank">
+                        <i class="fab fa-spotify"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -985,47 +1275,46 @@
             <div class="section-header">
                 <h2 class="section-title">SOBRE <span class="accent">MÍ</span></h2>
                 <p class="section-subtitle">
-                    Artista de techno con base en Barcelona, especializado en sonidos industriales 
-                    y experiencias audiovisuales minimalistas.
+                    Artista experimental especializado en experiencias visuales y sonoras disruptivas.
                 </p>
             </div>
             
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Soy INCRIFE, productor y DJ de techno con base en Barcelona. 
-                        Mi música fusiona elementos del techno industrial con matices de la escena 
-                        electrónica experimental, creando paisajes sonoros que transportan al oyente 
-                        a una dimensión donde lo analógico y lo digital convergen.
+                        Soy INCRIFE, creador de experiencias audiovisuales que desafían los límites 
+                        convencionales. Mi trabajo fusiona elementos de glitch art, estética cyberpunk 
+                        y sonidos industriales para crear atmósferas inmersivas y perturbadoras.
                     </p>
                     
                     <p>
-                        Con una formación en ingeniería de sonido y una pasión por la estética minimalista, 
-                        creo sets que son verdaderos viajes sónicos. Mis presentaciones en vivo incorporan 
-                        elementos visuales inspirados en el diseño industrial, creando una experiencia inmersiva única.
+                        Cada proyecto es una exploración de la frontera entre lo digital y lo orgánico, 
+                        lo controlado y lo caótico. Mis presentaciones en vivo son experiencias 
+                        multisensoriales que incorporan visuales generativos, sonidos manipulados 
+                        y performance ritualístico.
                     </p>
                     
-                    <div class="about-stats">
-                        <div class="stat">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">Shows</div>
+                    <div class="blood-stats">
+                        <div class="blood-stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Experiencias</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">75K+</div>
-                            <div class="stat-label">Oyentes</div>
+                        <div class="blood-stat">
+                            <div class="stat-number">100K+</div>
+                            <div class="stat-label">Impresiones</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">15</div>
-                            <div class="stat-label">Lanzamientos</div>
+                        <div class="blood-stat">
+                            <div class="stat-number">25</div>
+                            <div class="stat-label">Proyectos</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">7</div>
-                            <div class="stat-label">Años</div>
+                        <div class="blood-stat">
+                            <div class="stat-number">10</div>
+                            <div class="stat-label">Colaboraciones</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="visual-image" style="height: 400px;"></div>
+                <div class="visual-image" style="height: 400px; border: 2px solid var(--blood); border-radius: 15px; background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.7) 100%);"></div>
             </div>
         </div>
     </section>
@@ -1034,9 +1323,9 @@
     <section id="music" class="music">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">MI <span class="accent">MÚSICA</span></h2>
+                <h2 class="section-title">PROYECTOS <span class="accent">SONOROS</span></h2>
                 <p class="section-subtitle">
-                    Explora mi catálogo de techno experimental y descubre nuevos sonidos.
+                    Exploraciones sonoras que desafían las convenciones.
                 </p>
             </div>
             
@@ -1050,14 +1339,14 @@
                         </div>
                     </div>
                     <div class="track-info">
-                        <h3 class="track-title">NEON DREAMS EP</h3>
-                        <p class="track-meta">2024 • 6 tracks • Techno Industrial</p>
+                        <h3 class="track-title">GLITCH MANIFEST</h3>
+                        <p class="track-meta">2024 • Experimental • 8 tracks</p>
                         <div class="track-links">
-                            <a href="#" class="stream-link">
+                            <a href="https://spotify.com" target="_blank" class="stream-link">
                                 <i class="fab fa-spotify"></i>
                                 Spotify
                             </a>
-                            <a href="#" class="stream-link">
+                            <a href="https://soundcloud.com" target="_blank" class="stream-link">
                                 <i class="fab fa-soundcloud"></i>
                                 SoundCloud
                             </a>
@@ -1074,16 +1363,16 @@
                         </div>
                     </div>
                     <div class="track-info">
-                        <h3 class="track-title">SYNTHETIC RAIN</h3>
-                        <p class="track-meta">2023 • Single • Industrial Techno</p>
+                        <h3 class="track-title">BLOOD NOISE</h3>
+                        <p class="track-meta">2023 • Industrial • Single</p>
                         <div class="track-links">
-                            <a href="#" class="stream-link">
+                            <a href="https://spotify.com" target="_blank" class="stream-link">
                                 <i class="fab fa-spotify"></i>
                                 Spotify
                             </a>
-                            <a href="#" class="stream-link">
-                                <i class="fab fa-soundcloud"></i>
-                                SoundCloud
+                            <a href="https://youtube.com" target="_blank" class="stream-link">
+                                <i class="fab fa-youtube"></i>
+                                YouTube
                             </a>
                         </div>
                     </div>
@@ -1098,16 +1387,16 @@
                         </div>
                     </div>
                     <div class="track-info">
-                        <h3 class="track-title">BAIXA ANOMALY (Live)</h3>
-                        <p class="track-meta">2023 • Live Set • Barcelona</p>
+                        <h3 class="track-title">DIGITAL RITUAL</h3>
+                        <p class="track-meta">2023 • Live Performance • 45min</p>
                         <div class="track-links">
-                            <a href="#" class="stream-link">
-                                <i class="fab fa-spotify"></i>
-                                Spotify
-                            </a>
-                            <a href="#" class="stream-link">
+                            <a href="https://soundcloud.com" target="_blank" class="stream-link">
                                 <i class="fab fa-soundcloud"></i>
                                 SoundCloud
+                            </a>
+                            <a href="https://bandcamp.com" target="_blank" class="stream-link">
+                                <i class="fab fa-bandcamp"></i>
+                                Bandcamp
                             </a>
                         </div>
                     </div>
@@ -1120,9 +1409,9 @@
     <section id="videos" class="videos">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">VIDEOS & <span class="accent">SHORT FILMS</span></h2>
+                <h2 class="section-title">EXPERIENCIAS <span class="accent">VISUALES</span></h2>
                 <p class="section-subtitle">
-                    Experiencias audiovisuales que complementan mi música.
+                    Visuales glitch y performances audiovisuales.
                 </p>
             </div>
             
@@ -1130,17 +1419,17 @@
                 <div class="video-container">
                     <div class="video-overlay">
                         <i class="fas fa-play-circle"></i>
-                        <h3>"MONOCHROME VISION"</h3>
-                        <p>Un viaje audiovisual por Barcelona industrial</p>
+                        <h3>"DIGITAL SACRIFICE"</h3>
+                        <p>Performance audiovisual experimental</p>
                     </div>
                 </div>
             </div>
             
             <div class="video-thumbnails">
-                <div class="video-thumb">LIVE @ SONAR 2023</div>
-                <div class="video-thumb">MAKING OF: NEON DREAMS</div>
-                <div class="video-thumb">VISUAL SET 2024</div>
-                <div class="video-thumb">STUDIO SESSIONS</div>
+                <div class="video-thumb">GLITCH RITUAL</div>
+                <div class="video-thumb">BLOOD PIXELS</div>
+                <div class="video-thumb">ERROR MANIFEST</div>
+                <div class="video-thumb">DIGITAL SHAMAN</div>
             </div>
         </div>
     </section>
@@ -1149,9 +1438,9 @@
     <section id="shows" class="shows">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">PRÓXIMOS <span class="accent">SHOWS</span></h2>
+                <h2 class="section-title">EXPERIENCIAS <span class="accent">EN VIVO</span></h2>
                 <p class="section-subtitle">
-                    Descubre dónde estaré presentando mi música en vivo.
+                    Performances inmersivas y experiencias multisensoriales.
                 </p>
             </div>
             
@@ -1159,52 +1448,52 @@
                 <!-- Show 1 -->
                 <div class="show-card">
                     <div class="show-date">
-                        <span class="date-day">15</span>
+                        <span class="date-day">25</span>
                         <span class="date-month">OCT</span>
                     </div>
                     <div class="show-info">
-                        <h3>RAZZMATAZZ • BARCELONA</h3>
+                        <h3>DIGITAL RITUAL</h3>
                         <p class="show-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            Sala 2, Barcelona
+                            Espacio Experimental
                         </p>
-                        <p>Noche de techno industrial con visual mapping en vivo.</p>
+                        <p>Performance audiovisual con visuales glitch generativos.</p>
                     </div>
-                    <button class="ticket-btn">ENTRADAS</button>
+                    <button class="ticket-btn">RESERVAR</button>
                 </div>
                 
                 <!-- Show 2 -->
                 <div class="show-card">
                     <div class="show-date">
-                        <span class="date-day">22</span>
-                        <span class="date-month">OCT</span>
+                        <span class="date-day">08</span>
+                        <span class="date-month">NOV</span>
                     </div>
                     <div class="show-info">
-                        <h3>INPUT HIGH FIDELITY</h3>
+                        <h3>GLITCH MANIFEST</h3>
                         <p class="show-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            Barcelona
+                            Galería de Arte Digital
                         </p>
-                        <p>Set especial 4 horas para el 10º aniversario.</p>
+                        <p>Instalación interactiva + performance en vivo.</p>
                     </div>
-                    <button class="ticket-btn">ENTRADAS</button>
+                    <button class="ticket-btn">RESERVAR</button>
                 </div>
                 
                 <!-- Show 3 -->
                 <div class="show-card">
                     <div class="show-date">
-                        <span class="date-day">05</span>
-                        <span class="date-month">NOV</span>
+                        <span class="date-day">15</span>
+                        <span class="date-month">DIC</span>
                     </div>
                     <div class="show-info">
-                        <h3>SONAR BY NIGHT</h3>
+                        <h3>BLOOD PIXELS</h3>
                         <p class="show-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            Fira Barcelona
+                            Festival Experimental
                         </p>
-                        <p>Presentación del nuevo A/V show "Neon Dreams".</p>
+                        <p>Experiencia multisensorial con visuales y sonido espacial.</p>
                     </div>
-                    <button class="ticket-btn">PRÓXIMAMENTE</button>
+                    <button class="ticket-btn">PRÓXIMO</button>
                 </div>
             </div>
         </div>
@@ -1214,29 +1503,21 @@
     <section id="contact" class="contact">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">CONTACTO & <span class="accent">BOOKING</span></h2>
+                <h2 class="section-title">CONEXIÓN <span class="accent">DIGITAL</span></h2>
                 <p class="section-subtitle">
-                    ¿Quieres trabajar conmigo o tienes alguna pregunta?
+                    Colaboraciones, proyectos y conexiones experimentales.
                 </p>
             </div>
             
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>PONTE EN CONTACTO</h3>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>UBICACIÓN</h4>
-                            <p>Barcelona, España</p>
-                        </div>
-                    </div>
+                    <h3>CONTACTO DIRECTO</h3>
                     
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>EMAIL</h4>
-                            <p>booking@incrife.com</p>
+                            <p>contact@incrife.com</p>
                         </div>
                     </div>
                     
@@ -1248,45 +1529,82 @@
                         </div>
                     </div>
                     
+                    <div class="contact-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h4>BOOKING</h4>
+                            <p>Disponible para proyectos experimentales</p>
+                        </div>
+                    </div>
+                    
                     <div class="social-links">
-                        <a href="#" class="social-link">
+                        <a href="https://x.com/incrife" target="_blank" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/incrife" target="_blank" class="social-link">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-spotify"></i>
+                        <a href="https://tiktok.com/@incrife" target="_blank" class="social-link">
+                            <i class="fab fa-tiktok"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-soundcloud"></i>
-                        </a>
-                        <a href="#" class="social-link">
+                        <a href="https://youtube.com/@incrife" target="_blank" class="social-link">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" required>
+                    <!-- FORMULARIO COPIADO DE KURTUS INC -->
+                    <form action="https://formspree.io/f/mvzgdnay" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo *</label>
+                                <input type="text" name="nombre" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" name="email" id="email" required>
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" required>
+                            <label for="tipo_cliente">Tipo de Cliente *</label>
+                            <select name="tipo_cliente" id="tipo_cliente" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="artist">Artista</option>
+                                <option value="curator">Curador</option>
+                                <option value="gallery">Galería</option>
+                                <option value="festival">Festival</option>
+                                <option value="collaboration">Colaboración</option>
+                            </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Asunto</label>
-                            <input type="text" id="subject" required>
+                            <label>Interés Principal</label>
+                            <div class="form-radio-group">
+                                <label class="form-radio-label">
+                                    <input type="radio" name="interes" value="performance" required>
+                                    Performance
+                                </label>
+                                <label class="form-radio-label">
+                                    <input type="radio" name="interes" value="collaboration">
+                                    Colaboración
+                                </label>
+                                <label class="form-radio-label">
+                                    <input type="radio" name="interes" value="exhibition">
+                                    Exhibición
+                                </label>
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" rows="5" required></textarea>
+                            <label for="message">Mensaje *</label>
+                            <textarea name="mensaje" id="message" rows="5" required placeholder="Describe tu proyecto o idea..."></textarea>
                         </div>
                         
-                        <button type="submit" class="form-submit">ENVIAR MENSAJE</button>
+                        <button type="submit" class="form-submit">
+                            <i class="fas fa-paper-plane"></i> ENVIAR MENSAJE
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1295,50 +1613,49 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="section-container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">INC<span class="accent">RIFE</span></div>
-                    <p class="footer-text">
-                        Artista de techno con base en Barcelona. 
-                        Fusión de sonidos industriales con estética minimalista.
-                    </p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>NAVEGACIÓN</h4>
-                    <ul>
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#about">Sobre mí</a></li>
-                        <li><a href="#music">Música</a></li>
-                        <li><a href="#videos">Videos</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>MÚSICA</h4>
-                    <ul>
-                        <li><a href="#">Lanzamientos</a></li>
-                        <li><a href="#">Streaming</a></li>
-                        <li><a href="#">Live Sets</a></li>
-                        <li><a href="#">Colaboraciones</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>LEGAL</h4>
-                    <ul>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">INC<span>RIFE</span></div>
+                <p class="footer-text">
+                    Artista experimental especializado en experiencias visuales 
+                    y sonoras disruptivas. Explorando la frontera entre lo digital 
+                    y lo orgánico.
+                </p>
             </div>
             
-            <div class="copyright">
-                © 2024 INCRIFE. Todos los derechos reservados.
+            <div class="footer-links">
+                <h4>NAVEGACIÓN</h4>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#music">Proyectos</a></li>
+                    <li><a href="#videos">Visuales</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-links">
+                <h4>REDES</h4>
+                <ul>
+                    <li><a href="https://x.com/incrife" target="_blank">X (Twitter)</a></li>
+                    <li><a href="https://instagram.com/incrife" target="_blank">Instagram</a></li>
+                    <li><a href="https://tiktok.com/@incrife" target="_blank">TikTok</a></li>
+                    <li><a href="https://youtube.com/@incrife" target="_blank">YouTube</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2024 INCRIFE. TODAS LAS EXPERIENCIAS RESERVADAS.
         </div>
     </footer>
 
@@ -1383,39 +1700,54 @@
             });
         });
 
-        // Form Submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
-            
-            // Basic validation
-            if (!name || !email || !subject || !message) {
-                alert('Por favor, completa todos los campos.');
-                return;
+        // Random Glitch Effect
+        function triggerGlitch() {
+            const glitchText = document.querySelector('.glitch-text');
+            glitchText.style.animation = 'none';
+            setTimeout(() => {
+                glitchText.style.animation = '';
+            }, 100);
+        }
+
+        // Random glitch every 3-10 seconds
+        setInterval(() => {
+            if (Math.random() > 0.7) {
+                triggerGlitch();
             }
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Por favor, introduce un email válido.');
-                return;
-            }
-            
-            // Simulate form submission
-            alert('¡Mensaje enviado! Te contactaré pronto.');
-            this.reset();
-        });
+        }, 3000);
 
         // Play Button Functionality
         document.querySelectorAll('.play-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const trackTitle = this.closest('.track-card').querySelector('.track-title').textContent;
-                alert(`Reproduciendo: ${trackTitle}`);
+                
+                // Glitch effect on play
+                triggerGlitch();
+                
+                // Show playing message with glitch style
+                const message = document.createElement('div');
+                message.textContent = `REPRODUCIENDO: ${trackTitle}`;
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.9);
+                    color: var(--blood);
+                    padding: 20px 40px;
+                    font-family: var(--font-display);
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    border: 2px solid var(--blood);
+                    z-index: 9999;
+                    animation: glitch-anim 0.3s;
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 2000);
                 
                 // Toggle play/pause icon
                 const icon = this.querySelector('i');
@@ -1433,7 +1765,11 @@
         document.querySelectorAll('.ticket-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const showTitle = this.closest('.show-card').querySelector('h3').textContent;
-                alert(`Redirigiendo a compra de entradas para: ${showTitle}`);
+                
+                // Glitch effect
+                triggerGlitch();
+                
+                alert(`ACCESO A: ${showTitle}\n\nRedirigiendo a reserva...`);
             });
         });
 
@@ -1441,7 +1777,33 @@
         document.querySelectorAll('.video-thumb').forEach(thumb => {
             thumb.addEventListener('click', function() {
                 const videoTitle = this.textContent;
-                alert(`Reproduciendo: ${videoTitle}`);
+                
+                // Glitch effect
+                triggerGlitch();
+                
+                const message = document.createElement('div');
+                message.textContent = `CARGANDO: ${videoTitle}`;
+                message.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.9);
+                    color: var(--glitch-blue);
+                    padding: 20px 40px;
+                    font-family: var(--font-display);
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    border: 2px solid var(--glitch-blue);
+                    z-index: 9999;
+                    animation: glitch-anim2 0.3s;
+                `;
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    message.remove();
+                }, 1500);
             });
         });
 
@@ -1477,24 +1839,35 @@
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    
+                    // Add glitch effect on entry
+                    if (Math.random() > 0.5) {
+                        entry.target.style.filter = 'hue-rotate(90deg)';
+                        setTimeout(() => {
+                            entry.target.style.filter = 'none';
+                        }, 300);
+                    }
                 }
             });
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.track-card, .show-card, .contact-item, .video-thumb').forEach(el => {
+        document.querySelectorAll('.track-card, .show-card, .contact-item, .video-thumb, .blood-stat').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s, transform 0.5s';
+            el.style.transition = 'opacity 0.5s, transform 0.5s, filter 0.3s';
             observer.observe(el);
         });
 
-        // Initialize
+        // Initialize with glitch effect
         window.addEventListener('load', () => {
-            console.log('%c🎵 INCRIFE | Techno Barcelona 🎵', 
-                'color: #FF0000; font-size: 20px; font-weight: bold;');
-            console.log('%cBlanco, Negro y Rojo - Website loaded', 
-                'color: #666; font-size: 14px;');
+            console.log('%c⚡ INCRIFE | EXPERIMENTAL ⚡', 
+                'color: #8B0000; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #FF0000;');
+            console.log('%cGLITCH MODE ACTIVATED', 
+                'color: #00FFFF; font-size: 14px;');
+            
+            // Initial glitch
+            setTimeout(triggerGlitch, 1000);
         });
     </script>
 </body>
