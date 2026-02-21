@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incrife · estudio creativo Barcelona</title>
+    <title>INCRIFE · estudio creativo Barcelona</title>
     <!-- SEO Local Barcelona / España -->
     <meta name="description" content="Incrife: servicios de foto, vídeo, edición, grabación de audio, mezcla, máster, LUTs, packs de sonidos y beats. Sorteo trimestral para artistas emergentes en Barcelona. Presencial en Barcelona y servicios online.">
     <meta name="keywords" content="estudio grabacion Barcelona, videoclip Barcelona, edicion video, mastering, beats, LUTs, productora musical Barcelona, sorteo artistas emergentes">
@@ -13,10 +13,10 @@
     <meta property="og:description" content="FOTO · VIDEO · AUDIO · BEATS · LUTs. Sorteo trimestral para emergentes. Presencial en Barcelona.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    <!-- Estilo rojo + negro + tipografía brutal -->
+    <!-- Fuentes y estilos profesionales -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -25,75 +25,90 @@
         }
 
         body {
-            background-color: #0a0a0a; /* negro base */
-            color: #f0f0f0;
-            font-family: 'Roboto Condensed', sans-serif;
+            background-color: #0c0c0c;
+            color: #e5e5e5;
+            font-family: 'Space Grotesk', sans-serif;
             line-height: 1.5;
             scroll-behavior: smooth;
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: -0.02em;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 3rem 2rem;
         }
 
-        /* acentos rojos */
-        .red-bg {
-            background-color: #e11b1b;
-            color: #000;
+        /* Paleta rojo/negro profesional */
+        :root {
+            --red: #ff2a2a;
+            --red-dark: #cc1f1f;
+            --black: #0a0a0a;
+            --black-light: #1a1a1a;
+            --gray: #2e2e2e;
+            --text-light: #f0f0f0;
         }
 
-        .red-text {
-            color: #e11b1b;
-        }
-
+        .red-bg { background-color: var(--red); color: var(--black); }
+        .red-text { color: var(--red); }
         .btn {
             display: inline-block;
-            background-color: #e11b1b;
-            color: #000;
+            background: var(--red);
+            color: var(--black);
             font-weight: 700;
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.2rem;
             text-decoration: none;
-            border: 2px solid #e11b1b;
-            transition: 0.3s;
+            border: 2px solid var(--red);
+            transition: 0.2s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+            border-radius: 4px;
         }
-
         .btn:hover {
-            background-color: transparent;
-            color: #e11b1b;
-            border-color: #e11b1b;
+            background: transparent;
+            color: var(--red);
+            border-color: var(--red);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--red);
+            border: 2px solid var(--red);
+        }
+        .btn-outline:hover {
+            background: var(--red);
+            color: var(--black);
         }
 
-        /* header negro/rojo */
+        /* Header profesional */
         header {
-            background: #000;
-            border-bottom: 4px solid #e11b1b;
-            padding: 0.8rem 1.5rem;
+            background: var(--black);
+            padding: 1rem 2rem;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
+            border-bottom: 2px solid var(--red);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.95);
         }
 
         .logo h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             line-height: 1;
-            color: #e11b1b;
-            text-shadow: 2px 2px 0 #300;
+            color: var(--red);
+            letter-spacing: -0.02em;
         }
         .logo span {
-            font-size: 0.9rem;
-            display: block;
+            font-size: 0.8rem;
             color: #aaa;
             font-weight: 400;
             letter-spacing: 2px;
@@ -101,177 +116,254 @@
 
         nav ul {
             display: flex;
-            flex-wrap: wrap;
+            gap: 2.5rem;
             list-style: none;
-            gap: 1.8rem;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 500;
             text-transform: uppercase;
-            font-size: 1rem;
-            padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: 0.2s;
+            position: relative;
         }
-        nav a:hover {
-            border-bottom-color: #e11b1b;
-            color: #e11b1b;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red);
+            transition: 0.2s;
+        }
+        nav a:hover::after {
+            width: 100%;
         }
 
-        /* sección hero */
+        /* Hero */
         .hero {
-            background: linear-gradient(145deg, #1a0000 0%, #000 80%);
-            border-bottom: 2px solid #e11b1b;
+            background: linear-gradient(165deg, #140000 0%, #000 70%);
+            border-bottom: 2px solid var(--red);
         }
         .hero-content {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         .hero h2 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-            color: #e11b1b;
+            font-size: 4.5rem;
+            line-height: 1.1;
+            color: var(--red);
         }
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             max-width: 700px;
             color: #ccc;
         }
-        .hero .location {
-            font-size: 1.8rem;
+        .location-badge {
+            background: var(--red);
+            color: var(--black);
+            padding: 0.5rem 1.5rem;
             font-weight: 700;
-            color: #fff;
-            background: #e11b1b;
             display: inline-block;
-            padding: 0.3rem 1rem;
-            margin-top: 0.5rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
         }
 
-        /* tarjetas servicio */
+        /* Secciones */
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            border-left: 10px solid #e11b1b;
-            padding-left: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 2.5rem;
+            border-left: 6px solid var(--red);
+            padding-left: 1.5rem;
         }
 
+        /* Servicios grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-
         .service-card {
-            background: #111;
-            border: 1px solid #222;
-            padding: 1.8rem 1.2rem;
+            background: var(--black-light);
+            border: 1px solid #333;
+            padding: 2rem;
             transition: 0.3s;
-            border-bottom: 3px solid #e11b1b;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--red);
         }
         .service-card:hover {
-            background: #1e1e1e;
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(255, 42, 42, 0.2);
         }
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
         .service-card h3 {
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
-        .service-card p {
-            color: #aaa;
-            margin-bottom: 1rem;
-        }
         .price-tag {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: #e11b1b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--red);
             background: #000;
             display: inline-block;
             padding: 0.2rem 1rem;
-            border: 1px solid #e11b1b;
+            border-radius: 30px;
+            border: 1px solid var(--red);
+            margin-top: 1rem;
         }
 
-        .sorteo-box {
-            background: #000;
-            border: 3px solid #e11b1b;
-            padding: 2rem;
-            margin: 3rem 0;
-            box-shadow: 10px 10px 0 #e11b1b;
+        /* RULETA SORTEO - INTERACTIVA */
+        .ruleta-section {
+            background: var(--black);
+            padding: 3rem 0;
+            border-top: 2px solid var(--red);
+            border-bottom: 2px solid var(--red);
         }
-        .sorteo-box h3 {
-            font-size: 2.2rem;
+        .ruleta-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
         }
-        .sorteo-box .big {
-            font-size: 2rem;
-            font-weight: 900;
+        .wheel {
+            position: relative;
+            width: 300px;
+            height: 300px;
         }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.8rem;
-            margin-top: 2rem;
+        .wheel-svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+            transition: transform 3s cubic-bezier(0.25, 0.1, 0.15, 1);
         }
-        .portfolio-item {
-            aspect-ratio: 16/9;
-            background: #222;
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: var(--red);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            color: #aaa;
-            border: 1px solid #e11b1b33;
-            transition: 0.2s;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: black;
+            border: 3px solid white;
+            z-index: 10;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--red);
         }
-        .portfolio-item:hover {
-            border: 2px solid #e11b1b;
-            color: #e11b1b;
-            background: #2a2a2a;
+        .wheel-pointer {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid var(--red);
+            z-index: 20;
+            filter: drop-shadow(0 2px 4px black);
+        }
+        .ruleta-texto {
+            flex: 1;
+            min-width: 300px;
+        }
+        .ruleta-texto h3 {
+            font-size: 2.5rem;
+            color: var(--red);
+        }
+        .highlight {
+            background: var(--red);
+            color: var(--black);
+            padding: 0.2rem 1rem;
+            font-weight: 700;
+            display: inline-block;
         }
 
+        /* Portafolio con grid profesional */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .portfolio-item {
+            aspect-ratio: 1/1;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            color: #aaa;
+            border-radius: 8px;
+            transition: 0.2s;
+            background-size: cover;
+            background-position: center;
+        }
+        .portfolio-item:hover {
+            border: 2px solid var(--red);
+            transform: scale(1.02);
+        }
+
+        /* Tabla precios elegante */
         .price-list {
-            background: #0d0d0d;
+            background: var(--black-light);
+            border-radius: 20px;
             padding: 2rem;
         }
         .price-row {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px dashed #e11b1b;
-            padding: 1rem 0;
-            font-size: 1.3rem;
+            border-bottom: 1px solid #333;
+            padding: 1.2rem 0;
+            font-size: 1.1rem;
         }
         .price-row span:last-child {
-            font-weight: 900;
-            color: #e11b1b;
+            font-weight: 700;
+            color: var(--red);
         }
 
         footer {
-            background: #000;
-            border-top: 3px solid #e11b1b;
-            margin-top: 2rem;
-            padding: 2rem 1.5rem;
+            background: var(--black);
+            border-top: 2px solid var(--red);
+            padding: 3rem 2rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            align-items: center;
+            gap: 2rem;
         }
         .seo-local {
             color: #777;
             font-size: 0.9rem;
         }
-        .seo-local strong {
-            color: #e11b1b;
-        }
 
-        @media (max-width: 700px) {
-            .hero h2 { font-size: 2.5rem; }
-            .portfolio-grid { grid-template-columns: 1fr 1fr; }
+        @media (max-width: 800px) {
+            .hero h2 { font-size: 3rem; }
+            .portfolio-grid { grid-template-columns: repeat(2,1fr); }
+            nav ul { gap: 1rem; }
         }
     </style>
 </head>
@@ -279,7 +371,7 @@
     <header>
         <div class="logo">
             <h1>INCRIFE</h1>
-            <span>· estudio creativo ·</span>
+            <span>CREATIVE STUDIO</span>
         </div>
         <nav>
             <ul>
@@ -292,156 +384,157 @@
         </nav>
     </header>
 
-    <main>
-        <!-- HERO con localización Barcelona -->
-        <section class="hero">
-            <div class="container hero-content">
-                <h2>ROJO · NEGRO <br> CREACIÓN SIN LÍMITES</h2>
-                <p>Foto · Vídeo · Edición · Audio · Beats · LUTs · Sonido</p>
-                <div class="location">📍 BARCELONA · PRESENCIAL / ONLINE</div>
-                <a href="#sorteo" class="btn">↓ SORTEO ARTISTA EMERGENTE</a>
-            </div>
-        </section>
+    <!-- HERO con localización -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>ROJO · NEGRO <br> ALMA URBANA</h2>
+            <p>Fotografía · Videoclips · Grabación de audio · Mezcla · Beats · LUTs · Sound Packs</p>
+            <div class="location-badge">📍 ESTUDIO EN BARCELONA · PRESENCIAL & ONLINE</div>
+            <a href="#sorteo" class="btn">PARTICIPAR EN SORTEO →</a>
+        </div>
+    </section>
 
-        <!-- SERVICIOS (fotos, video, edición vídeo, grabación audio, mezcla/master, luts, pack sonidos, beats) -->
-        <section id="servicios" class="container">
-            <h2 class="section-title">SERVICIOS // INC RIFE</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📸</div>
-                    <h3>FOTOS</h3>
-                    <p>Sesiones foto para artistas, book, product shots. Revelado digital incluido.</p>
-                    <span class="price-tag">desde 90€</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎥</div>
-                    <h3>VIDEO</h3>
-                    <p>Videoclips, making of, contenido para redes. Equipos profesionales en Barcelona.</p>
-                    <span class="price-tag">desde 250€</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✂️</div>
-                    <h3>EDICIÓN VÍDEO</h3>
-                    <p>Montaje, colorización (LUTs), efectos. Entregas rápidas.</p>
-                    <span class="price-tag">desde 150€</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎙️</div>
-                    <h3>GRABACIÓN AUDIO</h3>
-                    <p>Estudio insonorizado en Barcelona. Grabación de voces, instrumentos.</p>
-                    <span class="price-tag">30€/hora</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎛️</div>
-                    <h3>MEZCLA / MASTER</h3>
-                    <p>Mezcla stereo, mastering final. Escucha profesional.</p>
-                    <span class="price-tag">desde 70€</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎚️</div>
-                    <h3>LUTS</h3>
-                    <p>Packs LUTs exclusivos para vídeo y foto. Look cinematográfico.</p>
-                    <span class="price-tag">25€/pack</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>PACK SONIDOS</h3>
-                    <p>Sound Kits: drum loops, one-shots, atmósferas. Royalty free.</p>
-                    <span class="price-tag">desde 19€</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🥁</div>
-                    <h3>BEATS</h3>
-                    <p>Instrumentales exclusivas o leases. Trap, reggaeton, drill, etc.</p>
-                    <span class="price-tag">desde 40€</span>
-                </div>
-            </div>
-        </section>
+    <!-- SERVICIOS completos -->
+    <section id="servicios" class="container">
+        <h2 class="section-title">SERVICIOS // INC RIFE</h2>
+        <div class="services-grid">
+            <div class="service-card"><div class="service-icon">📸</div><h3>FOTOS</h3><p>Sesiones book, producto, making of. Revelado profesional.</p><span class="price-tag">90€</span></div>
+            <div class="service-card"><div class="service-icon">🎥</div><h3>VIDEO</h3><p>Videoclips, documentales, contenido redes. Equipos cine.</p><span class="price-tag">250€</span></div>
+            <div class="service-card"><div class="service-icon">✂️</div><h3>EDICIÓN VÍDEO</h3><p>Montaje, color grading con LUTs, postproducción.</p><span class="price-tag">150€</span></div>
+            <div class="service-card"><div class="service-icon">🎙️</div><h3>GRABACIÓN AUDIO</h3><p>Estudio insonorizado en Barcelona. Voces, instrumentos.</p><span class="price-tag">30€/h</span></div>
+            <div class="service-card"><div class="service-icon">🎛️</div><h3>MEZCLA / MASTER</h3><p>Mezcla stereo y mastering final. Calidad broadcast.</p><span class="price-tag">70€</span></div>
+            <div class="service-card"><div class="service-icon">🎚️</div><h3>LUTS</h3><p>Packs LUTs cinematográficos para vídeo/foto.</p><span class="price-tag">25€</span></div>
+            <div class="service-card"><div class="service-icon">📦</div><h3>PACK SONIDOS</h3><p>Drum kits, loops, atmósferas. Royalty free.</p><span class="price-tag">19€</span></div>
+            <div class="service-card"><div class="service-icon">🥁</div><h3>BEATS</h3><p>Instrumentales exclusivas o leases. Trap, drill, reggaeton.</p><span class="price-tag">40€</span></div>
+        </div>
+    </section>
 
-        <!-- SORTEO TRIMESTRAL EMERGENTE (BARCELONA) -->
-        <section id="sorteo" class="container">
-            <div class="sorteo-box">
-                <h3 class="red-text">🎲 SORTEO TRIMESTRAL · ARTISTA EMERGENTE</h3>
-                <p class="big">CADA 3 MESES un artista seleccionado grabación profesional + videoclip 👇</p>
-                <p style="font-size: 1.3rem; margin: 1rem 0;">✔️ Sesión de grabación de audio (4h) ✔️ Mezcla y máster ✔️ Videoclip completo (localización Barcelona) ✔️ Edición y LUTs premium</p>
-                <p style="background: #e11b1b; color: #000; font-weight: 700; display: inline-block; padding: 0.5rem 1.5rem;">BASES: SÍGUENOS Y MENCIÓN A 3 AMIGOS · PRÓXIMO SORTEO 30 DE JUNIO</p>
-                <p style="margin-top: 1.5rem;"><a href="#" class="btn">¡INSCRIBIRME AL SORTEO!</a></p>
-                <small>* Sorteo válido para artistas en Barcelona o desplazamiento a cargo de Incrife (España peninsular).</small>
+    <!-- RULETA SORTEO INTERACTIVA (link a rekonise) -->
+    <section id="sorteo" class="ruleta-section">
+        <div class="container ruleta-container">
+            <div class="wheel">
+                <div class="wheel-pointer"></div>
+                <svg class="wheel-svg" id="ruletaSvg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="46" fill="#1a1a1a" stroke="#ff2a2a" stroke-width="2"/>
+                    <path d="M50 4 A46 46 0 0 1 92.3 31.5 L50 50 Z" fill="#ff2a2a"/>
+                    <path d="M92.3 31.5 A46 46 0 0 1 92.3 68.5 L50 50 Z" fill="#cc1f1f"/>
+                    <path d="M92.3 68.5 A46 46 0 0 1 50 96 L50 50 Z" fill="#ff2a2a"/>
+                    <path d="M50 96 A46 46 0 0 1 7.7 68.5 L50 50 Z" fill="#cc1f1f"/>
+                    <path d="M7.7 68.5 A46 46 0 0 1 7.7 31.5 L50 50 Z" fill="#ff2a2a"/>
+                    <path d="M7.7 31.5 A46 46 0 0 1 50 4 L50 50 Z" fill="#cc1f1f"/>
+                    <circle cx="50" cy="50" r="15" fill="#0a0a0a" stroke="#ff2a2a" stroke-width="2"/>
+                </svg>
+                <div class="wheel-center" id="girarRuleta">→</div>
             </div>
-        </section>
+            <div class="ruleta-texto">
+                <h3>🎰 SORTEO TRIMESTRAL</h3>
+                <p style="font-size: 1.8rem; font-weight: 700;">ARTISTA EMERGENTE</p>
+                <p style="margin: 1.5rem 0;">Cada 3 meses un artista seleccionado grabación profesional + videoclip. <span class="highlight">PRÓXIMO 30 JUNIO</span></p>
+                <p style="margin-bottom: 2rem;">¡Gira la ruleta y participa! Serás redirigido a las bases.</p>
+                <a href="https://rekonise.com/sorteo-dm-g7w8r" target="_blank" id="linkSorteo" class="btn btn-outline">➡️ IR A SORTEO EN REKONISE</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">* Sorteo válido para artistas en Barcelona o desplazamiento a cargo de Incrife.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- PORTAFOLIO (simulación) -->
-        <section id="portfolio" class="container">
-            <h2 class="section-title">PORTAFOLIO // TRABAJOS RECIENTES</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">🎬 VIDEOCLIP · CRIMI</div>
-                <div class="portfolio-item">🎤 SESIÓN · NICO F.</div>
-                <div class="portfolio-item">📸 BOOK · LUKA</div>
-                <div class="portfolio-item">🎧 BEAT · "ROJO"</div>
-                <div class="portfolio-item">🎛️ MASTER · EP N3</div>
-                <div class="portfolio-item">🎥 BTS · CONCIERTO</div>
-            </div>
-            <p style="text-align: right; margin-top: 1rem;"><a href="#" style="color:#e11b1b;">ver más proyectos →</a></p>
-        </section>
+    <!-- PORTAFOLIO -->
+    <section id="portfolio" class="container">
+        <h2 class="section-title">PORTAFOLIO</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">🎬 CRIMI · VIDEOCLIP</div>
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">🎤 NICO F · SESIÓN</div>
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">📸 LUKA · BOOK</div>
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">🥁 BEAT 'ROJO'</div>
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">🎛️ MASTER EP N3</div>
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">🎥 BTS CONCIERTO</div>
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">🎚️ LUTS PACK</div>
+            <div class="portfolio-item" style="background-image: linear-gradient(145deg, #2a0000, #1a1a1a);">📦 SOUND KIT</div>
+        </div>
+    </section>
 
-        <!-- PRECIOS DETALLADOS (apartado completo) -->
-        <section id="precios" class="container">
-            <h2 class="section-title">PRECIOS / TARIFAS 2025</h2>
-            <div class="price-list">
-                <div class="price-row"><span>📸 Sesión foto estudio (2h, 10 finales editadas)</span> <span>120€</span></div>
-                <div class="price-row"><span>🎥 Videoclip básico (4h grabación, edición simple)</span> <span>350€</span></div>
-                <div class="price-row"><span>🎥 Videoclip premium (localización, luces, edición avanzada)</span> <span>750€</span></div>
-                <div class="price-row"><span>🎙️ Grabación audio (hora adicional después de 1ªh)</span> <span>25€/h</span></div>
-                <div class="price-row"><span>🎛️ Mezcla por canción (hasta 50 pistas)</span> <span>80€</span></div>
-                <div class="price-row"><span>🎚️ Mastering (canción individual)</span> <span>40€</span></div>
-                <div class="price-row"><span>🎚️ Mastering (EP 5 canciones)</span> <span>160€</span></div>
-                <div class="price-row"><span>📦 Pack sonidos "ESENCIALES" (descarga inmediata)</span> <span>29€</span></div>
-                <div class="price-row"><span>🥁 Beat exclusivo + mezcla + pistas separadas</span> <span>120€</span></div>
-                <div class="price-row"><span>🎚️ LUTs pack "CINEMATIC 2025" (10 LUTs .cube)</span> <span>35€</span></div>
-                <div class="price-row"><span>📹 Edición vídeo (por minuto final)</span> <span>25€/min</span></div>
-                <div class="price-row"><span>🎬 Pack GRABACIÓN COMPLETA (canción + videoclip)</span> <span>900€</span></div>
-            </div>
-            <p style="margin-top: 1rem;">💳 * todos los precios incluyen IVA. Presupuesto sin compromiso para proyectos personalizados.</p>
-        </section>
+    <!-- PRECIOS -->
+    <section id="precios" class="container">
+        <h2 class="section-title">TARIFAS 2025</h2>
+        <div class="price-list">
+            <div class="price-row"><span>📸 Sesión foto estudio (2h / 10 finales)</span> <span>120€</span></div>
+            <div class="price-row"><span>🎥 Videoclip básico (4h grabación + edición)</span> <span>350€</span></div>
+            <div class="price-row"><span>🎥 Videoclip premium (localización, luces, edición color)</span> <span>750€</span></div>
+            <div class="price-row"><span>🎙️ Grabación audio (hora adicional)</span> <span>25€/h</span></div>
+            <div class="price-row"><span>🎛️ Mezcla por canción (hasta 50 pistas)</span> <span>80€</span></div>
+            <div class="price-row"><span>🎚️ Mastering canción individual</span> <span>40€</span></div>
+            <div class="price-row"><span>🎚️ Mastering EP (5 canciones)</span> <span>160€</span></div>
+            <div class="price-row"><span>📦 Pack sonidos "ESENCIALES"</span> <span>29€</span></div>
+            <div class="price-row"><span>🥁 Beat exclusivo + mezcla + stems</span> <span>120€</span></div>
+            <div class="price-row"><span>🎚️ LUTs pack "CINEMATIC 2025" (10 .cube)</span> <span>35€</span></div>
+            <div class="price-row"><span>📹 Edición vídeo (por minuto final)</span> <span>25€/min</span></div>
+            <div class="price-row"><span>🎬 Pack COMPLETO (canción + videoclip)</span> <span>900€</span></div>
+        </div>
+    </section>
 
-        <!-- CONTACTO + énfasis Barcelona SEO -->
-        <section id="contacto" class="container" style="border: 2px solid #e11b1b; padding: 2rem;">
-            <h2 class="section-title">CONTACTO / BARCELONA</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-                <div style="flex: 1;">
-                    <p style="font-size: 1.5rem;"><span class="red-text">📍 Estudio central:</span> Poblenou, Barcelona</p>
-                    <p>⚡ Servicios presenciales en toda el área metropolitana. También trabajamos online (envíos por wetransfer).</p>
-                    <p>📧 hola@incrife.es · 📞 +34 666 123 123</p>
-                    <p>🕒 Horario: Lunes a viernes 10:00–20:00 · Sábados con cita</p>
-                </div>
-                <div style="flex: 1;">
-                    <form>
-                        <input type="text" placeholder="Nombre" style="width:100%; background:#111; border:1px solid #e11b1b; padding:0.8rem; margin-bottom:1rem; color:white;">
-                        <input type="email" placeholder="Email" style="width:100%; background:#111; border:1px solid #e11b1b; padding:0.8rem; margin-bottom:1rem; color:white;">
-                        <textarea placeholder="Cuéntame tu proyecto..." style="width:100%; background:#111; border:1px solid #e11b1b; padding:0.8rem; margin-bottom:1rem; color:white; min-height:100px;"></textarea>
-                        <button type="submit" class="btn">ENVIAR MENSAJE</button>
-                    </form>
-                </div>
+    <!-- CONTACTO + BARCELONA -->
+    <section id="contacto" class="container" style="background: #0f0f0f; border-radius: 30px; padding: 3rem;">
+        <h2 class="section-title">CONTACTO BARCELONA</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+            <div>
+                <h3 style="color: var(--red);">ESTUDIO POBLENOU</h3>
+                <p style="font-size: 1.2rem;">C/ dels Pellaires, 23 · Barcelona</p>
+                <p>📧 hola@incrife.es  ·  📞 +34 666 123 123</p>
+                <p>Lun–Vie 10:00–20:00 · Sábados con cita</p>
+                <p style="margin-top: 2rem;"><strong>Servicios presenciales en toda Barcelona.</strong> También trabajamos online.</p>
             </div>
-        </section>
-    </main>
+            <div>
+                <form>
+                    <input type="text" placeholder="Nombre" style="width:100%; background:#1a1a1a; border:1px solid #ff2a2a; padding:1rem; margin-bottom:1rem; color:white; border-radius:8px;">
+                    <input type="email" placeholder="Email" style="width:100%; background:#1a1a1a; border:1px solid #ff2a2a; padding:1rem; margin-bottom:1rem; color:white; border-radius:8px;">
+                    <textarea placeholder="Cuéntame tu proyecto..." style="width:100%; background:#1a1a1a; border:1px solid #ff2a2a; padding:1rem; margin-bottom:1rem; color:white; border-radius:8px; min-height:120px;"></textarea>
+                    <button type="submit" class="btn">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div>
-            <h3 style="color:#e11b1b;">INCRIFE</h3>
-            <p>© 2025 · España · Barcelona</p>
-        </div>
+        <div><h3 style="color:var(--red);">INCRIFE</h3><p>© 2025 · Barcelona · España</p></div>
         <div class="seo-local">
-            <strong>SEO:</strong> grabación barcelona · videoclip barcelona · estudio musical barcelona · sorteo artista emergente · edición vídeo · luts · beats · pack sonidos · mezcla y master · producción musical barcelona · foto barcelona
+            <strong>SEO LOCAL:</strong> grabacion barcelona · videoclip barcelona · estudio musical barcelona · sorteo artista emergente · edicion video · luts · beats · pack sonidos · mezcla master · produccion musical barcelona
         </div>
-        <div>
-            <span style="color:#e11b1b;">IG · TIKTOK · YT</span>
+        <div style="display: flex; gap: 1.5rem;">
+            <span style="color:var(--red);">IG</span> <span style="color:var(--red);">YT</span> <span style="color:var(--red);">TIKTOK</span>
         </div>
     </footer>
 
-    <!-- pequeño aviso de localización y sorteo (extra) -->
-    <div style="background:#e11b1b; color:#000; text-align:center; padding:0.5rem; font-weight:bold; font-size:0.9rem;">
-        ⚡ SERVICIOS EN BARCELONA · SORTEO TRIMESTRAL PARA ARTISTAS EMERGENTES · PRÓXIMO 30 JUNIO 2025 ⚡
+    <!-- SCRIPT RULETA INTERACTIVA -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ruleta = document.getElementById('ruletaSvg');
+            const btnGirar = document.getElementById('girarRuleta');
+            const linkSorteo = document.getElementById('linkSorteo');
+
+            let girando = false;
+
+            btnGirar.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (girando) return;
+                girando = true;
+
+                // Rotación aleatoria (mínimo 5 vueltas)
+                const vueltas = 5 + Math.floor(Math.random() * 5);
+                const grados = vueltas * 360 + Math.floor(Math.random() * 360);
+                ruleta.style.transform = `rotate(${grados}deg)`;
+
+                // Después de la animación, redirigir al link
+                setTimeout(() => {
+                    window.open(linkSorteo.href, '_blank');
+                    girando = false;
+                }, 3000); // 3 segundos de animación
+            });
+        });
+    </script>
+
+    <!-- Barra inferior fija con sorteo y localización -->
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: var(--red); color: black; text-align: center; padding: 0.7rem; font-weight: 700; z-index: 1000;">
+        ⚡ SORTEO TRIMESTRAL · ARTISTA EMERGENTE · PRÓXIMO 30 JUNIO · <a href="https://rekonise.com/sorteo-dm-g7w8r" target="_blank" style="color: black; text-decoration: underline;">¡PARTICIPA EN LA RULETA!</a> · ESTUDIO EN BARCELONA ⚡
     </div>
+    <div style="height: 50px;"></div> <!-- espacio para el fixed -->
 </body>
 </html>
