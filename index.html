@@ -4,11 +4,11 @@
   <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Incrife | Videoclips & Fotografía · True Crime</title>
+  <title>Incrife | Fotografía & Videoclips · True Crime</title>
   
   <!-- Meta tags SEO avanzado -->
-  <meta name="description" content="Incrife - Director de videoclips y fotógrafo en Barcelona. Especializado en videoclips urbanos, fotografía editorial y documentales true crime. Booking y producciones audiovisuales.">
-  <meta name="keywords" content="incrife, videoclips barcelona, fotógrafo barcelona, director videoclips, true crime, documentales, producción audiovisual, fotografía urbana, incrife edad">
+  <meta name="description" content="Incrife - Fotógrafa y directora de videoclips en Barcelona. Especializada en videoclips urbanos, fotografía editorial y documentales true crime. Booking y producciones audiovisuales.">
+  <meta name="keywords" content="incrife, fotógrafa barcelona, videoclips barcelona, directora videoclips, true crime, documentales, producción audiovisual, fotografía urbana, incrife 19 años">
   <meta name="author" content="Incrife">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="geo.placename" content="Barcelona, España">
@@ -16,16 +16,16 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Incrife | Videoclips, Fotografía & True Crime">
-  <meta property="og:description" content="Director de videoclips y fotógrafo en Barcelona. Documentales true crime y producción audiovisual.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=1200&h=630&fit=crop">
+  <meta property="og:title" content="Incrife | Fotografía, Videoclips & True Crime">
+  <meta property="og:description" content="Fotógrafa y directora de videoclips en Barcelona. Documentales true crime y producción audiovisual.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&h=630&fit=crop">
   <meta property="og:url" content="https://www.incrife.com">
   <meta property="og:locale" content="es_ES">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Incrife | Videoclips, Fotografía & True Crime">
-  <meta name="twitter:description" content="Creador visual en Barcelona. Videoclips, fotografía y documentales true crime.">
+  <meta name="twitter:title" content="Incrife | Fotografía, Videoclips & True Crime">
+  <meta name="twitter:description" content="Creadora visual en Barcelona. Videoclips, fotografía y documentales true crime.">
   
   <!-- Favicon + tema ROJO URBANO -->
   <meta name="theme-color" content="#cc0000">
@@ -113,7 +113,7 @@
       text-transform: uppercase;
     }
 
-    /* BIO personal con edad */
+    /* BIO personal con edad y fecha */
     .bio-box {
       background: rgba(20, 5, 5, 0.7);
       backdrop-filter: blur(12px);
@@ -333,6 +333,40 @@
       border: 0.5px solid rgba(255,80,80,0.4);
     }
 
+    /* WHATSAPP FLOTANTE ESQUINA INFERIOR DERECHA */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 100;
+      animation: pulse 2s infinite;
+    }
+    .whatsapp-float a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 65px;
+      height: 65px;
+      background: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: white;
+      font-size: 2.2rem;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+    .whatsapp-float a:hover {
+      transform: scale(1.1);
+      background: #20b859;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -355,6 +389,11 @@
         padding: 0.6rem 0.8rem;
         font-size: 0.85rem;
       }
+      .whatsapp-float a {
+        width: 55px;
+        height: 55px;
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
@@ -362,26 +401,26 @@
 
 <div class="linktree-container">
   
-  <!-- Perfil INCRIFE con bio personal, edad, Barcelona -->
+  <!-- Perfil INCRIFE con bio: 19 años, 28 septiembre 2006, mujer, fotógrafa y videoclips -->
   <div class="profile" itemscope itemtype="https://schema.org/Person">
-    <img class="avatar" src="https://ui-avatars.com/api/?background=cc0000&color=fff&bold=true&size=130&name=INCRIFE&fontsize=65&rounded=true&length=7" alt="Incrife - Fotógrafo y director Barcelona" itemprop="image">
+    <img class="avatar" src="https://ui-avatars.com/api/?background=cc0000&color=fff&bold=true&size=130&name=INCRIFE&fontsize=65&rounded=true&length=7&feminine=true" alt="Incrife - Fotógrafa y directora Barcelona" itemprop="image">
     <h1 class="name" itemprop="name">INCRIFE</h1>
     
-    <!-- BIO personal con edad, ciudad, especialidades -->
+    <!-- BIO personal con edad, fecha de nacimiento, género femenino, Barcelona -->
     <div class="bio-box">
       <div class="bio-text">
-        <i class="fas fa-user"></i> <strong>27 años</strong> · Creador visual nacido en Barcelona. <br>
-        <i class="fas fa-camera-retro"></i> Director de videoclips, fotógrafo editorial y storyteller audiovisual. <br>
-        <i class="fas fa-map-marker-alt"></i> <strong>Barcelona</strong> · Disponible para proyectos internacionales. <br>
-        <i class="fas fa-film"></i> Especializado en estética urbana, narrativa cruda y luz dramática.
+        <i class="fas fa-female"></i> <strong>19 años</strong> · Nacida el <strong>28 de septiembre de 2006</strong><br>
+        <i class="fas fa-camera-retro"></i> Fotógrafa y directora de videoclips · Barcelona<br>
+        <i class="fas fa-map-marker-alt"></i> <strong>Barcelona</strong> · Disponible para proyectos nacionales e internacionales<br>
+        <i class="fas fa-film"></i> Especializada en estética urbana, narrativa visual cruda y dirección creativa.
       </div>
       <div class="bio-highlight">
-        <i class="fas fa-headphones"></i> +6 años de experiencia · Videoclips para artistas urbanos · Fotografía de calle & retrato
+        <i class="fas fa-star"></i> +4 años de experiencia · Videoclips para artistas urbanos · Fotografía de calle & retrato editorial
       </div>
     </div>
     
     <div class="highlight-tag">
-      <i class="fas fa-skull"></i> <span>True Crime · Videoclips · Barcelona</span>
+      <i class="fas fa-skull"></i> <span>True Crime · Videoclips · Fotografía</span>
       <i class="fas fa-crown"></i>
     </div>
   </div>
@@ -414,7 +453,7 @@
     </a>
   </div>
 
-  <!-- SECCIÓN TRUE CRIME - PODCAST Y DOCUMENTALES (secundaria pero destacada) -->
+  <!-- SECCIÓN TRUE CRIME - PODCAST Y DOCUMENTALES (extra) -->
   <div class="crime-section">
     <div class="crime-header">
       <i class="fas fa-microphone-alt"></i>
@@ -452,7 +491,7 @@
     </a>
   </div>
 
-  <!-- Redes sociales oficiales con los tres canales + podimo (se repiten pero bien) -->
+  <!-- Redes sociales oficiales -->
   <div class="social-links">
     <a href="https://www.instagram.com/incrife/" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Instagram Incrife">
       <i class="fab fa-instagram"></i>
@@ -469,38 +508,43 @@
   </div>
   
   <div class="location-badge">
-    <i class="fas fa-map-pin"></i> Barcelona · Disponibilidad global · Creador visual & True Crime storyteller
+    <i class="fas fa-map-pin"></i> Barcelona · Disponibilidad global · Fotógrafa & Directora de Videoclips · True Crime storyteller
   </div>
   
   <div class="footer-note">
-    © 2025 INCRIFE — Videoclips, Fotografía Urbana y Documentales True Crime · Seguimiento en redes
+    © 2025 INCRIFE — Fotografía, Videoclips y Documentales True Crime · Seguimiento en redes
   </div>
 </div>
 
+<!-- WHATSAPP FLOTANTE ESQUINA INFERIOR DERECHA con número 624170204 -->
+<div class="whatsapp-float">
+  <a href="https://wa.me/34624170204?text=Hola%20Incrife%2C%20me%20interesa%20tu%20trabajo%20de%20fotograf%C3%ADa%20y%20videoclips" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Incrife">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
 <script>
-  // Asegurar todos los enlaces apunten a las URLs correctas: Instagram, YouTube, TikTok, Podimo.
+  // Configuración de enlaces y verificación de URLs correctas
   const OFFICIAL_LINKS = {
-    // para cualquier elemento que necesite override
     instagram: "https://www.instagram.com/incrife/",
     youtube: "https://www.youtube.com/@incrifed",
     tiktok: "https://www.tiktok.com/@incrife",
-    podimo: "https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da"
+    podimo: "https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da",
+    whatsapp: "https://wa.me/34624170204"
   };
   
   function fixAllLinks() {
-    // Corregir cualquier enlace que contenga patrones o clases
     const allAnchors = document.querySelectorAll('a');
     allAnchors.forEach(anchor => {
       let href = anchor.getAttribute('href');
       if (!href || href === '#' || href === '' || href.includes('javascript')) {
-        // Asignación inteligente según el contenido o clase
         const text = anchor.innerText.toLowerCase();
         const hasInsta = anchor.querySelector('.fa-instagram') || text.includes('instagram') || text.includes('portfolio') || text.includes('booking');
         const hasYt = anchor.querySelector('.fa-youtube') || text.includes('youtube') || text.includes('videoclip') || text.includes('showreel');
         const hasTik = anchor.querySelector('.fa-tiktok') || text.includes('tiktok') || text.includes('bts');
         const hasPod = anchor.querySelector('.fa-podcast') || text.includes('podimo') || text.includes('true crime') || text.includes('escúchame');
         
-        if (hasPod || (anchor.closest('.crime-section') && !hasYt)) {
+        if (hasPod || (anchor.closest('.crime-section') && anchor.innerText.includes('Podimo'))) {
           anchor.setAttribute('href', OFFICIAL_LINKS.podimo);
         } else if (hasInsta) {
           anchor.setAttribute('href', OFFICIAL_LINKS.instagram);
@@ -509,18 +553,7 @@
         } else if (hasTik) {
           anchor.setAttribute('href', OFFICIAL_LINKS.tiktok);
         } else {
-          // fallback por seguridad
           anchor.setAttribute('href', OFFICIAL_LINKS.instagram);
-        }
-      }
-      
-      // Reforzar que los enlaces de true crime / documentales secundarios apunten bien
-      if (anchor.closest('.crime-section')) {
-        const crimeText = anchor.innerText.toLowerCase();
-        if (crimeText.includes('podimo') || anchor.href?.includes('podimo') || crimeText.includes('escúchame')) {
-          anchor.setAttribute('href', OFFICIAL_LINKS.podimo);
-        } else if (crimeText.includes('youtube') || crimeText.includes('true crime')) {
-          anchor.setAttribute('href', OFFICIAL_LINKS.youtube);
         }
       }
       
@@ -537,9 +570,15 @@
       crimeBtns[0].setAttribute('href', OFFICIAL_LINKS.podimo);
       crimeBtns[1].setAttribute('href', OFFICIAL_LINKS.youtube);
     }
+    
+    // Asegurar el WhatsApp flotante tenga el número correcto
+    const whatsappLink = document.querySelector('.whatsapp-float a');
+    if (whatsappLink) {
+      whatsappLink.setAttribute('href', 'https://wa.me/34624170204?text=Hola%20Incrife%2C%20me%20interesa%20tu%20trabajo%20de%20fotograf%C3%ADa%20y%20videoclips');
+    }
   }
   
-  // Evento de tracking para analítica
+  // Tracking de clics para analítica
   function addTracking() {
     const allLinks = document.querySelectorAll('a');
     allLinks.forEach(link => {
@@ -551,21 +590,21 @@
           else if (url.includes('youtube')) platform = "YouTube";
           else if (url.includes('tiktok')) platform = "TikTok";
           else if (url.includes('podimo')) platform = "Podimo (True Crime)";
+          else if (url.includes('wa.me') || url.includes('whatsapp')) platform = "WhatsApp";
           console.log(`[INCRIFE TRACKING] Click → ${platform}: ${url}`);
-          // Aquí puedes integrar Google Analytics o Meta Pixel si deseas
         }
       });
     });
   }
   
-  // Schema.org con datos mejorados (edad, Barcelona, True Crime)
+  // Schema.org con datos actualizados: 19 años, 28 septiembre, género femenino, Barcelona
   const scriptSchema = document.createElement('script');
   scriptSchema.type = 'application/ld+json';
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "INCRIFE",
-    "description": "Director de videoclips y fotógrafo en Barcelona. 27 años, especialista en videoclips urbanos, fotografía editorial y documentales true crime.",
+    "description": "Fotógrafa y directora de videoclips en Barcelona. 19 años, nacida el 28 de septiembre de 2006. Especialista en videoclips urbanos, fotografía editorial y documentales true crime.",
     "url": window.location.href,
     "sameAs": [
       "https://www.instagram.com/incrife/",
@@ -573,14 +612,15 @@
       "https://www.tiktok.com/@incrife",
       "https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da"
     ],
-    "jobTitle": "Director de Videoclips / Fotógrafo / Productor True Crime",
+    "jobTitle": "Fotógrafa / Directora de Videoclips / Productora True Crime",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Barcelona",
       "addressCountry": "ES"
     },
-    "knowsAbout": ["Videoclip production", "Urban Photography", "True Crime Podcasts", "Documentary Filmmaking", "Barcelona Creative"],
-    "age": "27",
+    "gender": "Female",
+    "birthDate": "2006-09-28",
+    "knowsAbout": ["Videoclip production", "Urban Photography", "True Crime Podcasts", "Documentary Filmmaking", "Barcelona Creative", "Dirección de Fotografía"],
     "nationality": "Española"
   };
   scriptSchema.textContent = JSON.stringify(schemaData);
@@ -590,9 +630,9 @@
   fixAllLinks();
   addTracking();
   
-  // Título dinámico y verificación google ya incluida
-  document.title = "Incrife | Videoclips Barcelona · Fotografía & True Crime";
-  console.log("🔥 Estilo urbano rojo + True Crime activado | Enlaces: Instagram, YouTube, TikTok, Podimo");
+  // Título dinámico
+  document.title = "Incrife | Fotógrafa Barcelona · Videoclips & True Crime | 19 años";
+  console.log("🔥 Estilo urbano rojo | Incrife - 19 años, 28 septiembre 2006 | WhatsApp flotante 624170204 | True Crime activado");
 </script>
 
 </body>
