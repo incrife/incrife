@@ -16,14 +16,14 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="INCRIFE | Fotografía & Videoclips">
   <meta property="og:description" content="Fotógrafo y director de videoclips. Estética urbana y narrativa visual.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&h=630&fit=crop">
+  <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   
   <!-- Theme -->
-  <meta name="theme-color" content="#111111">
+  <meta name="theme-color" content="#cc0000">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23cc0000'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/%3E%3C/svg%3E">
   
-  <!-- Fonts - modernas -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
@@ -34,140 +34,256 @@
     }
 
     body {
-      background: #0a0a0a;
+      background: #0a0505;
       font-family: 'Inter', sans-serif;
-      color: #ededed;
+      color: #f0f0f0;
       line-height: 1.5;
       min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
-
-    /* Layout moderno */
+    
+    /* Fondo con blur en movimiento - efecto cinemático */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+    
+    .bg-blur-layer {
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      top: -25%;
+      left: -25%;
+      background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101);
+      filter: blur(60px);
+      animation: moveBlur 12s ease-in-out infinite alternate;
+    }
+    
+    .bg-blur-layer2 {
+      position: absolute;
+      width: 130%;
+      height: 130%;
+      top: -15%;
+      left: -15%;
+      background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000);
+      filter: blur(80px);
+      opacity: 0.7;
+      animation: moveBlur2 15s ease-in-out infinite alternate;
+    }
+    
+    .bg-grain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E');
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+    }
+    
+    @keyframes moveBlur {
+      0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.2) rotate(5deg);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes moveBlur2 {
+      0% {
+        transform: scale(1) rotate(0deg) translateX(-5%);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1.3) rotate(-3deg) translateX(5%);
+        opacity: 0.9;
+      }
+    }
+    
+    /* Contenido principal */
     .container {
-      max-width: 640px;
+      max-width: 680px;
       width: 100%;
       margin: 0 auto;
       padding: 2rem 1.5rem;
+      position: relative;
+      z-index: 10;
     }
-
-    /* Perfil */
+    
+    /* Perfil - más llamativo */
     .profile {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
-
+    
     .avatar-wrapper {
       position: relative;
       display: inline-block;
     }
     
     .avatar {
-      width: 112px;
-      height: 112px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      border: 3px solid #ff3333;
+      box-shadow: 0 0 0 4px rgba(204, 0, 0, 0.4), 0 20px 35px -8px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
     }
     
     .avatar:hover {
-      transform: scale(1.02);
-      border-color: #ff4444;
+      transform: scale(1.03);
+      box-shadow: 0 0 0 6px rgba(255, 68, 68, 0.5), 0 25px 40px -10px #cc0000;
+      border-color: #ff5555;
+    }
+    
+    /* Anillo pulsante alrededor de la foto */
+    .glow-ring {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 68, 68, 0.6);
+      animation: pulseRing 2s ease-out infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes pulseRing {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+        border-width: 2px;
+      }
+      70% {
+        transform: scale(1.1);
+        opacity: 0;
+        border-width: 1px;
+      }
+      100% {
+        transform: scale(0.95);
+        opacity: 0;
+      }
     }
     
     .online-dot {
       position: absolute;
-      bottom: 6px;
-      right: 6px;
-      width: 16px;
-      height: 16px;
-      background: #10b981;
+      bottom: 8px;
+      right: 8px;
+      width: 18px;
+      height: 18px;
+      background: #ff4444;
       border-radius: 50%;
       border: 2px solid #0a0a0a;
+      box-shadow: 0 0 8px #ff0000;
+      animation: blink 1.5s infinite;
     }
-
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.9); }
+    }
+    
     .name {
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: 2.4rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
       margin-top: 1.2rem;
-      background: linear-gradient(135deg, #ffffff, #ff6666);
+      background: linear-gradient(135deg, #ffffff, #ff6666, #cc3333);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
     }
-
-    /* Bio moderna */
+    
+    /* Bio card con borde rojo brillante */
     .bio-card {
-      background: rgba(20, 20, 20, 0.6);
-      backdrop-filter: blur(12px);
+      background: rgba(10, 5, 5, 0.7);
+      backdrop-filter: blur(16px);
       border-radius: 28px;
-      padding: 1.2rem 1.5rem;
+      padding: 1.3rem 1.5rem;
       margin: 1rem 0;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 68, 68, 0.5);
+      box-shadow: 0 8px 20px rgba(204, 0, 0, 0.2);
     }
     
     .bio-row {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      font-size: 0.9rem;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
       flex-wrap: wrap;
     }
     
     .bio-row i {
-      width: 24px;
+      width: 26px;
       color: #ff5555;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
     
     .bio-row strong {
-      font-weight: 600;
-      color: #ffffff;
+      font-weight: 700;
+      color: #ff8888;
     }
     
     .bio-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.8rem;
+      gap: 0.6rem;
+      margin-top: 1rem;
     }
     
     .bio-tag {
-      background: rgba(255, 68, 68, 0.12);
-      padding: 0.25rem 0.9rem;
+      background: rgba(255, 68, 68, 0.2);
+      padding: 0.3rem 1rem;
       border-radius: 40px;
       font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      color: #ff9999;
-      border: 0.5px solid rgba(255, 68, 68, 0.2);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #ffaaaa;
+      border: 0.5px solid rgba(255, 68, 68, 0.4);
     }
-
-    /* Links modernos */
+    
+    /* Links con estilo rojo llamativo */
     .links-section {
       margin: 1.8rem 0;
     }
     
     .link-item {
-      background: rgba(20, 20, 20, 0.7);
-      backdrop-filter: blur(8px);
+      background: rgba(15, 8, 8, 0.8);
+      backdrop-filter: blur(12px);
       border-radius: 20px;
-      padding: 1rem 1.2rem;
-      margin-bottom: 0.9rem;
+      padding: 1rem 1.3rem;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       text-decoration: none;
-      color: #eaeaea;
+      color: #f0f0f0;
       transition: all 0.25s ease;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 68, 68, 0.3);
     }
     
     .link-item:hover {
-      background: rgba(255, 68, 68, 0.15);
-      border-color: rgba(255, 68, 68, 0.4);
-      transform: translateY(-2px);
+      background: rgba(204, 0, 0, 0.5);
+      border-color: #ff5555;
+      transform: translateX(8px);
+      box-shadow: -5px 0 15px rgba(204, 0, 0, 0.4);
     }
     
     .link-left {
@@ -177,34 +293,35 @@
     }
     
     .link-left i {
-      width: 28px;
-      font-size: 1.25rem;
+      width: 30px;
+      font-size: 1.3rem;
       color: #ff6666;
     }
     
     .link-text {
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95rem;
     }
     
     .link-arrow {
-      color: #666;
+      color: #ff6666;
       font-size: 0.8rem;
       transition: transform 0.2s;
     }
     
     .link-item:hover .link-arrow {
-      transform: translateX(4px);
-      color: #ff8888;
+      transform: translateX(5px);
+      color: white;
     }
-
-    /* True Crime section - moderna */
+    
+    /* True Crime section - rojo intenso */
     .crime-modern {
-      background: linear-gradient(135deg, rgba(30, 20, 20, 0.8), rgba(15, 10, 10, 0.9));
+      background: linear-gradient(135deg, rgba(40, 10, 10, 0.9), rgba(20, 5, 5, 0.95));
       border-radius: 28px;
-      padding: 1.2rem 1.5rem;
+      padding: 1.3rem 1.5rem;
       margin: 1.5rem 0;
-      border: 1px solid rgba(255, 68, 68, 0.2);
+      border: 1px solid #ff4444;
+      box-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
     }
     
     .crime-header {
@@ -215,14 +332,14 @@
     }
     
     .crime-header i {
-      font-size: 1.4rem;
-      color: #ff5555;
+      font-size: 1.6rem;
+      color: #ff4444;
     }
     
     .crime-header h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: -0.2px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ff8888;
     }
     
     .crime-buttons {
@@ -233,37 +350,29 @@
     
     .crime-btn-modern {
       flex: 1;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       border-radius: 40px;
-      padding: 0.75rem;
+      padding: 0.8rem;
       text-align: center;
       text-decoration: none;
-      color: #e0e0e0;
+      color: #ffcccc;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
       transition: all 0.2s;
-      border: 1px solid rgba(255, 85, 85, 0.3);
+      border: 1px solid #ff5555;
     }
     
     .crime-btn-modern:hover {
-      background: #ff4444;
+      background: #cc0000;
       color: white;
-      border-color: transparent;
+      transform: scale(1.02);
     }
     
-    .crime-note {
-      font-size: 0.7rem;
-      text-align: center;
-      margin-top: 0.9rem;
-      color: #888;
-      letter-spacing: 0.2px;
-    }
-
-    /* Social links - modernos */
+    /* Social */
     .social-modern {
       display: flex;
       justify-content: center;
@@ -272,58 +381,57 @@
     }
     
     .social-circle {
-      width: 48px;
-      height: 48px;
-      background: rgba(30, 30, 30, 0.9);
+      width: 52px;
+      height: 52px;
+      background: rgba(30, 15, 15, 0.9);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: #cccccc;
-      font-size: 1.3rem;
+      color: #ff8888;
+      font-size: 1.4rem;
       transition: all 0.25s ease;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 68, 68, 0.5);
     }
     
     .social-circle:hover {
-      background: #ff4444;
+      background: #cc0000;
       color: white;
-      transform: translateY(-3px);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(204, 0, 0, 0.5);
     }
-
-    /* Location badge */
+    
     .location-modern {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       font-size: 0.75rem;
-      color: #aaa;
-      background: rgba(255, 255, 255, 0.03);
+      color: #ffaaaa;
+      background: rgba(204, 0, 0, 0.2);
       width: fit-content;
       margin: 0 auto;
-      padding: 0.4rem 1.2rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 40px;
       backdrop-filter: blur(4px);
+      border: 0.5px solid #ff5555;
     }
     
     .location-modern i {
       color: #ff5555;
-      font-size: 0.7rem;
     }
-
-    /* Footer */
+    
     .footer-modern {
       text-align: center;
       font-size: 0.7rem;
-      color: #5a5a5a;
+      color: #aa7777;
       margin-top: 2rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255, 68, 68, 0.3);
     }
-
-    /* WhatsApp flotante moderno */
+    
+    /* WhatsApp flotante */
     .whatsapp-modern {
       position: fixed;
       bottom: 24px;
@@ -335,28 +443,33 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 56px;
-      height: 56px;
+      width: 60px;
+      height: 60px;
       background: #25D366;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
       transition: all 0.25s ease;
       text-decoration: none;
       color: white;
-      font-size: 1.8rem;
+      font-size: 2rem;
+      animation: floatWa 2s ease-in-out infinite;
     }
     
     .whatsapp-modern a:hover {
-      transform: scale(1.05);
-      border-radius: 20px;
+      transform: scale(1.08);
       background: #20b859;
+      border-radius: 24px;
     }
-
-    /* Animaciones */
+    
+    @keyframes floatWa {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
       }
       to {
         opacity: 1;
@@ -368,213 +481,221 @@
       animation: fadeUp 0.5s ease forwards;
     }
     
-    .link-item {
-      animation: fadeUp 0.4s ease forwards;
-      opacity: 0;
-      animation-delay: calc(0.05s * var(--i, 1));
-    }
-    
-    @media (max-width: 500px) {
+    @media (max-width: 550px) {
       .container {
-        padding: 1.5rem 1.2rem;
+        padding: 1.5rem 1rem;
       }
       .name {
-        font-size: 1.7rem;
+        font-size: 1.9rem;
       }
-      .link-left {
-        gap: 0.8rem;
+      .avatar {
+        width: 115px;
+        height: 115px;
       }
       .link-text {
         font-size: 0.85rem;
-      }
-      .crime-btn-modern {
-        font-size: 0.75rem;
-        padding: 0.65rem;
       }
     }
   </style>
 </head>
 <body>
-
-<div class="container">
   
-  <!-- Perfil moderno -->
- <div class="profile">
-  <div class="avatar-wrapper">
-    <img class="avatar" src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE">
-    <span class="online-dot"></span>
-  </div>
-  <h1 class="name">INCRIFE</h1>
-</div>
-  <!-- Bio moderna - MASCULINO, 19 años, 28 sept -->
-  <div class="bio-card">
-    <div class="bio-row">
-      <i class="fas fa-user"></i>
-      <span><strong>19 años</strong> · Nacido el 28 de septiembre de 2006</span>
-    </div>
-    <div class="bio-row">
-      <i class="fas fa-camera"></i>
-      <span>Fotógrafo y director de videoclips · <strong>Barcelona</strong></span>
-    </div>
-    <div class="bio-row">
-      <i class="fas fa-film"></i>
-      <span>Especializado en estética urbana y narrativa visual cruda</span>
-    </div>
-    <div class="bio-tags">
-      <span class="bio-tag"></span>
-      <span class="bio-tag">Videoclips urbanos</span>
-      <span class="bio-tag">Fotografía editorial</span>
-      <span class="bio-tag">True Crime</span>
-    </div>
+  <!-- Fondo con blur en movimiento -->
+  <div class="animated-bg">
+    <div class="bg-blur-layer"></div>
+    <div class="bg-blur-layer2"></div>
+    <div class="bg-grain"></div>
   </div>
   
-  <!-- Links principales -->
-  <div class="links-section">
-    <a href="https://www.youtube.com/@incrifed" class="link-item" target="_blank" rel="noopener noreferrer" style="--i:1">
-      <div class="link-left">
-        <i class="fas fa-play-circle"></i>
-        <span class="link-text">Videoclips · Últimos trabajos</span>
-      </div>
-      <i class="fas fa-arrow-right link-arrow"></i>
-    </a>
+  <div class="container">
     
-    <a href="https://www.instagram.com/incrife/" class="link-item" target="_blank" rel="noopener noreferrer" style="--i:2">
-      <div class="link-left">
+    <!-- Perfil con tu foto -->
+    <div class="profile">
+      <div class="avatar-wrapper">
+        <div class="glow-ring"></div>
+        <img class="avatar" src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE">
+        <span class="online-dot"></span>
+      </div>
+      <h1 class="name">INCRIFE</h1>
+    </div>
+    
+    <!-- Bio masculina -->
+    <div class="bio-card">
+      <div class="bio-row">
+        <i class="fas fa-user"></i>
+        <span><strong>19 años</strong> · Nacido el 28 de septiembre de 2006</span>
+      </div>
+      <div class="bio-row">
         <i class="fas fa-camera"></i>
-        <span class="link-text">Fotografía · Portfolio urbano</span>
+        <span>Fotógrafo y director de videoclips · <strong>Barcelona</strong></span>
       </div>
-      <i class="fas fa-arrow-right link-arrow"></i>
-    </a>
+      <div class="bio-row">
+        <i class="fas fa-film"></i>
+        <span>Especializado en estética urbana y narrativa visual cruda</span>
+      </div>
+      <div class="bio-tags">
+        <span class="bio-tag">+4 años de experiencia</span>
+        <span class="bio-tag">Videoclips urbanos</span>
+        <span class="bio-tag">Fotografía editorial</span>
+        <span class="bio-tag">True Crime</span>
+      </div>
+    </div>
     
-    <a href="https://www.tiktok.com/@incrife" class="link-item" target="_blank" rel="noopener noreferrer" style="--i:3">
-      <div class="link-left">
-        <i class="fab fa-tiktok"></i>
-        <span class="link-text">BTS · Making of & Reels</span>
-      </div>
-      <i class="fas fa-arrow-right link-arrow"></i>
-    </a>
-  </div>
-  
-  <!-- True Crime moderno -->
-  <div class="crime-modern">
-    <div class="crime-header">
-      <i class="fas fa-microphone-alt"></i>
-      <h3>True Crime · Documentales</h3>
-    </div>
-    <div class="crime-buttons">
-      <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="crime-btn-modern" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-podcast"></i> Escúchame en Podimo
+    <!-- Links principales -->
+    <div class="links-section">
+      <a href="https://www.youtube.com/@incrifed" class="link-item" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <i class="fas fa-play-circle"></i>
+          <span class="link-text">Videoclips · Últimos trabajos</span>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
       </a>
-      <a href="https://www.youtube.com/@incrifed" class="crime-btn-modern" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-youtube"></i> True Crime · YouTube
-      </a>
-    </div>
-    <div class="crime-note">
-      <i class="fas fa-dna"></i> Narrativa de crímenes reales · Casos sin resolver · Producción propia
-    </div>
-  </div>
- 
-  <!-- Redes sociales -->
-  <div class="social-modern">
-    <a href="https://www.instagram.com/incrife/" class="social-circle" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com/@incrifed" class="social-circle" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://www.tiktok.com/@incrife" class="social-circle" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-tiktok"></i>
-    </a>
-    <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="social-circle" target="_blank" rel="noopener noreferrer">
-      <i class="fas fa-podcast"></i>
-    </a>
-  </div>
-  
-  <!-- Location badge -->
-  <div class="location-modern">
-    <i class="fas fa-map-marker-alt"></i> Barcelona · Disponibilidad global
-    <span style="margin: 0 4px">•</span>
-    <i class="fas fa-camera-retro"></i> Fotógrafo & Director
-  </div>
-  
-  <div class="footer-modern">
-    INCRIFE · Fotografía, Videoclips y Documentales True Crime<br>
-    © 2026
-  </div>
-</div>
-
-<!-- WhatsApp flotante moderno -->
-<div class="whatsapp-modern">
-  <a href="https://wa.me/34624170204?text=Hola%20Incrife%2C%20me%20interesa%20tu%20trabajo" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</div>
-
-<script>
-  // Configuración de enlaces
-  const LINKS = {
-    ig: "https://www.instagram.com/incrife/",
-    yt: "https://www.youtube.com/@incrifed",
-    tt: "https://www.tiktok.com/@incrife",
-    pod: "https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da",
-    wa: "https://wa.me/34624170204"
-  };
-  
-  function fixLinks() {
-    const allAnchors = document.querySelectorAll('a');
-    allAnchors.forEach(anchor => {
-      const href = anchor.getAttribute('href');
-      if (!href || href === '#' || href === '' || href.includes('javascript')) {
-        const text = anchor.innerText.toLowerCase();
-        const hasPod = text.includes('podimo') || text.includes('escúchame');
-        const hasYt = text.includes('youtube') || text.includes('videoclip') || text.includes('showreel');
-        const hasIg = text.includes('instagram') || text.includes('fotograf') || text.includes('booking') || text.includes('portfolio');
-        const hasTik = text.includes('tiktok') || text.includes('bts');
-        
-        if (hasPod) anchor.setAttribute('href', LINKS.pod);
-        else if (hasYt) anchor.setAttribute('href', LINKS.yt);
-        else if (hasTik) anchor.setAttribute('href', LINKS.tt);
-        else if (hasIg) anchor.setAttribute('href', LINKS.ig);
-        else anchor.setAttribute('href', LINKS.ig);
-      }
       
-      if (anchor.getAttribute('href') && !anchor.getAttribute('href').startsWith('#')) {
-        if (!anchor.getAttribute('target')) anchor.setAttribute('target', '_blank');
-        anchor.setAttribute('rel', 'noopener noreferrer');
-      }
-    });
+      <a href="https://www.instagram.com/incrife/" class="link-item" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <i class="fas fa-camera"></i>
+          <span class="link-text">Fotografía · Portfolio urbano</span>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+      
+      <a href="https://www.tiktok.com/@incrife" class="link-item" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <i class="fab fa-tiktok"></i>
+          <span class="link-text">BTS · Making of & Reels</span>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+    </div>
     
-    const waLink = document.querySelector('.whatsapp-modern a');
-    if (waLink) waLink.setAttribute('href', 'https://wa.me/34624170204?text=Hola%20Incrife%2C%20me%20interesa%20tu%20trabajo');
-  }
+    <!-- True Crime -->
+    <div class="crime-modern">
+      <div class="crime-header">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>True Crime · Documentales</h3>
+      </div>
+      <div class="crime-buttons">
+        <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="crime-btn-modern" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-podcast"></i> Escúchame en Podimo
+        </a>
+        <a href="https://www.youtube.com/@incrifed" class="crime-btn-modern" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-youtube"></i> True Crime · YouTube
+        </a>
+      </div>
+      <div class="crime-note" style="font-size:0.7rem; text-align:center; margin-top:0.8rem; color:#aa7777;">
+        <i class="fas fa-dna"></i> Narrativa de crímenes reales · Casos sin resolver · Producción propia
+      </div>
+    </div>
+    
+    <!-- Segundo bloque -->
+    <div class="links-section">
+      <a href="https://www.instagram.com/incrife/" class="link-item" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <i class="fas fa-calendar-alt"></i>
+          <span class="link-text">Booking · Sesiones y producción</span>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+      
+      <a href="https://www.youtube.com/@incrifed" class="link-item" target="_blank" rel="noopener noreferrer">
+        <div class="link-left">
+          <i class="fas fa-clapperboard"></i>
+          <span class="link-text">Showreel · Dirección</span>
+        </div>
+        <i class="fas fa-arrow-right link-arrow"></i>
+      </a>
+    </div>
+    
+    <!-- Social -->
+    <div class="social-modern">
+      <a href="https://www.instagram.com/incrife/" class="social-circle" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@incrifed" class="social-circle" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.tiktok.com/@incrife" class="social-circle" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="social-circle" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-podcast"></i>
+      </a>
+    </div>
+    
+    <div class="location-modern">
+      <i class="fas fa-map-marker-alt"></i> Barcelona · Disponibilidad global
+      <span style="margin:0 4px">✦</span>
+      <i class="fas fa-camera-retro"></i> Fotógrafo & Director
+    </div>
+    
+    <div class="footer-modern">
+      INCRIFE · Fotografía, Videoclips y Documentales True Crime<br>
+      © 2025
+    </div>
+  </div>
   
-  // Schema masculino
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "INCRIFE",
-    "description": "Fotógrafo y director de videoclips en Barcelona. 19 años, nacido el 28 de septiembre de 2006. Especializado en videoclips urbanos y true crime.",
-    "url": window.location.href,
-    "sameAs": [LINKS.ig, LINKS.yt, LINKS.tt],
-    "jobTitle": "Fotógrafo / Director de Videoclips",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Barcelona",
-      "addressCountry": "ES"
-    },
-    "gender": "Male",
-    "birthDate": "2006-09-28"
-  };
+  <!-- WhatsApp -->
+  <div class="whatsapp-modern">
+    <a href="https://wa.me/34624170204?text=Hola%20Incrife%2C%20me%20interesa%20tu%20trabajo" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
   
-  const schemaScript = document.createElement('script');
-  schemaScript.type = 'application/ld+json';
-  schemaScript.textContent = JSON.stringify(schemaData);
-  document.head.appendChild(schemaScript);
+  <script>
+    // Fix de enlaces
+    const LINKS = {
+      ig: "https://www.instagram.com/incrife/",
+      yt: "https://www.youtube.com/@incrifed",
+      tt: "https://www.tiktok.com/@incrife",
+      pod: "https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da",
+      wa: "https://wa.me/34624170204"
+    };
+    
+    function fixLinks() {
+      const allAnchors = document.querySelectorAll('a');
+      allAnchors.forEach(anchor => {
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#' || href === '' || href.includes('javascript')) {
+          const text = anchor.innerText.toLowerCase();
+          const hasPod = text.includes('podimo') || text.includes('escúchame');
+          const hasYt = text.includes('youtube') || text.includes('videoclip') || text.includes('showreel');
+          const hasIg = text.includes('instagram') || text.includes('fotograf') || text.includes('booking');
+          const hasTik = text.includes('tiktok') || text.includes('bts');
+          
+          if (hasPod) anchor.setAttribute('href', LINKS.pod);
+          else if (hasYt) anchor.setAttribute('href', LINKS.yt);
+          else if (hasTik) anchor.setAttribute('href', LINKS.tt);
+          else if (hasIg) anchor.setAttribute('href', LINKS.ig);
+          else anchor.setAttribute('href', LINKS.ig);
+        }
+        
+        if (anchor.getAttribute('href') && !anchor.getAttribute('href').startsWith('#')) {
+          if (!anchor.getAttribute('target')) anchor.setAttribute('target', '_blank');
+          anchor.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    }
+    
+    // Schema masculino
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "INCRIFE",
+      "description": "Fotógrafo y director de videoclips en Barcelona. 19 años, nacido el 28 de septiembre de 2006.",
+      "url": window.location.href,
+      "sameAs": [LINKS.ig, LINKS.yt, LINKS.tt],
+      "jobTitle": "Fotógrafo / Director de Videoclips",
+      "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" },
+      "gender": "Male",
+      "birthDate": "2006-09-28"
+    });
+    document.head.appendChild(schema);
+    
+    fixLinks();
+    document.title = "INCRIFE | Fotógrafo & Director · Barcelona";
+  </script>
   
-  fixLinks();
-  document.title = "INCRIFE | Fotógrafo & Director · Barcelona";
-  console.log("🔥 INCRIFE - Moderno | Masculino | 19 años | WhatsApp 624170204");
-</script>
-
 </body>
 </html>
