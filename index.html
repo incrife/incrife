@@ -4,11 +4,11 @@
   <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>INCRIFE | Fotografía · Videoclips · True Crime</title>
+  <title>INCRIFE | Fotografía · Videoclips · True Crime · Artista Audiovisual Barcelona</title>
   
-  <!-- SEO SUPER OPTIMIZADO (oculto visual pero potente para Google) -->
-  <meta name="description" content="INCRIFE: artista audiovisual, fotógrafo profesional en Barcelona, director de videoclips, creador de true crime. Nacido en La Mina, su arte comenzó con la fotografía y videoclips. Superó problemas de audición y ahora fusiona imagen y sonido. Videoclips, fotografía urbana, editorial, producciones en Barcelona.">
-  <meta name="keywords" content="INCRIFE, fotógrafo Barcelona, videoclips Barcelona, director videoclips, fotografía urbana Barcelona, artista audiovisual Barcelona, true crime Barcelona, producción videoclips, nacido en La Mina, fotografía editorial, problemas de audición superación, incrife fotografía, incrife videoclips, barcelona fotografia, videoclip barcelona, fotógrafo urbano">
+  <!-- SEO MEGA OPTIMIZADO (oculto visualmente pero ultra potente para Google) -->
+  <meta name="description" content="INCRIFE: artista audiovisual nacido en La Mina, Barcelona. Fotógrafo profesional, director de videoclips y creador de true crime. Superó problemas de audición y fusiona imagen con sonido. Videoclips urbanos, fotografía editorial, producciones en Barcelona.">
+  <meta name="keywords" content="INCRIFE, fotógrafo Barcelona, videoclips Barcelona, director videoclips, artista audiovisual Barcelona, fotografía urbana Barcelona, true crime Barcelona, producción videoclips, nacido en La Mina, fotografía editorial, problemas de audición superación, incrife fotografía, barcelona fotografia, videoclip barcelona, fotógrafo urbano barcelona, incrife true crime, incrife spotify">
   <meta name="author" content="INCRIFE">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
@@ -16,24 +16,22 @@
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="website">
   <meta property="og:title" content="INCRIFE | Fotógrafo & Director Audiovisual · Barcelona">
-  <meta property="og:description" content="Artista audiovisual nacido en La Mina (Barcelona). Fotografía, videoclips y true crime. Descubre su último tema y su viaje creativo.">
+  <meta property="og:description" content="Artista audiovisual nacido en La Mina. Fotografía, videoclips y true crime. Escucha su último tema en Spotify y descubre su universo visual.">
   <meta property="og:url" content="https://incrife.com">
   <meta property="og:site_name" content="INCRIFE">
   <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="INCRIFE | Fotografía · Videoclips · True Crime">
-  <meta name="twitter:description" content="Artista audiovisual, fotógrafo en Barcelona, director de videoclips. Descubre su último lanzamiento y su historia de superación.">
+  <meta name="twitter:description" content="Artista audiovisual, fotógrafo en Barcelona, director de videoclips. Último tema disponible con player interactivo.">
   <meta name="twitter:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
   <meta name="geo.position" content="41.385063;2.173404">
   <meta name="ICBM" content="41.385063, 2.173404">
   
-  <!-- Theme -->
   <meta name="theme-color" content="#cc0000">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23cc0000'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/%3E%3C/svg%3E">
   
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
@@ -54,7 +52,6 @@
       overflow-x: hidden;
     }
     
-    /* Fondo con blur en movimiento - efecto cinemático */
     .animated-bg {
       position: fixed;
       top: 0;
@@ -101,28 +98,14 @@
     }
     
     @keyframes moveBlur {
-      0% {
-        transform: scale(1) rotate(0deg);
-        opacity: 0.8;
-      }
-      100% {
-        transform: scale(1.2) rotate(5deg);
-        opacity: 1;
-      }
+      0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+      100% { transform: scale(1.2) rotate(5deg); opacity: 1; }
     }
-    
     @keyframes moveBlur2 {
-      0% {
-        transform: scale(1) rotate(0deg) translateX(-5%);
-        opacity: 0.5;
-      }
-      100% {
-        transform: scale(1.3) rotate(-3deg) translateX(5%);
-        opacity: 0.9;
-      }
+      0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; }
+      100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; }
     }
     
-    /* Contenido principal */
     .container {
       max-width: 680px;
       width: 100%;
@@ -132,17 +115,25 @@
       z-index: 10;
     }
     
-    /* Perfil */
+    /* Animaciones de entrada con scroll y aparición */
+    .fade-up-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease;
+    }
+    .fade-up-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
     .profile {
       text-align: center;
       margin-bottom: 2rem;
     }
-    
     .avatar-wrapper {
       position: relative;
       display: inline-block;
     }
-    
     .avatar {
       width: 140px;
       height: 140px;
@@ -152,64 +143,33 @@
       box-shadow: 0 0 0 4px rgba(204, 0, 0, 0.4), 0 20px 35px -8px rgba(0,0,0,0.6);
       transition: all 0.3s ease;
     }
-    
-    .avatar:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 0 6px rgba(255, 68, 68, 0.5), 0 25px 40px -10px #cc0000;
-      border-color: #ff5555;
-    }
-    
+    .avatar:hover { transform: scale(1.03); border-color: #ff5555; }
     .glow-ring {
       position: absolute;
-      top: -8px;
-      left: -8px;
-      right: -8px;
-      bottom: -8px;
+      top: -8px; left: -8px; right: -8px; bottom: -8px;
       border-radius: 50%;
       border: 2px solid rgba(255, 68, 68, 0.6);
       animation: pulseRing 2s ease-out infinite;
       pointer-events: none;
     }
-    
     @keyframes pulseRing {
-      0% {
-        transform: scale(0.95);
-        opacity: 0.8;
-        border-width: 2px;
-      }
-      70% {
-        transform: scale(1.1);
-        opacity: 0;
-        border-width: 1px;
-      }
-      100% {
-        transform: scale(0.95);
-        opacity: 0;
-      }
+      0% { transform: scale(0.95); opacity: 0.8; border-width: 2px; }
+      70% { transform: scale(1.1); opacity: 0; border-width: 1px; }
+      100% { transform: scale(0.95); opacity: 0; }
     }
-    
     .online-dot {
       position: absolute;
-      bottom: 8px;
-      right: 8px;
-      width: 18px;
-      height: 18px;
+      bottom: 8px; right: 8px;
+      width: 18px; height: 18px;
       background: #ff4444;
       border-radius: 50%;
       border: 2px solid #0a0a0a;
-      box-shadow: 0 0 8px #ff0000;
       animation: blink 1.5s infinite;
     }
-    
-    @keyframes blink {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(0.9); }
-    }
-    
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
     .name {
       font-size: 2.4rem;
       font-weight: 800;
-      letter-spacing: -0.02em;
       margin-top: 1.2rem;
       background: linear-gradient(135deg, #ffffff, #ff6666, #cc3333);
       -webkit-background-clip: text;
@@ -217,32 +177,26 @@
       color: transparent;
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
-      text-shadow: 0 0 20px rgba(204, 0, 0, 0.5);
     }
     
-    /* BIO EXTENDIDA: artista audiovisual, nacido en la mina, fotografía, videoclips, problemas de audición */
+    /* Bio card mejorada */
     .bio-card {
       background: rgba(10, 5, 5, 0.75);
       backdrop-filter: blur(16px);
       border-radius: 28px;
-      padding: 1.6rem 1.6rem;
+      padding: 1.6rem;
       margin: 1rem 0;
       border: 1px solid rgba(255, 68, 68, 0.6);
       box-shadow: 0 8px 20px rgba(204, 0, 0, 0.25);
+      transition: all 0.3s;
     }
-    
     .bio-highlight {
       font-size: 0.98rem;
       line-height: 1.55;
       color: #f5e6e6;
       margin-bottom: 1rem;
     }
-    
-    .bio-highlight strong {
-      color: #ff7777;
-      font-weight: 700;
-    }
-    
+    .bio-highlight strong { color: #ff7777; }
     .bio-row {
       display: flex;
       align-items: center;
@@ -251,154 +205,125 @@
       font-size: 0.92rem;
       flex-wrap: wrap;
     }
-    
-    .bio-row i {
-      width: 26px;
-      color: #ff5555;
-      font-size: 1.1rem;
-    }
-    
-    .bio-row strong {
-      font-weight: 700;
-      color: #ff8888;
-    }
-    
+    .bio-row i { width: 26px; color: #ff5555; font-size: 1.1rem; }
+    .bio-row strong { color: #ff8888; }
     .bio-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.6rem;
       margin-top: 1rem;
     }
-    
     .bio-tag {
       background: rgba(255, 68, 68, 0.2);
       padding: 0.3rem 1rem;
       border-radius: 40px;
       font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
       color: #ffaaaa;
       border: 0.5px solid rgba(255, 68, 68, 0.4);
     }
     
-    /* SECCIÓN RELEASE ÚLTIMO TEMA - con estilo PLAY animado estilo Spotify */
-    .release-spotify {
-      background: linear-gradient(115deg, rgba(25, 8, 8, 0.9), rgba(40, 12, 12, 0.95));
-      border-radius: 28px;
+    /* SECCIÓN SPOTIFY PRO - CON FOTO DEL TEMA Y PLAY ANIMADO */
+    .release-spotify-pro {
+      background: linear-gradient(115deg, rgba(18, 8, 8, 0.95), rgba(35, 12, 12, 0.98));
+      border-radius: 32px;
       padding: 1.2rem 1.5rem 1.5rem;
       margin: 1.5rem 0;
       border: 1px solid #ff4d4d;
-      box-shadow: 0 0 18px rgba(204, 0, 0, 0.5);
-      transition: all 0.2s;
+      box-shadow: 0 0 25px rgba(204, 0, 0, 0.5);
+      transition: transform 0.2s;
     }
-    
     .release-header {
       display: flex;
       align-items: center;
       gap: 0.7rem;
       margin-bottom: 1rem;
     }
-    
-    .release-header i {
-      font-size: 1.8rem;
-      color: #1DB954;
-      filter: drop-shadow(0 0 6px #1DB954);
-    }
-    
+    .release-header i { font-size: 1.8rem; color: #1DB954; filter: drop-shadow(0 0 5px #1DB954); }
     .release-header h3 {
       font-size: 1.3rem;
       font-weight: 800;
-      letter-spacing: -0.3px;
       background: linear-gradient(120deg, #fff, #ff8888);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    
-    .track-card {
+    .track-pro {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 1.2rem;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 0.8rem;
+      justify-content: space-between;
     }
-    
-    .track-info {
+    .track-artwork {
       display: flex;
       align-items: center;
       gap: 1rem;
       flex: 2;
     }
-    
-    .track-cover {
-      width: 60px;
-      height: 60px;
+    .track-cover-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
       background: #2a0f0f;
-      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 2rem;
       border: 1px solid #ff6666;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+      overflow: hidden;
     }
-    
-    .track-meta {
-      font-weight: 600;
+    .track-cover-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    
-    .track-name {
+    .track-info-pro .track-name {
       font-size: 1.1rem;
-      font-weight: 700;
+      font-weight: 800;
     }
-    
-    .track-artist {
+    .track-info-pro .track-artist {
       font-size: 0.75rem;
       color: #ffaaaa;
     }
-    
-    .play-button-animated {
+    .play-spotify-pulse {
       background: #1DB954;
-      width: 54px;
-      height: 54px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
       color: white;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       transition: all 0.2s ease;
-      box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7);
-      animation: pulse-green 1.8s infinite;
+      box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.8);
+      animation: sonicPulse 1.6s infinite;
       cursor: pointer;
     }
-    
-    .play-button-animated:hover {
-      transform: scale(1.07);
+    .play-spotify-pulse:hover {
+      transform: scale(1.08);
       background: #1aa34a;
       animation: none;
-      box-shadow: 0 0 12px #1DB954;
+      box-shadow: 0 0 18px #1DB954;
     }
-    
-    @keyframes pulse-green {
-      0% {
-        box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.5);
-      }
-      70% {
-        box-shadow: 0 0 0 12px rgba(29, 185, 84, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(29, 185, 84, 0);
-      }
+    @keyframes sonicPulse {
+      0% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.7); }
+      70% { box-shadow: 0 0 0 14px rgba(29, 185, 84, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0); }
+    }
+    .spotify-preview-text {
+      font-size: 0.7rem;
+      margin-top: 12px;
+      text-align: center;
+      color: #ffb5b5;
+      letter-spacing: 0.5px;
     }
     
     /* Links */
-    .links-section {
-      margin: 1.8rem 0;
-    }
-    
+    .links-section { margin: 1.8rem 0; }
     .link-item {
       background: rgba(15, 8, 8, 0.8);
       backdrop-filter: blur(12px);
@@ -413,38 +338,18 @@
       transition: all 0.25s ease;
       border: 1px solid rgba(255, 68, 68, 0.3);
     }
-    
     .link-item:hover {
       background: rgba(204, 0, 0, 0.5);
       border-color: #ff5555;
       transform: translateX(8px);
-      box-shadow: -5px 0 15px rgba(204, 0, 0, 0.4);
     }
+    .link-left { display: flex; align-items: center; gap: 1rem; }
+    .link-left i { width: 30px; font-size: 1.3rem; color: #ff6666; }
+    .link-text { font-weight: 600; font-size: 0.95rem; }
+    .link-arrow { color: #ff6666; font-size: 0.8rem; transition: transform 0.2s; }
+    .link-item:hover .link-arrow { transform: translateX(5px); color: white; }
     
-    .link-left {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .link-left i {
-      width: 30px;
-      font-size: 1.3rem;
-      color: #ff6666;
-    }
-    
-    .link-text {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    
-    .link-arrow {
-      color: #ff6666;
-      font-size: 0.8rem;
-      transition: transform 0.2s;
-    }
-    
-    /* True Crime PODIMO YT expandido */
+    /* True Crime Mejorado */
     .crime-modern {
       background: linear-gradient(135deg, rgba(40, 10, 10, 0.9), rgba(20, 5, 5, 0.95));
       border-radius: 28px;
@@ -453,25 +358,9 @@
       border: 1px solid #ff4444;
       box-shadow: 0 0 20px rgba(204, 0, 0, 0.3);
     }
-    
-    .crime-header {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 0.8rem;
-    }
-    
-    .crime-header i {
-      font-size: 1.6rem;
-      color: #ff4444;
-    }
-    
-    .crime-header h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #ff8888;
-    }
-    
+    .crime-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+    .crime-header i { font-size: 1.6rem; color: #ff4444; }
+    .crime-header h3 { font-size: 1.2rem; font-weight: 700; color: #ff8888; }
     .crime-description {
       font-size: 0.85rem;
       line-height: 1.45;
@@ -482,14 +371,12 @@
       color: #eccccc;
       border-left: 3px solid #ff5555;
     }
-    
     .crime-buttons {
       display: flex;
       gap: 0.8rem;
       flex-wrap: wrap;
       margin-top: 0.6rem;
     }
-    
     .crime-btn-modern {
       flex: 1;
       background: rgba(0, 0, 0, 0.6);
@@ -507,24 +394,16 @@
       transition: all 0.2s;
       border: 1px solid #ff5555;
     }
+    .crime-btn-modern:hover { background: #cc0000; color: white; transform: scale(1.02); }
     
-    .crime-btn-modern:hover {
-      background: #cc0000;
-      color: white;
-      transform: scale(1.02);
-    }
-    
-    /* Social y footer */
     .social-modern {
       display: flex;
       justify-content: center;
       gap: 1.2rem;
       margin: 2rem 0 1.2rem;
     }
-    
     .social-circle {
-      width: 52px;
-      height: 52px;
+      width: 52px; height: 52px;
       background: rgba(30, 15, 15, 0.9);
       border-radius: 50%;
       display: flex;
@@ -536,12 +415,7 @@
       transition: all 0.25s ease;
       border: 1px solid rgba(255, 68, 68, 0.5);
     }
-    
-    .social-circle:hover {
-      background: #cc0000;
-      color: white;
-      transform: translateY(-4px) scale(1.05);
-    }
+    .social-circle:hover { background: #cc0000; color: white; transform: translateY(-4px) scale(1.05); }
     
     .location-modern {
       display: flex;
@@ -556,7 +430,6 @@
       padding: 0.5rem 1.2rem;
       border-radius: 40px;
     }
-    
     .footer-modern {
       text-align: center;
       font-size: 0.7rem;
@@ -565,20 +438,17 @@
       padding-top: 1rem;
       border-top: 1px solid rgba(255, 68, 68, 0.3);
     }
-    
     .whatsapp-modern {
       position: fixed;
       bottom: 24px;
       right: 24px;
       z-index: 100;
     }
-    
     .whatsapp-modern a {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 60px;
-      height: 60px;
+      width: 60px; height: 60px;
       background: #25D366;
       border-radius: 18px;
       box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
@@ -588,32 +458,14 @@
       font-size: 2rem;
       animation: floatWa 2s ease-in-out infinite;
     }
-    
-    @keyframes floatWa {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .container > * {
-      animation: fadeUp 0.5s ease forwards;
-    }
+    @keyframes floatWa { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
     
     @media (max-width: 550px) {
       .container { padding: 1.5rem 1rem; }
       .name { font-size: 1.9rem; }
       .avatar { width: 115px; height: 115px; }
-      .track-card { flex-direction: column; align-items: flex-start; }
+      .track-pro { flex-direction: column; align-items: flex-start; }
+      .play-spotify-pulse { align-self: center; margin-top: 10px; }
     }
   </style>
 </head>
@@ -625,90 +477,65 @@
   </div>
   
   <div class="container">
-    <div class="profile">
+    <div class="profile fade-up-item">
       <div class="avatar-wrapper">
         <div class="glow-ring"></div>
-        <img class="avatar" src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE fotógrafo Barcelona">
+        <img class="avatar" src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE fotógrafo Barcelona artista audiovisual">
         <span class="online-dot"></span>
       </div>
       <h1 class="name">INCRIFE</h1>
     </div>
     
-    <!-- BIO EXTENDIDA: ARTISTA AUDIOVISUAL, Nacido en La Mina, fotografía + videoclips, problemas de audición -->
-    <div class="bio-card">
+    <!-- BIO EXTENDIDA PRO -->
+    <div class="bio-card fade-up-item">
       <div class="bio-highlight">
-        <strong>🎬 Artista audiovisual · Nacido en La Mina (Barcelona)</strong> — Su viaje creativo comenzó en la <strong>fotografía urbana</strong> y los <strong>videoclips</strong>, forjando un estilo crudo y cinematográfico. Con más de 10 años de trayectoria visual, su mirada única captura la esencia de Barcelona. 
-        Lamentablemente, en su faceta musical enfrentó <strong>problemas de audición</strong> que lo llevaron a pausar temporalmente ese camino, pero hoy renace fusionando imagen y sonido con una fuerza inquebrantable. 
-        Director de videoclips, fotógrafo editorial y creador de contenido true crime.
+        <strong>🎬 Artista audiovisual · Nacido en La Mina (Barcelona)</strong> — Su universo creativo nace en la <strong>fotografía urbana</strong> y los <strong>videoclips</strong>, forjando una estética cruda y cinematográfica. Con más de una década de trayectoria visual, captura la esencia de Barcelona desde sus raíces. 
+        En su faceta musical, enfrentó <strong>problemas de audición</strong> que lo llevaron a una pausa temporal, pero hoy su arte resuena con más fuerza fusionando imagen, sonido y narrativa. Director de videoclips, fotógrafo editorial y productor true crime.
       </div>
-      <div class="bio-row">
-        <i class="fas fa-map-pin"></i>
-        <span><strong>La Mina · Barcelona</strong> | Raíces que inspiran cada plano</span>
-      </div>
-      <div class="bio-row">
-        <i class="fas fa-head-side-medical"></i>
-        <span><strong>Superación auditiva:</strong> Pausa musical temporal, regreso al arte visual con más intensidad.</span>
-      </div>
-      <div class="bio-row">
-        <i class="fas fa-video"></i>
-        <span><strong>Videoclips · Fotografía · True Crime</strong> — Narrativa visual única</span>
-      </div>
+      <div class="bio-row"><i class="fas fa-map-pin"></i><span><strong>La Mina · Barcelona</strong> | Raíces que inspiran cada plano</span></div>
+      <div class="bio-row"><i class="fas fa-head-side-medical"></i><span><strong>Superación auditiva:</strong> Pausa musical transformada en potencia visual.</span></div>
+      <div class="bio-row"><i class="fas fa-video"></i><span><strong>Videoclips · Fotografía · True Crime</strong> — Narrativa única</span></div>
       <div class="bio-tags">
-        <span class="bio-tag">#FotógrafoBarcelona</span>
-        <span class="bio-tag">#VideoclipsUrbanos</span>
-        <span class="bio-tag">#DirecciónCreativa</span>
-        <span class="bio-tag">#TrueCrimeES</span>
-        <span class="bio-tag">#LaMina</span>
+        <span class="bio-tag">#FotógrafoBarcelona</span><span class="bio-tag">#VideoclipsUrbanos</span>
+        <span class="bio-tag">#DirecciónCreativa</span><span class="bio-tag">#TrueCrimeES</span><span class="bio-tag">#LaMina</span>
       </div>
     </div>
     
-    <!-- NUEVA SECCIÓN: RELEASE ÚLTIMO TEMA DE INCRIFE (SPOTIFY con PLAY animado) -->
-    <div class="release-spotify">
+    <!-- RELEASE PRO con foto del tema y play animado tipo Spotify real -->
+    <div class="release-spotify-pro fade-up-item">
       <div class="release-header">
         <i class="fab fa-spotify"></i>
-        <h3>ÚLTIMO LANZAMIENTO</h3>
+        <h3>ÚLTIMO LANZAMIENTO · ESCUCHA AHORA</h3>
       </div>
-      <div class="track-card">
-        <div class="track-info">
-          <div class="track-cover">
-            <i class="fas fa-music" style="color:#ff6666;"></i>
+      <div class="track-pro">
+        <div class="track-artwork">
+          <div class="track-cover-img">
+            <!-- Imagen representativa del tema (se puede usar cover personalizado, usamos un gradiente + ícono pero simulando portada pro) -->
+            <img src="https://via.placeholder.com/70x70/cc0000/ffffff?text=INCRIFE" alt="cover tema incrife" style="width:100%;height:100%;object-fit:cover;">
           </div>
-          <div class="track-meta">
+          <div class="track-info-pro">
             <div class="track-name">20VgqLfhBxMl8jxoCyp9Mf · INCRIFE</div>
-            <div class="track-artist">Single 2025 · Producción visual & sonido</div>
+            <div class="track-artist">Single 2025 · Producción audiovisual</div>
           </div>
         </div>
-        <a href="https://open.spotify.com/track/20VgqLfhBxMl8jxoCyp9Mf" target="_blank" rel="noopener noreferrer" class="play-button-animated" aria-label="Escuchar en Spotify">
+        <a href="https://open.spotify.com/track/20VgqLfhBxMl8jxoCyp9Mf" target="_blank" rel="noopener noreferrer" class="play-spotify-pulse" aria-label="Reproducir en Spotify">
           <i class="fas fa-play"></i>
         </a>
       </div>
-      <div style="font-size:0.7rem; margin-top: 12px; text-align:center; color:#ffa5a5;">
-        <i class="fas fa-headphones"></i> Disponible en Spotify — Dale play y siente la fusión audiovisual
+      <div class="spotify-preview-text">
+        <i class="fas fa-headphones"></i> Click en play → escucha en Spotify ·  <i class="fas fa-waveform"></i>  Sonido inmersivo
       </div>
     </div>
     
-    <!-- Links principales: videoclips, fotografía, etc -->
-    <div class="links-section">
-      <a href="https://www.youtube.com/@incrifed" class="link-item" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fas fa-play-circle"></i><span class="link-text">Videoclips · Últimas producciones</span></div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
-      <a href="https://www.instagram.com/incrife/" class="link-item" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fas fa-camera"></i><span class="link-text">Fotografía · Portfolio Barcelona</span></div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
-      <a href="https://www.tiktok.com/@incrife" class="link-item" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fab fa-tiktok"></i><span class="link-text">BTS · Making of & Reels</span></div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
+    <div class="links-section fade-up-item">
+      <a href="https://www.youtube.com/@incrifed" class="link-item" target="_blank"><div class="link-left"><i class="fas fa-play-circle"></i><span class="link-text">Videoclips · Últimas producciones</span></div><i class="fas fa-arrow-right link-arrow"></i></a>
+      <a href="https://www.instagram.com/incrife/" class="link-item" target="_blank"><div class="link-left"><i class="fas fa-camera"></i><span class="link-text">Fotografía · Portfolio Barcelona</span></div><i class="fas fa-arrow-right link-arrow"></i></a>
+      <a href="https://www.tiktok.com/@incrife" class="link-item" target="_blank"><div class="link-left"><i class="fab fa-tiktok"></i><span class="link-text">BTS · Making of & Reels</span></div><i class="fas fa-arrow-right link-arrow"></i></a>
     </div>
     
-    <!-- TRUE CRIME ampliado con descripción completa de YouTube (miércoles y domingo) -->
-    <div class="crime-modern">
-      <div class="crime-header">
-        <i class="fas fa-microphone-alt"></i>
-        <h3>True Crime · Documentales & Terror</h3>
-      </div>
+    <!-- TRUE CRIME con descripción completa y enlaces X / Podimo -->
+    <div class="crime-modern fade-up-item">
+      <div class="crime-header"><i class="fas fa-microphone-alt"></i><h3>True Crime · Documentales & Terror</h3></div>
       <div class="crime-description">
         <i class="fas fa-calendar-week"></i> <strong>Nuevos videos cada miércoles y domingo</strong><br>
         En este canal encontrarás reseñas y análisis de documentales de terror y crímenes reales, explorando historias impactantes y casos que han marcado a la sociedad. También comparto opiniones y reflexiones personales sobre el contexto cultural, social y narrativo detrás de estas historias.<br><br>
@@ -717,61 +544,84 @@
         📺 <strong>Suscríbete</strong> y acompáñame cada semana para descubrir historias que te harán pensar… y quizá no dormir o simplemente entretenerte.
       </div>
       <div class="crime-buttons">
-        <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="crime-btn-modern" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-podcast"></i> Escúchame en Podimo
-        </a>
-        <a href="https://www.youtube.com/@incrifed" class="crime-btn-modern" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-youtube"></i> True Crime · YouTube
-        </a>
+        <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="crime-btn-modern" target="_blank"><i class="fas fa-podcast"></i> Escúchame en Podimo</a>
+        <a href="https://www.youtube.com/@incrifed" class="crime-btn-modern" target="_blank"><i class="fab fa-youtube"></i> True Crime · YouTube</a>
       </div>
     </div>
     
-    <!-- Segundo bloque servicios/booking -->
-    <div class="links-section">
-      <a href="https://www.instagram.com/incrife/" class="link-item" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fas fa-calendar-alt"></i><span class="link-text">Booking · Sesiones y producción audiovisual</span></div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
-      <a href="https://www.youtube.com/@incrifed" class="link-item" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fas fa-clapperboard"></i><span class="link-text">Showreel · Dirección y videoclips</span></div>
-        <i class="fas fa-arrow-right link-arrow"></i>
-      </a>
+    <div class="links-section fade-up-item">
+      <a href="https://www.instagram.com/incrife/" class="link-item" target="_blank"><div class="link-left"><i class="fas fa-calendar-alt"></i><span class="link-text">Booking · Sesiones y producción audiovisual</span></div><i class="fas fa-arrow-right link-arrow"></i></a>
+      <a href="https://www.youtube.com/@incrifed" class="link-item" target="_blank"><div class="link-left"><i class="fas fa-clapperboard"></i><span class="link-text">Showreel · Dirección y videoclips</span></div><i class="fas fa-arrow-right link-arrow"></i></a>
     </div>
     
-    <!-- Social con X (Twitter) -->
-    <div class="social-modern">
-      <a href="https://www.instagram.com/incrife/" class="social-circle" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@incrifed" class="social-circle" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@incrife" class="social-circle" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
-      <a href="https://x.com/Incrife" class="social-circle" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-      <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="social-circle" target="_blank" rel="noopener noreferrer"><i class="fas fa-podcast"></i></a>
+    <div class="social-modern fade-up-item">
+      <a href="https://www.instagram.com/incrife/" class="social-circle" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@incrifed" class="social-circle" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@incrife" class="social-circle" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://x.com/Incrife" class="social-circle" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="social-circle" target="_blank"><i class="fas fa-podcast"></i></a>
     </div>
     
-    <div class="location-modern">
+    <div class="location-modern fade-up-item">
       <i class="fas fa-map-marker-alt"></i> Barcelona · Fotografía · Videoclips · True Crime
       <span style="margin:0 4px">✦</span>
       <i class="fas fa-head-side-vr"></i> Artista audiovisual
     </div>
-    
-    <div class="footer-modern">
+    <div class="footer-modern fade-up-item">
       INCRIFE · Fotografía, dirección de videoclips y narrativa true crime desde Barcelona<br>
-      © 2025 · Visual storyteller
+      © 2025 · Visual storyteller & director
     </div>
   </div>
   
   <div class="whatsapp-modern">
-    <a href="https://wa.me/34624170204?text=Hola%20Incrife%2C%20me%20interesa%20tu%20trabajo" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/34624170204?text=Hola%20Incrife%2C%20me%20interesa%20tu%20trabajo" target="_blank"><i class="fab fa-whatsapp"></i></a>
   </div>
   
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "INCRIFE",
-    "description": "Artista audiovisual nacido en La Mina (Barcelona). Fotógrafo y director de videoclips, con trayectoria en true crime. Superó problemas de audición temporalmente. Especialista en fotografía urbana, videoclips y producción documental.",
-    "url": "https://incrife.com",
-    "sameAs": ["https://www.instagram.com/incrife/","https://www.youtube.com/@incrifed","https://www.tiktok.com/@incrife","https://x.com/Incrife"],
-    "jobTitle": "Fotógrafo / Director Audiovisual",
-   
+  <script>
+    // Intersection Observer para animaciones al hacer scroll (efecto profesional)
+    const fadeElements = document.querySelectorAll('.fade-up-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+    fadeElements.forEach(el => observer.observe(el));
+    
+    // Forzar visible algunos que puedan quedar fuera pero dar fluidez
+    window.addEventListener('load', () => {
+      fadeElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) el.classList.add('visible');
+      });
+    });
+    
+    // Schema orgánico mejorado para SEO extremo
+    const schemaData = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "INCRIFE",
+      "description": "Artista audiovisual nacido en La Mina, Barcelona. Fotógrafo y director de videoclips con superación de problemas de audición. Especialista en fotografía urbana, true crime y videoclips.",
+      "url": "https://incrife.com",
+      "sameAs": ["https://www.instagram.com/incrife/","https://www.youtube.com/@incrifed","https://www.tiktok.com/@incrife","https://x.com/Incrife"],
+      "jobTitle": "Fotógrafo / Director Audiovisual",
+      "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES"},
+      "gender": "Male",
+      "birthDate": "2006-09-28",
+      "knowsAbout": ["Fotografía", "Videoclips", "True Crime", "Dirección de cine", "Arte urbano"]
+    };
+    const scriptSchema = document.createElement('script');
+    scriptSchema.type = 'application/ld+json';
+    scriptSchema.textContent = JSON.stringify(schemaData);
+    document.head.appendChild(scriptSchema);
+    
+    // Pequeño fix para enlaces correctos
+    document.querySelectorAll('a').forEach(anchor => {
+      if (!anchor.getAttribute('target')) anchor.setAttribute('target', '_blank');
+      anchor.setAttribute('rel', 'noopener noreferrer');
+    });
+  </script>
+</body>
+</html>
