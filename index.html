@@ -135,17 +135,20 @@
         <i class="fab fa-spotify"></i>
         <h3>ÚLTIMO LANZAMIENTO · ESCUCHA DESDE LA WEB</h3>
     </div>
-    <div class="track-pro">
-        <div class="track-artwork">
-            <div class="track-cover-img">
-                <img src="https://i.scdn.co/image/ab67616d0000b273c0f4b8e4e8f5a6b9c3d2e1f0" alt="cover tema" style="width:100%;height:100%;object-fit:cover;">
-            </div>
-            <div class="track-info-pro">
-                <div class="track-name">20VgqLfhBxMl8jxoCyp9Mf · INCRIFE</div>
-                <div class="track-artist">Single 2025 · Dale play y vibra</div>
-            </div>
-        </div>
+    
+    <!-- Reproductor oficial de Spotify (embebido) -->
+    <iframe style="border-radius:12px; width:100%; height:152px;" 
+            src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" 
+            frameborder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+    
+    <div class="spotify-preview-text" style="margin-top:10px; text-align:center;">
+        <i class="fas fa-headphones"></i> Haz click en play · Suena directo desde la web  <i class="fas fa-waveform"></i>
     </div>
+</div>
     <!-- Reproductor web de Spotify (embebido) - se escucha desde la propia web -->
     <iframe style="border-radius:12px; margin-top:12px; width:100%; height:80px;" src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     <div class="spotify-preview-text" style="margin-top:8px;">
@@ -155,7 +158,7 @@
   <!-- NUEVA SECCIÓN NOTICIAS EXCLUSIVAS + GESTIONADO POR EQUIPO -->
 <div class="noticias-section fade-up-item" style="background: rgba(10, 5, 5, 0.85); backdrop-filter: blur(12px);">
     <div class="section-title">
-        <i class="fas fa-newspaper"></i> EL PERIÓDICO DE INCRIFE · EXCLUSIVAS
+        <i class="fas fa-newspaper"></i> NOTICIAS DE INCRIFE · EXCLUSIVAS
     </div>
     
     <!-- NOTICIA DESTACADA estilo titular -->
@@ -184,23 +187,38 @@
 </div>
   
   <!-- TRUE CRIME con ÚLTIMO VIDEO DE YOUTUBE EMBEBIDO -->
-  <div class="crime-modern fade-up-item">
-    <div class="crime-header"><i class="fas fa-microphone-alt"></i><h3>True Crime · Último Video</h3></div>
-  <div class="video-embed">
-    <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=UCw5iKfxTKcAJci7eBfL9EoA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<div class="crime-modern fade-up-item">
+    <div class="crime-header">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>True Crime · Último Video</h3>
+    </div>
+    
+    <!-- Enlace destacado al último video del canal -->
+    <div class="video-embed" style="background: linear-gradient(135deg, #1a1a1a, #0a0505); border-radius: 20px; padding: 1rem; text-align: center; border: 1px solid #ff5555;">
+        <a href="https://www.youtube.com/@incrifed" target="_blank" style="text-decoration: none; display: block;">
+            <div style="position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 16 / 9; background: #000; margin-bottom: 0.8rem;">
+                <img src="https://img.youtube.com/vi/maxresdefault.jpg" alt="Último video" style="width:100%; height:100%; object-fit: cover; opacity: 0.7;">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.7); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #ff5555;">
+                    <i class="fas fa-play" style="font-size: 2rem; color: #ff5555; margin-left: 5px;"></i>
+                </div>
+            </div>
+            <div style="font-size: 0.9rem; font-weight: 600; color: #ffaaaa;">▶ HAZ CLIC PARA VER EL ÚLTIMO VIDEO</div>
+            <div style="font-size: 0.7rem; color: #aa7777; margin-top: 5px;">Nuevo contenido cada miércoles y domingo</div>
+        </a>
+    </div>
+    
     <div class="crime-description">
-      <i class="fas fa-calendar-week"></i> <strong>Nuevos videos cada miércoles y domingo</strong><br>
-      Análisis de documentales de terror y crímenes reales. Reflexiones personales sobre el contexto cultural, social y narrativo.<br><br>
-      🕯️ <strong>Domingos:</strong> Terror real o ficticio · True crime<br>
-      🎭 <strong>Miércoles:</strong> Reacciones espontáneas, humor y pensamiento crítico.
+        <i class="fas fa-calendar-week"></i> <strong>Nuevos videos cada miércoles y domingo</strong><br>
+        Análisis de documentales de terror y crímenes reales. Reflexiones personales sobre el contexto cultural, social y narrativo.<br><br>
+        🕯️ <strong>Domingos:</strong> Terror real o ficticio · True crime<br>
+        🎭 <strong>Miércoles:</strong> Reacciones espontáneas, humor y pensamiento crítico.
     </div>
+    
     <div class="crime-buttons">
-      <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="crime-btn-modern" target="_blank"><i class="fas fa-podcast"></i> Escúchame en Podimo</a>
-      <a href="https://www.youtube.com/@incrifed" class="crime-btn-modern" target="_blank"><i class="fab fa-youtube"></i> Más videos en YouTube</a>
+        <a href="https://open.podimo.com/podcast/5a25dab8-0f0b-4672-8273-56bfc39460da" class="crime-btn-modern" target="_blank"><i class="fas fa-podcast"></i> Escúchame en Podimo</a>
+        <a href="https://www.youtube.com/@incrifed" class="crime-btn-modern" target="_blank"><i class="fab fa-youtube"></i> Ver canal en YouTube</a>
     </div>
-  </div>
-  
+</div>
   <!-- NUEVO FORMULARIO PARA ARTISTAS / MODELOS (Formspree) -->
   <div class="form-section fade-up-item">
     <div class="section-title"><i class="fas fa-star-of-life"></i> ¿Eres artista musical o modelo?</div>
