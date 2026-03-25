@@ -3,65 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INCRIFE | Servicios · Fotografía · Mezcla · True Crime</title>
-  <meta name="description" content="Servicios profesionales de INCRIFE: fotografía en Barcelona, mezcla y masterización, producción de videoclips y contenido true crime.">
+  <title>INCRIFE | Servicios</title>
   <link rel="icon" type="image/png" href="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; display: flex; flex-wrap: wrap; gap: 2rem; }
-    
-    /* MENÚ LATERAL */
-    .sidebar { width: 260px; background: linear-gradient(135deg, #120808, #080303); border-radius: 24px; padding: 1.5rem; border: 1px solid rgba(255,68,68,0.3); height: fit-content; position: sticky; top: 20px; }
-    .sidebar h3 { color: #ff8888; margin-bottom: 1rem; font-family: 'Montserrat', sans-serif; }
-    .sidebar a { display: block; color: #ffcccc; text-decoration: none; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,68,68,0.1); transition: all 0.2s; }
-    .sidebar a:hover { color: #ff5555; padding-left: 8px; }
-    .sidebar .back-home { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #ff4444; color: #ff8888; }
-    
-    .content { flex: 1; }
-    .service-block { background: linear-gradient(135deg, #120808, #080303); border-radius: 24px; padding: 1.8rem; margin-bottom: 1.5rem; border: 1px solid rgba(204,0,0,0.5); transition: all 0.3s; }
-    .service-block:hover { border-color: #ff5555; transform: translateY(-3px); }
-    .service-block h2 { color: #ff8888; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; gap: 0.8rem; }
-    .service-block p { color: #bbaaaa; margin-bottom: 1rem; line-height: 1.5; }
-    .btn-service { background: #cc0000; padding: 0.6rem 1.2rem; border-radius: 40px; text-decoration: none; color: white; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
-    .btn-service:hover { background: #ff3333; transform: scale(1.02); }
-    .back-top { margin-top: 2rem; text-align: center; }
-    .back-top a { color: #ff8888; text-decoration: none; }
-    
-    .top-nav { background: rgba(10,5,5,0.95); padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); position: sticky; top: 0; z-index: 100; }
+    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
+    .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
+    .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
+    @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
+    @keyframes moveBlur2 { 0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; } 100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; } }
+    .top-nav { position: sticky; top: 0; background: rgba(10,5,5,0.95); backdrop-filter: blur(12px); padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); z-index: 100; }
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .logo a { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff6666); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; font-family: 'Montserrat', sans-serif; }
     .nav-links a { color: #ffcccc; text-decoration: none; margin-left: 1.5rem; font-size: 0.85rem; }
-    .nav-links a:hover { color: #ff5555; }
-    
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 2rem; position: relative; z-index: 10; }
+    .sidebar { width: 260px; background: linear-gradient(135deg, #120808, #080303); border-radius: 24px; padding: 1.5rem; border: 1px solid rgba(255,68,68,0.3); height: fit-content; position: sticky; top: 80px; }
+    .sidebar h3 { color: #ff8888; margin-bottom: 1rem; }
+    .sidebar a { display: block; color: #ffcccc; text-decoration: none; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,68,68,0.1); }
+    .sidebar a:hover { color: #ff5555; padding-left: 8px; }
+    .content { flex: 1; }
+    .service-block { background: linear-gradient(135deg, #120808, #080303); border-radius: 24px; padding: 1.8rem; margin-bottom: 1.5rem; border: 1px solid rgba(204,0,0,0.5); transition: all 0.3s; }
+    .service-block:hover { border-color: #ff5555; transform: translateY(-3px); }
+    .service-block h2 { color: #ff8888; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.8rem; }
+    .service-block p { color: #bbaaaa; margin-bottom: 1rem; line-height: 1.5; }
+    .btn-service { background: #cc0000; padding: 0.6rem 1.2rem; border-radius: 40px; text-decoration: none; color: white; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+    .btn-service:hover { background: #ff3333; transform: scale(1.02); }
     @media (max-width: 768px) { .container { flex-direction: column; } .sidebar { position: static; width: 100%; } .nav-links { display: none; } }
   </style>
 </head>
 <body>
+<div class="animated-bg"><div class="bg-blur-layer"></div><div class="bg-blur-layer2"></div></div>
 <nav class="top-nav"><div class="nav-container"><div class="logo"><a href="index.html">INCRIFE</a></div><div class="nav-links"><a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="fotografia.html">Fotografía</a><a href="studio.html">Studio</a><a href="incrifed.html">True Crime</a><a href="trabajaconnosotros.html">Equipo</a><a href="contacto.html">Contacto</a></div></div></nav>
-
 <div class="container">
-  <aside class="sidebar">
-    <h3><i class="fas fa-bars"></i> Servicios</h3>
-    <a href="#fotografia"><i class="fas fa-camera"></i> Fotografía</a>
-    <a href="#videoclips"><i class="fas fa-video"></i> Videoclips</a>
-    <a href="#mezcla"><i class="fas fa-headphones"></i> Mezcla & Master</a>
-    <a href="#truecrime"><i class="fas fa-microphone-alt"></i> True Crime</a>
-    <a href="#produccion"><i class="fas fa-cogs"></i> Producción Audiovisual</a>
-    <a href="#equipo"><i class="fas fa-users"></i> Únete al equipo</a>
-    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Volver al inicio</a>
-  </aside>
-  
+  <aside class="sidebar"><h3><i class="fas fa-bars"></i> Servicios</h3><a href="#fotografia"><i class="fas fa-camera"></i> Fotografía</a><a href="#videoclips"><i class="fas fa-video"></i> Videoclips</a><a href="#mezcla"><i class="fas fa-headphones"></i> Mezcla & Master</a><a href="#truecrime"><i class="fas fa-microphone-alt"></i> True Crime</a><a href="#produccion"><i class="fas fa-cogs"></i> Producción Audiovisual</a><a href="#equipo"><i class="fas fa-users"></i> Únete al equipo</a><a href="index.html" style="margin-top:1rem; color:#ff8888;"><i class="fas fa-arrow-left"></i> Volver</a></aside>
   <main class="content">
-    <div id="fotografia" class="service-block"><h2><i class="fas fa-camera" style="color:#ff5555;"></i> Fotografía Profesional</h2><p>Sesiones de fotografía urbana, editorial, retratos y making of. Especialista en capturar la esencia de Barcelona. Portfolio con más de 50 proyectos realizados.</p><a href="fotografia.html" class="btn-service">Ver portafolio <i class="fas fa-arrow-right"></i></a></div>
-    <div id="videoclips" class="service-block"><h2><i class="fas fa-play-circle" style="color:#ff5555;"></i> Videoclips</h2><p>Dirección, producción y edición de videoclips. Estética urbana y narrativa visual cruda. Colaboraciones con artistas emergentes y consolidados.</p><a href="https://www.youtube.com/@incrife" target="_blank" class="btn-service">Ver trabajos <i class="fab fa-youtube"></i></a></div>
-    <div id="mezcla" class="service-block"><h2><i class="fas fa-sliders-h" style="color:#ff5555;"></i> Mezcla & Masterización</h2><p>Servicios profesionales de audio. Mezcla, masterización y producción musical. Trabajamos con artistas de todo el mundo para dar el sonido definitivo a tus canciones.</p><a href="studio.html" class="btn-service">Solicita presupuesto <i class="fas fa-headphones"></i></a></div>
-    <div id="truecrime" class="service-block"><h2><i class="fas fa-microphone-alt" style="color:#ff5555;"></i> True Crime · INCRIFED</h2><p>Análisis de crímenes reales, documentales de terror y reacciones. Contenido semanal con reflexiones personales y un toque humano.</p><a href="incrifed.html" class="btn-service">Descubrir proyecto <i class="fas fa-arrow-right"></i></a></div>
-    <div id="produccion" class="service-block"><h2><i class="fas fa-cogs" style="color:#ff5555;"></i> Producción Audiovisual</h2><p>Producción integral de contenido audiovisual: desde la idea hasta la postproducción. Creamos piezas únicas para marcas, artistas y proyectos personales.</p><a href="contacto.html" class="btn-service">Consultar <i class="fas fa-envelope"></i></a></div>
-    <div id="equipo" class="service-block"><h2><i class="fas fa-users" style="color:#ff5555;"></i> ¿Quieres trabajar con nosotros?</h2><p>Buscamos filmakers, fotógrafos, beatmakers, ingenieros de sonido y modelos. Únete al equipo INCRIFE y colabora en proyectos reales.</p><a href="trabajaconnosotros.html" class="btn-service">Enviar candidatura <i class="fas fa-paper-plane"></i></a></div>
-    <div class="back-top"><a href="#"><i class="fas fa-arrow-up"></i> Volver arriba</a></div>
+    <div id="fotografia" class="service-block"><h2><i class="fas fa-camera" style="color:#ff5555;"></i> Fotografía Profesional</h2><p>Sesiones de fotografía urbana, editorial, retratos y making of. Especialista en capturar la esencia de Barcelona.</p><a href="fotografia.html" class="btn-service">Ver portafolio <i class="fas fa-arrow-right"></i></a></div>
+    <div id="videoclips" class="service-block"><h2><i class="fas fa-play-circle" style="color:#ff5555;"></i> Videoclips</h2><p>Dirección, producción y edición de videoclips. Estética urbana y narrativa visual cruda.</p><a href="https://www.youtube.com/@incrife" target="_blank" class="btn-service">Ver trabajos <i class="fab fa-youtube"></i></a></div>
+    <div id="mezcla" class="service-block"><h2><i class="fas fa-sliders-h" style="color:#ff5555;"></i> Mezcla & Masterización</h2><p>Servicios profesionales de audio para llevar tu música al siguiente nivel.</p><a href="studio.html" class="btn-service">Solicitar presupuesto <i class="fas fa-headphones"></i></a></div>
+    <div id="truecrime" class="service-block"><h2><i class="fas fa-microphone-alt" style="color:#ff5555;"></i> True Crime · INCRIFED</h2><p>Análisis de crímenes reales, documentales de terror y reacciones semanales.</p><a href="incrifed.html" class="btn-service">Descubrir proyecto <i class="fas fa-arrow-right"></i></a></div>
+    <div id="produccion" class="service-block"><h2><i class="fas fa-cogs" style="color:#ff5555;"></i> Producción Audiovisual</h2><p>Producción integral de contenido para marcas, artistas y proyectos personales.</p><a href="contacto.html" class="btn-service">Consultar <i class="fas fa-envelope"></i></a></div>
+    <div id="equipo" class="service-block"><h2><i class="fas fa-users" style="color:#ff5555;"></i> ¿Quieres trabajar con nosotros?</h2><p>Buscamos filmakers, fotógrafos, beatmakers, ingenieros de sonido y modelos.</p><a href="trabajaconnosotros.html" class="btn-service">Enviar candidatura <i class="fas fa-paper-plane"></i></a></div>
   </main>
 </div>
 </body>
