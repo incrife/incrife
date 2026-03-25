@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>INCRIFE | Fotografía · Portfolio Barcelona</title>
+  <meta name="description" content="Portafolio de fotografía de INCRIFE. Fotografía urbana, retratos, editorial y making of en Barcelona. Descubre mi trabajo visual y solicita colaboraciones.">
+  <meta name="keywords" content="fotografía barcelona, portfolio fotografía, retratos urbanos, fotografía editorial barcelona, incrife fotógrafo">
+  <meta name="author" content="INCRIFE">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://incrife.com/fotografia.html">
+  <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
+  <meta name="theme-color" content="#cc0000">
+  <link rel="icon" type="image/png" href="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; overflow-x: hidden; }
+    
+    /* Fondo animado (mismo que página principal) */
+    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
+    .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
+    .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
+    .bg-grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E'); pointer-events: none; z-index: 1; opacity: 0.4; }
+    @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
+    @keyframes moveBlur2 { 0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; } 100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; } }
+    
+    /* Menú superior */
+    .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(10,5,5,0.95); backdrop-filter: blur(12px); z-index: 1000; padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .logo a { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff6666); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; font-family: 'Montserrat', sans-serif; }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { color: #ffcccc; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
+    .nav-links a:hover { color: #ff5555; }
+    .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    
+    /* Menú lateral móvil */
+    .side-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #0f0808; z-index: 1001; transition: right 0.3s ease; padding: 2rem; border-left: 1px solid #ff4444; }
+    .side-menu.open { right: 0; }
+    .side-menu .close-menu { background: none; border: none; color: white; font-size: 1.5rem; float: right; cursor: pointer; margin-bottom: 2rem; }
+    .side-menu a { display: block; color: #ffcccc; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,68,68,0.2); }
+    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: none; }
+    .overlay.active { display: block; }
+    
+    .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; }
+    @keyframes entranceSpin { 0% { opacity: 0; transform: perspective(800px) rotateY(90deg) scale(0.95); filter: blur(8px); } 100% { opacity: 1; transform: perspective(800px) rotateY(0deg) scale(1); filter: blur(0); } }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
+    
+    /* Hero sección */
+    .hero-photo { text-align: center; margin-bottom: 3rem; }
+    .hero-photo h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
+    .hero-photo p { color: #ccaaaa; max-width: 600px; margin: 0 auto; }
+    
+    /* Galería */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .gallery-item { background: linear-gradient(135deg, #120808, #080303); border-radius: 24px; overflow: hidden; border: 1px solid rgba(204,0,0,0.4); transition: all 0.3s ease; cursor: pointer; }
+    .gallery-item:hover { transform: translateY(-8px); border-color: #ff5555; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+    .gallery-item img { width: 100%; height: 260px; object-fit: cover; transition: all 0.3s; }
+    .gallery-item:hover img { filter: brightness(1.05); }
+    .gallery-info { padding: 1rem 1.2rem 1.2rem; }
+    .gallery-info h3 { color: #ffaa88; font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .gallery-info p { color: #886666; font-size: 0.7rem; letter-spacing: 0.5px; }
+    
+    /* Sección Oportunidad Profesional */
+    .opportunity-section { background: linear-gradient(135deg, #1a0a0a, #0f0505); border-radius: 32px; padding: 2rem; margin: 2rem 0; border: 1px solid #ff4444; text-align: center; position: relative; overflow: hidden; }
+    .opportunity-section::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,68,68,0.05), transparent); pointer-events: none; }
+    .opportunity-section i { font-size: 2.5rem; color: #ff5555; margin-bottom: 1rem; }
+    .opportunity-section h2 { font-size: 1.8rem; font-weight: 800; color: #ff8888; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
+    .opportunity-section p { color: #ddcccc; max-width: 600px; margin: 0 auto 1.2rem auto; line-height: 1.5; }
+    .btn-whatsapp { background: #25D366; border: none; padding: 0.9rem 2rem; border-radius: 50px; color: white; font-weight: 700; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.6rem; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+    .btn-whatsapp:hover { transform: scale(1.03); background: #20b859; box-shadow: 0 6px 20px rgba(37,211,102,0.4); }
+    .btn-outline-light { background: rgba(0,0,0,0.5); border: 1px solid #ff5555; padding: 0.7rem 1.5rem; border-radius: 40px; color: #ffaaaa; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; margin-left: 0.8rem; transition: all 0.2s; }
+    .btn-outline-light:hover { background: #cc0000; color: white; border-color: #cc0000; }
+    
+    /* Footer y social */
+    .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; }
+    .social-circle { width: 52px; height: 52px; background: rgba(30, 15, 15, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.4rem; transition: all 0.25s ease; border: 1px solid rgba(255, 68, 68, 0.5); }
+    .social-circle:hover { background: #cc0000; color: white; transform: translateY(-4px); }
+    .footer-modern { text-align: center; font-size: 0.7rem; color: #aa7777; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255, 68, 68, 0.3); }
+    .whatsapp-fixed { position: fixed; bottom: 24px; right: 24px; z-index: 1000; }
+    .whatsapp-fixed a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 18px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); text-decoration: none; color: white; font-size: 2rem; transition: all 0.2s; }
+    .whatsapp-fixed a:hover { transform: scale(1.05); }
+    
+    @media (max-width: 768px) { .nav-links { display: none; } .menu-toggle { display: block; } .container { padding: 1.5rem 1rem; } .hero-photo h1 { font-size: 1.8rem; } .opportunity-section h2 { font-size: 1.4rem; } .btn-outline-light { margin-left: 0; margin-top: 0.8rem; } }
+  </style>
+</head>
+<body>
+<div class="animated-bg"><div class="bg-blur-layer"></div><div class="bg-blur-layer2"></div><div class="bg-grain"></div></div>
+
+<nav class="top-nav">
+  <div class="nav-container">
+    <div class="logo"><a href="index.html">INCRIFE</a></div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="fotografia.html">Fotografía</a>
+      <a href="studio.html">Studio</a>
+      <a href="incrifed.html">True Crime</a>
+      <a href="trabajaconnosotros.html">Equipo</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<div class="side-menu" id="sideMenu">
+  <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="fotografia.html">Fotografía</a>
+  <a href="studio.html">Studio</a>
+  <a href="incrifed.html">True Crime</a>
+  <a href="trabajaconnosotros.html">Equipo</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<div class="page-wrapper">
+<div class="container">
+  
+  <div class="hero-photo fade-up-item">
+    <h1><i class="fas fa-camera-retro"></i> Fotografía · Portfolio</h1>
+    <p>Fotografía urbana, retratos, editorial y making of. Capturando la esencia de Barcelona con una estética única.</p>
+  </div>
+  
+  <!-- GALERÍA DE IMÁGENES -->
+  <div class="gallery fade-up-item">
+    <div class="gallery-item"><img src="https://github.com/incrife/incrife/raw/main/P1013921.jpg" alt="Retrato urbano Barcelona"><div class="gallery-info"><h3>Retrato Urbano</h3><p>La Mina · Barcelona</p></div></div>
+    <div class="gallery-item"><img src="https://github.com/incrife/incrife/raw/main/SaveClip.App_627479185_18083942891235869_2096664627468556493_n.jpg" alt="Making of videoclip"><div class="gallery-info"><h3>Making Of</h3><p>Detrás de cámaras · Videoclip</p></div></div>
+    <div class="gallery-item"><img src="https://github.com/incrife/incrife/raw/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg" alt="Artista audiovisual"><div class="gallery-info"><h3>Artista Audiovisual</h3><p>Estudio · Barcelona</p></div></div>
+    <div class="gallery-item"><img src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(56).png" alt="True Crime INCRIFED"><div class="gallery-info"><h3>True Crime · INCRIFED</h3><p>Identidad visual · Fotografía editorial</p></div></div>
+    <div class="gallery-item"><img src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="Perfil INCRIFE"><div class="gallery-info"><h3>Perfil · INCRIFE</h3><p>Fotografía de perfil · Barcelona</p></div></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&h=400&fit=crop" alt="Videoclip Cadena"><div class="gallery-info"><h3>Videoclip · Cadena</h3><p>Producción audiovisual · Estética urbana</p></div></div>
+  </div>
+  
+  <!-- SECCIÓN OPORTUNIDAD PROFESIONAL -->
+  <div class="opportunity-section fade-up-item">
+    <i class="fas fa-star-of-life"></i>
+    <h2>¿Sientes que mereces una oportunidad?</h2>
+    <p>En INCRIFE buscamos nuevos talentos para aparecer en nuestros perfiles. Si tienes presencia, actitud y quieres formar parte de nuestras producciones visuales, queremos conocerte.</p>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem;">
+      <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesar%C3%ADa%20aparecer%20en%20vuestros%20perfiles.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n." class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Enviar WhatsApp</a>
+      <a href="https://www.instagram.com/incrife/" class="btn-outline-light" target="_blank"><i class="fab fa-instagram"></i> Ver nuestros perfiles</a>
+    </div>
+    <p style="font-size: 0.7rem; margin-top: 1rem; color: #886666;"><i class="fas fa-shield-alt"></i> Seleccionamos perfiles con autenticidad y proyección. Cuéntanos tu historia.</p>
+  </div>
+  
+  <!-- REDES SOCIALES -->
+  <div class="social-modern fade-up-item">
+    <a href="https://www.instagram.com/incrife/" class="social-circle"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@incrifed" class="social-circle"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
+    <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-modern fade-up-item">INCRIFE · Fotografía, Videoclips y Producción Audiovisual · Barcelona<br>© 2026 · Visual storyteller & director</div>
+</div>
+</div>
+
+<div class="whatsapp-fixed"><a href="https://wa.me/34624170204"><i class="fab fa-whatsapp"></i></a></div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const sideMenu = document.getElementById('sideMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlay = document.getElementById('overlay');
+  if (menuToggle) menuToggle.onclick = () => { sideMenu.classList.add('open'); overlay.classList.add('active'); };
+  if (closeMenu) closeMenu.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); };
+  if (overlay) overlay.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); };
+  
+  const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-up-item').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
