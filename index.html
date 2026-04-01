@@ -4,12 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>INCRIFE | Fotógrafo Barcelona · Videoclips · Artista Audiovisual</title>
+  
+  <!-- ========== SEO PRINCIPAL ========== -->
   <meta name="description" content="INCRIFE: Fotógrafo profesional en Barcelona, director de videoclips y artista audiovisual nacido en La Mina. Especialista en fotografía urbana, editorial, retratos y producción de videoclips.">
   <meta name="keywords" content="fotógrafo barcelona, fotografía barcelona, videoclips barcelona, director videoclips barcelona, incrife fotógrafo">
   <meta name="author" content="INCRIFE">
   <meta name="robots" content="index, follow">
+  
+  <!-- ========== CANONICAL ========== -->
   <link rel="canonical" href="https://incrife.com">
+  
+  <!-- ========== INDICAR QUE ES UNA WEB INDEPENDIENTE DE INCRIFED ========== -->
+  <meta name="page-type" content="main-portfolio">
+  <meta name="business-type" content="photography-videoclips">
+  <meta name="content-focus" content="fotografía profesional, videoclips, arte audiovisual">
+  
+  <!-- ========== RELACIÓN CON INCRIFED (NO ES DUPLICADO, ES OTRA WEB) ========== -->
+  <!-- Esto le dice a Google que incrifed.html es un sitio hermano, NO una copia -->
+  <link rel="related" href="https://incrife.com/incrifed" title="INCRIFED - True Crime Channel (Web Independiente)">
+  <meta name="has-microsite" content="true-crime">
+  
+  <!-- ========== PREVENIR CONFUSIÓN CON LA PÁGINA DE TRUE CRIME ========== -->
+  <meta name="distinct-content" content="fotografia-videoclips-vs-true-crime">
+  <meta name="topic" content="photography, videoclips, barcelona artist">
+  
   <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
+  <meta property="og:title" content="INCRIFE | Fotógrafo Barcelona · Videoclips · Artista Audiovisual">
+  <meta property="og:description" content="Fotógrafo profesional en Barcelona, director de videoclips. Especialista en fotografía urbana, editorial y producción audiovisual.">
+  <meta property="og:url" content="https://incrife.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#cc0000">
   <link rel="icon" type="image/png" href="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -123,6 +147,35 @@
   document.getElementById('overlay').onclick = () => { document.getElementById('sideMenu').classList.remove('open'); document.getElementById('overlay').classList.remove('active'); };
   const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up-item').forEach(el => observer.observe(el));
+  
+  // Schema para la página principal (Fotografía/Videoclips)
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "INCRIFE",
+    "description": "Fotógrafo profesional en Barcelona, director de videoclips y artista audiovisual. Especialista en fotografía urbana, editorial y producción de videoclips.",
+    "url": "https://incrife.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Barcelona",
+      "addressRegion": "Barcelona",
+      "addressCountry": "ES"
+    },
+    "areaServed": "Barcelona",
+    "knowsAbout": ["Fotografía", "Videoclips", "Producción Audiovisual", "Mezcla y Master"],
+    "sameAs": [
+      "https://www.instagram.com/incrife/",
+      "https://www.youtube.com/@incrife",
+      "https://www.tiktok.com/@incrife"
+    ],
+    "hasPart": {
+      "@type": "WebPage",
+      "name": "INCRIFED - True Crime Channel",
+      "url": "https://incrife.com/incrifed",
+      "description": "Canal independiente de True Crime, crímenes reales y reacciones"
+    }
+  };
+  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(schema) }));
 </script>
 </body>
 </html>
