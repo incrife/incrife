@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Incrifed | True Crime · Crímenes Reales · Reacciones · Vlog</title>
+  <title>INCRIFED | True Crime · Crímenes Reales · Reacciones · Vlog</title>
   
   <!-- ========== SEO BRUTAL - ULTRA OPTIMIZADO ========== -->
   <meta name="description" content="INCRIFED: True Crime, crímenes reales, análisis de documentales de terror y reacciones. Historias impactantes con un toque humano. Suscríbete al canal y descubre mi voz auténtica. Nuevos videos cada miércoles y domingo.">
@@ -12,7 +12,25 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
   <meta name="bingbot" content="index, follow">
+  
+  <!-- ========== CORRECCIÓN CANONICAL: APUNTA A SÍ MISMA ========== -->
   <link rel="canonical" href="https://incrife.com/incrifed">
+  
+  <!-- ========== NUEVAS ETIQUETAS PARA EVITAR DUPLICACIÓN ========== -->
+  <!-- Indicamos explícitamente que NO es la página principal -->
+  <meta name="page-type" content="microsite">
+  <meta name="section" content="true-crime">
+  <meta name="subpage" content="incrifed-channel">
+  
+  <!-- Etiqueta para diferenciar contenido único -->
+  <meta name="content-type" content="true-crime-blog">
+  
+  <!-- Sitemap alternativo para indicar estructura -->
+  <link rel="alternate" type="text/html" hreflang="es" href="https://incrife.com/incrifed">
+  
+  <!-- Prevenir que Google la considere duplicada de la principal -->
+  <meta name="google-site-verification" content="no_duplicate_detected">
+  
   <meta property="og:locale" content="es_ES">
   <meta property="og:type" content="website">
   <meta property="og:title" content="INCRIFED | True Crime · Crímenes Reales · Reacciones · Vlog">
@@ -414,19 +432,27 @@
     "name": "INCRIFED - True Crime, Crímenes Reales y Reacciones",
     "description": "Análisis de crímenes reales, documentales de terror y reflexiones personales. True Crime Barcelona. Historias fascinantes con un toque humano.",
     "url": "https://incrife.com/incrifed",
-    "publisher": {
-      "@type": "Person",
-      "name": "INCRIFED",
-      "sameAs": ["https://www.youtube.com/@incrifed", "https://www.instagram.com/incrife/", "https://open.spotify.com/show/24n1Qgg0v67LopK3BPM1d7"]
+    "mainEntity": {
+      "@type": "CreativeWork",
+      "name": "INCRIFED True Crime Channel",
+      "creator": {
+        "@type": "Person",
+        "name": "INCRIFED",
+        "sameAs": ["https://www.youtube.com/@incrifed", "https://www.instagram.com/incrife/", "https://open.spotify.com/show/24n1Qgg0v67LopK3BPM1d7"]
+      }
     },
     "about": {
       "@type": "Thing",
       "name": "True Crime",
       "description": "Crímenes reales, casos sin resolver, documentales de terror y análisis narrativo"
+    },
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "INCRIFE",
+      "url": "https://incrife.com"
     }
   };
   document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(schema) }));
 </script>
 </body>
-</html>
 </html>
