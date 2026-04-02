@@ -16,7 +16,7 @@
   <!-- ========== CANONICAL ========== -->
   <link rel="canonical" href="https://incrife.com">
   
-  <!-- ========== GEO LOCALIZATION - CLAVE PARA BARCELONA ========== -->
+  <!-- ========== GEO LOCALIZATION ========== -->
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
   <meta name="geo.position" content="41.385063;2.173404">
@@ -26,7 +26,7 @@
   <meta name="distribution" content="global">
   <meta name="revisit-after" content="7 days">
   
-  <!-- ========== INDICAR QUE ES UNA WEB INDEPENDIENTE DE INCRIFED ========== -->
+  <!-- ========== INDICAR QUE ES UNA WEB INDEPENDIENTE ========== -->
   <meta name="page-type" content="main-portfolio">
   <meta name="business-type" content="photography-videoclips-filmmaker">
   <meta name="content-focus" content="fotografía profesional barcelona, videógrafo, filmmaker, producción videoclips">
@@ -37,7 +37,7 @@
   <meta name="has-microsite" content="true-crime">
   <meta name="distinct-content" content="fotografia-videoclips-vs-true-crime">
   
-  <!-- ========== OPEN GRAPH / SOCIAL MEDIA ========== -->
+  <!-- ========== OPEN GRAPH ========== -->
   <meta property="og:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
   <meta property="og:description" content="Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, retratos, videoclips y producción audiovisual. ¡Contrátame!">
   <meta property="og:url" content="https://incrife.com">
@@ -47,8 +47,6 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="INCRIFE">
-  <meta property="og:email" content="incrife@gmail.com">
-  <meta property="og:phone_number" content="+34624170204">
   
   <!-- ========== TWITTER CARDS ========== -->
   <meta name="twitter:card" content="summary_large_image">
@@ -119,7 +117,7 @@
     .release-header i { font-size: 1.8rem; color: #1DB954; }
     .release-header h3 { font-size: 1.3rem; font-weight: 800; background: linear-gradient(120deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; }
     
-    /* PLATAFORMAS MUSICALES - DEBAJO DEL LANZAMIENTO */
+    /* PLATAFORMAS MUSICALES */
     .music-platforms {
       background: rgba(10, 5, 5, 0.6);
       backdrop-filter: blur(12px);
@@ -149,8 +147,6 @@
       transition: all 0.3s;
     }
     .platform-btn:hover { background: #1DB954; color: white; border-color: #1DB954; transform: translateY(-2px); }
-    .platform-btn.apple:hover { background: #f94f4f; }
-    .platform-btn.amazon:hover { background: #ff9900; }
     
     .links-section { margin: 1.8rem 0; }
     .link-item { background: rgba(15, 8, 8, 0.8); backdrop-filter: blur(12px); border-radius: 20px; padding: 1rem 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: #f0f0f0; border: 1px solid rgba(255, 68, 68, 0.3); transition: all 0.3s; }
@@ -159,7 +155,7 @@
     .link-left i { width: 30px; font-size: 1.3rem; color: #ff6666; }
     .link-text { font-weight: 600; font-size: 0.95rem; }
     
-    /* SECCIÓN DE RESEÑAS - HORIZONTAL CON FOTOS Y ANIMACIÓN */
+    /* SECCIÓN DE RESEÑAS */
     .reviews-section {
       background: rgba(10, 5, 5, 0.75);
       backdrop-filter: blur(16px);
@@ -180,7 +176,7 @@
     .section-header-custom i { font-size: 1.6rem; color: #ffcc00; }
     .section-header-custom h3 { font-size: 1.2rem; color: #fff; font-weight: 700; }
     
-    /* Carrusel horizontal animado */
+    /* Carrusel horizontal */
     .reviews-scroll {
       display: flex;
       gap: 1.2rem;
@@ -190,7 +186,6 @@
       scrollbar-width: thin;
       scrollbar-color: #cc0000 #2a2a2a;
       cursor: grab;
-      animation: fadeInUp 0.6s ease;
     }
     .reviews-scroll:active { cursor: grabbing; }
     .reviews-scroll::-webkit-scrollbar { height: 5px; }
@@ -206,20 +201,11 @@
       padding: 1.2rem;
       border: 1px solid rgba(255, 68, 68, 0.4);
       transition: all 0.3s ease;
-      animation: slideIn 0.5s ease backwards;
     }
     .review-card-horizontal:hover {
       transform: translateY(-5px);
       border-color: #cc0000;
       background: rgba(204, 0, 0, 0.15);
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(30px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .review-header {
       display: flex;
@@ -239,21 +225,113 @@
     .review-stars { color: #ffcc00; font-size: 0.7rem; margin: 0.5rem 0; letter-spacing: 2px; }
     .review-text { color: #ccc; font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem; font-style: italic; }
     
-    /* BOTÓN SCROLL INDICADOR */
     .scroll-indicator {
       text-align: center;
       margin-top: 1rem;
       font-size: 0.7rem;
       color: #ff8888;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
     }
-    .scroll-indicator i { animation: bounce 1.5s infinite; }
-    @keyframes bounce { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
     
-    /* SECCIÓN ARTISTA - AL FINAL */
+    /* ========== NUEVA SECCIÓN: MIS PROYECTOS ========== */
+    .projects-section {
+      background: rgba(10, 5, 5, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(255, 68, 68, 0.6);
+    }
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .project-card {
+      flex: 1;
+      min-width: 200px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 24px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid rgba(255, 68, 68, 0.3);
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: #cc0000;
+      background: rgba(204, 0, 0, 0.15);
+    }
+    .project-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(204, 0, 0, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem auto;
+      transition: all 0.3s;
+    }
+    .project-card:hover .project-icon {
+      background: #cc0000;
+      transform: scale(1.05);
+    }
+    .project-icon i { font-size: 2rem; color: #ff6666; transition: all 0.3s; }
+    .project-card:hover .project-icon i { color: white; }
+    .project-card h4 { color: white; font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700; }
+    .project-card p { color: #888; font-size: 0.75rem; line-height: 1.4; }
+    
+    /* SECCIÓN GALERÍA DE INCRIFE */
+    .gallery-section {
+      background: rgba(10, 5, 5, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(255, 68, 68, 0.6);
+      text-align: center;
+    }
+    .gallery-preview {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .gallery-preview img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 2px solid rgba(255, 68, 68, 0.4);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .gallery-preview img:hover {
+      transform: scale(1.05);
+      border-color: #cc0000;
+    }
+    .btn-gallery {
+      display: inline-block;
+      margin-top: 1rem;
+      background: rgba(204, 0, 0, 0.2);
+      border: 1px solid #cc0000;
+      border-radius: 40px;
+      padding: 0.6rem 1.5rem;
+      color: #ffaaaa;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-gallery:hover {
+      background: #cc0000;
+      color: white;
+    }
+    
+    /* SECCIÓN ARTISTA */
     .artist-section {
       background: linear-gradient(135deg, #120808, #080303);
       border-radius: 28px;
@@ -271,7 +349,7 @@
     .whatsapp-modern a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 18px; text-decoration: none; color: white; font-size: 2rem; transition: all 0.2s; }
     .whatsapp-modern a:hover { transform: scale(1.05); background: #20b359; }
     
-    @media (max-width: 768px) { .nav-links { display: none; } .menu-toggle { display: block; } .container { padding: 1.5rem 1rem; } .name { font-size: 1.8rem; } .review-card-horizontal { flex: 0 0 260px; } }
+    @media (max-width: 768px) { .nav-links { display: none; } .menu-toggle { display: block; } .container { padding: 1.5rem 1rem; } .name { font-size: 1.8rem; } .review-card-horizontal { flex: 0 0 260px; } .project-card { min-width: 160px; } }
   </style>
 </head>
 <body>
@@ -327,13 +405,57 @@
     <iframe style="border-radius:12px; width:100%; height:152px;" src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
-  <!-- PLATAFORMAS DE MÚSICA - DEBAJO DEL LANZAMIENTO -->
+  <!-- PLATAFORMAS DE MÚSICA -->
   <div class="music-platforms fade-up-item">
     <div class="platform-grid">
       <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="platform-btn"><i class="fab fa-spotify"></i> Spotify</a>
-      <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" class="platform-btn apple"><i class="fab fa-apple"></i> Apple Music</a>
-      <a href="https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife" target="_blank" class="platform-btn amazon"><i class="fab fa-amazon"></i> Amazon Music</a>
+      <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" class="platform-btn"><i class="fab fa-apple"></i> Apple Music</a>
+      <a href="https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife" target="_blank" class="platform-btn"><i class="fab fa-amazon"></i> Amazon Music</a>
     </div>
+  </div>
+
+  <!-- ========== NUEVA SECCIÓN: MIS PROYECTOS ========== -->
+  <div class="projects-section fade-up-item">
+    <div class="section-header-custom">
+      <i class="fas fa-briefcase"></i>
+      <h3>Mis Proyectos</h3>
+    </div>
+    <div class="projects-grid">
+      <!-- True Crime - Canal INCRIFED -->
+      <a href="https://www.youtube.com/@incrifed" target="_blank" class="project-card">
+        <div class="project-icon"><i class="fas fa-microphone-alt"></i></div>
+        <h4>INCRIFED · True Crime</h4>
+        <p>Canal de crímenes reales, reacciones y análisis. Nuevos videos cada miércoles y domingo.</p>
+      </a>
+      <!-- Videoclips - Canal INCRIFE -->
+      <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card">
+        <div class="project-icon"><i class="fas fa-video"></i></div>
+        <h4>Videoclips · INCRIFE</h4>
+        <p>Dirección y producción de videoclips. Mira mis últimos trabajos audiovisuales.</p>
+      </a>
+      <!-- Fotografía - Instagram -->
+      <a href="https://www.instagram.com/incrife/" target="_blank" class="project-card">
+        <div class="project-icon"><i class="fas fa-camera"></i></div>
+        <h4>Mis Fotos · INCRIFE</h4>
+        <p>Portfolio de fotografía profesional. Sesiones, retratos y fotografía urbana en Barcelona.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ========== NUEVA SECCIÓN: GALERÍA DE INCRIFE ========== -->
+  <div class="gallery-section fade-up-item">
+    <div class="section-header-custom" style="justify-content: center;">
+      <i class="fas fa-images"></i>
+      <h3>Galería · Detrás de cámaras</h3>
+    </div>
+    <div class="gallery-preview">
+      <img src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE perfil">
+      <img src="https://github.com/incrife/incrife/raw/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg" alt="INCRIFE sesión">
+      <img src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(56).png" alt="INCRIFED true crime">
+    </div>
+    <a href="https://www.instagram.com/incrife/" target="_blank" class="btn-gallery">
+      <i class="fab fa-instagram"></i> Ver más en Instagram
+    </a>
   </div>
 
   <div class="links-section fade-up-item">
@@ -348,52 +470,44 @@
     </a>
   </div>
 
-  <!-- SECCIÓN DE RESEÑAS - HORIZONTAL CON FOTOS Y ANIMACIÓN -->
+  <!-- SECCIÓN DE RESEÑAS -->
   <div class="reviews-section fade-up-item">
     <div class="section-header-custom">
       <i class="fas fa-star"></i>
       <h3>Lo que dicen mis clientes</h3>
     </div>
     <div class="reviews-scroll" id="reviewsScroll">
-      <div class="review-card-horizontal" style="animation-delay: 0s;">
+      <div class="review-card-horizontal">
         <div class="review-header">
           <img class="review-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
           <div class="review-info"><h4>Laura Martínez</h4><p>Artista musical</p></div>
         </div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-text">"INCRIFE capturó perfectamente la esencia de mi música. El videoclip superó todas mis expectativas. Muy profesional y creativo."</div>
+        <div class="review-text">"INCRIFE capturó perfectamente la esencia de mi música. El videoclip superó todas mis expectativas."</div>
       </div>
-      <div class="review-card-horizontal" style="animation-delay: 0.1s;">
+      <div class="review-card-horizontal">
         <div class="review-header">
           <img class="review-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
           <div class="review-info"><h4>Carlos Ruiz</h4><p>Modelo profesional</p></div>
         </div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Las fotos que me hizo son espectaculares. Muy atento a los detalles y con una mirada artística única. Repetiré sin duda."</div>
+        <div class="review-text">"Las fotos que me hizo son espectaculares. Muy atento a los detalles y con una mirada artística única."</div>
       </div>
-      <div class="review-card-horizontal" style="animation-delay: 0.2s;">
+      <div class="review-card-horizontal">
         <div class="review-header">
           <img class="review-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente">
           <div class="review-info"><h4>Sofia Crespo</h4><p>Productora musical</p></div>
         </div>
         <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Gran profesional, cumplió con los plazos y la calidad del trabajo es sobresaliente. Volveré a contar con él para mis proyectos."</div>
+        <div class="review-text">"Gran profesional, cumplió con los plazos y la calidad del trabajo es sobresaliente."</div>
       </div>
-      <div class="review-card-horizontal" style="animation-delay: 0.3s;">
+      <div class="review-card-horizontal">
         <div class="review-header">
           <img class="review-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Cliente">
           <div class="review-info"><h4>David Gómez</h4><p>Cantante</p></div>
         </div>
         <div class="review-stars">★★★★☆</div>
-        <div class="review-text">"Muy buen trato y resultados increíbles. Entendió lo que necesitaba y lo llevó a otro nivel. 100% recomendable."</div>
-      </div>
-      <div class="review-card-horizontal" style="animation-delay: 0.4s;">
-        <div class="review-header">
-          <img class="review-avatar" src="https://randomuser.me/api/portraits/women/23.jpg" alt="Cliente">
-          <div class="review-info"><h4>Elena Navarro</h4><p>Influencer</p></div>
-        </div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Las sesiones con INCRIFE son una experiencia increíble. Sabe cómo sacar lo mejor de cada persona. Las fotos son arte."</div>
+        <div class="review-text">"Muy buen trato y resultados increíbles. Entendió lo que necesitaba y lo llevó a otro nivel."</div>
       </div>
     </div>
     <div class="scroll-indicator">
@@ -401,13 +515,13 @@
     </div>
   </div>
 
-  <!-- SECCIÓN ARTISTA - MOVIDA AL FINAL -->
+  <!-- SECCIÓN ARTISTA -->
   <div class="artist-section fade-up-item">
     <h3 style="font-size:1.3rem; margin-bottom:0.5rem;">🎬 ¿Eres artista musical, modelo o necesitas contenido audiovisual?</h3>
     <p style="margin:0.5rem 0 1rem;">Soy fotógrafo profesional y director de videoclips en Barcelona. Colaboraciones para videoclips, sesiones fotográficas, producción audiovisual y proyectos creativos.</p>
     <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-      <a href="studio.html" class="btn-red" style="background:#cc0000; border:none; padding:0.7rem 1.5rem; border-radius:40px; color:white; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:0.5rem;"><i class="fas fa-headphones"></i> Mezcla & Master</a>
-      <a href="trabajaconnosotros.html" class="btn-outline" style="background:rgba(0,0,0,0.5); border:1px solid #ff5555; padding:0.7rem 1.5rem; border-radius:40px; color:#ffaaaa; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:0.5rem;"><i class="fas fa-users"></i> Únete al equipo</a>
+      <a href="studio.html" style="background:#cc0000; border:none; padding:0.7rem 1.5rem; border-radius:40px; color:white; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:0.5rem;"><i class="fas fa-headphones"></i> Mezcla & Master</a>
+      <a href="trabajaconnosotros.html" style="background:rgba(0,0,0,0.5); border:1px solid #ff5555; padding:0.7rem 1.5rem; border-radius:40px; color:#ffaaaa; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:0.5rem;"><i class="fas fa-users"></i> Únete al equipo</a>
     </div>
   </div>
 
@@ -429,13 +543,12 @@
   const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up-item').forEach(el => observer.observe(el));
   
-  // Schema mejorado para posicionar en Barcelona
   const schema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "INCRIFE",
     "alternateName": "Fotógrafo Barcelona",
-    "description": "Fotógrafo profesional y director de videoclips en Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips. Nacido en La Mina, Barcelona.",
+    "description": "Fotógrafo profesional y director de videoclips en Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips.",
     "url": "https://incrife.com",
     "telephone": "+34624170204",
     "email": "incrife@gmail.com",
@@ -444,7 +557,6 @@
       "@type": "PostalAddress",
       "addressLocality": "Barcelona",
       "addressRegion": "Barcelona",
-      "postalCode": "08001",
       "addressCountry": "ES"
     },
     "geo": {
@@ -452,40 +564,19 @@
       "latitude": "41.385063",
       "longitude": "2.173404"
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Barcelona"
-    },
-    "knowsAbout": ["Fotografía Profesional", "Videoclips", "Producción Audiovisual", "Filmmaking", "Fotografía Urbana", "Fotografía Editorial", "Retratos", "Mezcla y Master", "Fotografía de Producto"],
-    "serviceType": ["Fotografía Profesional", "Dirección de Videoclips", "Producción Audiovisual", "Filmmaking", "Sesiones Fotográficas"],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios Fotografía y Video Barcelona",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fotografía Profesional Barcelona" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Videoclips Barcelona" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Producción Audiovisual Barcelona" } }
-      ]
-    },
+    "areaServed": { "@type": "City", "name": "Barcelona" },
     "sameAs": [
       "https://www.instagram.com/incrife/",
       "https://www.youtube.com/@incrife",
       "https://www.tiktok.com/@incrife",
       "https://x.com/Incrife"
-    ],
-    "hasPart": {
-      "@type": "WebPage",
-      "name": "INCRIFED - True Crime Channel",
-      "url": "https://incrife.com/incrifed"
-    }
+    ]
   };
   document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(schema) }));
   
-  // Carrusel con scroll suave
   const scrollContainer = document.getElementById('reviewsScroll');
   let isDown = false;
-  let startX;
-  let scrollLeft;
+  let startX, scrollLeft;
   if (scrollContainer) {
     scrollContainer.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - scrollContainer.offsetLeft; scrollLeft = scrollContainer.scrollLeft; });
     scrollContainer.addEventListener('mouseleave', () => { isDown = false; });
