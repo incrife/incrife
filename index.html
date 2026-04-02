@@ -126,6 +126,97 @@
     .btn-outline { background: rgba(0,0,0,0.5); border: 1px solid #ff5555; padding: 0.7rem 1.5rem; border-radius: 40px; color: #ffaaaa; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
     .btn-outline:hover { background: #cc0000; color: white; }
     
+    /* NUEVA SECCIÓN: PLATAFORMAS MUSICALES */
+    .music-platforms {
+      background: rgba(10, 5, 5, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(255, 68, 68, 0.6);
+    }
+    .section-header-custom {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(255, 68, 68, 0.3);
+      padding-bottom: 0.8rem;
+    }
+    .section-header-custom i { font-size: 1.8rem; color: #1DB954; }
+    .section-header-custom h3 { font-size: 1.3rem; color: #fff; font-weight: 700; }
+    .platform-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .platform-btn {
+      background: #0a0a0a;
+      border: 1px solid rgba(255, 68, 68, 0.4);
+      border-radius: 40px;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      color: #ffaaaa;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+    }
+    .platform-btn:hover { background: #cc0000; color: white; border-color: #cc0000; transform: translateY(-2px); }
+    
+    /* NUEVA SECCIÓN: CONTENIDO RELEVANTE */
+    .content-tips {
+      background: rgba(10, 5, 5, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(255, 68, 68, 0.6);
+    }
+    .tips-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.8rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+    }
+    .tip-icon { font-size: 1.5rem; color: #ff6666; }
+    .tip-text h4 { color: #fff; font-size: 1rem; margin-bottom: 0.3rem; }
+    .tip-text p { color: #aaa; font-size: 0.8rem; line-height: 1.4; }
+    
+    /* NUEVA SECCIÓN: RESEÑAS */
+    .reviews-section {
+      background: rgba(10, 5, 5, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(255, 68, 68, 0.6);
+    }
+    .reviews-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .review-card {
+      background: rgba(0,0,0,0.4);
+      border-radius: 20px;
+      padding: 1.2rem;
+      border-left: 3px solid #cc0000;
+    }
+    .review-stars { color: #ffcc00; margin-bottom: 0.5rem; font-size: 0.8rem; letter-spacing: 2px; }
+    .review-text { color: #ddd; font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.5rem; font-style: italic; }
+    .review-author { color: #ff8888; font-size: 0.7rem; font-weight: 600; }
+    
     .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; }
     .social-circle { width: 52px; height: 52px; background: rgba(30, 15, 15, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.4rem; border: 1px solid rgba(255, 68, 68, 0.5); }
     .social-circle:hover { background: #cc0000; color: white; transform: translateY(-4px); }
@@ -207,6 +298,67 @@
     <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
       <a href="studio.html" class="btn-red"><i class="fas fa-headphones"></i> Mezcla & Master</a>
       <a href="trabajaconnosotros.html" class="btn-outline"><i class="fas fa-users"></i> Únete al equipo</a>
+    </div>
+  </div>
+
+  <!-- ========== NUEVA SECCIÓN: PLATAFORMAS DE MÚSICA ========== -->
+  <div class="music-platforms fade-up-item">
+    <div class="section-header-custom">
+      <i class="fab fa-spotify"></i>
+      <h3>Escucha mi música en plataformas</h3>
+    </div>
+    <div class="platform-grid">
+      <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="platform-btn"><i class="fab fa-spotify"></i> Spotify</a>
+      <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" class="platform-btn"><i class="fab fa-apple"></i> Apple Music</a>
+      <a href="https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife" target="_blank" class="platform-btn"><i class="fab fa-amazon"></i> Amazon Music</a>
+    </div>
+  </div>
+
+  <!-- ========== NUEVA SECCIÓN: CONTENIDO RELEVANTE Y CONSTANTE ========== -->
+  <div class="content-tips fade-up-item">
+    <div class="section-header-custom">
+      <i class="fas fa-chart-line"></i>
+      <h3>Contenido relevante y constante</h3>
+    </div>
+    <p style="color:#aaa; margin-bottom:1rem; font-size:0.85rem;">Publico artículos, videos y posts que responden a lo que mis clientes buscan. Cuanto más útil y actualizado es el contenido, más Google lo prioriza.</p>
+    <div class="tips-list">
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-camera"></i></div>
+        <div class="tip-text"><h4>Tutoriales de fotografía</h4><p>Aprende técnicas profesionales, composición, iluminación y edición.</p></div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-video"></i></div>
+        <div class="tip-text"><h4>Casos de estudio de proyectos</h4><p>Descubre cómo se hacen videoclips y sesiones profesionales.</p></div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon"><i class="fas fa-microphone-alt"></i></div>
+        <div class="tip-text"><h4>Tips de producción audiovisual</h4><p>Consejos prácticos para grabar, editar y producir contenido de calidad.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NUEVA SECCIÓN: RESEÑAS / TESTIMONIOS ========== -->
+  <div class="reviews-section fade-up-item">
+    <div class="section-header-custom">
+      <i class="fas fa-star"></i>
+      <h3>Lo que dicen mis clientes</h3>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"INCRIFE es un profesional increíble. Capturó exactamente la esencia que buscaba para mi videoclip. Muy recomendable."</div>
+        <div class="review-author">— Artista musical, Barcelona</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Las fotos que me hizo son espectaculares. Muy creativo y atento a los detalles. Sin duda repetiré."</div>
+        <div class="review-author">— Modelo profesional</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <div class="review-text">"Gran profesional, cumplió con los plazos y la calidad del trabajo es sobresaliente. Volveré a contar con él."</div>
+        <div class="review-author">— Productor musical</div>
+      </div>
     </div>
   </div>
 
