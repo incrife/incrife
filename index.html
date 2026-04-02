@@ -91,7 +91,7 @@
     @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
     @keyframes moveBlur2 { 0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; } 100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; } }
     
-    .container { max-width: 780px; width: 100%; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
+    .container { max-width: 880px; width: 100%; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
     .fade-up-item { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease; }
     .fade-up-item.visible { opacity: 1; transform: translateY(0); }
     
@@ -112,28 +112,36 @@
     .bio-tag { background: rgba(255, 68, 68, 0.2); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.7rem; font-weight: 600; color: #ffaaaa; border: 0.5px solid rgba(255, 68, 68, 0.4); transition: all 0.3s; }
     .bio-tag:hover { background: rgba(255, 68, 68, 0.4); transform: translateY(-2px); }
     
-    .release-spotify-pro { background: linear-gradient(115deg, rgba(18, 8, 8, 0.95), rgba(35, 12, 12, 0.98)); border-radius: 32px; padding: 1.2rem 1.5rem 1.5rem; margin: 1.5rem 0; border: 1px solid #ff4d4d; }
-    .release-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; }
+    /* SECCIÓN ÚLTIMO LANZAMIENTO UNIFICADA (como Jordi Wild) */
+    .release-unified {
+      background: linear-gradient(115deg, rgba(18, 8, 8, 0.95), rgba(35, 12, 12, 0.98));
+      border-radius: 32px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #ff4d4d;
+    }
+    .release-header {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 68, 68, 0.3);
+      padding-bottom: 0.8rem;
+    }
     .release-header i { font-size: 1.8rem; color: #1DB954; }
     .release-header h3 { font-size: 1.3rem; font-weight: 800; background: linear-gradient(120deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; }
     
-    /* PLATAFORMAS MUSICALES */
-    .music-platforms {
-      background: rgba(10, 5, 5, 0.6);
-      backdrop-filter: blur(12px);
-      border-radius: 24px;
-      padding: 1rem 1.2rem;
-      margin: -0.8rem 0 1.5rem 0;
-      border: 1px solid rgba(255, 68, 68, 0.4);
-    }
-    .platform-grid {
+    .platforms-inline {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem;
+      gap: 1rem;
       justify-content: center;
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 68, 68, 0.3);
     }
-    .platform-btn {
-      background: #0a0a0a;
+    .platform-badge {
+      background: rgba(10, 5, 5, 0.6);
       border: 1px solid rgba(255, 68, 68, 0.4);
       border-radius: 40px;
       padding: 0.5rem 1.2rem;
@@ -146,7 +154,121 @@
       gap: 0.5rem;
       transition: all 0.3s;
     }
-    .platform-btn:hover { background: #1DB954; color: white; border-color: #1DB954; transform: translateY(-2px); }
+    .platform-badge:hover { background: #1DB954; color: white; border-color: #1DB954; transform: translateY(-2px); }
+    .platform-badge.apple:hover { background: #f94f4f; }
+    .platform-badge.amazon:hover { background: #ff9900; }
+    
+    /* SECCIÓN MIS PROYECTOS - ESTILO PRO (como Jordi Wild) */
+    .projects-section-pro {
+      background: rgba(10, 5, 5, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 32px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      border: 1px solid rgba(255, 68, 68, 0.6);
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid rgba(255, 68, 68, 0.3);
+      padding-bottom: 0.8rem;
+    }
+    .section-title i { font-size: 1.8rem; color: #cc0000; }
+    .section-title h2 { font-size: 1.5rem; color: #fff; font-weight: 800; font-family: 'Montserrat', sans-serif; }
+    .section-title span { color: #ff8888; font-size: 0.8rem; margin-left: auto; }
+    
+    .projects-grid-pro {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .project-card-pro {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 24px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 68, 68, 0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card-pro:hover {
+      border-color: #cc0000;
+      background: rgba(204, 0, 0, 0.08);
+      transform: translateX(8px);
+    }
+    .project-icon-pro {
+      width: 70px;
+      height: 70px;
+      background: rgba(204, 0, 0, 0.15);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .project-icon-pro i { font-size: 2rem; color: #cc0000; }
+    .project-info-pro {
+      flex: 1;
+    }
+    .project-info-pro h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.3rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .project-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.7rem;
+      color: #ff8888;
+    }
+    .project-meta i { margin-right: 0.3rem; }
+    .project-info-pro p {
+      color: #aaa;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+    }
+    .project-link {
+      color: #ff6666;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .project-card-pro:hover .project-link { color: white; gap: 0.5rem; }
+    
+    /* ESTADÍSTICAS SOCIALES */
+    .stats-social {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .stat-card {
+      background: rgba(10, 5, 5, 0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 1rem 2rem;
+      text-align: center;
+      border: 1px solid rgba(255, 68, 68, 0.4);
+      transition: all 0.3s;
+    }
+    .stat-card:hover { transform: translateY(-3px); border-color: #cc0000; }
+    .stat-card i { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+    .stat-card.ig i { color: #e4405f; }
+    .stat-card.yt i { color: #ff0000; }
+    .stat-number { font-size: 1.5rem; font-weight: 800; color: #fff; font-family: 'Montserrat', sans-serif; }
+    .stat-label { font-size: 0.7rem; color: #ff8888; margin-top: 0.3rem; }
     
     .links-section { margin: 1.8rem 0; }
     .link-item { background: rgba(15, 8, 8, 0.8); backdrop-filter: blur(12px); border-radius: 20px; padding: 1rem 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: #f0f0f0; border: 1px solid rgba(255, 68, 68, 0.3); transition: all 0.3s; }
@@ -155,7 +277,7 @@
     .link-left i { width: 30px; font-size: 1.3rem; color: #ff6666; }
     .link-text { font-weight: 600; font-size: 0.95rem; }
     
-    /* SECCIÓN DE RESEÑAS */
+    /* RESEÑAS */
     .reviews-section {
       background: rgba(10, 5, 5, 0.75);
       backdrop-filter: blur(16px);
@@ -176,7 +298,6 @@
     .section-header-custom i { font-size: 1.6rem; color: #ffcc00; }
     .section-header-custom h3 { font-size: 1.2rem; color: #fff; font-weight: 700; }
     
-    /* Carrusel horizontal */
     .reviews-scroll {
       display: flex;
       gap: 1.2rem;
@@ -232,105 +353,6 @@
       color: #ff8888;
     }
     
-    /* ========== NUEVA SECCIÓN: MIS PROYECTOS ========== */
-    .projects-section {
-      background: rgba(10, 5, 5, 0.75);
-      backdrop-filter: blur(16px);
-      border-radius: 28px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      border: 1px solid rgba(255, 68, 68, 0.6);
-    }
-    .projects-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .project-card {
-      flex: 1;
-      min-width: 200px;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 24px;
-      padding: 1.5rem 1rem;
-      text-align: center;
-      text-decoration: none;
-      border: 1px solid rgba(255, 68, 68, 0.3);
-      transition: all 0.3s ease;
-    }
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: #cc0000;
-      background: rgba(204, 0, 0, 0.15);
-    }
-    .project-icon {
-      width: 70px;
-      height: 70px;
-      background: rgba(204, 0, 0, 0.2);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem auto;
-      transition: all 0.3s;
-    }
-    .project-card:hover .project-icon {
-      background: #cc0000;
-      transform: scale(1.05);
-    }
-    .project-icon i { font-size: 2rem; color: #ff6666; transition: all 0.3s; }
-    .project-card:hover .project-icon i { color: white; }
-    .project-card h4 { color: white; font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700; }
-    .project-card p { color: #888; font-size: 0.75rem; line-height: 1.4; }
-    
-    /* SECCIÓN GALERÍA DE INCRIFE */
-    .gallery-section {
-      background: rgba(10, 5, 5, 0.75);
-      backdrop-filter: blur(16px);
-      border-radius: 28px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      border: 1px solid rgba(255, 68, 68, 0.6);
-      text-align: center;
-    }
-    .gallery-preview {
-      display: flex;
-      gap: 0.8rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-    .gallery-preview img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 2px solid rgba(255, 68, 68, 0.4);
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-    .gallery-preview img:hover {
-      transform: scale(1.05);
-      border-color: #cc0000;
-    }
-    .btn-gallery {
-      display: inline-block;
-      margin-top: 1rem;
-      background: rgba(204, 0, 0, 0.2);
-      border: 1px solid #cc0000;
-      border-radius: 40px;
-      padding: 0.6rem 1.5rem;
-      color: #ffaaaa;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-    .btn-gallery:hover {
-      background: #cc0000;
-      color: white;
-    }
-    
     /* SECCIÓN ARTISTA */
     .artist-section {
       background: linear-gradient(135deg, #120808, #080303);
@@ -349,7 +371,15 @@
     .whatsapp-modern a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 18px; text-decoration: none; color: white; font-size: 2rem; transition: all 0.2s; }
     .whatsapp-modern a:hover { transform: scale(1.05); background: #20b359; }
     
-    @media (max-width: 768px) { .nav-links { display: none; } .menu-toggle { display: block; } .container { padding: 1.5rem 1rem; } .name { font-size: 1.8rem; } .review-card-horizontal { flex: 0 0 260px; } .project-card { min-width: 160px; } }
+    @media (max-width: 768px) { 
+      .nav-links { display: none; } 
+      .menu-toggle { display: block; } 
+      .container { padding: 1.5rem 1rem; } 
+      .name { font-size: 1.8rem; }
+      .review-card-horizontal { flex: 0 0 260px; }
+      .project-card-pro { flex-direction: column; align-items: flex-start; }
+      .project-icon-pro { width: 50px; height: 50px; }
+    }
   </style>
 </head>
 <body>
@@ -400,62 +430,82 @@
     </div>
   </div>
 
-  <div class="release-spotify-pro fade-up-item">
-    <div class="release-header"><i class="fab fa-spotify"></i><h3>ÚLTIMO LANZAMIENTO · Producción Audiovisual</h3></div>
+  <!-- SECCIÓN ÚLTIMO LANZAMIENTO UNIFICADA (Spotify + Apple + Amazon juntos) -->
+  <div class="release-unified fade-up-item">
+    <div class="release-header">
+      <i class="fab fa-spotify"></i>
+      <h3>ÚLTIMO LANZAMIENTO · Producción Audiovisual</h3>
+    </div>
     <iframe style="border-radius:12px; width:100%; height:152px;" src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
-
-  <!-- PLATAFORMAS DE MÚSICA -->
-  <div class="music-platforms fade-up-item">
-    <div class="platform-grid">
-      <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="platform-btn"><i class="fab fa-spotify"></i> Spotify</a>
-      <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" class="platform-btn"><i class="fab fa-apple"></i> Apple Music</a>
-      <a href="https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife" target="_blank" class="platform-btn"><i class="fab fa-amazon"></i> Amazon Music</a>
+    <div class="platforms-inline">
+      <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="platform-badge"><i class="fab fa-spotify"></i> Spotify</a>
+      <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" class="platform-badge apple"><i class="fab fa-apple"></i> Apple Music</a>
+      <a href="https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife" target="_blank" class="platform-badge amazon"><i class="fab fa-amazon"></i> Amazon Music</a>
     </div>
   </div>
 
-  <!-- ========== NUEVA SECCIÓN: MIS PROYECTOS ========== -->
-  <div class="projects-section fade-up-item">
-    <div class="section-header-custom">
+  <!-- SECCIÓN MIS PROYECTOS - ESTILO PRO (como Jordi Wild) -->
+  <div class="projects-section-pro fade-up-item">
+    <div class="section-title">
       <i class="fas fa-briefcase"></i>
-      <h3>Mis Proyectos</h3>
+      <h2>MIS PROYECTOS</h2>
+      <span>+3 proyectos activos</span>
     </div>
-    <div class="projects-grid">
-      <!-- True Crime - Canal INCRIFED -->
-      <a href="https://www.youtube.com/@incrifed" target="_blank" class="project-card">
-        <div class="project-icon"><i class="fas fa-microphone-alt"></i></div>
-        <h4>INCRIFED · True Crime</h4>
-        <p>Canal de crímenes reales, reacciones y análisis. Nuevos videos cada miércoles y domingo.</p>
+    <div class="projects-grid-pro">
+      <!-- Proyecto 1: INCRIFED True Crime -->
+      <a href="https://www.youtube.com/@incrifed" target="_blank" class="project-card-pro">
+        <div class="project-icon-pro"><i class="fas fa-microphone-alt"></i></div>
+        <div class="project-info-pro">
+          <h3>INCRIFED · True Crime</h3>
+          <div class="project-meta">
+            <span><i class="far fa-calendar-alt"></i> Fundado en 2025</span>
+            <span><i class="fas fa-video"></i> +30 videos</span>
+          </div>
+          <p>Canal de crímenes reales, reacciones y análisis en profundidad. Historias impactantes con un toque humano. Nuevos videos cada miércoles y domingo.</p>
+          <span class="project-link">Ver canal <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
-      <!-- Videoclips - Canal INCRIFE -->
-      <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card">
-        <div class="project-icon"><i class="fas fa-video"></i></div>
-        <h4>Videoclips · INCRIFE</h4>
-        <p>Dirección y producción de videoclips. Mira mis últimos trabajos audiovisuales.</p>
+      <!-- Proyecto 2: Videoclips INCRIFE -->
+      <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card-pro">
+        <div class="project-icon-pro"><i class="fas fa-video"></i></div>
+        <div class="project-info-pro">
+          <h3>Videoclips · INCRIFE</h3>
+          <div class="project-meta">
+            <span><i class="far fa-calendar-alt"></i> Fundado en 2024</span>
+            <span><i class="fas fa-music"></i> +10 videoclips</span>
+          </div>
+          <p>Dirección y producción de videoclips para artistas. Creación de narrativas visuales únicas que capturan la esencia de cada canción.</p>
+          <span class="project-link">Ver videoclips <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
-      <!-- Fotografía - Instagram -->
-      <a href="https://www.instagram.com/incrife/" target="_blank" class="project-card">
-        <div class="project-icon"><i class="fas fa-camera"></i></div>
-        <h4>Mis Fotos · INCRIFE</h4>
-        <p>Portfolio de fotografía profesional. Sesiones, retratos y fotografía urbana en Barcelona.</p>
+      <!-- Proyecto 3: Fotografía INCRIFE -->
+      <a href="https://www.instagram.com/incrife/" target="_blank" class="project-card-pro">
+        <div class="project-icon-pro"><i class="fas fa-camera"></i></div>
+        <div class="project-info-pro">
+          <h3>Fotografía · INCRIFE</h3>
+          <div class="project-meta">
+            <span><i class="far fa-calendar-alt"></i> Fundado en 2023</span>
+            <span><i class="fas fa-images"></i> +50 sesiones</span>
+          </div>
+          <p>Fotógrafo profesional en Barcelona. Especialista en retratos, fotografía urbana, editorial y sesiones creativas. Estética única y personal.</p>
+          <span class="project-link">Ver portfolio <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
     </div>
   </div>
 
-  <!-- ========== NUEVA SECCIÓN: GALERÍA DE INCRIFE ========== -->
-  <div class="gallery-section fade-up-item">
-    <div class="section-header-custom" style="justify-content: center;">
-      <i class="fas fa-images"></i>
-      <h3>Galería · Detrás de cámaras</h3>
+  <!-- ESTADÍSTICAS SOCIALES -->
+  <div class="stats-social fade-up-item">
+    <div class="stat-card ig">
+      <i class="fab fa-instagram"></i>
+      <div class="stat-number">+12.5K</div>
+      <div class="stat-label">SEGUIDORES · Instagram</div>
     </div>
-    <div class="gallery-preview">
-      <img src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE perfil">
-      <img src="https://github.com/incrife/incrife/raw/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg" alt="INCRIFE sesión">
-      <img src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(56).png" alt="INCRIFED true crime">
+    <div class="stat-card yt">
+      <i class="fab fa-youtube"></i>
+      <div class="stat-number">+1.2K</div>
+      <div class="stat-label">SUSCRIPTORES · YouTube</div>
     </div>
-    <a href="https://www.instagram.com/incrife/" target="_blank" class="btn-gallery">
-      <i class="fab fa-instagram"></i> Ver más en Instagram
-    </a>
   </div>
 
   <div class="links-section fade-up-item">
@@ -470,7 +520,7 @@
     </a>
   </div>
 
-  <!-- SECCIÓN DE RESEÑAS -->
+  <!-- RESEÑAS -->
   <div class="reviews-section fade-up-item">
     <div class="section-header-custom">
       <i class="fas fa-star"></i>
