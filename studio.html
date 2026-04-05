@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>INCRIFE Studio | Mezcla y Masterización Profesional · Barcelona</title>
-  <meta name="description" content="Servicios profesionales de mezcla y masterización con INCRIFE Studio. Lleva tu música al siguiente nivel. Calidad de estudio, atención personalizada y resultados profesionales.">
-  <meta name="keywords" content="mezcla de audio barcelona, masterización profesional, estudio de grabación barcelona, mezcla y master, ingeniero de sonido barcelona, producción musical barcelona">
+  <title>INCRIFE Studio | Mezcla y Masterización Profesional · Sant Adrià del Besòs</title>
+  <meta name="description" content="Servicios profesionales de mezcla y masterización con INCRIFE Studio en Sant Adrià del Besòs. Lleva tu música al siguiente nivel. Calidad de estudio, atención personalizada y resultados profesionales.">
+  <meta name="keywords" content="mezcla de audio barcelona, masterización profesional, estudio de grabación sant adrià del besòs, mezcla y master, ingeniero de sonido barcelona, producción musical barcelona">
   <meta name="author" content="INCRIFE Studio">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://incrife.com/studio.html">
@@ -87,6 +87,22 @@
     .btn-outline-white { background: rgba(0,0,0,0.5); border: 1px solid #ff5555; padding: 0.7rem 1.5rem; border-radius: 40px; color: #ffaaaa; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; margin-left: 0.8rem; transition: all 0.2s; }
     .btn-outline-white:hover { background: #cc0000; color: white; border-color: #cc0000; }
     
+    /* Ubicación destacada */
+    .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #ffaaaa;
+      border: 1px solid #ff4444;
+      margin-bottom: 1rem;
+    }
+    .location-badge i { color: #ff5555; }
+    
     /* Redes sociales y footer */
     .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; }
     .social-circle { width: 52px; height: 52px; background: rgba(30, 15, 15, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.4rem; transition: all 0.25s ease; border: 1px solid rgba(255, 68, 68, 0.5); }
@@ -95,6 +111,22 @@
     .whatsapp-fixed { position: fixed; bottom: 24px; right: 24px; z-index: 1000; }
     .whatsapp-fixed a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 18px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); text-decoration: none; color: white; font-size: 2rem; transition: all 0.2s; }
     .whatsapp-fixed a:hover { transform: scale(1.05); }
+    
+    /* Reproductor de YouTube elegante */
+    .yt-showcase {
+      margin: 2rem 0;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(204,0,0,0.4);
+      transition: all 0.3s ease;
+    }
+    .yt-showcase:hover { border-color: #ff5555; transform: scale(1.01); }
+    .yt-showcase iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
     
     @media (max-width: 768px) { .nav-links { display: none; } .menu-toggle { display: block; } .container { padding: 1.5rem 1rem; } .hero-studio h1 { font-size: 2rem; } .steps { flex-direction: column; } .btn-outline-white { margin-left: 0; margin-top: 0.8rem; } }
   </style>
@@ -134,8 +166,11 @@
 <div class="container">
   
   <div class="hero-studio fade-up-item">
+    <div class="location-badge">
+      <i class="fas fa-map-marker-alt"></i> Sant Adrià del Besòs · Barcelona
+    </div>
     <h1><i class="fas fa-headphones"></i> INCRIFE Studio</h1>
-    <p>Mezcla y masterización profesional. Lleva tu música al siguiente nivel con un sonido de estudio.</p>
+    <p>Mezcla y masterización profesional en Sant Adrià del Besòs. Lleva tu música al siguiente nivel con un sonido de estudio.</p>
   </div>
   
   <div class="services-grid fade-up-item">
@@ -160,6 +195,11 @@
       <p>Mezcla + Masterización + Revisiones. El servicio completo para un lanzamiento profesional.</p>
       <a href="contacto.html" class="btn-service">Solicitar <i class="fas fa-arrow-right"></i></a>
     </div>
+  </div>
+  
+  <!-- Video showcase de YouTube -->
+  <div class="yt-showcase fade-up-item">
+    <iframe src="https://www.youtube.com/embed/Du64WQoyopE" title="INCRIFE Studio Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </div>
   
   <div class="process-section fade-up-item">
@@ -187,7 +227,7 @@
     <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
     <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
   </div>
-  <div class="footer-modern fade-up-item">INCRIFE Studio · Mezcla y Masterización Profesional · Barcelona<br>© 2026 · Lleva tu música al siguiente nivel</div>
+  <div class="footer-modern fade-up-item">INCRIFE Studio · Mezcla y Masterización Profesional · Sant Adrià del Besòs (Barcelona)<br>© 2026 · Lleva tu música al siguiente nivel</div>
 </div>
 </div>
 
