@@ -3,46 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>INCRIFE Studio | Mezcla, Master y Grabación Profesional · Estudio Musical Barcelona</title>
+  <title>INCRIFE · AKA STUDIO | Mezcla, Master y Grabación Profesional · Barcelona</title>
   
   <!-- ========== SEO PRINCIPAL - ULTRA OPTIMIZADO ========== -->
-  <meta name="description" content="INCRIFE Studio: Servicios profesionales de mezcla, master y grabación. Colaboración con AKA Studio. Equipo premium: Neumann TL103, Apollo Solo, SSL2+. Lleva tu música al siguiente nivel.">
-  <meta name="keywords" content="estudio grabacion barcelona, mezcla y master barcelona, estudio musical barcelona, aka studio barcelona, neumann tl103, apollo solo, ssl2, grabacion profesional barcelona">
-  <meta name="author" content="INCRIFE Studio">
+  <meta name="description" content="INCRIFE · AKA STUDIO: Estudio de mezcla, master y grabación profesional en Barcelona. Colaboración oficial. Equipo premium: Neumann TL103, Apollo Solo, SSL2+. Escucha nuestros proyectos.">
+  <meta name="keywords" content="aka studio barcelona, incrife studio, mezcla y master barcelona, estudio grabacion barcelona, neumann tl103, apollo solo, ssl2, masterización profesional, grabación de audio barcelona">
+  <meta name="author" content="INCRIFE · AKA STUDIO">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
   <meta name="bingbot" content="index, follow">
   
-  <!-- ========== CANONICAL - FORZAR INDEPENDENCIA ========== -->
+  <!-- ========== CANONICAL ========== -->
   <link rel="canonical" href="https://incrife.com/studio.html">
   
   <!-- ========== ETIQUETAS PARA INDICAR QUE ES PÁGINA INDEPENDIENTE ========== -->
   <meta name="page-type" content="service-page">
-  <meta name="content-topic" content="audio-production-studio">
-  <meta name="business-section" content="mezcla-master-grabacion">
-  <meta name="distinct-content" content="studio-audio-production">
-  <meta name="purpose" content="servicios-de-estudio-musical">
+  <meta name="content-topic" content="audio-production-studio-collaboration">
+  <meta name="business-section" content="mezcla-master-grabacion-aka">
+  <meta name="distinct-content" content="aka-studio-collaboration">
   
   <!-- ========== GEO LOCALIZATION ========== -->
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Sant Adrià del Besòs">
   <meta name="geo.position" content="41.430633;2.218233">
   <meta name="ICBM" content="41.430633, 2.218233">
+  <meta name="city" content="Sant Adrià del Besòs">
+  <meta name="language" content="Spanish">
   
   <!-- ========== OPEN GRAPH ========== -->
-  <meta property="og:title" content="INCRIFE Studio | Mezcla, Master y Grabación Profesional">
-  <meta property="og:description" content="Estudio de mezcla, master y grabación. Colaboración con AKA Studio. Equipo premium disponible.">
+  <meta property="og:title" content="INCRIFE · AKA STUDIO | Mezcla, Master y Grabación Profesional">
+  <meta property="og:description" content="Estudio de mezcla, master y grabación. Colaboración oficial INCRIFE + AKA STUDIO. Equipo premium. Escucha nuestros proyectos.">
   <meta property="og:url" content="https://incrife.com/studio.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="INCRIFE Studio">
+  <meta property="og:site_name" content="INCRIFE · AKA STUDIO">
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="INCRIFE Studio | Mezcla, Master y Grabación">
-  <meta name="twitter:description" content="Servicios profesionales de audio. Equipo premium y colaboración con AKA Studio.">
+  <meta name="twitter:title" content="INCRIFE · AKA STUDIO | Mezcla, Master y Grabación">
+  <meta name="twitter:description" content="Servicios profesionales de audio. Colaboración oficial. Equipo premium.">
   <meta name="twitter:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   
   <meta name="theme-color" content="#cc0000">
@@ -54,15 +55,56 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; overflow-x: hidden; }
     
-    /* Fondo morado */
+    /* ========== FONDO CON LETRAS EN MOVIMIENTO (EFECTO AUTOBÚS) ========== */
     .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
     .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #7B2D8E, #3D1A4A, #1A0A1F); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
     .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #9B4DCA, #5E2A7A, #2E1A3A); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
-    .bg-grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E'); pointer-events: none; z-index: 1; opacity: 0.4; }
+    
+    /* Textos flotantes en movimiento diagonal (efecto autobús) */
+    .floating-texts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .float-item {
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 4rem;
+      white-space: nowrap;
+      opacity: 0.08;
+      animation: floatDiagonal linear infinite;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+    .float-item i { margin-right: 0.5rem; }
+    .float-item.aka { color: #ff5555; text-shadow: 0 0 15px rgba(255,85,85,0.5); }
+    .float-item.incrife { color: #c97bff; text-shadow: 0 0 15px rgba(201,123,255,0.5); }
+    
+    @keyframes floatDiagonal {
+      0% { transform: translateX(-20%) translateY(-20%) rotate(15deg); }
+      100% { transform: translateX(120%) translateY(120%) rotate(15deg); }
+    }
+    
+    /* Diferentes velocidades y posiciones */
+    .float-item:nth-child(1) { top: 10%; left: -20%; animation-duration: 25s; font-size: 5rem; }
+    .float-item:nth-child(2) { top: 40%; left: -30%; animation-duration: 35s; font-size: 3rem; animation-delay: -5s; }
+    .float-item:nth-child(3) { top: 70%; left: -10%; animation-duration: 28s; font-size: 4.5rem; animation-delay: -10s; }
+    .float-item:nth-child(4) { top: 20%; left: -40%; animation-duration: 40s; font-size: 3.5rem; animation-delay: -15s; }
+    .float-item:nth-child(5) { top: 85%; left: -25%; animation-duration: 30s; font-size: 6rem; animation-delay: -3s; }
+    .float-item:nth-child(6) { top: 55%; left: -15%; animation-duration: 32s; font-size: 2.8rem; animation-delay: -20s; }
+    
+    .bg-grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E'); pointer-events: none; z-index: 2; opacity: 0.4; }
+    
     @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
     @keyframes moveBlur2 { 0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; } 100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; } }
     
-    /* Menú superior (rojo como antes, sin cambios) */
+    /* Menú superior */
     .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(10,5,5,0.95); backdrop-filter: blur(12px); z-index: 1000; padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); }
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .logo a { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff6666); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; font-family: 'Montserrat', sans-serif; }
@@ -71,7 +113,6 @@
     .nav-links a:hover, .nav-links a.active { color: #ff5555; }
     .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
     
-    /* Menú lateral móvil */
     .side-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #0f0808; z-index: 1001; transition: right 0.3s ease; padding: 2rem; border-left: 1px solid #ff4444; }
     .side-menu.open { right: 0; }
     .side-menu .close-menu { background: none; border: none; color: white; font-size: 1.5rem; float: right; cursor: pointer; margin-bottom: 2rem; }
@@ -79,57 +120,20 @@
     .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: none; }
     .overlay.active { display: block; }
     
-    .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; }
+    .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; position: relative; z-index: 10; }
     @keyframes entranceSpin { 0% { opacity: 0; transform: perspective(800px) rotateY(90deg) scale(0.95); filter: blur(8px); } 100% { opacity: 1; transform: perspective(800px) rotateY(0deg) scale(1); filter: blur(0); } }
     
-    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 20; }
     .fade-up-item { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease; }
     .fade-up-item.visible { opacity: 1; transform: translateY(0); }
     
     /* Hero con foto de fondo */
-    .hero-studio {
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
-      border-radius: 32px;
-      overflow: hidden;
-    }
-    .hero-bg-img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-      display: block;
-      filter: brightness(0.5);
-      transition: all 0.5s ease;
-    }
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.5);
-    }
-    .hero-studio h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #fff, #ff8888);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 0.5rem;
-    }
-    .hero-studio p {
-      color: #ffdddd;
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1rem;
-    }
+    .hero-studio { text-align: center; margin-bottom: 2rem; position: relative; border-radius: 32px; overflow: hidden; }
+    .hero-bg-img { width: 100%; height: 350px; object-fit: cover; display: block; filter: brightness(0.5); transition: all 0.5s ease; }
+    .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); }
+    .hero-studio h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
+    .hero-studio p { color: #ffdddd; max-width: 600px; margin: 0 auto; font-size: 1rem; }
+    .hero-badge { display: inline-block; background: rgba(255,85,85,0.2); backdrop-filter: blur(4px); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; color: #ff8888; border: 1px solid #ff5555; margin-bottom: 1rem; }
     
     /* Tarjetas de servicios */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin: 2rem 0; }
@@ -145,157 +149,53 @@
     .btn-service:hover { background: #cc0000; color: white; border-color: #cc0000; }
     
     /* Equipo del estudio */
-    .studio-gear {
-      background: #0a0505;
-      border-radius: 32px;
-      padding: 2rem;
-      margin: 2rem 0;
-      border: 1px solid rgba(204,0,0,0.4);
-    }
-    .studio-gear h2 {
-      font-size: 1.6rem;
-      color: #ff8888;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .gear-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .gear-item {
-      background: #111111;
-      padding: 0.8rem;
-      border-radius: 20px;
-      text-align: center;
-      border: 1px solid rgba(204,0,0,0.2);
-      transition: all 0.3s;
-    }
+    .studio-gear { background: #0a0505; border-radius: 32px; padding: 2rem; margin: 2rem 0; border: 1px solid rgba(204,0,0,0.4); }
+    .studio-gear h2 { font-size: 1.6rem; color: #ff8888; margin-bottom: 1.5rem; text-align: center; font-family: 'Montserrat', sans-serif; }
+    .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .gear-item { background: #111111; padding: 0.8rem; border-radius: 20px; text-align: center; border: 1px solid rgba(204,0,0,0.2); transition: all 0.3s; }
     .gear-item:hover { border-color: #ff5555; transform: translateY(-3px); }
     .gear-item i { font-size: 1.5rem; color: #ff5555; margin-bottom: 0.5rem; display: block; }
     .gear-item h4 { color: #ffaa88; font-size: 0.9rem; margin-bottom: 0.2rem; }
     .gear-item p { color: #886666; font-size: 0.7rem; }
     
-    /* Colaboración AKA Studio - MÁS DESTACADA */
-    .collab-section {
-      background: linear-gradient(135deg, #1a0a0a, #0f0505);
-      border-radius: 28px;
-      padding: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-      border: 2px solid #ff5555;
-      position: relative;
-      overflow: hidden;
-    }
-    .collab-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,85,85,0.2), transparent);
-      animation: shine 3s infinite;
-    }
-    @keyframes shine {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
+    /* Colaboración AKA Studio */
+    .collab-section { background: linear-gradient(135deg, #1a0a0a, #0f0505); border-radius: 28px; padding: 2rem; margin: 2rem 0; text-align: center; border: 2px solid #ff5555; position: relative; overflow: hidden; }
+    .collab-section::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,85,85,0.2), transparent); animation: shine 3s infinite; }
+    @keyframes shine { 0% { left: -100%; } 100% { left: 100%; } }
     .collab-section h3 { color: #ff5555; font-size: 1.5rem; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
     .collab-section p { color: #ddcccc; font-size: 0.9rem; max-width: 500px; margin: 0 auto 1rem auto; }
-    .collab-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: #ff5555;
-      color: white;
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      font-size: 0.7rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    .collab-btn {
-      background: rgba(0,0,0,0.5);
-      border: 1px solid #ff5555;
-      padding: 0.6rem 1.5rem;
-      border-radius: 40px;
-      color: #ffaaaa;
-      text-decoration: none;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: all 0.3s;
-    }
+    .collab-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #ff5555; color: white; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.7rem; font-weight: bold; margin-bottom: 1rem; }
+    .collab-btn { background: rgba(0,0,0,0.5); border: 1px solid #ff5555; padding: 0.6rem 1.5rem; border-radius: 40px; color: #ffaaaa; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; }
     .collab-btn:hover { background: #cc0000; color: white; border-color: #cc0000; transform: scale(1.02); }
     
     /* Proyecto destacado */
-    .featured-project {
-      background: #0a0505;
-      border-radius: 32px;
-      padding: 1.5rem;
-      margin: 2rem 0;
-      border: 1px solid rgba(204,0,0,0.4);
-    }
-    .featured-project h2 {
-      font-size: 1.5rem;
-      color: #ff8888;
-      margin-bottom: 1rem;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-    }
-    .project-card-video {
-      background: #111111;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(204,0,0,0.3);
-    }
-    .project-video {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-    }
-    .project-video iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    .project-info {
-      padding: 1rem;
-      text-align: center;
-    }
+    .featured-project { background: #0a0505; border-radius: 32px; padding: 1.5rem; margin: 2rem 0; border: 1px solid rgba(204,0,0,0.4); }
+    .featured-project h2 { font-size: 1.5rem; color: #ff8888; margin-bottom: 1rem; text-align: center; font-family: 'Montserrat', sans-serif; }
+    .project-card-video { background: #111111; border-radius: 24px; overflow: hidden; border: 1px solid rgba(204,0,0,0.3); }
+    .project-video { position: relative; padding-bottom: 56.25%; height: 0; }
+    .project-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .project-info { padding: 1rem; text-align: center; }
     .project-info h3 { color: #ffaa88; font-size: 1rem; margin-bottom: 0.3rem; }
     .project-info p { color: #886666; font-size: 0.75rem; }
-    .project-badge {
-      display: inline-block;
-      background: rgba(204,0,0,0.2);
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      font-size: 0.6rem;
-      color: #ff8888;
-      margin-top: 0.5rem;
-    }
+    .project-badge { display: inline-block; background: rgba(204,0,0,0.2); padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.6rem; color: #ff8888; margin-top: 0.5rem; }
+    
+    /* Canciones destacadas - Reproductor de audio */
+    .songs-section { background: #0a0505; border-radius: 32px; padding: 1.5rem; margin: 2rem 0; border: 1px solid rgba(204,0,0,0.4); }
+    .songs-section h2 { font-size: 1.5rem; color: #ff8888; margin-bottom: 1rem; text-align: center; font-family: 'Montserrat', sans-serif; }
+    .songs-grid { display: flex; flex-direction: column; gap: 1rem; }
+    .song-card { background: #111111; border-radius: 20px; padding: 1rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; border: 1px solid rgba(204,0,0,0.2); transition: all 0.3s; }
+    .song-card:hover { border-color: #ff5555; transform: translateX(5px); }
+    .song-icon { width: 50px; height: 50px; background: rgba(204,0,0,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .song-icon i { font-size: 1.5rem; color: #ff5555; }
+    .song-info { flex: 1; }
+    .song-info h4 { color: #ffaa88; font-size: 1rem; margin-bottom: 0.2rem; }
+    .song-info p { color: #886666; font-size: 0.7rem; }
+    audio { max-width: 250px; height: 40px; border-radius: 40px; }
+    audio::-webkit-media-controls-panel { background-color: #1a1a1a; }
     
     /* Próximamente */
-    .coming-soon {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .soon-card {
-      background: #111111;
-      border-radius: 20px;
-      padding: 1.5rem;
-      text-align: center;
-      border: 1px dashed rgba(204,0,0,0.4);
-    }
+    .coming-soon { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .soon-card { background: #111111; border-radius: 20px; padding: 1.5rem; text-align: center; border: 1px dashed rgba(204,0,0,0.4); }
     .soon-card i { font-size: 2rem; color: #ff5555; margin-bottom: 0.5rem; display: block; }
     .soon-card h4 { color: #ffaa88; font-size: 1rem; }
     .soon-card p { color: #886666; font-size: 0.7rem; margin-top: 0.3rem; }
@@ -309,23 +209,9 @@
     .btn-outline-white { background: rgba(0,0,0,0.5); border: 1px solid #ff5555; padding: 0.7rem 1.5rem; border-radius: 40px; color: #ffaaaa; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; margin-left: 0.8rem; transition: all 0.2s; }
     .btn-outline-white:hover { background: #cc0000; color: white; border-color: #cc0000; }
     
-    /* Ubicación abajo con mapa */
-    .location-footer {
-      text-align: center;
-      margin: 1rem 0 2rem;
-      padding: 1rem;
-      background: rgba(0,0,0,0.3);
-      border-radius: 28px;
-    }
-    .location-footer a {
-      color: #ff8888;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      transition: all 0.3s;
-    }
+    /* Ubicación */
+    .location-footer { text-align: center; margin: 1rem 0 2rem; padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 28px; }
+    .location-footer a { color: #ff8888; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; transition: all 0.3s; }
     .location-footer a:hover { color: #ff5555; transform: translateY(-2px); }
     
     .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; }
@@ -340,14 +226,29 @@
       .nav-links { display: none; } 
       .menu-toggle { display: block; } 
       .container { padding: 1.5rem 1rem; } 
-      .hero-studio h1 { font-size: 2rem; }
+      .hero-studio h1 { font-size: 1.8rem; }
       .btn-outline-white { margin-left: 0; margin-top: 0.8rem; }
       .hero-bg-img { height: 250px; }
+      .song-card { flex-direction: column; text-align: center; }
+      audio { max-width: 100%; }
+      .float-item { font-size: 2rem !important; }
     }
   </style>
 </head>
 <body>
-<div class="animated-bg"><div class="bg-blur-layer"></div><div class="bg-blur-layer2"></div><div class="bg-grain"></div></div>
+<div class="animated-bg">
+  <div class="bg-blur-layer"></div>
+  <div class="bg-blur-layer2"></div>
+  <div class="floating-texts">
+    <div class="float-item aka"><i class="fas fa-star"></i> AKA STUDIO <i class="fas fa-music"></i></div>
+    <div class="float-item incrife"><i class="fas fa-headphones"></i> INCRIFE <i class="fas fa-microphone"></i></div>
+    <div class="float-item aka"><i class="fas fa-waveform"></i> AKA STUDIO <i class="fas fa-sliders-h"></i></div>
+    <div class="float-item incrife"><i class="fas fa-crown"></i> INCRIFE <i class="fas fa-star"></i></div>
+    <div class="float-item aka"><i class="fas fa-handshake"></i> AKA STUDIO <i class="fas fa-heart"></i></div>
+    <div class="float-item incrife"><i class="fas fa-microphone-alt"></i> INCRIFE <i class="fas fa-headphones"></i></div>
+  </div>
+  <div class="bg-grain"></div>
+</div>
 
 <nav class="top-nav">
   <div class="nav-container">
@@ -380,16 +281,15 @@
 <div class="page-wrapper">
 <div class="container">
   
-  <!-- Hero con foto de fondo -->
   <div class="hero-studio fade-up-item">
-    <img class="hero-bg-img" src="https://github.com/incrife/incrife/raw/main/661643511_777960658482630_6706461266514003454_n%20(2).jpg" alt="INCRIFE Studio - Equipo de grabación profesional">
+    <img class="hero-bg-img" src="https://github.com/incrife/incrife/raw/main/661643511_777960658482630_6706461266514003454_n%20(2).jpg" alt="INCRIFE · AKA STUDIO - Estudio de grabación profesional">
     <div class="hero-overlay">
-      <h1><i class="fas fa-headphones"></i> INCRIFE Studio</h1>
+      <div class="hero-badge"><i class="fas fa-handshake"></i> COLABORACIÓN OFICIAL</div>
+      <h1><i class="fas fa-headphones"></i> INCRIFE · AKA STUDIO</h1>
       <p>Mezcla, master y grabación profesional. Lleva tu música al siguiente nivel.</p>
     </div>
   </div>
   
-  <!-- Servicios: Mezcla, Master, Grabación -->
   <div class="services-grid fade-up-item">
     <div class="service-card">
       <div class="service-icon"><i class="fas fa-sliders-h"></i></div>
@@ -414,7 +314,6 @@
     </div>
   </div>
   
-  <!-- Equipo del estudio -->
   <div class="studio-gear fade-up-item">
     <h2><i class="fas fa-microchip"></i> Equipo Profesional</h2>
     <div class="gear-grid">
@@ -425,17 +324,13 @@
     </div>
   </div>
   
-  <!-- Colaboración con AKA Studio - MÁS DESTACADA -->
   <div class="collab-section fade-up-item">
-    <div class="collab-badge">
-      <i class="fas fa-handshake"></i> COLABORACIÓN OFICIAL
-    </div>
-    <h3><i class="fas fa-star"></i> AKA STUDIO <i class="fas fa-star"></i></h3>
+    <div class="collab-badge"><i class="fas fa-handshake"></i> COLABORACIÓN OFICIAL</div>
+    <h3><i class="fas fa-star"></i> INCRIFE + AKA STUDIO <i class="fas fa-star"></i></h3>
     <p>Producción musical, mezcla y master de la mano de profesionales. Calidad de estudio garantizada.</p>
     <a href="https://www.instagram.com/aka_thestudio/" target="_blank" class="collab-btn"><i class="fab fa-instagram"></i> @aka_thestudio</a>
   </div>
   
-  <!-- Proyecto destacado: GALOU MERYOULE - RASSAM -->
   <div class="featured-project fade-up-item">
     <h2><i class="fas fa-star-of-life"></i> Proyecto Destacado</h2>
     <div class="project-card-video">
@@ -450,7 +345,23 @@
     </div>
   </div>
   
-  <!-- Próximamente -->
+  <!-- SECCIÓN DE CANCIONES DESTACADAS -->
+  <div class="songs-section fade-up-item">
+    <h2><i class="fas fa-music"></i> Nuestros Lanzamientos</h2>
+    <div class="songs-grid">
+      <div class="song-card">
+        <div class="song-icon"><i class="fas fa-headphones"></i></div>
+        <div class="song-info">
+          <h4>Hero 2026</h4>
+          <p>Producción: AKA STUDIO · Mezcla y Master: INCRIFE Studio</p>
+        </div>
+        <audio controls src="https://github.com/incrife/incrife/raw/main/hero%202026.mp3%20(1).mpeg">
+          Tu navegador no soporta el elemento de audio.
+        </audio>
+      </div>
+    </div>
+  </div>
+  
   <div class="coming-soon fade-up-item">
     <div class="soon-card">
       <i class="fas fa-clock"></i>
@@ -464,7 +375,6 @@
     </div>
   </div>
   
-  <!-- CTA final -->
   <div class="cta-studio fade-up-item">
     <h2>¿Listo para dar el siguiente paso?</h2>
     <p>Cuéntanos tu proyecto y recibe un presupuesto personalizado.</p>
@@ -474,7 +384,6 @@
     </div>
   </div>
   
-  <!-- Ubicación abajo con mapa (Sant Adrià) -->
   <div class="location-footer fade-up-item">
     <a href="https://maps.google.com/?q=Sant+Adrià+del+Besòs+Barcelona" target="_blank">
       <i class="fas fa-map-marker-alt"></i> Sant Adrià del Besòs · Barcelona
@@ -488,7 +397,7 @@
     <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
     <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
   </div>
-  <div class="footer-modern fade-up-item">INCRIFE Studio · Mezcla, Master y Grabación Profesional · Barcelona<br>© 2026 · Lleva tu música al siguiente nivel</div>
+  <div class="footer-modern fade-up-item">INCRIFE · AKA STUDIO · Mezcla, Master y Grabación Profesional · Barcelona<br>© 2026 · Lleva tu música al siguiente nivel</div>
 </div>
 </div>
 
@@ -509,9 +418,9 @@
   const schema = {
     "@context": "https://schema.org",
     "@type": "MusicRecordingStudio",
-    "name": "INCRIFE Studio",
+    "name": "INCRIFE · AKA STUDIO",
     "alternateName": "Estudio de Mezcla y Grabación Barcelona",
-    "description": "Servicios profesionales de mezcla, master y grabación. Equipo premium: Neumann TL103, Apollo Solo, SSL2+. Colaboración con AKA Studio.",
+    "description": "Servicios profesionales de mezcla, master y grabación. Colaboración oficial INCRIFE + AKA STUDIO. Equipo premium: Neumann TL103, Apollo Solo, SSL2+.",
     "url": "https://incrife.com/studio.html",
     "telephone": "+34624170204",
     "email": "incrife@gmail.com",
