@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Contacto | INCRIFE · AKA STUDIO</title>
+  <title>Contacto | INCRIFE · AKA STUDIO · Sant Adrià del Besòs</title>
   
   <!-- ========== SEO ========== -->
-  <meta name="description" content="Contacta con INCRIFE · AKA STUDIO para presupuestos de mezcla, master y grabación profesional. Email: contact@incrife.com | WhatsApp: +34 624 17 02 04">
-  <meta name="keywords" content="contacto incrife, estudio grabacion barcelona, presupuesto mezcla y master, aka studio contacto">
+  <meta name="description" content="Contacta con INCRIFE · AKA STUDIO en Sant Adrià del Besòs (Barcelona). Presupuestos de mezcla, master y grabación profesional. Email: contact@incrife.com | Tel: +34 624 17 02 04">
+  <meta name="keywords" content="contacto incrife, estudio grabacion sant adrià del besòs, presupuesto mezcla y master, aka studio contacto, estudio musical barcelona">
   <meta name="author" content="INCRIFE · AKA STUDIO">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://incrife.com/contacto.html">
   
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Sant Adrià del Besòs">
+  <meta name="geo.position" content="41.430633;2.218233">
+  <meta name="ICBM" content="41.430633, 2.218233">
   
   <meta property="og:title" content="Contacto | INCRIFE · AKA STUDIO">
-  <meta property="og:description" content="Contacta con nosotros para presupuestos de mezcla, master y grabación profesional.">
+  <meta property="og:description" content="Estudio de mezcla, master y grabación en Sant Adrià del Besòs. Contacta para presupuestos.">
   <meta property="og:url" content="https://incrife.com/contacto.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
@@ -30,7 +32,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; overflow-x: hidden; }
     
-    /* Fondo rojo (mismo que página principal) */
+    /* Fondo rojo/negro */
     .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
     .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
     .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
@@ -58,63 +60,165 @@
     .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; position: relative; z-index: 10; }
     @keyframes entranceSpin { 0% { opacity: 0; transform: perspective(800px) rotateY(90deg) scale(0.95); filter: blur(8px); } 100% { opacity: 1; transform: perspective(800px) rotateY(0deg) scale(1); filter: blur(0); } }
     
-    .container { max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
     .fade-up-item { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease; }
     .fade-up-item.visible { opacity: 1; transform: translateY(0); }
     
-    /* Hero contacto */
-    .hero-contact { text-align: center; margin-bottom: 2rem; }
-    .hero-contact h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
-    .hero-contact p { color: #ccaaaa; max-width: 500px; margin: 0 auto; font-size: 0.9rem; }
+    /* Hero */
+    .hero-contact { text-align: center; margin-bottom: 2rem; padding: 1rem; }
+    .hero-contact h1 { font-size: 2.8rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
+    .hero-contact p { color: #ccaaaa; max-width: 500px; margin: 0 auto; font-size: 0.95rem; }
     
-    /* Tarjeta de contacto (email + WhatsApp) */
-    .contact-card {
+    /* Grid de dos columnas: info + mapa */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    /* Tarjeta de información */
+    .info-card {
       background: rgba(10,5,5,0.75);
       backdrop-filter: blur(16px);
       border-radius: 32px;
       padding: 2rem;
-      margin: 1.5rem 0;
       border: 1px solid rgba(255,68,68,0.6);
-      text-align: center;
     }
-    .contact-buttons {
+    .info-card h2 {
+      color: #ff8888;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
       display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .contact-detail-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+    .contact-detail-item:hover {
+      background: rgba(204,0,0,0.2);
+      transform: translateX(5px);
+    }
+    .contact-detail-item i {
+      width: 40px;
+      height: 40px;
+      background: rgba(204,0,0,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 1.5rem;
+      font-size: 1.2rem;
+      color: #ff5555;
+    }
+    .contact-detail-item .detail-info {
+      flex: 1;
+    }
+    .contact-detail-item .detail-info h4 {
+      color: #ffaa88;
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+    }
+    .contact-detail-item .detail-info a {
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .contact-detail-item .detail-info a:hover {
+      color: #ff8888;
+    }
+    
+    /* Botones de acción rápidos */
+    .action-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
       flex-wrap: wrap;
     }
-    .contact-btn {
+    .action-btn {
+      flex: 1;
+      background: #cc0000;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 0.8rem;
-      padding: 0.9rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
+      justify-content: center;
+      gap: 0.5rem;
       transition: all 0.3s;
-      font-size: 1rem;
+      font-size: 0.85rem;
     }
-    .contact-btn.email {
+    .action-btn.outline {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #ff5555;
+      color: #ffaaaa;
+    }
+    .action-btn:hover {
+      background: #ff3333;
+      transform: translateY(-2px);
+    }
+    .action-btn.outline:hover {
       background: #cc0000;
       color: white;
+    }
+    
+    /* Mapa */
+    .map-card {
+      background: rgba(10,5,5,0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 32px;
+      padding: 1rem;
+      border: 1px solid rgba(255,68,68,0.6);
+      overflow: hidden;
+    }
+    .map-card h2 {
+      color: #ff8888;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0 0.5rem;
+    }
+    .map-container {
+      border-radius: 24px;
+      overflow: hidden;
+      height: 300px;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
       border: none;
     }
-    .contact-btn.email:hover {
-      background: #ff3333;
-      transform: scale(1.02);
-      box-shadow: 0 5px 15px rgba(204,0,0,0.4);
+    .map-address {
+      text-align: center;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #ffaaaa;
     }
-    .contact-btn.whatsapp {
-      background: #25D366;
-      color: white;
-      border: none;
-    }
-    .contact-btn.whatsapp:hover {
-      background: #20b359;
-      transform: scale(1.02);
-      box-shadow: 0 5px 15px rgba(37,211,102,0.4);
-    }
-    .contact-btn i { font-size: 1.2rem; }
+    .map-address i { margin-right: 0.5rem; color: #ff5555; }
     
     /* Formulario */
     .form-card {
@@ -122,7 +226,7 @@
       backdrop-filter: blur(16px);
       border-radius: 32px;
       padding: 2rem;
-      margin: 1.5rem 0;
+      margin: 2rem 0;
       border: 1px solid rgba(255,68,68,0.6);
     }
     .form-card h2 {
@@ -174,30 +278,10 @@
       transform: scale(1.01);
     }
     
-    /* Ubicación con mapa (como antes) */
-    .location-footer {
-      text-align: center;
-      margin: 1rem 0 2rem;
-      padding: 1rem;
-      background: rgba(0,0,0,0.3);
-      border-radius: 28px;
-    }
-    .location-footer a {
-      color: #ff8888;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      transition: all 0.3s;
-    }
-    .location-footer a:hover { color: #ff5555; transform: translateY(-2px); }
-    
-    /* Redes sociales solo abajo */
+    /* Redes sociales */
     .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; }
     .social-circle { width: 52px; height: 52px; background: rgba(30, 15, 15, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.4rem; transition: all 0.25s ease; border: 1px solid rgba(255, 68, 68, 0.5); }
     .social-circle:hover { background: #cc0000; color: white; transform: translateY(-4px); }
-    
     .footer-modern { text-align: center; font-size: 0.7rem; color: #aa7777; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255, 68, 68, 0.3); }
     .whatsapp-fixed { position: fixed; bottom: 24px; right: 24px; z-index: 1000; }
     .whatsapp-fixed a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 18px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); text-decoration: none; color: white; font-size: 2rem; transition: all 0.2s; }
@@ -208,8 +292,11 @@
       .menu-toggle { display: block; } 
       .container { padding: 1.5rem 1rem; } 
       .hero-contact h1 { font-size: 2rem; }
-      .contact-buttons { flex-direction: column; align-items: center; }
-      .contact-btn { width: 80%; justify-content: center; }
+      .contact-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .action-buttons { flex-direction: column; }
+      .contact-detail-item { padding: 0.6rem; }
+      .contact-detail-item i { width: 35px; height: 35px; font-size: 1rem; }
+      .detail-info a { font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -252,11 +339,61 @@
     <p>¿Hablamos? Cuéntame tu proyecto y te responderé lo antes posible.</p>
   </div>
   
-  <!-- Email y WhatsApp uno al lado del otro -->
-  <div class="contact-card fade-up-item">
-    <div class="contact-buttons">
-      <a href="mailto:contact@incrife.com" class="contact-btn email"><i class="fas fa-envelope"></i> contact@incrife.com</a>
-      <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20trabajar%20contigo" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <!-- Grid: Información de contacto + Mapa -->
+  <div class="contact-grid fade-up-item">
+    <!-- Columna izquierda: Información -->
+    <div class="info-card">
+      <h2><i class="fas fa-info-circle"></i> Información de contacto</h2>
+      <div class="contact-details">
+        <div class="contact-detail-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="detail-info">
+            <h4>Ubicación</h4>
+            <a href="https://maps.google.com/?q=Sant+Adrià+del+Besòs+Barcelona" target="_blank">Sant Adrià del Besòs · Barcelona</a>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <i class="fas fa-phone-alt"></i>
+          <div class="detail-info">
+            <h4>Teléfono</h4>
+            <a href="tel:+34624170204">+34 624 17 02 04</a>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <i class="fas fa-envelope"></i>
+          <div class="detail-info">
+            <h4>Email</h4>
+            <a href="mailto:contact@incrife.com">contact@incrife.com</a>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <i class="fab fa-whatsapp"></i>
+          <div class="detail-info">
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20trabajar%20contigo" target="_blank">+34 624 17 02 04</a>
+          </div>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <a href="mailto:contact@incrife.com" class="action-btn"><i class="fas fa-envelope"></i> Enviar email</a>
+        <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20trabajar%20contigo" target="_blank" class="action-btn outline"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+    
+    <!-- Columna derecha: Mapa de Google -->
+    <div class="map-card">
+      <h2><i class="fas fa-map-marked-alt"></i> Dónde estamos</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23954.401520029668!2d2.2039778474981465!3d41.43063299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4b9d1b7e8c1e3%3A0x7b2c4e8a9f6d1c5a!2sSant%20Adri%C3%A0%20del%20Bes%C3%B2s%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="map-address">
+        <i class="fas fa-map-pin"></i> Sant Adrià del Besòs · Barcelona · España
+      </div>
     </div>
   </div>
   
@@ -277,22 +414,14 @@
     </form>
   </div>
   
-  <!-- Ubicación con mapa (como antes) -->
-  <div class="location-footer fade-up-item">
-    <a href="https://maps.google.com/?q=Sant+Adrià+del+Besòs+Barcelona" target="_blank">
-      <i class="fas fa-map-marker-alt"></i> Sant Adrià del Besòs · Barcelona
-      <i class="fas fa-external-link-alt" style="font-size: 0.6rem;"></i>
-    </a>
-  </div>
-  
-  <!-- Redes sociales SOLO AQUÍ ABAJO -->
+  <!-- Redes sociales -->
   <div class="social-modern fade-up-item">
     <a href="https://www.instagram.com/incrife/" class="social-circle"><i class="fab fa-instagram"></i></a>
     <a href="https://www.youtube.com/@incrife" class="social-circle"><i class="fab fa-youtube"></i></a>
     <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
     <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
   </div>
-  <div class="footer-modern fade-up-item">INCRIFE · AKA STUDIO · Mezcla, Master y Grabación Profesional · Barcelona<br>© 2026 · contact@incrife.com</div>
+  <div class="footer-modern fade-up-item">INCRIFE · AKA STUDIO · Mezcla, Master y Grabación Profesional · Sant Adrià del Besòs (Barcelona)<br>© 2026 · contact@incrife.com · Tel: +34 624 17 02 04</div>
 </div>
 </div>
 
