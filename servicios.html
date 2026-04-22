@@ -2,51 +2,308 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INCRIFE | Servicios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>INCRIFE Models | Agencia de Modelos · Colaboración con @kurtusinc</title>
+  
+  <!-- ========== SEO ========== -->
+  <meta name="description" content="INCRIFE Models: Agencia de modelos. Colaboración oficial con @kurtusinc. Buscamos talento para fotografía, pasarela y publicidad. Únete a nuestra comunidad.">
+  <meta name="keywords" content="agencia de modelos barcelona, kurtusinc, incrife models, modelos barcelona, casting modelos, talento femenino y masculino">
+  <meta name="author" content="INCRIFE Models">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://incrife.com/servicios.html">
+  
+  <meta name="geo.region" content="ES-CT">
+  <meta name="geo.placename" content="Barcelona">
+  
+  <meta property="og:title" content="INCRIFE Models | Agencia de Modelos">
+  <meta property="og:description" content="Agencia de modelos. Colaboración oficial con @kurtusinc. Buscamos talento.">
+  <meta property="og:url" content="https://incrife.com/servicios.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
+  
+  <meta name="theme-color" content="#cc0000">
   <link rel="icon" type="image/png" href="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; }
+    body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; overflow-x: hidden; }
+    
+    /* Fondo rojo/negro */
     .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
     .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
     .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
+    .bg-grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E'); pointer-events: none; z-index: 1; opacity: 0.4; }
     @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
     @keyframes moveBlur2 { 0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; } 100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; } }
+    
+    /* Menú superior */
     .top-nav { position: sticky; top: 0; background: rgba(10,5,5,0.95); backdrop-filter: blur(12px); padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); z-index: 100; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .logo a { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff6666); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; font-family: 'Montserrat', sans-serif; }
-    .nav-links a { color: #ffcccc; text-decoration: none; margin-left: 1.5rem; font-size: 0.85rem; }
-    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; gap: 2rem; position: relative; z-index: 10; }
-    .sidebar { width: 260px; background: linear-gradient(135deg, #120808, #080303); border-radius: 24px; padding: 1.5rem; border: 1px solid rgba(255,68,68,0.3); height: fit-content; position: sticky; top: 80px; }
-    .sidebar h3 { color: #ff8888; margin-bottom: 1rem; }
-    .sidebar a { display: block; color: #ffcccc; text-decoration: none; padding: 0.6rem 0; border-bottom: 1px solid rgba(255,68,68,0.1); }
-    .sidebar a:hover { color: #ff5555; padding-left: 8px; }
-    .content { flex: 1; }
-    .service-block { background: linear-gradient(135deg, #120808, #080303); border-radius: 24px; padding: 1.8rem; margin-bottom: 1.5rem; border: 1px solid rgba(204,0,0,0.5); transition: all 0.3s; }
-    .service-block:hover { border-color: #ff5555; transform: translateY(-3px); }
-    .service-block h2 { color: #ff8888; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.8rem; }
-    .service-block p { color: #bbaaaa; margin-bottom: 1rem; line-height: 1.5; }
-    .btn-service { background: #cc0000; padding: 0.6rem 1.2rem; border-radius: 40px; text-decoration: none; color: white; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
-    .btn-service:hover { background: #ff3333; transform: scale(1.02); }
-    @media (max-width: 768px) { .container { flex-direction: column; } .sidebar { position: static; width: 100%; } .nav-links { display: none; } }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .nav-links a { color: #ffcccc; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: #ff5555; }
+    .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    
+    /* Hero */
+    .hero { text-align: center; padding: 3rem 1.5rem; position: relative; z-index: 10; }
+    .hero h1 { font-size: 2.8rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
+    .hero p { color: #ccaaaa; max-width: 600px; margin: 0 auto; font-size: 1rem; }
+    .hero-badge { display: inline-block; background: rgba(255,85,85,0.2); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.8rem; color: #ff8888; border: 1px solid #ff5555; margin-bottom: 1rem; }
+    
+    /* Sección colaboración kurtusinc */
+    .collab-section {
+      background: linear-gradient(135deg, rgba(26,10,10,0.9), rgba(15,5,15,0.9));
+      backdrop-filter: blur(10px);
+      border-radius: 32px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 800px;
+      text-align: center;
+      border: 2px solid #ff5555;
+      position: relative;
+      overflow: hidden;
+    }
+    .collab-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,85,85,0.15), transparent);
+      animation: shine 3s infinite;
+    }
+    @keyframes shine { 0% { left: -100%; } 100% { left: 100%; } }
+    .collab-section h2 { color: #ff5555; font-size: 1.8rem; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
+    .collab-section p { color: #ddcccc; max-width: 500px; margin: 0 auto 1rem auto; }
+    .collab-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: #ff5555; color: white; padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.7rem; font-weight: bold; margin-bottom: 1rem; }
+    .social-links-kurtus {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .social-links-kurtus a {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #ff5555;
+      border-radius: 40px;
+      padding: 0.5rem 1.2rem;
+      color: #ffaaaa;
+      text-decoration: none;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+    }
+    .social-links-kurtus a:hover { background: #cc0000; color: white; transform: translateY(-2px); }
+    
+    /* Galería de modelos */
+    .gallery-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .gallery-section h2 {
+      text-align: center;
+      color: #ff8888;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-card {
+      background: rgba(10,5,5,0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,68,68,0.4);
+      transition: all 0.3s;
+    }
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      border-color: #ff5555;
+    }
+    .gallery-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: #1a0a0a;
+    }
+    .gallery-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .gallery-info h3 {
+      color: #ffaa88;
+      font-size: 1rem;
+    }
+    .gallery-info p {
+      color: #886666;
+      font-size: 0.7rem;
+      margin-top: 0.3rem;
+    }
+    
+    /* CTA final */
+    .cta-section {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: rgba(10,5,5,0.85);
+      backdrop-filter: blur(16px);
+      border-radius: 32px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid #ff4444;
+    }
+    .cta-section h2 {
+      font-size: 1.6rem;
+      color: #ff8888;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .cta-section p {
+      color: #ddcccc;
+      margin-bottom: 1.5rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #cc0000;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #ff3333; transform: scale(1.02); }
+    .btn-outline {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #ff5555;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      color: #ffaaaa;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: #cc0000; color: white; border-color: #cc0000; }
+    
+    /* Footer */
+    .footer-modern { text-align: center; font-size: 0.7rem; color: #aa7777; margin-top: 3rem; padding: 1.5rem; border-top: 1px solid rgba(255,68,68,0.3); }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .menu-toggle { display: block; }
+      .hero h1 { font-size: 2rem; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
   </style>
 </head>
 <body>
-<div class="animated-bg"><div class="bg-blur-layer"></div><div class="bg-blur-layer2"></div></div>
-<nav class="top-nav"><div class="nav-container"><div class="logo"><a href="index.html">INCRIFE</a></div><div class="nav-links"><a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="fotografia.html">Fotografía</a><a href="studio.html">Studio</a><a href="incrifed.html">True Crime</a><a href="trabajaconnosotros.html">Equipo</a><a href="contacto.html">Contacto</a></div></div></nav>
-<div class="container">
-  <aside class="sidebar"><h3><i class="fas fa-bars"></i> Servicios</h3><a href="#fotografia"><i class="fas fa-camera"></i> Fotografía</a><a href="#videoclips"><i class="fas fa-video"></i> Videoclips</a><a href="#mezcla"><i class="fas fa-headphones"></i> Mezcla & Master</a><a href="#truecrime"><i class="fas fa-microphone-alt"></i> True Crime</a><a href="#produccion"><i class="fas fa-cogs"></i> Producción Audiovisual</a><a href="#equipo"><i class="fas fa-users"></i> Únete al equipo</a><a href="index.html" style="margin-top:1rem; color:#ff8888;"><i class="fas fa-arrow-left"></i> Volver</a></aside>
-  <main class="content">
-    <div id="fotografia" class="service-block"><h2><i class="fas fa-camera" style="color:#ff5555;"></i> Fotografía Profesional</h2><p>Sesiones de fotografía urbana, editorial, retratos y making of. Especialista en capturar la esencia de Barcelona.</p><a href="fotografia.html" class="btn-service">Ver portafolio <i class="fas fa-arrow-right"></i></a></div>
-    <div id="videoclips" class="service-block"><h2><i class="fas fa-play-circle" style="color:#ff5555;"></i> Videoclips</h2><p>Dirección, producción y edición de videoclips. Estética urbana y narrativa visual cruda.</p><a href="https://www.youtube.com/@incrife" target="_blank" class="btn-service">Ver trabajos <i class="fab fa-youtube"></i></a></div>
-    <div id="mezcla" class="service-block"><h2><i class="fas fa-sliders-h" style="color:#ff5555;"></i> Mezcla & Masterización</h2><p>Servicios profesionales de audio para llevar tu música al siguiente nivel.</p><a href="studio.html" class="btn-service">Solicitar presupuesto <i class="fas fa-headphones"></i></a></div>
-    <div id="truecrime" class="service-block"><h2><i class="fas fa-microphone-alt" style="color:#ff5555;"></i> True Crime · INCRIFED</h2><p>Análisis de crímenes reales, documentales de terror y reacciones semanales.</p><a href="incrifed.html" class="btn-service">Descubrir proyecto <i class="fas fa-arrow-right"></i></a></div>
-    <div id="produccion" class="service-block"><h2><i class="fas fa-cogs" style="color:#ff5555;"></i> Producción Audiovisual</h2><p>Producción integral de contenido para marcas, artistas y proyectos personales.</p><a href="contacto.html" class="btn-service">Consultar <i class="fas fa-envelope"></i></a></div>
-    <div id="equipo" class="service-block"><h2><i class="fas fa-users" style="color:#ff5555;"></i> ¿Quieres trabajar con nosotros?</h2><p>Buscamos filmakers, fotógrafos, beatmakers, ingenieros de sonido y modelos.</p><a href="trabajaconnosotros.html" class="btn-service">Enviar candidatura <i class="fas fa-paper-plane"></i></a></div>
-  </main>
+<div class="animated-bg"><div class="bg-blur-layer"></div><div class="bg-blur-layer2"></div><div class="bg-grain"></div></div>
+
+<nav class="top-nav">
+  <div class="nav-container">
+    <div class="logo"><a href="index.html">INCRIFE</a></div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html" class="active">Servicios</a>
+      <a href="fotografia.html">Fotografía</a>
+      <a href="studio.html">Studio</a>
+      <a href="incrifed.html">True Crime</a>
+      <a href="trabajaconnosotros.html">Equipo</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge"><i class="fas fa-star"></i> AGENCIA DE MODELOS</div>
+  <h1>INCRIFE Models</h1>
+  <p>Talento único para fotografía, pasarela y publicidad</p>
 </div>
+
+<!-- Colaboración con @kurtusinc -->
+<div class="collab-section">
+  <div class="collab-badge"><i class="fas fa-handshake"></i> COLABORACIÓN OFICIAL</div>
+  <h2><i class="fas fa-crown"></i> @kurtusinc <i class="fas fa-crown"></i></h2>
+  <p>Kurtusinc es nuestro socio oficial en la industria del modelaje. Juntos impulsamos nuevos talentos.</p>
+  <div class="social-links-kurtus">
+    <a href="https://www.tiktok.com/@kurtusinc" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a href="https://www.instagram.com/kurtusinc" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://www.youtube.com/@kurtusinc" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+  </div>
+</div>
+
+<!-- Galería de modelos -->
+<div class="gallery-section">
+  <h2><i class="fas fa-images"></i> Nuestras Modelos</h2>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img class="gallery-img" src="https://placehold.co/400x500/1a0a0a/ff8888?text=Modelo+1" alt="Modelo INCRIFE">
+      <div class="gallery-info"><h3>Modelo · Laura</h3><p>Fotografía urbana · Barcelona</p></div>
+    </div>
+    <div class="gallery-card">
+      <img class="gallery-img" src="https://placehold.co/400x500/1a0a0a/ff8888?text=Modelo+2" alt="Modelo INCRIFE">
+      <div class="gallery-info"><h3>Modelo · Sofia</h3><p>Pasarela · Editorial</p></div>
+    </div>
+    <div class="gallery-card">
+      <img class="gallery-img" src="https://placehold.co/400x500/1a0a0a/ff8888?text=Modelo+3" alt="Modelo INCRIFE">
+      <div class="gallery-info"><h3>Modelo · Carla</h3><p>Publicidad · Marcas</p></div>
+    </div>
+    <div class="gallery-card">
+      <img class="gallery-img" src="https://placehold.co/400x500/1a0a0a/ff8888?text=Modelo+4" alt="Modelo INCRIFE">
+      <div class="gallery-info"><h3>Modelo · Elena</h3><p>Fitness · Lifestyle</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA final -->
+<div class="cta-section">
+  <h2><i class="fas fa-user-plus"></i> ¿Buscas modelos o quieres unirte?</h2>
+  <p>Si eres marca y buscas talento, o si quieres formar parte de nuestra agencia, contáctanos.</p>
+  <div class="cta-buttons">
+    <a href="contacto.html" class="btn-primary"><i class="fas fa-envelope"></i> Contactar</a>
+    <a href="trabajaconnosotros.html" class="btn-outline"><i class="fas fa-paper-plane"></i> Unirme al equipo</a>
+  </div>
+</div>
+
+<div class="footer-modern">INCRIFE Models · Agencia de Modelos · Colaboración oficial con @kurtusinc<br>© 2026 · Barcelona</div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const sideMenu = document.getElementById('sideMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const overlay = document.getElementById('overlay');
+  if (menuToggle) {
+    menuToggle.onclick = () => {
+      document.getElementById('sideMenu').classList.add('open');
+      document.getElementById('overlay').classList.add('active');
+    };
+  }
+  if (closeMenu) closeMenu.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); };
+  if (overlay) overlay.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); };
+</script>
 </body>
 </html>
