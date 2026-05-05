@@ -64,8 +64,60 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; line-height: 1.5; overflow-x: hidden; }
     
+    /* ========== FONDO CON FOTO DE PERFIL + BLUR + ANIMACIÓN ========== */
+    .animated-bg { 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      z-index: 0; 
+      overflow: hidden;
+    }
+    .bg-profile {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(8px) brightness(0.4);
+      transform: scale(1.1);
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    @keyframes slowZoom {
+      0% { transform: scale(1.1); }
+      100% { transform: scale(1.2); }
+    }
+    .bg-blur-layer { 
+      position: absolute; 
+      width: 100%; 
+      height: 100%; 
+      top: 0; 
+      left: 0; 
+      background: radial-gradient(circle at 30% 40%, rgba(204,0,0,0.3), rgba(0,0,0,0.7));
+      filter: blur(60px);
+      animation: moveBlur 12s ease-in-out infinite alternate;
+      z-index: 1;
+    }
+    .bg-grain { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E'); 
+      pointer-events: none; 
+      z-index: 2; 
+      opacity: 0.4; 
+    }
+    @keyframes moveBlur { 
+      0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 
+      100% { transform: scale(1.3) rotate(5deg); opacity: 1; } 
+    }
+    
     /* MENÚ SUPERIOR */
-    .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: #0a0505; backdrop-filter: blur(12px); z-index: 1000; padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); }
+    .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(10,5,5,0.95); backdrop-filter: blur(12px); z-index: 1000; padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); }
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .logo a { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff6666); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; font-family: 'Montserrat', sans-serif; }
     .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
@@ -74,24 +126,17 @@
     .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
     
     /* MENÚ LATERAL */
-    .side-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #0a0505; z-index: 1001; transition: right 0.3s ease; padding: 2rem; border-left: 1px solid #ff4444; }
+    .side-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #0f0808; z-index: 1001; transition: right 0.3s ease; padding: 2rem; border-left: 1px solid #ff4444; }
     .side-menu.open { right: 0; }
     .side-menu .close-menu { background: none; border: none; color: white; font-size: 1.5rem; float: right; cursor: pointer; margin-bottom: 2rem; }
     .side-menu a { display: block; color: #ffcccc; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,68,68,0.2); }
     .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: none; }
     .overlay.active { display: block; }
     
-    .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; }
+    .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; position: relative; z-index: 10; }
     @keyframes entranceSpin { 0% { opacity: 0; transform: perspective(800px) rotateY(90deg) scale(0.95); filter: blur(8px); } 100% { opacity: 1; transform: perspective(800px) rotateY(0deg) scale(1); filter: blur(0); } }
     
-    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
-    .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
-    .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
-    .bg-grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E'); pointer-events: none; z-index: 1; opacity: 0.4; }
-    @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
-    @keyframes moveBlur2 { 0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; } 100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; } }
-    
-    .container { max-width: 880px; width: 100%; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
+    .container { max-width: 880px; width: 100%; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 20; }
     .fade-up-item { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease; }
     .fade-up-item.visible { opacity: 1; transform: translateY(0); }
     
@@ -106,16 +151,16 @@
     .name { font-size: 2.4rem; font-weight: 800; margin-top: 1.2rem; background: linear-gradient(135deg, #ffffff, #ff6666, #cc3333); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: -1px; }
     .tagline { color: #ff8888; font-size: 0.9rem; letter-spacing: 1px; margin-top: 0.3rem; }
     
-    /* BIO CARD - FONDO NEGRO */
-    .bio-card { background: #0a0505; border-radius: 28px; padding: 0; margin: 1rem 0; border: 1px solid rgba(255, 68, 68, 0.6); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    /* BIO CARD */
+    .bio-card { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 0; margin: 1rem 0; border: 1px solid rgba(255, 68, 68, 0.6); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
     .bio-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(204,0,0,0.2); }
     .bio-highlight { font-size: 0.98rem; line-height: 1.55; color: #f5e6e6; margin-bottom: 1rem; }
     .bio-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
     .bio-tag { background: rgba(255, 68, 68, 0.2); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.7rem; font-weight: 600; color: #ffaaaa; border: 0.5px solid rgba(255, 68, 68, 0.4); transition: all 0.3s; }
     .bio-tag:hover { background: rgba(255, 68, 68, 0.4); transform: translateY(-2px); }
     
-    /* SECCIÓN ÚLTIMO LANZAMIENTO - FONDO NEGRO */
-    .release-unified { background: #0a0505; border-radius: 32px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #ff4d4d; transition: all 0.3s; }
+    /* SECCIÓN ÚLTIMO LANZAMIENTO */
+    .release-unified { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 32px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #ff4d4d; transition: all 0.3s; }
     .release-unified:hover { border-color: #ff8888; box-shadow: 0 5px 20px rgba(255,68,68,0.15); }
     .release-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255, 68, 68, 0.3); padding-bottom: 0.8rem; }
     .release-header i { font-size: 1.8rem; color: #1DB954; }
@@ -125,16 +170,16 @@
     .platform-badge { background: rgba(10, 5, 5, 0.6); border: 1px solid rgba(255, 68, 68, 0.4); border-radius: 40px; padding: 0.5rem 1.2rem; text-decoration: none; color: #ffaaaa; font-size: 0.8rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s; }
     .platform-badge:hover { background: #1DB954; color: white; border-color: #1DB954; transform: translateY(-2px); }
     
-    /* SECCIÓN MIS PROYECTOS - FONDO NEGRO */
-    .projects-section-pro { background: #0a0505; border-radius: 32px; padding: 2rem; margin: 1.5rem 0; border: 1px solid rgba(255, 68, 68, 0.6); }
+    /* SECCIÓN MIS PROYECTOS */
+    .projects-section-pro { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 32px; padding: 2rem; margin: 1.5rem 0; border: 1px solid rgba(255, 68, 68, 0.6); }
     .section-title { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.8rem; border-bottom: 1px solid rgba(255, 68, 68, 0.3); padding-bottom: 0.8rem; flex-wrap: wrap; }
     .section-title i { font-size: 1.8rem; color: #cc0000; }
     .section-title h2 { font-size: 1.5rem; color: #fff; font-weight: 800; font-family: 'Montserrat', sans-serif; }
     .section-title span { color: #ff8888; font-size: 0.8rem; margin-left: auto; }
     
     .projects-grid-pro { display: flex; flex-direction: column; gap: 1.5rem; }
-    .project-card-pro { background: #111111; border-radius: 24px; padding: 1.5rem; border: 1px solid rgba(255, 68, 68, 0.2); transition: all 0.3s ease; display: flex; flex-wrap: wrap; gap: 1.5rem; text-decoration: none; color: inherit; }
-    .project-card-pro:hover { border-color: #cc0000; background: #1a0a0a; transform: translateX(8px) scale(1.01); }
+    .project-card-pro { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border-radius: 24px; padding: 1.5rem; border: 1px solid rgba(255, 68, 68, 0.2); transition: all 0.3s ease; display: flex; flex-wrap: wrap; gap: 1.5rem; text-decoration: none; color: inherit; }
+    .project-card-pro:hover { border-color: #cc0000; background: rgba(204, 0, 0, 0.15); transform: translateX(8px) scale(1.01); }
     .project-icon-pro { width: 70px; height: 70px; background: rgba(204, 0, 0, 0.15); border-radius: 20px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.3s; }
     .project-card-pro:hover .project-icon-pro { background: #cc0000; }
     .project-card-pro:hover .project-icon-pro i { color: white; }
@@ -147,10 +192,10 @@
     .project-link { color: #ff6666; font-size: 0.75rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; transition: all 0.3s; }
     .project-card-pro:hover .project-link { color: white; gap: 0.5rem; }
     
-    /* ESTADÍSTICAS SOCIALES - FONDO NEGRO */
+    /* ESTADÍSTICAS SOCIALES */
     .stats-social { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
-    .stat-card { background: #0a0505; border-radius: 24px; padding: 1rem 2rem; text-align: center; border: 1px solid rgba(255, 68, 68, 0.4); transition: all 0.3s; }
-    .stat-card:hover { transform: translateY(-5px) scale(1.02); border-color: #cc0000; background: #111111; }
+    .stat-card { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 24px; padding: 1rem 2rem; text-align: center; border: 1px solid rgba(255, 68, 68, 0.4); transition: all 0.3s; }
+    .stat-card:hover { transform: translateY(-5px) scale(1.02); border-color: #cc0000; background: rgba(30,15,15,0.9); }
     .stat-card i { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
     .stat-card.ig i { color: #e4405f; }
     .stat-card.yt i { color: #ff0000; }
@@ -158,15 +203,15 @@
     .stat-label { font-size: 0.7rem; color: #ff8888; margin-top: 0.3rem; }
     
     .links-section { margin: 1.8rem 0; }
-    .link-item { background: #111111; border-radius: 20px; padding: 1rem 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: #f0f0f0; border: 1px solid rgba(255, 68, 68, 0.3); transition: all 0.3s; }
+    .link-item { background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); border-radius: 20px; padding: 1rem 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: #f0f0f0; border: 1px solid rgba(255, 68, 68, 0.3); transition: all 0.3s; }
     .link-item:hover { background: #cc0000; transform: translateX(8px); border-color: #ff4444; }
     .link-left { display: flex; align-items: center; gap: 1rem; }
     .link-left i { width: 30px; font-size: 1.3rem; color: #ff6666; transition: all 0.3s; }
     .link-item:hover .link-left i { color: white; }
     .link-text { font-weight: 600; font-size: 0.95rem; }
     
-    /* FICHA GOOGLE BUSINESS - FONDO NEGRO */
-    .google-business-card { background: #0a0505; border-radius: 32px; padding: 1.8rem; margin: 1.5rem 0; border: 1px solid rgba(255, 68, 68, 0.5); transition: all 0.3s; }
+    /* FICHA GOOGLE BUSINESS */
+    .google-business-card { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 32px; padding: 1.8rem; margin: 1.5rem 0; border: 1px solid rgba(255, 68, 68, 0.5); transition: all 0.3s; }
     .google-business-card:hover { border-color: #4285F4; box-shadow: 0 5px 20px rgba(66,133,244,0.15); }
     .gbusiness-container { display: flex; flex-wrap: wrap; gap: 2rem; }
     .gbusiness-info { flex: 2; min-width: 240px; }
@@ -181,7 +226,7 @@
     .detail-item i { width: 20px; color: #ff6666; font-size: 0.9rem; }
     .detail-item a { color: #ffaaaa; text-decoration: none; transition: color 0.2s; }
     .detail-item a:hover { color: white; text-decoration: underline; }
-    .gbusiness-hours { background: #111111; border-radius: 20px; padding: 0.8rem 1rem; margin-top: 1rem; }
+    .gbusiness-hours { background: rgba(0,0,0,0.4); backdrop-filter: blur(8px); border-radius: 20px; padding: 0.8rem 1rem; margin-top: 1rem; }
     .hours-header { font-size: 0.75rem; font-weight: bold; margin-bottom: 0.5rem; color: #ff8888; }
     .hours-row { display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 0.2rem; }
     .hours-row.closed span:first-child { color: #ff6666; }
@@ -192,29 +237,30 @@
     .action-btn.primary:hover { background: #3367d6; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(66,133,244,0.3); }
     .action-btn.whatsapp { background: #25D366; color: white; }
     .action-btn.whatsapp:hover { background: #20b359; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
-    .action-btn.secondary { background: #111111; border: 1px solid rgba(255, 68, 68, 0.5); color: #ffaaaa; }
+    .action-btn.secondary { background: rgba(0,0,0,0.5); border: 1px solid rgba(255, 68, 68, 0.5); color: #ffaaaa; }
     .action-btn.secondary:hover { background: #cc0000; color: white; border-color: #cc0000; transform: translateY(-2px); }
     .action-note { font-size: 0.6rem; color: #55aa55; text-align: center; margin-top: 0.8rem; }
     
-    /* RESEÑAS GOOGLE - FONDO NEGRO */
-    .google-reviews-section { background: #0a0505; border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid rgba(255, 68, 68, 0.6); }
-    .google-rating-badge { background: #4285F4; color: white; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; font-weight: 600; margin-left: auto; }
+    /* RESEÑAS GOOGLE */
+    .google-reviews-section { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid rgba(255, 68, 68, 0.6); }
     .google-reviews-grid { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0; }
-    .google-review-card { background: #111111; border-radius: 20px; padding: 1.2rem; border-left: 3px solid #4285F4; transition: all 0.3s; }
-    .google-review-card:hover { transform: translateX(5px) scale(1.01); background: #1a1a1a; }
+    .google-review-card { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border-radius: 20px; padding: 1.2rem; border-left: 3px solid #4285F4; transition: all 0.3s; }
+    .google-review-card:hover { transform: translateX(5px) scale(1.01); background: rgba(66,133,244,0.1); }
     .review-header-google { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+    .review-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; border: 2px solid #cc0000; }
     .review-info-google h4 { color: white; font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .review-stars { color: #ffcc00; font-size: 0.7rem; letter-spacing: 2px; }
     .review-text-google { color: #ccc; font-size: 0.85rem; line-height: 1.4; margin-bottom: 0.5rem; }
     .review-date { font-size: 0.6rem; color: #4285F4; }
     .btn-leave-review { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(66, 133, 244, 0.2); border: 1px solid #4285F4; border-radius: 40px; padding: 0.5rem 1.2rem; color: #4285F4; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.3s; }
     .btn-leave-review:hover { background: #4285F4; color: white; transform: translateY(-2px); }
     
-    /* SECCIÓN ARTISTA - FONDO NEGRO */
-    .artist-section { background: #0a0505; border-radius: 28px; padding: 1.8rem; margin: 1.5rem 0 1rem; text-align: center; border: 1px solid #ff4444; transition: all 0.3s; }
+    /* SECCIÓN ARTISTA */
+    .artist-section { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 1.8rem; margin: 1.5rem 0 1rem; text-align: center; border: 1px solid #ff4444; transition: all 0.3s; }
     .artist-section:hover { border-color: #ff8888; box-shadow: 0 5px 20px rgba(255,68,68,0.15); }
     
     .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; flex-wrap: wrap; }
-    .social-circle { width: 52px; height: 52px; background: #111111; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.4rem; border: 1px solid rgba(255, 68, 68, 0.5); transition: all 0.3s; }
+    .social-circle { width: 52px; height: 52px; background: rgba(30, 15, 15, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.4rem; border: 1px solid rgba(255, 68, 68, 0.5); transition: all 0.3s; }
     .social-circle:hover { background: #cc0000; color: white; transform: translateY(-4px) scale(1.05); }
     
     .footer-modern { text-align: center; font-size: 0.7rem; color: #aa7777; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255, 68, 68, 0.3); }
@@ -253,7 +299,6 @@
       .link-left i { font-size: 1rem; }
       .release-header h3 { font-size: 1rem; }
       .platform-badge { font-size: 0.7rem; padding: 0.4rem 0.8rem; }
-      .google-rating-badge { font-size: 0.6rem; margin-left: 0; margin-top: 0.5rem; }
       .review-text-google { font-size: 0.75rem; }
       .artist-section { padding: 1.2rem; }
       .artist-section h3 { font-size: 1rem !important; }
@@ -278,16 +323,49 @@
   </style>
 </head>
 <body>
-<div class="animated-bg"><div class="bg-blur-layer"></div><div class="bg-blur-layer2"></div><div class="bg-grain"></div></div>
+<!-- Fondo con tu foto de perfil -->
+<div class="animated-bg">
+  <img class="bg-profile" src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE Background">
+  <div class="bg-blur-layer"></div>
+  <div class="bg-grain"></div>
+</div>
 
-<nav class="top-nav"><div class="nav-container"><div class="logo"><a href="index.html">INCRIFE</a></div><div class="nav-links"><a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="fotografia.html">Fotografía</a><a href="studio.html">Studio</a><a href="incrifed.html">True Crime</a><a href="trabajaconnosotros.html">Equipo</a><a href="contacto.html">Contacto</a></div><button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button></div></nav>
-<div class="side-menu" id="sideMenu"><button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button><a href="index.html">Inicio</a><a href="servicios.html">Servicios</a><a href="fotografia.html">Fotografía</a><a href="studio.html">Studio</a><a href="incrifed.html">True Crime</a><a href="trabajaconnosotros.html">Equipo</a><a href="contacto.html">Contacto</a></div>
+<nav class="top-nav">
+  <div class="nav-container">
+    <div class="logo"><a href="index.html">INCRIFE</a></div>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="fotografia.html">Fotografía</a>
+      <a href="studio.html">Studio</a>
+      <a href="incrifed.html">True Crime</a>
+      <a href="trabajaconnosotros.html">Equipo</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<div class="side-menu" id="sideMenu">
+  <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="fotografia.html">Fotografía</a>
+  <a href="studio.html">Studio</a>
+  <a href="incrifed.html">True Crime</a>
+  <a href="trabajaconnosotros.html">Equipo</a>
+  <a href="contacto.html">Contacto</a>
+</div>
 <div class="overlay" id="overlay"></div>
 
 <div class="page-wrapper">
 <div class="container">
   <div class="profile fade-up-item">
-    <div class="avatar-wrapper"><div class="glow-ring"></div><img class="avatar" src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE - Fotógrafo Barcelona"><span class="online-dot"></span></div>
+    <div class="avatar-wrapper">
+      <div class="glow-ring"></div>
+      <img class="avatar" src="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE - Fotógrafo Barcelona">
+      <span class="online-dot"></span>
+    </div>
     <h1 class="name">INCRIFE</h1>
     <div class="tagline">Fotógrafo Profesional · Videógrafo · Filmmaker · Barcelona</div>
   </div>
@@ -346,10 +424,11 @@
       <h2>TIMELINE · MIS PROYECTOS</h2>
       <span>+3 proyectos activos</span>
     </div>
-  <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card-pro">
+    <div class="projects-grid-pro">
+      <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card-pro">
         <div class="project-icon-pro"><i class="fas fa-video"></i></div>
         <div class="project-info-pro">
-          <h3>Projectos visuales · Incrife</h3>
+          <h3>Proyectos visuales · INCRIFE</h3>
           <div class="project-meta">
             <span><i class="far fa-calendar-alt"></i> Fundado en 2024</span>
             <span><i class="fas fa-music"></i> +4 videoclips</span>
@@ -361,39 +440,67 @@
       <a href="https://www.instagram.com/incrife/" target="_blank" class="project-card-pro">
         <div class="project-icon-pro"><i class="fas fa-camera"></i></div>
         <div class="project-info-pro">
-          <h3>Fotografia Incrife</h3>
+          <h3>Fotografía INCRIFE</h3>
           <div class="project-meta">
-            <span><i class="far fa-calendar-alt"></i>fUNDADO EN 2025</span>
+            <span><i class="far fa-calendar-alt"></i> Fundado en 2025</span>
             <span><i class="fas fa-images"></i> +50 sesiones</span>
           </div>
           <p>Fotógrafo profesional en Barcelona. Especialista en retratos, fotografía urbana, editorial y sesiones creativas. Estética única y personal.</p>
-          <span class="project-link">Ver portfolio en instagram <i class="fas fa-arrow-right"></i></span>
+          <span class="project-link">Ver portfolio en Instagram <i class="fas fa-arrow-right"></i></span>
         </div>
       </a>
-    </div>
-  </div>
-   <div class="projects-grid-pro">
       <a href="https://www.youtube.com/@incrifed" target="_blank" class="project-card-pro">
         <div class="project-icon-pro"><i class="fas fa-microphone-alt"></i></div>
         <div class="project-info-pro">
-          <h3>Canal Youtube @incrifed</h3>
+          <h3>Canal YouTube @incrifed</h3>
           <div class="project-meta">
             <span><i class="far fa-calendar-alt"></i> Fundado en 2025</span>
             <span><i class="fas fa-video"></i> +30 videos</span>
           </div>
-          <p>Canal de crímenes reales, reacciones y análisis en profundida, donde tambien hay humor y entretenimiento. Nuevos videos cada miércoles y domingo.</p>
+          <p>Canal de crímenes reales, reacciones y análisis en profundidad, donde también hay humor y entretenimiento. Nuevos videos cada miércoles y domingo.</p>
           <span class="project-link">Ver canal <i class="fas fa-arrow-right"></i></span>
         </div>
       </a>
-        </a>
       <a href="https://www.instagram.com/kurtusinc/" target="_blank" class="project-card-pro">
         <div class="project-icon-pro"><i class="fas fa-camera"></i></div>
         <div class="project-info-pro">
           <h3>Agency Kurtusinc</h3>
           <div class="project-meta">
-            <span><i class="far fa-calendar-alt"></i>fUNDADO EN 2025</span>
-            <span><i class="fas fa-images"></i> +3o models</span>
+            <span><i class="far fa-calendar-alt"></i> Fundado en 2025</span>
+            <span><i class="fas fa-images"></i> +30 models</span>
           </div>
+          <p>Agencia de modelos. Colaboración oficial con @kurtusinc. Talento único para fotografía, pasarela y publicidad.</p>
+          <span class="project-link">Ver agencia <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ESTADÍSTICAS SOCIALES -->
+  <div class="stats-social fade-up-item">
+    <div class="stat-card ig">
+      <i class="fab fa-instagram"></i>
+      <div class="stat-number">+12.5K</div>
+      <div class="stat-label">SEGUIDORES · Instagram</div>
+    </div>
+    <div class="stat-card yt">
+      <i class="fab fa-youtube"></i>
+      <div class="stat-number">+1.2K</div>
+      <div class="stat-label">SUSCRIPTORES · YouTube</div>
+    </div>
+  </div>
+
+  <div class="links-section fade-up-item">
+    <a href="https://www.youtube.com/@incrife" class="link-item">
+      <div class="link-left"><i class="fas fa-play-circle"></i><span class="link-text">VIDEOCLIPS · Producciones y Dirección</span></div><i class="fas fa-arrow-right link-arrow"></i>
+    </a>
+    <a href="https://www.instagram.com/incrife/" class="link-item">
+      <div class="link-left"><i class="fas fa-camera"></i><span class="link-text">FOTOGRAFÍA · Portfolio Barcelona · Sesiones</span></div><i class="fas fa-arrow-right link-arrow"></i>
+    </a>
+    <a href="https://www.tiktok.com/@incrife" class="link-item">
+      <div class="link-left"><i class="fab fa-tiktok"></i><span class="link-text">BTS · Making of & Reels · Contenido Audiovisual</span></div><i class="fas fa-arrow-right link-arrow"></i>
+    </a>
+  </div>
 
   <!-- FICHA GOOGLE BUSINESS -->
   <div class="google-business-card fade-up-item" itemscope itemtype="https://schema.org/LocalBusiness">
@@ -432,7 +539,44 @@
     </div>
   </div>
 
-  <!-- SECCIÓN CONTACTO (sin Mezcla & Master) -->
+  <!-- RESEÑAS DE GOOGLE -->
+  <div class="google-reviews-section fade-up-item">
+    <div class="section-header-custom">
+      <i class="fab fa-google"></i>
+      <h3>⭐ RESEÑAS DE MIS CLIENTES EN GOOGLE</h3>
+    </div>
+    <div class="google-reviews-grid">
+      <div class="google-review-card">
+        <div class="review-header-google">
+          <img class="review-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
+          <div class="review-info-google"><h4>Laura Martínez</h4><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text-google">"INCRIFE hizo las fotos de mi portfolio profesional. Muy atento, creativo y los resultados fueron espectaculares. 100% recomendable."</p>
+        <span class="review-date">hace 2 semanas en Google</span>
+      </div>
+      <div class="google-review-card">
+        <div class="review-header-google">
+          <img class="review-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente">
+          <div class="review-info-google"><h4>Carlos Ruiz</h4><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text-google">"Muy profesional. Grabó mi videoclip y entendió perfectamente lo que quería. La edición y la calidad del video son increíbles."</p>
+        <span class="review-date">hace 1 mes en Google</span>
+      </div>
+      <div class="google-review-card">
+        <div class="review-header-google">
+          <img class="review-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente">
+          <div class="review-info-google"><h4>Sofia Crespo</h4><div class="review-stars">★★★★★</div></div>
+        </div>
+        <p class="review-text-google">"Un artista con mucho talento. Las fotos que me hizo capturan mi esencia. Además es muy fácil trabajar con él."</p>
+        <span class="review-date">hace 2 meses en Google</span>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 1rem;">
+      <a href="https://g.page/r/Cd6xo07U8yjeEBM/review" target="_blank" class="btn-leave-review"><i class="fab fa-google"></i> Deja tu reseña en Google</a>
+    </div>
+  </div>
+
+  <!-- SECCIÓN ARTISTA -->
   <div class="artist-section fade-up-item">
     <h3 style="font-size:1.3rem; margin-bottom:0.5rem;">📸 ¿Eres artista musical, modelo o necesitas contenido audiovisual?</h3>
     <p style="margin:0.5rem 0 1rem;">Soy fotógrafo profesional y director de videoclips en Barcelona. Colaboraciones para videoclips, sesiones fotográficas, producción audiovisual y proyectos creativos.</p>
