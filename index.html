@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker · Director Videoclips</title>
   
+  <!-- VERIFICACIÓN GOOGLE (SOLICITADA) -->
+  <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA" />
+  
   <!-- ========== PRELOAD Y PREFETCH PARA RENDIMIENTO ========== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,9 +68,6 @@
   <meta name="twitter:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   <meta name="twitter:image:alt" content="INCRIFE - Fotógrafo profesional en Barcelona">
   <meta name="twitter:creator" content="@Incrife">
-  
-  <!-- ========== VERIFICACIONES ========== -->
-  <meta name="google-site-verification" content="TU_CODIGO_VERIFICACION">
   
   <meta name="theme-color" content="#cc0000">
   <link rel="icon" type="image/png" href="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
@@ -224,6 +224,16 @@
     .artist-section h3 { font-size: clamp(1rem, 4vw, 1.2rem); margin-bottom: 0.5rem; }
     .artist-section p { font-size: 0.85rem; color: #ddcccc; margin-bottom: 1rem; }
     
+    /* NUEVO APARTADO COLABORACIONES: DISEÑO IDÉNTICO A RESTO DE SECCIONES */
+    .collaborations-section { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #ff4444; transition: all 0.3s; }
+    .collab-grid { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin-top: 1rem; }
+    .collab-card { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border-radius: 24px; padding: 1rem; text-align: center; min-width: 110px; flex: 1 0 100px; transition: all 0.2s; border: 1px solid rgba(255,68,68,0.3); text-decoration: none; color: inherit; }
+    .collab-card:hover { transform: translateY(-5px); background: rgba(204,0,0,0.15); border-color: #cc0000; }
+    .collab-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 0.7rem; border: 2px solid #ff4444; background: #1a0a0a; }
+    .collab-name { font-weight: 700; font-size: 0.9rem; color: #fff; margin-bottom: 0.2rem; }
+    .collab-ig { font-size: 0.7rem; color: #ff8888; display: flex; align-items: center; justify-content: center; gap: 4px; }
+    .collab-ig i { font-size: 0.65rem; }
+    
     /* Social */
     .social-modern { display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
     .social-circle { width: 45px; height: 45px; background: rgba(30,15,15,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.2rem; transition: all 0.2s; border: 1px solid rgba(255,68,68,0.5); }
@@ -267,6 +277,8 @@
       .artist-section p { font-size: 0.75rem; }
       .social-circle { width: 40px; height: 40px; font-size: 1rem; }
       .whatsapp-modern a { width: 50px; height: 50px; font-size: 1.5rem; border-radius: 14px; }
+      .collab-card { min-width: 90px; }
+      .collab-avatar { width: 55px; height: 55px; }
     }
     
     @media (max-width: 480px) {
@@ -468,6 +480,44 @@
       <div class="google-review-card"><div class="review-header-google"><img class="review-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente" loading="lazy"><div class="review-info-google"><h4>Sofia Crespo</h4><div class="review-stars">★★★★★</div></div></div><p class="review-text-google">"Un artista con mucho talento. Las fotos capturan mi esencia. Muy fácil trabajar con él."</p><span class="review-date">hace 2 meses</span></div>
     </div>
     <div style="text-align:center;"><a href="https://g.page/r/Cd6xo07U8yjeEBM/review" target="_blank" class="btn-leave-review" rel="noopener"><i class="fab fa-google"></i> Deja tu reseña</a></div>
+  </div>
+
+  <!-- ===== NUEVO APARTADO COLABORACIONES (CON LOS PERFILES SOLICITADOS) ===== -->
+  <div class="collaborations-section fade-up-item">
+    <div class="section-header-custom"><i class="fas fa-handshake"></i><h3>🤝 COLABORACIONES · TALENTO CREATIVO</h3></div>
+    <div class="collab-grid">
+      <!-- rafa930 -->
+      <a href="https://instagram.com/rafa930" target="_blank" class="collab-card" rel="noopener">
+        <img src="https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=70&name=Rafa+930" alt="rafa930" class="collab-avatar" loading="lazy">
+        <div class="collab-name">rafa930</div>
+        <div class="collab-ig"><i class="fab fa-instagram"></i> @rafa930</div>
+      </a>
+      <!-- kingsla -->
+      <a href="https://instagram.com/kingsla" target="_blank" class="collab-card" rel="noopener">
+        <img src="https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=70&name=kingsla" alt="kingsla" class="collab-avatar" loading="lazy">
+        <div class="collab-name">kingsla</div>
+        <div class="collab-ig"><i class="fab fa-instagram"></i> @kingsla</div>
+      </a>
+      <!-- rassam -->
+      <a href="https://instagram.com/rassam" target="_blank" class="collab-card" rel="noopener">
+        <img src="https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=70&name=Rassam" alt="rassam" class="collab-avatar" loading="lazy">
+        <div class="collab-name">rassam</div>
+        <div class="collab-ig"><i class="fab fa-instagram"></i> @rassam</div>
+      </a>
+      <!-- maruking -->
+      <a href="https://instagram.com/maruking" target="_blank" class="collab-card" rel="noopener">
+        <img src="https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=70&name=Maruking" alt="maruking" class="collab-avatar" loading="lazy">
+        <div class="collab-name">maruking</div>
+        <div class="collab-ig"><i class="fab fa-instagram"></i> @maruking</div>
+      </a>
+      <!-- yadira__mey -->
+      <a href="https://instagram.com/yadira__mey" target="_blank" class="collab-card" rel="noopener">
+        <img src="https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=70&name=Yadira" alt="yadira__mey" class="collab-avatar" loading="lazy">
+        <div class="collab-name">yadira__mey</div>
+        <div class="collab-ig"><i class="fab fa-instagram"></i> @yadira__mey</div>
+      </a>
+    </div>
+    <p style="text-align:center; font-size:0.7rem; margin-top:1rem; color:#ffaaaa;">✨ Colaboradores oficiales · Talento multidisciplinary ✨</p>
   </div>
 
   <!-- SECCIÓN ARTISTA -->
