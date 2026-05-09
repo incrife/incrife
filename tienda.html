@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>INCRIFE SHOP | LUTs · Presets · Merchandising · Audiovisual</title>
+  <title>INCRIFE | Servicios Profesionales · Fotografía · Videoclips · Estudio</title>
   
   <!-- ========== SEO ========== -->
-  <meta name="description" content="INCRIFE SHOP: Tienda profesional de LUTs para color grading, presets para edición de video, camisetas y merchandising para creadores audiovisuales. Descarga digital instantánea.">
-  <meta name="keywords" content="luts color grading, presets davinci resolve, luts cine, camisetas audiovisual, tienda creadores, luts barcelona, color grading pack, merch cineasta">
-  <meta name="author" content="INCRIFE SHOP">
+  <meta name="description" content="Servicios profesionales de fotografía, videoclips y estudio en Barcelona. Tarifas desde 50€. Sesiones fotográficas, videoclips musicales, estudio blanco y más. Calidad profesional.">
+  <meta name="keywords" content="servicios fotografía barcelona, videoclips barcelona precio, estudio blanco barcelona, sesiones fotográficas, videoclip económico, productor audiovisual barcelona">
+  <meta name="author" content="INCRIFE">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <link rel="canonical" href="https://incrife.com/shop.html">
-  <meta property="og:title" content="INCRIFE SHOP | LUTs · Presets · Merchandising">
-  <meta property="og:description" content="Tienda profesional para creadores audiovisuales. LUTs de color grading, presets y merchandising exclusivo.">
+  <link rel="canonical" href="https://incrife.com/servicios.html">
+  <meta property="og:title" content="INCRIFE | Servicios Profesionales · Fotografía · Videoclips · Estudio">
+  <meta property="og:description" content="Servicios profesionales de fotografía, videoclips y estudio en Barcelona. Tarifas desde 50€.">
   <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   <meta name="theme-color" content="#cc0000">
   
@@ -24,8 +24,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; overflow-x: hidden; }
     
-    /* Fondo rojo/negro estilo estudio */
-    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; background: #0a0505; }
+    /* Fondo animado */
+    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
     .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
     .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
     .bg-grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.08"/%3E%3C/svg%3E'); pointer-events: none; z-index: 1; opacity: 0.4; }
@@ -39,26 +39,7 @@
     .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
     .nav-links a { color: #ffcccc; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: #ff5555; }
-    .cart-icon { position: relative; cursor: pointer; color: #ffcccc; font-size: 1.2rem; }
-    .cart-count { position: absolute; top: -8px; right: -12px; background: #cc0000; color: white; font-size: 0.6rem; padding: 0.1rem 0.4rem; border-radius: 50%; }
     .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
-    
-    /* Sidebar carrito */
-    .cart-sidebar { position: fixed; top: 0; right: -400px; width: 380px; height: 100%; background: #0f0808; z-index: 1002; transition: right 0.3s ease; padding: 1.5rem; border-left: 1px solid #ff4444; overflow-y: auto; }
-    .cart-sidebar.open { right: 0; }
-    .cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid #ff4444; }
-    .cart-header h3 { color: #ff8888; }
-    .close-cart { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
-    .cart-items { margin-bottom: 1.5rem; }
-    .cart-item { display: flex; gap: 1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #333; }
-    .cart-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
-    .cart-item-info h4 { font-size: 0.8rem; }
-    .cart-item-info p { font-size: 0.7rem; color: #ff8888; }
-    .cart-item-remove { margin-left: auto; color: #ff5555; cursor: pointer; }
-    .cart-total { margin-top: 1rem; padding-top: 0.5rem; border-top: 1px solid #ff4444; text-align: right; }
-    .cart-total span { color: #ff8888; font-size: 1.2rem; }
-    .checkout-btn { background: #cc0000; border: none; padding: 0.8rem; width: 100%; border-radius: 40px; color: white; font-weight: 700; margin-top: 1rem; cursor: pointer; transition: all 0.2s; }
-    .checkout-btn:hover { background: #ff3333; }
     
     /* Menú lateral móvil */
     .side-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #0f0808; z-index: 1001; transition: right 0.3s ease; padding: 2rem; border-left: 1px solid #ff4444; }
@@ -75,33 +56,263 @@
     .fade-up-item { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease; }
     .fade-up-item.visible { opacity: 1; transform: translateY(0); }
     
-    /* Hero Shop */
-    .hero-shop { text-align: center; margin-bottom: 3rem; }
-    .hero-shop h1 { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
-    .hero-shop p { color: #ccaaaa; max-width: 600px; margin: 0 auto; font-size: 1rem; }
+    /* Hero */
+    .hero-services { text-align: center; margin-bottom: 3rem; }
+    .hero-services h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
+    .hero-services p { color: #ccaaaa; max-width: 600px; margin: 0 auto; font-size: 1rem; }
     
-    /* Categorías */
-    .categories { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .category-btn { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,68,68,0.4); border-radius: 40px; padding: 0.5rem 1.5rem; color: #ffcccc; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
-    .category-btn:hover, .category-btn.active { background: #cc0000; color: white; border-color: #cc0000; }
+    /* Sección de precios general */
+    .pricing-section {
+      margin-bottom: 4rem;
+    }
+    .pricing-section h2 {
+      font-size: 1.8rem;
+      color: #ff8888;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .pricing-card {
+      background: rgba(10,5,5,0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 32px;
+      padding: 2rem;
+      text-align: center;
+      border: 1px solid rgba(204,0,0,0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #ff5555;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    }
+    .pricing-card.popular {
+      border: 2px solid #ff5555;
+    }
+    .popular-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #ff5555;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .pricing-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #cc0000, #8b0000);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem auto;
+    }
+    .pricing-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+    .pricing-card h3 {
+      color: #ffaa88;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .pricing-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ff5555;
+      margin: 0.5rem 0;
+    }
+    .pricing-price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #aa8888;
+    }
+    .pricing-features {
+      list-style: none;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+    .pricing-features li {
+      padding: 0.5rem 0;
+      color: #bbaaaa;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      border-bottom: 1px solid rgba(255,68,68,0.2);
+    }
+    .pricing-features li i {
+      width: 20px;
+      color: #ff5555;
+    }
+    .btn-service {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #ff5555;
+      border-radius: 40px;
+      padding: 0.8rem 1.5rem;
+      color: #ffcccc;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s;
+    }
+    .btn-service:hover {
+      background: #cc0000;
+      color: white;
+      border-color: #cc0000;
+      transform: scale(1.02);
+    }
     
-    /* Grid de productos */
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-    .product-card { background: rgba(10,5,5,0.75); backdrop-filter: blur(16px); border-radius: 28px; overflow: hidden; border: 1px solid rgba(204,0,0,0.4); transition: all 0.3s ease; cursor: pointer; }
-    .product-card:hover { transform: translateY(-8px); border-color: #ff5555; box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
-    .product-image { width: 100%; height: 220px; object-fit: cover; transition: all 0.3s; }
-    .product-card:hover .product-image { transform: scale(1.02); filter: brightness(1.05); }
-    .product-info { padding: 1.2rem; }
-    .product-info h3 { color: #ffaa88; font-size: 1.1rem; margin-bottom: 0.3rem; }
-    .product-price { color: #ff5555; font-size: 1.3rem; font-weight: 700; margin: 0.5rem 0; }
-    .product-desc { color: #aa8888; font-size: 0.75rem; margin-bottom: 1rem; line-height: 1.4; }
-    .add-to-cart { background: rgba(0,0,0,0.5); border: 1px solid #ff5555; border-radius: 40px; padding: 0.6rem; width: 100%; color: #ffcccc; font-weight: 600; font-size: 0.8rem; cursor: pointer; transition: all 0.2s; }
-    .add-to-cart:hover { background: #cc0000; color: white; border-color: #cc0000; }
+    /* Sección de estudio */
+    .studio-section {
+      background: rgba(10,5,5,0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 40px;
+      padding: 2rem;
+      margin: 3rem 0;
+      border: 1px solid rgba(204,0,0,0.4);
+    }
+    .studio-section h2 {
+      font-size: 1.6rem;
+      color: #ff8888;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .studio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .studio-item {
+      background: rgba(0,0,0,0.4);
+      border-radius: 24px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .studio-item:hover {
+      transform: translateY(-5px);
+      background: rgba(204,0,0,0.1);
+    }
+    .studio-item i {
+      font-size: 2rem;
+      color: #ff5555;
+      margin-bottom: 0.8rem;
+    }
+    .studio-item h3 {
+      color: #ffaa88;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .studio-item .price {
+      color: #ff5555;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+    .studio-item p {
+      color: #aa8888;
+      font-size: 0.75rem;
+    }
     
-    /* Carrito flotante */
-    .cart-floating { position: fixed; bottom: 100px; right: 24px; background: #cc0000; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; cursor: pointer; z-index: 1000; box-shadow: 0 4px 15px rgba(204,0,0,0.4); transition: all 0.2s; }
-    .cart-floating:hover { transform: scale(1.05); background: #ff3333; }
-    .cart-floating .count { position: absolute; top: -5px; right: -5px; background: #fff; color: #cc0000; border-radius: 50%; width: 22px; height: 22px; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    /* Sección extra / paquetes */
+    .extras-section {
+      margin: 3rem 0;
+    }
+    .extras-section h2 {
+      font-size: 1.6rem;
+      color: #ff8888;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .extras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .extra-card {
+      background: rgba(10,5,5,0.6);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid rgba(204,0,0,0.3);
+      transition: all 0.3s;
+    }
+    .extra-card:hover {
+      border-color: #ff5555;
+      transform: translateY(-3px);
+    }
+    .extra-card i {
+      font-size: 1.5rem;
+      color: #ff5555;
+    }
+    .extra-card h4 {
+      color: #ffaa88;
+      font-size: 0.9rem;
+      margin: 0.5rem 0 0.2rem;
+    }
+    .extra-card p {
+      color: #ff5555;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    
+    /* CTA final */
+    .cta-services {
+      background: linear-gradient(135deg, #1a0a0a, #0f0505);
+      border-radius: 40px;
+      padding: 2.5rem;
+      margin: 2rem 0;
+      text-align: center;
+      border: 1px solid #ff4444;
+    }
+    .cta-services h2 {
+      font-size: 1.6rem;
+      color: #ff8888;
+      margin-bottom: 0.5rem;
+    }
+    .cta-services p {
+      color: #ddcccc;
+      margin-bottom: 1.5rem;
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 40px;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all 0.2s;
+    }
+    .btn-whatsapp:hover {
+      background: #20b359;
+      transform: scale(1.02);
+    }
     
     /* Footer */
     .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; }
@@ -109,17 +320,16 @@
     .social-circle:hover { background: #cc0000; color: white; transform: translateY(-4px); }
     .footer-modern { text-align: center; font-size: 0.7rem; color: #aa7777; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,68,68,0.3); }
     .whatsapp-fixed { position: fixed; bottom: 24px; right: 24px; z-index: 1000; }
-    .whatsapp-fixed a { display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; background: #25D366; border-radius: 16px; text-decoration: none; color: white; font-size: 1.8rem; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+    .whatsapp-fixed a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 18px; text-decoration: none; color: white; font-size: 2rem; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
     .whatsapp-fixed a:hover { transform: scale(1.05); }
     
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .menu-toggle { display: block; }
       .container { padding: 1.5rem 1rem; }
-      .hero-shop h1 { font-size: 2rem; }
-      .cart-sidebar { width: 100%; right: -100%; }
-      .products-grid { gap: 1rem; }
-      .product-image { height: 180px; }
+      .hero-services h1 { font-size: 2rem; }
+      .pricing-price { font-size: 1.8rem; }
+      .pricing-card { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -131,13 +341,13 @@
     <div class="logo"><a href="index.html">INCRIFE</a></div>
     <div class="nav-links">
       <a href="index.html">Inicio</a>
-      <a href="shop.html" class="active">Tienda</a>
+      <a href="servicios.html" class="active">Servicios</a>
       <a href="fotografia.html">Fotografía</a>
       <a href="studio.html">Studio</a>
       <a href="incrifed.html">True Crime</a>
+      <a href="trabajaconnosotros.html">Equipo</a>
       <a href="contacto.html">Contacto</a>
     </div>
-    <div class="cart-icon" id="cartIconMobile" style="display: none;"><i class="fas fa-shopping-cart"></i><span class="cart-count" id="cartCountMobile">0</span></div>
     <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
   </div>
 </nav>
@@ -145,7 +355,7 @@
 <div class="side-menu" id="sideMenu">
   <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
   <a href="index.html">Inicio</a>
-  <a href="shop.html">Tienda</a>
+  <a href="servicios.html">Servicios</a>
   <a href="fotografia.html">Fotografía</a>
   <a href="studio.html">Studio</a>
   <a href="incrifed.html">True Crime</a>
@@ -153,84 +363,151 @@
 </div>
 <div class="overlay" id="overlay"></div>
 
-<div class="cart-sidebar" id="cartSidebar">
-  <div class="cart-header">
-    <h3><i class="fas fa-shopping-cart"></i> Mi Carrito</h3>
-    <button class="close-cart" id="closeCartBtn"><i class="fas fa-times"></i></button>
-  </div>
-  <div id="cartItemsList" class="cart-items"><p style="text-align:center; color:#888;">Tu carrito está vacío</p></div>
-  <div class="cart-total"><span>Total: <span id="cartTotal">0</span>€</span></div>
-  <button class="checkout-btn" id="checkoutBtn"><i class="fab fa-whatsapp"></i> Finalizar pedido por WhatsApp</button>
-</div>
-
-<div class="cart-floating" id="cartFloating">
-  <i class="fas fa-shopping-cart"></i>
-  <span class="count" id="cartFloatingCount">0</span>
-</div>
-
 <div class="page-wrapper">
 <div class="container">
   
-  <div class="hero-shop fade-up-item">
-    <h1><i class="fas fa-store"></i> INCRIFE SHOP</h1>
-    <p>LUTs para color grading · Presets · Merchandising para creadores audiovisuales</p>
+  <div class="hero-services fade-up-item">
+    <h1><i class="fas fa-crown"></i> Servicios Profesionales</h1>
+    <p>Fotografía, videoclips y estudio. Calidad profesional a precios competitivos.</p>
   </div>
   
-  <div class="categories fade-up-item">
-    <button class="category-btn active" data-category="all">Todos</button>
-    <button class="category-btn" data-category="luts">LUTs · Presets</button>
-    <button class="category-btn" data-category="merch">Merchandising</button>
-    <button class="category-btn" data-category="digital">Descargas Digitales</button>
+  <!-- SECCIÓN FOTOGRAFÍA -->
+  <div class="pricing-section fade-up-item">
+    <h2><i class="fas fa-camera"></i> Fotografía</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-icon"><i class="fas fa-camera-retro"></i></div>
+        <h3>Sesión Individual</h3>
+        <div class="pricing-price">50€<span>/sesión</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> 1 hora de sesión</li>
+          <li><i class="fas fa-check-circle"></i> 10 fotos editadas</li>
+          <li><i class="fas fa-check-circle"></i> Localización en Barcelona</li>
+          <li><i class="fas fa-check-circle"></i> Entrega en 5-7 días</li>
+        </ul>
+        <a href="contacto.html" class="btn-service">Solicitar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="pricing-card popular">
+        <div class="popular-badge">🔥 Más vendido</div>
+        <div class="pricing-icon"><i class="fas fa-users"></i></div>
+        <h3>Pack Duo / Grupo</h3>
+        <div class="pricing-price">90€<span>/sesión</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> 1.5 horas de sesión</li>
+          <li><i class="fas fa-check-circle"></i> 20 fotos editadas</li>
+          <li><i class="fas fa-check-circle"></i> Hasta 4 personas</li>
+          <li><i class="fas fa-check-circle"></i> Localización premium</li>
+        </ul>
+        <a href="contacto.html" class="btn-service">Solicitar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="pricing-card">
+        <div class="pricing-icon"><i class="fas fa-star"></i></div>
+        <h3>Pack Editorial</h3>
+        <div class="pricing-price">150€<span>/sesión</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> 2 horas de sesión</li>
+          <li><i class="fas fa-check-circle"></i> 30 fotos editadas</li>
+          <li><i class="fas fa-check-circle"></i> 2 cambios de look</li>
+          <li><i class="fas fa-check-circle"></i> Entrega en 3-5 días</li>
+        </ul>
+        <a href="contacto.html" class="btn-service">Solicitar <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
   </div>
   
-  <div class="products-grid fade-up-item" id="productsGrid">
-    <!-- Producto 1 - LUT Cine Pack -->
-    <div class="product-card" data-category="luts" data-name="LUT Pack · Cine Looks" data-price="25" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=LUT+Cine">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=LUT+Cine" alt="LUT Pack Cine Looks">
-      <div class="product-info"><h3>LUT Pack · Cine Looks</h3><div class="product-price">25€</div><div class="product-desc">10 LUTs profesionales para DaVinci Resolve, Premiere Pro y Final Cut. Look cinematográfico.</div><button class="add-to-cart">Añadir al carrito</button></div>
+  <!-- SECCIÓN VIDEOCLIPS -->
+  <div class="pricing-section fade-up-item">
+    <h2><i class="fas fa-video"></i> Videoclips</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Videoclip Básico</h3>
+        <div class="pricing-price">150€<span>/video</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Un solo plano / plano fijo</li>
+          <li><i class="fas fa-check-circle"></i> Edición básica</li>
+          <li><i class="fas fa-check-circle"></i> Color grading</li>
+          <li><i class="fas fa-check-circle"></i> Duración: hasta 3 minutos</li>
+        </ul>
+        <a href="contacto.html" class="btn-service">Solicitar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="pricing-card popular">
+        <div class="popular-badge">🎥 Recomendado</div>
+        <div class="pricing-icon"><i class="fas fa-play-circle"></i></div>
+        <h3>Videoclip Profesional</h3>
+        <div class="pricing-price">300€<span>/video</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Múltiples planos</li>
+          <li><i class="fas fa-check-circle"></i> Locaciones externas</li>
+          <li><i class="fas fa-check-circle"></i> Edición avanzada</li>
+          <li><i class="fas fa-check-circle"></i> Corrección de color premium</li>
+          <li><i class="fas fa-check-circle"></i> Duración: hasta 4 minutos</li>
+        </ul>
+        <a href="contacto.html" class="btn-service">Solicitar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="pricing-card">
+        <div class="pricing-icon"><i class="fas fa-crown"></i></div>
+        <h3>Pack Premium</h3>
+        <div class="pricing-price">500€<span>/video</span></div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Videoclip + making of</li>
+          <li><i class="fas fa-check-circle"></i> 3 locaciones diferentes</li>
+          <li><i class="fas fa-check-circle"></i> Efectos especiales</li>
+          <li><i class="fas fa-check-circle"></i> Sesión fotográfica incluida</li>
+          <li><i class="fas fa-check-circle"></i> Entrega en 7 días</li>
+        </ul>
+        <a href="contacto.html" class="btn-service">Solicitar <i class="fas fa-arrow-right"></i></a>
+      </div>
     </div>
-    
-    <!-- Producto 2 - LUT Urban Street -->
-    <div class="product-card" data-category="luts" data-name="LUT · Urban Street" data-price="15" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=Urban+Street">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=Urban+Street" alt="LUT Urban Street">
-      <div class="product-info"><h3>LUT · Urban Street</h3><div class="product-price">15€</div><div class="product-desc">Look urbano y vibrante. Ideal para videoclips y contenido callejero.</div><button class="add-to-cart">Añadir al carrito</button></div>
+  </div>
+  
+  <!-- SECCIÓN ESTUDIO BLANCO / STUDIO FOTOS -->
+  <div class="studio-section fade-up-item">
+    <h2><i class="fas fa-lightbulb"></i> Estudio Blanco · Fotos</h2>
+    <div class="studio-grid">
+      <div class="studio-item">
+        <i class="fas fa-camera"></i>
+        <h3>Sesión Estudio Blanco</h3>
+        <div class="price">80€ / hora</div>
+        <p>Fondo blanco profesional. Iluminación incluida.</p>
+      </div>
+      <div class="studio-item">
+        <i class="fas fa-users"></i>
+        <h3>Pack 2h Estudio</h3>
+        <div class="price">140€</div>
+        <p>2 horas + 20 fotos editadas. Ideal para portfolios.</p>
+      </div>
+      <div class="studio-item">
+        <i class="fas fa-chalkboard-user"></i>
+        <h3>Fondo Croma</h3>
+        <div class="price">+30€</div>
+        <p>Añade fondo verde para efectos especiales.</p>
+      </div>
     </div>
-    
-    <!-- Producto 3 - Preset Pack (Lightroom/Video) -->
-    <div class="product-card" data-category="luts" data-name="Preset Pack · Moody" data-price="12" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=Moody+Presets">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=Moody+Presets" alt="Preset Pack Moody">
-      <div class="product-info"><h3>Preset Pack · Moody</h3><div class="product-price">12€</div><div class="product-desc">5 presets para Lightroom y Premiere. Tonos apagados y cinematográficos.</div><button class="add-to-cart">Añadir al carrito</button></div>
+  </div>
+  
+  <!-- EXTRAS / SERVICIOS ADICIONALES -->
+  <div class="extras-section fade-up-item">
+    <h2><i class="fas fa-plus-circle"></i> Extras · Servicios Adicionales</h2>
+    <div class="extras-grid">
+      <div class="extra-card"><i class="fas fa-droplet"></i><h4>Color Grading Pro</h4><p>+50€</p></div>
+      <div class="extra-card"><i class="fas fa-clock"></i><h4>Hora adicional</h4><p>+40€</p></div>
+      <div class="extra-card"><i class="fas fa-print"></i><h4>Impresión fotos</h4><p>desde 5€</p></div>
+      <div class="extra-card"><i class="fas fa-drone"></i><h4>Drone</h4><p>+80€</p></div>
+      <div class="extra-card"><i class="fas fa-music"></i><h4>Locución / Voz</h4><p>+60€</p></div>
+      <div class="extra-card"><i class="fas fa-truck"></i><h4>Envio de archivos</h4><p>Incluido</p></div>
     </div>
-    
-    <!-- Producto 4 - Camiseta INCRIFE -->
-    <div class="product-card" data-category="merch" data-name="Camiseta INCRIFE · Negra" data-price="25" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=Camiseta+INCRIFE">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=Camiseta+INCRIFE" alt="Camiseta INCRIFE">
-      <div class="product-info"><h3>Camiseta INCRIFE · Negra</h3><div class="product-price">25€</div><div class="product-desc">Camiseta 100% algodón. Logo impreso. Tallas S-XXL. Envío gratis.</div><button class="add-to-cart">Añadir al carrito</button></div>
-    </div>
-    
-    <!-- Producto 5 - Gorra INCRIFE -->
-    <div class="product-card" data-category="merch" data-name="Gorra INCRIFE" data-price="20" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=Gorra+INCRIFE">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=Gorra+INCRIFE" alt="Gorra INCRIFE">
-      <div class="product-info"><h3>Gorra INCRIFE</h3><div class="product-price">20€</div><div class="product-desc">Gorra negra bordada. Ajustable. Unisex.</div><button class="add-to-cart">Añadir al carrito</button></div>
-    </div>
-    
-    <!-- Producto 6 - Pack Prints Digitales -->
-    <div class="product-card" data-category="digital" data-name="Pack Prints Digitales" data-price="15" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=Digital+Prints">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=Digital+Prints" alt="Pack Prints Digitales">
-      <div class="product-info"><h3>Pack Prints Digitales</h3><div class="product-price">15€</div><div class="product-desc">10 fotografías en alta resolución. Uso personal. Descarga inmediata.</div><button class="add-to-cart">Añadir al carrito</button></div>
-    </div>
-    
-    <!-- Producto 7 - Curso Introducción Color Grading -->
-    <div class="product-card" data-category="digital" data-name="Curso · Color Grading" data-price="49" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=Curso+Color">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=Curso+Color" alt="Curso Color Grading">
-      <div class="product-info"><h3>Curso · Color Grading</h3><div class="product-price">49€</div><div class="product-desc">Introducción al color grading en DaVinci Resolve. 5h de contenido.</div><button class="add-to-cart">Añadir al carrito</button></div>
-    </div>
-    
-    <!-- Producto 8 - Hoodie INCRIFE -->
-    <div class="product-card" data-category="merch" data-name="Hoodie INCRIFE" data-price="45" data-img="https://placehold.co/400x400/1a1a1a/ff5555?text=Hoodie+INCRIFE">
-      <img class="product-image" src="https://placehold.co/400x400/1a1a1a/ff5555?text=Hoodie+INCRIFE" alt="Hoodie INCRIFE">
-      <div class="product-info"><h3>Hoodie INCRIFE</h3><div class="product-price">45€</div><div class="product-desc">Sudadera con capucha. Algodón orgánico. Diseño exclusivo.</div><button class="add-to-cart">Añadir al carrito</button></div>
-    </div>
+  </div>
+  
+  <!-- CTA FINAL -->
+  <div class="cta-services fade-up-item">
+    <h2><i class="fas fa-calendar-alt"></i> ¿Listo para tu proyecto?</h2>
+    <p>Cuéntame qué necesitas y te preparo un presupuesto personalizado sin compromiso.</p>
+    <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20un%20presupuesto%20de%20servicios" class="btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
   </div>
   
   <div class="social-modern fade-up-item">
@@ -239,105 +516,20 @@
     <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
     <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
   </div>
-  <div class="footer-modern">INCRIFE SHOP · LUTs · Presets · Merchandising para creadores audiovisuales<br>© 2026 · Descarga digital instantánea · Envíos a toda España</div>
+  <div class="footer-modern fade-up-item">INCRIFE · Servicios Profesionales de Fotografía, Videoclips y Estudio · Barcelona<br>© 2026 · Calidad y precio garantizados</div>
 </div>
 </div>
 
-<div class="whatsapp-fixed"><a href="https://wa.me/34624170204?text=Hola%20INCRIFE%20SHOP%2C%20me%20interesa%20un%20producto"><i class="fab fa-whatsapp"></i></a></div>
+<div class="whatsapp-fixed"><a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20un%20presupuesto"><i class="fab fa-whatsapp"></i></a></div>
 
 <script>
-  let cart = [];
-  
-  function saveCart() { localStorage.setItem('incrifeShopCart', JSON.stringify(cart)); updateCartUI(); }
-  function loadCart() { const saved = localStorage.getItem('incrifeShopCart'); if(saved) { cart = JSON.parse(saved); updateCartUI(); } }
-  
-  function updateCartUI() {
-    const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    document.getElementById('cartCountMobile').innerText = count;
-    document.getElementById('cartFloatingCount').innerText = count;
-    
-    const cartItemsList = document.getElementById('cartItemsList');
-    if(cart.length === 0) { cartItemsList.innerHTML = '<p style="text-align:center; color:#888;">Tu carrito está vacío</p>'; }
-    else {
-      cartItemsList.innerHTML = cart.map((item, idx) => `
-        <div class="cart-item">
-          <img src="${item.img}" alt="${item.name}">
-          <div class="cart-item-info"><h4>${item.name}</h4><p>${item.price}€ x ${item.quantity}</p></div>
-          <div class="cart-item-remove" onclick="removeFromCart(${idx})"><i class="fas fa-trash"></i></div>
-        </div>
-      `).join('');
-    }
-    document.getElementById('cartTotal').innerText = total;
-  }
-  
-  function addToCart(name, price, img) {
-    const existing = cart.find(item => item.name === name);
-    if(existing) { existing.quantity++; }
-    else { cart.push({ name, price, img, quantity: 1 }); }
-    saveCart();
-    alert(`✅ ${name} añadido al carrito`);
-  }
-  
-  function removeFromCart(index) { cart.splice(index, 1); saveCart(); }
-  
-  document.querySelectorAll('.add-to-cart').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const card = btn.closest('.product-card');
-      const name = card.dataset.name;
-      const price = parseInt(card.dataset.price);
-      const img = card.dataset.img;
-      addToCart(name, price, img);
-    });
-  });
-  
-  // Filtrado por categorías
-  const categoryBtns = document.querySelectorAll('.category-btn');
-  const products = document.querySelectorAll('.product-card');
-  categoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      categoryBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const category = btn.dataset.category;
-      products.forEach(product => {
-        if(category === 'all' || product.dataset.category === category) { product.style.display = 'block'; }
-        else { product.style.display = 'none'; }
-      });
-    });
-  });
-  
-  // Carrito sidebar
-  const cartSidebar = document.getElementById('cartSidebar');
-  const cartFloating = document.getElementById('cartFloating');
-  const closeCartBtn = document.getElementById('closeCartBtn');
-  const overlayEl = document.getElementById('overlay');
-  
-  function openCart() { cartSidebar.classList.add('open'); overlayEl.classList.add('active'); document.body.style.overflow = 'hidden'; }
-  function closeCart() { cartSidebar.classList.remove('open'); overlayEl.classList.remove('active'); document.body.style.overflow = ''; }
-  
-  cartFloating.onclick = openCart;
-  closeCartBtn.onclick = closeCart;
-  overlayEl.onclick = closeCart;
-  
-  // Checkout WhatsApp
-  document.getElementById('checkoutBtn').onclick = () => {
-    if(cart.length === 0) { alert('Tu carrito está vacío'); return; }
-    let message = 'Hola INCRIFE SHOP, quiero hacer este pedido:%0A';
-    cart.forEach(item => { message += `- ${item.name} x${item.quantity} = ${item.price * item.quantity}€%0A`; });
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    message += `%0ATotal: ${total}€%0A%0AMi nombre es: %0ADirección: %0ATeléfono:`;
-    window.open(`https://wa.me/34624170204?text=${message}`, '_blank');
-  };
-  
-  // Menú móvil
   const menuToggle = document.getElementById('menuToggle');
   const sideMenu = document.getElementById('sideMenu');
   const closeMenu = document.getElementById('closeMenu');
-  if(menuToggle) menuToggle.onclick = () => { sideMenu.classList.add('open'); overlayEl.classList.add('active'); };
-  if(closeMenu) closeMenu.onclick = () => { sideMenu.classList.remove('open'); overlayEl.classList.remove('active'); };
-  
-  loadCart();
+  const overlay = document.getElementById('overlay');
+  if (menuToggle) menuToggle.onclick = () => { sideMenu.classList.add('open'); overlay.classList.add('active'); };
+  if (closeMenu) closeMenu.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); };
+  if (overlay) overlay.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); };
   
   const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up-item').forEach(el => observer.observe(el));
