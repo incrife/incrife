@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>INCRIFE | Fotografía Urbana · Retratos · Barcelona</title>
+  <title>INCRIFE Portfolio | Fotografía Urbana · Retratos · Videoclips · Barcelona</title>
   
-  <!-- ========== SEO BRUTAL ========== -->
-  <meta name="description" content="INCRIFE: Fotógrafo urbano en Barcelona especializado en retratos, fotografía callejera y editorial. Descubre mi portfolio visual único. Sesiones profesionales para modelos y artistas.">
-  <meta name="keywords" content="fotógrafo barcelona, fotografía urbana barcelona, retratos barcelona, fotógrafo de modelos barcelona, fotografía callejera, sesiones fotográficas barcelona, incrife fotografía, fotografía editorial barcelona">
-  <meta name="author" content="INCRIFE">
+  <!-- ========== SEO BRUTAL - PORTAFOLIO ========== -->
+  <meta name="description" content="Portafolio de INCRIFE: Fotógrafo urbano y artista visual en Barcelona. Retratos, fotografía callejera, editorial, videoclips y producción audiovisual. Descubre mi trabajo.">
+  <meta name="keywords" content="portafolio fotografía barcelona, artista visual barcelona, incrife portfolio, fotógrafo de artistas barcelona, videoclips barcelona, fotografía editorial, retratos profesionales">
+  <meta name="author" content="INCRIFE · Artista Visual">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  
   <link rel="canonical" href="https://incrife.com/fotografia.html">
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
   <meta name="geo.position" content="41.385063;2.173404">
   
-  <meta property="og:title" content="INCRIFE | Fotografía Urbana · Retratos · Barcelona">
-  <meta property="og:description" content="Fotógrafo urbano en Barcelona. Retratos, fotografía callejera y editorial. Portfolio profesional.">
+  <meta property="og:title" content="INCRIFE Portfolio | Fotografía Urbana · Videoclips · Barcelona">
+  <meta property="og:description" content="Portafolio de INCRIFE: Fotógrafo urbano y artista visual. Retratos, fotografía callejera, editorial y videoclips.">
   <meta property="og:url" content="https://incrife.com/fotografia.html">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
@@ -106,7 +105,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
       padding: 1.5rem;
       opacity: 0;
       transform: translateY(20px);
@@ -118,15 +117,30 @@
     }
     .collage-overlay h3 {
       color: #ffaa88;
-      font-size: 1rem;
+      font-size: 1.1rem;
       margin-bottom: 0.2rem;
+      font-weight: 700;
     }
     .collage-overlay p {
       color: #ddcccc;
+      font-size: 0.75rem;
+    }
+    .collage-name {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
       font-size: 0.7rem;
+      color: #ffaa88;
+      font-weight: 600;
+      z-index: 2;
+      border-left: 2px solid #ff5555;
     }
     
-    /* Lightbox (post grande al hacer click) */
+    /* Lightbox */
     .lightbox {
       position: fixed;
       top: 0;
@@ -141,40 +155,68 @@
       cursor: pointer;
       backdrop-filter: blur(10px);
     }
-    .lightbox.active {
-      display: flex;
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 16px; box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 2rem; color: white; cursor: pointer; transition: all 0.2s; }
+    .lightbox-close:hover { color: #ff5555; transform: scale(1.1); }
+    .lightbox-caption { position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; color: #ffaa88; font-size: 0.9rem; }
+    
+    /* SECCIÓN VIDEOCLIPS - NUEVA */
+    .videoclips-section {
+      margin: 4rem 0;
     }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 85%;
-      object-fit: contain;
-      border-radius: 16px;
-      box-shadow: 0 0 40px rgba(0,0,0,0.5);
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .lightbox-close:hover {
-      color: #ff5555;
-      transform: scale(1.1);
-    }
-    .lightbox-caption {
-      position: absolute;
-      bottom: 30px;
-      left: 0;
-      right: 0;
+    .videoclips-section h2 {
       text-align: center;
+      color: #ff8888;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .videoclips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .videoclip-card {
+      background: rgba(10,5,5,0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,68,68,0.3);
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .videoclip-card:hover {
+      transform: translateY(-5px);
+      border-color: #ff5555;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    }
+    .videoclip-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .videoclip-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .videoclip-info h3 {
       color: #ffaa88;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .videoclip-info p {
+      color: #aa8888;
+      font-size: 0.7rem;
     }
     
-    /* Sección BTS (detrás de cámaras) */
+    /* BTS - VIDEOS CON BLOQUEO */
     .bts-section {
       margin: 4rem 0;
     }
@@ -191,31 +233,63 @@
     }
     .bts-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
     .bts-item {
       position: relative;
       overflow: hidden;
       border-radius: 20px;
-      cursor: pointer;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 16 / 9;
       background: rgba(10,5,5,0.6);
       border: 1px solid rgba(255,68,68,0.3);
       transition: all 0.3s;
+      cursor: pointer;
     }
     .bts-item:hover {
       transform: translateY(-5px);
       border-color: #ff5555;
     }
-    .bts-item img {
+    .bts-item iframe {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: all 0.3s;
+      border: none;
+      pointer-events: none;
     }
-    .bts-item:hover img {
-      transform: scale(1.05);
+    .bts-blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+      z-index: 2;
+    }
+    .bts-blur i {
+      font-size: 2rem;
+      color: #ffaa88;
+    }
+    .bts-blur span {
+      font-size: 0.8rem;
+      color: #ffaa88;
+      font-weight: 600;
+    }
+    .bts-blur small {
+      font-size: 0.6rem;
+      color: #886666;
+    }
+    .bts-blur:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    .bts-blur:hover i {
+      transform: scale(1.1);
     }
     .bts-overlay {
       position: absolute;
@@ -225,6 +299,7 @@
       background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
       padding: 0.8rem;
       text-align: center;
+      z-index: 1;
     }
     .bts-overlay span {
       font-size: 0.65rem;
@@ -282,7 +357,7 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
     
-    /* Sección estilo */
+    /* Estilos fotográficos */
     .style-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -329,7 +404,7 @@
     
     @media (max-width: 1024px) {
       .gallery-collage { grid-template-columns: repeat(2, 1fr); }
-      .bts-grid { grid-template-columns: repeat(2, 1fr); }
+      .bts-grid { grid-template-columns: 1fr; }
     }
     
     @media (max-width: 768px) {
@@ -338,7 +413,7 @@
       .container { padding: 1.5rem 1rem; }
       .hero-photo h1 { font-size: 2rem; }
       .gallery-collage { grid-template-columns: 1fr; }
-      .bts-grid { grid-template-columns: 1fr; }
+      .videoclips-grid { grid-template-columns: 1fr; }
       .style-section { gap: 1rem; }
     }
   </style>
@@ -351,9 +426,10 @@
     <div class="logo"><a href="index.html">INCRIFE</a></div>
     <div class="nav-links">
       <a href="index.html">Inicio</a>
-      <a href="fotografia.html" class="active">Fotografía</a>
-      <a href="studio.html">Studio</a>
-      <a href="incrifed.html">True Crime</a>
+      <a href="tienda.html">Servicios</a>
+      <a href="fotografia.html" class="active">Portafolio</a>
+      <a href="agency.html">Agencia</a>
+      <a href="studio.html">Estudio musical</a>
       <a href="trabajaconnosotros.html">Equipo</a>
       <a href="contacto.html">Contacto</a>
     </div>
@@ -361,47 +437,47 @@
   </div>
 </nav>
 
-<nav class="top-nav">
-  <div class="nav-container">
-    <div class="logo"><a href="index.html">INCRIFE</a></div>
-    <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="tienda.html">Servicios</a>
-      <a href="fotografia.html">Portafolio</a>
-       <a href="agency.html">Agencia</a>
-      <a href="studio.html">Estudio musical</a>
-      <a href="trabajaconnosotros.html">Equipo</a>
-      <a href="contacto.html">Contacto</a>
-    </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
-  </div>
-</nav>
+<div class="side-menu" id="sideMenu">
+  <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="index.html">Inicio</a>
+  <a href="tienda.html">Servicios</a>
+  <a href="fotografia.html">Portafolio</a>
+  <a href="agency.html">Agencia</a>
+  <a href="studio.html">Estudio musical</a>
+  <a href="trabajaconnosotros.html">Equipo</a>
+  <a href="contacto.html">Contacto</a>
+</div>
+<div class="overlay" id="overlay"></div>
+
 <div class="page-wrapper">
 <div class="container">
   
   <div class="hero-photo fade-up-item">
-    <h1><i class="fas fa-camera-retro"></i> Fotografía · Barcelona</h1>
-    <p>Retratos, fotografía urbana y editorial. Capturando la esencia de Barcelona con una estética única.</p>
+    <h1><i class="fas fa-camera-retro"></i> Portfolio · INCRIFE</h1>
+    <p>Fotografía urbana, retratos, editorial y videoclips. Capturando la esencia de Barcelona.</p>
   </div>
   
-  <!-- GALERÍA COLLAGE - 3 FOTOS GRANDES -->
+  <!-- GALERÍA COLLAGE - CON NOMBRES -->
   <div class="gallery-collage fade-up-item">
-    <div class="collage-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/P1014619_2.jpg', 'Retrato Urbano · Barcelona')">
-      <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1014619_2.jpg" alt="Retrato urbano Barcelona">
+    <div class="collage-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/P1014619_2.jpg', 'Retrato Urbano · Barcelona · Modelo: Carla')">
+      <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1014619_2.jpg" alt="Retrato urbano Barcelona - Carla">
+      <div class="collage-name">Carla · Urbano</div>
       <div class="collage-overlay">
         <h3>Retrato Urbano</h3>
         <p><i class="fas fa-map-marker-alt"></i> Barcelona · Fotografía callejera</p>
       </div>
     </div>
-    <div class="collage-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/IMG_5076%20(1).jpeg', 'Editorial · Modelo · Barcelona')">
-      <img src="https://raw.githubusercontent.com/incrife/incrife/main/IMG_5076%20(1).jpeg" alt="Sesión editorial Barcelona">
+    <div class="collage-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/IMG_5076%20(1).jpeg', 'Editorial · Barcelona · Modelo: Laura')">
+      <img src="https://raw.githubusercontent.com/incrife/incrife/main/IMG_5076%20(1).jpeg" alt="Sesión editorial Barcelona - Laura">
+      <div class="collage-name">Laura · Editorial</div>
       <div class="collage-overlay">
         <h3>Editorial · Modelo</h3>
         <p><i class="fas fa-map-marker-alt"></i> Barcelona · Sesión profesional</p>
       </div>
     </div>
-    <div class="collage-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg', 'Fotografía Artística · La Mina')">
-      <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Fotografía artística Barcelona">
+    <div class="collage-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg', 'Fotografía Artística · La Mina · Modelo: Sofia')">
+      <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Fotografía artística Barcelona - Sofia">
+      <div class="collage-name">Sofia · Artística</div>
       <div class="collage-overlay">
         <h3>Fotografía Artística</h3>
         <p><i class="fas fa-map-marker-alt"></i> La Mina · Barcelona</p>
@@ -409,32 +485,64 @@
     </div>
   </div>
   
-  <!-- SECCIÓN BTS (DETRÁS DE CÁMARAS) -->
+  <!-- SECCIÓN VIDEOCLIPS (NUEVA - ENLACE A STUDIO) -->
+  <div class="videoclips-section fade-up-item">
+    <h2><i class="fas fa-video"></i> Videoclips · Producción Audiovisual</h2>
+    <div class="videoclips-grid">
+      <a href="studio.html" class="videoclip-card">
+        <img class="videoclip-img" src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Videoclip INCRIFE">
+        <div class="videoclip-info">
+          <h3>Producción de Videoclips</h3>
+          <p>Dirección, grabación y edición profesional</p>
+        </div>
+      </a>
+      <a href="studio.html" class="videoclip-card">
+        <img class="videoclip-img" src="https://raw.githubusercontent.com/incrife/incrife/main/IMG_5076%20(1).jpeg" alt="Making of Videoclip">
+        <div class="videoclip-info">
+          <h3>Making Of · Detrás de cámaras</h3>
+          <p>El proceso creativo de cada producción</p>
+        </div>
+      </a>
+      <a href="studio.html" class="videoclip-card">
+        <img class="videoclip-img" src="https://raw.githubusercontent.com/incrife/incrife/main/P1014619_2.jpg" alt="Postproducción">
+        <div class="videoclip-info">
+          <h3>Postproducción · Color Grading</h3>
+          <p>Corrección de color y efectos visuales</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <!-- SECCIÓN BTS - VIDEOS CON BLOQUEO -->
   <div class="bts-section fade-up-item">
-    <h2><i class="fas fa-video"></i> Detrás de Cámaras · BTS</h2>
+    <h2><i class="fas fa-lock"></i> Detrás de Cámaras · Contenido Exclusivo</h2>
     <div class="bts-grid">
-      <div class="bts-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg', 'Making of · Sesión fotográfica')">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg" alt="BTS sesión fotográfica">
-        <div class="bts-overlay"><span><i class="fas fa-camera"></i> Making of · Sesión</span></div>
+      <!-- BTS 1 - Bloqueado -->
+      <div class="bts-item">
+        <iframe src="https://www.youtube.com/embed/Du64WQoyopE" title="BTS Videoclip RASSAM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="bts-blur" onclick="window.open('https://www.instagram.com/incrife/', '_blank')">
+          <i class="fas fa-lock"></i>
+          <span>Contenido exclusivo</span>
+          <small>Haz clic para ver en Instagram</small>
+        </div>
+        <div class="bts-overlay"><span><i class="fas fa-video"></i> RASSAM · GALOU MERYOULE · Rodaje</span></div>
       </div>
-      <div class="bts-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png', 'BTS · Producción audiovisual')">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="BTS producción">
-        <div class="bts-overlay"><span><i class="fas fa-video"></i> Producción Audiovisual</span></div>
-      </div>
-      <div class="bts-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(56).png', 'BTS · True Crime INCRIFED')">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(56).png" alt="BTS True Crime">
-        <div class="bts-overlay"><span><i class="fas fa-microphone-alt"></i> True Crime · Grabación</span></div>
-      </div>
-      <div class="bts-item" onclick="openLightbox('https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_627479185_18083942891235869_2096664627468556493_n.jpg', 'BTS · Videoclip')">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_627479185_18083942891235869_2096664627468556493_n.jpg" alt="BTS videoclip">
-        <div class="bts-overlay"><span><i class="fas fa-play-circle"></i> Videoclip · Rodaje</span></div>
+      <!-- BTS 2 - Bloqueado -->
+      <div class="bts-item">
+        <iframe src="https://www.youtube.com/embed/RoLccmDrCbc" title="BTS Rafa930" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="bts-blur" onclick="window.open('https://www.instagram.com/incrife/', '_blank')">
+          <i class="fas fa-lock"></i>
+          <span>Contenido exclusivo</span>
+          <small>Haz clic para ver en Instagram</small>
+        </div>
+        <div class="bts-overlay"><span><i class="fas fa-play-circle"></i> RAFA930 · Visual Drill · Grabación</span></div>
       </div>
     </div>
   </div>
   
   <!-- CTA REDES SOCIALES -->
   <div class="social-cta fade-up-item">
-    <h3><i class="fas fa-heart"></i> ¿Quieres ver más?</h3>
+    <h3><i class="fas fa-heart"></i> ¿Quieres ver más contenido?</h3>
     <p>Sigue toda mi galería y contenido exclusivo en mis redes sociales</p>
     <div class="social-cta-buttons">
       <a href="https://www.instagram.com/incrife/" target="_blank" class="social-cta-btn instagram"><i class="fab fa-instagram"></i> Instagram @incrife</a>
@@ -447,21 +555,21 @@
     <div class="style-card"><i class="fas fa-user-friends"></i><h3>Retratos</h3><p>Sesiones personalizadas para modelos, artistas y perfiles profesionales.</p></div>
     <div class="style-card"><i class="fas fa-building"></i><h3>Fotografía Urbana</h3><p>La ciudad como escenario. Estética cruda y auténtica.</p></div>
     <div class="style-card"><i class="fas fa-book-open"></i><h3>Editorial</h3><p>Producciones visuales para marcas, revistas y portfolios.</p></div>
-    <div class="style-card"><i class="fas fa-video"></i><h3>Making Of</h3><p>Detrás de cámaras de videoclips y producciones audiovisuales.</p></div>
+    <div class="style-card"><i class="fas fa-video"></i><h3>Videoclips</h3><p>Dirección y producción de videoclips para artistas.</p></div>
   </div>
   
   <!-- REDES SOCIALES -->
   <div class="social-modern fade-up-item">
     <a href="https://www.instagram.com/incrife/" class="social-circle"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@incrifed" class="social-circle"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.youtube.com/@incrife" class="social-circle"><i class="fab fa-youtube"></i></a>
     <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
     <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
   </div>
-  <div class="footer-modern fade-up-item">INCRIFE · Fotografía Urbana, Retratos y Producción Audiovisual · Barcelona<br>© 2026 · Visual storyteller & director</div>
+  <div class="footer-modern fade-up-item">INCRIFE · Fotografía Urbana, Retratos, Videoclips y Producción Audiovisual · Barcelona<br>© 2026 · Artista visual & director</div>
 </div>
 </div>
 
-<div class="whatsapp-fixed"><a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20tu%20trabajo%20de%20fotografía"><i class="fab fa-whatsapp"></i></a></div>
+<div class="whatsapp-fixed"><a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20tu%20trabajo%20de%20fotografía%20y%20videoclips"><i class="fab fa-whatsapp"></i></a></div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -488,11 +596,8 @@
     document.body.style.overflow = '';
   }
   
-  // Escape key to close lightbox
   document.addEventListener('keydown', function(e) {
-    if(e.key === 'Escape') {
-      closeLightbox();
-    }
+    if(e.key === 'Escape') closeLightbox();
   });
   
   // Menú móvil
@@ -508,16 +613,17 @@
   const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.15 });
   document.querySelectorAll('.fade-up-item').forEach(el => observer.observe(el));
   
-  // Schema
+  // Schema para portfolio de artista
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "VisualArtist",
     "name": "INCRIFE",
-    "alternateName": "Fotógrafo Barcelona",
-    "description": "Fotógrafo urbano en Barcelona especializado en retratos, fotografía callejera y editorial.",
+    "alternateName": "Fotógrafo y Artista Visual Barcelona",
+    "description": "Portafolio de fotografía urbana, retratos, editorial y videoclips. Artista visual con base en Barcelona.",
     "url": "https://incrife.com/fotografia.html",
     "telephone": "+34624170204",
-    "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" }
+    "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" },
+    "knowsAbout": ["Fotografía Urbana", "Retratos", "Fotografía Editorial", "Videoclips", "Producción Audiovisual"]
   };
   document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(schema) }));
 </script>
