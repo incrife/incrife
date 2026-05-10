@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- PÁGINA PRINCIPAL -->
+  <!-- PÁGINA PRINCIPAL (RAÍZ) -->
   <url>
     <loc>https://incrife.com/</loc>
     <lastmod>2026-05-10</lastmod>
@@ -12,7 +12,7 @@
   
   <!-- SERVICIOS / TIENDA -->
   <url>
-    <loc>https://incrife.com/tienda.html</loc>
+    <loc>https://incrife.com/tienda/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -20,15 +20,15 @@
   
   <!-- FOTOGRAFÍA / PORTAFOLIO -->
   <url>
-    <loc>https://incrife.com/fotografia.html</loc>
+    <loc>https://incrife.com/fotografia/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- AGENCIA KURTUSINC -->
+  <!-- AGENCIA KURTUSINC (CORREGIDO: Usa carpeta /agency/) -->
   <url>
-    <loc>https://incrife.com/agency.html</loc>
+    <loc>https://incrife.com/agency/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -36,7 +36,7 @@
   
   <!-- ESTUDIO MUSICAL -->
   <url>
-    <loc>https://incrife.com/studio.html</loc>
+    <loc>https://incrife.com/studio/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -44,23 +44,15 @@
   
   <!-- TRUE CRIME / INCRIFED -->
   <url>
-    <loc>https://incrife.com/incrifed.html</loc>
+    <loc>https://incrife.com/incrifed/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- TRABAJA CON NOSOTROS / EQUIPO -->
-  <url>
-    <loc>https://incrife.com/trabajaconnosotros.html</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
   <!-- CONTACTO -->
   <url>
-    <loc>https://incrife.com/contacto.html</loc>
+    <loc>https://incrife.com/contacto/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
