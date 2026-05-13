@@ -4,16 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>INCRIFE Team | Únete al equipo · Trabajo Audiovisual</title>
+  
+  <!-- ========== SEO ========== -->
   <meta name="description" content="Únete al equipo de INCRIFE. Buscamos filmakers, técnicos de mezcla y master, modelos, fotógrafos y creativos audiovisuales. Trabaja con nosotros en Barcelona.">
   <meta name="keywords" content="trabajo audiovisual barcelona, filmakers barcelona, equipo de producción audiovisual, mezcla y master trabajo, modelos barcelona, fotógrafo barcelona empleo, incrife equipo">
   <meta name="author" content="INCRIFE Team">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://incrife.com/trabajaconnosotros.html">
-  <meta property="og:image" content="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
+  <link rel="canonical" href="https://incrife.com/trabajaconnosotros">
+  
+  <meta property="og:title" content="INCRIFE Team | Únete al equipo">
+  <meta property="og:description" content="Buscamos talento audiovisual. Filmmakers, técnicos, modelos y creativos. Trabaja con nosotros en Barcelona.">
+  <meta property="og:url" content="https://incrife.com/trabajaconnosotros">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
+  
   <meta name="theme-color" content="#cc0000">
-  <link rel="icon" type="image/png" href="https://github.com/incrife/incrife/raw/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; overflow-x: hidden; }
@@ -44,7 +53,7 @@
     .overlay.active { display: block; }
     
     /* Animación de entrada principal */
-    .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; }
+    .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; position: relative; z-index: 10; }
     @keyframes entranceSpin { 0% { opacity: 0; transform: perspective(800px) rotateY(90deg) scale(0.95); filter: blur(8px); } 100% { opacity: 1; transform: perspective(800px) rotateY(0deg) scale(1); filter: blur(0); } }
     
     .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 10; }
@@ -55,6 +64,7 @@
     .hero-team { text-align: center; margin-bottom: 2.5rem; }
     .hero-team h1 { font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
     .hero-team p { color: #ccaaaa; max-width: 600px; margin: 0 auto; font-size: 0.95rem; }
+    .hero-team h2 { font-size: 1.5rem; color: #ff8888; margin-bottom: 0.5rem; font-family: 'Montserrat', sans-serif; }
     
     /* Roles grid */
     .roles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
@@ -91,49 +101,51 @@
     .whatsapp-fixed a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25D366; border-radius: 18px; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); text-decoration: none; color: white; font-size: 2rem; transition: all 0.2s; }
     .whatsapp-fixed a:hover { transform: scale(1.05); }
     
-    @media (max-width: 768px) { .nav-links { display: none; } .menu-toggle { display: block; } .container { padding: 1.5rem 1rem; } .hero-team h1 { font-size: 1.8rem; } .values-list { flex-direction: column; } }
+    @media (max-width: 768px) { 
+      .nav-links { display: none; } 
+      .menu-toggle { display: block; } 
+      .container { padding: 1.5rem 1rem; } 
+      .hero-team h1 { font-size: 1.8rem; } 
+      .values-list { flex-direction: column; }
+      .role-card { padding: 1rem; }
+      .role-icon { width: 50px; height: 50px; }
+      .role-icon i { font-size: 1.5rem; }
+    }
   </style>
 </head>
 <body>
 <div class="animated-bg"><div class="bg-blur-layer"></div><div class="bg-blur-layer2"></div><div class="bg-grain"></div></div>
 
-
 <nav class="top-nav">
   <div class="nav-container">
-    <div class="logo">
-      <a href="/">INCRIFE</a>
-    </div>
-
+    <div class="logo"><a href="/">INCRIFE</a></div>
     <div class="nav-links">
-      <a href="/home/">Inicio</a>
-      <a href="/tienda/">Servicios</a>
-      <a href="/portfolio/">Portafolio</a>
-      <a href="/agency/">Agencia</a>
-      <a href="/studio/">Estudio musical</a>
-      <a href="/trabajaconnosotros/">Equipo</a>
-      <a href="/contacto/">Contacto</a>
+      <a href="/">Inicio</a>
+      <a href="/tienda">Servicios</a>
+      <a href="/fotografia">Portafolio</a>
+      <a href="/agency">Agencia</a>
+      <a href="/studio">Estudio musical</a>
+      <a href="/trabajaconnosotros" class="active">Equipo</a>
+      <a href="/contacto">Contacto</a>
     </div>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
-      <i class="fas fa-bars"></i>
-    </button>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
   </div>
 </nav>
 
 <div class="side-menu" id="sideMenu">
-  <button class="close-menu" id="closeMenu" aria-label="Cerrar">
-    <i class="fas fa-times"></i>
-  </button>
-
-  <a href="/home/">Inicio</a>
-  <a href="/agency/">Agency</a>
-  <a href="/portfolio/">Portafolio</a>
-  <a href="/studio/">Studio Musical</a>
-  <a href="/servicios/">Servicios</a>
-  <a href="/team/">Equipo</a>
-  <a href="/contact/">Contacto</a>
+  <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
+  <a href="/">Inicio</a>
+  <a href="/tienda">Servicios</a>
+  <a href="/fotografia">Portafolio</a>
+  <a href="/agency">Agencia</a>
+  <a href="/studio">Estudio musical</a>
+  <a href="/trabajaconnosotros">Equipo</a>
+  <a href="/contacto">Contacto</a>
 </div>
+<div class="overlay" id="overlay"></div>
 
+<div class="page-wrapper">
+<div class="container">
   
   <div class="hero-team fade-up-item">
     <h1><i class="fas fa-users"></i> ÚNETE AL EQUIPO</h1>
@@ -141,7 +153,7 @@
   </div>
   
   <div class="hero-team fade-up-item">
-    <h2 style="font-size: 1.5rem;">¿Quieres formar parte de INCRIFE?</h2>
+    <h2>¿Quieres formar parte de INCRIFE?</h2>
     <p>Buscamos talento apasionado por el mundo audiovisual, la música y la creatividad. Si eres filmmaker, técnico de sonido, modelo o creativo, queremos conocerte. Únete a un equipo joven y dinámico en Barcelona.</p>
   </div>
   
@@ -172,21 +184,22 @@
   <div class="cta-team fade-up-item">
     <h2><i class="fas fa-paper-plane"></i> ¿Quieres trabajar con nosotros?</h2>
     <p>Cuéntanos quién eres, qué te apasiona y envíanos tu portfolio o currículum. Revisamos todas las candidaturas.</p>
-    <a href="contacto.html" class="btn-primary"><i class="fas fa-envelope"></i> Enviar candidatura</a>
+    <a href="/contacto" class="btn-primary"><i class="fas fa-envelope"></i> Enviar candidatura</a>
     <p style="font-size: 0.7rem; margin-top: 1rem; color: #886666;"><i class="fas fa-lock"></i> Tus datos están seguros. Solo los usaremos para procesos de selección.</p>
   </div>
   
   <div class="social-modern fade-up-item">
     <a href="https://www.instagram.com/incrife/" class="social-circle"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@incrifed" class="social-circle"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.youtube.com/@incrife" class="social-circle"><i class="fab fa-youtube"></i></a>
     <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
     <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
   </div>
   <div class="footer-modern fade-up-item">INCRIFE Team · Buscamos talento audiovisual, técnico y artístico · Barcelona<br>© 2026 · Únete a un equipo que cree sin límites</div>
+  
 </div>
 </div>
 
-<div class="whatsapp-fixed"><a href="https://wa.me/34624170204"><i class="fab fa-whatsapp"></i></a></div>
+<div class="whatsapp-fixed"><a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20trabajar%20con%20vosotros"><i class="fab fa-whatsapp"></i></a></div>
 
 <script>
   const menuToggle = document.getElementById('menuToggle');
