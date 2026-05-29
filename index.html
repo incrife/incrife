@@ -22,17 +22,10 @@
   <meta name="geo.position" content="41.385063;2.173404">
   <meta name="ICBM" content="41.385063, 2.173404">
   
-  <!-- SEO adicional -->
-  <meta name="rating" content="General">
-  <meta name="revisit-after" content="3 days">
-  <meta name="language" content="Spanish">
-  <meta name="distribution" content="Global">
-  <meta name="classification" content="Fotografía, Videoclips, Arte, Producción Audiovisual">
-  
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA">
   
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://incrife.com">
   <meta property="og:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
@@ -54,21 +47,12 @@
   <link rel="icon" type="image/x-icon" href="https://incrife.com/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/incrife/incrife/main/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/incrife/incrife/main/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/incrife/incrife/main/android-chrome-192x192.png">
   
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="site.webmanifest">
-  
-  <!-- ============================================ -->
-  <!-- FUENTES                                       -->
-  <!-- ============================================ -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
-  <!-- ============================================ -->
-  <!-- CSS PRINCIPAL                                 -->
-  <!-- ============================================ -->
   <style>
     /* ============================================ */
     /* RESET Y VARIABLES                            */
@@ -80,7 +64,7 @@
     }
     
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #0a0505;
       color: #ffffff;
       overflow-x: hidden;
@@ -93,7 +77,7 @@
     }
     
     /* ============================================ */
-    /* CANVAS DE FONDO (PARTÍCULAS)                 */
+    /* CANVAS DE FONDO                             */
     /* ============================================ */
     #particlesBg {
       position: fixed;
@@ -103,23 +87,6 @@
       height: 100%;
       z-index: 0;
       pointer-events: none;
-    }
-    
-    /* ============================================ */
-    /* SKIP LINK                                    */
-    /* ============================================ */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: #cc0000;
-      color: white;
-      padding: 8px;
-      text-decoration: none;
-      z-index: 1000;
-    }
-    .skip-link:focus {
-      top: 0;
     }
     
     /* ============================================ */
@@ -133,13 +100,15 @@
       z-index: 1000;
       padding: 1rem 0;
       background: rgba(10,5,5,0.95);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255,68,68,0.3);
     }
     
     body.light .header {
       background: rgba(255,255,255,0.95);
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom-color: rgba(0,0,0,0.1);
     }
     
     .container {
@@ -157,6 +126,7 @@
     
     .logo {
       display: block;
+      text-decoration: none;
     }
     
     .logo__img {
@@ -164,6 +134,32 @@
       width: auto;
       border-radius: 50%;
       object-fit: cover;
+    }
+    
+    .nav__links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    
+    .nav__link {
+      color: #ffcccc;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .nav__link:hover {
+      color: #ff5555;
+    }
+    
+    body.light .nav__link {
+      color: #444;
+    }
+    
+    body.light .nav__link:hover {
+      color: #cc0000;
     }
     
     .nav__actions {
@@ -184,10 +180,6 @@
     
     body.light .nav__social {
       color: #444;
-    }
-    
-    body.light .nav__social:hover {
-      color: #cc0000;
     }
     
     .nav__divider {
@@ -227,10 +219,6 @@
       color: #ffcc00;
     }
     
-    .theme-icon-sun {
-      color: #ffaa00;
-    }
-    
     .ball {
       position: absolute;
       width: 20px;
@@ -267,8 +255,14 @@
       background: #333;
     }
     
-    @media (min-width: 769px) {
+    @media (min-width: 992px) {
       .burger {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 991px) {
+      .nav__links {
         display: none;
       }
     }
@@ -282,7 +276,7 @@
       max-width: 300px;
       height: 100%;
       background: rgba(10,5,5,0.98);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       z-index: 1001;
       transition: right 0.3s;
       padding: 2rem;
@@ -315,8 +309,8 @@
     .mobile-menu__link {
       color: #ffcccc;
       text-decoration: none;
-      font-size: 1.2rem;
-      padding: 0.5rem 0;
+      font-size: 1rem;
+      padding: 0.8rem 0;
       border-bottom: 1px solid rgba(255,68,68,0.2);
     }
     
@@ -343,32 +337,34 @@
       height: 100%;
       background-size: cover;
       background-position: center;
-      filter: brightness(0.4);
+      filter: brightness(0.35);
       z-index: -1;
     }
     
     .hero__content {
       text-align: center;
       padding: 6rem 0;
+      position: relative;
+      z-index: 2;
     }
     
     .hero__content h1 {
       font-size: 5rem;
       font-weight: 800;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 2px;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: -2px;
       margin-bottom: 1rem;
     }
     
     .text-gradient {
-      background: linear-gradient(135deg, #cc0000, #ff5555);
+      background: linear-gradient(135deg, #cc0000, #ff5555, #ff8888);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     
     .hero__content p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 600px;
       margin: 0 auto 2rem;
       color: #dddddd;
@@ -397,6 +393,18 @@
       transform: translateY(-2px);
     }
     
+    .btn--outline {
+      background: transparent;
+      border: 1px solid #ff5555;
+      color: #ffcccc;
+    }
+    
+    .btn--outline:hover {
+      background: #cc0000;
+      color: white;
+      border-color: #cc0000;
+    }
+    
     .btn--large {
       padding: 1rem 2rem;
       font-size: 1rem;
@@ -410,7 +418,7 @@
     }
     
     /* ============================================ */
-    /* SHARE SECTION                                */
+    /* SHARE SECTION                               */
     /* ============================================ */
     .share-section {
       padding: 2rem 0;
@@ -426,7 +434,7 @@
     }
     
     .share__text {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #ff8888;
     }
     
@@ -439,14 +447,14 @@
     .share__btn {
       background: rgba(255,255,255,0.1);
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
       border-radius: 40px;
       color: #ffcccc;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       transition: all 0.3s;
     }
     
@@ -455,18 +463,8 @@
       color: white;
     }
     
-    body.light .share__btn {
-      background: rgba(0,0,0,0.05);
-      color: #333;
-    }
-    
-    body.light .share__btn:hover {
-      background: #cc0000;
-      color: white;
-    }
-    
     /* ============================================ */
-    /* ABOUT SECTION                                */
+    /* ABOUT SECTION                               */
     /* ============================================ */
     .about {
       padding: 5rem 0;
@@ -490,9 +488,9 @@
     }
     
     .eyebrow {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       color: #ff8888;
       display: inline-block;
       margin-bottom: 1rem;
@@ -501,24 +499,58 @@
     .about__text h2 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
     
     .about__text p {
-      color: #cccccc;
+      color: #ccaaaa;
       line-height: 1.6;
       margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
     
     body.light .about__text p {
-      color: #555;
+      color: #666;
     }
     
     /* ============================================ */
-    /* DISCOGRAPHY CARRUSEL                         */
+    /* STATS SECTION                               */
     /* ============================================ */
-    .discography-carousel,
-    .carrusel-colaboradores {
+    .stats {
+      padding: 3rem 0;
+      background: linear-gradient(135deg, rgba(204,0,0,0.1), rgba(0,0,0,0.2));
+    }
+    
+    .stats__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .stat__number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ff5555;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .stat__label {
+      font-size: 0.8rem;
+      color: #ffaaaa;
+      margin-top: 0.3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* ============================================ */
+    /* PROJECTS CARRUSEL                           */
+    /* ============================================ */
+    .projects-section {
       padding: 5rem 0;
     }
     
@@ -529,7 +561,7 @@
     
     .section-header h2 {
       font-size: 2.5rem;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
     
     .carrusel-horizontal {
@@ -576,11 +608,6 @@
       border-color: #ff5555;
     }
     
-    body.light .carrusel-horizontal__card {
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
     .carrusel-horizontal__image {
       position: relative;
       aspect-ratio: 1 / 1;
@@ -616,17 +643,20 @@
       opacity: 1;
     }
     
-    .carrusel-horizontal__instagram {
-      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    .carrusel-horizontal__btn {
+      background: #cc0000;
       color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .carrusel-horizontal__btn:hover {
+      background: #ff5555;
+      transform: scale(1.05);
     }
     
     .carrusel-horizontal__info {
@@ -635,113 +665,29 @@
     }
     
     .carrusel-horizontal__info h3 {
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-bottom: 0.2rem;
     }
     
     .carrusel-horizontal__info p {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       color: #ff8888;
     }
     
-    .carrusel-horizontal__btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #cc0000;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      color: white;
-      cursor: pointer;
-      z-index: 10;
-      transition: all 0.3s;
-    }
-    
-    .carrusel-horizontal__btn:hover {
-      background: #ff5555;
-      transform: translateY(-50%) scale(1.05);
-    }
-    
-    .carrusel-horizontal__btn--prev {
-      left: -20px;
-    }
-    
-    .carrusel-horizontal__btn--next {
-      right: -20px;
-    }
-    
-    @media (max-width: 768px) {
-      .carrusel-horizontal__btn {
-        display: none;
-      }
-    }
-    
     /* ============================================ */
-    /* SOCIAL SECTION                               */
+    /* SERVICES GRID                               */
     /* ============================================ */
-    .social-section {
+    .services {
       padding: 5rem 0;
     }
     
-    .social__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .social__card {
-      background: rgba(10,5,5,0.8);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 1.5rem;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.3s;
-      border: 1px solid rgba(204,0,0,0.3);
-    }
-    
-    .social__card i {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    
-    .social__card span {
-      color: #ffcccc;
-      font-size: 0.9rem;
-    }
-    
-    .social__card:hover {
-      transform: translateY(-5px);
-      border-color: #ff5555;
-      background: rgba(204,0,0,0.1);
-    }
-    
-    body.light .social__card {
-      background: white;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    
-    body.light .social__card span {
-      color: #333;
-    }
-    
-    /* ============================================ */
-    /* FEATURES SECTION                             */
-    /* ============================================ */
-    .features {
-      padding: 5rem 0;
-    }
-    
-    .features__grid {
+    .services__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
     
-    .feature-card {
+    .service-card {
       text-align: center;
       padding: 2rem;
       background: rgba(10,5,5,0.6);
@@ -751,200 +697,33 @@
       transition: all 0.3s;
     }
     
-    .feature-card:hover {
+    .service-card:hover {
       transform: translateY(-5px);
       border-color: #ff5555;
     }
     
-    body.light .feature-card {
-      background: rgba(255,255,255,0.8);
-    }
-    
-    .feature-card__icon i {
+    .service-card__icon i {
       font-size: 2.5rem;
       color: #ff5555;
       margin-bottom: 1rem;
     }
     
-    .feature-card h3 {
+    .service-card h3 {
+      font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
     
-    .feature-card p {
+    .service-card p {
       color: #ccaaaa;
-      font-size: 0.85rem;
-    }
-    
-    body.light .feature-card p {
-      color: #666;
-    }
-    
-    /* ============================================ */
-    /* BOOKING SECTION                              */
-    /* ============================================ */
-    .booking {
-      padding: 5rem 0;
-    }
-    
-    .booking__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-    
-    .info-category {
-      margin-bottom: 1.5rem;
-    }
-    
-    .info-category__title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      color: #ff8888;
-      margin-bottom: 1rem;
-    }
-    
-    .info-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .info-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .info-item__icon i {
-      width: 35px;
-      color: #ff5555;
-    }
-    
-    .info-item a {
-      color: #ffcccc;
-      text-decoration: none;
-    }
-    
-    .info-item a:hover {
-      color: #ff5555;
-    }
-    
-    body.light .info-item a {
-      color: #555;
-    }
-    
-    .separator {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    
-    .separator span {
-      flex: 1;
-      height: 1px;
-      background: rgba(255,68,68,0.3);
-    }
-    
-    .booking__form {
-      background: rgba(10,5,5,0.8);
-      backdrop-filter: blur(10px);
-      border-radius: 30px;
-      padding: 2rem;
-      border: 1px solid rgba(204,0,0,0.3);
-    }
-    
-    body.light .booking__form {
-      background: white;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    
-    .booking__form-title {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .booking__form-subtitle {
-      color: #ccaaaa;
-      margin-bottom: 1.5rem;
-      font-size: 0.85rem;
-    }
-    
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-    
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    
-    .form-label {
-      display: block;
-      margin-bottom: 0.3rem;
       font-size: 0.8rem;
-      color: #ffaaaa;
     }
     
-    .form-control,
-    .form-select {
-      width: 100%;
-      padding: 0.8rem;
-      background: rgba(0,0,0,0.5);
-      border: 1px solid rgba(255,68,68,0.3);
-      border-radius: 12px;
-      color: white;
-      font-family: inherit;
-    }
-    
-    body.light .form-control,
-    body.light .form-select {
-      background: rgba(0,0,0,0.05);
-      color: #333;
-      border-color: rgba(0,0,0,0.1);
-    }
-    
-    .form-group--checkbox {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .form-group--checkbox input {
-      width: auto;
-    }
-    
-    .form-group--checkbox label {
-      margin-bottom: 0;
-    }
-    
-    .btn--block {
-      width: 100%;
-      justify-content: center;
-    }
-    
-    .form-success,
-    .form-error {
-      margin-top: 1rem;
-      padding: 0.8rem;
-      border-radius: 12px;
-      display: none;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .form-success {
-      background: rgba(0,255,0,0.1);
-      color: #00ff88;
-    }
-    
-    .form-error {
-      background: rgba(255,0,0,0.1);
-      color: #ff5555;
+    /* ============================================ */
+    /* COLABORADORES CARRUSEL                       */
+    /* ============================================ */
+    .colaboradores {
+      padding: 5rem 0;
+      background: rgba(204,0,0,0.03);
     }
     
     /* ============================================ */
@@ -961,7 +740,7 @@
       margin-top: 2rem;
     }
     
-    .contact__item {
+    .contact__card {
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -970,31 +749,111 @@
       padding: 1.5rem;
       border-radius: 20px;
       border: 1px solid rgba(204,0,0,0.2);
+      transition: all 0.3s;
+      text-decoration: none;
     }
     
-    body.light .contact__item {
-      background: white;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    .contact__card:hover {
+      transform: translateY(-3px);
+      border-color: #ff5555;
     }
     
-    .contact__icon i {
+    .contact__card i {
       font-size: 1.5rem;
       color: #ff5555;
     }
     
-    .contact__item h4 {
-      font-size: 0.8rem;
-      color: #ff8888;
-      margin-bottom: 0.2rem;
+    .contact__card span {
+      color: #ffcccc;
+      font-size: 0.85rem;
     }
     
-    .contact__item a {
+    /* ============================================ */
+    /* BOOKING SECTION                              */
+    /* ============================================ */
+    .booking {
+      padding: 5rem 0;
+    }
+    
+    .booking__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .booking__info h2 {
+      margin-bottom: 1rem;
+    }
+    
+    .booking__info p {
+      color: #ccaaaa;
+      margin-bottom: 2rem;
+    }
+    
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .info-item i {
+      width: 30px;
+      color: #ff5555;
+    }
+    
+    .info-item a {
       color: #ffcccc;
       text-decoration: none;
     }
     
-    body.light .contact__item a {
-      color: #333;
+    .info-item a:hover {
+      color: #ff5555;
+    }
+    
+    .booking__form {
+      background: rgba(10,5,5,0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 2rem;
+      border: 1px solid rgba(204,0,0,0.3);
+    }
+    
+    .booking__form h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .booking__form .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    .booking__form input,
+    .booking__form select,
+    .booking__form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,68,68,0.3);
+      border-radius: 12px;
+      color: white;
+      font-family: inherit;
+    }
+    
+    .btn--block {
+      width: 100%;
+      justify-content: center;
+    }
+    
+    @media (max-width: 768px) {
+      .booking__grid {
+        grid-template-columns: 1fr;
+      }
     }
     
     /* ============================================ */
@@ -1003,40 +862,19 @@
     .footer {
       background: #0a0505;
       position: relative;
-      overflow: hidden;
-      padding-top: 3rem;
+      padding: 3rem 0 1.5rem;
+      border-top: 1px solid rgba(255,68,68,0.2);
     }
     
     body.light .footer {
       background: #1a1a1a;
     }
     
-    .footer__wave {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-    }
-    
-    .footer__wave svg {
-      position: relative;
-      display: block;
-      width: calc(100% + 1.3px);
-      height: 60px;
-    }
-    
-    .footer__wave-fill {
-      fill: #cc0000;
-      opacity: 0.3;
-    }
-    
     .footer__grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      padding: 3rem 0 2rem;
+      margin-bottom: 2rem;
     }
     
     .footer__brand h3 {
@@ -1053,7 +891,7 @@
     
     .footer__brand p {
       color: #aa8888;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin-bottom: 1rem;
     }
     
@@ -1082,7 +920,7 @@
     
     .footer__col h4 {
       margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     
     .footer__col ul {
@@ -1096,7 +934,7 @@
     .footer__col a {
       color: #aa8888;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       transition: color 0.3s;
     }
     
@@ -1106,7 +944,7 @@
     
     .footer__bottom {
       text-align: center;
-      padding: 1.5rem 0;
+      padding-top: 1.5rem;
       border-top: 1px solid rgba(255,68,68,0.2);
       font-size: 0.7rem;
       color: #886666;
@@ -1175,11 +1013,6 @@
       visibility: visible;
     }
     
-    .back-to-top:hover {
-      background: #ff3333;
-      transform: translateY(-3px);
-    }
-    
     /* ============================================ */
     /* RESPONSIVE                                   */
     /* ============================================ */
@@ -1189,37 +1022,24 @@
       }
       
       .hero__content h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
       
-      .about__grid,
-      .booking__grid {
+      .about__grid {
         grid-template-columns: 1fr;
       }
       
-      .form-row {
-        grid-template-columns: 1fr;
+      .about__image img {
+        max-width: 300px;
       }
       
-      .nav__actions {
-        gap: 0.5rem;
+      .hero__content p {
+        font-size: 0.9rem;
       }
       
-      .nav__social {
-        display: none;
-      }
-      
-      .footer__grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      
-      .footer__brand h3 {
-        justify-content: center;
-      }
-      
-      .social-links {
-        justify-content: center;
+      .btn--large {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -1228,18 +1048,23 @@
 
 <canvas id="particlesBg" aria-hidden="true"></canvas>
 
-<!-- SKIP LINK -->
-<a href="#main-content" class="skip-link" aria-label="Saltar al contenido principal">
-  Saltar al contenido principal
-</a>
-
 <!-- HEADER -->
 <header class="header" id="header" role="banner">
   <div class="container">
     <nav class="nav" role="navigation" aria-label="Navegación principal">
-      <a href="#hero" class="logo" aria-label="INCRIFE - Ir al inicio">
+      <a href="/" class="logo" aria-label="INCRIFE - Ir al inicio">
         <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE" class="logo__img">
       </a>
+      
+      <div class="nav__links">
+        <a href="/" class="nav__link">Inicio</a>
+        <a href="/tienda" class="nav__link">Servicios</a>
+        <a href="/fotografia" class="nav__link">Portafolio</a>
+        <a href="/agency" class="nav__link">Agencia</a>
+        <a href="/studio" class="nav__link">Estudio musical</a>
+        <a href="/trabajaconnosotros" class="nav__link">Equipo</a>
+        <a href="/contacto" class="nav__link">Contacto</a>
+      </div>
       
       <div class="nav__actions">
         <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener noreferrer" class="nav__social" aria-label="Spotify">
@@ -1271,81 +1096,92 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú móvil">
   <button class="mobile-menu__close" id="closeBtn" aria-label="Cerrar menú">&times;</button>
-  <a href="#about" class="mobile-menu__link">Biografía</a>
-  <a href="#discography" class="mobile-menu__link">Proyectos</a>
-  <a href="#colaboradores" class="mobile-menu__link">Colaboraciones</a>
-  <a href="#booking" class="mobile-menu__link">Booking</a>
-  <a href="#contact" class="mobile-menu__link">Contacto</a>
+  <a href="/" class="mobile-menu__link">Inicio</a>
+  <a href="/tienda" class="mobile-menu__link">Servicios</a>
+  <a href="/fotografia" class="mobile-menu__link">Portafolio</a>
+  <a href="/agency" class="mobile-menu__link">Agencia</a>
+  <a href="/studio" class="mobile-menu__link">Estudio musical</a>
+  <a href="/trabajaconnosotros" class="mobile-menu__link">Equipo</a>
+  <a href="/contacto" class="mobile-menu__link">Contacto</a>
 </div>
 
 <!-- MAIN CONTENT -->
-<main id="main-content">
+<main>
 
   <!-- HERO SECTION -->
-  <section class="hero" id="hero" aria-label="Presentación principal">
-    <div class="hero__bg" style="background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg');" role="img" aria-label="INCRIFE - Banner principal"></div>
+  <section class="hero" id="hero">
+    <div class="hero__bg" style="background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg');"></div>
     <div class="container">
       <div class="hero__content">
         <h1>INCR<span class="text-gradient">IFE</span></h1>
         <p>Fotógrafo profesional en Barcelona · Director de videoclips · Filmmaker · Artista visual</p>
         <div class="hero__actions">
-          <a href="#discography" class="btn btn--primary btn--large">Ver proyectos</a>
-          <a href="#colaboradores" class="btn btn--primary btn--large">Ver colaboraciones</a>
+          <a href="#projects" class="btn btn--primary btn--large">Ver proyectos</a>
+          <a href="#contact" class="btn btn--outline btn--large">Contactar</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SHARE SECTION -->
-  <section class="share-section" aria-label="Compartir">
+  <section class="share-section">
     <div class="container">
       <div class="share">
-        <span class="share__text">
-          <i class="fas fa-share-alt" aria-hidden="true"></i> 
-          Comparte mi trabajo
-        </span>
+        <span class="share__text"><i class="fas fa-share-alt"></i> Comparte mi trabajo</span>
         <div class="share__buttons">
-          <button class="share__btn" data-platform="twitter" aria-label="Compartir en Twitter">
-            <i class="fab fa-twitter" aria-hidden="true"></i>
-            <span>Twitter</span>
-          </button>
-          <button class="share__btn" data-platform="facebook" aria-label="Compartir en Facebook">
-            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-            <span>Facebook</span>
-          </button>
-          <button class="share__btn" data-platform="whatsapp" aria-label="Compartir en WhatsApp">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            <span>WhatsApp</span>
-          </button>
-          <button class="share__btn" data-platform="copy" aria-label="Copiar enlace">
-            <i class="fas fa-link" aria-hidden="true"></i>
-            <span>Copiar link</span>
-          </button>
+          <button class="share__btn" data-platform="twitter"><i class="fab fa-twitter"></i> Twitter</button>
+          <button class="share__btn" data-platform="facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+          <button class="share__btn" data-platform="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+          <button class="share__btn" data-platform="copy"><i class="fas fa-link"></i> Copiar link</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ABOUT SECTION -->
-  <section id="about" class="about" aria-label="Biografía">
+  <section id="about" class="about">
     <div class="container">
       <div class="about__grid">
         <div class="about__image" data-aos="fade-right">
-          <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE - Fotógrafo profesional" loading="lazy">
+          <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE" loading="lazy">
         </div>
         <div class="about__text" data-aos="fade-left">
           <span class="eyebrow">Mi historia</span>
-          <h2>Música y <span class="text-gradient">fotografía</span></h2>
-          <p>Soy <strong>INCRIFE</strong>, fotógrafo profesional en Barcelona, director de videoclips y artista visual. Nacido en La Mina, Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips.</p>
-          <p>He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único. Colaboro con artistas emergentes y consolidados para dar vida a proyectos visuales únicos.</p>
-          <p>Mi objetivo es llevar mi arte visual a todo el mundo y ofrecer un servicio fotográfico y audiovisual excepcional.</p>
+          <h2>Arte visual <span class="text-gradient">y música</span></h2>
+          <p>Soy <strong>INCRIFE</strong>, fotógrafo profesional en Barcelona, director de videoclips y artista visual. Nacido en La Mina, Barcelona.</p>
+          <p>Especialista en fotografía urbana, editorial, retratos y producción de videoclips. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.</p>
+          <p>Colaboro con artistas emergentes y consolidados para dar vida a proyectos visuales únicos.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS CARRUSEL -->
-  <section id="discography" class="discography-carousel" aria-label="Proyectos destacados">
+  <!-- STATS SECTION -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat">
+          <div class="stat__number">+2</div>
+          <div class="stat__label">Años de experiencia</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">+10</div>
+          <div class="stat__label">Videoclips</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">+50</div>
+          <div class="stat__label">Sesiones</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">BCN</div>
+          <div class="stat__label">Base</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects-section">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Mi trabajo</span>
@@ -1353,19 +1189,12 @@
       </div>
       
       <div class="carrusel-horizontal">
-        <button class="carrusel-horizontal__btn carrusel-horizontal__btn--prev" id="proyectosPrev" aria-label="Anterior proyecto">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        
-        <div class="carrusel-horizontal__track" id="proyectosTrack" role="list">
-          <!-- RASSAM - GALOU MERYOULE -->
-          <div class="carrusel-horizontal__card" role="listitem">
+        <div class="carrusel-horizontal__track" id="proyectosTrack">
+          <div class="carrusel-horizontal__card">
             <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="RASSAM - GALOU MERYOULE" loading="lazy">
+              <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="RASSAM">
               <div class="carrusel-horizontal__overlay">
-                <a href="https://www.youtube.com/watch?v=Du64WQoyopE" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram" style="background: #cc0000;">
-                  <i class="fab fa-youtube"></i> Ver videoclip
-                </a>
+                <a href="https://www.youtube.com/watch?v=Du64WQoyopE" target="_blank" class="carrusel-horizontal__btn"><i class="fab fa-youtube"></i> Ver</a>
               </div>
             </div>
             <div class="carrusel-horizontal__info">
@@ -1373,15 +1202,11 @@
               <p>Videoclip Oficial</p>
             </div>
           </div>
-          
-          <!-- RAFA930 VISUAL DRILL -->
-          <div class="carrusel-horizontal__card" role="listitem">
+          <div class="carrusel-horizontal__card">
             <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1014619_2.jpg" alt="RAFA930 VISUAL DRILL" loading="lazy">
+              <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1014619_2.jpg" alt="RAFA930">
               <div class="carrusel-horizontal__overlay">
-                <a href="https://www.youtube.com/watch?v=RoLccmDrCbc" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram" style="background: #cc0000;">
-                  <i class="fab fa-youtube"></i> Ver reel
-                </a>
+                <a href="https://www.youtube.com/watch?v=RoLccmDrCbc" target="_blank" class="carrusel-horizontal__btn"><i class="fab fa-youtube"></i> Ver</a>
               </div>
             </div>
             <div class="carrusel-horizontal__info">
@@ -1389,53 +1214,69 @@
               <p>Reel Oficial</p>
             </div>
           </div>
-          
-          <!-- 05111 - Último proyecto -->
-          <div class="carrusel-horizontal__card" role="listitem">
+          <div class="carrusel-horizontal__card">
             <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/IMG_5076%20(1).jpeg" alt="05111" loading="lazy">
+              <img src="https://raw.githubusercontent.com/incrife/incrife/main/IMG_5076%20(1).jpeg" alt="05111">
               <div class="carrusel-horizontal__overlay">
-                <a href="https://youtu.be/hgBTNrN69xY" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram" style="background: #cc0000;">
-                  <i class="fab fa-youtube"></i> Ver proyecto
-                </a>
+                <a href="https://youtu.be/hgBTNrN69xY" target="_blank" class="carrusel-horizontal__btn"><i class="fab fa-youtube"></i> Ver</a>
               </div>
             </div>
             <div class="carrusel-horizontal__info">
               <h3>05111</h3>
-              <p>Dirección y producción · INCRIFE</p>
+              <p>Dirección y producción</p>
             </div>
           </div>
         </div>
-        
-        <button class="carrusel-horizontal__btn carrusel-horizontal__btn--next" id="proyectosNext" aria-label="Siguiente proyecto">
-          <i class="fas fa-chevron-right" aria-hidden="true"></i>
-        </button>
       </div>
     </div>
   </section>
 
-  <!-- COLABORADORES CARRUSEL -->
-  <section id="colaboradores" class="carrusel-colaboradores" aria-label="Colaboraciones profesionales">
+  <!-- SERVICES SECTION -->
+  <section class="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Servicios</span>
+        <h2>¿Qué <span class="text-gradient">ofrezco?</span></h2>
+      </div>
+      <div class="services__grid">
+        <div class="service-card" data-aos="fade-up">
+          <div class="service-card__icon"><i class="fas fa-camera"></i></div>
+          <h3>Fotografía profesional</h3>
+          <p>Sesiones para modelos, editorial y marcas</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card__icon"><i class="fas fa-video"></i></div>
+          <h3>Videoclips</h3>
+          <p>Dirección y producción para artistas</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card__icon"><i class="fas fa-users"></i></div>
+          <h3>Modelos · Castings</h3>
+          <p>Selección y representación de talento</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card__icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Desarrollo creativo</h3>
+          <p>Asesoramiento para artistas emergentes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLABORADORES SECTION -->
+  <section class="colaboradores">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Colaboraciones</span>
         <h2>He trabajado con <span class="text-gradient">ellos</span></h2>
       </div>
-      
       <div class="carrusel-horizontal">
-        <button class="carrusel-horizontal__btn carrusel-horizontal__btn--prev" id="colabPrev" aria-label="Anterior colaboración">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i>
-        </button>
-        
-        <div class="carrusel-horizontal__track" id="colabTrack" role="list">
-          <!-- Kingsla -->
-          <div class="carrusel-horizontal__card" role="listitem">
+        <div class="carrusel-horizontal__track" id="colabTrack">
+          <div class="carrusel-horizontal__card">
             <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_616350453_18335348698209010_3207213954587758104_n.jpg" alt="Kingsla" loading="lazy">
+              <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_616350453_18335348698209010_3207213954587758104_n.jpg" alt="Kingsla">
               <div class="carrusel-horizontal__overlay">
-                <a href="https://www.instagram.com/amine_grafi/" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram">
-                  <i class="fab fa-instagram"></i> Ver
-                </a>
+                <a href="https://www.instagram.com/amine_grafi/" target="_blank" class="carrusel-horizontal__btn"><i class="fab fa-instagram"></i> Ver</a>
               </div>
             </div>
             <div class="carrusel-horizontal__info">
@@ -1443,15 +1284,11 @@
               <p>Artista</p>
             </div>
           </div>
-          
-          <!-- Maruuking -->
-          <div class="carrusel-horizontal__card" role="listitem">
+          <div class="carrusel-horizontal__card">
             <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Maruuking" loading="lazy">
+              <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Maruuking">
               <div class="carrusel-horizontal__overlay">
-                <a href="https://www.instagram.com/maruu_king/" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram">
-                  <i class="fab fa-instagram"></i> Ver
-                </a>
+                <a href="https://www.instagram.com/maruu_king/" target="_blank" class="carrusel-horizontal__btn"><i class="fab fa-instagram"></i> Ver</a>
               </div>
             </div>
             <div class="carrusel-horizontal__info">
@@ -1459,15 +1296,11 @@
               <p>Artista</p>
             </div>
           </div>
-          
-          <!-- Rassam -->
-          <div class="carrusel-horizontal__card" role="listitem">
+          <div class="carrusel-horizontal__card">
             <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_651251130_18116188027712847_544541923891260297_n.jpg" alt="Rassam" loading="lazy">
+              <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_651251130_18116188027712847_544541923891260297_n.jpg" alt="Rassam">
               <div class="carrusel-horizontal__overlay">
-                <a href="https://www.instagram.com/therassam/" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram">
-                  <i class="fab fa-instagram"></i> Ver
-                </a>
+                <a href="https://www.instagram.com/therassam/" target="_blank" class="carrusel-horizontal__btn"><i class="fab fa-instagram"></i> Ver</a>
               </div>
             </div>
             <div class="carrusel-horizontal__info">
@@ -1475,15 +1308,11 @@
               <p>Artista</p>
             </div>
           </div>
-          
-          <!-- Rafa930 -->
-          <div class="carrusel-horizontal__card" role="listitem">
+          <div class="carrusel-horizontal__card">
             <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_670152063_18013529003844485_7891764818375528431_n.jpg" alt="Rafa930" loading="lazy">
+              <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_670152063_18013529003844485_7891764818375528431_n.jpg" alt="Rafa930">
               <div class="carrusel-horizontal__overlay">
-                <a href="https://www.instagram.com/rafa930_oficial/" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram">
-                  <i class="fab fa-instagram"></i> Ver
-                </a>
+                <a href="https://www.instagram.com/rafa930_oficial/" target="_blank" class="carrusel-horizontal__btn"><i class="fab fa-instagram"></i> Ver</a>
               </div>
             </div>
             <div class="carrusel-horizontal__info">
@@ -1491,306 +1320,91 @@
               <p>Artista</p>
             </div>
           </div>
-          
-          <!-- Kurtusinc -->
-          <div class="carrusel-horizontal__card" role="listitem">
-            <div class="carrusel-horizontal__image">
-              <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg" alt="Kurtusinc" loading="lazy">
-              <div class="carrusel-horizontal__overlay">
-                <a href="https://www.instagram.com/kurtusinc/" target="_blank" rel="noopener noreferrer" class="carrusel-horizontal__instagram">
-                  <i class="fab fa-instagram"></i> Ver
-                </a>
-              </div>
-            </div>
-            <div class="carrusel-horizontal__info">
-              <h3>Kurtusinc</h3>
-              <p>Agencia de Modelos</p>
-            </div>
-          </div>
-        </div>
-        
-        <button class="carrusel-horizontal__btn carrusel-horizontal__btn--next" id="colabNext" aria-label="Siguiente colaboración">
-          <i class="fas fa-chevron-right" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL SECTION -->
-  <section class="social-section" aria-label="Redes sociales">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Sígueme</span>
-        <h2><span class="text-gradient">Redes sociales</span></h2>
-      </div>
-      <div class="social__grid">
-        <a href="https://www.instagram.com/incrife/" target="_blank" rel="noopener noreferrer" class="social__card" aria-label="Instagram de INCRIFE">
-          <i class="fab fa-instagram" style="color: #E4405F;" aria-hidden="true"></i>
-          <span>Instagram</span>
-        </a>
-        <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener noreferrer" class="social__card" aria-label="Spotify de INCRIFE">
-          <i class="fab fa-spotify" style="color: #1DB954;" aria-hidden="true"></i>
-          <span>Spotify</span>
-        </a>
-        <a href="https://www.youtube.com/@incrife" target="_blank" rel="noopener noreferrer" class="social__card" aria-label="YouTube de INCRIFE">
-          <i class="fab fa-youtube" style="color: #FF0000;" aria-hidden="true"></i>
-          <span>YouTube</span>
-        </a>
-        <a href="https://www.tiktok.com/@incrife" target="_blank" rel="noopener noreferrer" class="social__card" aria-label="TikTok de INCRIFE">
-          <i class="fab fa-tiktok" style="color: #000000;" aria-hidden="true"></i>
-          <span>TikTok</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES SECTION -->
-  <section class="features" aria-label="Servicios">
-    <div class="container">
-      <div class="features__grid">
-        <article class="feature-card" data-aos="fade-up">
-          <div class="feature-card__icon"><i class="fas fa-camera" aria-hidden="true"></i></div>
-          <h3>Fotografía profesional</h3>
-          <p>Sesiones fotográficas de alta calidad para artistas, retratos y fotografía urbana en Barcelona.</p>
-        </article>
-        <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature-card__icon"><i class="fas fa-video" aria-hidden="true"></i></div>
-          <h3>Videoclips</h3>
-          <p>Dirección y producción de videoclips para artistas. Narrativas visuales únicas y estética urbana.</p>
-        </article>
-        <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature-card__icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
-          <h3>Booking disponible</h3>
-          <p>Sesiones fotográficas, videoclips y producciones audiovisuales. Contáctame.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING SECTION -->
-  <section id="booking" class="booking" aria-label="Formulario de booking">
-    <div class="container">
-      <div class="booking__grid">
-        <div class="booking__info">
-          <span class="eyebrow">Booking</span>
-          <h2>¿Trabajamos <span class="text-gradient">juntos?</span></h2>
-          <p>Para sesiones fotográficas, videoclips, producciones audiovisuales o cualquier consulta profesional, contáctame.</p>
-          
-          <div class="info-category">
-            <div class="info-category__title">
-              <i class="fas fa-camera" aria-hidden="true"></i>
-              <span>Sesiones Fotográficas / Videoclips</span>
-            </div>
-            <div class="info-list">
-              <div class="info-item">
-                <div class="info-item__icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Email profesional</strong>
-                  <a href="mailto:contact@incrife.com">contact@incrife.com</a>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="info-item__icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Instagram</strong>
-                  <a href="https://instagram.com/incrife" target="_blank">@incrife</a>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="info-item__icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Teléfono / WhatsApp</strong>
-                  <a href="https://wa.me/34624170204">+34 624 17 02 04</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="separator" aria-hidden="true">
-            <span></span>
-            <i class="fas fa-camera"></i>
-            <span></span>
-          </div>
-          
-          <div class="info-category">
-            <div class="info-category__title">
-              <i class="fas fa-video" aria-hidden="true"></i>
-              <span>Servicios Audiovisuales</span>
-            </div>
-            <div class="info-list">
-              <div class="info-item">
-                <div class="info-item__icon"><i class="fas fa-film" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Videoclips</strong>
-                  <span>Dirección, grabación y edición profesional</span>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="info-item__icon"><i class="fas fa-camera-retro" aria-hidden="true"></i></div>
-                <div>
-                  <strong>Fotografía</strong>
-                  <span>Retratos, urbana, editorial, making of</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="booking__form">
-          <h3 class="booking__form-title">Solicitar información</h3>
-          <p class="booking__form-subtitle">Completa todos los campos y te responderé en menos de 24h</p>
-          
-          <form id="bookingForm" method="POST" action="https://formspree.io/f/xgvazgva" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="firstName">Nombre</label>
-                <input type="text" name="first_name" id="firstName" class="form-control" placeholder="Tu nombre" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="lastName">Apellidos</label>
-                <input type="text" name="last_name" id="lastName" class="form-control" placeholder="Tus apellidos" required>
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="tu@email.com" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="phone">Teléfono / WhatsApp</label>
-                <input type="tel" name="phone" id="phone" class="form-control" placeholder="+34 123 456 789" required>
-              </div>
-            </div>
-            
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="subject">Tipo de consulta</label>
-                <select name="subject" id="subject" class="form-select" required>
-                  <option value="">Selecciona una opción</option>
-                  <option value="sesion">📸 Sesión fotográfica</option>
-                  <option value="videoclip">🎬 Videoclip</option>
-                  <option value="colaboracion">🎵 Colaboración musical</option>
-                  <option value="otros">💼 Otros</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="budget">Presupuesto estimado</label>
-                <select name="budget" id="budget" class="form-select">
-                  <option value="">Selecciona un rango</option>
-                  <option value="50-150">50€ - 150€</option>
-                  <option value="150-300">150€ - 300€</option>
-                  <option value="300-600">300€ - 600€</option>
-                  <option value="600+">Más de 600€</option>
-                </select>
-              </div>
-            </div>
-            
-            <div class="form-group">
-              <label class="form-label" for="message">Mensaje</label>
-              <textarea name="message" id="message" class="form-control" rows="5" placeholder="Cuéntame tu proyecto..." required></textarea>
-            </div>
-            
-            <div class="form-group form-group--checkbox">
-              <input type="checkbox" name="privacy" id="privacy" required>
-              <label for="privacy">Acepto la política de privacidad</label>
-            </div>
-            
-            <button type="submit" class="btn btn--primary btn--block">Enviar consulta</button>
-          </form>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="contact" aria-label="Información de contacto">
+  <section id="contact" class="contact">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Contacto</span>
-        <h2>Encuéntrame</h2>
+        <h2>¿Hablamos de tu <span class="text-gradient">proyecto?</span></h2>
       </div>
       <div class="contact__grid">
-        <div class="contact__item">
-          <div class="contact__icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-          <div>
-            <h4>Email</h4>
-            <a href="mailto:contact@incrife.com">contact@incrife.com</a>
-          </div>
-        </div>
-        <div class="contact__item">
-          <div class="contact__icon"><i class="fab fa-instagram" aria-hidden="true"></i></div>
-          <div>
-            <h4>Instagram</h4>
-            <a href="https://instagram.com/incrife" target="_blank">@incrife</a>
-          </div>
-        </div>
-        <div class="contact__item">
-          <div class="contact__icon"><i class="fab fa-spotify" aria-hidden="true"></i></div>
-          <div>
-            <h4>Spotify</h4>
-            <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank">Escuchar ahora</a>
-          </div>
-        </div>
-        <div class="contact__item">
-          <div class="contact__icon"><i class="fab fa-youtube" aria-hidden="true"></i></div>
-          <div>
-            <h4>YouTube</h4>
-            <a href="https://www.youtube.com/@incrife" target="_blank">Suscribirse</a>
-          </div>
-        </div>
+        <a href="mailto:contact@incrife.com" class="contact__card">
+          <i class="fas fa-envelope"></i>
+          <span>contact@incrife.com</span>
+        </a>
+        <a href="https://wa.me/34624170204" target="_blank" class="contact__card">
+          <i class="fab fa-whatsapp"></i>
+          <span>+34 624 17 02 04</span>
+        </a>
+        <a href="https://www.instagram.com/incrife/" target="_blank" class="contact__card">
+          <i class="fab fa-instagram"></i>
+          <span>@incrife</span>
+        </a>
+        <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="contact__card">
+          <i class="fab fa-spotify"></i>
+          <span>Escuchar en Spotify</span>
+        </a>
       </div>
     </div>
   </section>
 
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="booking">
+    <div class="container">
+      <div class="booking__grid">
+        <div class="booking__info">
+          <span class="eyebrow">Booking</span>
+          <h2>¿Trabajamos <span class="text-gradient">juntos?</span></h2>
+          <p>Para sesiones fotográficas, videoclips o cualquier consulta profesional, contáctame.</p>
+          <div class="info-list">
+            <div class="info-item"><i class="fas fa-envelope"></i><a href="mailto:contact@incrife.com">contact@incrife.com</a></div>
+            <div class="info-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/34624170204">+34 624 17 02 04</a></div>
+            <div class="info-item"><i class="fab fa-instagram"></i><a href="https://instagram.com/incrife">@incrife</a></div>
+          </div>
+        </div>
+        <div class="booking__form">
+          <h3>Solicitar información</h3>
+          <form id="bookingForm" method="POST" action="https://formspree.io/f/xgvazgva">
+            <div class="form-group"><input type="text" name="name" placeholder="Tu nombre" required></div>
+            <div class="form-group"><input type="email" name="email" placeholder="Tu email" required></div>
+            <div class="form-group"><input type="tel" name="phone" placeholder="Teléfono / WhatsApp"></div>
+            <div class="form-group"><select name="subject"><option value="">Tipo de consulta</option><option value="sesion">📸 Sesión fotográfica</option><option value="videoclip">🎬 Videoclip</option></select></div>
+            <div class="form-group"><textarea name="message" rows="4" placeholder="Cuéntame tu proyecto..." required></textarea></div>
+            <button type="submit" class="btn btn--primary btn--block">Enviar consulta</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- FOOTER -->
-<footer class="footer" role="contentinfo">
-  <div class="footer__wave" aria-hidden="true">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="footer__wave-fill"></path>
-    </svg>
-  </div>
-  
+<footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
-        <h3>
-          <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE">
-          INCRIFE
-        </h3>
-        <p>Fotógrafo profesional · Director de videoclips · Filmmaker · Artista visual</p>
+        <h3><img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE"> INCRIFE</h3>
+        <p>Fotógrafo profesional · Director de videoclips · Filmmaker</p>
         <div class="social-links">
-          <a href="https://www.instagram.com/incrife/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-          <a href="https://www.youtube.com/@incrife" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/incrife/" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" class="social-link"><i class="fab fa-spotify"></i></a>
+          <a href="https://www.youtube.com/@incrife" class="social-link"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
       <div class="footer__col">
         <h4>Navegación</h4>
-        <ul>
-          <li><a href="#about">Biografía</a></li>
-          <li><a href="#discography">Proyectos</a></li>
-          <li><a href="#colaboradores">Colaboraciones</a></li>
-          <li><a href="#booking">Booking</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Contacto</h4>
-        <a href="mailto:contact@incrife.com">contact@incrife.com</a>
+        <ul><li><a href="/">Inicio</a></li><li><a href="/tienda">Servicios</a></li><li><a href="/fotografia">Portafolio</a></li><li><a href="/agency">Agencia</a></li><li><a href="/studio">Estudio musical</a></li><li><a href="/contacto">Contacto</a></li></ul>
       </div>
       <div class="footer__col">
         <h4>Legal</h4>
-        <ul>
-          <li><a href="aviso-legal.html">Aviso legal</a></li>
-          <li><a href="privacidad.html">Privacidad</a></li>
-          <li><a href="cookies.html">Cookies</a></li>
-        </ul>
+        <ul><li><a href="aviso-legal.html">Aviso legal</a></li><li><a href="privacidad.html">Privacidad</a></li><li><a href="cookies.html">Cookies</a></li></ul>
       </div>
     </div>
-    
     <div class="footer__bottom">
       <p>&copy; 2026 INCRIFE · Fotógrafo Barcelona · Todos los derechos reservados</p>
     </div>
@@ -1798,302 +1412,105 @@
 </footer>
 
 <!-- BOTONES FLOTANTES -->
-<div class="floating-buttons" aria-label="Botones de contacto rápido">
-  <a href="https://wa.me/34624170204?text=Hola%20INCRIFE,%20me%20interesa%20trabajar%20contigo" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn--whatsapp" aria-label="Contactar por WhatsApp">
-    <i class="fab fa-whatsapp" aria-hidden="true"></i>
-  </a>
-  <a href="mailto:contact@incrife.com" class="floating-btn floating-btn--gmail" aria-label="Enviar email">
-    <i class="fas fa-envelope" aria-hidden="true"></i>
-  </a>
+<div class="floating-buttons">
+  <a href="https://wa.me/34624170204?text=Hola%20INCRIFE,%20me%20interesa%20trabajar%20contigo" class="floating-btn" style="background:#25D366;"><i class="fab fa-whatsapp"></i></a>
+  <a href="mailto:contact@incrife.com" class="floating-btn floating-btn--gmail"><i class="fas fa-envelope"></i></a>
 </div>
 
-<!-- BACK TO TOP -->
-<button class="back-to-top" id="backToTop" aria-label="Volver al inicio">
-  <i class="fas fa-arrow-up" aria-hidden="true"></i>
-</button>
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
-<!-- SCRIPTS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  // Inicializar AOS
-  AOS.init({
-    duration: 800,
-    once: true
-  });
+  AOS.init({ duration: 800, once: true });
   
-  // ==========================================
-  // SISTEMA DE TEMA
-  // ==========================================
-  var temaGuardado = localStorage.getItem('theme');
-  if (!temaGuardado) {
-    temaGuardado = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  }
-  document.body.classList.add(temaGuardado);
-  
-  function sincronizarToggle() {
-    var toggle = document.getElementById('themeToggle');
-    if (!toggle) return;
-    if (document.body.classList.contains('light')) {
-      toggle.classList.add('light');
-    } else {
-      toggle.classList.remove('light');
-    }
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', sincronizarToggle);
-  } else {
-    sincronizarToggle();
-  }
-  
-  // Theme toggle click
+  // Theme
   const themeToggle = document.getElementById('themeToggle');
   if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
-      if (document.body.classList.contains('light')) {
-        document.body.classList.remove('light');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.body.classList.add('light');
-        localStorage.setItem('theme', 'light');
-      }
-      sincronizarToggle();
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') document.body.classList.add('light');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+      themeToggle.classList.toggle('light');
     });
+    if (document.body.classList.contains('light')) themeToggle.classList.add('light');
   }
   
-  // ==========================================
-  // MENÚ MÓVIL
-  // ==========================================
-  const burgerBtn = document.getElementById('burgerBtn');
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('closeBtn');
+  const closeMenu = document.getElementById('closeBtn');
+  if (burger) burger.onclick = () => mobileMenu.classList.add('open');
+  if (closeMenu) closeMenu.onclick = () => mobileMenu.classList.remove('open');
   
-  if (burgerBtn && mobileMenu) {
-    burgerBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      burgerBtn.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
-    });
-  }
-  
-  if (closeBtn && mobileMenu) {
-    closeBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-    });
-  }
-  
-  // Cerrar menú al hacer clic en un enlace
-  document.querySelectorAll('.mobile-menu__link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-    });
-  });
-  
-  // ==========================================
-  // CARRUSEL PROYECTOS
-  // ==========================================
-  const proyectosTrack = document.getElementById('proyectosTrack');
-  const proyectosPrev = document.getElementById('proyectosPrev');
-  const proyectosNext = document.getElementById('proyectosNext');
-  
-  if (proyectosTrack && proyectosPrev && proyectosNext) {
-    proyectosPrev.addEventListener('click', () => {
-      proyectosTrack.scrollBy({ left: -300, behavior: 'smooth' });
-    });
-    proyectosNext.addEventListener('click', () => {
-      proyectosTrack.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-  }
-  
-  // ==========================================
-  // CARRUSEL COLABORACIONES
-  // ==========================================
-  const colabTrack = document.getElementById('colabTrack');
-  const colabPrev = document.getElementById('colabPrev');
-  const colabNext = document.getElementById('colabNext');
-  
-  if (colabTrack && colabPrev && colabNext) {
-    colabPrev.addEventListener('click', () => {
-      colabTrack.scrollBy({ left: -300, behavior: 'smooth' });
-    });
-    colabNext.addEventListener('click', () => {
-      colabTrack.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-  }
-  
-  // ==========================================
-  // BACK TO TOP
-  // ==========================================
+  // Back to top
   const backToTop = document.getElementById('backToTop');
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-    
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+  if (backToTop) backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   
-  // ==========================================
-  // SHARE BUTTONS
-  // ==========================================
-  const shareButtons = document.querySelectorAll('.share__btn');
-  const currentUrl = encodeURIComponent(window.location.href);
-  const currentTitle = encodeURIComponent('INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker');
-  
-  shareButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+  // Share buttons
+  document.querySelectorAll('.share__btn').forEach(btn => {
+    btn.onclick = () => {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent('INCRIFE | Fotógrafo Barcelona');
       const platform = btn.dataset.platform;
       let shareUrl = '';
-      
-      switch(platform) {
-        case 'twitter':
-          shareUrl = `https://twitter.com/intent/tweet?text=${currentTitle}&url=${currentUrl}`;
-          break;
-        case 'facebook':
-          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
-          break;
-        case 'whatsapp':
-          shareUrl = `https://wa.me/?text=${currentTitle}%20${currentUrl}`;
-          break;
-        case 'copy':
-          navigator.clipboard.writeText(window.location.href);
-          alert('Enlace copiado al portapapeles');
-          return;
-      }
-      
-      if (shareUrl) {
-        window.open(shareUrl, '_blank', 'width=600,height=400');
-      }
-    });
+      if (platform === 'twitter') shareUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+      else if (platform === 'facebook') shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      else if (platform === 'whatsapp') shareUrl = `https://wa.me/?text=${title}%20${url}`;
+      else if (platform === 'copy') { navigator.clipboard.writeText(window.location.href); alert('Enlace copiado'); return; }
+      if (shareUrl) window.open(shareUrl, '_blank');
+    };
   });
   
-  // ==========================================
-  // PARTÍCULAS
-  // ==========================================
+  // Particles
   const canvas = document.getElementById('particlesBg');
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let particles = [];
-    
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     function createParticles() {
       particles = [];
-      const particleCount = 80;
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          radius: Math.random() * 2 + 1,
-          speedX: (Math.random() - 0.5) * 0.5,
-          speedY: (Math.random() - 0.5) * 0.5,
-          opacity: Math.random() * 0.3 + 0.1
-        });
-      }
+      for (let i = 0; i < 80; i++) particles.push({
+        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1, speedX: (Math.random() - 0.5) * 0.5,
+        speedY: (Math.random() - 0.5) * 0.5, opacity: Math.random() * 0.3 + 0.1
+      });
     }
-    
     function drawParticles() {
-      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(204, 0, 0, ${p.opacity})`;
         ctx.fill();
-        
-        p.x += p.speedX;
-        p.y += p.speedY;
-        
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        p.x += p.speedX; p.y += p.speedY;
+        if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
       });
       requestAnimationFrame(drawParticles);
     }
-    
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      createParticles();
-    });
-    
-    resizeCanvas();
-    createParticles();
-    drawParticles();
+    window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
+    resizeCanvas(); createParticles(); drawParticles();
   }
 </script>
 
-<!-- Schema.org Structured Data -->
+<!-- Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "INCRIFE",
   "alternateName": "Fotógrafo Barcelona",
-  "description": "Fotógrafo profesional y director de videoclips en Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips.",
+  "description": "Fotógrafo profesional y director de videoclips en Barcelona.",
   "url": "https://incrife.com",
   "telephone": "+34624170204",
   "email": "contact@incrife.com",
-  "priceRange": "€€-€€€",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Barcelona",
-    "addressRegion": "Barcelona",
-    "addressCountry": "ES"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "41.385063",
-    "longitude": "2.173404"
-  },
-  "areaServed": { "@type": "City", "name": "Barcelona" },
-  "sameAs": [
-    "https://www.instagram.com/incrife/",
-    "https://www.youtube.com/@incrife",
-    "https://www.tiktok.com/@incrife",
-    "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi"
-  ]
+  "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" },
+  "sameAs": ["https://www.instagram.com/incrife/", "https://www.youtube.com/@incrife", "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi"]
 }
 </script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "INCRIFE",
-  "jobTitle": "Fotógrafo y Director de Videoclips",
-  "description": "Fotógrafo profesional y director de videoclips en Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips.",
-  "url": "https://incrife.com",
-  "sameAs": [
-    "https://www.instagram.com/incrife/",
-    "https://www.youtube.com/@incrife",
-    "https://www.tiktok.com/@incrife"
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "INCRIFE",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "12",
-    "bestRating": "5",
-    "worstRating": "1"
-  }
-}
-</script>
-
 </body>
 </html>
