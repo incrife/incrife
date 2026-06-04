@@ -16,10 +16,16 @@
   <!-- ========== SEO PRINCIPAL ========== -->
   <meta name="description" content="INCRIFE: Fotógrafo profesional en Barcelona, videógrafo y director de videoclips. Especialista en fotografía urbana, editorial, retratos y producción audiovisual. Nacido en La Mina. ¡Descubre mi trabajo!">
   <meta name="keywords" content="fotógrafo barcelona, videógrafo barcelona, filmmaker barcelona, director videoclips barcelona, fotografía urbana barcelona, productor audiovisual barcelona, incrife fotógrafo">
-  <meta name="author" content="INCRIFE">
+  <meta name="author" content="Ángel Córdoba El Hannouti">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow, max-video-preview:-1">
   <meta name="revisit-after" content="7 days">
+  
+  <!-- ========== METADATOS ADICIONALES ========== -->
+  <meta name="birth-date" content="2006-09-28">
+  <meta name="birth-place" content="Barcelona, La Mina, España">
+  <meta name="height" content="1.80 m">
+  <meta name="genre" content="Afrotrap, Afrobeat, Trap, Reggaetón, Latin Urban">
   
   <!-- ========== CANONICAL ========== -->
   <link rel="canonical" href="https://incrife.com">
@@ -451,12 +457,12 @@
   
   document.querySelectorAll('.fade-up-item').forEach(el => observer.observe(el));
   
-  // Schema
-  const schema = {
+  // ========== SCHEMA PROFESIONAL (Fotógrafo) ==========
+  const profSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "INCRIFE",
-    "alternateName": "Fotógrafo Barcelona",
+    "alternateName": "Ángel Córdoba El Hannouti",
     "description": "Fotógrafo profesional y director de videoclips en Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips.",
     "url": "https://incrife.com",
     "telephone": "+34624170204",
@@ -481,7 +487,106 @@
       "https://x.com/Incrife"
     ]
   };
-  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(schema) }));
+  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(profSchema) }));
+  
+  // ========== SCHEMA MUSICGROUP (Artista) con BIO COMPLETA ==========
+  const musicSchema = {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "INCRIFE",
+    "alternateName": "Ángel Córdoba El Hannouti",
+    "legalName": "Ángel Córdoba El Hannouti",
+    "description": "Ángel Córdoba El Hannouti, conocido artísticamente como Incrife, es un artista urbano, productor musical y director de videoclips nacido el 28 de septiembre de 2006 en Barcelona, España. De ascendencia española e italiana, creció en el barrio de La Mina, una zona marcada por la diversidad cultural que influyó profundamente en su visión artística y musical. Desde temprana edad mostró un gran interés por la música, inspirándose en artistas como Ne-Yo y MHD, referentes que transformaron su forma de entender la composición, las melodías y la identidad artística. Aunque siempre soñó con dedicarse al canto, durante años sintió que sus limitaciones técnicas vocales le impedían expresar plenamente sus ideas musicales. Su curiosidad creativa y su carácter autodidacta lo llevaron a explorar diferentes disciplinas. Mientras muchos de sus intereses no encajaban con los caminos tradicionales, dedicó incontables horas a aprender por cuenta propia sobre producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. Esa búsqueda constante de conocimiento se convirtió en una de las características que definirían su trayectoria. Durante una etapa se adentró en la escena techno y rave, enfocándose principalmente en la producción musical. Fruto de ese periodo surgieron colaboraciones y lanzamientos que le permitieron desarrollar su faceta como productor y comprender el funcionamiento de la industria desde una perspectiva más técnica. Sin embargo, diversos problemas relacionados con la audición provocaron una pausa en su actividad musical y le obligaron a replantear su camino artístico. Lejos de abandonar su creatividad, continuó desarrollándose como director de videoclips y fotógrafo, trabajando en proyectos audiovisuales y perfeccionando su visión estética. En 2026 decidió regresar a su objetivo original: convertirse en cantante. Para ello comenzó una nueva etapa centrada en la formación vocal, apostando por las clases de canto y priorizando su evolución artística por encima de las dudas que habían condicionado sus primeros años. Influenciado por la música francófona y la escena urbana europea, especialmente por artistas que combinan melodía, ritmo e identidad cultural, inició también el aprendizaje del idioma francés como parte de su desarrollo personal y creativo.",
+    "url": "https://incrife.com",
+    "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
+    "birthDate": "2006-09-28",
+    "birthPlace": {
+      "@type": "City",
+      "name": "Barcelona, La Mina",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressRegion": "Barcelona",
+        "addressCountry": "ES"
+      }
+    },
+    "height": {
+      "@type": "QuantitativeValue",
+      "value": "1.80",
+      "unitCode": "MTR"
+    },
+    "foundingDate": "2024",
+    "foundingLocation": {
+      "@type": "City",
+      "name": "Barcelona"
+    },
+    "genre": ["Afrotrap", "Afrobeat", "Trap", "Reggaetón", "Latin Urban", "Spanish Urban"],
+    "sameAs": [
+      "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi",
+      "https://music.apple.com/es/artist/incrife/1848003000",
+      "https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife",
+      "https://www.instagram.com/incrife/",
+      "https://www.youtube.com/@incrife",
+      "https://www.tiktok.com/@incrife",
+      "https://x.com/Incrife"
+    ],
+    "album": {
+      "@type": "MusicAlbum",
+      "name": "Último lanzamiento",
+      "byArtist": {
+        "@type": "MusicGroup",
+        "name": "INCRIFE"
+      }
+    }
+  };
+  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(musicSchema) }));
+  
+  // ========== SCHEMA PERSON (Datos personales) ==========
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ángel Córdoba El Hannouti",
+    "alternateName": "INCRIFE",
+    "description": "Ángel Córdoba El Hannouti (INCRIFE) nació el 28 de septiembre de 2006 en Barcelona, España. De ascendencia española e italiana, creció en La Mina. Es un artista de afrotrap y afrobeat, productor musical, director de videoclips y fotógrafo profesional. Con 1.80 metros de altura. Influenciado por Ne-Yo y MHD, ha superado problemas de audición para desarrollar un estilo único que fusiona ritmos africanos con la cultura urbana de Barcelona. En 2026 retomó su carrera como cantante, estudiando canto y francés como parte de su evolución artística.",
+    "birthDate": "2006-09-28",
+    "birthPlace": {
+      "@type": "City",
+      "name": "Barcelona, España",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      }
+    },
+    "height": {
+      "@type": "QuantitativeValue",
+      "value": "1.80",
+      "unitCode": "MTR",
+      "unitText": "metros"
+    },
+    "nationality": {
+      "@type": "Country",
+      "name": "España"
+    },
+    "homeLocation": {
+      "@type": "Place",
+      "name": "La Mina, Barcelona",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barcelona",
+        "addressCountry": "ES"
+      }
+    },
+    "jobTitle": "Artista musical · Productor · Director de videoclips · Fotógrafo profesional",
+    "knowsAbout": ["Afrotrap", "Afrobeat", "Producción musical", "Videoclips", "Fotografía profesional", "Trap", "Reggaetón"],
+    "sameAs": [
+      "https://www.instagram.com/incrife/",
+      "https://www.youtube.com/@incrife",
+      "https://www.tiktok.com/@incrife",
+      "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi"
+    ]
+  };
+  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(personSchema) }));
 </script>
 </body>
 </html>
