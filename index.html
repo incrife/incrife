@@ -6,7 +6,7 @@
     
     <!-- ============================================ -->
     <!-- INCRIFE - PROFESSIONAL RED & BLACK             -->
-    <!-- COMPLETE EDITION · 15+ SECCIONES · CORREGIDO   -->
+    <!-- COMPLETE EDITION · MENÚ ORIGINAL RESTAURADO    -->
     <!-- Fotógrafo Barcelona · Videógrafo · Filmmaker   -->
     <!-- ============================================ -->
     
@@ -195,7 +195,7 @@
         }
         @keyframes preloaderBar { to { width: 100px; } }
         
-        /* ===== NAVBAR CORREGIDA (igual que antes) ===== */
+        /* ===== NAVBAR ORIGINAL RESTAURADA ===== */
         .navbar {
             position: fixed; top: 0; left: 0; width: 100%; z-index: var(--z-fixed);
             background: rgba(10,10,10,0.88); backdrop-filter: blur(20px);
@@ -227,14 +227,6 @@
         }
         .nav-links a:hover { color: var(--white); }
         .nav-links a:hover::after { width: 100%; }
-        /* Botón Portfolio que redirige a studio (como antes) */
-        .nav-cta {
-            background: var(--red); color: var(--white); padding: 0.5rem 1.2rem;
-            border-radius: var(--radius-xs); font-size: 0.7rem; font-weight: 600;
-            letter-spacing: 1px; text-decoration: none; text-transform: uppercase;
-            transition: all var(--transition-base);
-        }
-        .nav-cta:hover { background: var(--red-dark); }
         .hamburger { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
         .hamburger span { width: 22px; height: 1.5px; background: var(--white); transition: all var(--transition-base); }
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
@@ -402,7 +394,7 @@
             letter-spacing: 2px; margin-top: 0.5rem;
         }
         
-        /* ===== INSPIRATIONS (con fotos e Instagram) ===== */
+        /* ===== INSPIRATIONS ===== */
         .inspo-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
             max-width: 900px; margin: 0 auto;
@@ -565,18 +557,6 @@
         }
         .quote-author { font-size: 0.85rem; color: var(--red-light); letter-spacing: 2px; text-transform: uppercase; }
         
-        /* ===== GEAR / EQUIPMENT ===== */
-        .gear-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 800px; margin: 0 auto; }
-        .gear-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 1.5rem; text-align: center;
-            transition: all var(--transition-base);
-        }
-        .gear-card:hover { border-color: var(--red-border); }
-        .gear-card i { font-size: 1.5rem; color: var(--red-light); margin-bottom: 0.8rem; }
-        .gear-card h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
-        .gear-card p { font-size: 0.7rem; color: var(--text-tertiary); font-weight: 300; }
-        
         /* ===== SOCIAL ===== */
         .social-grid { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
         .social-circle {
@@ -650,7 +630,6 @@
             .stats-grid { grid-template-columns: repeat(3, 1fr); }
             .inspo-grid { grid-template-columns: repeat(2, 1fr); }
             .videoclips-grid { grid-template-columns: repeat(2, 1fr); }
-            .gear-grid { grid-template-columns: repeat(2, 1fr); }
             .collab-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-grid { grid-template-columns: repeat(2, 1fr); }
         }
@@ -667,7 +646,6 @@
             .google-grid { grid-template-columns: 1fr; }
             .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
             .contact-grid { grid-template-columns: 1fr; }
-            .gear-grid { grid-template-columns: 1fr; }
             .inspo-grid { grid-template-columns: 1fr; }
             .videoclips-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
@@ -703,20 +681,18 @@
         </div>
     </div>
     
-    <!-- NAVBAR CORREGIDA (menú con Portfolio que redirige a /studio) -->
+    <!-- NAVBAR ORIGINAL RESTAURADA (con las URLs externas que tenías antes) -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="#home" class="nav-logo">INCRIFE</a>
             <ul class="nav-links">
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#services">Servicios</a></li>
-                <li><a href="#story">Historia</a></li>
-                <li><a href="#stats">Estadísticas</a></li>
-                <li><a href="#musica">Música</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#colaboraciones">Colaboraciones</a></li>
-                <!-- Botón Portfolio que redirige a studio (como antes) -->
-                <li><a href="https://incrife.com/studio" class="nav-cta" target="_blank">Portfolio</a></li>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="https://incrife.com/agency" target="_blank">Agency</a></li>
+                <li><a href="https://incrife.com/studio" target="_blank">Portafolio</a></li>
+                <li><a href="https://incrife.com/studio" target="_blank">Studio musical</a></li>
+                <li><a href="https://incrife.com/incrifed" target="_blank">Tienda</a></li>
+                <li><a href="https://incrife.com/trabajaconnosotros" target="_blank">Trabaja con nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Menú">
                 <span></span><span></span><span></span>
@@ -724,17 +700,15 @@
         </div>
     </nav>
     
-    <!-- MOBILE MENU -->
+    <!-- MOBILE MENU (con las mismas URLs) -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileClose">&times;</button>
         <a href="#home">Inicio</a>
-        <a href="#about">Sobre mí</a>
-        <a href="#services">Servicios</a>
-        <a href="#story">Historia</a>
-        <a href="#musica">Música</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#colaboraciones">Colaboraciones</a>
-        <a href="https://incrife.com/studio" target="_blank">Portfolio</a>
+        <a href="https://incrife.com/agency" target="_blank">Agency</a>
+        <a href="https://incrife.com/studio" target="_blank">Portafolio</a>
+        <a href="https://incrife.com/studio" target="_blank">Studio musical</a>
+        <a href="https://incrife.com/incrifed" target="_blank">Tienda</a>
+        <a href="https://incrife.com/trabajaconnosotros" target="_blank">Trabaja con nosotros</a>
         <a href="#contacto">Contacto</a>
     </div>
 
@@ -901,7 +875,7 @@
                         <i class="fab fa-instagram"></i> @mhdofficiel
                     </a>
                 </div>
-                <!-- Afrotrap & Afrobeat (mantenemos) -->
+                <!-- Afrotrap & Afrobeat -->
                 <div class="inspo-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="inspo-avatar">
                         <img src="https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=130&name=Afro&bold=true" alt="Afrotrap">
@@ -933,7 +907,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- Próximamente / Otro videoclip destacado -->
+                <!-- Próximamente -->
                 <div class="videoclip-card" data-aos="fade-up" data-aos-delay="100">
                     <img class="videoclip-thumb" src="https://ui-avatars.com/api/?background=cc0000&color=fff&size=400&text=Próximamente" alt="Próximo videoclip">
                     <div class="videoclip-info">
@@ -1077,33 +1051,7 @@
         </div>
     </section>
     
-    <!-- ===== GEAR / EQUIPMENT ===== -->
-    <section id="gear" class="dark">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Equipo</div>
-                <h2 class="section-title">Herramientas <span class="accent">Profesionales</span></h2>
-                <p class="section-subtitle">Equipamiento y software que utilizo en mis proyectos.</p>
-            </div>
-            <div class="gear-grid">
-                <div class="gear-card" data-aos="fade-up">
-                    <i class="fas fa-camera"></i>
-                    <h4>Cámaras Profesionales</h4>
-                    <p>Equipo DSLR y mirrorless para fotografía y vídeo de alta calidad.</p>
-                </div>
-                <div class="gear-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Iluminación de Estudio</h4>
-                    <p>Sistemas de iluminación profesional para sesiones fotográficas y videoclips.</p>
-                </div>
-                <div class="gear-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-laptop"></i>
-                    <h4>Edición Profesional</h4>
-                    <p>Software de edición: Adobe Premiere, Photoshop, Lightroom, DaVinci Resolve.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- NOTA: SECCIÓN GEAR ELIMINADA (como pediste) -->
     
     <!-- ===== SOCIAL ===== -->
     <section id="social">
@@ -1331,7 +1279,7 @@
         
         if (backToTop) backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
         
-        console.log('🚀 INCRIFE · Professional Complete Edition · Con videoclip de Maruu King y sección de inspiraciones mejorada');
+        console.log('🚀 INCRIFE · Menú original restaurado · Gear eliminado · Videoclip Maruu King incluido');
     });
     </script>
 </body>
