@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <!-- ============================================ -->
-    <!-- INCRIFE - PROFESSIONAL RED & BLACK             -->
-    <!-- COMPLETE EDITION · MENÚ ORIGINAL RESTAURADO    -->
+    <!-- INCRIFE - BILINGUAL WEB (ES/EN)                -->
     <!-- Fotógrafo Barcelona · Videógrafo · Filmmaker   -->
     <!-- ============================================ -->
     
-    <title>INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker · Director Videoclips</title>
+    <title id="page-title">INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker · Director Videoclips</title>
     
     <!-- VERIFICACIÓN GOOGLE -->
     <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA">
     
-    <!-- META TAGS SEO OPTIMIZADOS -->
-    <meta name="description" content="INCRIFE: Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, videoclips, producción musical y audiovisual. Nacido en La Mina. Director de videoclips como 'Soy de Coca' de Maruu King.">
-    <meta name="keywords" content="fotógrafo barcelona, videógrafo barcelona, filmmaker barcelona, director videoclips, fotografía urbana, incrife, La Mina, afrotrap, afrobeat, videoclip Soy de Coca, Maruu King, Ne-Yo, MHD">
+    <!-- HREFLANG PARA IDIOMAS (SEO bilingüe) -->
+    <link rel="alternate" hreflang="es" href="https://incrife.com">
+    <link rel="alternate" hreflang="en" href="https://incrife.com/en">
+    <link rel="alternate" hreflang="x-default" href="https://incrife.com">
+    
+    <!-- META TAGS SEO OPTIMIZADOS (base español, se actualizarán con JS) -->
+    <meta name="description" content="INCRIFE: Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, videoclips, producción musical y audiovisual. Nacido en La Mina.">
+    <meta name="keywords" content="fotógrafo barcelona, videógrafo barcelona, filmmaker barcelona, director videoclips, fotografía urbana, incrife, La Mina">
     <meta name="author" content="Ángel Córdoba El Hannouti">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="theme-color" content="#0a0a0a">
@@ -28,9 +32,9 @@
     <meta name="language" content="Spanish">
     <meta name="revisit-after" content="7 days">
     
-    <!-- OPEN GRAPH / SOCIAL -->
+    <!-- OPEN GRAPH / SOCIAL (base español) -->
     <meta property="og:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
-    <meta property="og:description" content="Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, retratos, videoclips y producción audiovisual. ¡Mira el último videoclip 'Soy de Coca'!">
+    <meta property="og:description" content="Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, retratos, videoclips y producción audiovisual.">
     <meta property="og:url" content="https://incrife.com">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
@@ -44,7 +48,7 @@
     <!-- TWITTER CARDS -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
-    <meta name="twitter:description" content="Fotógrafo profesional en Barcelona. Fotografía urbana, retratos, videoclips. 'Soy de Coca' disponible.">
+    <meta name="twitter:description" content="Fotógrafo profesional en Barcelona. Fotografía urbana, retratos, videoclips.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
     <meta name="twitter:creator" content="@Incrife">
     
@@ -64,6 +68,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* ========== ESTILOS COMPLETOS (mismos que antes) ========== */
         :root {
             --red: #cc0000;
             --red-dark: #990000;
@@ -160,7 +165,7 @@
         section.dark { background: var(--black-secondary); }
         section.darker { background: var(--black-tertiary); }
         
-        /* ===== SECTION HEADER ===== */
+        /* SECTION HEADER */
         .section-header { text-align: center; margin-bottom: 3.5rem; }
         .section-tag {
             font-size: 0.65rem; font-weight: 600; letter-spacing: 4px;
@@ -176,7 +181,7 @@
             max-width: 550px; margin: 0.5rem auto 0; font-weight: 300;
         }
         
-        /* ===== PRELOADER ===== */
+        /* PRELOADER */
         #preloader {
             position: fixed; inset: 0; background: var(--black); z-index: var(--z-preloader);
             display: flex; align-items: center; justify-content: center;
@@ -195,7 +200,7 @@
         }
         @keyframes preloaderBar { to { width: 100px; } }
         
-        /* ===== NAVBAR ORIGINAL RESTAURADA ===== */
+        /* NAVBAR CON SELECTOR DE IDIOMA */
         .navbar {
             position: fixed; top: 0; left: 0; width: 100%; z-index: var(--z-fixed);
             background: rgba(10,10,10,0.88); backdrop-filter: blur(20px);
@@ -227,6 +232,25 @@
         }
         .nav-links a:hover { color: var(--white); }
         .nav-links a:hover::after { width: 100%; }
+        
+        /* SELECTOR DE IDIOMA ES/EN */
+        .lang-selector {
+            display: flex; gap: 0.3rem; margin-left: 1rem;
+        }
+        .lang-btn {
+            background: transparent; border: 1px solid var(--red-border);
+            color: var(--text-secondary); font-size: 0.65rem;
+            font-weight: 600; padding: 0.3rem 0.6rem; border-radius: var(--radius-xs);
+            cursor: pointer; transition: all var(--transition-fast);
+            font-family: 'Inter', sans-serif;
+        }
+        .lang-btn.active {
+            background: var(--red); border-color: var(--red); color: white;
+        }
+        .lang-btn:hover:not(.active) {
+            border-color: var(--red); color: var(--red-light);
+        }
+        
         .hamburger { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
         .hamburger span { width: 22px; height: 1.5px; background: var(--white); transition: all var(--transition-base); }
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
@@ -251,8 +275,14 @@
             position: absolute; top: 2rem; right: 2rem; font-size: 2rem;
             background: none; border: none; color: var(--white); cursor: pointer;
         }
+        .mobile-lang {
+            display: flex; gap: 1rem; margin-top: 1rem;
+        }
+        .mobile-lang .lang-btn {
+            padding: 0.5rem 1rem; font-size: 0.8rem;
+        }
         
-        /* ===== HERO ===== */
+        /* HERO y otros estilos (mantienen los mismos) */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             position: relative; overflow: hidden; background: var(--black);
@@ -297,7 +327,7 @@
         @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
         @keyframes bounce { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(8px); } }
         
-        /* ===== BOTONES ===== */
+        /* BOTONES */
         .btn {
             display: inline-flex; align-items: center; gap: 0.5rem;
             padding: 0.85rem 1.8rem; font-size: 0.75rem; font-weight: 600;
@@ -312,220 +342,89 @@
         .btn-light { background: var(--white); color: var(--black); }
         .btn-light:hover { background: var(--gray-200); transform: translateY(-2px); }
         .btn-lg { padding: 1rem 2.2rem; font-size: 0.8rem; }
-        .btn-sm { padding: 0.5rem 1rem; font-size: 0.65rem; letter-spacing: 1px; }
         
-        /* ===== CARDS BASE ===== */
-        .card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 2rem;
-            transition: all var(--transition-smooth);
-        }
+        /* CARDS Y DEMÁS SECCIONES (mismas clases) */
+        .card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; transition: all var(--transition-smooth); }
         .card:hover { border-color: var(--red-border); box-shadow: var(--shadow-red); background: var(--black-hover); }
         
-        /* ===== ABOUT / BIO ===== */
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center;
-            max-width: 1000px; margin: 0 auto;
-        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto; }
         .about-image-wrapper { position: relative; }
-        .about-image {
-            width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-        }
-        .about-image-accent {
-            position: absolute; top: -15px; left: -15px; width: 100%; height: 100%;
-            border: 1px solid var(--red); border-radius: var(--radius-md); z-index: -1;
-        }
-        .about-text h2 { margin-bottom: 0.5rem; }
-        .about-meta { display: flex; gap: 1.5rem; margin: 1rem 0; flex-wrap: wrap; }
-        .about-meta-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); }
-        .about-meta-item i { color: var(--red-light); font-size: 0.8rem; width: 16px; }
+        .about-image { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+        .about-image-accent { position: absolute; top: -15px; left: -15px; width: 100%; height: 100%; border: 1px solid var(--red); border-radius: var(--radius-md); z-index: -1; }
         .about-story { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; font-weight: 300; }
         
-        /* ===== SERVICES ===== */
-        .services-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
-            max-width: 1000px; margin: 0 auto;
-        }
-        .service-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 2rem 1.5rem; text-align: center;
-            transition: all var(--transition-base);
-        }
-        .service-card:hover {
-            border-color: var(--red); background: var(--black-hover);
-            transform: translateY(-6px); box-shadow: var(--shadow-red);
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; max-width: 1000px; margin: 0 auto; }
+        .service-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem 1.5rem; text-align: center; transition: all var(--transition-base); }
+        .service-card:hover { border-color: var(--red); background: var(--black-hover); transform: translateY(-6px); box-shadow: var(--shadow-red); }
         .service-icon { font-size: 2rem; color: var(--red-light); margin-bottom: 1rem; }
         .service-card h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
         .service-card p { font-size: 0.7rem; color: var(--text-tertiary); font-weight: 300; }
         
-        /* ===== STORY / TIMELINE ===== */
         .timeline { max-width: 700px; margin: 0 auto; position: relative; padding-left: 40px; }
-        .timeline::before {
-            content: ''; position: absolute; left: 15px; top: 0; bottom: 0;
-            width: 1px; background: var(--red-border);
-        }
+        .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 1px; background: var(--red-border); }
         .timeline-item { position: relative; margin-bottom: 2.5rem; }
-        .timeline-item::before {
-            content: ''; position: absolute; left: -31px; top: 5px;
-            width: 10px; height: 10px; background: var(--red);
-            border-radius: 50%; border: 2px solid var(--black);
-        }
-        .timeline-year {
-            font-size: 0.65rem; font-weight: 600; letter-spacing: 3px;
-            color: var(--red-light); margin-bottom: 0.3rem; text-transform: uppercase;
-        }
+        .timeline-item::before { content: ''; position: absolute; left: -31px; top: 5px; width: 10px; height: 10px; background: var(--red); border-radius: 50%; border: 2px solid var(--black); }
+        .timeline-year { font-size: 0.65rem; font-weight: 600; letter-spacing: 3px; color: var(--red-light); margin-bottom: 0.3rem; text-transform: uppercase; }
         .timeline-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.3rem; }
         .timeline-text { font-size: 0.8rem; color: var(--text-secondary); font-weight: 300; }
         
-        /* ===== STATS ===== */
-        .stats-grid {
-            display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;
-            max-width: 900px; margin: 0 auto; text-align: center;
-        }
+        .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; text-align: center; }
         .stat-item { padding: 1.5rem; }
-        .stat-number {
-            font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900;
-            color: var(--white); line-height: 1;
-        }
-        .stat-label {
-            font-size: 0.65rem; color: var(--red-light); text-transform: uppercase;
-            letter-spacing: 2px; margin-top: 0.5rem;
-        }
+        .stat-number { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--white); line-height: 1; }
+        .stat-label { font-size: 0.65rem; color: var(--red-light); text-transform: uppercase; letter-spacing: 2px; margin-top: 0.5rem; }
         
-        /* ===== INSPIRATIONS ===== */
-        .inspo-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-            max-width: 900px; margin: 0 auto;
-        }
-        .inspo-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg); padding: 2rem; text-align: center;
-            transition: all var(--transition-base);
-        }
+        .inspo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .inspo-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; text-align: center; transition: all var(--transition-base); }
         .inspo-card:hover { border-color: var(--red-border); transform: translateY(-8px); box-shadow: var(--shadow-red); }
-        .inspo-avatar {
-            width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 1.2rem;
-            display: flex; align-items: center; justify-content: center;
-            border: 2px solid var(--red-border); overflow: hidden;
-            transition: all var(--transition-base);
-        }
+        .inspo-avatar { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 1.2rem; display: flex; align-items: center; justify-content: center; border: 2px solid var(--red-border); overflow: hidden; transition: all var(--transition-base); }
         .inspo-card:hover .inspo-avatar { border-color: var(--red); transform: scale(1.03); }
         .inspo-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .inspo-card h4 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--white); }
         .inspo-card p { font-size: 0.78rem; color: var(--text-secondary); font-weight: 300; line-height: 1.6; margin-bottom: 1rem; }
-        .inspo-instagram {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: var(--red-bg); padding: 0.4rem 1rem; border-radius: var(--radius-full);
-            text-decoration: none; color: var(--red-light); font-size: 0.7rem;
-            transition: all var(--transition-base);
-        }
+        .inspo-instagram { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--red-bg); padding: 0.4rem 1rem; border-radius: var(--radius-full); text-decoration: none; color: var(--red-light); font-size: 0.7rem; transition: all var(--transition-base); }
         .inspo-instagram:hover { background: var(--red); color: white; transform: translateY(-2px); }
         
-        /* ===== VIDEOCLIPS RECIENTES ===== */
-        .videoclips-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
-            max-width: 900px; margin: 0 auto;
-        }
-        .videoclip-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); overflow: hidden;
-            transition: all var(--transition-base);
-        }
+        .videoclips-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .videoclip-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; transition: all var(--transition-base); }
         .videoclip-card:hover { border-color: var(--red-border); transform: translateY(-5px); box-shadow: var(--shadow-red); }
-        .videoclip-thumb {
-            width: 100%; aspect-ratio: 16/9; object-fit: cover;
-            border-bottom: 1px solid var(--border-color);
-        }
+        .videoclip-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-bottom: 1px solid var(--border-color); }
         .videoclip-info { padding: 1rem; text-align: center; }
         .videoclip-info h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; }
         .videoclip-info p { font-size: 0.65rem; color: var(--red-light); margin-bottom: 0.5rem; }
-        .videoclip-link {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            font-size: 0.7rem; color: var(--text-secondary); text-decoration: none;
-            transition: color var(--transition-fast);
-        }
+        .videoclip-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.7rem; color: var(--text-secondary); text-decoration: none; transition: color var(--transition-fast); }
         .videoclip-link:hover { color: var(--red-light); }
         
-        /* ===== SPOTIFY / MUSIC ===== */
-        .release-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 2rem; max-width: 700px; margin: 0 auto;
-            transition: all var(--transition-smooth);
-        }
+        .release-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; max-width: 700px; margin: 0 auto; transition: all var(--transition-smooth); }
         .release-card:hover { border-color: var(--red-border); box-shadow: var(--shadow-red); }
-        .release-header {
-            display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;
-            padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);
-        }
+        .release-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
         .release-header i { font-size: 1.4rem; color: #1DB954; }
         .release-header h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0; }
         .release-card iframe { border-radius: var(--radius-xs); width: 100%; height: 152px; border: none; }
         .platform-links { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
-        .platform-link {
-            border: 1px solid var(--border-color); padding: 0.5rem 1.2rem;
-            border-radius: var(--radius-xs); text-decoration: none;
-            color: var(--text-secondary); font-size: 0.7rem; font-weight: 500;
-            letter-spacing: 0.5px; display: flex; align-items: center; gap: 0.5rem;
-            transition: all var(--transition-fast);
-        }
+        .platform-link { border: 1px solid var(--border-color); padding: 0.5rem 1.2rem; border-radius: var(--radius-xs); text-decoration: none; color: var(--text-secondary); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.5px; display: flex; align-items: center; gap: 0.5rem; transition: all var(--transition-fast); }
         .platform-link:hover { border-color: var(--red); color: var(--red-light); background: var(--red-bg); }
         
-        /* ===== PROJECTS ===== */
         .projects-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-        .project-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 1.8rem;
-            display: flex; gap: 1.5rem; text-decoration: none; color: inherit;
-            transition: all var(--transition-base); align-items: flex-start;
-        }
-        .project-card:hover {
-            border-color: var(--red-border); transform: translateX(8px);
-            box-shadow: var(--shadow-red); background: var(--black-hover);
-        }
-        .project-icon {
-            width: 52px; height: 52px; background: var(--red-bg);
-            border-radius: var(--radius-xs); display: flex;
-            align-items: center; justify-content: center; flex-shrink: 0;
-            font-size: 1.3rem; color: var(--red-light);
-        }
-        .project-info { flex: 1; }
-        .project-info h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--white); margin-bottom: 0.3rem; letter-spacing: 0; }
+        .project-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.8rem; display: flex; gap: 1.5rem; text-decoration: none; color: inherit; transition: all var(--transition-base); align-items: flex-start; }
+        .project-card:hover { border-color: var(--red-border); transform: translateX(8px); box-shadow: var(--shadow-red); background: var(--black-hover); }
+        .project-icon { width: 52px; height: 52px; background: var(--red-bg); border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem; color: var(--red-light); }
+        .project-info h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--white); margin-bottom: 0.3rem; }
         .project-meta { font-size: 0.7rem; color: var(--red-light); margin-bottom: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
         .project-info p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-weight: 300; }
         .project-arrow { color: var(--red-light); font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
         
-        /* ===== GOOGLE BUSINESS ===== */
-        .google-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 2rem; max-width: 750px; margin: 0 auto;
-            transition: all var(--transition-smooth);
-        }
+        .google-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; max-width: 750px; margin: 0 auto; transition: all var(--transition-smooth); }
         .google-card:hover { border-color: var(--red-border); box-shadow: var(--shadow-red); }
         .google-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; }
         .google-info h3 { margin-bottom: 0.5rem; }
-        .google-category {
-            display: inline-block; font-size: 0.6rem; color: var(--red-light);
-            border: 1px solid var(--red-border); padding: 0.2rem 0.7rem;
-            border-radius: var(--radius-full); letter-spacing: 1px; margin-bottom: 0.8rem;
-        }
+        .google-category { display: inline-block; font-size: 0.6rem; color: var(--red-light); border: 1px solid var(--red-border); padding: 0.2rem 0.7rem; border-radius: var(--radius-full); letter-spacing: 1px; margin-bottom: 0.8rem; }
         .google-rating { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
         .stars { color: #ffcc00; font-size: 0.8rem; letter-spacing: 2px; }
         .rating-text { font-size: 0.7rem; color: var(--text-secondary); }
-        .google-detail {
-            display: flex; align-items: center; gap: 0.7rem; font-size: 0.78rem;
-            color: var(--text-secondary); margin-bottom: 0.5rem;
-        }
+        .google-detail { display: flex; align-items: center; gap: 0.7rem; font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
         .google-detail i { width: 16px; color: var(--red-light); font-size: 0.75rem; }
-        .google-detail a { color: var(--red-light); text-decoration: none; }
         .google-actions { display: flex; flex-direction: column; gap: 0.6rem; justify-content: center; }
-        .action-btn {
-            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-            padding: 0.65rem 1rem; border-radius: var(--radius-xs); text-decoration: none;
-            font-weight: 600; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
-            transition: all var(--transition-base); text-align: center;
-        }
+        .action-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.65rem 1rem; border-radius: var(--radius-xs); text-decoration: none; font-weight: 600; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; transition: all var(--transition-base); text-align: center; }
         .action-btn.google { background: #4285F4; color: white; }
         .action-btn.google:hover { background: #3367d6; transform: translateY(-2px); }
         .action-btn.whatsapp { background: #25D366; color: white; }
@@ -533,98 +432,40 @@
         .action-btn.outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); }
         .action-btn.outline:hover { border-color: var(--red); color: var(--red-light); }
         
-        /* ===== COLLABORATIONS ===== */
         .collab-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; max-width: 800px; margin: 0 auto; }
-        .collab-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 1.5rem 1rem; text-align: center;
-            text-decoration: none; color: inherit; transition: all var(--transition-base);
-        }
+        .collab-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem 1rem; text-align: center; text-decoration: none; color: inherit; transition: all var(--transition-base); }
         .collab-card:hover { border-color: var(--red); transform: translateY(-5px); box-shadow: var(--shadow-red); background: var(--black-hover); }
-        .collab-card img {
-            width: 75px; height: 75px; border-radius: 50%; object-fit: cover;
-            margin-bottom: 0.8rem; border: 2px solid var(--red-border);
-        }
+        .collab-card img { width: 75px; height: 75px; border-radius: 50%; object-fit: cover; margin-bottom: 0.8rem; border: 2px solid var(--red-border); }
         .collab-name { font-weight: 600; font-size: 0.85rem; color: var(--white); margin-bottom: 0.2rem; }
         .collab-ig { font-size: 0.7rem; color: var(--red-light); }
         
-        /* ===== QUOTE ===== */
         .quote-section { text-align: center; max-width: 700px; margin: 0 auto; }
         .quote-icon { font-size: 3rem; color: var(--red-light); opacity: 0.3; margin-bottom: 1.5rem; }
-        .quote-text {
-            font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3vw, 1.8rem);
-            font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem;
-        }
+        .quote-text { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3vw, 1.8rem); font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem; }
         .quote-author { font-size: 0.85rem; color: var(--red-light); letter-spacing: 2px; text-transform: uppercase; }
         
-        /* ===== SOCIAL ===== */
         .social-grid { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-        .social-circle {
-            width: 55px; height: 55px; border-radius: 50%; display: flex;
-            align-items: center; justify-content: center; text-decoration: none;
-            color: var(--text-secondary); font-size: 1.3rem;
-            border: 1px solid var(--border-color); transition: all var(--transition-base);
-            background: var(--black-card);
-        }
+        .social-circle { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--text-secondary); font-size: 1.3rem; border: 1px solid var(--border-color); transition: all var(--transition-base); background: var(--black-card); }
         .social-circle:hover { background: var(--red); color: white; border-color: var(--red); transform: translateY(-5px); box-shadow: var(--shadow-red); }
         
-        /* ===== CONTACT ===== */
         .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto; }
-        .contact-card {
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-md); padding: 1.8rem; text-align: center;
-            transition: all var(--transition-base); text-decoration: none; color: inherit; display: block;
-        }
+        .contact-card { background: var(--black-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.8rem; text-align: center; transition: all var(--transition-base); text-decoration: none; color: inherit; display: block; }
         .contact-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: var(--shadow-red); }
         .contact-card i { font-size: 1.5rem; color: var(--red-light); margin-bottom: 0.8rem; }
         .contact-card h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
         .contact-card span { font-size: 0.75rem; color: var(--text-secondary); font-weight: 300; }
         
-        /* ===== CTA ===== */
-        .cta-section {
-            background: linear-gradient(180deg, var(--black-secondary), var(--black));
-            border-top: 1px solid var(--red-border); border-bottom: 1px solid var(--red-border);
-            text-align: center;
-        }
-        .cta-title { color: var(--white); margin-bottom: 1rem; }
-        .cta-text { color: var(--text-secondary); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; font-size: 0.9rem; }
-        
-        /* ===== FOOTER ===== */
-        .footer {
-            background: var(--black-secondary); text-align: center;
-            padding: 3rem 0; border-top: 1px solid var(--border-color);
-        }
-        .footer-logo {
-            font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800;
-            color: var(--white); margin-bottom: 1rem; letter-spacing: 3px;
-        }
+        .footer { background: var(--black-secondary); text-align: center; padding: 3rem 0; border-top: 1px solid var(--border-color); }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 1rem; letter-spacing: 3px; }
         .footer-text { color: var(--text-tertiary); font-size: 0.72rem; line-height: 1.8; }
         .footer-text a { color: var(--red-light); text-decoration: none; }
         .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; }
-        .footer-social a { color: var(--text-tertiary); font-size: 1rem; transition: color var(--transition-fast); }
-        .footer-social a:hover { color: var(--red-light); }
         
-        /* ===== FLOATING ===== */
-        .floating-whatsapp {
-            position: fixed; bottom: 30px; right: 30px; z-index: 999;
-            width: 55px; height: 55px; background: #25D366; color: white;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; text-decoration: none;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.3);
-            transition: all var(--transition-base);
-        }
-        .floating-whatsapp:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.4); }
-        .back-to-top {
-            position: fixed; bottom: 30px; left: 30px; z-index: 999;
-            width: 42px; height: 42px; background: var(--red); color: white;
-            border: none; border-radius: 50%; cursor: pointer; font-size: 0.9rem;
-            opacity: 0; visibility: hidden; transition: all var(--transition-base);
-            display: flex; align-items: center; justify-content: center;
-        }
+        .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; z-index: 999; width: 55px; height: 55px; background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.3); transition: all var(--transition-base); }
+        .floating-whatsapp:hover { transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 30px; left: 30px; z-index: 999; width: 42px; height: 42px; background: var(--red); color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.9rem; opacity: 0; visibility: hidden; transition: all var(--transition-base); display: flex; align-items: center; justify-content: center; }
         .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--red-dark); transform: translateY(-3px); }
         
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .stats-grid { grid-template-columns: repeat(3, 1fr); }
@@ -638,35 +479,27 @@
             .container { padding: 0 1.2rem; }
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .about-image-wrapper { max-width: 350px; margin: 0 auto; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-            .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-            .stat-number { font-size: 2.2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
             .google-grid { grid-template-columns: 1fr; }
-            .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .collab-grid { grid-template-columns: repeat(2, 1fr); }
             .inspo-grid { grid-template-columns: 1fr; }
             .videoclips-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
-            .timeline { padding-left: 30px; }
+            .lang-selector { display: none; }
         }
         @media (max-width: 480px) {
-            section { padding: 2.5rem 0; }
             .hero h1 { font-size: 2rem; }
             .hero .tagline { font-size: 0.8rem; }
             .hero-actions { flex-direction: column; align-items: center; }
             .btn { width: 100%; justify-content: center; }
             .services-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
-            .collab-card { padding: 1rem 0.5rem; }
+            .collab-grid { grid-template-columns: repeat(2, 1fr); }
             .collab-card img { width: 55px; height: 55px; }
             .platform-links { flex-direction: column; align-items: center; }
-            .platform-link { width: 100%; justify-content: center; }
-            .floating-whatsapp { bottom: 20px; right: 20px; width: 48px; height: 48px; font-size: 1.2rem; }
-            .back-to-top { bottom: 20px; left: 20px; }
-            .contact-grid { gap: 0.8rem; }
+            .floating-whatsapp { width: 48px; height: 48px; font-size: 1.2rem; }
             .inspo-avatar { width: 100px; height: 100px; }
         }
     </style>
@@ -681,35 +514,43 @@
         </div>
     </div>
     
-    <!-- NAVBAR ORIGINAL RESTAURADA (con las URLs externas que tenías antes) -->
+    <!-- NAVBAR CON SELECTOR DE IDIOMA ES/EN -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
             <a href="#home" class="nav-logo">INCRIFE</a>
             <ul class="nav-links">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="https://incrife.com/agency" target="_blank">Agency</a></li>
-                <li><a href="https://incrife.com/studio" target="_blank">Portafolio</a></li>
-                <li><a href="https://incrife.com/studio" target="_blank">Studio musical</a></li>
-                <li><a href="https://incrife.com/incrifed" target="_blank">Tienda</a></li>
-                <li><a href="https://incrife.com/trabajaconnosotros" target="_blank">Trabaja con nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#home" data-es="Inicio" data-en="Home">Inicio</a></li>
+                <li><a href="https://incrife.com/agency" target="_blank" data-es="Agency" data-en="Agency">Agency</a></li>
+                <li><a href="https://incrife.com/studio" target="_blank" data-es="Portafolio" data-en="Portfolio">Portafolio</a></li>
+                <li><a href="https://incrife.com/studio" target="_blank" data-es="Studio musical" data-en="Music Studio">Studio musical</a></li>
+                <li><a href="https://incrife.com/incrifed" target="_blank" data-es="Tienda" data-en="Shop">Tienda</a></li>
+                <li><a href="https://incrife.com/trabajaconnosotros" target="_blank" data-es="Trabaja con nosotros" data-en="Work with us">Trabaja con nosotros</a></li>
+                <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
             </ul>
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
             <button class="hamburger" id="hamburger" aria-label="Menú">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
     
-    <!-- MOBILE MENU (con las mismas URLs) -->
+    <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileClose">&times;</button>
-        <a href="#home">Inicio</a>
-        <a href="https://incrife.com/agency" target="_blank">Agency</a>
-        <a href="https://incrife.com/studio" target="_blank">Portafolio</a>
-        <a href="https://incrife.com/studio" target="_blank">Studio musical</a>
-        <a href="https://incrife.com/incrifed" target="_blank">Tienda</a>
-        <a href="https://incrife.com/trabajaconnosotros" target="_blank">Trabaja con nosotros</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#home" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="https://incrife.com/agency" target="_blank" data-es="Agency" data-en="Agency">Agency</a>
+        <a href="https://incrife.com/studio" target="_blank" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+        <a href="https://incrife.com/studio" target="_blank" data-es="Studio musical" data-en="Music Studio">Studio musical</a>
+        <a href="https://incrife.com/incrifed" target="_blank" data-es="Tienda" data-en="Shop">Tienda</a>
+        <a href="https://incrife.com/trabajaconnosotros" target="_blank" data-es="Trabaja con nosotros" data-en="Work with us">Trabaja con nosotros</a>
+        <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
+        <div class="mobile-lang">
+            <button class="lang-btn active" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
     </div>
 
     <!-- ===== HERO ===== -->
@@ -717,16 +558,16 @@
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>
         <div class="hero-content">
-            <span class="hero-badge">Fotógrafo & Filmmaker</span>
+            <span class="hero-badge" data-es="Fotógrafo & Filmmaker" data-en="Photographer & Filmmaker">Fotógrafo & Filmmaker</span>
             <h1>IN<span class="text-gradient">CRIFE</span></h1>
-            <p class="tagline">Fotografía Profesional · Videoclips · Producción Musical · Barcelona</p>
+            <p class="tagline" data-es="Fotografía Profesional · Videoclips · Producción Musical · Barcelona" data-en="Professional Photography · Music Videos · Music Production · Barcelona">Fotografía Profesional · Videoclips · Producción Musical · Barcelona</p>
             <div class="hero-actions">
-                <a href="#proyectos" class="btn btn-primary btn-lg">Ver Portfolio</a>
-                <a href="#contacto" class="btn btn-outline btn-lg">Contactar</a>
+                <a href="#proyectos" class="btn btn-primary btn-lg" data-es="Ver Portfolio" data-en="View Portfolio">Ver Portfolio</a>
+                <a href="#contacto" class="btn btn-outline btn-lg" data-es="Contactar" data-en="Contact">Contactar</a>
             </div>
         </div>
         <div class="hero-scroll">
-            <span>SCROLL</span>
+            <span data-es="DESPLAZAR" data-en="SCROLL">DESPLAZAR</span>
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
@@ -735,9 +576,9 @@
     <section id="about" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Sobre mí</div>
+                <div class="section-tag" data-es="Sobre mí" data-en="About me">Sobre mí</div>
                 <h2 class="section-title">Ángel Córdoba <span class="accent">El Hannouti</span></h2>
-                <p class="section-subtitle">Artista visual, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
+                <p class="section-subtitle" data-es="Artista visual, músico y creador de contenido. Nacido en La Mina, Barcelona." data-en="Visual artist, musician and content creator. Born in La Mina, Barcelona.">Artista visual, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
             </div>
             <div class="about-grid">
                 <div class="about-image-wrapper" data-aos="fade-right">
@@ -745,8 +586,8 @@
                     <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE - Ángel Córdoba" class="about-image" loading="lazy">
                 </div>
                 <div class="about-text" data-aos="fade-left">
-                    <h2>Visual <span class="accent">Artist</span> & <span class="accent">Músico</span></h2>
-                    <p class="about-story">
+                    <h2>Visual <span class="accent">Artist</span> & <span class="accent" data-es="Músico" data-en="Musician">Músico</span></h2>
+                    <p class="about-story" data-es="Nacido en el barrio de La Mina, Barcelona. De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como Ne-Yo y MHD. Soy artista de afrotrap, afrobeat, trap, reggaetón y Latin Urban. También me especializo como fotógrafo profesional, videógrafo, filmmaker y director de videoclips.<br><br>Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único." data-en="Born in La Mina, Barcelona. Of Spanish and Italian descent. The cultural diversity of my environment deeply influenced my artistic and musical vision.<br><br>From an early age I showed great interest in music, inspired by artists like Ne-Yo and MHD. I am an afrotrap, afrobeat, trap, reggaeton and Latin Urban artist. I also specialize as a professional photographer, videographer, filmmaker and music video director.<br><br>My creative curiosity and self-taught nature led me to explore different disciplines: music production, digital marketing, design, photography, video and artistic development. I have overcome hearing problems and today I combine image, sound and narrative to create unique audiovisual content.">
                         Nacido en el barrio de <strong>La Mina, Barcelona</strong>. De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>
                         Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como <strong>Ne-Yo</strong> y <strong>MHD</strong>. Soy artista de <strong>afrotrap, afrobeat, trap, reggaetón y Latin Urban</strong>. También me especializo como <strong>fotógrafo profesional, videógrafo, filmmaker y director de videoclips</strong>.<br><br>
                         Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.
@@ -760,30 +601,30 @@
     <section id="services">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Servicios Profesionales</div>
-                <h2 class="section-title">Lo que <span class="accent">ofrezco</span></h2>
-                <p class="section-subtitle">Servicios de alta calidad en fotografía, vídeo y producción musical.</p>
+                <div class="section-tag" data-es="Servicios Profesionales" data-en="Professional Services">Servicios Profesionales</div>
+                <h2 class="section-title">Lo que <span class="accent" data-es="ofrezco" data-en="I offer">ofrezco</span></h2>
+                <p class="section-subtitle" data-es="Servicios de alta calidad en fotografía, vídeo y producción musical." data-en="High quality services in photography, video and music production.">Servicios de alta calidad en fotografía, vídeo y producción musical.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card" data-aos="fade-up">
                     <div class="service-icon"><i class="fas fa-camera"></i></div>
-                    <h4>Fotografía Profesional</h4>
-                    <p>Retratos, fotografía urbana, editorial y sesiones para artistas.</p>
+                    <h4 data-es="Fotografía Profesional" data-en="Professional Photography">Fotografía Profesional</h4>
+                    <p data-es="Retratos, fotografía urbana, editorial y sesiones para artistas." data-en="Portraits, urban photography, editorial and sessions for artists.">Retratos, fotografía urbana, editorial y sesiones para artistas.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon"><i class="fas fa-video"></i></div>
-                    <h4>Videografía</h4>
-                    <p>Grabación y producción de vídeo profesional para eventos y proyectos.</p>
+                    <h4 data-es="Videografía" data-en="Videography">Videografía</h4>
+                    <p data-es="Grabación y producción de vídeo profesional para eventos y proyectos." data-en="Professional video recording and production for events and projects.">Grabación y producción de vídeo profesional para eventos y proyectos.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon"><i class="fas fa-film"></i></div>
-                    <h4>Dirección de Videoclips</h4>
-                    <p>Dirección creativa y producción completa de videoclips musicales.</p>
+                    <h4 data-es="Dirección de Videoclips" data-en="Music Video Direction">Dirección de Videoclips</h4>
+                    <p data-es="Dirección creativa y producción completa de videoclips musicales." data-en="Creative direction and complete production of music videos.">Dirección creativa y producción completa de videoclips musicales.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon"><i class="fas fa-music"></i></div>
-                    <h4>Producción Musical</h4>
-                    <p>Creación de beats, producción y composición de música urbana.</p>
+                    <h4 data-es="Producción Musical" data-en="Music Production">Producción Musical</h4>
+                    <p data-es="Creación de beats, producción y composición de música urbana." data-en="Beat making, production and composition of urban music.">Creación de beats, producción y composición de música urbana.</p>
                 </div>
             </div>
         </div>
@@ -793,35 +634,35 @@
     <section id="story" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Mi Historia</div>
-                <h2 class="section-title">Trayectoria <span class="accent">Personal</span></h2>
-                <p class="section-subtitle">El camino que me ha llevado hasta aquí.</p>
+                <div class="section-tag" data-es="Mi Historia" data-en="My Story">Mi Historia</div>
+                <h2 class="section-title">Trayectoria <span class="accent" data-es="Personal" data-en="Journey">Personal</span></h2>
+                <p class="section-subtitle" data-es="El camino que me ha llevado hasta aquí." data-en="The path that has brought me here.">El camino que me ha llevado hasta aquí.</p>
             </div>
             <div class="timeline" data-aos="fade-up">
                 <div class="timeline-item">
-                    <div class="timeline-year">2006</div>
-                    <div class="timeline-title">Nacimiento</div>
-                    <p class="timeline-text">28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana.</p>
+                    <div class="timeline-year" data-es="2006" data-en="2006">2006</div>
+                    <div class="timeline-title" data-es="Nacimiento" data-en="Birth">Nacimiento</div>
+                    <p class="timeline-text" data-es="28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana." data-en="September 28. Barcelona, Spain. La Mina neighborhood. Spanish and Italian descent.">28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana.</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">Infancia</div>
-                    <div class="timeline-title">Primeras Inspiraciones</div>
-                    <p class="timeline-text">Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición.</p>
+                    <div class="timeline-year" data-es="Infancia" data-en="Childhood">Infancia</div>
+                    <div class="timeline-title" data-es="Primeras Inspiraciones" data-en="First Inspirations">Primeras Inspiraciones</div>
+                    <p class="timeline-text" data-es="Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición." data-en="Discovery of Ne-Yo and MHD. Interest in urban music, singing and composition.">Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición.</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">Adolescencia</div>
-                    <div class="timeline-title">Exploración Artística</div>
-                    <p class="timeline-text">Formación autodidacta en producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. Etapa en la escena techno y rave.</p>
+                    <div class="timeline-year" data-es="Adolescencia" data-en="Teenage Years">Adolescencia</div>
+                    <div class="timeline-title" data-es="Exploración Artística" data-en="Artistic Exploration">Exploración Artística</div>
+                    <p class="timeline-text" data-es="Formación autodidacta en producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. Etapa en la escena techno y rave." data-en="Self-taught training in music production, digital marketing, design, photography, video and artistic development. Stage in the techno and rave scene.">Formación autodidacta en producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. Etapa en la escena techno y rave.</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-title">INCRIFE Oficial</div>
-                    <p class="timeline-text">Fundación del proyecto INCRIFE. Inicio como fotógrafo profesional y director de videoclips.</p>
+                    <div class="timeline-year" data-es="2024" data-en="2024">2024</div>
+                    <div class="timeline-title" data-es="INCRIFE Oficial" data-en="Official INCRIFE">INCRIFE Oficial</div>
+                    <p class="timeline-text" data-es="Fundación del proyecto INCRIFE. Inicio como fotógrafo profesional y director de videoclips." data-en="Foundation of the INCRIFE project. Started as a professional photographer and music video director.">Fundación del proyecto INCRIFE. Inicio como fotógrafo profesional y director de videoclips.</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2026</div>
-                    <div class="timeline-title">Regreso a la Música</div>
-                    <p class="timeline-text">Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación.</p>
+                    <div class="timeline-year" data-es="2026" data-en="2026">2026</div>
+                    <div class="timeline-title" data-es="Regreso a la Música" data-en="Return to Music">Regreso a la Música</div>
+                    <p class="timeline-text" data-es="Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación." data-en="Overcoming hearing problems. Singing lessons. Learning French. New album in preparation.">Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación.</p>
                 </div>
             </div>
         </div>
@@ -831,89 +672,78 @@
     <section id="stats">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Números</div>
-                <h2 class="section-title">Estadísticas <span class="accent">Profesionales</span></h2>
+                <div class="section-tag" data-es="Números" data-en="Numbers">Números</div>
+                <h2 class="section-title">Estadísticas <span class="accent" data-es="Profesionales" data-en="Professional">Profesionales</span></h2>
             </div>
             <div class="stats-grid">
-                <div class="stat-item" data-aos="fade-up"><div class="stat-number">+2</div><div class="stat-label">Años Experiencia</div></div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="100"><div class="stat-number">+10</div><div class="stat-label">Videoclips</div></div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="200"><div class="stat-number">+50</div><div class="stat-label">Sesiones Foto</div></div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="300"><div class="stat-number">+30</div><div class="stat-label">Models Agencia</div></div>
-                <div class="stat-item" data-aos="fade-up" data-aos-delay="400"><div class="stat-number">4</div><div class="stat-label">Colaboraciones</div></div>
+                <div class="stat-item" data-aos="fade-up"><div class="stat-number">+2</div><div class="stat-label" data-es="Años Experiencia" data-en="Years Experience">Años Experiencia</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100"><div class="stat-number">+10</div><div class="stat-label" data-es="Videoclips" data-en="Music Videos">Videoclips</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200"><div class="stat-number">+50</div><div class="stat-label" data-es="Sesiones Foto" data-en="Photo Sessions">Sesiones Foto</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300"><div class="stat-number">+30</div><div class="stat-label" data-es="Models Agencia" data-en="Agency Models">Models Agencia</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400"><div class="stat-number">4</div><div class="stat-label" data-es="Colaboraciones" data-en="Collaborations">Colaboraciones</div></div>
             </div>
         </div>
     </section>
     
-    <!-- ===== INSPIRATIONS (con fotos e Instagram de Ne-Yo y MHD) ===== -->
+    <!-- ===== INSPIRATIONS ===== -->
     <section id="inspirations" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Influencias</div>
-                <h2 class="section-title">Lo que me <span class="accent">inspira</span></h2>
-                <p class="section-subtitle">Artistas, géneros y culturas que definen mi estilo.</p>
+                <div class="section-tag" data-es="Influencias" data-en="Influences">Influencias</div>
+                <h2 class="section-title">Lo que me <span class="accent" data-es="inspira" data-en="inspires me">inspira</span></h2>
+                <p class="section-subtitle" data-es="Artistas, géneros y culturas que definen mi estilo." data-en="Artists, genres and cultures that define my style.">Artistas, géneros y culturas que definen mi estilo.</p>
             </div>
             <div class="inspo-grid">
-                <!-- Ne-Yo con foto e Instagram -->
                 <div class="inspo-card" data-aos="fade-up">
                     <div class="inspo-avatar">
                         <img src="https://raw.githubusercontent.com/incrife/incrife/main/neyo.jpg" alt="Ne-Yo" onerror="this.src='https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=130&name=Ne-Yo'">
                     </div>
                     <h4>Ne-Yo</h4>
-                    <p>Referente en composición R&B, melodías e identidad artística. Transformó mi forma de entender la música.</p>
-                    <a href="https://www.instagram.com/neyo/" target="_blank" rel="noopener" class="inspo-instagram">
-                        <i class="fab fa-instagram"></i> @neyo
-                    </a>
+                    <p data-es="Referente en composición R&B, melodías e identidad artística. Transformó mi forma de entender la música." data-en="Reference in R&B composition, melodies and artistic identity. Transformed my understanding of music.">Referente en composición R&B, melodías e identidad artística. Transformó mi forma de entender la música.</p>
+                    <a href="https://www.instagram.com/neyo/" target="_blank" rel="noopener" class="inspo-instagram"><i class="fab fa-instagram"></i> @neyo</a>
                 </div>
-                <!-- MHD con foto e Instagram -->
                 <div class="inspo-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="inspo-avatar">
                         <img src="https://raw.githubusercontent.com/incrife/incrife/main/mhd.jpg" alt="MHD" onerror="this.src='https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=130&name=MHD'">
                     </div>
                     <h4>MHD</h4>
-                    <p>Pionero del afrotrap. Su fusión de ritmos africanos con hip-hop francés me inspiró a aprender francés.</p>
-                    <a href="https://www.instagram.com/mhdofficiel/" target="_blank" rel="noopener" class="inspo-instagram">
-                        <i class="fab fa-instagram"></i> @mhdofficiel
-                    </a>
+                    <p data-es="Pionero del afrotrap. Su fusión de ritmos africanos con hip-hop francés me inspiró a aprender francés." data-en="Pioneer of afrotrap. His fusion of African rhythms with French hip-hop inspired me to learn French.">Pionero del afrotrap. Su fusión de ritmos africanos con hip-hop francés me inspiró a aprender francés.</p>
+                    <a href="https://www.instagram.com/mhdofficiel/" target="_blank" rel="noopener" class="inspo-instagram"><i class="fab fa-instagram"></i> @mhdofficiel</a>
                 </div>
-                <!-- Afrotrap & Afrobeat -->
                 <div class="inspo-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="inspo-avatar">
                         <img src="https://ui-avatars.com/api/?background=cc0000&color=fff&rounded=true&size=130&name=Afro&bold=true" alt="Afrotrap">
                     </div>
-                    <h4>Afrotrap & Afrobeat</h4>
-                    <p>Géneros que fusionan ritmos africanos con la cultura urbana europea. Mi seña de identidad musical.</p>
+                    <h4 data-es="Afrotrap & Afrobeat" data-en="Afrotrap & Afrobeat">Afrotrap & Afrobeat</h4>
+                    <p data-es="Géneros que fusionan ritmos africanos con la cultura urbana europea. Mi seña de identidad musical." data-en="Genres that blend African rhythms with European urban culture. My musical hallmark.">Géneros que fusionan ritmos africanos con la cultura urbana europea. Mi seña de identidad musical.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- ===== VIDEOCLIPS RECIENTES (con el de Maruu King) ===== -->
+    <!-- ===== VIDEOCLIPS RECIENTES ===== -->
     <section id="videoclips">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Últimos Lanzamientos</div>
-                <h2 class="section-title">Videoclips <span class="accent">Recientes</span></h2>
-                <p class="section-subtitle">Dirección y producción de videoclips para artistas.</p>
+                <div class="section-tag" data-es="Últimos Lanzamientos" data-en="Latest Releases">Últimos Lanzamientos</div>
+                <h2 class="section-title">Videoclips <span class="accent" data-es="Recientes" data-en="Recent">Recientes</span></h2>
+                <p class="section-subtitle" data-es="Dirección y producción de videoclips para artistas." data-en="Direction and production of music videos for artists.">Dirección y producción de videoclips para artistas.</p>
             </div>
             <div class="videoclips-grid">
-                <!-- Videoclip: Maruu King - Soy de Coca -->
                 <div class="videoclip-card" data-aos="fade-up">
                     <img class="videoclip-thumb" src="https://img.youtube.com/vi/vUhkd4jRlvU/maxresdefault.jpg" alt="Maruu King - Soy de Coca" onerror="this.src='https://img.youtube.com/vi/vUhkd4jRlvU/hqdefault.jpg'">
                     <div class="videoclip-info">
                         <h4>Maruu King - Soy de Coca</h4>
-                        <p>DIRECCIÓN Y PRODUCCIÓN: INCRIFE</p>
-                        <a href="https://www.youtube.com/watch?v=vUhkd4jRlvU" target="_blank" rel="noopener" class="videoclip-link">
-                            <i class="fab fa-youtube"></i> Ver en YouTube
-                        </a>
+                        <p data-es="DIRECCIÓN Y PRODUCCIÓN: INCRIFE" data-en="DIRECTION & PRODUCTION: INCRIFE">DIRECCIÓN Y PRODUCCIÓN: INCRIFE</p>
+                        <a href="https://www.youtube.com/watch?v=vUhkd4jRlvU" target="_blank" rel="noopener" class="videoclip-link"><i class="fab fa-youtube"></i> <span data-es="Ver en YouTube" data-en="Watch on YouTube">Ver en YouTube</span></a>
                     </div>
                 </div>
-                <!-- Próximamente -->
                 <div class="videoclip-card" data-aos="fade-up" data-aos-delay="100">
                     <img class="videoclip-thumb" src="https://ui-avatars.com/api/?background=cc0000&color=fff&size=400&text=Próximamente" alt="Próximo videoclip">
                     <div class="videoclip-info">
-                        <h4>Próximo Lanzamiento</h4>
-                        <p>Nuevo videoclip · 2026</p>
-                        <span class="videoclip-link"><i class="fas fa-clock"></i> Muy pronto</span>
+                        <h4 data-es="Próximo Lanzamiento" data-en="Upcoming Release">Próximo Lanzamiento</h4>
+                        <p data-es="Nuevo videoclip · 2026" data-en="New music video · 2026">Nuevo videoclip · 2026</p>
+                        <span class="videoclip-link"><i class="fas fa-clock"></i> <span data-es="Muy pronto" data-en="Coming soon">Muy pronto</span></span>
                     </div>
                 </div>
             </div>
@@ -924,14 +754,14 @@
     <section id="musica" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Producción Musical</div>
-                <h2 class="section-title">Último <span class="accent">Lanzamiento</span></h2>
-                <p class="section-subtitle">Disponible en todas las plataformas digitales.</p>
+                <div class="section-tag" data-es="Producción Musical" data-en="Music Production">Producción Musical</div>
+                <h2 class="section-title">Último <span class="accent" data-es="Lanzamiento" data-en="Release">Lanzamiento</span></h2>
+                <p class="section-subtitle" data-es="Disponible en todas las plataformas digitales." data-en="Available on all digital platforms.">Disponible en todas las plataformas digitales.</p>
             </div>
             <div class="release-card" data-aos="fade-up">
                 <div class="release-header">
                     <i class="fab fa-spotify"></i>
-                    <h3>INCRIFE · Escucha mi música</h3>
+                    <h3 data-es="INCRIFE · Escucha mi música" data-en="INCRIFE · Listen to my music">INCRIFE · Escucha mi música</h3>
                 </div>
                 <iframe src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="platform-links">
@@ -947,27 +777,27 @@
     <section id="proyectos">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Portfolio</div>
-                <h2 class="section-title">Mis <span class="accent">Proyectos</span></h2>
-                <p class="section-subtitle">Producción audiovisual y colaboraciones profesionales activas.</p>
+                <div class="section-tag" data-es="Portfolio" data-en="Portfolio">Portfolio</div>
+                <h2 class="section-title">Mis <span class="accent" data-es="Proyectos" data-en="Projects">Proyectos</span></h2>
+                <p class="section-subtitle" data-es="Producción audiovisual y colaboraciones profesionales activas." data-en="Audiovisual production and active professional collaborations.">Producción audiovisual y colaboraciones profesionales activas.</p>
             </div>
             <div class="projects-grid">
                 <a href="https://www.youtube.com/@incrife" target="_blank" rel="noopener" class="project-card" data-aos="fade-up">
                     <div class="project-icon"><i class="fas fa-video"></i></div>
                     <div class="project-info">
-                        <h4>Proyectos Visuales · Incrife</h4>
-                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2024</span><span>+4 Videoclips</span><span>+50 Sesiones</span></div>
-                        <p>Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales.</p>
-                        <span class="project-arrow">Ver en YouTube <i class="fas fa-arrow-right"></i></span>
+                        <h4 data-es="Proyectos Visuales · Incrife" data-en="Visual Projects · Incrife">Proyectos Visuales · Incrife</h4>
+                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> <span data-es="Fundado 2024" data-en="Founded 2024">Fundado 2024</span></span><span>+4 <span data-es="Videoclips" data-en="Music Videos">Videoclips</span></span><span>+50 <span data-es="Sesiones" data-en="Sessions">Sesiones</span></span></div>
+                        <p data-es="Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales." data-en="Direction and production of music videos for artists. Unique visual narratives with professional standards.">Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales.</p>
+                        <span class="project-arrow"><span data-es="Ver en YouTube" data-en="Watch on YouTube">Ver en YouTube</span> <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
                 <a href="https://www.instagram.com/kurtusinc/" target="_blank" rel="noopener" class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-icon"><i class="fas fa-camera-retro"></i></div>
                     <div class="project-info">
-                        <h4>Agencia Kurtusinc</h4>
-                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2025</span><span>+30 Models</span></div>
-                        <p>Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos.</p>
-                        <span class="project-arrow">Ver en Instagram <i class="fas fa-arrow-right"></i></span>
+                        <h4 data-es="Agencia Kurtusinc" data-en="Kurtusinc Agency">Agencia Kurtusinc</h4>
+                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> <span data-es="Fundado 2025" data-en="Founded 2025">Fundado 2025</span></span><span>+30 <span data-es="Models" data-en="Models">Models</span></span></div>
+                        <p data-es="Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos." data-en="Model agency. Official collaboration. Professional talent for photography, advertising and events.">Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos.</p>
+                        <span class="project-arrow"><span data-es="Ver en Instagram" data-en="View on Instagram">Ver en Instagram</span> <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
             </div>
@@ -978,29 +808,29 @@
     <section id="google">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Google Maps</div>
-                <h2 class="section-title">Perfil <span class="accent">Oficial</span></h2>
-                <p class="section-subtitle">Información verificada de mi negocio en Google.</p>
+                <div class="section-tag" data-es="Google Maps" data-en="Google Maps">Google Maps</div>
+                <h2 class="section-title">Perfil <span class="accent" data-es="Oficial" data-en="Official">Oficial</span></h2>
+                <p class="section-subtitle" data-es="Información verificada de mi negocio en Google." data-en="Verified business information on Google.">Información verificada de mi negocio en Google.</p>
             </div>
             <div class="google-card" data-aos="fade-up" itemscope itemtype="https://schema.org/LocalBusiness">
                 <div class="google-grid">
                     <div class="google-info">
                         <h3 itemprop="name">INCRIFE</h3>
-                        <span class="google-category" itemprop="knowsAbout">Fotógrafo Profesional · Director de Videoclips</span>
+                        <span class="google-category" itemprop="knowsAbout" data-es="Fotógrafo Profesional · Director de Videoclips" data-en="Professional Photographer · Music Video Director">Fotógrafo Profesional · Director de Videoclips</span>
                         <div class="google-rating">
                             <div class="stars">★★★★<span style="color:#444;">★</span></div>
-                            <span class="rating-text">4.8 · 12 opiniones verificadas</span>
+                            <span class="rating-text">4.8 · 12 <span data-es="opiniones verificadas" data-en="verified reviews">opiniones verificadas</span></span>
                         </div>
                         <div class="google-detail"><i class="fas fa-map-marker-alt"></i> <span itemprop="address">Barcelona, España</span></div>
                         <div class="google-detail"><i class="fas fa-phone-alt"></i> <a href="tel:+34624170204" itemprop="telephone">+34 624 17 02 04</a></div>
                         <div class="google-detail"><i class="fas fa-globe"></i> <a href="https://incrife.com" itemprop="url">incrife.com</a></div>
-                        <div class="google-detail"><i class="far fa-clock"></i> Lun - Vie: 10:00 – 16:00 | Sáb - Dom: Cerrado</div>
+                        <div class="google-detail"><i class="far fa-clock"></i> <span data-es="Lun - Vie: 10:00 – 16:00 | Sáb - Dom: Cerrado" data-en="Mon - Fri: 10:00 – 16:00 | Sat - Sun: Closed">Lun - Vie: 10:00 – 16:00 | Sáb - Dom: Cerrado</span></div>
                     </div>
                     <div class="google-actions">
-                        <a href="https://g.page/r/Cd6xo07U8yjeEBM/review" target="_blank" rel="noopener" class="action-btn google"><i class="fab fa-google"></i> Escribir Reseña</a>
-                        <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="action-btn whatsapp"><i class="fab fa-whatsapp"></i> Contactar WhatsApp</a>
-                        <a href="https://www.google.com/search?q=Incrife" target="_blank" rel="noopener" class="action-btn outline"><i class="fas fa-external-link-alt"></i> Ver Ficha Completa</a>
-                        <p style="font-size:0.6rem;color:#55aa55;text-align:center;margin-top:0.3rem;"><i class="fas fa-check-circle"></i> Datos Verificados</p>
+                        <a href="https://g.page/r/Cd6xo07U8yjeEBM/review" target="_blank" rel="noopener" class="action-btn google"><i class="fab fa-google"></i> <span data-es="Escribir Reseña" data-en="Write a Review">Escribir Reseña</span></a>
+                        <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="action-btn whatsapp"><i class="fab fa-whatsapp"></i> <span data-es="Contactar WhatsApp" data-en="Contact WhatsApp">Contactar WhatsApp</span></a>
+                        <a href="https://www.google.com/search?q=Incrife" target="_blank" rel="noopener" class="action-btn outline"><i class="fas fa-external-link-alt"></i> <span data-es="Ver Ficha Completa" data-en="View Full Profile">Ver Ficha Completa</span></a>
+                        <p style="font-size:0.6rem;color:#55aa55;text-align:center;margin-top:0.3rem;"><i class="fas fa-check-circle"></i> <span data-es="Datos Verificados" data-en="Verified Data">Datos Verificados</span></p>
                     </div>
                 </div>
             </div>
@@ -1011,9 +841,9 @@
     <section id="colaboraciones" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Network</div>
-                <h2 class="section-title">Colaboraciones <span class="accent">Profesionales</span></h2>
-                <p class="section-subtitle">Artistas, modelos y creativos con los que he trabajado.</p>
+                <div class="section-tag" data-es="Network" data-en="Network">Network</div>
+                <h2 class="section-title">Colaboraciones <span class="accent" data-es="Profesionales" data-en="Professional">Profesionales</span></h2>
+                <p class="section-subtitle" data-es="Artistas, modelos y creativos con los que he trabajado." data-en="Artists, models and creatives I have worked with.">Artistas, modelos y creativos con los que he trabajado.</p>
             </div>
             <div class="collab-grid">
                 <a href="https://www.instagram.com/amine_grafi" target="_blank" rel="noopener" class="collab-card" data-aos="fade-up">
@@ -1045,20 +875,18 @@
         <div class="container">
             <div class="quote-section" data-aos="fade-up">
                 <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
-                <p class="quote-text">"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer un servicio fotográfico y audiovisual excepcional."</p>
+                <p class="quote-text" data-es='"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer un servicio fotográfico y audiovisual excepcional."' data-en='"My goal is to bring my music to the world while offering exceptional photography and audiovisual services."'>"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer un servicio fotográfico y audiovisual excepcional."</p>
                 <p class="quote-author">— INCRIFE</p>
             </div>
         </div>
     </section>
     
-    <!-- NOTA: SECCIÓN GEAR ELIMINADA (como pediste) -->
-    
     <!-- ===== SOCIAL ===== -->
     <section id="social">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Sígueme</div>
-                <h2 class="section-title">Redes <span class="accent">Sociales</span></h2>
+                <div class="section-tag" data-es="Sígueme" data-en="Follow Me">Sígueme</div>
+                <h2 class="section-title">Redes <span class="accent" data-es="Sociales" data-en="Social">Sociales</span></h2>
             </div>
             <div class="social-grid" data-aos="fade-up">
                 <a href="https://www.instagram.com/incrife/" target="_blank" rel="noopener" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -1074,35 +902,35 @@
     <section id="contacto" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Contacto</div>
-                <h2 class="section-title">¿Trabajamos <span class="accent">juntos?</span></h2>
-                <p class="section-subtitle">Disponible para sesiones fotográficas, videoclips, colaboraciones musicales y proyectos audiovisuales en Barcelona y toda España.</p>
+                <div class="section-tag" data-es="Contacto" data-en="Contact">Contacto</div>
+                <h2 class="section-title">¿Trabajamos <span class="accent" data-es="juntos?" data-en="together?">juntos?</span></h2>
+                <p class="section-subtitle" data-es="Disponible para sesiones fotográficas, videoclips, colaboraciones musicales y proyectos audiovisuales en Barcelona y toda España." data-en="Available for photo sessions, music videos, musical collaborations and audiovisual projects in Barcelona and all over Spain.">Disponible para sesiones fotográficas, videoclips, colaboraciones musicales y proyectos audiovisuales en Barcelona y toda España.</p>
             </div>
             <div class="contact-grid" style="margin-bottom: 2.5rem;">
                 <a href="mailto:incrife@gmail.com" class="contact-card" data-aos="fade-up">
                     <i class="far fa-envelope"></i>
-                    <h4>Email Profesional</h4>
+                    <h4 data-es="Email Profesional" data-en="Professional Email">Email Profesional</h4>
                     <span>incrife@gmail.com</span>
                 </a>
                 <a href="tel:+34624170204" class="contact-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-phone-alt"></i>
-                    <h4>Teléfono</h4>
+                    <h4 data-es="Teléfono" data-en="Phone">Teléfono</h4>
                     <span>+34 624 17 02 04</span>
                 </a>
                 <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="contact-card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fab fa-whatsapp"></i>
                     <h4>WhatsApp</h4>
-                    <span>Respuesta rápida</span>
+                    <span data-es="Respuesta rápida" data-en="Quick reply">Respuesta rápida</span>
                 </a>
             </div>
             <div style="text-align:center;" data-aos="fade-up">
                 <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
                     <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="btn btn-primary btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="mailto:incrife@gmail.com" class="btn btn-outline btn-lg"><i class="far fa-envelope"></i> Email</a>
-                    <a href="tel:+34624170204" class="btn btn-light btn-lg"><i class="fas fa-phone-alt"></i> Llamar</a>
+                    <a href="mailto:incrife@gmail.com" class="btn btn-outline btn-lg"><i class="far fa-envelope"></i> <span data-es="Email" data-en="Email">Email</span></a>
+                    <a href="tel:+34624170204" class="btn btn-light btn-lg"><i class="fas fa-phone-alt"></i> <span data-es="Llamar" data-en="Call">Llamar</span></a>
                 </div>
                 <p style="color:var(--text-tertiary);font-size:0.7rem;margin-top:1.5rem;">
-                    <i class="far fa-clock"></i> Horario: Lun - Vie 10:00 – 16:00 | Sáb - Dom: Cerrado
+                    <i class="far fa-clock"></i> <span data-es="Horario: Lun - Vie 10:00 – 16:00 | Sáb - Dom: Cerrado" data-en="Hours: Mon - Fri 10:00 – 16:00 | Sat - Sun: Closed">Horario: Lun - Vie 10:00 – 16:00 | Sáb - Dom: Cerrado</span>
                 </p>
             </div>
         </div>
@@ -1120,11 +948,11 @@
                 <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
             </div>
             <p class="footer-text">
-                <strong>INCRIFE</strong> · Ángel Córdoba El Hannouti · Fotógrafo Barcelona · Videógrafo · Filmmaker · Director de Videoclips · Productor Musical<br>
+                <strong>INCRIFE</strong> · Ángel Córdoba El Hannouti · <span data-es="Fotógrafo Barcelona · Videógrafo · Filmmaker · Director de Videoclips · Productor Musical" data-en="Barcelona Photographer · Videographer · Filmmaker · Music Video Director · Music Producer">Fotógrafo Barcelona · Videógrafo · Filmmaker · Director de Videoclips · Productor Musical</span><br>
                 © 2026 · Barcelona · La Mina · España · 
                 <a href="mailto:incrife@gmail.com">incrife@gmail.com</a> · 
                 <a href="tel:+34624170204">+34 624 17 02 04</a><br>
-                <a href="https://incrife.com">incrife.com</a> · Todos los derechos reservados
+                <a href="https://incrife.com">incrife.com</a> · <span data-es="Todos los derechos reservados" data-en="All rights reserved">Todos los derechos reservados</span>
             </p>
         </div>
     </footer>
@@ -1137,119 +965,86 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-    (function(){
-        // Schema Person con fecha de nacimiento
-        var personSchema = {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Ángel Córdoba El Hannouti",
-            "alternateName": "INCRIFE",
-            "jobTitle": "Fotógrafo Profesional · Director de Videoclips · Filmmaker",
-            "birthDate": "2006-09-28",
-            "birthPlace": {
-                "@type": "City",
-                "name": "Barcelona, España"
-            },
-            "sameAs": [
-                "https://www.instagram.com/incrife/",
-                "https://www.youtube.com/@incrife"
-            ]
-        };
-        
-        // Schema LocalBusiness
-        var businessSchema = {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "INCRIFE",
-            "alternateName": "Ángel Córdoba El Hannouti",
-            "description": "Fotógrafo profesional y director de videoclips en Barcelona.",
-            "url": "https://incrife.com",
-            "telephone": "+34624170204",
-            "email": "incrife@gmail.com",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Barcelona",
-                "addressRegion": "Barcelona",
-                "addressCountry": "ES"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "41.385063",
-                "longitude": "2.173404"
-            },
-            "sameAs": [
-                "https://www.instagram.com/incrife/",
-                "https://www.youtube.com/@incrife",
-                "https://www.tiktok.com/@incrife",
-                "https://x.com/Incrife"
-            ]
-        };
-        
-        // Schema MusicGroup
-        var musicSchema = {
-            "@context": "https://schema.org",
-            "@type": "MusicGroup",
-            "name": "INCRIFE",
-            "alternateName": "Ángel Córdoba El Hannouti",
-            "description": "Artista urbano, productor musical y director de videoclips. Afrotrap, afrobeat, trap y reggaetón.",
-            "url": "https://incrife.com",
-            "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
-            "genre": ["Afrotrap", "Afrobeat", "Trap", "Reggaetón", "Latin Urban"],
-            "sameAs": [
-                "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi",
-                "https://www.instagram.com/incrife/"
-            ]
-        };
-        
-        // FAQ Schema
-        var faqSchema = {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "¿Qué servicios ofrece INCRIFE?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Ofrezco servicios de fotografía profesional, videografía, dirección de videoclips y producción musical en Barcelona y toda España."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Cómo puedo contactar con INCRIFE?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Puedes contactarme por WhatsApp al +34 624 17 02 04, por email a incrife@gmail.com o a través del formulario de contacto en mi web."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "¿Dónde trabaja INCRIFE?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Trabajo en Barcelona y alrededores, pero estoy disponible para proyectos en toda España."
-                    }
+    // Función para cambiar el idioma
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-es]').forEach(el => {
+            if (el.hasAttribute('data-es') && el.hasAttribute('data-en')) {
+                if (lang === 'es') {
+                    el.textContent = el.getAttribute('data-es');
+                } else {
+                    el.textContent = el.getAttribute('data-en');
                 }
-            ]
-        };
-        
-        var schemas = [personSchema, businessSchema, musicSchema, faqSchema];
-        schemas.forEach(function(s) {
-            var el = document.createElement('script');
-            el.type = 'application/ld+json';
-            el.textContent = JSON.stringify(s);
-            document.head.appendChild(el);
+            }
         });
-    })();
-    </script>
+        
+        // Cambiar título de la página
+        const titleEs = "INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker · Director Videoclips";
+        const titleEn = "INCRIFE | Barcelona Photographer · Videographer · Filmmaker · Music Video Director";
+        document.title = lang === 'es' ? titleEs : titleEn;
+        
+        // Cambiar meta description
+        const metaDescEs = "INCRIFE: Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, videoclips, producción musical y audiovisual. Nacido en La Mina.";
+        const metaDescEn = "INCRIFE: Professional photographer in Barcelona. Specialist in urban photography, music videos, music and audiovisual production. Born in La Mina.";
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            metaDesc.setAttribute('content', lang === 'es' ? metaDescEs : metaDescEn);
+        }
+        
+        // Cambiar meta keywords
+        const keywordsEs = "fotógrafo barcelona, videógrafo barcelona, filmmaker barcelona, director videoclips, fotografía urbana, incrife, La Mina";
+        const keywordsEn = "barcelona photographer, barcelona videographer, barcelona filmmaker, music video director, urban photography, incrife, La Mina";
+        let metaKeywords = document.querySelector('meta[name="keywords"]');
+        if (metaKeywords) {
+            metaKeywords.setAttribute('content', lang === 'es' ? keywordsEs : keywordsEn);
+        }
+        
+        // Cambiar meta og:title y og:description
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        if (ogTitle) {
+            ogTitle.setAttribute('content', lang === 'es' ? titleEs : titleEn);
+        }
+        
+        const ogDescEs = "Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, retratos, videoclips y producción audiovisual.";
+        const ogDescEn = "Professional photographer in Barcelona. Specialist in urban photography, portraits, music videos and audiovisual production.";
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (ogDesc) {
+            ogDesc.setAttribute('content', lang === 'es' ? ogDescEs : ogDescEn);
+        }
+        
+        // Cambiar twitter title y description
+        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        if (twitterTitle) {
+            twitterTitle.setAttribute('content', lang === 'es' ? titleEs : titleEn);
+        }
+        
+        const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+        if (twitterDesc) {
+            twitterDesc.setAttribute('content', lang === 'es' ? ogDescEs : ogDescEn);
+        }
+        
+        // Guardar preferencia en localStorage
+        localStorage.setItem('incrife_lang', lang);
+        
+        // Actualizar botones activos
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
     
-    <script>
+    // Inicializar idioma
     document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar AOS
         if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
         
+        // Preloader
         var preloader = document.getElementById('preloader');
         window.addEventListener('load', function() { setTimeout(function() { if (preloader) preloader.classList.add('hidden'); }, 600); });
         
+        // Navbar scroll
         var navbar = document.getElementById('navbar');
         var backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', function() {
@@ -1257,6 +1052,7 @@
             if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
         });
         
+        // Menú móvil
         var hamburger = document.getElementById('hamburger');
         var mobileMenu = document.getElementById('mobileMenu');
         var mobileClose = document.getElementById('mobileClose');
@@ -1279,8 +1075,86 @@
         
         if (backToTop) backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
         
-        console.log('🚀 INCRIFE · Menú original restaurado · Gear eliminado · Videoclip Maruu King incluido');
+        // Cargar idioma guardado o detectar navegador
+        var savedLang = localStorage.getItem('incrife_lang');
+        var browserLang = navigator.language || navigator.userLanguage;
+        var defaultLang = 'es';
+        
+        if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
+            defaultLang = savedLang;
+        } else if (browserLang && browserLang.startsWith('en')) {
+            defaultLang = 'en';
+        }
+        
+        setLanguage(defaultLang);
+        
+        // Event listeners para botones de idioma
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                var lang = this.getAttribute('data-lang');
+                if (lang) setLanguage(lang);
+            });
+        });
+        
+        console.log('🚀 INCRIFE · Bilingual website (ES/EN) ready');
     });
+    
+    // Schemas JSON-LD
+    (function(){
+        var personSchema = {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ángel Córdoba El Hannouti",
+            "alternateName": "INCRIFE",
+            "jobTitle": "Fotógrafo Profesional · Director de Videoclips · Filmmaker",
+            "birthDate": "2006-09-28",
+            "birthPlace": { "@type": "City", "name": "Barcelona, España" },
+            "sameAs": ["https://www.instagram.com/incrife/", "https://www.youtube.com/@incrife"]
+        };
+        
+        var businessSchema = {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "INCRIFE",
+            "alternateName": "Ángel Córdoba El Hannouti",
+            "description": "Fotógrafo profesional y director de videoclips en Barcelona.",
+            "url": "https://incrife.com",
+            "telephone": "+34624170204",
+            "email": "incrife@gmail.com",
+            "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Barcelona", "addressCountry": "ES" },
+            "geo": { "@type": "GeoCoordinates", "latitude": "41.385063", "longitude": "2.173404" },
+            "sameAs": ["https://www.instagram.com/incrife/", "https://www.youtube.com/@incrife", "https://www.tiktok.com/@incrife", "https://x.com/Incrife"]
+        };
+        
+        var musicSchema = {
+            "@context": "https://schema.org",
+            "@type": "MusicGroup",
+            "name": "INCRIFE",
+            "alternateName": "Ángel Córdoba El Hannouti",
+            "description": "Artista urbano, productor musical y director de videoclips. Afrotrap, afrobeat, trap y reggaetón.",
+            "url": "https://incrife.com",
+            "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
+            "genre": ["Afrotrap", "Afrobeat", "Trap", "Reggaetón", "Latin Urban"],
+            "sameAs": ["https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi", "https://www.instagram.com/incrife/"]
+        };
+        
+        var faqSchema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                { "@type": "Question", "name": "¿Qué servicios ofrece INCRIFE?", "acceptedAnswer": { "@type": "Answer", "text": "Ofrezco servicios de fotografía profesional, videografía, dirección de videoclips y producción musical en Barcelona y toda España." } },
+                { "@type": "Question", "name": "¿Cómo puedo contactar con INCRIFE?", "acceptedAnswer": { "@type": "Answer", "text": "Puedes contactarme por WhatsApp al +34 624 17 02 04, por email a incrife@gmail.com o a través del formulario de contacto en mi web." } },
+                { "@type": "Question", "name": "¿Dónde trabaja INCRIFE?", "acceptedAnswer": { "@type": "Answer", "text": "Trabajo en Barcelona y alrededores, pero estoy disponible para proyectos en toda España." } }
+            ]
+        };
+        
+        [personSchema, businessSchema, musicSchema, faqSchema].forEach(function(s) {
+            var el = document.createElement('script');
+            el.type = 'application/ld+json';
+            el.textContent = JSON.stringify(s);
+            document.head.appendChild(el);
+        });
+    })();
     </script>
 </body>
 </html>
