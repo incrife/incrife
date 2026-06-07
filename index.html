@@ -1,592 +1,1231 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker · Director Videoclips</title>
-  
-  <!-- VERIFICACIÓN GOOGLE -->
-  <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA" />
-  
-  <!-- ========== PRELOAD Y PREFETCH ========== -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
-  <!-- ========== SEO PRINCIPAL ========== -->
-  <meta name="description" content="INCRIFE: Fotógrafo profesional en Barcelona, videógrafo y director de videoclips. Especialista en fotografía urbana, editorial, retratos y producción audiovisual. Nacido en La Mina. ¡Descubre mi trabajo!">
-  <meta name="keywords" content="fotógrafo barcelona, videógrafo barcelona, filmmaker barcelona, director videoclips barcelona, fotografía urbana barcelona, productor audiovisual barcelona, incrife fotógrafo">
-  <meta name="author" content="Ángel Córdoba El Hannouti">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <meta name="googlebot" content="index, follow, max-video-preview:-1">
-  <meta name="revisit-after" content="7 days">
-  
-  <!-- ========== METADATOS ADICIONALES ========== -->
-  <meta name="birth-date" content="2006-09-28">
-  <meta name="birth-place" content="Barcelona, La Mina, España">
-  <meta name="height" content="1.80 m">
-  <meta name="genre" content="Afrotrap, Afrobeat, Trap, Reggaetón, Latin Urban">
-  
-  <!-- ========== CANONICAL ========== -->
-  <link rel="canonical" href="https://incrife.com">
-  
-  <!-- ========== GEO LOCALIZATION ========== -->
-  <meta name="geo.region" content="ES-CT">
-  <meta name="geo.placename" content="Barcelona">
-  <meta name="geo.position" content="41.385063;2.173404">
-  <meta name="ICBM" content="41.385063, 2.173404">
-  <meta name="city" content="Barcelona">
-  <meta name="language" content="Spanish">
-  
-  <!-- ========== OPEN GRAPH ========== -->
-  <meta property="og:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
-  <meta property="og:description" content="Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, retratos, videoclips y producción audiovisual.">
-  <meta property="og:url" content="https://incrife.com">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:site_name" content="INCRIFE">
-  
-  <!-- ========== TWITTER CARDS ========== -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
-  <meta name="twitter:description" content="Fotógrafo profesional en Barcelona. Fotografía urbana, retratos, videoclips y producción audiovisual.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
-  <meta name="twitter:creator" content="@Incrife">
-  
-  <meta name="theme-color" content="#cc0000">
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
-  <style>
-    /* ========== CSS ========== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; line-height: 1.5; overflow-x: hidden; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    /* Fondo con foto */
-    .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
-    .bg-profile { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(8px) brightness(0.4); transform: scale(1.1); animation: slowZoom 20s ease-in-out infinite alternate; }
-    @keyframes slowZoom { 0% { transform: scale(1.1); } 100% { transform: scale(1.2); } }
-    .bg-blur-layer { position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at 30% 40%, rgba(204,0,0,0.25), rgba(0,0,0,0.75)); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
-    @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.7; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
-    .bg-grain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.06"/%3E%3C/svg%3E'); pointer-events: none; opacity: 0.3; }
+    <!-- ============================================ -->
+    <!-- INCRIFE - PROFESSIONAL RED & BLACK             -->
+    <!-- COMPLETE EDITION · 15+ SECCIONES · CORREGIDO   -->
+    <!-- Fotógrafo Barcelona · Videógrafo · Filmmaker   -->
+    <!-- ============================================ -->
     
-    /* Menú */
-    .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(10,5,5,0.95); backdrop-filter: blur(12px); z-index: 1000; padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .logo a { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff6666); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; font-family: 'Montserrat', sans-serif; }
-    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .nav-links a { color: #ffcccc; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: #ff5555; }
-    .menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    <title>INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker · Director Videoclips</title>
     
-    /* Menú lateral móvil */
-    .side-menu { position: fixed; top: 0; right: -280px; width: 280px; height: 100%; background: #0f0808; z-index: 1001; transition: right 0.3s ease; padding: 2rem; border-left: 1px solid #ff4444; }
-    .side-menu.open { right: 0; }
-    .side-menu .close-menu { background: none; border: none; color: white; font-size: 1.5rem; float: right; cursor: pointer; margin-bottom: 2rem; }
-    .side-menu a { display: block; color: #ffcccc; text-decoration: none; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,68,68,0.2); }
-    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: none; }
-    .overlay.active { display: block; }
+    <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA">
+<meta name="description" content="INCRIFE: Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, videoclips, producción musical y audiovisual. Nacido en La Mina.">    <meta name="keywords" content="fotógrafo barcelona, videógrafo barcelona, filmmaker barcelona, director videoclips, fotografía urbana, incrife, La Mina, afrotrap, afrobeat">
+    <meta name="author" content="Ángel Córdoba El Hannouti">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="geo.region" content="ES-CT">
+    <meta name="geo.placename" content="Barcelona">
+    <meta name="geo.position" content="41.385063;2.173404">
     
-    .page-wrapper { animation: entranceSpin 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; position: relative; z-index: 10; }
-    @keyframes entranceSpin { 0% { opacity: 0; transform: perspective(800px) rotateY(90deg) scale(0.95); filter: blur(8px); } 100% { opacity: 1; transform: perspective(800px) rotateY(0deg) scale(1); filter: blur(0); } }
+    <meta property="og:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
+    <meta property="og:description" content="Fotógrafo profesional en Barcelona. Especialista en fotografía urbana, retratos, videoclips y producción audiovisual.">
+    <meta property="og:url" content="https://incrife.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
+    <meta property="og:locale" content="es_ES">
     
-    .container { max-width: 880px; width: 100%; margin: 0 auto; padding: 2rem 1.5rem; position: relative; z-index: 20; }
-    .fade-up-item { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.5s ease; }
-    .fade-up-item.visible { opacity: 1; transform: translateY(0); }
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="INCRIFE | Fotógrafo Barcelona · Videógrafo · Filmmaker">
+    <meta name="twitter:description" content="Fotógrafo profesional en Barcelona. Fotografía urbana, retratos, videoclips.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
     
-    /* Perfil */
-    .profile { text-align: center; margin-bottom: 2rem; }
-    .avatar-wrapper { position: relative; display: inline-block; }
-    .avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #ff3333; box-shadow: 0 0 0 4px rgba(204,0,0,0.4), 0 20px 35px -8px rgba(0,0,0,0.6); transition: transform 0.3s ease; }
-    .avatar:hover { transform: scale(1.03); border-color: #ff5555; }
-    .glow-ring { position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; border-radius: 50%; border: 2px solid rgba(255,68,68,0.6); animation: pulseRing 2s ease-out infinite; pointer-events: none; }
-    @keyframes pulseRing { 0% { transform: scale(0.95); opacity: 0.8; border-width: 2px; } 70% { transform: scale(1.1); opacity: 0; border-width: 1px; } 100% { transform: scale(0.95); opacity: 0; } }
-    .online-dot { position: absolute; bottom: 8px; right: 8px; width: 18px; height: 18px; background: #25D366; border-radius: 50%; border: 2px solid #0a0a0a; animation: blink 1.5s infinite; }
-    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
-    .name { font-size: clamp(1.8rem, 5vw, 2.4rem); font-weight: 800; margin-top: 1.2rem; background: linear-gradient(135deg, #ffffff, #ff6666, #cc3333); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: -1px; }
-    .tagline { color: #ff8888; font-size: clamp(0.7rem, 3vw, 0.9rem); letter-spacing: 1px; margin-top: 0.3rem; }
+    <link rel="canonical" href="https://incrife.com">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
     
-    /* Bio card */
-    .bio-card { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,68,68,0.6); transition: transform 0.3s, box-shadow 0.3s; }
-    .bio-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(204,0,0,0.2); }
-    .bio-highlight { font-size: 0.95rem; line-height: 1.5; color: #f5e6e6; }
-    .bio-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
-    .bio-tag { background: rgba(255,68,68,0.2); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.7rem; font-weight: 600; color: #ffaaaa; border: 0.5px solid rgba(255,68,68,0.4); transition: all 0.2s; }
-    .bio-tag:hover { background: rgba(255,68,68,0.4); transform: translateY(-2px); }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    /* Release */
-    .release-unified { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 32px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #ff4d4d; transition: all 0.3s; }
-    .release-unified:hover { border-color: #ff8888; box-shadow: 0 5px 20px rgba(255,68,68,0.15); }
-    .release-header { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,68,68,0.3); padding-bottom: 0.8rem; flex-wrap: wrap; }
-    .release-header i { font-size: 1.8rem; color: #1DB954; }
-    .release-header h3 { font-size: clamp(1rem, 4vw, 1.3rem); font-weight: 800; background: linear-gradient(120deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .platforms-inline { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,68,68,0.3); }
-    .platform-badge { background: rgba(10,5,5,0.6); border: 1px solid rgba(255,68,68,0.4); border-radius: 40px; padding: 0.4rem 1rem; text-decoration: none; color: #ffaaaa; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
-    .platform-badge:hover { background: #1DB954; color: white; border-color: #1DB954; transform: translateY(-2px); }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    /* Proyectos */
-    .projects-section-pro { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 32px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid rgba(255,68,68,0.6); }
-    .section-title { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,68,68,0.3); padding-bottom: 0.8rem; flex-wrap: wrap; }
-    .section-title i { font-size: 1.5rem; color: #cc0000; }
-    .section-title h2 { font-size: clamp(1.2rem, 4vw, 1.5rem); color: #fff; font-weight: 800; font-family: 'Montserrat', sans-serif; }
-    .section-title span { color: #ff8888; font-size: 0.7rem; margin-left: auto; }
-    .projects-grid-pro { display: flex; flex-direction: column; gap: 1rem; }
-    .project-card-pro { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border-radius: 20px; padding: 1rem; border: 1px solid rgba(255,68,68,0.2); transition: all 0.3s; display: flex; flex-wrap: wrap; gap: 1rem; text-decoration: none; color: inherit; }
-    .project-card-pro:hover { border-color: #cc0000; background: rgba(204,0,0,0.1); transform: translateX(5px); }
-    .project-icon-pro { width: 55px; height: 55px; background: rgba(204,0,0,0.15); border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .project-icon-pro i { font-size: 1.5rem; color: #cc0000; }
-    .project-info-pro { flex: 1; }
-    .project-info-pro h3 { font-size: clamp(0.9rem, 4vw, 1.1rem); font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
-    .project-meta { display: flex; gap: 0.8rem; margin-bottom: 0.5rem; font-size: 0.65rem; color: #ff8888; flex-wrap: wrap; }
-    .project-info-pro p { color: #aaa; font-size: 0.75rem; line-height: 1.4; margin-bottom: 0.5rem; }
-    .project-link { color: #ff6666; font-size: 0.7rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; }
-    
-    /* Stats */
-    .stats-social { display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap; }
-    .stat-card { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 20px; padding: 0.8rem 1.5rem; text-align: center; border: 1px solid rgba(255,68,68,0.4); transition: all 0.2s; min-width: 120px; }
-    .stat-card:hover { transform: translateY(-3px); border-color: #cc0000; }
-    .stat-card i { font-size: 1.5rem; margin-bottom: 0.3rem; display: block; }
-    .stat-card.ig i { color: #e4405f; }
-    .stat-card.yt i { color: #ff0000; }
-    .stat-number { font-size: 1.3rem; font-weight: 800; color: #fff; font-family: 'Montserrat', sans-serif; }
-    .stat-label { font-size: 0.6rem; color: #ff8888; margin-top: 0.2rem; }
-    
-    /* Links */
-    .links-section { margin: 1.5rem 0; }
-    .link-item { background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); border-radius: 20px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; display: flex; align-items: center; justify-content: space-between; text-decoration: none; color: #f0f0f0; border: 1px solid rgba(255,68,68,0.3); transition: all 0.2s; }
-    .link-item:hover { background: #cc0000; transform: translateX(5px); }
-    .link-left { display: flex; align-items: center; gap: 0.8rem; }
-    .link-left i { width: 25px; font-size: 1.1rem; color: #ff6666; }
-    .link-text { font-weight: 600; font-size: 0.85rem; }
-    
-    /* Google Business */
-    .google-business-card { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid rgba(255,68,68,0.5); }
-    .gbusiness-container { display: flex; flex-wrap: wrap; gap: 1.5rem; }
-    .gbusiness-info { flex: 2; min-width: 220px; }
-    .gbusiness-actions { flex: 1.2; min-width: 200px; display: flex; flex-direction: column; gap: 0.6rem; }
-    .gbusiness-title h4 { font-size: 1.3rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.2rem; }
-    .gbusiness-category { font-size: 0.65rem; color: #ffaaaa; background: rgba(204,0,0,0.2); padding: 0.2rem 0.6rem; border-radius: 20px; display: inline-block; }
-    .gbusiness-rating { display: flex; align-items: center; gap: 0.5rem; margin: 0.8rem 0; flex-wrap: wrap; }
-    .rating-stars { color: #ffcc00; font-size: 0.8rem; }
-    .rating-text { font-size: 0.7rem; color: #aaa; }
-    .gbusiness-details { margin: 0.8rem 0; }
-    .detail-item { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; font-size: 0.8rem; }
-    .detail-item i { width: 18px; color: #ff6666; font-size: 0.8rem; }
-    .detail-item a { color: #ffaaaa; text-decoration: none; }
-    .gbusiness-hours { background: rgba(0,0,0,0.4); border-radius: 16px; padding: 0.6rem 0.8rem; margin-top: 0.8rem; }
-    .hours-header { font-size: 0.7rem; font-weight: bold; margin-bottom: 0.3rem; color: #ff8888; }
-    .hours-row { display: flex; justify-content: space-between; font-size: 0.65rem; margin-bottom: 0.2rem; }
-    .hours-row.closed span:first-child { color: #ff6666; }
-    
-    .action-btn { display: flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.5rem 0.8rem; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.7rem; transition: all 0.2s; text-align: center; }
-    .action-btn.primary { background: #4285F4; color: white; }
-    .action-btn.primary:hover { background: #3367d6; transform: translateY(-2px); }
-    .action-btn.whatsapp { background: #25D366; color: white; }
-    .action-btn.whatsapp:hover { background: #20b359; transform: translateY(-2px); }
-    .action-btn.secondary { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,68,68,0.5); color: #ffaaaa; }
-    .action-btn.secondary:hover { background: #cc0000; color: white; }
-    .action-note { font-size: 0.55rem; color: #55aa55; text-align: center; margin-top: 0.5rem; }
-    
-    /* Reviews */
-    .google-reviews-section { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid rgba(255,68,68,0.6); }
-    .google-reviews-grid { display: flex; flex-direction: column; gap: 0.8rem; margin: 1rem 0; }
-    .google-review-card { background: rgba(0,0,0,0.5); border-radius: 16px; padding: 1rem; border-left: 3px solid #4285F4; transition: all 0.2s; }
-    .google-review-card:hover { transform: translateX(3px); background: rgba(66,133,244,0.1); }
-    .review-header-google { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
-    .review-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid #cc0000; }
-    .review-info-google h4 { color: white; font-size: 0.85rem; }
-    .review-stars { color: #ffcc00; font-size: 0.65rem; letter-spacing: 2px; margin-top: 0.2rem; }
-    .review-text-google { color: #ccc; font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.3rem; }
-    .review-date { font-size: 0.55rem; color: #4285F4; }
-    .btn-leave-review { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(66,133,244,0.2); border: 1px solid #4285F4; border-radius: 40px; padding: 0.4rem 1rem; color: #4285F4; text-decoration: none; font-size: 0.7rem; font-weight: 600; transition: all 0.2s; }
-    .btn-leave-review:hover { background: #4285F4; color: white; }
-    
-    /* Artist section */
-    .artist-section { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; text-align: center; border: 1px solid #ff4444; }
-    .artist-section h3 { font-size: clamp(1rem, 4vw, 1.2rem); margin-bottom: 0.5rem; }
-    .artist-section p { font-size: 0.85rem; color: #ddcccc; margin-bottom: 1rem; }
-    
-    /* Colaboraciones */
-    .collaborations-section { background: rgba(10,5,5,0.85); backdrop-filter: blur(16px); border-radius: 28px; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #ff4444; transition: all 0.3s; }
-    .collab-grid { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; margin-top: 1rem; }
-    .collab-card { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); border-radius: 24px; padding: 1rem; text-align: center; min-width: 110px; flex: 1 0 100px; transition: all 0.2s; border: 1px solid rgba(255,68,68,0.3); text-decoration: none; color: inherit; }
-    .collab-card:hover { transform: translateY(-5px); background: rgba(204,0,0,0.15); border-color: #cc0000; }
-    .collab-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 0.7rem; border: 2px solid #ff4444; background: #1a0a0a; }
-    .collab-name { font-weight: 700; font-size: 0.9rem; color: #fff; margin-bottom: 0.2rem; }
-    .collab-ig { font-size: 0.7rem; color: #ff8888; display: flex; align-items: center; justify-content: center; gap: 4px; }
-    .collab-ig i { font-size: 0.65rem; }
-    
-    .social-modern { display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
-    .social-circle { width: 45px; height: 45px; background: rgba(30,15,15,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.2rem; transition: all 0.2s; border: 1px solid rgba(255,68,68,0.5); }
-    .social-circle:hover { background: #cc0000; color: white; transform: translateY(-3px); }
-    
-    .footer-modern { text-align: center; font-size: 0.65rem; color: #aa7777; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,68,68,0.3); }
-    .whatsapp-modern { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-    .whatsapp-modern a { display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; background: #25D366; border-radius: 16px; text-decoration: none; color: white; font-size: 1.8rem; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
-    .whatsapp-modern a:hover { transform: scale(1.05); background: #20b359; }
-    
-    .section-header-custom { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,68,68,0.3); padding-bottom: 0.6rem; flex-wrap: wrap; }
-    .section-header-custom i { font-size: 1.3rem; color: #ffcc00; }
-    .section-header-custom h3 { font-size: 1rem; color: #fff; font-weight: 700; }
-    
-    /* Responsive */
-    @media (max-width: 768px) { 
-      .nav-links { display: none; } 
-      .menu-toggle { display: block; } 
-      .container { padding: 1rem 0.8rem; } 
-      .avatar { width: 100px; height: 100px; }
-      .bio-tag { font-size: 0.6rem; padding: 0.2rem 0.7rem; }
-      .project-card-pro { padding: 0.8rem; }
-      .stat-card { padding: 0.5rem 1rem; min-width: 100px; }
-      .social-circle { width: 40px; height: 40px; font-size: 1rem; }
-      .collab-card { min-width: 90px; }
-      .collab-avatar { width: 55px; height: 55px; }
-    }
-  </style>
+    <style>
+        :root {
+            --red: #cc0000;
+            --red-dark: #990000;
+            --red-darker: #660000;
+            --red-light: #ff3333;
+            --red-glow: #ff4444;
+            --red-bg: rgba(204,0,0,0.08);
+            --red-border: rgba(204,0,0,0.25);
+            
+            --black: #0a0a0a;
+            --black-secondary: #0f0f0f;
+            --black-tertiary: #141414;
+            --black-card: #111111;
+            --black-hover: #1a1a1a;
+            
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            
+            --text-primary: #ffffff;
+            --text-secondary: #a3a3a3;
+            --text-tertiary: #737373;
+            
+            --border-color: rgba(255,255,255,0.06);
+            --border-light: rgba(255,255,255,0.1);
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.5);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.6);
+            --shadow-red: 0 0 30px rgba(204,0,0,0.15);
+            --shadow-red-strong: 0 0 60px rgba(204,0,0,0.25);
+            
+            --radius-xs: 3px;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+            
+            --transition-fast: 0.2s ease;
+            --transition-base: 0.3s ease;
+            --transition-smooth: 0.5s cubic-bezier(0.4,0,0.2,1);
+            
+            --z-fixed: 1000;
+            --z-modal: 10000;
+            --z-preloader: 99999;
+        }
+        
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--black-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+        
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.2; }
+        h1 { font-size: clamp(3rem, 7vw, 6rem); letter-spacing: -0.02em; }
+        h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1rem; }
+        h3 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); }
+        h4 { font-size: clamp(1rem, 2vw, 1.3rem); }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--white) 30%, var(--red-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .accent { color: var(--red-light); }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 5rem 0; position: relative; overflow: hidden; }
+        section.dark { background: var(--black-secondary); }
+        section.darker { background: var(--black-tertiary); }
+        
+        /* ===== SECTION HEADER ===== */
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+        .section-tag {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 4px;
+            text-transform: uppercase; color: var(--red-light);
+            margin-bottom: 1rem; display: flex; align-items: center;
+            justify-content: center; gap: 0.8rem;
+        }
+        .section-tag::before, .section-tag::after {
+            content: ''; width: 25px; height: 1px; background: var(--red);
+        }
+        .section-subtitle {
+            color: var(--text-secondary); font-size: 0.9rem;
+            max-width: 550px; margin: 0.5rem auto 0; font-weight: 300;
+        }
+        
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed; inset: 0; background: var(--black); z-index: var(--z-preloader);
+            display: flex; align-items: center; justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #preloader.hidden { opacity: 0; visibility: hidden; }
+        .preloader-inner { text-align: center; }
+        .preloader-logo {
+            font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900;
+            color: var(--white); letter-spacing: 5px; margin-bottom: 1.5rem;
+        }
+        .preloader-bar {
+            width: 0; height: 2px; background: var(--red);
+            animation: preloaderBar 1.2s ease forwards; margin: 0 auto;
+            max-width: 100px;
+        }
+        @keyframes preloaderBar { to { width: 100px; } }
+        
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: var(--z-fixed);
+            background: rgba(10,10,10,0.88); backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid transparent;
+            transition: all var(--transition-smooth);
+        }
+        .navbar.scrolled { border-bottom: 1px solid var(--red-border); box-shadow: var(--shadow-red); }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 72px;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800;
+            color: var(--white); text-decoration: none; letter-spacing: 3px;
+            transition: color var(--transition-fast);
+        }
+        .nav-logo:hover { color: var(--red-light); }
+        .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none;
+            font-size: 0.72rem; font-weight: 500; letter-spacing: 1.5px;
+            text-transform: uppercase; transition: all var(--transition-fast);
+            position: relative; padding: 0.3rem 0;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0;
+            height: 1px; background: var(--red); transition: width var(--transition-base);
+        }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--red); color: var(--white); padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-xs); font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 1px; text-decoration: none; text-transform: uppercase;
+            transition: all var(--transition-base);
+        }
+        .nav-cta:hover { background: var(--red-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
+        .hamburger span { width: 22px; height: 1.5px; background: var(--white); transition: all var(--transition-base); }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed; inset: 0; background: rgba(10,10,10,0.98);
+            backdrop-filter: blur(30px); z-index: var(--z-modal);
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; gap: 1.8rem; transform: translateY(-100%);
+            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .mobile-menu.active { transform: translateY(0); }
+        .mobile-menu a {
+            font-family: 'Playfair Display', serif; font-size: 1.6rem;
+            color: var(--white); text-decoration: none; transition: color var(--transition-fast);
+        }
+        .mobile-menu a:hover { color: var(--red-light); }
+        .mobile-menu-close {
+            position: absolute; top: 2rem; right: 2rem; font-size: 2rem;
+            background: none; border: none; color: var(--white); cursor: pointer;
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden; background: var(--black);
+        }
+        .hero-bg {
+            position: absolute; inset: 0; z-index: 0;
+            background: 
+                radial-gradient(ellipse at 50% 30%, rgba(204,0,0,0.18) 0%, transparent 65%),
+                radial-gradient(ellipse at 80% 70%, rgba(255,51,51,0.06) 0%, transparent 50%);
+        }
+        .hero-grid {
+            position: absolute; inset: 0; z-index: 0; opacity: 0.025;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 850px; padding: 0 2rem; }
+        .hero-badge {
+            display: inline-block; border: 1px solid var(--red-border);
+            padding: 0.5rem 1.5rem; border-radius: var(--radius-full);
+            font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--red-light); margin-bottom: 2rem;
+            animation: fadeUp 0.8s ease forwards;
+        }
+        .hero h1 { color: var(--white); margin-bottom: 1.5rem; animation: fadeUp 0.8s ease 0.2s forwards; opacity: 0; }
+        .hero .tagline {
+            font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2.5rem;
+            animation: fadeUp 0.8s ease 0.4s forwards; opacity: 0; font-weight: 300;
+            letter-spacing: 0.5px; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .hero-actions {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            animation: fadeUp 0.8s ease 0.6s forwards; opacity: 0;
+        }
+        .hero-scroll {
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            color: var(--text-tertiary); font-size: 0.65rem; letter-spacing: 3px;
+            text-transform: uppercase; animation: bounce 2s infinite; z-index: 2;
+            display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+        }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes bounce { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(8px); } }
+        
+        /* ===== BOTONES ===== */
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.85rem 1.8rem; font-size: 0.75rem; font-weight: 600;
+            letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+            border-radius: var(--radius-xs); transition: all var(--transition-base);
+            cursor: pointer; border: none; font-family: 'Inter', sans-serif;
+        }
+        .btn-primary { background: var(--red); color: var(--white); box-shadow: 0 4px 15px rgba(204,0,0,0.25); }
+        .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: var(--shadow-red-strong); }
+        .btn-outline { background: transparent; color: var(--white); border: 1px solid var(--red-border); }
+        .btn-outline:hover { border-color: var(--red); color: var(--red-light); transform: translateY(-2px); }
+        .btn-light { background: var(--white); color: var(--black); }
+        .btn-light:hover { background: var(--gray-200); transform: translateY(-2px); }
+        .btn-lg { padding: 1rem 2.2rem; font-size: 0.8rem; }
+        .btn-sm { padding: 0.5rem 1rem; font-size: 0.65rem; letter-spacing: 1px; }
+        
+        /* ===== CARDS BASE ===== */
+        .card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 2rem;
+            transition: all var(--transition-smooth);
+        }
+        .card:hover { border-color: var(--red-border); box-shadow: var(--shadow-red); background: var(--black-hover); }
+        
+        /* ===== 1. ABOUT / BIO ===== */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center;
+            max-width: 1000px; margin: 0 auto;
+        }
+        .about-image-wrapper { position: relative; }
+        .about-image {
+            width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
+        .about-image-accent {
+            position: absolute; top: -15px; left: -15px; width: 100%; height: 100%;
+            border: 1px solid var(--red); border-radius: var(--radius-md); z-index: -1;
+        }
+        .about-text h2 { margin-bottom: 0.5rem; }
+        .about-meta { display: flex; gap: 1.5rem; margin: 1rem 0; flex-wrap: wrap; }
+        .about-meta-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-secondary); }
+        .about-meta-item i { color: var(--red-light); font-size: 0.8rem; width: 16px; }
+        .about-story { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; font-weight: 300; }
+        
+        /* ===== 2. SERVICES ===== */
+        .services-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem;
+            max-width: 1000px; margin: 0 auto;
+        }
+        .service-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 2rem 1.5rem; text-align: center;
+            transition: all var(--transition-base);
+        }
+        .service-card:hover {
+            border-color: var(--red); background: var(--black-hover);
+            transform: translateY(-6px); box-shadow: var(--shadow-red);
+        }
+        .service-icon { font-size: 2rem; color: var(--red-light); margin-bottom: 1rem; }
+        .service-card h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .service-card p { font-size: 0.7rem; color: var(--text-tertiary); font-weight: 300; }
+        
+        /* ===== 3. STORY / TIMELINE ===== */
+        .timeline { max-width: 700px; margin: 0 auto; position: relative; padding-left: 40px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 15px; top: 0; bottom: 0;
+            width: 1px; background: var(--red-border);
+        }
+        .timeline-item { position: relative; margin-bottom: 2.5rem; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -31px; top: 5px;
+            width: 10px; height: 10px; background: var(--red);
+            border-radius: 50%; border: 2px solid var(--black);
+        }
+        .timeline-year {
+            font-size: 0.65rem; font-weight: 600; letter-spacing: 3px;
+            color: var(--red-light); margin-bottom: 0.3rem; text-transform: uppercase;
+        }
+        .timeline-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.3rem; }
+        .timeline-text { font-size: 0.8rem; color: var(--text-secondary); font-weight: 300; }
+        
+        /* ===== 4. STATS ===== */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem;
+            max-width: 900px; margin: 0 auto; text-align: center;
+        }
+        .stat-item { padding: 1.5rem; }
+        .stat-number {
+            font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900;
+            color: var(--white); line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.65rem; color: var(--red-light); text-transform: uppercase;
+            letter-spacing: 2px; margin-top: 0.5rem;
+        }
+        
+        /* ===== 5. INSPIRATIONS ===== */
+        .inspo-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+            max-width: 800px; margin: 0 auto;
+        }
+        .inspo-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 2rem; text-align: center;
+            transition: all var(--transition-base);
+        }
+        .inspo-card:hover { border-color: var(--red-border); transform: translateY(-4px); }
+        .inspo-card .inspo-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        .inspo-card h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .inspo-card p { font-size: 0.75rem; color: var(--text-secondary); font-weight: 300; }
+        
+        /* ===== 6. SPOTIFY ===== */
+        .release-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 2rem; max-width: 700px; margin: 0 auto;
+            transition: all var(--transition-smooth);
+        }
+        .release-card:hover { border-color: var(--red-border); box-shadow: var(--shadow-red); }
+        .release-header {
+            display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;
+            padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);
+        }
+        .release-header i { font-size: 1.4rem; color: #1DB954; }
+        .release-header h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 0; }
+        .release-card iframe { border-radius: var(--radius-xs); width: 100%; height: 152px; border: none; }
+        .platform-links { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
+        .platform-link {
+            border: 1px solid var(--border-color); padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-xs); text-decoration: none;
+            color: var(--text-secondary); font-size: 0.7rem; font-weight: 500;
+            letter-spacing: 0.5px; display: flex; align-items: center; gap: 0.5rem;
+            transition: all var(--transition-fast);
+        }
+        .platform-link:hover { border-color: var(--red); color: var(--red-light); background: var(--red-bg); }
+        
+        /* ===== 7. PROJECTS ===== */
+        .projects-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .project-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 1.8rem;
+            display: flex; gap: 1.5rem; text-decoration: none; color: inherit;
+            transition: all var(--transition-base); align-items: flex-start;
+        }
+        .project-card:hover {
+            border-color: var(--red-border); transform: translateX(8px);
+            box-shadow: var(--shadow-red); background: var(--black-hover);
+        }
+        .project-icon {
+            width: 52px; height: 52px; background: var(--red-bg);
+            border-radius: var(--radius-xs); display: flex;
+            align-items: center; justify-content: center; flex-shrink: 0;
+            font-size: 1.3rem; color: var(--red-light);
+        }
+        .project-info { flex: 1; }
+        .project-info h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--white); margin-bottom: 0.3rem; letter-spacing: 0; }
+        .project-meta { font-size: 0.7rem; color: var(--red-light); margin-bottom: 0.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+        .project-info p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-weight: 300; }
+        .project-arrow { color: var(--red-light); font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+        
+        /* ===== 8. GOOGLE BUSINESS ===== */
+        .google-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 2rem; max-width: 750px; margin: 0 auto;
+            transition: all var(--transition-smooth);
+        }
+        .google-card:hover { border-color: var(--red-border); box-shadow: var(--shadow-red); }
+        .google-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; }
+        .google-info h3 { margin-bottom: 0.5rem; }
+        .google-category {
+            display: inline-block; font-size: 0.6rem; color: var(--red-light);
+            border: 1px solid var(--red-border); padding: 0.2rem 0.7rem;
+            border-radius: var(--radius-full); letter-spacing: 1px; margin-bottom: 0.8rem;
+        }
+        .google-rating { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .stars { color: #ffcc00; font-size: 0.8rem; letter-spacing: 2px; }
+        .rating-text { font-size: 0.7rem; color: var(--text-secondary); }
+        .google-detail {
+            display: flex; align-items: center; gap: 0.7rem; font-size: 0.78rem;
+            color: var(--text-secondary); margin-bottom: 0.5rem;
+        }
+        .google-detail i { width: 16px; color: var(--red-light); font-size: 0.75rem; }
+        .google-detail a { color: var(--red-light); text-decoration: none; }
+        .google-actions { display: flex; flex-direction: column; gap: 0.6rem; justify-content: center; }
+        .action-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            padding: 0.65rem 1rem; border-radius: var(--radius-xs); text-decoration: none;
+            font-weight: 600; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase;
+            transition: all var(--transition-base); text-align: center;
+        }
+        .action-btn.google { background: #4285F4; color: white; }
+        .action-btn.google:hover { background: #3367d6; transform: translateY(-2px); }
+        .action-btn.whatsapp { background: #25D366; color: white; }
+        .action-btn.whatsapp:hover { background: #20b359; transform: translateY(-2px); }
+        .action-btn.outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-secondary); }
+        .action-btn.outline:hover { border-color: var(--red); color: var(--red-light); }
+        
+        /* ===== 9. COLLABORATIONS ===== */
+        .collab-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; max-width: 800px; margin: 0 auto; }
+        .collab-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 1.5rem 1rem; text-align: center;
+            text-decoration: none; color: inherit; transition: all var(--transition-base);
+        }
+        .collab-card:hover { border-color: var(--red); transform: translateY(-5px); box-shadow: var(--shadow-red); background: var(--black-hover); }
+        .collab-card img {
+            width: 75px; height: 75px; border-radius: 50%; object-fit: cover;
+            margin-bottom: 0.8rem; border: 2px solid var(--red-border);
+        }
+        .collab-name { font-weight: 600; font-size: 0.85rem; color: var(--white); margin-bottom: 0.2rem; }
+        .collab-ig { font-size: 0.7rem; color: var(--red-light); }
+        
+        /* ===== 10. QUOTE ===== */
+        .quote-section { text-align: center; max-width: 700px; margin: 0 auto; }
+        .quote-icon { font-size: 3rem; color: var(--red-light); opacity: 0.3; margin-bottom: 1.5rem; }
+        .quote-text {
+            font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem;
+        }
+        .quote-author { font-size: 0.85rem; color: var(--red-light); letter-spacing: 2px; text-transform: uppercase; }
+        
+        /* ===== 11. GEAR / EQUIPMENT ===== */
+        .gear-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; max-width: 800px; margin: 0 auto; }
+        .gear-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 1.5rem; text-align: center;
+            transition: all var(--transition-base);
+        }
+        .gear-card:hover { border-color: var(--red-border); }
+        .gear-card i { font-size: 1.5rem; color: var(--red-light); margin-bottom: 0.8rem; }
+        .gear-card h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .gear-card p { font-size: 0.7rem; color: var(--text-tertiary); font-weight: 300; }
+        
+        /* ===== 12. SOCIAL ===== */
+        .social-grid { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .social-circle {
+            width: 55px; height: 55px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; text-decoration: none;
+            color: var(--text-secondary); font-size: 1.3rem;
+            border: 1px solid var(--border-color); transition: all var(--transition-base);
+            background: var(--black-card);
+        }
+        .social-circle:hover { background: var(--red); color: white; border-color: var(--red); transform: translateY(-5px); box-shadow: var(--shadow-red); }
+        
+        /* ===== 13. CONTACT ===== */
+        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+        .contact-card {
+            background: var(--black-card); border: 1px solid var(--border-color);
+            border-radius: var(--radius-md); padding: 1.8rem; text-align: center;
+            transition: all var(--transition-base); text-decoration: none; color: inherit; display: block;
+        }
+        .contact-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: var(--shadow-red); }
+        .contact-card i { font-size: 1.5rem; color: var(--red-light); margin-bottom: 0.8rem; }
+        .contact-card h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.3rem; }
+        .contact-card span { font-size: 0.75rem; color: var(--text-secondary); font-weight: 300; }
+        
+        /* ===== 14. CTA ===== */
+        .cta-section {
+            background: linear-gradient(180deg, var(--black-secondary), var(--black));
+            border-top: 1px solid var(--red-border); border-bottom: 1px solid var(--red-border);
+            text-align: center;
+        }
+        .cta-title { color: var(--white); margin-bottom: 1rem; }
+        .cta-text { color: var(--text-secondary); max-width: 500px; margin: 0 auto 2rem; font-weight: 300; font-size: 0.9rem; }
+        
+        /* ===== 15. FOOTER ===== */
+        .footer {
+            background: var(--black-secondary); text-align: center;
+            padding: 3rem 0; border-top: 1px solid var(--border-color);
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800;
+            color: var(--white); margin-bottom: 1rem; letter-spacing: 3px;
+        }
+        .footer-text { color: var(--text-tertiary); font-size: 0.72rem; line-height: 1.8; }
+        .footer-text a { color: var(--red-light); text-decoration: none; }
+        .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; }
+        .footer-social a { color: var(--text-tertiary); font-size: 1rem; transition: color var(--transition-fast); }
+        .footer-social a:hover { color: var(--red-light); }
+        
+        /* ===== FLOATING ===== */
+        .floating-whatsapp {
+            position: fixed; bottom: 30px; right: 30px; z-index: 999;
+            width: 55px; height: 55px; background: #25D366; color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+            transition: all var(--transition-base);
+        }
+        .floating-whatsapp:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.4); }
+        .back-to-top {
+            position: fixed; bottom: 30px; left: 30px; z-index: 999;
+            width: 42px; height: 42px; background: var(--red); color: white;
+            border: none; border-radius: 50%; cursor: pointer; font-size: 0.9rem;
+            opacity: 0; visibility: hidden; transition: all var(--transition-base);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--red-dark); transform: translateY(-3px); }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+            .inspo-grid { grid-template-columns: repeat(2, 1fr); }
+            .gear-grid { grid-template-columns: repeat(2, 1fr); }
+            .collab-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            section { padding: 3.5rem 0; }
+            .container { padding: 0 1.2rem; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-image-wrapper { max-width: 350px; margin: 0 auto; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .stat-number { font-size: 2.2rem; }
+            .google-grid { grid-template-columns: 1fr; }
+            .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .gear-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .timeline { padding-left: 30px; }
+        }
+        @media (max-width: 480px) {
+            section { padding: 2.5rem 0; }
+            .hero h1 { font-size: 2rem; }
+            .hero .tagline { font-size: 0.8rem; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; }
+            .services-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .inspo-grid { grid-template-columns: 1fr; }
+            .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+            .collab-card { padding: 1rem 0.5rem; }
+            .collab-card img { width: 55px; height: 55px; }
+            .platform-links { flex-direction: column; align-items: center; }
+            .platform-link { width: 100%; justify-content: center; }
+            .floating-whatsapp { bottom: 20px; right: 20px; width: 48px; height: 48px; font-size: 1.2rem; }
+            .back-to-top { bottom: 20px; left: 20px; }
+            .contact-grid { gap: 0.8rem; }
+        }
+
+
+/* ===== INSPO AVATARS MEJORADOS ===== */
+.inspo-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--red-border);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+.inspo-card:hover .inspo-avatar {
+    border-color: var(--red);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-red);
+}
+.inspo-emoji {
+    font-size: 3rem;
+    position: relative;
+    z-index: 1;
+    transition: transform var(--transition-base);
+}
+.inspo-card:hover .inspo-emoji {
+    transform: scale(1.2);
+}
+.inspo-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+.inspo-card p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* ===== HERO BADGE MEJORADO ===== */
+.hero-badge {
+    display: inline-block;
+    border: 1px solid var(--red-border);
+    padding: 0.6rem 1.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red-light);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease forwards;
+    background: rgba(204,0,0,0.05);
+    backdrop-filter: blur(4px);
+}
+
+    </style>
 </head>
 <body>
-<div class="animated-bg">
-  <img class="bg-profile" src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE Background" loading="eager">
-  <div class="bg-blur-layer"></div>
-  <div class="bg-grain"></div>
-</div>
 
-<nav class="top-nav">
-  <div class="nav-container">
-    <div class="logo"><a href="/">INCRIFE</a></div>
-    <div class="nav-links">
-      <a href="/">Inicio</a>
-      <a href="/tienda">Servicios</a>
-      <a href="/fotografia">Portafolio</a>
-      <a href="/agency">Agencia</a>
-      <a href="/studio">Estudio musical</a>
-      <a href="/trabajaconnosotros">Equipo</a>
-      <a href="/contacto">Contacto</a>
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">INCRIFE</div>
+            <div class="preloader-bar"></div>
+        </div>
     </div>
-    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-  </div>
+    
+<!-- NAVBAR CORREGIDO -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="#home" class="nav-logo">INCRIFE</a>
+        <ul class="nav-links">
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#story">Historia</a></li>
+            <li><a href="#stats">Estadísticas</a></li>
+            <li><a href="#musica">Música</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#colaboraciones">Colaboraciones</a></li>
+            <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </nav>
-
-<div class="side-menu" id="sideMenu">
-  <button class="close-menu" id="closeMenu"><i class="fas fa-times"></i></button>
-  <a href="/">Inicio</a>
-  <a href="/tienda">Servicios</a>
-  <a href="/fotografia">Portafolio</a>
-  <a href="/agency">Agencia</a>
-  <a href="/studio">Estudio musical</a>
-  <a href="/trabajaconnosotros">Equipo</a>
-  <a href="/contacto">Contacto</a>
-</div>
-<div class="overlay" id="overlay"></div>
-
-<div class="page-wrapper">
-<div class="container">
-  <div class="profile fade-up-item">
-    <div class="avatar-wrapper">
-      <div class="glow-ring"></div>
-      <img class="avatar" src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE - Fotógrafo Barcelona" width="140" height="140" loading="eager">
-      <span class="online-dot"></span>
-    </div>
-    <h1 class="name">INCRIFE</h1>
-    <div class="tagline">Fotógrafo Profesional · Videógrafo · Filmmaker · Barcelona</div>
-  </div>
-  
-  <div class="bio-card fade-up-item">
-    <div style="position: relative; height: 180px; overflow: hidden;">
-      <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_622160511_18082149995235869_8106190216276920798_n%20(1).jpg" style="width:100%; height:100%; object-fit:cover;" alt="Fotógrafo profesional Barcelona - INCRIFE" loading="lazy">
-      <div style="position: absolute; bottom:0; left:0; right:0; background: linear-gradient(to top, #080808, transparent); height:60px;"></div>
-      <div style="position:absolute; top:15px; right:15px; background:rgba(204,0,0,0.8); padding:3px 10px; border-radius:30px; font-size:0.7rem;"><i class="fas fa-crown"></i> FOTÓGRAFO · FILMMAKER</div>
-    </div>
-    <div style="padding:1.2rem;">
-      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;">
-        <h2 style="background:linear-gradient(135deg,#fff,#cc6666); -webkit-background-clip:text; background-clip:text; color:transparent; font-size:1.3rem;">INCRIFE · Visual Artist</h2>
-        <div style="font-size:0.8rem;"><i class="fas fa-map-marker-alt"></i> Barcelona · La Mina</div>
-      </div>
-      <div class="bio-highlight" style="border-left:3px solid #cc0000; padding-left:0.8rem; margin-bottom:0.8rem;">
-        <strong>📸 Fotógrafo profesional en Barcelona · Director de videoclips · Filmmaker</strong><br>
-        Nacido en La Mina, Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.
-      </div>
-      <div class="bio-tags">
-        <span class="bio-tag">#FotógrafoBarcelona</span>
-        <span class="bio-tag">#VideógrafoBarcelona</span>
-        <span class="bio-tag">#Filmmaker</span>
-        <span class="bio-tag">#DirectorVideoclips</span>
-        <span class="bio-tag">#FotografíaUrbana</span>
-        <span class="bio-tag">#LaMina</span>
-        <span class="bio-tag">#ProductorAudiovisual</span>
-      </div>
-      <div style="display:flex; justify-content:space-between; margin-top:1rem; padding-top:0.8rem; border-top:1px solid rgba(255,68,68,0.2); flex-wrap:wrap; gap:0.5rem;">
-        <div><div style="font-size:1rem; color:#ff8888;">+2</div><div style="font-size:0.6rem;">AÑOS EXP</div></div>
-        <div><div style="font-size:1rem; color:#ff8888;">+10</div><div style="font-size:0.6rem;">VIDEOCLIPS</div></div>
-        <div><div style="font-size:1rem; color:#ff8888;">+50</div><div style="font-size:0.6rem;">SESIONES</div></div>
-        <div><div style="font-size:1rem; color:#ff8888;">BCN</div><div style="font-size:0.6rem;">BASE</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ÚLTIMO LANZAMIENTO -->
-  <div class="release-unified fade-up-item">
-    <div class="release-header">
-      <i class="fab fa-spotify"></i>
-      <h3>ÚLTIMO LANZAMIENTO · Producción musical</h3>
-    </div>
-    <iframe style="border-radius:12px; width:100%; height:140px;" src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <div class="platforms-inline">
-      <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="platform-badge" rel="noopener"><i class="fab fa-spotify"></i> Spotify</a>
-      <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" class="platform-badge" rel="noopener"><i class="fab fa-apple"></i> Apple Music</a>
-      <a href="https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife" target="_blank" class="platform-badge" rel="noopener"><i class="fab fa-amazon"></i> Amazon Music</a>
-    </div>
-  </div>
-
-  <!-- MIS PROYECTOS -->
-  <div class="projects-section-pro fade-up-item">
-    <div class="section-title">
-      <i class="fas fa-briefcase"></i>
-      <h2>TIMELINE · MIS PROYECTOS</h2>
-      <span>+3 proyectos activos</span>
-    </div>
-    <div class="projects-grid-pro">
-      <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card-pro" rel="noopener">
-        <div class="project-icon-pro"><i class="fas fa-video"></i></div>
-        <div class="project-info-pro">
-          <h3>Proyectos visuales · Incrife</h3>
-          <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2024</span><span><i class="fas fa-music"></i> +4 videoclips y +50 sesiones</span></div>
-          <p>Dirección y producción de videoclips para artistas. Narrativas visuales únicas.</p>
-          <span class="project-link">Ver proyectos <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </a>
-      <a href="https://www.instagram.com/kurtusinc/" target="_blank" class="project-card-pro" rel="noopener">
-        <div class="project-icon-pro"><i class="fas fa-camera"></i></div>
-        <div class="project-info-pro">
-          <h3>Agencia Kurtusinc</h3>
-          <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2025</span><span><i class="fas fa-images"></i> +30 models</span></div>
-          <p>Agencia de modelos. Colaboración oficial. Talento para fotografía y publicidad.</p>
-          <span class="project-link">Ver agencia <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <!-- FICHA GOOGLE BUSINESS -->
-  <div class="google-business-card fade-up-item" itemscope itemtype="https://schema.org/LocalBusiness">
-    <div class="section-header-custom"><i class="fab fa-google"></i><h3>MI PERFIL OFICIAL EN GOOGLE MAPS</h3></div>
-    <div class="gbusiness-container">
-      <div class="gbusiness-info">
-        <div class="gbusiness-title"><h4 itemprop="name">INCRIFE</h4><span class="gbusiness-category" itemprop="knowsAbout">Fotógrafo profesional · Director de videoclips</span></div>
-        <div class="gbusiness-rating"><div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><span class="rating-text">4.8 ★ · 12 opiniones</span></div>
-        <div class="gbusiness-details">
-          <div class="detail-item"><i class="fas fa-map-marker-alt"></i><span itemprop="address">Barcelona</span></div>
-          <div class="detail-item"><i class="fas fa-phone-alt"></i><a href="tel:+34624170204" itemprop="telephone">+34 624 17 02 04</a></div>
-          <div class="detail-item"><i class="fas fa-globe"></i><a href="https://incrife.com" itemprop="url">incrife.com</a></div>
-        </div>
-        <div class="gbusiness-hours"><div class="hours-header"><i class="far fa-clock"></i> Horario</div><div class="hours-row"><span>Lun - Vie:</span><span>10:00 – 16:00</span></div><div class="hours-row closed"><span>Sáb - Dom:</span><span>Cerrado</span></div><div class="hours-note"></div></div>
-      </div>
-      <div class="gbusiness-actions">
-        <a href="https://g.page/r/Cd6xo07U8yjeEBM/review" target="_blank" class="action-btn primary" rel="noopener"><i class="fab fa-google"></i> Escribir reseña</a>
-        <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" class="action-btn whatsapp" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://www.google.com/search?q=Incrife" target="_blank" class="action-btn secondary" rel="noopener"><i class="fas fa-directions"></i> Ver ficha</a>
-        <p class="action-note"><i class="fas fa-check-circle"></i> Datos verificados · Indexación prioritaria</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- COLABORACIONES RELEVANTES -->
-  <div class="collaborations-section fade-up-item">
-    <div class="section-header-custom"><i class="fas fa-handshake"></i><h3>COLABORACIONES RELEVANTES</h3></div>
-    <div class="collab-grid">
-      <a href="https://www.instagram.com/amine_grafi" target="_blank" class="collab-card" rel="noopener">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_616350453_18335348698209010_3207213954587758104_n.jpg" alt="Kingsla" class="collab-avatar" loading="lazy">
-        <div class="collab-name">Kingsla</div>
-        <div class="collab-ig"><i class="fab fa-instagram"></i> @amine_grafi</div>
-      </a>
-      <a href="https://www.instagram.com/maruu_king/" target="_blank" class="collab-card" rel="noopener">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="maruking" class="collab-avatar" loading="lazy">
-        <div class="collab-name">Maruuking</div>
-        <div class="collab-ig"><i class="fab fa-instagram"></i> @maruuking</div>
-      </a>
-      <a href="https://www.instagram.com/therassam/" target="_blank" class="collab-card" rel="noopener">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_651251130_18116188027712847_544541923891260297_n.jpg" alt="Rassam" class="collab-avatar" loading="lazy">
-        <div class="collab-name">Rassam</div>
-        <div class="collab-ig"><i class="fab fa-instagram"></i> @therassam</div>
-      </a>
-      <a href="https://www.instagram.com/rafa930_oficial/" target="_blank" class="collab-card" rel="noopener">
-        <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_670152063_18013529003844485_7891764818375528431_n.jpg" alt="rafa930" class="collab-avatar" loading="lazy">
-        <div class="collab-name">Rafa930</div>
-        <div class="collab-ig"><i class="fab fa-instagram"></i> @rafa930_oficial</div>
-      </a>
-    </div>
-    <p style="text-align:center; font-size:0.7rem; margin-top:1rem; color:#ffaaaa;">Artistas y colaboradores oficiales</p>
-  </div>
-
-  <div class="social-modern fade-up-item">
-    <a href="https://www.instagram.com/incrife/" class="social-circle" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@incrife" class="social-circle" aria-label="YouTube" rel="noopener"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.tiktok.com/@incrife" class="social-circle" aria-label="TikTok" rel="noopener"><i class="fab fa-tiktok"></i></a>
-    <a href="https://x.com/Incrife" class="social-circle" aria-label="Twitter" rel="noopener"><i class="fab fa-twitter"></i></a>
-  </div>
-  <div class="footer-modern">INCRIFE · Fotógrafo Barcelona · Videógrafo · Filmmaker · Director de Videoclips · Producción Audiovisual<br>© 2026 · Barcelona · Contacta para sesiones y proyectos</div>
-  
-</div>
+    
+    <!-- MOBILE MENU CORREGIDO - SIMPLE Y FUNCIONAL -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileClose">&times;</button>
+    <a href="#home">Inicio</a>
+    <a href="#about">Sobre mí</a>
+    <a href="#services">Servicios</a>
+    <a href="#story">Historia</a>
+    <a href="#musica">Música</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#colaboraciones">Colaboraciones</a>
+    <a href="#contacto">Contacto</a>
 </div>
 
-<div class="whatsapp-modern"><a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" aria-label="WhatsApp" rel="noopener"><i class="fab fa-whatsapp"></i></a></div>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+       <div class="hero-content">
+    <span class="hero-badge">Fotógrafo & Filmmaker</span>
+    <h1>IN<span class="text-gradient">CRIFE</span></h1>
+    <p class="tagline">Fotografía Profesional · Videoclips · Producción Musical · Barcelona</p>
+    <div class="hero-actions">
+        <a href="#proyectos" class="btn btn-primary btn-lg">Ver Portfolio</a>
+        <a href="#contacto" class="btn btn-outline btn-lg">Contactar</a>
+    </div>
+</div>
+    </section>
+    
+    <!-- ===== 1. ABOUT / BIO ===== -->
+<section id="about" class="dark">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">Sobre mí</div>
+            <h2 class="section-title">Ángel Córdoba <span class="accent">El Hannouti</span></h2>
+            <p class="section-subtitle">Artista visual, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-image-wrapper" data-aos="fade-right">
+                <div class="about-image-accent"></div>
+                <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE - Ángel Córdoba" class="about-image" loading="lazy">
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <h2>Visual <span class="accent">Artist</span> & <span class="accent">Músico</span></h2>
+                <p class="about-story">
+                    Nacido en el barrio de <strong>La Mina, Barcelona</strong>. De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>
+                    Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como <strong>Ne-Yo</strong> y <strong>MHD</strong>. Soy artista de <strong>afrotrap, afrobeat, trap, reggaetón y Latin Urban</strong>. También me especializo como <strong>fotógrafo profesional, videógrafo, filmmaker y director de videoclips</strong>.<br><br>
+                    Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- ===== 2. SERVICES ===== -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Servicios Profesionales</div>
+                <h2 class="section-title">Lo que <span class="accent">ofrezco</span></h2>
+                <p class="section-subtitle">Servicios de alta calidad en fotografía, vídeo y producción musical.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon"><i class="fas fa-camera"></i></div>
+                    <h4>Fotografía Profesional</h4>
+                    <p>Retratos, fotografía urbana, editorial y sesiones para artistas.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-video"></i></div>
+                    <h4>Videografía</h4>
+                    <p>Grabación y producción de vídeo profesional para eventos y proyectos.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-film"></i></div>
+                    <h4>Dirección de Videoclips</h4>
+                    <p>Dirección creativa y producción completa de videoclips musicales.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fas fa-music"></i></div>
+                    <h4>Producción Musical</h4>
+                    <p>Creación de beats, producción y composición de música urbana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 3. STORY / TIMELINE ===== -->
+    <section id="story" class="dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Mi Historia</div>
+                <h2 class="section-title">Trayectoria <span class="accent">Personal</span></h2>
+                <p class="section-subtitle">El camino que me ha llevado hasta aquí.</p>
+            </div>
+            <div class="timeline" data-aos="fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-title">Nacimiento</div>
+                    <p class="timeline-text">28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Infancia</div>
+                    <div class="timeline-title">Primeras Inspiraciones</div>
+                    <p class="timeline-text">Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Adolescencia</div>
+                    <div class="timeline-title">Exploración Artística</div>
+                    <p class="timeline-text">Formación autodidacta en producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. Etapa en la escena techno y rave.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-title">INCRIFE Oficial</div>
+                    <p class="timeline-text">Fundación del proyecto INCRIFE. Inicio como fotógrafo profesional y director de videoclips.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-title">Regreso a la Música</div>
+                    <p class="timeline-text">Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 4. STATS ===== -->
+    <section id="stats">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Números</div>
+                <h2 class="section-title">Estadísticas <span class="accent">Profesionales</span></h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="fade-up"><div class="stat-number">+2</div><div class="stat-label">Años Experiencia</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="100"><div class="stat-number">+10</div><div class="stat-label">Videoclips</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="200"><div class="stat-number">+50</div><div class="stat-label">Sesiones Foto</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="300"><div class="stat-number">+30</div><div class="stat-label">Models Agencia</div></div>
+                <div class="stat-item" data-aos="fade-up" data-aos-delay="400"><div class="stat-number">4</div><div class="stat-label">Colaboraciones</div></div>
+            </div>
+        </div>
+    </section>
+    
+<!-- ===== 5. INSPIRATIONS ===== -->
+<section id="inspirations" class="dark">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <div class="section-tag">Influencias</div>
+            <h2 class="section-title">Lo que me <span class="accent">inspira</span></h2>
+            <p class="section-subtitle">Artistas, géneros y culturas que definen mi estilo.</p>
+        </div>
+        <div class="inspo-grid">
+            <div class="inspo-card" data-aos="fade-up">
+                <div class="inspo-avatar" style="background: linear-gradient(135deg, #1a1a2e, #2d1b69);">
+                    <span class="inspo-emoji">🎤</span>
+                </div>
+                <h4>Ne-Yo</h4>
+                <p>Referente en composición R&B, melodías e identidad artística. Transformó mi forma de entender la música.</p>
+            </div>
+            <div class="inspo-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="inspo-avatar" style="background: linear-gradient(135deg, #1a1a2e, #1e3a5f);">
+                    <span class="inspo-emoji">🎵</span>
+                </div>
+                <h4>MHD</h4>
+                <p>Pionero del afrotrap. Su fusión de ritmos africanos con hip-hop francés me inspiró a aprender francés.</p>
+            </div>
+            <div class="inspo-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="inspo-avatar" style="background: linear-gradient(135deg, #cc0000, #660000);">
+                    <span class="inspo-emoji">🌍</span>
+                </div>
+                <h4>Afrotrap & Afrobeat</h4>
+                <p>Géneros que fusionan ritmos africanos con la cultura urbana europea. Mi seña de identidad musical.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- ===== 6. SPOTIFY / MUSIC ===== -->
+    <section id="musica">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Producción Musical</div>
+                <h2 class="section-title">Último <span class="accent">Lanzamiento</span></h2>
+                <p class="section-subtitle">Disponible en todas las plataformas digitales.</p>
+            </div>
+            <div class="release-card" data-aos="fade-up">
+                <div class="release-header">
+                    <i class="fab fa-spotify"></i>
+                    <h3>INCRIFE · Escucha mi música</h3>
+                </div>
+                <iframe src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <div class="platform-links">
+                    <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener" class="platform-link"><i class="fab fa-spotify"></i> Spotify</a>
+                    <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" rel="noopener" class="platform-link"><i class="fab fa-apple"></i> Apple Music</a>
+                    <a href="https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife" target="_blank" rel="noopener" class="platform-link"><i class="fab fa-amazon"></i> Amazon Music</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 7. PROJECTS ===== -->
+    <section id="proyectos" class="dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Portfolio</div>
+                <h2 class="section-title">Mis <span class="accent">Proyectos</span></h2>
+                <p class="section-subtitle">Producción audiovisual y colaboraciones profesionales activas.</p>
+            </div>
+            <div class="projects-grid">
+                <a href="https://www.youtube.com/@incrife" target="_blank" rel="noopener" class="project-card" data-aos="fade-up">
+                    <div class="project-icon"><i class="fas fa-video"></i></div>
+                    <div class="project-info">
+                        <h4>Proyectos Visuales · Incrife</h4>
+                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2024</span><span>+4 Videoclips</span><span>+50 Sesiones</span></div>
+                        <p>Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales.</p>
+                        <span class="project-arrow">Ver en YouTube <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/kurtusinc/" target="_blank" rel="noopener" class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-icon"><i class="fas fa-camera-retro"></i></div>
+                    <div class="project-info">
+                        <h4>Agencia Kurtusinc</h4>
+                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2025</span><span>+30 Models</span></div>
+                        <p>Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos.</p>
+                        <span class="project-arrow">Ver en Instagram <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 8. GOOGLE BUSINESS ===== -->
+    <section id="google">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Google Maps</div>
+                <h2 class="section-title">Perfil <span class="accent">Oficial</span></h2>
+                <p class="section-subtitle">Información verificada de mi negocio en Google.</p>
+            </div>
+            <div class="google-card" data-aos="fade-up" itemscope itemtype="https://schema.org/LocalBusiness">
+                <div class="google-grid">
+                    <div class="google-info">
+                        <h3 itemprop="name">INCRIFE</h3>
+                        <span class="google-category" itemprop="knowsAbout">Fotógrafo Profesional · Director de Videoclips</span>
+                        <div class="google-rating">
+                            <div class="stars">★★★★<span style="color:#444;">★</span></div>
+                            <span class="rating-text">4.8 · 12 opiniones verificadas</span>
+                        </div>
+                        <div class="google-detail"><i class="fas fa-map-marker-alt"></i> <span itemprop="address">Barcelona, España</span></div>
+                        <div class="google-detail"><i class="fas fa-phone-alt"></i> <a href="tel:+34624170204" itemprop="telephone">+34 624 17 02 04</a></div>
+                        <div class="google-detail"><i class="fas fa-globe"></i> <a href="https://incrife.com" itemprop="url">incrife.com</a></div>
+                        <div class="google-detail"><i class="far fa-clock"></i> Lun - Vie: 10:00 – 16:00 | Sáb - Dom: Cerrado</div>
+                    </div>
+                    <div class="google-actions">
+                        <a href="https://g.page/r/Cd6xo07U8yjeEBM/review" target="_blank" rel="noopener" class="action-btn google"><i class="fab fa-google"></i> Escribir Reseña</a>
+                        <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="action-btn whatsapp"><i class="fab fa-whatsapp"></i> Contactar WhatsApp</a>
+                        <a href="https://www.google.com/search?q=Incrife" target="_blank" rel="noopener" class="action-btn outline"><i class="fas fa-external-link-alt"></i> Ver Ficha Completa</a>
+                        <p style="font-size:0.6rem;color:#55aa55;text-align:center;margin-top:0.3rem;"><i class="fas fa-check-circle"></i> Datos Verificados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 9. COLLABORATIONS ===== -->
+    <section id="colaboraciones" class="dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Network</div>
+                <h2 class="section-title">Colaboraciones <span class="accent">Profesionales</span></h2>
+                <p class="section-subtitle">Artistas, modelos y creativos con los que he trabajado.</p>
+            </div>
+            <div class="collab-grid">
+                <a href="https://www.instagram.com/amine_grafi" target="_blank" rel="noopener" class="collab-card" data-aos="fade-up">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_616350453_18335348698209010_3207213954587758104_n.jpg" alt="Kingsla" loading="lazy">
+                    <div class="collab-name">Kingsla</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @amine_grafi</div>
+                </a>
+                <a href="https://www.instagram.com/maruu_king/" target="_blank" rel="noopener" class="collab-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Maruuking" loading="lazy">
+                    <div class="collab-name">Maruuking</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @maruuking</div>
+                </a>
+                <a href="https://www.instagram.com/therassam/" target="_blank" rel="noopener" class="collab-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_651251130_18116188027712847_544541923891260297_n.jpg" alt="Rassam" loading="lazy">
+                    <div class="collab-name">Rassam</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @therassam</div>
+                </a>
+                <a href="https://www.instagram.com/rafa930_oficial/" target="_blank" rel="noopener" class="collab-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_670152063_18013529003844485_7891764818375528431_n.jpg" alt="Rafa930" loading="lazy">
+                    <div class="collab-name">Rafa930</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @rafa930_oficial</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 10. QUOTE ===== -->
+    <section id="quote">
+        <div class="container">
+            <div class="quote-section" data-aos="fade-up">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <p class="quote-text">"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer un servicio fotográfico y audiovisual excepcional."</p>
+                <p class="quote-author">— INCRIFE</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 11. GEAR / EQUIPMENT ===== -->
+    <section id="gear" class="dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Equipo</div>
+                <h2 class="section-title">Herramientas <span class="accent">Profesionales</span></h2>
+                <p class="section-subtitle">Equipamiento y software que utilizo en mis proyectos.</p>
+            </div>
+            <div class="gear-grid">
+                <div class="gear-card" data-aos="fade-up">
+                    <i class="fas fa-camera"></i>
+                    <h4>Cámaras Profesionales</h4>
+                    <p>Equipo DSLR y mirrorless para fotografía y vídeo de alta calidad.</p>
+                </div>
+                <div class="gear-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Iluminación de Estudio</h4>
+                    <p>Sistemas de iluminación profesional para sesiones fotográficas y videoclips.</p>
+                </div>
+                <div class="gear-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-laptop"></i>
+                    <h4>Edición Profesional</h4>
+                    <p>Software de edición: Adobe Premiere, Photoshop, Lightroom, DaVinci Resolve.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== REEMPLAZA desde la sección 12 (SOCIAL) hasta el FOOTER ===== -->
 
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const sideMenu = document.getElementById('sideMenu');
-  const closeMenu = document.getElementById('closeMenu');
-  const overlay = document.getElementById('overlay');
-  
-  if (menuToggle) menuToggle.onclick = () => { sideMenu.classList.add('open'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; };
-  if (closeMenu) closeMenu.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; };
-  if (overlay) overlay.onclick = () => { sideMenu.classList.remove('open'); overlay.classList.remove('active'); document.body.style.overflow = ''; };
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+    <!-- ===== 12. SOCIAL ===== -->
+    <section id="social">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Sígueme</div>
+                <h2 class="section-title">Redes <span class="accent">Sociales</span></h2>
+            </div>
+            <div class="social-grid" data-aos="fade-up">
+                <a href="https://www.instagram.com/incrife/" target="_blank" rel="noopener" class="social-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@incrife" target="_blank" rel="noopener" class="social-circle" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@incrife" target="_blank" rel="noopener" class="social-circle" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://x.com/Incrife" target="_blank" rel="noopener" class="social-circle" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener" class="social-circle" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 13. CONTACTO (UNIFICADO) ===== -->
+    <section id="contacto" class="dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Contacto</div>
+                <h2 class="section-title">¿Trabajamos <span class="accent">juntos?</span></h2>
+                <p class="section-subtitle">Disponible para sesiones fotográficas, videoclips, colaboraciones musicales y proyectos audiovisuales en Barcelona y toda España.</p>
+            </div>
+            
+            <!-- Datos de contacto -->
+            <div class="contact-grid" style="margin-bottom: 2.5rem;">
+                <a href="mailto:incrife@gmail.com" class="contact-card" data-aos="fade-up">
+                    <i class="far fa-envelope"></i>
+                    <h4>Email Profesional</h4>
+                    <span>incrife@gmail.com</span>
+                </a>
+                <a href="tel:+34624170204" class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Teléfono</h4>
+                    <span>+34 624 17 02 04</span>
+                </a>
+                <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>WhatsApp</h4>
+                    <span>Respuesta rápida</span>
+                </a>
+            </div>
+            
+            <!-- Botones CTA -->
+            <div style="text-align:center;" data-aos="fade-up">
+                <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+                    <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="btn btn-primary btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="mailto:incrife@gmail.com" class="btn btn-outline btn-lg"><i class="far fa-envelope"></i> Email</a>
+                    <a href="tel:+34624170204" class="btn btn-light btn-lg"><i class="fas fa-phone-alt"></i> Llamar</a>
+                </div>
+                <p style="color:var(--text-tertiary);font-size:0.7rem;margin-top:1.5rem;">
+                    <i class="far fa-clock"></i> Horario: Lun - Vie 10:00 – 16:00 | Sáb - Dom: Cerrado
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ===== 15. FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">INCRIFE</div>
+            <div class="footer-social">
+                <a href="https://www.instagram.com/incrife/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@incrife" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@incrife" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                <a href="https://x.com/Incrife" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener"><i class="fab fa-spotify"></i></a>
+            </div>
+            <p class="footer-text">
+                <strong>INCRIFE</strong> · Ángel Córdoba El Hannouti · Fotógrafo Barcelona · Videógrafo · Filmmaker · Director de Videoclips · Productor Musical<br>
+                © 2026 · Barcelona · La Mina · España · 
+                <a href="mailto:incrife@gmail.com">incrife@gmail.com</a> · 
+                <a href="tel:+34624170204">+34 624 17 02 04</a><br>
+                <a href="https://incrife.com">incrife.com</a> · Todos los derechos reservados
+            </p>
+        </div>
+    </footer>
+    
+    <!-- FLOATING BUTTONS -->
+    <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20gustaría%20trabajar%20contigo" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+    
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+    (function(){
+        var schemas = [
+            {"@context":"https://schema.org","@type":"LocalBusiness","name":"INCRIFE","alternateName":"Ángel Córdoba El Hannouti","description":"Fotógrafo profesional y director de videoclips en Barcelona.","url":"https://incrife.com","telephone":"+34624170204","email":"incrife@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Barcelona","addressRegion":"Barcelona","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":"41.385063","longitude":"2.173404"},"sameAs":["https://www.instagram.com/incrife/","https://www.youtube.com/@incrife","https://www.tiktok.com/@incrife","https://x.com/Incrife"]},
+            {"@context":"https://schema.org","@type":"MusicGroup","name":"INCRIFE","alternateName":"Ángel Córdoba El Hannouti","description":"Artista urbano, productor musical y director de videoclips. Afrotrap, afrobeat, trap y reggaetón.","url":"https://incrife.com","image":"https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png","genre":["Afrotrap","Afrobeat","Trap","Reggaetón","Latin Urban"],"sameAs":["https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi","https://www.instagram.com/incrife/"]},
+            {"@context":"https://schema.org","@type":"Person","name":"Ángel Córdoba El Hannouti","alternateName":"INCRIFE","jobTitle":"Fotógrafo Profesional · Director de Videoclips · Filmmaker","birthDate":"2006-09-28","birthPlace":{"@type":"City","name":"Barcelona, España"},"sameAs":["https://www.instagram.com/incrife/","https://www.youtube.com/@incrife"]}
+        ];
+        schemas.forEach(function(s) { var el = document.createElement('script'); el.type = 'application/ld+json'; el.textContent = JSON.stringify(s); document.head.appendChild(el); });
+    })();
+    </script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
+        
+        var preloader = document.getElementById('preloader');
+        window.addEventListener('load', function() { setTimeout(function() { if (preloader) preloader.classList.add('hidden'); }, 600); });
+        
+        var navbar = document.getElementById('navbar');
+        var backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+            if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        
+        var hamburger = document.getElementById('hamburger');
+        var mobileMenu = document.getElementById('mobileMenu');
+        var mobileClose = document.getElementById('mobileClose');
+        
+        function closeMenu() {
+            if (mobileMenu) mobileMenu.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        if (hamburger) hamburger.addEventListener('click', function() {
+            var isOpen = mobileMenu && mobileMenu.classList.contains('active');
+            if (mobileMenu) mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        });
+        
+        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-menu a').forEach(function(l) { l.addEventListener('click', closeMenu); });
+        
+        if (backToTop) backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        
+        console.log('🚀 INCRIFE · Professional Complete Edition · 15 Secciones · Corregido');
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  
-  document.querySelectorAll('.fade-up-item').forEach(el => observer.observe(el));
-  
-  // ========== SCHEMA PROFESIONAL (Fotógrafo) ==========
-  const profSchema = {
+    </script>
+   
+   <script type="application/ld+json">
+{
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "INCRIFE",
-    "alternateName": "Ángel Córdoba El Hannouti",
-    "description": "Fotógrafo profesional y director de videoclips en Barcelona. Especialista en fotografía urbana, editorial, retratos y producción de videoclips.",
-    "url": "https://incrife.com",
-    "telephone": "+34624170204",
-    "email": "incrife@gmail.com",
-    "priceRange": "€€-€€€",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Barcelona",
-      "addressRegion": "Barcelona",
-      "addressCountry": "ES"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "41.385063",
-      "longitude": "2.173404"
-    },
-    "areaServed": { "@type": "City", "name": "Barcelona" },
-    "sameAs": [
-      "https://www.instagram.com/incrife/",
-      "https://www.youtube.com/@incrife",
-      "https://www.tiktok.com/@incrife",
-      "https://x.com/Incrife"
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué servicios ofrece INCRIFE?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ofrezco servicios de fotografía profesional, videografía, dirección de videoclips y producción musical en Barcelona y toda España."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cómo puedo contactar con INCRIFE?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puedes contactarme por WhatsApp al +34 624 17 02 04, por email a incrife@gmail.com o a través del formulario de contacto en mi web."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Dónde trabaja INCRIFE?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Trabajo en Barcelona y alrededores, pero estoy disponible para proyectos en toda España."
+            }
+        }
     ]
-  };
-  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(profSchema) }));
-  
-  // ========== SCHEMA MUSICGROUP (Artista) con BIO COMPLETA ==========
-  const musicSchema = {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "name": "INCRIFE",
-    "alternateName": "Ángel Córdoba El Hannouti",
-    "legalName": "Ángel Córdoba El Hannouti",
-    "description": "Ángel Córdoba El Hannouti, conocido artísticamente como Incrife, es un artista urbano, productor musical y director de videoclips nacido el 28 de septiembre de 2006 en Barcelona, España. De ascendencia española e italiana, creció en el barrio de La Mina, una zona marcada por la diversidad cultural que influyó profundamente en su visión artística y musical. Desde temprana edad mostró un gran interés por la música, inspirándose en artistas como Ne-Yo y MHD, referentes que transformaron su forma de entender la composición, las melodías y la identidad artística. Aunque siempre soñó con dedicarse al canto, durante años sintió que sus limitaciones técnicas vocales le impedían expresar plenamente sus ideas musicales. Su curiosidad creativa y su carácter autodidacta lo llevaron a explorar diferentes disciplinas. Mientras muchos de sus intereses no encajaban con los caminos tradicionales, dedicó incontables horas a aprender por cuenta propia sobre producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. Esa búsqueda constante de conocimiento se convirtió en una de las características que definirían su trayectoria. Durante una etapa se adentró en la escena techno y rave, enfocándose principalmente en la producción musical. Fruto de ese periodo surgieron colaboraciones y lanzamientos que le permitieron desarrollar su faceta como productor y comprender el funcionamiento de la industria desde una perspectiva más técnica. Sin embargo, diversos problemas relacionados con la audición provocaron una pausa en su actividad musical y le obligaron a replantear su camino artístico. Lejos de abandonar su creatividad, continuó desarrollándose como director de videoclips y fotógrafo, trabajando en proyectos audiovisuales y perfeccionando su visión estética. En 2026 decidió regresar a su objetivo original: convertirse en cantante. Para ello comenzó una nueva etapa centrada en la formación vocal, apostando por las clases de canto y priorizando su evolución artística por encima de las dudas que habían condicionado sus primeros años. Influenciado por la música francófona y la escena urbana europea, especialmente por artistas que combinan melodía, ritmo e identidad cultural, inició también el aprendizaje del idioma francés como parte de su desarrollo personal y creativo.",
-    "url": "https://incrife.com",
-    "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
-    "birthDate": "2006-09-28",
-    "birthPlace": {
-      "@type": "City",
-      "name": "Barcelona, La Mina",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Barcelona",
-        "addressRegion": "Barcelona",
-        "addressCountry": "ES"
-      }
-    },
-    "height": {
-      "@type": "QuantitativeValue",
-      "value": "1.80",
-      "unitCode": "MTR"
-    },
-    "foundingDate": "2024",
-    "foundingLocation": {
-      "@type": "City",
-      "name": "Barcelona"
-    },
-    "genre": ["Afrotrap", "Afrobeat", "Trap", "Reggaetón", "Latin Urban", "Spanish Urban"],
-    "sameAs": [
-      "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi",
-      "https://music.apple.com/es/artist/incrife/1848003000",
-      "https://music.amazon.com/es-ar/artists/B0FX5XCGKP/incrife",
-      "https://www.instagram.com/incrife/",
-      "https://www.youtube.com/@incrife",
-      "https://www.tiktok.com/@incrife",
-      "https://x.com/Incrife"
-    ],
-    "album": {
-      "@type": "MusicAlbum",
-      "name": "Último lanzamiento",
-      "byArtist": {
-        "@type": "MusicGroup",
-        "name": "INCRIFE"
-      }
-    }
-  };
-  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(musicSchema) }));
-  
-  // ========== SCHEMA PERSON (Datos personales) ==========
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ángel Córdoba El Hannouti",
-    "alternateName": "INCRIFE",
-    "description": "Ángel Córdoba El Hannouti (INCRIFE) nació el 28 de septiembre de 2006 en Barcelona, España. De ascendencia española e italiana, creció en La Mina. Es un artista de afrotrap y afrobeat, productor musical, director de videoclips y fotógrafo profesional. Con 1.80 metros de altura. Influenciado por Ne-Yo y MHD, ha superado problemas de audición para desarrollar un estilo único que fusiona ritmos africanos con la cultura urbana de Barcelona. En 2026 retomó su carrera como cantante, estudiando canto y francés como parte de su evolución artística.",
-    "birthDate": "2006-09-28",
-    "birthPlace": {
-      "@type": "City",
-      "name": "Barcelona, España",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Barcelona",
-        "addressCountry": "ES"
-      }
-    },
-    "height": {
-      "@type": "QuantitativeValue",
-      "value": "1.80",
-      "unitCode": "MTR",
-      "unitText": "metros"
-    },
-    "nationality": {
-      "@type": "Country",
-      "name": "España"
-    },
-    "homeLocation": {
-      "@type": "Place",
-      "name": "La Mina, Barcelona",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Barcelona",
-        "addressCountry": "ES"
-      }
-    },
-    "jobTitle": "Artista musical · Productor · Director de videoclips · Fotógrafo profesional",
-    "knowsAbout": ["Afrotrap", "Afrobeat", "Producción musical", "Videoclips", "Fotografía profesional", "Trap", "Reggaetón"],
-    "sameAs": [
-      "https://www.instagram.com/incrife/",
-      "https://www.youtube.com/@incrife",
-      "https://www.tiktok.com/@incrife",
-      "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi"
-    ]
-  };
-  document.head.appendChild(Object.assign(document.createElement('script'), { type: 'application/ld+json', textContent: JSON.stringify(personSchema) }));
+}
 </script>
 </body>
 </html>
