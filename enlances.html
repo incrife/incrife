@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>INCRIFE · Enlaces oficiales · Fotógrafo & Artista</title>
+  <title>INCRIFE · Música Oficial · Streaming & Redes</title>
   
-  <!-- ========== SEO COMPLETO (desde web principal + artista) ========== -->
-  <meta name="description" content="INCRIFE: Fotógrafo profesional en Barcelona, videógrafo y director de videoclips. Escucha su música en todas las plataformas. Enlaces oficiales, redes y contacto.">
-  <meta name="keywords" content="incrife, fotógrafo barcelona, videógrafo barcelona, filmmaker barcelona, música incrife, artista urbano barcelona">
+  <!-- ========== SEO COMPLETO PARA ARTISTA ========== -->
+  <meta name="description" content="INCRIFE: artista multidisciplinar, música urbana y visuales. Escucha sus temas en todas las plataformas digitales: Spotify, Apple Music, Deezer, Amazon, YouTube. Enlace oficial.">
+  <meta name="keywords" content="incrife, música incrife, artista urbano, streaming incrife, spotify incrife, apple music incrife, deezer incrife, amazon music incrife, videoclips incrife">
   <meta name="author" content="INCRIFE">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="https://incrife.com">
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
-  <meta name="geo.position" content="41.385063;2.173404">
-  <meta name="ICBM" content="41.385063, 2.173404">
   
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="INCRIFE · Enlaces oficiales | Música & Fotografía">
-  <meta property="og:description" content="Música, videoclips, fotografía profesional y redes oficiales de INCRIFE. ¡Conócelo!">
+  <!-- Open Graph / Social Cards para artista -->
+  <meta property="og:title" content="INCRIFE · Música Oficial | Streaming">
+  <meta property="og:description" content="Toda la música de INCRIFE en un solo lugar. Escúchalo en Spotify, Apple Music, Deezer, Amazon y YouTube.">
   <meta property="og:url" content="https://incrife.com">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
@@ -27,8 +25,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="INCRIFE · Enlaces oficiales">
-  <meta name="twitter:description" content="Música, videoclips y fotografía. Todos los enlaces de INCRIFE.">
+  <meta name="twitter:title" content="INCRIFE · Música Oficial">
+  <meta name="twitter:description" content="Streaming y enlaces oficiales del artista INCRIFE.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   
   <meta name="theme-color" content="#cc0000">
@@ -49,7 +47,7 @@
     }
 
     body {
-      background: #8a0000;
+      background: #6f0000;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
@@ -61,538 +59,484 @@
       overflow-x: hidden;
     }
 
-    /* ========== FONDO ROJO CON ANIMACIÓN PREMIUM ========== */
-    .red-aura {
+    /* ========== FONDO CON IMAGEN BLUR + ANIMACIÓN PRO ========== */
+    .bg-blur-artist {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
       z-index: 0;
-      overflow: hidden;
-      background: radial-gradient(circle at 30% 20%, #ff3a3a, #aa0000, #4a0000);
-      animation: redPulseBg 10s infinite alternate;
-    }
-    
-    @keyframes redPulseBg {
-      0% { background: radial-gradient(circle at 20% 30%, #ff4d4d, #b30000, #5c0000); }
-      50% { background: radial-gradient(circle at 75% 60%, #ff5e5e, #cc0000, #660000); }
-      100% { background: radial-gradient(circle at 45% 80%, #ff3333, #aa0000, #3f0000); }
-    }
-    
-    /* Llamas / líneas rojas dinámicas */
-    .flame-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      filter: blur(28px) brightness(0.55) saturate(1.6);
+      transform: scale(1.05);
+      animation: slowPan 24s infinite alternate ease-in-out;
       pointer-events: none;
-      z-index: 0;
-      background: repeating-linear-gradient(45deg, rgba(255,80,40,0.12) 0px, rgba(255,80,40,0.12) 3px, transparent 3px, transparent 15px);
-      animation: flameShift 16s linear infinite;
-    }
-    
-    @keyframes flameShift {
-      0% { background-position: 0 0; }
-      100% { background-position: 100px 100px; }
-    }
-    
-    .energy-lines {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    .energy-lines span {
-      position: absolute;
-      background: linear-gradient(90deg, transparent, rgba(255,100,50,0.6), transparent);
-      height: 2px;
-      width: 100%;
-      animation: slideEnergy 10s linear infinite;
-    }
-    
-    .energy-lines span:nth-child(1) { top: 15%; animation-delay: 0s; }
-    .energy-lines span:nth-child(2) { top: 35%; animation-delay: -2.5s; opacity: 0.7; }
-    .energy-lines span:nth-child(3) { top: 55%; animation-delay: -5s; opacity: 0.5; }
-    .energy-lines span:nth-child(4) { top: 75%; animation-delay: -7.5s; opacity: 0.6; }
-    .energy-lines span:nth-child(5) { top: 90%; animation-delay: -3.2s; opacity: 0.4; }
-    
-    @keyframes slideEnergy {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    
-    .red-noise {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(rgba(255,100,50,0.1) 1.2px, transparent 1.2px);
-      background-size: 34px 34px;
-      pointer-events: none;
-      z-index: 0;
     }
 
+    @keyframes slowPan {
+      0% { transform: scale(1.05) translateX(0%) translateY(0%); filter: blur(28px) brightness(0.55) saturate(1.6);}
+      100% { transform: scale(1.12) translateX(3%) translateY(2%); filter: blur(32px) brightness(0.5) saturate(1.8);}
+    }
+    
+    /* capa de color rojo dramático sobre blur */
+    .overlay-red {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(180,0,0,0.45), rgba(70,0,0,0.7));
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    /* partículas / líneas dinámicas estilo artista premium */
+    .dynamic-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      background: repeating-linear-gradient(115deg, rgba(255,70,40,0.08) 0px, rgba(255,70,40,0.08) 2px, transparent 2px, transparent 12px);
+      animation: driftLines 15s linear infinite;
+    }
+    
+    @keyframes driftLines {
+      0% { background-position: 0 0; }
+      100% { background-position: 80px 80px; }
+    }
+    
+    /* efecto neón sutil que se mueve */
+    .glow-pulse {
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(255,80,40,0.25) 0%, rgba(255,0,0,0) 70%);
+      border-radius: 50%;
+      filter: blur(45px);
+      z-index: 1;
+      animation: softPulse 6s infinite alternate;
+      pointer-events: none;
+    }
+    
+    @keyframes softPulse {
+      0% { opacity: 0.4; transform: scale(0.9);}
+      100% { opacity: 0.9; transform: scale(1.2);}
+    }
+    
     /* Contenedor principal */
     .hub {
       width: 100%;
       max-width: min(580px, 95%);
       position: relative;
-      z-index: 10;
+      z-index: 15;
     }
 
-    /* Cabecera premium con foto real desde GitHub */
+    /* Header con foto y nombre artista */
     .header {
       text-align: center;
       margin-bottom: clamp(24px, 6vh, 38px);
     }
 
     .avatar {
-      width: clamp(95px, 22vw, 125px);
-      height: clamp(95px, 22vw, 125px);
+      width: clamp(105px, 24vw, 135px);
+      height: clamp(105px, 24vw, 135px);
       margin: 0 auto clamp(12px, 3vh, 18px);
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid rgba(255,90,50,0.9);
-      box-shadow: 0 0 40px rgba(255,50,20,0.8), 0 0 20px rgba(255,100,0,0.5);
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      cursor: pointer;
-      background: #1a1a1a;
+      border: 3px solid rgba(255,110,70,0.95);
+      box-shadow: 0 0 35px rgba(255,60,30,0.8), 0 0 15px rgba(255,100,0,0.6);
+      transition: all 0.3s ease;
+      background: #0a0a0a;
     }
 
     .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s;
     }
 
     .avatar:hover {
-      box-shadow: 0 0 70px rgba(255,70,30,1);
-      border-color: #ff8855;
+      box-shadow: 0 0 70px rgba(255,80,40,1);
       transform: scale(1.02);
     }
-    .avatar:hover img { transform: scale(1.02); }
+    .avatar:hover img { transform: scale(1.03); }
 
     h1 {
-      font-size: clamp(1.9rem, 9vw, 2.6rem);
+      font-size: clamp(2rem, 9vw, 2.9rem);
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 8px;
-      text-shadow: 0 0 30px rgba(255,80,40,0.8);
-      background: linear-gradient(135deg, #fff4e0, #ffc0a0, #ff9966);
+      margin-bottom: 6px;
+      text-shadow: 0 0 22px rgba(255,70,40,0.9);
+      background: linear-gradient(135deg, #fff2e0, #ffc8aa, #ff9f6e);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       font-family: 'Montserrat', sans-serif;
     }
 
-    .tagline {
-      color: #ffe0cc;
-      font-size: clamp(0.65rem, 3.5vw, 0.75rem);
-      font-weight: 600;
+    .badge-art {
+      color: #ffddcc;
+      font-size: clamp(0.6rem, 3.2vw, 0.7rem);
+      font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
       display: inline-block;
-      padding: 0.2rem 1rem;
-      border-radius: 40px;
-      backdrop-filter: blur(4px);
+      padding: 0.25rem 1.2rem;
+      border-radius: 50px;
+      border: 0.5px solid rgba(255,120,80,0.6);
     }
 
-    /* Botones estilo linktree mejorados */
+    /* Botones de plataformas de streaming */
     .links {
       display: flex;
       flex-direction: column;
       gap: clamp(12px, 2.5vh, 16px);
-      margin-bottom: clamp(24px, 6vh, 32px);
+      margin-bottom: clamp(28px, 7vh, 36px);
     }
 
     .link-btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(30,10,5,0.8);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,90,60,0.5);
-      border-radius: 60px;
-      padding: clamp(10px, 2.5vw, 14px) clamp(18px, 4vw, 26px);
+      background: rgba(20,8,6,0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,100,70,0.6);
+      border-radius: 70px;
+      padding: clamp(10px, 2.5vw, 14px) clamp(20px, 4vw, 28px);
       text-decoration: none;
       color: #ffffff;
       font-weight: 600;
       font-size: clamp(0.8rem, 3.5vw, 0.95rem);
-      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-      position: relative;
-      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
     }
-
-    .link-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,120,70,0.3), transparent);
-      transition: left 0.55s ease;
-    }
-
-    .link-btn:hover::before { left: 100%; }
 
     .link-left {
       display: flex;
       align-items: center;
-      gap: clamp(10px, 3vw, 16px);
+      gap: clamp(12px, 3.5vw, 18px);
     }
 
     .link-left i {
-      font-size: clamp(1rem, 4vw, 1.3rem);
-      width: clamp(26px, 6vw, 32px);
+      font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+      width: clamp(28px, 6vw, 34px);
       text-align: center;
-      transition: all 0.3s ease;
     }
 
     .arrow {
-      font-size: clamp(0.65rem, 2.5vw, 0.75rem);
-      color: #ffaa88;
-      transition: transform 0.3s ease;
+      font-size: 0.8rem;
+      color: #ffaa80;
+      transition: transform 0.2s;
     }
-    .link-btn:hover .arrow { transform: translateX(6px); color: #ffffff; }
+    .link-btn:hover .arrow { transform: translateX(6px); color: white; }
 
     .link-btn:hover {
-      background: rgba(60,20,15,0.95);
-      border-color: rgba(255,100,60,0.9);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.5), 0 0 25px rgba(255,70,30,0.5);
+      background: rgba(50,20,12,0.9);
+      border-color: #ffaa77;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(255,80,50,0.5);
     }
 
-    /* Colores específicos para plataformas */
-    .spotify-link i { color: #1DB954; }
-    .spotify-link:hover i { text-shadow: 0 0 12px #1DB954; }
-    .apple-link i { color: #fa6bcb; }
-    .apple-link:hover i { text-shadow: 0 0 10px #ff6bcb; }
-    .amazon-link i { color: #ff9900; }
-    .deezer-link i { color: #A238FF; }
-    .youtube-link i { color: #FF0000; }
+    /* Colores específicos de plataformas */
+    .spotify i { color: #1DB954; }
+    .apple i { color: #fc6bcb; }
+    .deezer i { color: #A238FF; }
+    .amazon i { color: #ff9900; }
+    .youtube i { color: #FF0000; }
+    .tidal i { color: #00ffff; }
     
-    .link-btn--featured {
-      background: #cc3300;
+    /* Botón especial página oficial */
+    .official-btn {
+      background: #bc2f00;
       border: none;
-      box-shadow: 0 0 35px rgba(255,70,0,0.7);
+      box-shadow: 0 0 28px rgba(255,80,30,0.8);
     }
-    .link-btn--featured .link-left i, .link-btn--featured span, .link-btn--featured .arrow { color: #ffffff; }
-    .link-btn--featured:hover { background: #e34410; box-shadow: 0 0 55px rgba(255,100,30,0.9); }
+    .official-btn:hover { background: #e64916; box-shadow: 0 0 45px rgba(255,100,40,0.9);}
 
-    /* Social dock */
+    /* Social dock: solo X, TikTok, IG, Facebook */
     .social-dock {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 6vw, 32px);
+      gap: clamp(28px, 8vw, 42px);
       background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,100,70,0.5);
-      border-radius: 80px;
-      padding: clamp(8px, 2vh, 12px) clamp(20px, 5vw, 32px);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,100,75,0.6);
+      border-radius: 100px;
+      padding: clamp(8px, 2vh, 12px) clamp(24px, 6vw, 40px);
       width: fit-content;
-      margin: 0 auto clamp(16px, 4vh, 24px);
-      box-shadow: 0 0 35px rgba(255,60,20,0.3);
+      margin: 0 auto clamp(22px, 5vh, 30px);
     }
+    
     .social-icon {
-      color: #ffccaa !important;
-      font-size: clamp(1rem, 4.5vw, 1.3rem);
+      color: #ffccb0 !important;
+      font-size: clamp(1.2rem, 5vw, 1.5rem);
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
       position: relative;
     }
     .social-icon:hover {
-      transform: translateY(-4px) scale(1.1);
+      transform: translateY(-5px) scale(1.12);
       color: #ffffff !important;
-      text-shadow: 0 0 15px rgba(255,100,50,0.9);
+      text-shadow: 0 0 12px rgba(255,100,50,1);
     }
-    .social-icon::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(10px);
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(8px);
-      color: #ffccaa;
-      font-size: 0.6rem;
-      padding: 4px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.2s;
-      pointer-events: none;
-      border: 1px solid rgba(255,80,50,0.5);
-    }
-    .social-icon:hover::after { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-
-    /* Footer y copyright */
-    .footer {
-      text-align: center;
-      font-size: clamp(0.55rem, 3vw, 0.7rem);
-      color: #ffb48a;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      padding-top: 8px;
-    }
-    .footer a { color: #ffbe95; text-decoration: none; transition: 0.2s; }
-    .footer a:hover { color: #ffffff; text-shadow: 0 0 6px rgba(255,80,40,0.7); }
     
-    /* Proyecto / mini bio opcional */
-    .mini-bio {
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(12px);
-      border-radius: 28px;
-      padding: 0.9rem 1rem;
-      margin-bottom: 1.2rem;
+    /* Footer con solo derechos reservados, correo y teléfono */
+    .footer-bottom {
       text-align: center;
-      border: 1px solid rgba(255,100,70,0.4);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      color: #ffbf9a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.3px;
+      padding-top: 6px;
     }
-    .mini-bio i { margin-right: 6px; color: #ff8866; }
+    .footer-contact {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.7rem;
+    }
+    .footer-contact span { cursor: pointer; transition: 0.2s; color: #ffbc8c;}
+    .footer-contact span:hover { color: white; text-shadow: 0 0 4px #ff7744; }
+    .copyright {
+      font-size: 0.6rem;
+      opacity: 0.7;
+    }
 
-    @keyframes flameRise {
-      0% { opacity: 0; transform: translateY(30px) scale(0.96); filter: blur(5px); }
-      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    /* Animación entrada */
+    @keyframes riseGlow {
+      0% { opacity: 0; transform: translateY(25px) scale(0.96); filter: blur(6px);}
+      100% { opacity: 1; transform: translateY(0px) scale(1); filter: blur(0);}
     }
-    .animate { animation: flameRise 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards; opacity: 0; }
+    .animate-item { animation: riseGlow 0.55s forwards cubic-bezier(0.2, 0.7, 0.3, 1); opacity: 0; }
     .d1 { animation-delay: 0.05s; }
-    .d2 { animation-delay: 0.12s; }
-    .d3 { animation-delay: 0.19s; }
-    .d4 { animation-delay: 0.26s; }
-    .d5 { animation-delay: 0.33s; }
-    .d6 { animation-delay: 0.40s; }
-    .d7 { animation-delay: 0.47s; }
+    .d2 { animation-delay: 0.1s; }
+    .d3 { animation-delay: 0.16s; }
+    .d4 { animation-delay: 0.22s; }
+    .d5 { animation-delay: 0.28s; }
+    .d6 { animation-delay: 0.34s; }
+    .d7 { animation-delay: 0.40s; }
+    .d8 { animation-delay: 0.46s; }
 
     @media (max-width: 480px) {
+      .social-dock { gap: 24px; padding: 8px 22px; }
       .link-left { gap: 8px; }
-      .social-dock { gap: 20px; }
-      .mini-bio { font-size: 0.65rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- FONDO ROJO DINÁMICO + ANIMACIÓN PREMIUM -->
-<div class="red-aura"></div>
-<div class="flame-overlay"></div>
-<div class="energy-lines"><span></span><span></span><span></span><span></span><span></span></div>
-<div class="red-noise"></div>
+<!-- FONDO: imagen real en blur + animación + superposiciones profesionales -->
+<div class="bg-blur-artist"></div>
+<div class="overlay-red"></div>
+<div class="dynamic-lines"></div>
+<div class="glow-pulse"></div>
 
 <div class="hub">
   
-  <!-- Cabecera con foto real de INCRIFE desde su repositorio (misma que web principal) -->
-  <div class="header animate d1">
-    <div class="avatar" onclick="window.open('https://incrife.com', '_blank')">
-      <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE - Fotógrafo y Artista" loading="eager">
+  <!-- Cabecera artista: imagen real (sin mina ni descripción extra) -->
+  <div class="header animate-item d1">
+    <div class="avatar">
+      <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE artista visual y música" loading="eager">
     </div>
     <h1>INCRIFE</h1>
-    <div class="tagline">FOTÓGRAFO · VIDEÓGRAFO · MÚSICA URBANA</div>
+    <div class="badge-art">ARTISTA · MÚSICA URBANA</div>
   </div>
 
-  <!-- Mini bio estilo extracto profesional -->
-  <div class="mini-bio animate d2">
-    <i class="fas fa-camera-retro"></i> Fotógrafo profesional en Barcelona · Director de videoclips · <i class="fas fa-head-side-vr"></i> Artista multidisciplinar nacido en La Mina.
-  </div>
-
-  <!-- Lista de enlaces oficiales (MÚSICA + PLATAFORMAS) según los datos de incrife -->
+  <!-- PLATAFORMAS DE STREAMING MUSICAL (TODAS LAS FAMOSAS: Spotify, Apple, Deezer, Amazon, YouTube, TIDAL) -->
   <div class="links">
     <!-- Spotify -->
-    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify-link animate d3" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify · Mi música</span></div>
+    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify · Escucha ahora</span></div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
     <!-- Apple Music -->
-    <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple-link animate d4" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music · Escúchame</span></div>
+    <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
     <!-- Deezer -->
-    <a href="https://www.deezer.com/en/artist/352025722" class="link-btn deezer-link animate d5" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-brands fa-deezer"></i><span>Deezer · Catálogo</span></div>
+    <a href="https://www.deezer.com/en/artist/352025722" class="link-btn deezer animate-item d4" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-deezer"></i><span>Deezer · Full catálogo</span></div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
     <!-- Amazon Music -->
-    <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="link-btn amazon-link animate d6" target="_blank" rel="noopener noreferrer">
+    <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="link-btn amazon animate-item d5" target="_blank" rel="noopener noreferrer">
       <div class="link-left"><i class="fa-brands fa-amazon"></i><span>Amazon Music</span></div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
-    <!-- YouTube (Videoclips y contenido visual) -->
-    <a href="https://www.youtube.com/@incrife" class="link-btn youtube-link animate d6" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube · Videoclips</span></div>
+    <!-- YouTube Música / Videoclips -->
+    <a href="https://www.youtube.com/@incrife" class="link-btn youtube animate-item d6" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube · Videoclips oficiales</span></div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
-    <!-- Botón destacado: Portafolio fotográfico -->
-    <a href="https://www.instagram.com/incrife/" class="link-btn link-btn--featured animate d7" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-solid fa-camera"></i><span>Portafolio fotográfico · Instagram</span></div>
+    <!-- TIDAL (plataforma de alta fidelidad) -->
+    <a href="https://tidal.com/browse/artist/42197663" class="link-btn tidal animate-item d7" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-solid fa-headphones"></i><span>TIDAL · Máxima calidad</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+
+    <!-- PÁGINA OFICIAL (incrife.com) tal cual pide, lleva a incrife.com -->
+    <a href="https://incrife.com" class="link-btn official-btn animate-item d8" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-solid fa-globe"></i><span>Página oficial · incrife.com</span></div>
       <i class="fa-solid fa-arrow-right arrow"></i>
     </a>
   </div>
 
-  <!-- Social dock completo con tooltips (Instagram, TikTok, Twitter/X, Email, WhatsApp) -->
-  <div class="social-dock animate d5">
-    <a href="https://www.instagram.com/incrife/" class="social-icon" target="_blank" rel="noopener" data-tooltip="Instagram">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://www.tiktok.com/@incrife" class="social-icon" target="_blank" rel="noopener" data-tooltip="TikTok">
-      <i class="fa-brands fa-tiktok"></i>
-    </a>
-    <a href="https://x.com/Incrife" class="social-icon" target="_blank" rel="noopener" data-tooltip="X (Twitter)">
+  <!-- SOCIAL DOCK: SOLO X, TIK TOK, IG, FACEBOOK (sin email ni whatsapp enlaces abajo) -->
+  <div class="social-dock animate-item d5">
+    <a href="https://x.com/Incrife" class="social-icon" target="_blank" rel="noopener" aria-label="X">
       <i class="fa-brands fa-twitter"></i>
     </a>
-    <a href="#" id="gmailBtn" class="social-icon" target="_blank" rel="noopener" data-tooltip="Email profesional">
-      <i class="fa-regular fa-envelope"></i>
+    <a href="https://www.tiktok.com/@incrife" class="social-icon" target="_blank" rel="noopener" aria-label="TikTok">
+      <i class="fa-brands fa-tiktok"></i>
     </a>
-    <a href="#" id="whatsappBtn" class="social-icon" target="_blank" rel="noopener" data-tooltip="WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://www.instagram.com/incrife/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/incrifeoficial" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
     </a>
   </div>
 
-  <!-- Footer con email de contacto, copy y copyright -->
-  <div class="footer animate d6">
-    <span>📧 incrife@gmail.com</span>
-    <span class="divider-dot">·</span>
-    <a href="#" id="copyEmail">📋 Copiar email</a>
-    <span class="divider-dot">·</span>
-    <span>© 2026 INCRIFE · Barcelona</span>
+  <!-- FOOTER: SOLO DERECHOS RESERVADOS, CORREO CONTACTO Y TELÉFONO (sin enlaces de mail y whatsapp extra) -->
+  <div class="footer-bottom animate-item d6">
+    <div class="footer-contact">
+      <span id="copyMailFooter">📧 contact@incrife.com</span>
+      <span id="copyPhoneFooter">📞 624 170 204</span>
+    </div>
+    <div class="copyright">© 2026 INCRIFE · Todos los derechos reservados</div>
   </div>
 </div>
 
 <script>
-  // ========== SPLASH / EFECTO DE ENCENDIDO (FUEGO) ==========
-  (function() {
-    const splashDiv = document.createElement('div');
-    splashDiv.id = 'customSplash';
-    splashDiv.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:#4a0a0a; z-index:10000; display:flex; justify-content:center; align-items:center; transition:opacity 0.8s cubic-bezier(0.2,0.9,0.4,1), visibility 0.8s; pointer-events:none;';
-    const splashInner = document.createElement('div');
-    splashInner.style.cssText = 'text-align:center; animation: flameSplash 1.2s infinite ease-in-out;';
-    splashInner.innerHTML = `<i class="fa-solid fa-fire" style="font-size:70px; color:#ff6633; filter: drop-shadow(0 0 20px #ff4400);"></i><h2 style="color:white; margin-top:15px; font-family:Montserrat;">INCRIFE</h2><p style="color:#ffaa88;">enciende los enlaces</p>`;
+  // ========== ANIMACIÓN DE SPLASH DE ENTRADA ==========
+  (function initSplash() {
+    const splash = document.createElement('div');
+    splash.id = 'incrifeSplash';
+    splash.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:#2f0404; z-index:10000; display:flex; justify-content:center; align-items:center; transition:opacity 0.7s ease; backdrop-filter:blur(8px);';
+    const inner = document.createElement('div');
+    inner.style.cssText = 'text-align:center; animation: glowPulse 1s infinite alternate;';
+    inner.innerHTML = `<i class="fa-solid fa-bolt" style="font-size:75px; color:#ff5e2e; filter:drop-shadow(0 0 18px #ff3300);"></i><h2 style="color:#ffc4a2; font-family:Montserrat; margin-top:10px;">INCRIFE</h2><p style="color:#ffb48a;">streaming · vibra</p>`;
     const styleAnim = document.createElement('style');
-    styleAnim.textContent = `@keyframes flameSplash { 0% { transform: scale(0.94); opacity:0.9; } 100% { transform: scale(1.08); opacity:1; } }`;
+    styleAnim.textContent = `@keyframes glowPulse { 0% { opacity:0.7; transform: scale(0.95);} 100% { opacity:1; transform: scale(1.08);} }`;
     document.head.appendChild(styleAnim);
-    splashDiv.appendChild(splashInner);
-    document.body.appendChild(splashDiv);
+    splash.appendChild(inner);
+    document.body.appendChild(splash);
     setTimeout(() => {
-      splashDiv.style.opacity = '0';
-      splashDiv.style.visibility = 'hidden';
-      setTimeout(() => { if(splashDiv && splashDiv.remove) splashDiv.remove(); }, 800);
-    }, 2100);
+      splash.style.opacity = '0';
+      setTimeout(() => { if(splash && splash.remove) splash.remove(); }, 700);
+    }, 1900);
   })();
 
-  // ========== EMAIL GMAIL PROFESIONAL ==========
-  const gmailBtn = document.getElementById('gmailBtn');
-  if(gmailBtn) {
-    const email = 'incrife@gmail.com';
-    const subject = encodeURIComponent('Colaboración / Producción audiovisual · INCRIFE');
-    const body = encodeURIComponent('Hola INCRIFE,%0D%0A%0D%0AMe interesa tu trabajo como fotógrafo/artista. Me encantaría saber más sobre tus proyectos o colaboraciones.%0D%0A%0D%0A¡Quedo a la espera! 🔥');
-    gmailBtn.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
-  }
-
-  // ========== WHATSAPP (número real desde la página principal) ==========
-  const whatsappBtn = document.getElementById('whatsappBtn');
-  if(whatsappBtn) {
-    const phoneNumber = '34624170204';
-    const message = encodeURIComponent('Hola INCRIFE! Vi tu trabajo, me encantaría contactar para una sesión o proyecto audiovisual.');
-    whatsappBtn.href = `https://wa.me/${phoneNumber}?text=${message}`;
-  }
-
-  // ========== COPIAR EMAIL ==========
-  const copyEmailEl = document.getElementById('copyEmail');
-  if(copyEmailEl) {
-    copyEmailEl.addEventListener('click', (e) => {
+  // ========== COPIAR CORREO Y TELÉFONO ==========
+  const mailSpan = document.getElementById('copyMailFooter');
+  const phoneSpan = document.getElementById('copyPhoneFooter');
+  
+  if(mailSpan) {
+    const emailRaw = 'contact@incrife.com';
+    mailSpan.style.cursor = 'pointer';
+    mailSpan.addEventListener('click', (e) => {
       e.preventDefault();
-      const email = 'incrife@gmail.com';
-      navigator.clipboard.writeText(email).then(() => {
-        const original = copyEmailEl.innerText;
-        copyEmailEl.innerText = '✅ ¡Copiado!';
-        copyEmailEl.style.color = '#ffaa88';
-        setTimeout(() => {
-          copyEmailEl.innerText = original;
-          copyEmailEl.style.color = '';
-        }, 2000);
-      }).catch(() => alert('Copia manual: ' + email));
+      navigator.clipboard.writeText(emailRaw).then(() => {
+        const originalText = mailSpan.innerText;
+        mailSpan.innerText = '✅ ¡Correo copiado!';
+        setTimeout(() => { mailSpan.innerText = originalText; }, 2000);
+      }).catch(() => alert('Copia manual: ' + emailRaw));
     });
   }
-
-  // Efecto hover extra en botones
-  document.querySelectorAll('.link-btn').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-      const rect = btn.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      btn.style.setProperty('--x', `${x}%`);
-      btn.style.setProperty('--y', `${y}%`);
+  
+  if(phoneSpan) {
+    const phoneRaw = '624170204';
+    phoneSpan.style.cursor = 'pointer';
+    phoneSpan.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard.writeText(phoneRaw).then(() => {
+        const originalPhone = phoneSpan.innerText;
+        phoneSpan.innerText = '✅ Teléfono copiado';
+        setTimeout(() => { phoneSpan.innerText = originalPhone; }, 2000);
+      }).catch(() => alert('Copia manual: ' + phoneRaw));
     });
-  });
-
-  // ========== SCHEMA DE ARTISTA Y PROFESIONAL (según requerimiento) ==========
+  }
+  
+  // ========== SCHEMA.ORG PARA ARTISTA ==========
   const artistSchema = {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": "MusicGroup",
     "name": "INCRIFE",
-    "alternateName": "Incrife Fotógrafo",
-    "description": "Fotógrafo profesional en Barcelona, videógrafo, director de videoclips y artista musical urbano.",
+    "alternateName": "Incrife Musica",
+    "description": "Artista urbano y productor musical. Disponible en todas las plataformas de streaming: Spotify, Apple Music, Deezer, Amazon Music, YouTube, TIDAL.",
     "url": "https://incrife.com",
+    "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
     "sameAs": [
-      "https://www.instagram.com/incrife/",
-      "https://www.youtube.com/@incrife",
-      "https://www.tiktok.com/@incrife",
-      "https://x.com/Incrife",
       "https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi",
-      "https://music.apple.com/es/artist/incrife/1848003000"
+      "https://music.apple.com/es/artist/incrife/1848003000",
+      "https://www.deezer.com/en/artist/352025722",
+      "https://music.amazon.in/artists/B0FX5XCGKP",
+      "https://www.youtube.com/@incrife",
+      "https://tidal.com/browse/artist/42197663",
+      "https://x.com/Incrife",
+      "https://www.instagram.com/incrife/",
+      "https://www.tiktok.com/@incrife",
+      "https://www.facebook.com/incrifeoficial"
     ],
-    "jobTitle": "Fotógrafo & Director de videoclips",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "INCRIFE Studio"
-    },
+    "genre": ["Urban", "Latin Trap", "Hip Hop", "Reggaeton"],
+    "email": "contact@incrife.com",
+    "telephone": "+34624170204",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Barcelona",
-      "addressRegion": "Barcelona",
       "addressCountry": "ES"
-    },
-    "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png"
-  };
-  
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "INCRIFE Fotografía & Audiovisual",
-    "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
-    "telephone": "+34624170204",
-    "email": "incrife@gmail.com",
-    "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" },
-    "priceRange": "€€-€€€",
-    "areaServed": "Barcelona",
-    "url": "https://incrife.com"
+    }
   };
   
   const scriptArtist = document.createElement('script');
   scriptArtist.type = 'application/ld+json';
   scriptArtist.textContent = JSON.stringify(artistSchema);
-  const scriptLocal = document.createElement('script');
-  scriptLocal.type = 'application/ld+json';
-  scriptLocal.textContent = JSON.stringify(localBusinessSchema);
   document.head.appendChild(scriptArtist);
-  document.head.appendChild(scriptLocal);
+  
+  // Schema adicional para WebSite
+  const webSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "INCRIFE Oficial",
+    "url": "https://incrife.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://incrife.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+  const scriptWeb = document.createElement('script');
+  scriptWeb.type = 'application/ld+json';
+  scriptWeb.textContent = JSON.stringify(webSchema);
+  document.head.appendChild(scriptWeb);
+  
+  // efecto hover dinámico
+  document.querySelectorAll('.link-btn').forEach(btn => {
+    btn.addEventListener('mouseenter', (e) => {
+      btn.style.transition = 'all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.2)';
+    });
+  });
 </script>
 
 </body>
