@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>INCRIFE · Música Oficial · Streaming & Redes</title>
+  <title>Incrife · Escuchame en estas plataformas</title>
   
   <!-- ========== SEO COMPLETO PARA ARTISTA ========== -->
-  <meta name="description" content="INCRIFE: artista multidisciplinar, música urbana y visuales. Escucha sus temas en todas las plataformas digitales: Spotify, Apple Music, Deezer, Amazon, YouTube. Enlace oficial.">
-  <meta name="keywords" content="incrife, música incrife, artista urbano, streaming incrife, spotify incrife, apple music incrife, deezer incrife, amazon music incrife, videoclips incrife">
+  <meta name="description" content="INCRIFE: artista multidisciplinar, música urbana y visuales. Escucha sus temas en todas las plataformas digitales: Spotify, Apple Music, Deezer, Amazon, YouTube Music, TIDAL. Enlace oficial.">
+  <meta name="keywords" content="incrife, música incrife, artista urbano, streaming incrife, spotify incrife, apple music incrife, deezer incrife, amazon music incrife, youtube music incrife, tidal incrife">
   <meta name="author" content="INCRIFE">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
-  <link rel="canonical" href="https://incrife.com">
+  <link rel="canonical" href="https://incrife.com/enlances">
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
   
   <!-- Open Graph / Social Cards para artista -->
   <meta property="og:title" content="INCRIFE · Música Oficial | Streaming">
-  <meta property="og:description" content="Toda la música de INCRIFE en un solo lugar. Escúchalo en Spotify, Apple Music, Deezer, Amazon y YouTube.">
-  <meta property="og:url" content="https://incrife.com">
+  <meta property="og:description" content="Toda la música de INCRIFE en un solo lugar. Escúchalo en Spotify, Apple Music, Deezer, Amazon, YouTube Music y TIDAL.">
+  <meta property="og:url" content="https://incrife.com/enlances">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   <meta property="og:image:width" content="1200">
@@ -228,10 +228,23 @@
       gap: clamp(12px, 3.5vw, 18px);
     }
 
-    .link-left i {
+    .link-left i, .link-left .custom-icon {
       font-size: clamp(1.1rem, 4.5vw, 1.4rem);
       width: clamp(28px, 6vw, 34px);
       text-align: center;
+    }
+    
+    /* Icono personalizado para TIDAL (ya que FontAwesome no tiene oficial) */
+    .custom-tidal-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(28px, 6vw, 34px);
+    }
+    .custom-tidal-icon svg {
+      width: clamp(20px, 4vw, 26px);
+      height: auto;
+      fill: #00ffff;
     }
 
     .arrow {
@@ -253,8 +266,9 @@
     .apple i { color: #fc6bcb; }
     .deezer i { color: #A238FF; }
     .amazon i { color: #ff9900; }
-    .youtube i { color: #FF0000; }
-    .tidal i { color: #00ffff; }
+    .youtube-music i { color: #FF0000; }
+    .tidal-link .custom-tidal-icon svg { fill: #00ffff; transition: filter 0.3s; }
+    .tidal-link:hover .custom-tidal-icon svg { filter: drop-shadow(0 0 6px #00ffff); }
     
     /* Botón especial página oficial */
     .official-btn {
@@ -348,7 +362,7 @@
 
 <div class="hub">
   
-  <!-- Cabecera artista: imagen real (sin mina ni descripción extra) -->
+  <!-- Cabecera artista: imagen real -->
   <div class="header animate-item d1">
     <div class="avatar">
       <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE artista visual y música" loading="eager">
@@ -357,7 +371,7 @@
     <div class="badge-art">ARTISTA · MÚSICA URBANA</div>
   </div>
 
-  <!-- PLATAFORMAS DE STREAMING MUSICAL (TODAS LAS FAMOSAS: Spotify, Apple, Deezer, Amazon, YouTube, TIDAL) -->
+  <!-- PLATAFORMAS DE STREAMING MUSICAL (TODAS LAS FAMOSAS) -->
   <div class="links">
     <!-- Spotify -->
     <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer">
@@ -383,26 +397,33 @@
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
-    <!-- YouTube Música / Videoclips -->
-    <a href="https://www.youtube.com/@incrife" class="link-btn youtube animate-item d6" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube · Videoclips oficiales</span></div>
+    <!-- YouTube Music (cambiado de YouTube a YT Music) -->
+    <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
-    <!-- TIDAL (plataforma de alta fidelidad) -->
-    <a href="https://tidal.com/browse/artist/42197663" class="link-btn tidal animate-item d7" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-solid fa-headphones"></i><span>TIDAL · Máxima calidad</span></div>
+    <!-- TIDAL con logo personalizado y enlace actualizado -->
+    <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer">
+      <div class="link-left">
+        <span class="custom-tidal-icon">
+          <svg viewBox="0 0 24 24" width="100%" height="100%" fill="currentColor">
+            <path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/>
+          </svg>
+        </span>
+        <span>TIDAL · Máxima calidad</span>
+      </div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
-    <!-- PÁGINA OFICIAL (incrife.com) tal cual pide, lleva a incrife.com -->
+    <!-- PÁGINA OFICIAL (incrife.com) -->
     <a href="https://incrife.com" class="link-btn official-btn animate-item d8" target="_blank" rel="noopener noreferrer">
       <div class="link-left"><i class="fa-solid fa-globe"></i><span>Página oficial · incrife.com</span></div>
       <i class="fa-solid fa-arrow-right arrow"></i>
     </a>
   </div>
 
-  <!-- SOCIAL DOCK: SOLO X, TIK TOK, IG, FACEBOOK (sin email ni whatsapp enlaces abajo) -->
+  <!-- SOCIAL DOCK: SOLO X, TIK TOK, IG, FACEBOOK -->
   <div class="social-dock animate-item d5">
     <a href="https://x.com/Incrife" class="social-icon" target="_blank" rel="noopener" aria-label="X">
       <i class="fa-brands fa-twitter"></i>
@@ -418,7 +439,7 @@
     </a>
   </div>
 
-  <!-- FOOTER: SOLO DERECHOS RESERVADOS, CORREO CONTACTO Y TELÉFONO (sin enlaces de mail y whatsapp extra) -->
+  <!-- FOOTER: SOLO DERECHOS RESERVADOS, CORREO Y TELÉFONO -->
   <div class="footer-bottom animate-item d6">
     <div class="footer-contact">
       <span id="copyMailFooter">📧 contact@incrife.com</span>
@@ -429,23 +450,23 @@
 </div>
 
 <script>
-  // ========== ANIMACIÓN DE SPLASH DE ENTRADA ==========
+  // ========== ANIMACIÓN DE SPLASH DE ENTRADA (eliminada la intro larga, solo efecto breve) ==========
   (function initSplash() {
     const splash = document.createElement('div');
     splash.id = 'incrifeSplash';
-    splash.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:#2f0404; z-index:10000; display:flex; justify-content:center; align-items:center; transition:opacity 0.7s ease; backdrop-filter:blur(8px);';
+    splash.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:#2f0404; z-index:10000; display:flex; justify-content:center; align-items:center; transition:opacity 0.6s ease; backdrop-filter:blur(8px);';
     const inner = document.createElement('div');
-    inner.style.cssText = 'text-align:center; animation: glowPulse 1s infinite alternate;';
-    inner.innerHTML = `<i class="fa-solid fa-bolt" style="font-size:75px; color:#ff5e2e; filter:drop-shadow(0 0 18px #ff3300);"></i><h2 style="color:#ffc4a2; font-family:Montserrat; margin-top:10px;">INCRIFE</h2><p style="color:#ffb48a;">streaming · vibra</p>`;
+    inner.style.cssText = 'text-align:center; animation: glowPulse 0.9s infinite alternate;';
+    inner.innerHTML = `<i class="fa-solid fa-bolt" style="font-size:65px; color:#ff5e2e; filter:drop-shadow(0 0 15px #ff3300);"></i><h2 style="color:#ffc4a2; font-family:Montserrat; margin-top:8px;">INCRIFE</h2>`;
     const styleAnim = document.createElement('style');
-    styleAnim.textContent = `@keyframes glowPulse { 0% { opacity:0.7; transform: scale(0.95);} 100% { opacity:1; transform: scale(1.08);} }`;
+    styleAnim.textContent = `@keyframes glowPulse { 0% { opacity:0.7; transform: scale(0.96);} 100% { opacity:1; transform: scale(1.05);} }`;
     document.head.appendChild(styleAnim);
     splash.appendChild(inner);
     document.body.appendChild(splash);
     setTimeout(() => {
       splash.style.opacity = '0';
-      setTimeout(() => { if(splash && splash.remove) splash.remove(); }, 700);
-    }, 1900);
+      setTimeout(() => { if(splash && splash.remove) splash.remove(); }, 600);
+    }, 1500);
   })();
 
   // ========== COPIAR CORREO Y TELÉFONO ==========
@@ -484,7 +505,7 @@
     "@type": "MusicGroup",
     "name": "INCRIFE",
     "alternateName": "Incrife Musica",
-    "description": "Artista urbano y productor musical. Disponible en todas las plataformas de streaming: Spotify, Apple Music, Deezer, Amazon Music, YouTube, TIDAL.",
+    "description": "Artista urbano y productor musical. Disponible en todas las plataformas de streaming: Spotify, Apple Music, Deezer, Amazon Music, YouTube Music, TIDAL.",
     "url": "https://incrife.com",
     "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
     "sameAs": [
@@ -492,8 +513,8 @@
       "https://music.apple.com/es/artist/incrife/1848003000",
       "https://www.deezer.com/en/artist/352025722",
       "https://music.amazon.in/artists/B0FX5XCGKP",
-      "https://www.youtube.com/@incrife",
-      "https://tidal.com/browse/artist/42197663",
+      "https://music.youtube.com/@incrife",
+      "https://tidal.com/artist/68789425",
       "https://x.com/Incrife",
       "https://www.instagram.com/incrife/",
       "https://www.tiktok.com/@incrife",
