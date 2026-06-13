@@ -9,6 +9,14 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+        
+<!-- ENLACES OFICIALES DEL ARTISTA (incrife.com/enlances) -->
+  <url>
+    <loc>https://incrife.com/enlances</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
   
   <!-- SERVICIOS / TIENDA -->
   <url>
@@ -31,7 +39,7 @@
     <loc>https://incrife.com/agency/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   
   <!-- ESTUDIO MUSICAL -->
@@ -39,7 +47,7 @@
     <loc>https://incrife.com/studio/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>1.0</priority>
   </url>
   
   <!-- TRUE CRIME / INCRIFED -->
@@ -55,7 +63,7 @@
     <loc>https://incrife.com/contacto/</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   
 </urlset>
