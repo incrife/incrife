@@ -1,4 +1,4 @@
-Aquí tienes el código completamente optimizado: Genius movido a Schema invisible para Google, efecto glitch mejorado con líneas y más blur, responsive perfecto y SEO reforzado.
+Aquí tienes el código con el fondo original (sin glitch) restaurado, manteniendo todas las mejoras: Genius solo en Schema (invisible para el usuario), Qobuz visible, responsive perfecto y SEO completo.
 
 ```html
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #0a0000;
+      background: #6f0000;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
@@ -56,140 +56,81 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
       overflow-x: hidden;
     }
     
-    /* ========== FONDO CON GLITCH MEJORADO + LÍNEAS + BLUR ========== */
-    .bg-glitch {
+    /* ========== FONDO ORIGINAL CON BLUR ANIMADO (SIN GLITCH) ========== */
+    .bg-blur-artist {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
       z-index: 0;
       background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png');
       background-size: cover;
       background-position: center 30%;
       background-repeat: no-repeat;
-      filter: blur(12px) brightness(0.45) saturate(1.4) contrast(1.2);
-      transform: scale(1.08);
-      animation: glitchShift 4s infinite alternate;
-    }
-    
-    @keyframes glitchShift {
-      0% { transform: scale(1.08) translateX(0px) translateY(0px); filter: blur(12px) brightness(0.45) saturate(1.4); }
-      10% { transform: scale(1.09) translateX(-6px) translateY(2px); filter: blur(14px) brightness(0.43) saturate(1.5); }
-      20% { transform: scale(1.07) translateX(6px) translateY(-2px); filter: blur(11px) brightness(0.47) saturate(1.35); }
-      30% { transform: scale(1.1) translateX(-3px) translateY(3px); filter: blur(15px) brightness(0.42) saturate(1.55); }
-      40% { transform: scale(1.06) translateX(8px) translateY(-1px); filter: blur(13px) brightness(0.46) saturate(1.45); }
-      50% { transform: scale(1.09) translateX(-8px) translateY(1px); filter: blur(14px) brightness(0.44) saturate(1.5); }
-      60% { transform: scale(1.07) translateX(5px) translateY(-3px); filter: blur(12px) brightness(0.45) saturate(1.4); }
-      70% { transform: scale(1.1) translateX(-5px) translateY(3px); filter: blur(16px) brightness(0.41) saturate(1.6); }
-      80% { transform: scale(1.06) translateX(7px) translateY(-2px); filter: blur(13px) brightness(0.46) saturate(1.42); }
-      90% { transform: scale(1.08) translateX(-7px) translateY(2px); filter: blur(14px) brightness(0.44) saturate(1.48); }
-      100% { transform: scale(1.08) translateX(0px) translateY(0px); filter: blur(12px) brightness(0.45) saturate(1.4); }
-    }
-    
-    /* Capa de líneas de escaneo / glitch */
-    .glitch-lines {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+      filter: blur(28px) brightness(0.55) saturate(1.6);
+      transform: scale(1.05);
+      animation: slowPan 24s infinite alternate ease-in-out;
       pointer-events: none;
-      background: repeating-linear-gradient(0deg, 
-        rgba(255,0,0,0.06) 0px, 
-        rgba(0,255,0,0.03) 2px, 
-        rgba(0,0,255,0.05) 4px, 
-        transparent 6px,
-        rgba(255,255,0,0.02) 8px,
-        transparent 10px);
-      animation: scanVertical 6s linear infinite;
     }
     
-    @keyframes scanVertical {
-      0% { background-position: 0 0; }
-      100% { background-position: 0 60px; }
+    @keyframes slowPan {
+      0% { transform: scale(1.05) translateX(0%) translateY(0%); filter: blur(28px) brightness(0.55) saturate(1.6);}
+      100% { transform: scale(1.12) translateX(3%) translateY(2%); filter: blur(32px) brightness(0.5) saturate(1.8);}
     }
     
-    /* Líneas diagonales de glitch */
-    .glitch-diagonal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-      background: repeating-linear-gradient(115deg, 
-        rgba(255,50,30,0.07) 0px, 
-        rgba(255,50,30,0.07) 1px, 
-        transparent 1px, 
-        transparent 8px);
-      animation: diagonalMove 8s linear infinite;
-    }
-    
-    @keyframes diagonalMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 50px 50px; }
-    }
-    
-    /* Ruido de píxel glitch */
-    .glitch-noise {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjgiIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMTIiLz48L3N2Zz4=');
-      background-repeat: repeat;
-      opacity: 0.2;
-      pointer-events: none;
-      z-index: 2;
-      animation: noiseShake 0.2s infinite alternate;
-    }
-    
-    @keyframes noiseShake {
-      0% { transform: translate(0px, 0px); opacity: 0.2; }
-      100% { transform: translate(-1px, 1px); opacity: 0.25; }
-    }
-    
-    /* Capa de color rojo dramático sobre todo */
     .overlay-red {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(180,0,0,0.35), rgba(30,0,0,0.75));
-      z-index: 3;
+      background: radial-gradient(circle at 50% 50%, rgba(180,0,0,0.45), rgba(70,0,0,0.7));
+      z-index: 1;
       pointer-events: none;
     }
     
-    /* Pulsos de luz glitch ocasionales */
-    .glitch-flash {
+    .dynamic-lines {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255,50,30,0.05);
-      z-index: 3;
       pointer-events: none;
-      animation: flashRandom 6s infinite;
+      z-index: 2;
+      background: repeating-linear-gradient(115deg, rgba(255,70,40,0.08) 0px, rgba(255,70,40,0.08) 2px, transparent 2px, transparent 12px);
+      animation: driftLines 15s linear infinite;
     }
     
-    @keyframes flashRandom {
-      0%, 90%, 94%, 100% { opacity: 0; }
-      92% { opacity: 0.15; }
-      93% { opacity: 0.08; }
-      95% { opacity: 0.12; }
+    @keyframes driftLines {
+      0% { background-position: 0 0; }
+      100% { background-position: 80px 80px; }
+    }
+    
+    .glow-pulse {
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(255,80,40,0.25) 0%, rgba(255,0,0,0) 70%);
+      border-radius: 50%;
+      filter: blur(45px);
+      z-index: 1;
+      animation: softPulse 6s infinite alternate;
+      pointer-events: none;
+    }
+    
+    @keyframes softPulse {
+      0% { opacity: 0.4; transform: scale(0.9);}
+      100% { opacity: 0.9; transform: scale(1.2);}
     }
     
     .hub {
       width: 100%;
       max-width: min(580px, 95%);
       position: relative;
-      z-index: 20;
+      z-index: 15;
       margin: 0 auto;
     }
     
@@ -200,20 +141,20 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
       margin: 0 auto clamp(10px, 2.5vh, 18px);
       border-radius: 50%;
       overflow: hidden;
-      border: 3px solid rgba(255,80,50,0.95);
-      box-shadow: 0 0 35px rgba(255,50,20,0.5);
+      border: 3px solid rgba(255,110,70,0.95);
+      box-shadow: 0 0 35px rgba(255,60,30,0.8);
       transition: all 0.3s ease;
     }
     .avatar img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .avatar:hover { box-shadow: 0 0 60px rgba(255,70,30,0.8); transform: scale(1.01); }
-    .avatar:hover img { transform: scale(1.02); }
+    .avatar:hover { box-shadow: 0 0 70px rgba(255,80,40,1); transform: scale(1.02); }
+    .avatar:hover img { transform: scale(1.03); }
     
     h1 {
       font-size: clamp(1.8rem, 8vw, 2.7rem);
       font-weight: 900;
       letter-spacing: -1px;
       margin-bottom: 4px;
-      text-shadow: 0 0 22px rgba(255,50,30,0.7);
+      text-shadow: 0 0 22px rgba(255,70,40,0.9);
       background: linear-gradient(135deg, #fff2e0, #ffc8aa, #ff9f6e);
       background-clip: text;
       -webkit-background-clip: text;
@@ -240,7 +181,7 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(10,5,3,0.8);
+      background: rgba(20,8,6,0.75);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255,100,70,0.6);
       border-radius: 70px;
@@ -260,7 +201,7 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
     .arrow { font-size: 0.7rem; color: #ffaa80; transition: transform 0.2s; }
     .link-btn:hover .arrow { transform: translateX(5px); color: white; }
     .link-btn:hover {
-      background: rgba(40,15,8,0.95);
+      background: rgba(50,20,12,0.9);
       border-color: #ffaa77;
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 0 18px rgba(255,80,50,0.4);
@@ -400,13 +341,11 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
 </head>
 <body>
 
-<!-- FONDO CON GLITCH MEJORADO + LÍNEAS + BLUR -->
-<div class="bg-glitch"></div>
-<div class="glitch-lines"></div>
-<div class="glitch-diagonal"></div>
-<div class="glitch-noise"></div>
-<div class="glitch-flash"></div>
+<!-- FONDO ORIGINAL CON BLUR ANIMADO (RESTAURADO) -->
+<div class="bg-blur-artist"></div>
 <div class="overlay-red"></div>
+<div class="dynamic-lines"></div>
+<div class="glow-pulse"></div>
 
 <div class="hub">
   <div class="header animate-item d1">
@@ -415,7 +354,7 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
     <div class="badge-art">DISTRIBUCIÓN OFICIAL · STREAMING</div>
   </div>
 
-  <!-- PLATAFORMAS DE STREAMING + QOBUZ (Genius eliminado de vista) -->
+  <!-- PLATAFORMAS DE STREAMING + QOBUZ (Genius no visible, solo en Schema) -->
   <div class="links">
     <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
@@ -424,7 +363,7 @@ Aquí tienes el código completamente optimizado: Genius movido a Schema invisib
     <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer"><div class="link-left"><span class="custom-tidal-icon"><svg viewBox="0 0 24 24"><path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/></svg></span><span>TIDAL</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     
-    <!-- QOBUZ (Hi-Res Audio) -->
+    <!-- QOBUZ (Hi-Res Audio) - VISIBLE -->
     <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="link-btn qobuz-link animate-item d8" target="_blank" rel="noopener noreferrer">
       <div class="link-left">
         <span class="custom-qobuz-icon">
