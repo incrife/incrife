@@ -1,4 +1,4 @@
-Aquí tienes el código con el fondo original (sin glitch) restaurado, manteniendo todas las mejoras: Genius solo en Schema (invisible para el usuario), Qobuz visible, responsive perfecto y SEO completo.
+Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba limitado a 95% pero algunos elementos internos no se ajustaban bien. Aquí tienes el código corregido y optimizado para móvil, con el fondo original restaurado y el responsive perfecto en todos los dispositivos.
 
 ```html
 <!DOCTYPE html>
@@ -42,7 +42,12 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
       background: #6f0000;
       color: #ffffff;
@@ -51,12 +56,12 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: clamp(16px, 5vw, 32px);
+      padding: 20px 16px;
       position: relative;
       overflow-x: hidden;
     }
     
-    /* ========== FONDO ORIGINAL CON BLUR ANIMADO (SIN GLITCH) ========== */
+    /* ========== FONDO ORIGINAL CON BLUR ANIMADO ========== */
     .bg-blur-artist {
       position: fixed;
       top: -10%;
@@ -126,34 +131,49 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
       100% { opacity: 0.9; transform: scale(1.2);}
     }
     
+    /* CONTENEDOR PRINCIPAL - RESPONSIVE MEJORADO */
     .hub {
       width: 100%;
-      max-width: min(580px, 95%);
+      max-width: 560px;
+      margin: 0 auto;
       position: relative;
       z-index: 15;
-      margin: 0 auto;
     }
     
-    .header { text-align: center; margin-bottom: clamp(20px, 5vh, 38px); }
+    /* HEADER RESPONSIVE */
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    
     .avatar {
-      width: clamp(95px, 22vw, 130px);
-      height: clamp(95px, 22vw, 130px);
-      margin: 0 auto clamp(10px, 2.5vh, 18px);
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 16px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid rgba(255,110,70,0.95);
       box-shadow: 0 0 35px rgba(255,60,30,0.8);
       transition: all 0.3s ease;
     }
-    .avatar img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .avatar:hover { box-shadow: 0 0 70px rgba(255,80,40,1); transform: scale(1.02); }
-    .avatar:hover img { transform: scale(1.03); }
+    
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    
+    .avatar:hover {
+      box-shadow: 0 0 70px rgba(255,80,40,1);
+      transform: scale(1.02);
+    }
     
     h1 {
-      font-size: clamp(1.8rem, 8vw, 2.7rem);
+      font-size: 2.4rem;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       text-shadow: 0 0 22px rgba(255,70,40,0.9);
       background: linear-gradient(135deg, #fff2e0, #ffc8aa, #ff9f6e);
       background-clip: text;
@@ -164,19 +184,26 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
     
     .badge-art {
       color: #ffddcc;
-      font-size: clamp(0.55rem, 3vw, 0.7rem);
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       background: rgba(0,0,0,0.5);
       backdrop-filter: blur(8px);
       display: inline-block;
-      padding: 0.2rem 1rem;
+      padding: 6px 18px;
       border-radius: 50px;
       border: 0.5px solid rgba(255,120,80,0.6);
     }
     
-    .links { display: flex; flex-direction: column; gap: clamp(10px, 2vh, 16px); margin-bottom: 1.5rem; }
+    /* BOTONES DE PLATAFORMAS */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    
     .link-btn {
       display: flex;
       align-items: center;
@@ -184,28 +211,73 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
       background: rgba(20,8,6,0.75);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255,100,70,0.6);
-      border-radius: 70px;
-      padding: clamp(8px, 2.2vw, 13px) clamp(16px, 4vw, 26px);
+      border-radius: 60px;
+      padding: 12px 20px;
       text-decoration: none;
       color: #ffffff;
       font-weight: 600;
-      font-size: clamp(0.75rem, 3.2vw, 0.9rem);
+      font-size: 0.9rem;
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
     }
-    .link-left { display: flex; align-items: center; gap: clamp(10px, 3vw, 16px); }
-    .link-left i, .link-left .custom-icon { font-size: clamp(1rem, 4vw, 1.3rem); width: clamp(26px, 5.5vw, 32px); text-align: center; }
-    .custom-tidal-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(26px, 5.5vw, 32px); }
-    .custom-tidal-icon svg { width: clamp(18px, 3.8vw, 24px); height: auto; fill: #00ffff; }
-    .custom-qobuz-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(26px, 5.5vw, 32px); }
-    .custom-qobuz-icon svg { width: clamp(16px, 3.5vw, 22px); height: auto; fill: #0095F5; }
-    .arrow { font-size: 0.7rem; color: #ffaa80; transition: transform 0.2s; }
-    .link-btn:hover .arrow { transform: translateX(5px); color: white; }
+    
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    
+    .link-left i,
+    .link-left .custom-icon {
+      font-size: 1.3rem;
+      width: 32px;
+      text-align: center;
+    }
+    
+    .custom-tidal-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+    }
+    
+    .custom-tidal-icon svg {
+      width: 24px;
+      height: auto;
+      fill: #00ffff;
+    }
+    
+    .custom-qobuz-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+    }
+    
+    .custom-qobuz-icon svg {
+      width: 22px;
+      height: auto;
+      fill: #0095F5;
+    }
+    
+    .arrow {
+      font-size: 0.8rem;
+      color: #ffaa80;
+      transition: transform 0.2s;
+    }
+    
+    .link-btn:hover .arrow {
+      transform: translateX(6px);
+      color: white;
+    }
+    
     .link-btn:hover {
       background: rgba(50,20,12,0.9);
       border-color: #ffaa77;
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 0 18px rgba(255,80,50,0.4);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4), 0 0 18px rgba(255,80,50,0.4);
     }
+    
+    /* COLORES PLATAFORMAS */
     .spotify i { color: #1DB954; }
     .apple i { color: #fc6bcb; }
     .deezer i { color: #A238FF; }
@@ -216,6 +288,7 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
     .qobuz-link .custom-qobuz-icon svg { fill: #0095F5; transition: filter 0.3s; }
     .qobuz-link:hover .custom-qobuz-icon svg { filter: drop-shadow(0 0 6px #0095F5); }
     
+    /* BOTÓN PÁGINA OFICIAL */
     .official-btn {
       background: linear-gradient(135deg, #e64410, #9e2a00);
       border: none;
@@ -224,6 +297,7 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
       position: relative;
       overflow: hidden;
     }
+    
     .official-btn::before {
       content: '';
       position: absolute;
@@ -235,38 +309,95 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
       opacity: 0;
       transition: opacity 0.5s;
     }
-    .official-btn:hover::before { opacity: 1; }
-    .official-btn .link-left { flex: 1; justify-content: center; gap: 10px; }
-    .official-btn .link-left i { font-size: 1.2rem; }
-    .official-btn .arrow { display: none; }
-    .official-btn:hover { background: linear-gradient(135deg, #ff5722, #c0392b); transform: translateY(-3px) scale(1.01); box-shadow: 0 0 40px rgba(255,100,40,0.8); }
     
+    .official-btn:hover::before {
+      opacity: 1;
+    }
+    
+    .official-btn .link-left {
+      flex: 1;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .official-btn .link-left i {
+      font-size: 1.2rem;
+    }
+    
+    .official-btn .arrow {
+      display: none;
+    }
+    
+    .official-btn:hover {
+      background: linear-gradient(135deg, #ff5722, #c0392b);
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 0 40px rgba(255,100,40,0.8);
+    }
+    
+    /* SECCIÓN DE EVENTOS */
     .events-section {
       background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(30,10,5,0.75));
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255,120,80,0.4);
-      border-radius: 48px;
-      padding: 1.2rem 1rem;
-      margin: 1.5rem 0;
+      border-radius: 40px;
+      padding: 20px 16px;
+      margin: 24px 0;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
+    
     .events-section::after {
       content: '🎤';
       position: absolute;
-      bottom: -12px;
-      right: -12px;
-      font-size: 60px;
+      bottom: -10px;
+      right: -10px;
+      font-size: 55px;
       opacity: 0.08;
       pointer-events: none;
     }
-    .events-header { margin-bottom: 1rem; }
-    .events-header i { font-size: 1.8rem; color: #ffaa80; margin-bottom: 6px; display: inline-block; animation: floatIcon 3s infinite ease; }
-    @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-    .events-header h3 { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; background: linear-gradient(135deg, #fff, #ffaa80); background-clip: text; -webkit-background-clip: text; color: transparent; }
-    .events-header p { font-size: 0.65rem; opacity: 0.8; margin-top: 4px; }
-    .events-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 1rem 0; }
+    
+    .events-header {
+      margin-bottom: 14px;
+    }
+    
+    .events-header i {
+      font-size: 1.8rem;
+      color: #ffaa80;
+      margin-bottom: 8px;
+      display: inline-block;
+      animation: floatIcon 3s infinite ease;
+    }
+    
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    .events-header h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #fff, #ffaa80);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    
+    .events-header p {
+      font-size: 0.7rem;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+    
+    .events-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    
     .event-btn {
       display: inline-flex;
       align-items: center;
@@ -274,74 +405,284 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
       background: rgba(0,0,0,0.6);
       backdrop-filter: blur(8px);
       border: 1.5px solid #ff7a55;
-      border-radius: 60px;
-      padding: 8px 20px;
+      border-radius: 50px;
+      padding: 8px 22px;
       text-decoration: none;
       color: white;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 700;
       transition: all 0.3s ease;
       letter-spacing: 0.5px;
     }
-    .event-btn i { font-size: 0.9rem; transition: transform 0.2s; }
-    .event-btn:hover { background: #ff4d2e; transform: translateY(-2px) scale(1.02); box-shadow: 0 6px 20px rgba(255,80,40,0.4); border-color: white; }
-    .event-btn:hover i { transform: scale(1.08); }
+    
+    .event-btn i {
+      font-size: 0.9rem;
+      transition: transform 0.2s;
+    }
+    
+    .event-btn:hover {
+      background: #ff4d2e;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(255,80,40,0.4);
+      border-color: white;
+    }
+    
+    .event-btn:hover i {
+      transform: scale(1.1);
+    }
+    
     .event-note {
-      font-size: 0.6rem;
+      font-size: 0.65rem;
       background: rgba(255,100,50,0.2);
       border-radius: 50px;
-      padding: 5px 10px;
+      padding: 5px 12px;
       display: inline-block;
       margin-top: 8px;
     }
-    .event-note i { margin-right: 5px; }
     
+    .event-note i {
+      margin-right: 5px;
+    }
+    
+    /* SOCIAL DOCK */
     .social-dock {
       display: flex;
       justify-content: center;
-      gap: clamp(24px, 7vw, 38px);
+      gap: 32px;
       background: rgba(0,0,0,0.55);
       backdrop-filter: blur(24px);
       border: 1px solid rgba(255,100,75,0.6);
       border-radius: 100px;
-      padding: clamp(6px, 1.8vh, 10px) clamp(20px, 5vw, 36px);
+      padding: 10px 32px;
       width: fit-content;
-      margin: 0 auto clamp(18px, 4vh, 28px);
+      margin: 0 auto 24px;
     }
+    
     .social-icon {
       color: #ffccb0 !important;
-      font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+      font-size: 1.3rem;
       text-decoration: none;
       transition: all 0.25s ease;
     }
-    .social-icon:hover { transform: translateY(-4px) scale(1.1); color: #ffffff !important; text-shadow: 0 0 12px rgba(255,100,50,1); }
-    .footer-bottom { text-align: center; font-size: 0.6rem; color: #ffbf9a; opacity: 0.7; padding-top: 6px; }
     
-    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(12px);} 100% { opacity: 1; transform: translateY(0);} }
-    .animate-item { animation: fadeUp 0.45s ease forwards; opacity: 0; }
-    .d1 { animation-delay: 0.04s; } .d2 { animation-delay: 0.07s; } .d3 { animation-delay: 0.1s; }
-    .d4 { animation-delay: 0.13s; } .d5 { animation-delay: 0.16s; } .d6 { animation-delay: 0.19s; }
-    .d7 { animation-delay: 0.22s; } .d8 { animation-delay: 0.25s; } .d9 { animation-delay: 0.28s; }
-    
-    @media (max-width: 480px) {
-      body { padding: 14px; }
-      .social-dock { gap: 22px; padding: 6px 18px; }
-      .link-left { gap: 6px; }
-      .events-buttons { gap: 8px; }
-      .event-btn { padding: 6px 14px; font-size: 0.65rem; }
-      .events-section { padding: 1rem 0.8rem; margin: 1.2rem 0; }
+    .social-icon:hover {
+      transform: translateY(-4px) scale(1.1);
+      color: #ffffff !important;
+      text-shadow: 0 0 12px rgba(255,100,50,1);
     }
     
-    @media (max-width: 380px) {
-      .link-left span { font-size: 0.7rem; }
-      .link-left i, .link-left .custom-icon { width: 24px; }
-      .event-btn span { font-size: 0.6rem; }
+    /* FOOTER */
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.65rem;
+      color: #ffbf9a;
+      opacity: 0.7;
+      padding-top: 6px;
+    }
+    
+    /* ANIMACIONES DE ENTRADA */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(15px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-item {
+      animation: fadeUp 0.45s ease forwards;
+      opacity: 0;
+    }
+    
+    .d1 { animation-delay: 0.04s; }
+    .d2 { animation-delay: 0.07s; }
+    .d3 { animation-delay: 0.1s; }
+    .d4 { animation-delay: 0.13s; }
+    .d5 { animation-delay: 0.16s; }
+    .d6 { animation-delay: 0.19s; }
+    .d7 { animation-delay: 0.22s; }
+    .d8 { animation-delay: 0.25s; }
+    .d9 { animation-delay: 0.28s; }
+    
+    /* ========== MEDIA QUERIES RESPONSIVE MEJORADAS ========== */
+    @media (max-width: 560px) {
+      .hub {
+        max-width: 100%;
+      }
+      
+      .avatar {
+        width: 100px;
+        height: 100px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .badge-art {
+        font-size: 0.6rem;
+        padding: 4px 14px;
+      }
+      
+      .link-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+      }
+      
+      .link-left {
+        gap: 10px;
+      }
+      
+      .link-left i,
+      .link-left .custom-icon {
+        font-size: 1.2rem;
+        width: 28px;
+      }
+      
+      .custom-tidal-icon,
+      .custom-qobuz-icon {
+        width: 28px;
+      }
+      
+      .custom-tidal-icon svg {
+        width: 20px;
+      }
+      
+      .custom-qobuz-icon svg {
+        width: 18px;
+      }
+      
+      .arrow {
+        font-size: 0.7rem;
+      }
+      
+      .events-section {
+        padding: 16px 12px;
+        margin: 20px 0;
+      }
+      
+      .events-header h3 {
+        font-size: 1.1rem;
+      }
+      
+      .events-buttons {
+        gap: 10px;
+      }
+      
+      .event-btn {
+        padding: 6px 16px;
+        font-size: 0.7rem;
+      }
+      
+      .event-btn i {
+        font-size: 0.8rem;
+      }
+      
+      .social-dock {
+        gap: 24px;
+        padding: 8px 24px;
+      }
+      
+      .social-icon {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 420px) {
+      body {
+        padding: 16px 12px;
+      }
+      
+      .avatar {
+        width: 85px;
+        height: 85px;
+        margin-bottom: 12px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .badge-art {
+        font-size: 0.55rem;
+        padding: 4px 12px;
+      }
+      
+      .link-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+      }
+      
+      .link-left {
+        gap: 8px;
+      }
+      
+      .link-left i,
+      .link-left .custom-icon {
+        font-size: 1.1rem;
+        width: 26px;
+      }
+      
+      .custom-tidal-icon,
+      .custom-qobuz-icon {
+        width: 26px;
+      }
+      
+      .custom-tidal-icon svg {
+        width: 18px;
+      }
+      
+      .custom-qobuz-icon svg {
+        width: 16px;
+      }
+      
+      .event-btn {
+        padding: 5px 12px;
+        font-size: 0.65rem;
+      }
+      
+      .event-btn i {
+        font-size: 0.75rem;
+      }
+      
+      .social-dock {
+        gap: 20px;
+        padding: 6px 20px;
+      }
+      
+      .social-icon {
+        font-size: 1.1rem;
+      }
+      
+      .events-section {
+        padding: 14px 10px;
+      }
+      
+      .events-header h3 {
+        font-size: 1rem;
+      }
+      
+      .events-header p {
+        font-size: 0.6rem;
+      }
+      
+      .event-note {
+        font-size: 0.6rem;
+        padding: 4px 10px;
+      }
+    }
+    
+    @media (max-width: 360px) {
+      .link-left span {
+        font-size: 0.75rem;
+      }
+      
+      .event-btn span {
+        font-size: 0.6rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- FONDO ORIGINAL CON BLUR ANIMADO (RESTAURADO) -->
+<!-- FONDO ORIGINAL CON BLUR ANIMADO -->
 <div class="bg-blur-artist"></div>
 <div class="overlay-red"></div>
 <div class="dynamic-lines"></div>
@@ -349,21 +690,48 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
 
 <div class="hub">
   <div class="header animate-item d1">
-    <div class="avatar"><img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE" loading="eager"></div>
+    <div class="avatar">
+      <img src="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png" alt="INCRIFE" loading="eager">
+    </div>
     <h1>INCRIFE</h1>
     <div class="badge-art">DISTRIBUCIÓN OFICIAL · STREAMING</div>
   </div>
 
-  <!-- PLATAFORMAS DE STREAMING + QOBUZ (Genius no visible, solo en Schema) -->
+  <!-- PLATAFORMAS DE STREAMING + QOBUZ -->
   <div class="links">
-    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://www.deezer.com/en/artist/352025722" class="link-btn deezer animate-item d4" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-deezer"></i><span>Deezer</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="link-btn amazon animate-item d5" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-amazon"></i><span>Amazon Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer"><div class="link-left"><span class="custom-tidal-icon"><svg viewBox="0 0 24 24"><path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/></svg></span><span>TIDAL</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
+    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://www.deezer.com/en/artist/352025722" class="link-btn deezer animate-item d4" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-deezer"></i><span>Deezer</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="link-btn amazon animate-item d5" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-amazon"></i><span>Amazon Music</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer">
+      <div class="link-left">
+        <span class="custom-tidal-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/>
+          </svg>
+        </span>
+        <span>TIDAL</span>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
     
-    <!-- QOBUZ (Hi-Res Audio) - VISIBLE -->
+    <!-- QOBUZ (Hi-Res Audio) -->
     <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="link-btn qobuz-link animate-item d8" target="_blank" rel="noopener noreferrer">
       <div class="link-left">
         <span class="custom-qobuz-icon">
@@ -378,7 +746,11 @@ Aquí tienes el código con el fondo original (sin glitch) restaurado, mantenien
     </a>
     
     <a href="https://incrife.com" class="link-btn official-btn animate-item d9" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-solid fa-globe"></i><span>Página oficial · incrife.com</span><i class="fa-solid fa-arrow-up-right-from-squares"></i></div>
+      <div class="link-left">
+        <i class="fa-solid fa-globe"></i>
+        <span>Página oficial · incrife.com</span>
+        <i class="fa-solid fa-arrow-up-right-from-squares"></i>
+      </div>
     </a>
   </div>
 
