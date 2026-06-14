@@ -1,4 +1,6 @@
-Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba limitado a 95% pero algunos elementos internos no se ajustaban bien. Aquí tienes el código corregido y optimizado para móvil, con el fondo original restaurado y el responsive perfecto en todos los dispositivos.
+¡Perfecto! Voy a restaurar el tamaño original de los botones que te gustaba (más grandes, cómodos y con ese estilo que funcionaba bien). Mantengo el fondo original sin glitch, Qobuz visible, Genius solo en Schema (invisible), la sección de eventos y el responsive bien ajustado para que se vea igual de bien en móvil.
+
+Aquí tienes el código definitivo con los botones del tamaño original que te funcionaba:
 
 ```html
 <!DOCTYPE html>
@@ -7,14 +9,12 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
   
-  <!-- TÍTULO SEO OPTIMIZADO -->
-  <title>INCRIFE · Escúchame en todas las plataformas | Streaming oficial + Alta resolución</title>
+  <title>INCRIFE · Escúchame en todas las plataformas | Streaming oficial</title>
   
   <meta name="description" content="INCRIFE · Artista urbano. Escucha su música en Spotify, Apple Music, Qobuz, TIDAL y más. Próximos conciertos y toda su discografía en Hi-Res.">
   <meta name="keywords" content="incrife, música incrife, conciertos incrife, artista barcelona, spotify incrife, qobuz incrife, tidal incrife, musicbrainz">
   <meta name="author" content="INCRIFE">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <meta name="googlebot" content="index, follow">
   <link rel="canonical" href="https://incrife.com/enlances">
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
@@ -131,25 +131,25 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       100% { opacity: 0.9; transform: scale(1.2);}
     }
     
-    /* CONTENEDOR PRINCIPAL - RESPONSIVE MEJORADO */
+    /* CONTENEDOR PRINCIPAL */
     .hub {
       width: 100%;
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto;
       position: relative;
       z-index: 15;
     }
     
-    /* HEADER RESPONSIVE */
+    /* HEADER */
     .header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
     
     .avatar {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 16px;
+      width: 125px;
+      height: 125px;
+      margin: 0 auto 18px;
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid rgba(255,110,70,0.95);
@@ -161,7 +161,6 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s;
     }
     
     .avatar:hover {
@@ -170,10 +169,10 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     }
     
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       text-shadow: 0 0 22px rgba(255,70,40,0.9);
       background: linear-gradient(135deg, #fff2e0, #ffc8aa, #ff9f6e);
       background-clip: text;
@@ -191,17 +190,17 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       background: rgba(0,0,0,0.5);
       backdrop-filter: blur(8px);
       display: inline-block;
-      padding: 6px 18px;
+      padding: 6px 20px;
       border-radius: 50px;
       border: 0.5px solid rgba(255,120,80,0.6);
     }
     
-    /* BOTONES DE PLATAFORMAS */
+    /* BOTONES DE PLATAFORMAS - TAMAÑO ORIGINAL (GRANDE Y CÓMODO) */
     .links {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-bottom: 24px;
+      gap: 16px;
+      margin-bottom: 28px;
     }
     
     .link-btn {
@@ -211,25 +210,25 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       background: rgba(20,8,6,0.75);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255,100,70,0.6);
-      border-radius: 60px;
-      padding: 12px 20px;
+      border-radius: 70px;
+      padding: 14px 24px;
       text-decoration: none;
       color: #ffffff;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 1rem;
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
     }
     
     .link-left {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
     
     .link-left i,
     .link-left .custom-icon {
-      font-size: 1.3rem;
-      width: 32px;
+      font-size: 1.4rem;
+      width: 34px;
       text-align: center;
     }
     
@@ -237,11 +236,11 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 32px;
+      width: 34px;
     }
     
     .custom-tidal-icon svg {
-      width: 24px;
+      width: 26px;
       height: auto;
       fill: #00ffff;
     }
@@ -250,17 +249,17 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 32px;
+      width: 34px;
     }
     
     .custom-qobuz-icon svg {
-      width: 22px;
+      width: 24px;
       height: auto;
       fill: #0095F5;
     }
     
     .arrow {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: #ffaa80;
       transition: transform 0.2s;
     }
@@ -274,7 +273,7 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       background: rgba(50,20,12,0.9);
       border-color: #ffaa77;
       transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.4), 0 0 18px rgba(255,80,50,0.4);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(255,80,50,0.5);
     }
     
     /* COLORES PLATAFORMAS */
@@ -288,11 +287,11 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     .qobuz-link .custom-qobuz-icon svg { fill: #0095F5; transition: filter 0.3s; }
     .qobuz-link:hover .custom-qobuz-icon svg { filter: drop-shadow(0 0 6px #0095F5); }
     
-    /* BOTÓN PÁGINA OFICIAL */
+    /* BOTÓN PÁGINA OFICIAL - CENTRADO */
     .official-btn {
       background: linear-gradient(135deg, #e64410, #9e2a00);
       border: none;
-      box-shadow: 0 0 28px rgba(255,80,30,0.7), inset 0 1px 0 rgba(255,255,255,0.2);
+      box-shadow: 0 0 28px rgba(255,80,30,0.8), inset 0 1px 0 rgba(255,255,255,0.2);
       justify-content: center;
       position: relative;
       overflow: hidden;
@@ -317,11 +316,11 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     .official-btn .link-left {
       flex: 1;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
     }
     
     .official-btn .link-left i {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     
     .official-btn .arrow {
@@ -331,7 +330,7 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     .official-btn:hover {
       background: linear-gradient(135deg, #ff5722, #c0392b);
       transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 0 40px rgba(255,100,40,0.8);
+      box-shadow: 0 0 45px rgba(255,100,40,0.9);
     }
     
     /* SECCIÓN DE EVENTOS */
@@ -339,7 +338,7 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(30,10,5,0.75));
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255,120,80,0.4);
-      border-radius: 40px;
+      border-radius: 48px;
       padding: 20px 16px;
       margin: 24px 0;
       text-align: center;
@@ -352,17 +351,17 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       position: absolute;
       bottom: -10px;
       right: -10px;
-      font-size: 55px;
+      font-size: 60px;
       opacity: 0.08;
       pointer-events: none;
     }
     
     .events-header {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     
     .events-header i {
-      font-size: 1.8rem;
+      font-size: 2rem;
       color: #ffaa80;
       margin-bottom: 8px;
       display: inline-block;
@@ -375,7 +374,7 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     }
     
     .events-header h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 800;
       letter-spacing: 2px;
       background: linear-gradient(135deg, #fff, #ffaa80);
@@ -394,36 +393,36 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       margin: 16px 0;
     }
     
     .event-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       background: rgba(0,0,0,0.6);
       backdrop-filter: blur(8px);
       border: 1.5px solid #ff7a55;
-      border-radius: 50px;
-      padding: 8px 22px;
+      border-radius: 60px;
+      padding: 10px 24px;
       text-decoration: none;
       color: white;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 700;
       transition: all 0.3s ease;
       letter-spacing: 0.5px;
     }
     
     .event-btn i {
-      font-size: 0.9rem;
+      font-size: 1rem;
       transition: transform 0.2s;
     }
     
     .event-btn:hover {
       background: #ff4d2e;
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(255,80,40,0.4);
+      box-shadow: 0 8px 20px rgba(255,80,40,0.4);
       border-color: white;
     }
     
@@ -432,16 +431,16 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     }
     
     .event-note {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       background: rgba(255,100,50,0.2);
       border-radius: 50px;
-      padding: 5px 12px;
+      padding: 6px 14px;
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 10px;
     }
     
     .event-note i {
-      margin-right: 5px;
+      margin-right: 6px;
     }
     
     /* SOCIAL DOCK */
@@ -453,20 +452,20 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       backdrop-filter: blur(24px);
       border: 1px solid rgba(255,100,75,0.6);
       border-radius: 100px;
-      padding: 10px 32px;
+      padding: 12px 36px;
       width: fit-content;
-      margin: 0 auto 24px;
+      margin: 0 auto 28px;
     }
     
     .social-icon {
       color: #ffccb0 !important;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       text-decoration: none;
       transition: all 0.25s ease;
     }
     
     .social-icon:hover {
-      transform: translateY(-4px) scale(1.1);
+      transform: translateY(-5px) scale(1.1);
       color: #ffffff !important;
       text-shadow: 0 0 12px rgba(255,100,50,1);
     }
@@ -474,10 +473,10 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     /* FOOTER */
     .footer-bottom {
       text-align: center;
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       color: #ffbf9a;
       opacity: 0.7;
-      padding-top: 6px;
+      padding-top: 8px;
     }
     
     /* ANIMACIONES DE ENTRADA */
@@ -501,29 +500,91 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     .d8 { animation-delay: 0.25s; }
     .d9 { animation-delay: 0.28s; }
     
-    /* ========== MEDIA QUERIES RESPONSIVE MEJORADAS ========== */
+    /* ========== RESPONSIVE: LOS BOTONES SE REDUCEN PROPORCIONALMENTE PERO SIGUEN SIENDO GRANDES ========== */
     @media (max-width: 560px) {
       .hub {
         max-width: 100%;
       }
       
       .avatar {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
       }
       
       h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+      }
+      
+      .link-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+      }
+      
+      .link-left {
+        gap: 12px;
+      }
+      
+      .link-left i,
+      .link-left .custom-icon {
+        font-size: 1.3rem;
+        width: 30px;
+      }
+      
+      .custom-tidal-icon,
+      .custom-qobuz-icon {
+        width: 30px;
+      }
+      
+      .custom-tidal-icon svg {
+        width: 22px;
+      }
+      
+      .custom-qobuz-icon svg {
+        width: 20px;
+      }
+      
+      .arrow {
+        font-size: 0.85rem;
+      }
+      
+      .events-section {
+        padding: 18px 14px;
+      }
+      
+      .event-btn {
+        padding: 8px 20px;
+        font-size: 0.75rem;
+      }
+      
+      .social-dock {
+        gap: 28px;
+        padding: 10px 28px;
+      }
+      
+      .social-icon {
+        font-size: 1.3rem;
+      }
+    }
+    
+    @media (max-width: 450px) {
+      .avatar {
+        width: 95px;
+        height: 95px;
+        margin-bottom: 14px;
+      }
+      
+      h1 {
+        font-size: 1.9rem;
       }
       
       .badge-art {
         font-size: 0.6rem;
-        padding: 4px 14px;
+        padding: 4px 16px;
       }
       
       .link-btn {
-        padding: 10px 16px;
-        font-size: 0.85rem;
+        padding: 10px 18px;
+        font-size: 0.9rem;
       }
       
       .link-left {
@@ -549,133 +610,22 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
         width: 18px;
       }
       
-      .arrow {
-        font-size: 0.7rem;
-      }
-      
-      .events-section {
-        padding: 16px 12px;
-        margin: 20px 0;
-      }
-      
-      .events-header h3 {
-        font-size: 1.1rem;
-      }
-      
-      .events-buttons {
-        gap: 10px;
-      }
-      
       .event-btn {
         padding: 6px 16px;
         font-size: 0.7rem;
       }
       
-      .event-btn i {
-        font-size: 0.8rem;
-      }
-      
       .social-dock {
-        gap: 24px;
-        padding: 8px 24px;
+        gap: 22px;
+        padding: 8px 22px;
       }
       
       .social-icon {
         font-size: 1.2rem;
       }
-    }
-    
-    @media (max-width: 420px) {
-      body {
-        padding: 16px 12px;
-      }
-      
-      .avatar {
-        width: 85px;
-        height: 85px;
-        margin-bottom: 12px;
-      }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      .badge-art {
-        font-size: 0.55rem;
-        padding: 4px 12px;
-      }
-      
-      .link-btn {
-        padding: 8px 14px;
-        font-size: 0.8rem;
-      }
-      
-      .link-left {
-        gap: 8px;
-      }
-      
-      .link-left i,
-      .link-left .custom-icon {
-        font-size: 1.1rem;
-        width: 26px;
-      }
-      
-      .custom-tidal-icon,
-      .custom-qobuz-icon {
-        width: 26px;
-      }
-      
-      .custom-tidal-icon svg {
-        width: 18px;
-      }
-      
-      .custom-qobuz-icon svg {
-        width: 16px;
-      }
-      
-      .event-btn {
-        padding: 5px 12px;
-        font-size: 0.65rem;
-      }
-      
-      .event-btn i {
-        font-size: 0.75rem;
-      }
-      
-      .social-dock {
-        gap: 20px;
-        padding: 6px 20px;
-      }
-      
-      .social-icon {
-        font-size: 1.1rem;
-      }
-      
-      .events-section {
-        padding: 14px 10px;
-      }
       
       .events-header h3 {
-        font-size: 1rem;
-      }
-      
-      .events-header p {
-        font-size: 0.6rem;
-      }
-      
-      .event-note {
-        font-size: 0.6rem;
-        padding: 4px 10px;
-      }
-    }
-    
-    @media (max-width: 360px) {
-      .link-left span {
-        font-size: 0.75rem;
-      }
-      
-      .event-btn span {
-        font-size: 0.6rem;
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -697,7 +647,7 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
     <div class="badge-art">DISTRIBUCIÓN OFICIAL · STREAMING</div>
   </div>
 
-  <!-- PLATAFORMAS DE STREAMING + QOBUZ -->
+  <!-- PLATAFORMAS DE STREAMING - TAMAÑO ORIGINAL RESTAURADO -->
   <div class="links">
     <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer">
       <div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div>
@@ -731,7 +681,7 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
     
-    <!-- QOBUZ (Hi-Res Audio) -->
+    <!-- QOBUZ (Hi-Res Audio) visible -->
     <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="link-btn qobuz-link animate-item d8" target="_blank" rel="noopener noreferrer">
       <div class="link-left">
         <span class="custom-qobuz-icon">
@@ -790,7 +740,7 @@ Tienes razón, he detectado el problema. En móvil el ancho máximo .hub estaba 
 </div>
 
 <script>
-  // SCHEMA.ORG COMPLETO CON GENIUS (INVISIBLE PARA EL USUARIO, LEGIBLE POR GOOGLE)
+  // SCHEMA.ORG CON GENIUS INCLUIDO (INVISIBLE PARA USUARIO, LEGIBLE POR GOOGLE)
   const artistSchema = {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
