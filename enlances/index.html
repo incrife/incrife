@@ -1,4 +1,4 @@
-Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real oculto al público (pero presente en el Schema para SEO), y un fondo con efecto glitch animado muy profesional.
+Aquí tienes el código completamente optimizado: Genius movido a Schema invisible para Google, efecto glitch mejorado con líneas y más blur, responsive perfecto y SEO reforzado.
 
 ```html
 <!DOCTYPE html>
@@ -8,10 +8,10 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
   
   <!-- TÍTULO SEO OPTIMIZADO -->
-  <title>INCRIFE · Escúchame en todas las plataformas | Streaming oficial + Letras</title>
+  <title>INCRIFE · Escúchame en todas las plataformas | Streaming oficial + Alta resolución</title>
   
-  <meta name="description" content="INCRIFE · Artista urbano. Escucha su música en Spotify, Apple Music, Qobuz, TIDAL y más. Lee las letras de sus canciones en Genius. Próximos conciertos.">
-  <meta name="keywords" content="incrife, música incrife, conciertos incrife, artista barcelona, spotify incrife, qobuz incrife, genius incrife, letras incrife">
+  <meta name="description" content="INCRIFE · Artista urbano. Escucha su música en Spotify, Apple Music, Qobuz, TIDAL y más. Próximos conciertos y toda su discografía en Hi-Res.">
+  <meta name="keywords" content="incrife, música incrife, conciertos incrife, artista barcelona, spotify incrife, qobuz incrife, tidal incrife, musicbrainz">
   <meta name="author" content="INCRIFE">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <meta name="googlebot" content="index, follow">
@@ -19,9 +19,8 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
   
-  <!-- Open Graph / Social Cards -->
-  <meta property="og:title" content="INCRIFE · Música + Letras | Streaming oficial">
-  <meta property="og:description" content="Artista urbano barcelonés. Escucha su música, lee sus letras y mantente al día de sus conciertos.">
+  <meta property="og:title" content="INCRIFE · Música + Eventos | Streaming oficial">
+  <meta property="og:description" content="Artista urbano barcelonés. Escucha su música y mantente al día de sus conciertos.">
   <meta property="og:url" content="https://incrife.com/enlances">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
@@ -29,8 +28,8 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="INCRIFE · Música oficial + Letras">
-  <meta name="twitter:description" content="Escucha a INCRIFE en todas las plataformas y lee sus letras en Genius.">
+  <meta name="twitter:title" content="INCRIFE · Música oficial">
+  <meta name="twitter:description" content="Escucha a INCRIFE en todas las plataformas.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
   
   <meta name="theme-color" content="#cc0000">
@@ -57,7 +56,7 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
       overflow-x: hidden;
     }
     
-    /* ========== FONDO CON GLITCH ANIMADO ========== */
+    /* ========== FONDO CON GLITCH MEJORADO + LÍNEAS + BLUR ========== */
     .bg-glitch {
       position: fixed;
       top: 0;
@@ -69,26 +68,27 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
       background-size: cover;
       background-position: center 30%;
       background-repeat: no-repeat;
-      filter: brightness(0.5) saturate(1.3);
-      animation: glitchBg 6s infinite alternate;
+      filter: blur(12px) brightness(0.45) saturate(1.4) contrast(1.2);
+      transform: scale(1.08);
+      animation: glitchShift 4s infinite alternate;
     }
     
-    @keyframes glitchBg {
-      0% { filter: brightness(0.5) saturate(1.3) blur(2px); transform: scale(1.02) translateX(0px); }
-      10% { filter: brightness(0.55) saturate(1.4) blur(1px); transform: scale(1.03) translateX(-5px); }
-      20% { filter: brightness(0.45) saturate(1.2) blur(3px); transform: scale(1.01) translateX(5px); }
-      30% { filter: brightness(0.52) saturate(1.35) blur(1.5px); transform: scale(1.04) translateX(-2px); }
-      40% { filter: brightness(0.48) saturate(1.25) blur(4px); transform: scale(1.02) translateX(6px); }
-      50% { filter: brightness(0.55) saturate(1.4) blur(1px); transform: scale(1.03) translateX(-6px); }
-      60% { filter: brightness(0.5) saturate(1.3) blur(2.5px); transform: scale(1.01) translateX(3px); }
-      70% { filter: brightness(0.47) saturate(1.28) blur(3.5px); transform: scale(1.05) translateX(-3px); }
-      80% { filter: brightness(0.53) saturate(1.38) blur(1.8px); transform: scale(1.02) translateX(4px); }
-      90% { filter: brightness(0.5) saturate(1.32) blur(2px); transform: scale(1.04) translateX(-4px); }
-      100% { filter: brightness(0.5) saturate(1.3) blur(2px); transform: scale(1.02) translateX(0px); }
+    @keyframes glitchShift {
+      0% { transform: scale(1.08) translateX(0px) translateY(0px); filter: blur(12px) brightness(0.45) saturate(1.4); }
+      10% { transform: scale(1.09) translateX(-6px) translateY(2px); filter: blur(14px) brightness(0.43) saturate(1.5); }
+      20% { transform: scale(1.07) translateX(6px) translateY(-2px); filter: blur(11px) brightness(0.47) saturate(1.35); }
+      30% { transform: scale(1.1) translateX(-3px) translateY(3px); filter: blur(15px) brightness(0.42) saturate(1.55); }
+      40% { transform: scale(1.06) translateX(8px) translateY(-1px); filter: blur(13px) brightness(0.46) saturate(1.45); }
+      50% { transform: scale(1.09) translateX(-8px) translateY(1px); filter: blur(14px) brightness(0.44) saturate(1.5); }
+      60% { transform: scale(1.07) translateX(5px) translateY(-3px); filter: blur(12px) brightness(0.45) saturate(1.4); }
+      70% { transform: scale(1.1) translateX(-5px) translateY(3px); filter: blur(16px) brightness(0.41) saturate(1.6); }
+      80% { transform: scale(1.06) translateX(7px) translateY(-2px); filter: blur(13px) brightness(0.46) saturate(1.42); }
+      90% { transform: scale(1.08) translateX(-7px) translateY(2px); filter: blur(14px) brightness(0.44) saturate(1.48); }
+      100% { transform: scale(1.08) translateX(0px) translateY(0px); filter: blur(12px) brightness(0.45) saturate(1.4); }
     }
     
-    /* Capas de glitch RGB */
-    .glitch-overlay {
+    /* Capa de líneas de escaneo / glitch */
+    .glitch-lines {
       position: fixed;
       top: 0;
       left: 0;
@@ -96,52 +96,93 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
       height: 100%;
       z-index: 1;
       pointer-events: none;
+      background: repeating-linear-gradient(0deg, 
+        rgba(255,0,0,0.06) 0px, 
+        rgba(0,255,0,0.03) 2px, 
+        rgba(0,0,255,0.05) 4px, 
+        transparent 6px,
+        rgba(255,255,0,0.02) 8px,
+        transparent 10px);
+      animation: scanVertical 6s linear infinite;
     }
     
-    .glitch-overlay::before {
-      content: '';
-      position: absolute;
+    @keyframes scanVertical {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 60px; }
+    }
+    
+    /* Líneas diagonales de glitch */
+    .glitch-diagonal {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: repeating-linear-gradient(0deg, rgba(255,0,0,0.08) 0px, rgba(0,255,0,0.04) 2px, rgba(0,0,255,0.06) 4px, transparent 6px);
-      animation: scanLines 8s linear infinite;
+      z-index: 1;
+      pointer-events: none;
+      background: repeating-linear-gradient(115deg, 
+        rgba(255,50,30,0.07) 0px, 
+        rgba(255,50,30,0.07) 1px, 
+        transparent 1px, 
+        transparent 8px);
+      animation: diagonalMove 8s linear infinite;
     }
     
-    @keyframes scanLines {
+    @keyframes diagonalMove {
       0% { background-position: 0 0; }
-      100% { background-position: 0 30px; }
+      100% { background-position: 50px 50px; }
     }
     
+    /* Ruido de píxel glitch */
     .glitch-noise {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDYiLz48L3N2Zz4=');
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjgiIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMTIiLz48L3N2Zz4=');
       background-repeat: repeat;
-      opacity: 0.15;
+      opacity: 0.2;
       pointer-events: none;
       z-index: 2;
-      animation: noiseShift 0.3s infinite alternate;
+      animation: noiseShake 0.2s infinite alternate;
     }
     
-    @keyframes noiseShift {
-      0% { transform: translate(0px, 0px); }
-      100% { transform: translate(-2px, 2px); }
+    @keyframes noiseShake {
+      0% { transform: translate(0px, 0px); opacity: 0.2; }
+      100% { transform: translate(-1px, 1px); opacity: 0.25; }
     }
     
+    /* Capa de color rojo dramático sobre todo */
     .overlay-red {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(180,0,0,0.35), rgba(30,0,0,0.7));
+      background: radial-gradient(circle at 50% 50%, rgba(180,0,0,0.35), rgba(30,0,0,0.75));
       z-index: 3;
       pointer-events: none;
+    }
+    
+    /* Pulsos de luz glitch ocasionales */
+    .glitch-flash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,50,30,0.05);
+      z-index: 3;
+      pointer-events: none;
+      animation: flashRandom 6s infinite;
+    }
+    
+    @keyframes flashRandom {
+      0%, 90%, 94%, 100% { opacity: 0; }
+      92% { opacity: 0.15; }
+      93% { opacity: 0.08; }
+      95% { opacity: 0.12; }
     }
     
     .hub {
@@ -149,48 +190,52 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
       max-width: min(580px, 95%);
       position: relative;
       z-index: 20;
+      margin: 0 auto;
     }
     
-    .header { text-align: center; margin-bottom: clamp(24px, 6vh, 38px); }
+    .header { text-align: center; margin-bottom: clamp(20px, 5vh, 38px); }
     .avatar {
-      width: clamp(105px, 24vw, 135px);
-      height: clamp(105px, 24vw, 135px);
-      margin: 0 auto clamp(12px, 3vh, 18px);
+      width: clamp(95px, 22vw, 130px);
+      height: clamp(95px, 22vw, 130px);
+      margin: 0 auto clamp(10px, 2.5vh, 18px);
       border-radius: 50%;
       overflow: hidden;
       border: 3px solid rgba(255,80,50,0.95);
-      box-shadow: 0 0 35px rgba(255,50,20,0.6);
+      box-shadow: 0 0 35px rgba(255,50,20,0.5);
       transition: all 0.3s ease;
     }
     .avatar img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-    .avatar:hover { box-shadow: 0 0 70px rgba(255,70,30,0.9); transform: scale(1.02); }
-    .avatar:hover img { transform: scale(1.03); }
+    .avatar:hover { box-shadow: 0 0 60px rgba(255,70,30,0.8); transform: scale(1.01); }
+    .avatar:hover img { transform: scale(1.02); }
+    
     h1 {
-      font-size: clamp(2rem, 9vw, 2.9rem);
+      font-size: clamp(1.8rem, 8vw, 2.7rem);
       font-weight: 900;
       letter-spacing: -1px;
-      margin-bottom: 6px;
-      text-shadow: 0 0 22px rgba(255,50,30,0.8);
+      margin-bottom: 4px;
+      text-shadow: 0 0 22px rgba(255,50,30,0.7);
       background: linear-gradient(135deg, #fff2e0, #ffc8aa, #ff9f6e);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       font-family: 'Montserrat', sans-serif;
     }
+    
     .badge-art {
       color: #ffddcc;
-      font-size: clamp(0.6rem, 3.2vw, 0.7rem);
+      font-size: clamp(0.55rem, 3vw, 0.7rem);
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       background: rgba(0,0,0,0.5);
       backdrop-filter: blur(8px);
       display: inline-block;
-      padding: 0.25rem 1.2rem;
+      padding: 0.2rem 1rem;
       border-radius: 50px;
       border: 0.5px solid rgba(255,120,80,0.6);
     }
-    .links { display: flex; flex-direction: column; gap: clamp(12px, 2.5vh, 16px); margin-bottom: 1.5rem; }
+    
+    .links { display: flex; flex-direction: column; gap: clamp(10px, 2vh, 16px); margin-bottom: 1.5rem; }
     .link-btn {
       display: flex;
       align-items: center;
@@ -199,26 +244,26 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255,100,70,0.6);
       border-radius: 70px;
-      padding: clamp(10px, 2.5vw, 14px) clamp(20px, 4vw, 28px);
+      padding: clamp(8px, 2.2vw, 13px) clamp(16px, 4vw, 26px);
       text-decoration: none;
       color: #ffffff;
       font-weight: 600;
-      font-size: clamp(0.8rem, 3.5vw, 0.95rem);
+      font-size: clamp(0.75rem, 3.2vw, 0.9rem);
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
     }
-    .link-left { display: flex; align-items: center; gap: clamp(12px, 3.5vw, 18px); }
-    .link-left i, .link-left .custom-icon { font-size: clamp(1.1rem, 4.5vw, 1.4rem); width: clamp(28px, 6vw, 34px); text-align: center; }
-    .custom-tidal-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(28px, 6vw, 34px); }
-    .custom-tidal-icon svg { width: clamp(20px, 4vw, 26px); height: auto; fill: #00ffff; }
-    .custom-qobuz-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(28px, 6vw, 34px); }
-    .custom-qobuz-icon svg { width: clamp(18px, 3.8vw, 24px); height: auto; fill: #0095F5; }
-    .arrow { font-size: 0.8rem; color: #ffaa80; transition: transform 0.2s; }
-    .link-btn:hover .arrow { transform: translateX(6px); color: white; }
+    .link-left { display: flex; align-items: center; gap: clamp(10px, 3vw, 16px); }
+    .link-left i, .link-left .custom-icon { font-size: clamp(1rem, 4vw, 1.3rem); width: clamp(26px, 5.5vw, 32px); text-align: center; }
+    .custom-tidal-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(26px, 5.5vw, 32px); }
+    .custom-tidal-icon svg { width: clamp(18px, 3.8vw, 24px); height: auto; fill: #00ffff; }
+    .custom-qobuz-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(26px, 5.5vw, 32px); }
+    .custom-qobuz-icon svg { width: clamp(16px, 3.5vw, 22px); height: auto; fill: #0095F5; }
+    .arrow { font-size: 0.7rem; color: #ffaa80; transition: transform 0.2s; }
+    .link-btn:hover .arrow { transform: translateX(5px); color: white; }
     .link-btn:hover {
       background: rgba(40,15,8,0.95);
       border-color: #ffaa77;
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(255,80,50,0.5);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 0 18px rgba(255,80,50,0.4);
     }
     .spotify i { color: #1DB954; }
     .apple i { color: #fc6bcb; }
@@ -229,14 +274,11 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
     .tidal-link:hover .custom-tidal-icon svg { filter: drop-shadow(0 0 6px #00ffff); }
     .qobuz-link .custom-qobuz-icon svg { fill: #0095F5; transition: filter 0.3s; }
     .qobuz-link:hover .custom-qobuz-icon svg { filter: drop-shadow(0 0 6px #0095F5); }
-    .genius-link i { color: #ffff66; }
-    .genius-link:hover i { text-shadow: 0 0 10px #ffff66; }
     
-    /* BOTÓN PÁGINA OFICIAL */
     .official-btn {
       background: linear-gradient(135deg, #e64410, #9e2a00);
       border: none;
-      box-shadow: 0 0 28px rgba(255,80,30,0.8), inset 0 1px 0 rgba(255,255,255,0.2);
+      box-shadow: 0 0 28px rgba(255,80,30,0.7), inset 0 1px 0 rgba(255,255,255,0.2);
       justify-content: center;
       position: relative;
       overflow: hidden;
@@ -253,19 +295,18 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
       transition: opacity 0.5s;
     }
     .official-btn:hover::before { opacity: 1; }
-    .official-btn .link-left { flex: 1; justify-content: center; gap: 12px; }
-    .official-btn .link-left i { font-size: 1.3rem; }
+    .official-btn .link-left { flex: 1; justify-content: center; gap: 10px; }
+    .official-btn .link-left i { font-size: 1.2rem; }
     .official-btn .arrow { display: none; }
-    .official-btn:hover { background: linear-gradient(135deg, #ff5722, #c0392b); transform: translateY(-3px) scale(1.01); box-shadow: 0 0 45px rgba(255,100,40,0.9); }
+    .official-btn:hover { background: linear-gradient(135deg, #ff5722, #c0392b); transform: translateY(-3px) scale(1.01); box-shadow: 0 0 40px rgba(255,100,40,0.8); }
     
-    /* SECCIÓN DE EVENTOS */
     .events-section {
       background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(30,10,5,0.75));
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255,120,80,0.4);
       border-radius: 48px;
-      padding: 1.5rem 1.2rem;
-      margin: 1.8rem 0;
+      padding: 1.2rem 1rem;
+      margin: 1.5rem 0;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -273,82 +314,98 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
     .events-section::after {
       content: '🎤';
       position: absolute;
-      bottom: -15px;
-      right: -15px;
-      font-size: 70px;
-      opacity: 0.1;
+      bottom: -12px;
+      right: -12px;
+      font-size: 60px;
+      opacity: 0.08;
       pointer-events: none;
     }
-    .events-header { margin-bottom: 1.2rem; position: relative; }
-    .events-header i { font-size: 2rem; color: #ffaa80; margin-bottom: 8px; display: inline-block; animation: floatIcon 3s infinite ease; }
-    @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-    .events-header h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: 2px; background: linear-gradient(135deg, #fff, #ffaa80); background-clip: text; -webkit-background-clip: text; color: transparent; }
-    .events-header p { font-size: 0.7rem; opacity: 0.8; margin-top: 4px; }
-    .events-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 1.2rem 0; }
+    .events-header { margin-bottom: 1rem; }
+    .events-header i { font-size: 1.8rem; color: #ffaa80; margin-bottom: 6px; display: inline-block; animation: floatIcon 3s infinite ease; }
+    @keyframes floatIcon { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+    .events-header h3 { font-size: 1.2rem; font-weight: 800; letter-spacing: 2px; background: linear-gradient(135deg, #fff, #ffaa80); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .events-header p { font-size: 0.65rem; opacity: 0.8; margin-top: 4px; }
+    .events-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 1rem 0; }
     .event-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       background: rgba(0,0,0,0.6);
       backdrop-filter: blur(8px);
       border: 1.5px solid #ff7a55;
       border-radius: 60px;
-      padding: 10px 24px;
+      padding: 8px 20px;
       text-decoration: none;
       color: white;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+      transition: all 0.3s ease;
       letter-spacing: 0.5px;
     }
-    .event-btn i { font-size: 1rem; transition: transform 0.2s; }
-    .event-btn:hover { background: #ff4d2e; transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 25px rgba(255,80,40,0.5); border-color: white; }
-    .event-btn:hover i { transform: scale(1.1); }
+    .event-btn i { font-size: 0.9rem; transition: transform 0.2s; }
+    .event-btn:hover { background: #ff4d2e; transform: translateY(-2px) scale(1.02); box-shadow: 0 6px 20px rgba(255,80,40,0.4); border-color: white; }
+    .event-btn:hover i { transform: scale(1.08); }
     .event-note {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       background: rgba(255,100,50,0.2);
       border-radius: 50px;
-      padding: 6px 12px;
+      padding: 5px 10px;
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 8px;
     }
-    .event-note i { margin-right: 6px; }
+    .event-note i { margin-right: 5px; }
     
     .social-dock {
       display: flex;
       justify-content: center;
-      gap: clamp(28px, 8vw, 42px);
+      gap: clamp(24px, 7vw, 38px);
       background: rgba(0,0,0,0.55);
       backdrop-filter: blur(24px);
       border: 1px solid rgba(255,100,75,0.6);
       border-radius: 100px;
-      padding: clamp(8px, 2vh, 12px) clamp(24px, 6vw, 40px);
+      padding: clamp(6px, 1.8vh, 10px) clamp(20px, 5vw, 36px);
       width: fit-content;
-      margin: 0 auto clamp(22px, 5vh, 30px);
+      margin: 0 auto clamp(18px, 4vh, 28px);
     }
     .social-icon {
       color: #ffccb0 !important;
-      font-size: clamp(1.2rem, 5vw, 1.5rem);
+      font-size: clamp(1.1rem, 4.5vw, 1.4rem);
       text-decoration: none;
       transition: all 0.25s ease;
     }
-    .social-icon:hover { transform: translateY(-5px) scale(1.12); color: #ffffff !important; text-shadow: 0 0 12px rgba(255,100,50,1); }
-    .footer-bottom { text-align: center; font-size: 0.65rem; color: #ffbf9a; opacity: 0.7; padding-top: 8px; }
-    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(15px);} 100% { opacity: 1; transform: translateY(0);} }
-    .animate-item { animation: fadeUp 0.5s ease forwards; opacity: 0; }
-    .d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.08s; } .d3 { animation-delay: 0.11s; }
-    .d4 { animation-delay: 0.14s; } .d5 { animation-delay: 0.17s; } .d6 { animation-delay: 0.2s; }
-    .d7 { animation-delay: 0.23s; } .d8 { animation-delay: 0.26s; } .d9 { animation-delay: 0.29s; }
-    .d10 { animation-delay: 0.32s; }
-    @media (max-width: 480px) { .social-dock { gap: 24px; padding: 8px 22px; } .link-left { gap: 8px; } .events-buttons { gap: 10px; } .event-btn { padding: 7px 18px; font-size: 0.7rem; } }
+    .social-icon:hover { transform: translateY(-4px) scale(1.1); color: #ffffff !important; text-shadow: 0 0 12px rgba(255,100,50,1); }
+    .footer-bottom { text-align: center; font-size: 0.6rem; color: #ffbf9a; opacity: 0.7; padding-top: 6px; }
+    
+    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(12px);} 100% { opacity: 1; transform: translateY(0);} }
+    .animate-item { animation: fadeUp 0.45s ease forwards; opacity: 0; }
+    .d1 { animation-delay: 0.04s; } .d2 { animation-delay: 0.07s; } .d3 { animation-delay: 0.1s; }
+    .d4 { animation-delay: 0.13s; } .d5 { animation-delay: 0.16s; } .d6 { animation-delay: 0.19s; }
+    .d7 { animation-delay: 0.22s; } .d8 { animation-delay: 0.25s; } .d9 { animation-delay: 0.28s; }
+    
+    @media (max-width: 480px) {
+      body { padding: 14px; }
+      .social-dock { gap: 22px; padding: 6px 18px; }
+      .link-left { gap: 6px; }
+      .events-buttons { gap: 8px; }
+      .event-btn { padding: 6px 14px; font-size: 0.65rem; }
+      .events-section { padding: 1rem 0.8rem; margin: 1.2rem 0; }
+    }
+    
+    @media (max-width: 380px) {
+      .link-left span { font-size: 0.7rem; }
+      .link-left i, .link-left .custom-icon { width: 24px; }
+      .event-btn span { font-size: 0.6rem; }
+    }
   </style>
 </head>
 <body>
 
-<!-- FONDO CON EFECTO GLITCH -->
+<!-- FONDO CON GLITCH MEJORADO + LÍNEAS + BLUR -->
 <div class="bg-glitch"></div>
-<div class="glitch-overlay"></div>
+<div class="glitch-lines"></div>
+<div class="glitch-diagonal"></div>
 <div class="glitch-noise"></div>
+<div class="glitch-flash"></div>
 <div class="overlay-red"></div>
 
 <div class="hub">
@@ -358,7 +415,7 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
     <div class="badge-art">DISTRIBUCIÓN OFICIAL · STREAMING</div>
   </div>
 
-  <!-- PLATAFORMAS DE STREAMING + QOBUZ + GENIUS -->
+  <!-- PLATAFORMAS DE STREAMING + QOBUZ (Genius eliminado de vista) -->
   <div class="links">
     <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
@@ -367,7 +424,7 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
     <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer"><div class="link-left"><span class="custom-tidal-icon"><svg viewBox="0 0 24 24"><path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/></svg></span><span>TIDAL</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     
-    <!-- QOBUZ (HI-RES) -->
+    <!-- QOBUZ (Hi-Res Audio) -->
     <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="link-btn qobuz-link animate-item d8" target="_blank" rel="noopener noreferrer">
       <div class="link-left">
         <span class="custom-qobuz-icon">
@@ -380,15 +437,8 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
       </div>
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
-
-    <!-- GENIUS (LETRAS) -->
-    <a href="https://genius.com/artists/Incrife" class="link-btn genius-link animate-item d9" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><i class="fa-regular fa-message"></i><span>Genius · Letras oficiales</span></div>
-      <i class="fa-solid fa-chevron-right arrow"></i>
-    </a>
     
-    <!-- BOTÓN PÁGINA OFICIAL -->
-    <a href="https://incrife.com" class="link-btn official-btn animate-item d10" target="_blank" rel="noopener noreferrer">
+    <a href="https://incrife.com" class="link-btn official-btn animate-item d9" target="_blank" rel="noopener noreferrer">
       <div class="link-left"><i class="fa-solid fa-globe"></i><span>Página oficial · incrife.com</span><i class="fa-solid fa-arrow-up-right-from-squares"></i></div>
     </a>
   </div>
@@ -403,11 +453,11 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
     <div class="events-buttons">
       <a href="https://www.bandsintown.com/a/15650903-incrife" class="event-btn" target="_blank" rel="noopener noreferrer">
         <i class="fa-solid fa-ticket-alt"></i>
-        <span>Bandsintown · Sigue al artista</span>
+        <span>Bandsintown</span>
       </a>
       <a href="https://www.songkick.com/artists/10407628-incrife" class="event-btn" target="_blank" rel="noopener noreferrer">
         <i class="fa-solid fa-bell"></i>
-        <span>Songkick · Recibir alertas</span>
+        <span>Songkick</span>
       </a>
     </div>
     <div class="event-note">
@@ -429,13 +479,13 @@ Aquí tienes el código completo con Qobuz y Genius integrados, el nombre real o
 </div>
 
 <script>
-  // SCHEMA.ORG COMPLETO (con nombre real SOLO para Google, no visible al público)
+  // SCHEMA.ORG COMPLETO CON GENIUS (INVISIBLE PARA EL USUARIO, LEGIBLE POR GOOGLE)
   const artistSchema = {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
     "name": "INCRIFE",
     "alternateName": "Ángel Córdoba El Hannouti",
-    "description": "Artista urbano nacido en Barcelona el 28 de septiembre de 2006. Música urbana, latin trap y hip hop. Disponible en todas las plataformas digitales y letras en Genius.",
+    "description": "Artista urbano nacido en Barcelona el 28 de septiembre de 2006. Música urbana, latin trap y hip hop. Disponible en todas las plataformas digitales, incluyendo Qobuz Hi-Res.",
     "url": "https://incrife.com",
     "image": "https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png",
     "genre": ["Urban", "Latin Trap", "Hip Hop", "Reggaeton"],
