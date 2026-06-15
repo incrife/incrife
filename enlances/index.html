@@ -1,15 +1,3 @@
-Tienes toda la razón. He restaurado el archivo original que funcionaba bien y le he aplicado solo los cambios que me pediste:
-
-1. Añadido Qobuz como botón visible (con su logo y enlace correcto).
-2. Añadido Genius como botón visible (para "Leer mis letras").
-3. Eliminado "Ángel Córdoba" de la vista pública (ya no se ve, pero sigue en el Schema para Google).
-4. Cambiado el fondo a un efecto Glitch con líneas y blur animado.
-
-El tamaño de los botones y el diseño general se mantienen exactamente como estaban, porque solo modifiqué lo que me indicaste.
-
-Aquí tienes el código final y corregido:
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,7 +16,6 @@ Aquí tienes el código final y corregido:
   <meta name="geo.region" content="ES-CT">
   <meta name="geo.placename" content="Barcelona">
   
-  <!-- Open Graph / Social Cards -->
   <meta property="og:title" content="INCRIFE · Música + Letras | Streaming oficial">
   <meta property="og:description" content="Artista urbano barcelonés. Escucha su música, lee sus letras y mantente al día de sus conciertos.">
   <meta property="og:url" content="https://incrife.com/enlances">
@@ -54,7 +41,7 @@ Aquí tienes el código final y corregido:
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #0a0000;
+      background: #6f0000;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
@@ -65,111 +52,62 @@ Aquí tienes el código final y corregido:
       position: relative;
       overflow-x: hidden;
     }
-    
-    /* ========== FONDO CON GLITCH ANIMADO ========== */
-    .bg-glitch {
+    .bg-blur-artist {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
       z-index: 0;
       background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png');
       background-size: cover;
       background-position: center 30%;
       background-repeat: no-repeat;
-      filter: blur(12px) brightness(0.45) saturate(1.4);
-      transform: scale(1.08);
-      animation: glitchShift 6s infinite alternate;
-    }
-    
-    @keyframes glitchShift {
-      0% { transform: scale(1.08) translateX(0px); filter: blur(12px) brightness(0.45) saturate(1.4); }
-      20% { transform: scale(1.09) translateX(-5px); filter: blur(14px) brightness(0.43) saturate(1.5); }
-      40% { transform: scale(1.07) translateX(5px); filter: blur(11px) brightness(0.47) saturate(1.35); }
-      60% { transform: scale(1.1) translateX(-3px); filter: blur(15px) brightness(0.42) saturate(1.55); }
-      80% { transform: scale(1.06) translateX(6px); filter: blur(13px) brightness(0.46) saturate(1.45); }
-      100% { transform: scale(1.08) translateX(0px); filter: blur(12px) brightness(0.45) saturate(1.4); }
-    }
-    
-    /* Capa de líneas de escaneo */
-    .glitch-lines {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+      filter: blur(28px) brightness(0.55) saturate(1.6);
+      transform: scale(1.05);
+      animation: slowPan 24s infinite alternate ease-in-out;
       pointer-events: none;
-      background: repeating-linear-gradient(0deg, 
-        rgba(255,0,0,0.06) 0px, 
-        rgba(0,255,0,0.03) 2px, 
-        rgba(0,0,255,0.05) 4px, 
-        transparent 6px,
-        rgba(255,255,0,0.02) 8px,
-        transparent 10px);
-      animation: scanVertical 6s linear infinite;
     }
-    
-    @keyframes scanVertical {
-      0% { background-position: 0 0; }
-      100% { background-position: 0 60px; }
+    @keyframes slowPan {
+      0% { transform: scale(1.05) translateX(0%) translateY(0%); filter: blur(28px) brightness(0.55) saturate(1.6);}
+      100% { transform: scale(1.12) translateX(3%) translateY(2%); filter: blur(32px) brightness(0.5) saturate(1.8);}
     }
-    
-    /* Líneas diagonales */
-    .glitch-diagonal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-      background: repeating-linear-gradient(115deg, 
-        rgba(255,50,30,0.07) 0px, 
-        rgba(255,50,30,0.07) 1px, 
-        transparent 1px, 
-        transparent 8px);
-      animation: diagonalMove 8s linear infinite;
-    }
-    
-    @keyframes diagonalMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 50px 50px; }
-    }
-    
-    /* Ruido de píxel */
-    .glitch-noise {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjgiIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMTIiLz48L3N2Zz4=');
-      background-repeat: repeat;
-      opacity: 0.2;
-      pointer-events: none;
-      z-index: 2;
-      animation: noiseShake 0.2s infinite alternate;
-    }
-    
-    @keyframes noiseShake {
-      0% { transform: translate(0px, 0px); opacity: 0.2; }
-      100% { transform: translate(-1px, 1px); opacity: 0.25; }
-    }
-    
-    /* Capa de color rojo */
     .overlay-red {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 50% 50%, rgba(180,0,0,0.35), rgba(30,0,0,0.75));
-      z-index: 3;
+      background: radial-gradient(circle at 50% 50%, rgba(180,0,0,0.45), rgba(70,0,0,0.7));
+      z-index: 1;
       pointer-events: none;
     }
-    
+    .dynamic-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      background: repeating-linear-gradient(115deg, rgba(255,70,40,0.08) 0px, rgba(255,70,40,0.08) 2px, transparent 2px, transparent 12px);
+      animation: driftLines 15s linear infinite;
+    }
+    @keyframes driftLines { 0% { background-position: 0 0; } 100% { background-position: 80px 80px; } }
+    .glow-pulse {
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(255,80,40,0.25) 0%, rgba(255,0,0,0) 70%);
+      border-radius: 50%;
+      filter: blur(45px);
+      z-index: 1;
+      animation: softPulse 6s infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes softPulse { 0% { opacity: 0.4; transform: scale(0.9);} 100% { opacity: 0.9; transform: scale(1.2);} }
     .hub { width: 100%; max-width: min(580px, 95%); position: relative; z-index: 15; }
     .header { text-align: center; margin-bottom: clamp(24px, 6vh, 38px); }
     .avatar {
@@ -252,7 +190,7 @@ Aquí tienes el código final y corregido:
     .genius-link i { color: #ffff66; }
     .genius-link:hover i { text-shadow: 0 0 10px #ffff66; }
     
-    /* BOTÓN PÁGINA OFICIAL REDISEÑADO - ESTILO ARTISTA */
+    /* BOTÓN PÁGINA OFICIAL - ESTILO ARTISTA */
     .official-btn {
       background: linear-gradient(135deg, #e64410, #9e2a00);
       border: none;
@@ -363,13 +301,10 @@ Aquí tienes el código final y corregido:
   </style>
 </head>
 <body>
-
-<!-- FONDO CON GLITCH MEJORADO -->
-<div class="bg-glitch"></div>
-<div class="glitch-lines"></div>
-<div class="glitch-diagonal"></div>
-<div class="glitch-noise"></div>
+<div class="bg-blur-artist"></div>
 <div class="overlay-red"></div>
+<div class="dynamic-lines"></div>
+<div class="glow-pulse"></div>
 
 <div class="hub">
   <div class="header animate-item d1">
@@ -387,7 +322,7 @@ Aquí tienes el código final y corregido:
     <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer"><div class="link-left"><span class="custom-tidal-icon"><svg viewBox="0 0 24 24"><path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/></svg></span><span>TIDAL</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
     
-    <!-- QOBUZ (Hi-Res Audio) - NUEVO BOTÓN VISIBLE -->
+    <!-- QOBUZ (Hi-Res Audio) -->
     <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="link-btn qobuz-link animate-item d8" target="_blank" rel="noopener noreferrer">
       <div class="link-left">
         <span class="custom-qobuz-icon">
@@ -401,7 +336,7 @@ Aquí tienes el código final y corregido:
       <i class="fa-solid fa-chevron-right arrow"></i>
     </a>
 
-    <!-- GENIUS (Letras) - NUEVO BOTÓN VISIBLE -->
+    <!-- GENIUS (Letras) -->
     <a href="https://genius.com/artists/Incrife" class="link-btn genius-link animate-item d9" target="_blank" rel="noopener noreferrer">
       <div class="link-left"><i class="fa-regular fa-message"></i><span>Genius · Lee mis letras</span></div>
       <i class="fa-solid fa-chevron-right arrow"></i>
@@ -448,7 +383,7 @@ Aquí tienes el código final y corregido:
 </div>
 
 <script>
-  // SCHEMA.ORG CON NOMBRE REAL (SOLO PARA GOOGLE, NO SE VE EN PÚBLICO)
+  // SCHEMA.ORG CON DATOS PERSONALES (SOLO PARA GOOGLE, NO VISIBLE EN PÚBLICO)
   const artistSchema = {
     "@context": "https://schema.org",
     "@type": "MusicGroup",
@@ -513,4 +448,3 @@ Aquí tienes el código final y corregido:
 </script>
 </body>
 </html>
-```
