@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <title>INCRIFE | Artista Visual · Música · Videoclips</title>
+    <title>INCRIFE | Artista · Música · Videoclips</title>
     
     <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA">
     
@@ -13,8 +13,8 @@
     <link rel="alternate" hreflang="en" href="https://incrife.com/en">
     <link rel="alternate" hreflang="x-default" href="https://incrife.com">
     
-    <meta name="description" content="INCRIFE: Artista visual, músico y creador de contenido. Especialista en videoclips, producción musical y narrativa audiovisual. Nacido en La Mina.">
-    <meta name="keywords" content="artista visual, músico, videoclips, producción musical, incrife, La Mina, barcelona">
+    <meta name="description" content="INCRIFE: Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual. Nacido en La Mina.">
+    <meta name="keywords" content="artista, músico, videoclips, producción musical, incrife, La Mina, barcelona">
     <meta name="author" content="Ángel Córdoba El Hannouti">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="theme-color" content="#cc0000">
@@ -23,8 +23,8 @@
     <meta name="geo.position" content="41.385063;2.173404">
     <meta name="ICBM" content="41.385063, 2.173404">
     
-    <meta property="og:title" content="INCRIFE | Artista Visual · Música · Videoclips">
-    <meta property="og:description" content="Artista visual, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.">
+    <meta property="og:title" content="INCRIFE | Artista · Música · Videoclips">
+    <meta property="og:description" content="Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.">
     <meta property="og:url" content="https://incrife.com">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
@@ -34,8 +34,8 @@
     <meta property="og:phone_number" content="+34624170204">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="INCRIFE | Artista Visual · Música · Videoclips">
-    <meta name="twitter:description" content="Artista visual, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.">
+    <meta name="twitter:title" content="INCRIFE | Artista · Música · Videoclips">
+    <meta name="twitter:description" content="Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.">
     <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png">
     <meta name="twitter:creator" content="@Incrife">
     
@@ -409,11 +409,6 @@
         .quote-text { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3vw, 1.8rem); font-style: italic; color: var(--white); line-height: 1.5; margin-bottom: 1.5rem; }
         .quote-author { font-size: 0.85rem; color: var(--red-light); letter-spacing: 2px; text-transform: uppercase; }
         
-        /* Social - SOLO X, IG, TIKTOK */
-        .social-grid { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-        .social-circle { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--text-secondary); font-size: 1.3rem; border: 1px solid var(--border-color); transition: all var(--transition-base); background: var(--black-card); }
-        .social-circle:hover { background: var(--red); color: white; border-color: var(--red); transform: translateY(-5px); box-shadow: var(--shadow-red); }
-        
         /* Footer - enlaces y números en blanco */
         .footer { background: var(--black-secondary); text-align: center; padding: 3rem 0; border-top: 1px solid var(--border-color); }
         .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 1rem; letter-spacing: 3px; }
@@ -421,6 +416,8 @@
         .footer-text a, .footer-text span { color: var(--white) !important; text-decoration: none; }
         .footer-text a:hover { color: var(--red-light) !important; }
         .footer-social { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; }
+        .footer-social a { color: var(--white) !important; font-size: 1.1rem; transition: color 0.2s; }
+        .footer-social a:hover { color: var(--red-light) !important; }
         
         /* Floating WhatsApp */
         .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; z-index: 999; width: 55px; height: 55px; background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.3); transition: all var(--transition-base); }
@@ -507,12 +504,11 @@
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>
         <div class="hero-content">
-            <span class="hero-badge" data-es="Artista Visual · Músico" data-en="Visual Artist · Musician">Artista Visual · Músico</span>
+            <span class="hero-badge" data-es="Artista" data-en="Artist">Artista</span>
             <h1>IN<span class="text-gradient">CRIFE</span></h1>
-            <p class="tagline" data-es="Videoclips · Producción Musical · Narrativa Audiovisual · Barcelona" data-en="Music Videos · Music Production · Audiovisual Narrative · Barcelona">Videoclips · Producción Musical · Narrativa Audiovisual · Barcelona</p>
+            <p class="tagline" data-es="Música · Videoclips · Narrativa Audiovisual · Barcelona" data-en="Music · Music Videos · Audiovisual Narrative · Barcelona">Música · Videoclips · Narrativa Audiovisual · Barcelona</p>
             <div class="hero-actions">
                 <a href="#proyectos" class="btn btn-primary btn-lg" data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</a>
-                <a href="#vevo" class="btn btn-outline btn-lg" data-es="Ver VEVO" data-en="Watch VEVO">Ver VEVO</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -521,13 +517,13 @@
         </div>
     </section>
     
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== ABOUT (BIOGRAFÍA) ===== -->
     <section id="about" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag" data-es="Sobre mí" data-en="About me">Sobre mí</div>
+                <div class="section-tag" data-es="Biografía" data-en="Biography">Biografía</div>
                 <h2 class="section-title">Ángel Córdoba <span class="accent">El Hannouti</span></h2>
-                <p class="section-subtitle" data-es="Artista visual, músico y creador de contenido. Nacido en La Mina, Barcelona." data-en="Visual artist, musician and content creator. Born in La Mina, Barcelona.">Artista visual, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
+                <p class="section-subtitle" data-es="Artista, músico y creador de contenido. Nacido en La Mina, Barcelona." data-en="Artist, musician and content creator. Born in La Mina, Barcelona.">Artista, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
             </div>
             <div class="about-grid">
                 <div class="about-image-wrapper" data-aos="fade-right">
@@ -535,8 +531,8 @@
                     <img src="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png" alt="INCRIFE - Ángel Córdoba" class="about-image" loading="lazy">
                 </div>
                 <div class="about-text" data-aos="fade-left">
-                    <h2>Visual <span class="accent">Artist</span> & <span class="accent" data-es="Músico" data-en="Musician">Músico</span></h2>
-                    <p class="about-story" data-es="Nacido en el barrio de La Mina, Barcelona. De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como Ne-Yo y MHD. Soy artista de afrotrap, afrobeat, trap, reggaetón y Latin Urban. También me especializo en la creación de videoclips y narrativa audiovisual.<br><br>Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: producción musical, marketing digital, diseño, fotografía, vídeo y desarrollo artístico. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único." data-en="Born in La Mina, Barcelona. Of Spanish and Italian descent. The cultural diversity of my environment deeply influenced my artistic and musical vision.<br><br>From an early age I showed great interest in music, inspired by artists like Ne-Yo and MHD. I am an afrotrap, afrobeat, trap, reggaeton and Latin Urban artist. I also specialize in music video creation and audiovisual narrative.<br><br>My creative curiosity and self-taught nature led me to explore different disciplines: music production, digital marketing, design, photography, video and artistic development. I have overcome hearing problems and today I combine image, sound and narrative to create unique audiovisual content.">
+                    <h2>Artista <span class="accent">&</span> <span class="accent" data-es="Músico" data-en="Musician">Músico</span></h2>
+                    <p class="about-story" data-es="Nacido en el barrio de La Mina, Barcelona. De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como Ne-Yo y MHD. Soy artista de afrotrap, afrobeat, trap, reggaetón y Latin Urban. También me especializo en la creación de videoclips y narrativa audiovisual.<br><br>Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: producción musical, marketing digital, diseño, vídeo y desarrollo artístico. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único." data-en="Born in La Mina, Barcelona. Of Spanish and Italian descent. The cultural diversity of my environment deeply influenced my artistic and musical vision.<br><br>From an early age I showed great interest in music, inspired by artists like Ne-Yo and MHD. I am an afrotrap, afrobeat, trap, reggaeton and Latin Urban artist. I also specialize in music video creation and audiovisual narrative.<br><br>My creative curiosity and self-taught nature led me to explore different disciplines: music production, digital marketing, design, video and artistic development. I have overcome hearing problems and today I combine image, sound and narrative to create unique audiovisual content.">
                         Nacido en el barrio de <strong>La Mina, Barcelona</strong>. De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>
                         Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como <strong>Ne-Yo</strong> y <strong>MHD</strong>. Soy artista de <strong>afrotrap, afrobeat, trap, reggaetón y Latin Urban</strong>. También me especializo en la creación de <strong>videoclips y narrativa audiovisual</strong>.<br><br>
                         Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: producción musical, marketing digital, diseño, vídeo y desarrollo artístico. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.
@@ -558,7 +554,7 @@
                 <div class="timeline-item"><div class="timeline-year" data-es="2006" data-en="2006">2006</div><div class="timeline-title" data-es="Nacimiento" data-en="Birth">Nacimiento</div><p class="timeline-text" data-es="28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana." data-en="September 28. Barcelona, Spain. La Mina neighborhood. Spanish and Italian descent.">28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana.</p></div>
                 <div class="timeline-item"><div class="timeline-year" data-es="Infancia" data-en="Childhood">Infancia</div><div class="timeline-title" data-es="Primeras Inspiraciones" data-en="First Inspirations">Primeras Inspiraciones</div><p class="timeline-text" data-es="Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición." data-en="Discovery of Ne-Yo and MHD. Interest in urban music, singing and composition.">Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición.</p></div>
                 <div class="timeline-item"><div class="timeline-year" data-es="Adolescencia" data-en="Teenage Years">Adolescencia</div><div class="timeline-title" data-es="Exploración Artística" data-en="Artistic Exploration">Exploración Artística</div><p class="timeline-text" data-es="Formación autodidacta en producción musical, marketing digital, diseño, vídeo y desarrollo artístico. Etapa en la escena techno y rave." data-en="Self-taught training in music production, digital marketing, design, video and artistic development. Stage in the techno and rave scene.">Formación autodidacta en producción musical, marketing digital, diseño, vídeo y desarrollo artístico. Etapa en la escena techno y rave.</p></div>
-                <div class="timeline-item"><div class="timeline-year" data-es="2024" data-en="2024">2024</div><div class="timeline-title" data-es="INCRIFE Oficial" data-en="Official INCRIFE">INCRIFE Oficial</div><p class="timeline-text" data-es="Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista visual." data-en="Foundation of the INCRIFE project. Started as a content creator and visual artist.">Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista visual.</p></div>
+                <div class="timeline-item"><div class="timeline-year" data-es="2024" data-en="2024">2024</div><div class="timeline-title" data-es="INCRIFE Oficial" data-en="Official INCRIFE">INCRIFE Oficial</div><p class="timeline-text" data-es="Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista." data-en="Foundation of the INCRIFE project. Started as a content creator and artist.">Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista.</p></div>
                 <div class="timeline-item"><div class="timeline-year" data-es="2026" data-en="2026">2026</div><div class="timeline-title" data-es="Regreso a la Música" data-en="Return to Music">Regreso a la Música</div><p class="timeline-text" data-es="Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación." data-en="Overcoming hearing problems. Singing lessons. Learning French. New album in preparation.">Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación.</p></div>
             </div>
         </div>
@@ -658,15 +654,6 @@
         <div class="container"><div class="quote-section" data-aos="fade-up"><div class="quote-icon"><i class="fas fa-quote-right"></i></div><p class="quote-text" data-es='"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer una experiencia audiovisual única."' data-en='"My goal is to bring my music to the world while offering a unique audiovisual experience."'>"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer una experiencia audiovisual única."</p><p class="quote-author">— INCRIFE</p></div></div>
     </section>
     
-    <!-- ===== SOCIAL (SOLO X, IG, TIKTOK) ===== -->
-    <section id="social" class="dark">
-        <div class="container"><div class="section-header" data-aos="fade-up"><div class="section-tag" data-es="Sígueme" data-en="Follow Me">Sígueme</div><h2 class="section-title">Redes <span class="accent" data-es="Sociales" data-en="Social">Sociales</span></h2></div><div class="social-grid" data-aos="fade-up">
-            <a href="https://www.instagram.com/incrife/" target="_blank" class="social-circle"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@incrife" target="_blank" class="social-circle"><i class="fab fa-tiktok"></i></a>
-            <a href="https://x.com/Incrife" target="_blank" class="social-circle"><i class="fab fa-twitter"></i></a>
-        </div></div>
-    </section>
-    
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
@@ -677,7 +664,7 @@
                 <a href="https://x.com/Incrife" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
             <p class="footer-text">
-                <strong>INCRIFE</strong> · Ángel Córdoba El Hannouti · <span data-es="Artista Visual · Músico · Creador de Contenido" data-en="Visual Artist · Musician · Content Creator">Artista Visual · Músico · Creador de Contenido</span><br>
+                <strong>INCRIFE</strong> · Ángel Córdoba El Hannouti · <span data-es="Artista · Músico · Creador de Contenido" data-en="Artist · Musician · Content Creator">Artista · Músico · Creador de Contenido</span><br>
                 © 2026 · Barcelona · La Mina · España · <a href="mailto:contact@gmail.com">contact@gmail.com</a> · <span>+34 624 17 02 04</span><br>
                 <a href="https://incrife.com">incrife.com</a> · <span data-es="Todos los derechos reservados" data-en="All rights reserved">Todos los derechos reservados</span>
             </p>
@@ -697,25 +684,25 @@
             }
         });
         
-        const titleEs = "INCRIFE | Artista Visual · Música · Videoclips";
-        const titleEn = "INCRIFE | Visual Artist · Music · Music Videos";
+        const titleEs = "INCRIFE | Artista · Música · Videoclips";
+        const titleEn = "INCRIFE | Artist · Music · Music Videos";
         document.title = lang === 'es' ? titleEs : titleEn;
         
-        const metaDescEs = "INCRIFE: Artista visual, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.";
-        const metaDescEn = "INCRIFE: Visual artist, musician and content creator. Music videos, music production and audiovisual narrative.";
+        const metaDescEs = "INCRIFE: Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.";
+        const metaDescEn = "INCRIFE: Artist, musician and content creator. Music videos, music production and audiovisual narrative.";
         let metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.setAttribute('content', lang === 'es' ? metaDescEs : metaDescEn);
         
-        const keywordsEs = "artista visual, músico, videoclips, producción musical, incrife, La Mina, barcelona";
-        const keywordsEn = "visual artist, musician, music videos, music production, incrife, La Mina, barcelona";
+        const keywordsEs = "artista, músico, videoclips, producción musical, incrife, La Mina, barcelona";
+        const keywordsEn = "artist, musician, music videos, music production, incrife, La Mina, barcelona";
         let metaKeywords = document.querySelector('meta[name="keywords"]');
         if (metaKeywords) metaKeywords.setAttribute('content', lang === 'es' ? keywordsEs : keywordsEn);
         
         let ogTitle = document.querySelector('meta[property="og:title"]');
         if (ogTitle) ogTitle.setAttribute('content', lang === 'es' ? titleEs : titleEn);
         
-        const ogDescEs = "Artista visual, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.";
-        const ogDescEn = "Visual artist, musician and content creator. Music videos, music production and audiovisual narrative.";
+        const ogDescEs = "Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.";
+        const ogDescEn = "Artist, musician and content creator. Music videos, music production and audiovisual narrative.";
         let ogDesc = document.querySelector('meta[property="og:description"]');
         if (ogDesc) ogDesc.setAttribute('content', lang === 'es' ? ogDescEs : ogDescEn);
         
@@ -780,8 +767,8 @@
     
     (function(){
         let schemas = [
-            {"@context":"https://schema.org","@type":"Person","name":"Ángel Córdoba El Hannouti","alternateName":"INCRIFE","jobTitle":"Artista Visual · Músico","birthDate":"2006-09-28","birthPlace":{"@type":"City","name":"Barcelona, España"},"sameAs":["https://www.instagram.com/incrife/","https://www.tiktok.com/@incrife","https://x.com/Incrife"]},
-            {"@context":"https://schema.org","@type":"MusicGroup","name":"INCRIFE","alternateName":"Ángel Córdoba El Hannouti","description":"Artista visual, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.","url":"https://incrife.com","image":"https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png","genre":["Afrotrap","Afrobeat","Trap","Reggaetón","Latin Urban"],"sameAs":["https://www.deezer.com/es/artist/352025722","https://tidal.com/artist/68789425","https://www.qobuz.com/us-en/interpreter/incrife/29103217"]}
+            {"@context":"https://schema.org","@type":"Person","name":"Ángel Córdoba El Hannouti","alternateName":"INCRIFE","jobTitle":"Artista · Músico","birthDate":"2006-09-28","birthPlace":{"@type":"City","name":"Barcelona, España"},"sameAs":["https://www.instagram.com/incrife/","https://www.tiktok.com/@incrife","https://x.com/Incrife"]},
+            {"@context":"https://schema.org","@type":"MusicGroup","name":"INCRIFE","alternateName":"Ángel Córdoba El Hannouti","description":"Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.","url":"https://incrife.com","image":"https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png","genre":["Afrotrap","Afrobeat","Trap","Reggaetón","Latin Urban"],"sameAs":["https://www.deezer.com/es/artist/352025722","https://tidal.com/artist/68789425","https://www.qobuz.com/us-en/interpreter/incrife/29103217"]}
         ];
         schemas.forEach(s => { let el = document.createElement('script'); el.type = 'application/ld+json'; el.textContent = JSON.stringify(s); document.head.appendChild(el); });
     })();
