@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -7,11 +8,6 @@
     <title>INCRIFE | Artista · Música · Videoclips</title>
     
     <meta name="google-site-verification" content="yKbXOS6S6iUlOi7-N5iLx1rqcqQpRqUypio05PDIOiA">
-    
-    <!-- HREFLANG para SEO bilingüe -->
-    <link rel="alternate" hreflang="es" href="https://incrife.com">
-    <link rel="alternate" hreflang="en" href="https://incrife.com/en">
-    <link rel="alternate" hreflang="x-default" href="https://incrife.com">
     
     <meta name="description" content="INCRIFE: Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual. Nacido en La Mina.">
     <meta name="keywords" content="artista, músico, videoclips, producción musical, incrife, La Mina, barcelona">
@@ -215,23 +211,6 @@
         .nav-links a:hover { color: var(--white); }
         .nav-links a:hover::after { width: 100%; }
         
-        .lang-selector {
-            display: flex; gap: 0.3rem; margin-left: 1rem;
-        }
-        .lang-btn {
-            background: transparent; border: 1px solid var(--red-border);
-            color: var(--text-secondary); font-size: 0.65rem;
-            font-weight: 600; padding: 0.3rem 0.6rem; border-radius: var(--radius-xs);
-            cursor: pointer; transition: all var(--transition-fast);
-            font-family: 'Inter', sans-serif;
-        }
-        .lang-btn.active {
-            background: var(--red); border-color: var(--red); color: white;
-        }
-        .lang-btn:hover:not(.active) {
-            border-color: var(--red); color: var(--red-light);
-        }
-        
         .hamburger { display: none; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 1001; }
         .hamburger span { width: 22px; height: 1.5px; background: var(--white); transition: all var(--transition-base); }
         .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
@@ -254,12 +233,6 @@
         .mobile-menu-close {
             position: absolute; top: 2rem; right: 2rem; font-size: 2rem;
             background: none; border: none; color: var(--white); cursor: pointer;
-        }
-        .mobile-lang {
-            display: flex; gap: 1rem; margin-top: 1rem;
-        }
-        .mobile-lang .lang-btn {
-            padding: 0.5rem 1rem; font-size: 0.8rem;
         }
         
         /* HERO */
@@ -322,12 +295,14 @@
         .btn-light:hover { background: var(--gray-200); transform: translateY(-2px); }
         .btn-lg { padding: 1rem 2.2rem; font-size: 0.8rem; }
         
-        /* About */
-        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto; }
+        /* About - BIOGRAFÍA JUNTO A LA FOTO */
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; max-width: 1000px; margin: 0 auto; }
         .about-image-wrapper { position: relative; }
         .about-image { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
         .about-image-accent { position: absolute; top: -15px; left: -15px; width: 100%; height: 100%; border: 1px solid var(--red); border-radius: var(--radius-md); z-index: -1; }
         .about-story { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; font-weight: 300; }
+        .about-story strong { color: var(--white); font-weight: 600; }
+        .about-story .highlight { color: var(--red-light); font-weight: 500; }
         
         /* Timeline */
         .timeline { max-width: 700px; margin: 0 auto; position: relative; padding-left: 40px; }
@@ -370,7 +345,7 @@
         .project-info p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-weight: 300; }
         .project-arrow { color: var(--red-light); font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
         
-        /* VEVO - SECCIÓN ELABORADA */
+        /* VEVO */
         .vevo-section {
             background: var(--black-card); border: 1px solid var(--border-color);
             border-radius: var(--radius-lg); padding: 2.5rem; text-align: center;
@@ -439,7 +414,6 @@
             .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
             .videoclips-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
-            .lang-selector { display: none; }
         }
         @media (max-width: 480px) {
             section { padding: 2.5rem 0; }
@@ -470,33 +444,25 @@
         <div class="nav-inner">
             <a href="#home" class="nav-logo">INCRIFE</a>
             <ul class="nav-links">
-                <li><a href="#home" data-es="Inicio" data-en="Home">Inicio</a></li>
-                <li><a href="https://incrife.com/agency" target="_blank" data-es="Agency" data-en="Agency">Agency</a></li>
-                <li><a href="https://incrife.com/studio" target="_blank" data-es="Portafolio" data-en="Portfolio">Portafolio</a></li>
-                <li><a href="https://incrife.com/studio" target="_blank" data-es="Studio musical" data-en="Music Studio">Studio musical</a></li>
-                <li><a href="https://incrife.com/book" target="_blank" data-es="Book" data-en="Book">Book</a></li>
-                <li><a href="#vevo" data-es="VEVO" data-en="VEVO">VEVO</a></li>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="https://incrife.com/agency" target="_blank">Agency</a></li>
+                <li><a href="https://incrife.com/studio" target="_blank">Portafolio</a></li>
+                <li><a href="https://incrife.com/studio" target="_blank">Studio musical</a></li>
+                <li><a href="https://incrife.com/book" target="_blank">Book</a></li>
+                <li><a href="#vevo">VEVO</a></li>
             </ul>
-            <div class="lang-selector">
-                <button class="lang-btn active" data-lang="es">ES</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
     </nav>
     
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileClose">&times;</button>
-        <a href="#home" data-es="Inicio" data-en="Home">Inicio</a>
-        <a href="https://incrife.com/agency" target="_blank" data-es="Agency" data-en="Agency">Agency</a>
-        <a href="https://incrife.com/studio" target="_blank" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
-        <a href="https://incrife.com/studio" target="_blank" data-es="Studio musical" data-en="Music Studio">Studio musical</a>
-        <a href="https://incrife.com/book" target="_blank" data-es="Book" data-en="Book">Book</a>
-        <a href="#vevo" data-es="VEVO" data-en="VEVO">VEVO</a>
-        <div class="mobile-lang">
-            <button class="lang-btn active" data-lang="es">ES</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-        </div>
+        <a href="#home">Inicio</a>
+        <a href="https://incrife.com/agency" target="_blank">Agency</a>
+        <a href="https://incrife.com/studio" target="_blank">Portafolio</a>
+        <a href="https://incrife.com/studio" target="_blank">Studio musical</a>
+        <a href="https://incrife.com/book" target="_blank">Book</a>
+        <a href="#vevo">VEVO</a>
     </div>
 
     <!-- ===== HERO ===== -->
@@ -504,26 +470,26 @@
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>
         <div class="hero-content">
-            <span class="hero-badge" data-es="Artista" data-en="Artist">Artista</span>
+            <span class="hero-badge">Artista</span>
             <h1>IN<span class="text-gradient">CRIFE</span></h1>
-            <p class="tagline" data-es="Música · Videoclips · Narrativa Audiovisual · Barcelona" data-en="Music · Music Videos · Audiovisual Narrative · Barcelona">Música · Videoclips · Narrativa Audiovisual · Barcelona</p>
+            <p class="tagline">Música · Videoclips · Narrativa Audiovisual · Barcelona</p>
             <div class="hero-actions">
-                <a href="#proyectos" class="btn btn-primary btn-lg" data-es="Ver Proyectos" data-en="View Projects">Ver Proyectos</a>
+                <a href="#proyectos" class="btn btn-primary btn-lg">Ver Proyectos</a>
             </div>
         </div>
         <div class="hero-scroll">
-            <span data-es="DESPLAZAR" data-en="SCROLL">DESPLAZAR</span>
+            <span>DESPLAZAR</span>
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
     
-    <!-- ===== ABOUT (BIOGRAFÍA) ===== -->
+    <!-- ===== ABOUT (BIOGRAFÍA JUNTO A LA FOTO) ===== -->
     <section id="about" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag" data-es="Biografía" data-en="Biography">Biografía</div>
+                <div class="section-tag">Biografía</div>
                 <h2 class="section-title">Ángel Córdoba <span class="accent">El Hannouti</span></h2>
-                <p class="section-subtitle" data-es="Artista, músico y creador de contenido. Nacido en La Mina, Barcelona." data-en="Artist, musician and content creator. Born in La Mina, Barcelona.">Artista, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
+                <p class="section-subtitle">Artista, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
             </div>
             <div class="about-grid">
                 <div class="about-image-wrapper" data-aos="fade-right">
@@ -532,9 +498,9 @@
                 </div>
                 <div class="about-text" data-aos="fade-left">
                     <p class="about-story">
-                        Nacido en el barrio de <strong>La Mina, Barcelona</strong>. De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>
+                        <strong>Nacido en el barrio de La Mina, Barcelona.</strong> De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>
                         Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como <strong>Ne-Yo</strong> y <strong>MHD</strong>. Soy artista de <strong>afrotrap, afrobeat, trap, reggaetón y Latin Urban</strong>. También me especializo en la creación de <strong>videoclips y narrativa audiovisual</strong>.<br><br>
-                        Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: producción musical, marketing digital, diseño, vídeo y desarrollo artístico. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.
+                        Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: <strong>producción musical, marketing digital, diseño, vídeo y desarrollo artístico</strong>. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.
                     </p>
                 </div>
             </div>
@@ -545,16 +511,16 @@
     <section id="story">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag" data-es="Mi Historia" data-en="My Story">Mi Historia</div>
-                <h2 class="section-title">Trayectoria <span class="accent" data-es="Personal" data-en="Journey">Personal</span></h2>
-                <p class="section-subtitle" data-es="El camino que me ha llevado hasta aquí." data-en="The path that has brought me here.">El camino que me ha llevado hasta aquí.</p>
+                <div class="section-tag">Mi Historia</div>
+                <h2 class="section-title">Trayectoria <span class="accent">Personal</span></h2>
+                <p class="section-subtitle">El camino que me ha llevado hasta aquí.</p>
             </div>
             <div class="timeline" data-aos="fade-up">
-                <div class="timeline-item"><div class="timeline-year" data-es="2006" data-en="2006">2006</div><div class="timeline-title" data-es="Nacimiento" data-en="Birth">Nacimiento</div><p class="timeline-text" data-es="28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana." data-en="September 28. Barcelona, Spain. La Mina neighborhood. Spanish and Italian descent.">28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana.</p></div>
-                <div class="timeline-item"><div class="timeline-year" data-es="Infancia" data-en="Childhood">Infancia</div><div class="timeline-title" data-es="Primeras Inspiraciones" data-en="First Inspirations">Primeras Inspiraciones</div><p class="timeline-text" data-es="Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición." data-en="Discovery of Ne-Yo and MHD. Interest in urban music, singing and composition.">Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición.</p></div>
-                <div class="timeline-item"><div class="timeline-year" data-es="Adolescencia" data-en="Teenage Years">Adolescencia</div><div class="timeline-title" data-es="Exploración Artística" data-en="Artistic Exploration">Exploración Artística</div><p class="timeline-text" data-es="Formación autodidacta en producción musical, marketing digital, diseño, vídeo y desarrollo artístico. Etapa en la escena techno y rave." data-en="Self-taught training in music production, digital marketing, design, video and artistic development. Stage in the techno and rave scene.">Formación autodidacta en producción musical, marketing digital, diseño, vídeo y desarrollo artístico. Etapa en la escena techno y rave.</p></div>
-                <div class="timeline-item"><div class="timeline-year" data-es="2024" data-en="2024">2024</div><div class="timeline-title" data-es="INCRIFE Oficial" data-en="Official INCRIFE">INCRIFE Oficial</div><p class="timeline-text" data-es="Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista." data-en="Foundation of the INCRIFE project. Started as a content creator and artist.">Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista.</p></div>
-                <div class="timeline-item"><div class="timeline-year" data-es="2026" data-en="2026">2026</div><div class="timeline-title" data-es="Regreso a la Música" data-en="Return to Music">Regreso a la Música</div><p class="timeline-text" data-es="Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación." data-en="Overcoming hearing problems. Singing lessons. Learning French. New album in preparation.">Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación.</p></div>
+                <div class="timeline-item"><div class="timeline-year">2006</div><div class="timeline-title">Nacimiento</div><p class="timeline-text">28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana.</p></div>
+                <div class="timeline-item"><div class="timeline-year">Infancia</div><div class="timeline-title">Primeras Inspiraciones</div><p class="timeline-text">Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición.</p></div>
+                <div class="timeline-item"><div class="timeline-year">Adolescencia</div><div class="timeline-title">Exploración Artística</div><p class="timeline-text">Formación autodidacta en producción musical, marketing digital, diseño, vídeo y desarrollo artístico. Etapa en la escena techno y rave.</p></div>
+                <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-title">INCRIFE Oficial</div><p class="timeline-text">Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista.</p></div>
+                <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-title">Regreso a la Música</div><p class="timeline-text">Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación.</p></div>
             </div>
         </div>
     </section>
@@ -563,13 +529,13 @@
     <section id="videoclips" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag" data-es="Últimos Lanzamientos" data-en="Latest Releases">Últimos Lanzamientos</div>
-                <h2 class="section-title">Videoclips <span class="accent" data-es="Recientes" data-en="Recent">Recientes</span></h2>
-                <p class="section-subtitle" data-es="Dirección y producción de videoclips para artistas." data-en="Direction and production of music videos for artists.">Dirección y producción de videoclips para artistas.</p>
+                <div class="section-tag">Últimos Lanzamientos</div>
+                <h2 class="section-title">Videoclips <span class="accent">Recientes</span></h2>
+                <p class="section-subtitle">Dirección y producción de videoclips para artistas.</p>
             </div>
             <div class="videoclips-grid">
-                <div class="videoclip-card" data-aos="fade-up"><img class="videoclip-thumb" src="https://img.youtube.com/vi/vUhkd4jRlvU/maxresdefault.jpg" alt="Maruu King - Soy de Coca" onerror="this.src='https://img.youtube.com/vi/vUhkd4jRlvU/hqdefault.jpg'"><div class="videoclip-info"><h4>Maruu King - Soy de Coca</h4><p data-es="DIRECCIÓN Y PRODUCCIÓN: INCRIFE" data-en="DIRECTION & PRODUCTION: INCRIFE">DIRECCIÓN Y PRODUCCIÓN: INCRIFE</p><a href="https://www.youtube.com/watch?v=vUhkd4jRlvU" target="_blank" class="videoclip-link"><i class="fab fa-youtube"></i> <span data-es="Ver en YouTube" data-en="Watch on YouTube">Ver en YouTube</span></a></div></div>
-                <div class="videoclip-card" data-aos="fade-up" data-aos-delay="100"><img class="videoclip-thumb" src="https://ui-avatars.com/api/?background=cc0000&color=fff&size=400&text=Próximamente" alt="Próximo videoclip"><div class="videoclip-info"><h4 data-es="Próximo Lanzamiento" data-en="Upcoming Release">Próximo Lanzamiento</h4><p data-es="Nuevo videoclip · 2026" data-en="New music video · 2026">Nuevo videoclip · 2026</p><span class="videoclip-link"><i class="fas fa-clock"></i> <span data-es="Muy pronto" data-en="Coming soon">Muy pronto</span></span></div></div>
+                <div class="videoclip-card" data-aos="fade-up"><img class="videoclip-thumb" src="https://img.youtube.com/vi/vUhkd4jRlvU/maxresdefault.jpg" alt="Maruu King - Soy de Coca" onerror="this.src='https://img.youtube.com/vi/vUhkd4jRlvU/hqdefault.jpg'"><div class="videoclip-info"><h4>Maruu King - Soy de Coca</h4><p>DIRECCIÓN Y PRODUCCIÓN: INCRIFE</p><a href="https://www.youtube.com/watch?v=vUhkd4jRlvU" target="_blank" class="videoclip-link"><i class="fab fa-youtube"></i> Ver en YouTube</a></div></div>
+                <div class="videoclip-card" data-aos="fade-up" data-aos-delay="100"><img class="videoclip-thumb" src="https://ui-avatars.com/api/?background=cc0000&color=fff&size=400&text=Próximamente" alt="Próximo videoclip"><div class="videoclip-info"><h4>Próximo Lanzamiento</h4><p>Nuevo videoclip · 2026</p><span class="videoclip-link"><i class="fas fa-clock"></i> Muy pronto</span></div></div>
             </div>
         </div>
     </section>
@@ -578,12 +544,12 @@
     <section id="musica">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag" data-es="Producción Musical" data-en="Music Production">Producción Musical</div>
-                <h2 class="section-title">Último <span class="accent" data-es="Lanzamiento" data-en="Release">Lanzamiento</span></h2>
-                <p class="section-subtitle" data-es="Disponible en todas las plataformas digitales." data-en="Available on all digital platforms.">Disponible en todas las plataformas digitales.</p>
+                <div class="section-tag">Producción Musical</div>
+                <h2 class="section-title">Último <span class="accent">Lanzamiento</span></h2>
+                <p class="section-subtitle">Disponible en todas las plataformas digitales.</p>
             </div>
             <div class="release-card" data-aos="fade-up">
-                <div class="release-header"><i class="fab fa-spotify"></i><h3 data-es="INCRIFE · Escucha mi música" data-en="INCRIFE · Listen to my music">INCRIFE · Escucha mi música</h3></div>
+                <div class="release-header"><i class="fab fa-spotify"></i><h3>INCRIFE · Escucha mi música</h3></div>
                 <iframe src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="platform-links">
                     <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="platform-link"><i class="fab fa-spotify"></i> Spotify</a>
@@ -599,24 +565,24 @@
     <section id="proyectos" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag" data-es="Portfolio" data-en="Portfolio">Portfolio</div>
-                <h2 class="section-title">Mis <span class="accent" data-es="Proyectos" data-en="Projects">Proyectos</span></h2>
-                <p class="section-subtitle" data-es="Producción audiovisual y colaboraciones profesionales activas." data-en="Audiovisual production and active professional collaborations.">Producción audiovisual y colaboraciones profesionales activas.</p>
+                <div class="section-tag">Portfolio</div>
+                <h2 class="section-title">Mis <span class="accent">Proyectos</span></h2>
+                <p class="section-subtitle">Producción audiovisual y colaboraciones profesionales activas.</p>
             </div>
             <div class="projects-grid">
-                <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card" data-aos="fade-up"><div class="project-icon"><i class="fas fa-video"></i></div><div class="project-info"><h4 data-es="Proyectos Visuales · Incrife" data-en="Visual Projects · Incrife">Proyectos Visuales · Incrife</h4><div class="project-meta"><span><i class="far fa-calendar-alt"></i> <span data-es="Fundado 2024" data-en="Founded 2024">Fundado 2024</span></span><span>+4 <span data-es="Videoclips" data-en="Music Videos">Videoclips</span></span></div><p data-es="Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales." data-en="Direction and production of music videos for artists. Unique visual narratives with professional standards.">Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales.</p><span class="project-arrow"><span data-es="Ver en YouTube" data-en="Watch on YouTube">Ver en YouTube</span> <i class="fas fa-arrow-right"></i></span></div></a>
-                <a href="https://www.instagram.com/kurtusinc/" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="project-icon"><i class="fas fa-camera-retro"></i></div><div class="project-info"><h4 data-es="Agencia Kurtusinc" data-en="Kurtusinc Agency">Agencia Kurtusinc</h4><div class="project-meta"><span><i class="far fa-calendar-alt"></i> <span data-es="Fundado 2025" data-en="Founded 2025">Fundado 2025</span></span><span>+30 <span data-es="Models" data-en="Models">Models</span></span></div><p data-es="Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos." data-en="Model agency. Official collaboration. Professional talent for photography, advertising and events.">Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos.</p><span class="project-arrow"><span data-es="Ver en Instagram" data-en="View on Instagram">Ver en Instagram</span> <i class="fas fa-arrow-right"></i></span></div></a>
+                <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card" data-aos="fade-up"><div class="project-icon"><i class="fas fa-video"></i></div><div class="project-info"><h4>Proyectos Visuales · Incrife</h4><div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2024</span><span>+4 Videoclips</span></div><p>Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales.</p><span class="project-arrow">Ver en YouTube <i class="fas fa-arrow-right"></i></span></div></a>
+                <a href="https://www.instagram.com/kurtusinc/" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="project-icon"><i class="fas fa-camera-retro"></i></div><div class="project-info"><h4>Agencia Kurtusinc</h4><div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2025</span><span>+30 Models</span></div><p>Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos.</p><span class="project-arrow">Ver en Instagram <i class="fas fa-arrow-right"></i></span></div></a>
             </div>
         </div>
     </section>
     
-    <!-- ===== VEVO - SECCIÓN ELABORADA ===== -->
+    <!-- ===== VEVO ===== -->
     <section id="vevo">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <div class="section-tag" data-es="VEVO" data-en="VEVO">VEVO</div>
+                <div class="section-tag">VEVO</div>
                 <h2 class="section-title">Mira mi <span class="accent">canal</span></h2>
-                <p class="section-subtitle" data-es="Videoclips oficiales y contenido visual exclusivo." data-en="Official music videos and exclusive visual content.">Videoclips oficiales y contenido visual exclusivo.</p>
+                <p class="section-subtitle">Videoclips oficiales y contenido visual exclusivo.</p>
             </div>
             <div class="vevo-section" data-aos="fade-up">
                 <div class="vevo-icon"><i class="fab fa-youtube"></i></div>
@@ -638,7 +604,7 @@
     <!-- ===== COLLABORATIONS ===== -->
     <section id="colaboraciones" class="dark">
         <div class="container">
-            <div class="section-header" data-aos="fade-up"><div class="section-tag" data-es="Network" data-en="Network">Network</div><h2 class="section-title">Colaboraciones <span class="accent" data-es="Profesionales" data-en="Professional">Profesionales</span></h2><p class="section-subtitle" data-es="Artistas, modelos y creativos con los que he trabajado." data-en="Artists, models and creatives I have worked with.">Artistas, modelos y creativos con los que he trabajado.</p></div>
+            <div class="section-header" data-aos="fade-up"><div class="section-tag">Network</div><h2 class="section-title">Colaboraciones <span class="accent">Profesionales</span></h2><p class="section-subtitle">Artistas, modelos y creativos con los que he trabajado.</p></div>
             <div class="collab-grid">
                 <a href="https://www.instagram.com/amine_grafi" target="_blank" class="collab-card" data-aos="fade-up"><img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_616350453_18335348698209010_3207213954587758104_n.jpg" alt="Kingsla"><div class="collab-name">Kingsla</div><div class="collab-ig"><i class="fab fa-instagram"></i> @amine_grafi</div></a>
                 <a href="https://www.instagram.com/maruu_king/" target="_blank" class="collab-card" data-aos="fade-up" data-aos-delay="100"><img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Maruuking"><div class="collab-name">Maruuking</div><div class="collab-ig"><i class="fab fa-instagram"></i> @maruu_king</div></a>
@@ -650,7 +616,7 @@
     
     <!-- ===== QUOTE ===== -->
     <section id="quote">
-        <div class="container"><div class="quote-section" data-aos="fade-up"><div class="quote-icon"><i class="fas fa-quote-right"></i></div><p class="quote-text" data-es='"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer una experiencia audiovisual única."' data-en='"My goal is to bring my music to the world while offering a unique audiovisual experience."'>"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer una experiencia audiovisual única."</p><p class="quote-author">— INCRIFE</p></div></div>
+        <div class="container"><div class="quote-section" data-aos="fade-up"><div class="quote-icon"><i class="fas fa-quote-right"></i></div><p class="quote-text">"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer una experiencia audiovisual única."</p><p class="quote-author">— INCRIFE</p></div></div>
     </section>
     
     <!-- ===== FOOTER ===== -->
@@ -663,9 +629,9 @@
                 <a href="https://x.com/Incrife" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
             <p class="footer-text">
-                <strong>INCRIFE</strong> · Ángel Córdoba El Hannouti · <span data-es="Artista · Músico · Creador de Contenido" data-en="Artist · Musician · Content Creator">Artista · Músico · Creador de Contenido</span><br>
+                <strong>INCRIFE</strong> · Ángel Córdoba El Hannouti · Artista · Músico · Creador de Contenido<br>
                 © 2026 · Barcelona · La Mina · España · <a href="mailto:contact@gmail.com">contact@gmail.com</a> · <span>+34 624 17 02 04</span><br>
-                <a href="https://incrife.com">incrife.com</a> · <span data-es="Todos los derechos reservados" data-en="All rights reserved">Todos los derechos reservados</span>
+                <a href="https://incrife.com">incrife.com</a> · Todos los derechos reservados
             </p>
         </div>
     </footer>
@@ -676,101 +642,48 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-    function setLanguage(lang) {
-        document.querySelectorAll('[data-es]').forEach(el => {
-            if (el.hasAttribute('data-es') && el.hasAttribute('data-en')) {
-                el.textContent = lang === 'es' ? el.getAttribute('data-es') : el.getAttribute('data-en');
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
+            
+            let preloader = document.getElementById('preloader');
+            window.addEventListener('load', function() { setTimeout(function() { if (preloader) preloader.classList.add('hidden'); }, 600); });
+            
+            let navbar = document.getElementById('navbar');
+            let backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+                if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
+            });
+            
+            let hamburger = document.getElementById('hamburger');
+            let mobileMenu = document.getElementById('mobileMenu');
+            let mobileClose = document.getElementById('mobileClose');
+            
+            function closeMenu() {
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
+                document.body.style.overflow = '';
             }
+            
+            if (hamburger) hamburger.addEventListener('click', function() {
+                let isOpen = mobileMenu && mobileMenu.classList.contains('active');
+                if (mobileMenu) mobileMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                document.body.style.overflow = isOpen ? '' : 'hidden';
+            });
+            
+            if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+            document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', closeMenu));
+            if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
         });
         
-        const titleEs = "INCRIFE | Artista · Música · Videoclips";
-        const titleEn = "INCRIFE | Artist · Music · Music Videos";
-        document.title = lang === 'es' ? titleEs : titleEn;
-        
-        const metaDescEs = "INCRIFE: Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.";
-        const metaDescEn = "INCRIFE: Artist, musician and content creator. Music videos, music production and audiovisual narrative.";
-        let metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', lang === 'es' ? metaDescEs : metaDescEn);
-        
-        const keywordsEs = "artista, músico, videoclips, producción musical, incrife, La Mina, barcelona";
-        const keywordsEn = "artist, musician, music videos, music production, incrife, La Mina, barcelona";
-        let metaKeywords = document.querySelector('meta[name="keywords"]');
-        if (metaKeywords) metaKeywords.setAttribute('content', lang === 'es' ? keywordsEs : keywordsEn);
-        
-        let ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle) ogTitle.setAttribute('content', lang === 'es' ? titleEs : titleEn);
-        
-        const ogDescEs = "Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.";
-        const ogDescEn = "Artist, musician and content creator. Music videos, music production and audiovisual narrative.";
-        let ogDesc = document.querySelector('meta[property="og:description"]');
-        if (ogDesc) ogDesc.setAttribute('content', lang === 'es' ? ogDescEs : ogDescEn);
-        
-        let twitterTitle = document.querySelector('meta[name="twitter:title"]');
-        if (twitterTitle) twitterTitle.setAttribute('content', lang === 'es' ? titleEs : titleEn);
-        
-        let twitterDesc = document.querySelector('meta[name="twitter:description"]');
-        if (twitterDesc) twitterDesc.setAttribute('content', lang === 'es' ? ogDescEs : ogDescEn);
-        
-        localStorage.setItem('incrife_lang', lang);
-        
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-        });
-    }
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
-        
-        let preloader = document.getElementById('preloader');
-        window.addEventListener('load', function() { setTimeout(function() { if (preloader) preloader.classList.add('hidden'); }, 600); });
-        
-        let navbar = document.getElementById('navbar');
-        let backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function() {
-            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
-            if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
-        });
-        
-        let hamburger = document.getElementById('hamburger');
-        let mobileMenu = document.getElementById('mobileMenu');
-        let mobileClose = document.getElementById('mobileClose');
-        
-        function closeMenu() {
-            if (mobileMenu) mobileMenu.classList.remove('active');
-            if (hamburger) hamburger.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        if (hamburger) hamburger.addEventListener('click', function() {
-            let isOpen = mobileMenu && mobileMenu.classList.contains('active');
-            if (mobileMenu) mobileMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            document.body.style.overflow = isOpen ? '' : 'hidden';
-        });
-        
-        if (mobileClose) mobileClose.addEventListener('click', closeMenu);
-        document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', closeMenu));
-        if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        
-        let savedLang = localStorage.getItem('incrife_lang');
-        let browserLang = navigator.language || navigator.userLanguage;
-        let defaultLang = 'es';
-        if (savedLang && (savedLang === 'es' || savedLang === 'en')) defaultLang = savedLang;
-        else if (browserLang && browserLang.startsWith('en')) defaultLang = 'en';
-        setLanguage(defaultLang);
-        
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', function() { setLanguage(this.getAttribute('data-lang')); });
-        });
-    });
-    
-    (function(){
-        let schemas = [
-            {"@context":"https://schema.org","@type":"Person","name":"Ángel Córdoba El Hannouti","alternateName":"INCRIFE","jobTitle":"Artista · Músico","birthDate":"2006-09-28","birthPlace":{"@type":"City","name":"Barcelona, España"},"sameAs":["https://www.instagram.com/incrife/","https://www.tiktok.com/@incrife","https://x.com/Incrife"]},
-            {"@context":"https://schema.org","@type":"MusicGroup","name":"INCRIFE","alternateName":"Ángel Córdoba El Hannouti","description":"Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.","url":"https://incrife.com","image":"https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png","genre":["Afrotrap","Afrobeat","Trap","Reggaetón","Latin Urban"],"sameAs":["https://www.deezer.com/es/artist/352025722","https://tidal.com/artist/68789425","https://www.qobuz.com/us-en/interpreter/incrife/29103217"]}
-        ];
-        schemas.forEach(s => { let el = document.createElement('script'); el.type = 'application/ld+json'; el.textContent = JSON.stringify(s); document.head.appendChild(el); });
-    })();
+        (function(){
+            let schemas = [
+                {"@context":"https://schema.org","@type":"Person","name":"Ángel Córdoba El Hannouti","alternateName":"INCRIFE","jobTitle":"Artista · Músico","birthDate":"2006-09-28","birthPlace":{"@type":"City","name":"Barcelona, España"},"sameAs":["https://www.instagram.com/incrife/","https://www.tiktok.com/@incrife","https://x.com/Incrife"]},
+                {"@context":"https://schema.org","@type":"MusicGroup","name":"INCRIFE","alternateName":"Ángel Córdoba El Hannouti","description":"Artista, músico y creador de contenido. Videoclips, producción musical y narrativa audiovisual.","url":"https://incrife.com","image":"https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(57).png","genre":["Afrotrap","Afrobeat","Trap","Reggaetón","Latin Urban"],"sameAs":["https://www.deezer.com/es/artist/352025722","https://tidal.com/artist/68789425","https://www.qobuz.com/us-en/interpreter/incrife/29103217"]}
+            ];
+            schemas.forEach(s => { let el = document.createElement('script'); el.type = 'application/ld+json'; el.textContent = JSON.stringify(s); document.head.appendChild(el); });
+        })();
     </script>
 </body>
 </html>
