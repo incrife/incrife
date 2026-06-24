@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -295,7 +294,7 @@
         .btn-light:hover { background: var(--gray-200); transform: translateY(-2px); }
         .btn-lg { padding: 1rem 2.2rem; font-size: 0.8rem; }
         
-        /* About - BIOGRAFÍA JUNTO A LA FOTO */
+        /* About */
         .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; max-width: 1000px; margin: 0 auto; }
         .about-image-wrapper { position: relative; }
         .about-image { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
@@ -394,9 +393,8 @@
         .footer-social a { color: var(--white) !important; font-size: 1.1rem; transition: color 0.2s; }
         .footer-social a:hover { color: var(--red-light) !important; }
         
-        /* Floating WhatsApp */
-        .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; z-index: 999; width: 55px; height: 55px; background: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.3); transition: all var(--transition-base); }
-        .floating-whatsapp:hover { transform: scale(1.1); }
+        /* Floating WhatsApp ELIMINADO */
+        
         .back-to-top { position: fixed; bottom: 30px; left: 30px; z-index: 999; width: 42px; height: 42px; background: var(--red); color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.9rem; opacity: 0; visibility: hidden; transition: all var(--transition-base); display: flex; align-items: center; justify-content: center; }
         .back-to-top.visible { opacity: 1; visibility: visible; }
         
@@ -426,7 +424,6 @@
             .collab-card img { width: 55px; height: 55px; }
             .platform-links { flex-direction: column; align-items: center; }
             .platform-link { width: 100%; justify-content: center; }
-            .floating-whatsapp { bottom: 20px; right: 20px; width: 48px; height: 48px; font-size: 1.2rem; }
             .back-to-top { bottom: 20px; left: 20px; }
         }
     </style>
@@ -483,7 +480,7 @@
         </div>
     </section>
     
-    <!-- ===== ABOUT (BIOGRAFÍA JUNTO A LA FOTO) ===== -->
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -534,8 +531,24 @@
                 <p class="section-subtitle">Dirección y producción de videoclips para artistas.</p>
             </div>
             <div class="videoclips-grid">
-                <div class="videoclip-card" data-aos="fade-up"><img class="videoclip-thumb" src="https://img.youtube.com/vi/vUhkd4jRlvU/maxresdefault.jpg" alt="Maruu King - Soy de Coca" onerror="this.src='https://img.youtube.com/vi/vUhkd4jRlvU/hqdefault.jpg'"><div class="videoclip-info"><h4>Maruu King - Soy de Coca</h4><p>DIRECCIÓN Y PRODUCCIÓN: INCRIFE</p><a href="https://www.youtube.com/watch?v=vUhkd4jRlvU" target="_blank" class="videoclip-link"><i class="fab fa-youtube"></i> Ver en YouTube</a></div></div>
-                <div class="videoclip-card" data-aos="fade-up" data-aos-delay="100"><img class="videoclip-thumb" src="https://ui-avatars.com/api/?background=cc0000&color=fff&size=400&text=Próximamente" alt="Próximo videoclip"><div class="videoclip-info"><h4>Próximo Lanzamiento</h4><p>Nuevo videoclip · 2026</p><span class="videoclip-link"><i class="fas fa-clock"></i> Muy pronto</span></div></div>
+                <!-- Videoclip 1 -->
+                <div class="videoclip-card" data-aos="fade-up">
+                    <img class="videoclip-thumb" src="https://img.youtube.com/vi/Du64WQoyopE/maxresdefault.jpg" alt="RASSAM - GALOU MERYOULE" onerror="this.src='https://img.youtube.com/vi/Du64WQoyopE/hqdefault.jpg'">
+                    <div class="videoclip-info">
+                        <h4>RASSAM - GALOU MERYOULE</h4>
+                        <p>PROD & MIX: AKA STUDIO · FILM: INCRIFE</p>
+                        <a href="https://www.youtube.com/watch?v=Du64WQoyopE" target="_blank" class="videoclip-link"><i class="fab fa-youtube"></i> Ver en YouTube</a>
+                    </div>
+                </div>
+                <!-- Videoclip 2 (mismo enlace) -->
+                <div class="videoclip-card" data-aos="fade-up" data-aos-delay="100">
+                    <img class="videoclip-thumb" src="https://img.youtube.com/vi/Du64WQoyopE/maxresdefault.jpg" alt="RASSAM - GALOU MERYOULE" onerror="this.src='https://img.youtube.com/vi/Du64WQoyopE/hqdefault.jpg'">
+                    <div class="videoclip-info">
+                        <h4>RASSAM - GALOU MERYOULE</h4>
+                        <p>PROD & MIX: AKA STUDIO · FILM: INCRIFE</p>
+                        <a href="https://www.youtube.com/watch?v=Du64WQoyopE" target="_blank" class="videoclip-link"><i class="fab fa-youtube"></i> Ver en YouTube</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -636,7 +649,7 @@
         </div>
     </footer>
     
-    <a href="https://wa.me/34624170204?text=Hola%20INCRIFE" target="_blank" class="floating-whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <!-- Floating WhatsApp ELIMINADO -->
     <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
