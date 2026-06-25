@@ -319,20 +319,59 @@
         }
         
         .author-bio {
-            display: flex; align-items: center; gap: 2rem;
-            background: var(--black-card); border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg); padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            background: var(--black-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
             margin-bottom: 2.5rem;
+            text-align: center;
+            transition: all var(--transition-base);
         }
         .author-bio:hover { border-color: var(--red-border); box-shadow: var(--shadow-red); }
         .author-avatar {
-            width: 120px; height: 120px; border-radius: 50%;
-            overflow: hidden; border: 2px solid var(--red-border); flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--red-border);
+            flex-shrink: 0;
+            box-shadow: 0 0 40px rgba(204,0,0,0.15);
+            transition: all var(--transition-base);
         }
-        .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
-        .author-info h3 { font-family: 'Inter', sans-serif; font-size: 1.2rem; margin-bottom: 0.3rem; }
-        .author-info .author-title { color: var(--red-light); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
-        .author-info p { color: var(--text-secondary); font-size: 0.85rem; font-weight: 300; margin-top: 0.5rem; }
+        .author-avatar:hover {
+            border-color: var(--red);
+            box-shadow: 0 0 60px rgba(204,0,0,0.3);
+            transform: scale(1.02);
+        }
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .author-info h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .author-info .author-title {
+            color: var(--red-light);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .author-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin-top: 0.8rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         
         .book-coming {
             background: var(--black-card); border: 1px solid var(--border-color);
@@ -397,7 +436,6 @@
             .book-cover-img { max-width: 200px; }
             .book-highlights { grid-template-columns: 1fr; text-align: left; }
             .book-actions { justify-content: center; }
-            .author-bio { flex-direction: column; text-align: center; }
         }
         @media (max-width: 768px) {
             section { padding: 3.5rem 0; }
@@ -407,7 +445,8 @@
             .hero-books .hero-content h1 { font-size: 2.5rem; }
             .book-card { padding: 1.5rem; }
             .book-cover-img { max-width: 160px; }
-            .author-avatar { width: 90px; height: 90px; }
+            .author-avatar { width: 150px; height: 150px; }
+            .author-info p { font-size: 0.85rem; }
         }
         @media (max-width: 480px) {
             section { padding: 2.5rem 0; }
@@ -420,6 +459,7 @@
             .book-cover-img { max-width: 140px; }
             .book-highlights li { font-size: 0.7rem; }
             .author-bio { padding: 1.5rem; }
+            .author-avatar { width: 120px; height: 120px; }
         }
     </style>
 </head>
@@ -470,7 +510,7 @@
         <div class="container">
             <div class="author-bio" data-aos="fade-up">
                 <div class="author-avatar">
-                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png" alt="Ángel Córdoba El Hannouti - INCRIFE" loading="lazy">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2025%20jun%202026%2C%2014_15_01.png" alt="Ángel Córdoba El Hannouti - INCRIFE" loading="lazy">
                 </div>
                 <div class="author-info">
                     <h3>Ángel Córdoba El Hannouti</h3>
@@ -658,7 +698,7 @@
                         "https://www.tiktok.com/@incrife",
                         "https://x.com/Incrife"
                     ],
-                    "image": "https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2025%20jun%202026%2C%2014_08_51.png",
+                    "image": "https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2025%20jun%202026%2C%2014_15_01.png",
                     "worksFor": { "@type": "Organization", "name": "INCRIFE Studio" },
                     "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" }
                 },
