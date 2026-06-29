@@ -1,780 +1,1049 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
 
-  <!-- TÍTULO SEO OPTIMIZADO -->
-  <title>INCRIFE · Escúchame en todas las plataformas | Streaming oficial + Letras</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-  <meta name="description" content="INCRIFE · Artista urbano. Escucha su música en Spotify, Apple Music, Qobuz, TIDAL y más. Lee las letras de sus canciones en Genius. Próximos conciertos.">
-  <meta name="keywords" content="incrife, música incrife, conciertos incrife, artista barcelona, spotify incrife, qobuz incrife, genius incrife, letras incrife">
-  <meta name="author" content="INCRIFE">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <meta name="googlebot" content="index, follow">
-  <link rel="canonical" href="https://incrife.com/enlances">
-  <meta name="geo.region" content="ES-CT">
-  <meta name="geo.placename" content="Barcelona">
+<!-- SEO -->
+<title>INCRIFE · Official Artist | Música Urbana Barcelona</title>
+<meta name="description" content="INCRIFE · Artista urbano de Barcelona. Escucha su música en Spotify, Apple Music, Qobuz, TIDAL y más. Conciertos y novedades.">
+<meta name="keywords" content="incrife, música urbana, artista barcelona, trap, hip hop, spotify, apple music">
+<meta name="author" content="INCRIFE">
+<link rel="canonical" href="https://incrife.com">
 
-  <meta property="og:title" content="INCRIFE · Música + Letras | Streaming oficial">
-  <meta property="og:description" content="Artista urbano barcelonés. Escucha su música, lee sus letras y mantente al día de sus conciertos.">
-  <meta property="og:url" content="https://incrife.com/enlances">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="es_ES">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="INCRIFE · Música oficial + Letras">
-  <meta name="twitter:description" content="Escucha a INCRIFE en todas las plataformas y lee sus letras en Genius.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
+<!-- Open Graph -->
+<meta property="og:title" content="INCRIFE · Official Artist">
+<meta property="og:description" content="Artista urbano de Barcelona. Disponible en todas las plataformas digitales.">
+<meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
+<meta property="og:url" content="https://incrife.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="INCRIFE · Official Artist">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
 
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --bg: #050505;
+  --glass: rgba(255, 255, 255, .08);
+  --glass2: rgba(255, 255, 255, .14);
+  --white: #fff;
+  --text: #f5f5f5;
+  --muted: #bcbcbc;
+  --border: rgba(255, 255, 255, .12);
+  --radius: 34px;
+  --shadow: 0 40px 120px rgba(0, 0, 0, .55);
+}
 
-  <style>
-    /*====================================================
-        INCRIFE PREMIUM 2026
-    ====================================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    :root {
-      --bg: #050505;
-      --glass: rgba(255, 255, 255, .08);
-      --glass2: rgba(255, 255, 255, .14);
-      --white: #fff;
-      --muted: #d0d0d0;
-      --radius: 34px;
-      --shadow: 0 40px 120px rgba(0, 0, 0, .45);
-      --transition: all .55s cubic-bezier(.22, 1, .36, 1);
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    /*=========================
-    RESET
-    =========================*/
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+/* ============================================================
+   FONDO CINEMÁTICO CON LA FOTO DE ELLA
+   ============================================================ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .78)),
+    url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2028%20jun%202026%2C%2000_46_57.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -20;
+  transform: scale(1.08);
+  animation: bgDrift 28s ease-in-out infinite alternate;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-      position: relative;
-    }
+@keyframes bgDrift {
+  0% { transform: scale(1.08) translateX(0); }
+  100% { transform: scale(1.18) translateX(-2%); }
+}
 
-    /*=========================================
-    MODELO - FONDO PRINCIPAL
-    =========================================*/
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -10%;
-      background:
-        linear-gradient(rgba(0, 0, 0, .10), rgba(0, 0, 0, .62)),
-        url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2028%20jun%202026%2C%2000_46_57.jpg");
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      filter: brightness(.9) contrast(1.08) saturate(1.15);
-      transform: scale(1.08);
-      z-index: -30;
-    }
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  z-index: -19;
+}
 
-    /*=========================================
-    BLUR DEL FONDO
-    =========================================*/
-    body::after {
-      content: "";
-      position: fixed;
-      left: -10%;
-      right: -10%;
-      top: 25vh;
-      bottom: -10%;
-      background:
-        linear-gradient(rgba(255, 255, 255, .03), rgba(0, 0, 0, .45)),
-        url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2028%20jun%202026%2C%2000_46_57.jpg");
-      background-size: cover;
-      background-position: center;
-      filter: blur(65px) brightness(.55) saturate(1.25);
-      transform: scale(1.25);
-      z-index: -29;
-    }
+/* Luces decorativas */
+.light-left {
+  position: fixed;
+  width: 900px;
+  height: 900px;
+  left: -400px;
+  top: -300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, .10), transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -10;
+}
 
-    /*=========================================
-    LUCES
-    =========================================*/
-    .light1 {
-      position: fixed;
-      width: 700px;
-      height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, .08), transparent 70%);
-      left: -250px;
-      top: -200px;
-      pointer-events: none;
-      filter: blur(30px);
-      z-index: -20;
-    }
+.light-right {
+  position: fixed;
+  width: 900px;
+  height: 900px;
+  right: -400px;
+  bottom: -400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -10;
+}
 
-    .light2 {
-      position: fixed;
-      width: 800px;
-      height: 800px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, .05), transparent 70%);
-      right: -250px;
-      bottom: -250px;
-      filter: blur(40px);
-      pointer-events: none;
-      z-index: -20;
-    }
+/* ============================================================
+   CONTENEDOR PRINCIPAL
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: 840px;
+  margin: auto;
+  padding: 30px;
+  animation: fadeIn 1s cubic-bezier(.22, 1, .36, 1) forwards;
+}
 
-    /*=========================================
-    CARD
-    =========================================*/
-    .hub {
-      position: relative;
-      width: 100%;
-      max-width: 760px;
-      overflow: hidden;
-      border-radius: 42px;
-      padding: 36px;
-      background: linear-gradient(rgba(255, 255, 255, .10), rgba(255, 255, 255, .05));
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
-      border: 1px solid rgba(255, 255, 255, .12);
-      box-shadow: 0 50px 120px rgba(0, 0, 0, .45);
-    }
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
 
-    /*=========================================
-    HERO
-    =========================================*/
-    .header {
-      position: relative;
-      height: 720px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      padding-bottom: 30px;
-    }
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .04));
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
 
-    /*=========================================
-    TU FOTO
-    =========================================*/
-    .header::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 110px;
-      transform: translateX(-50%);
-      width: 520px;
-      height: 620px;
-      background: url("https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      filter: drop-shadow(0 35px 60px rgba(0, 0, 0, .60));
-      z-index: 2;
-    }
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  padding: 60px 40px 50px;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
 
-    /*=========================================
-    ALBUM
-    =========================================*/
-    .latest-track {
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-      width: 190px;
-      padding: 18px;
-      border-radius: 26px;
-      background: rgba(255, 255, 255, .12);
-      backdrop-filter: blur(22px);
-      border: 1px solid rgba(255, 255, 255, .15);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, .40);
-      z-index: 10;
-    }
+.artist-watermark {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: -12px;
+  color: rgba(255, 255, 255, .04);
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+  z-index: 1;
+}
 
-    .track-thumb {
-      width: 150px;
-      height: 150px;
-      margin: auto;
-      border-radius: 22px;
-      background-image: url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2026%20jun%202026%2C%2016_53_38_1.jpg");
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
-      transform: rotate(-5deg);
-      transition: .5s;
-    }
+.hero-glow {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, .08), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
 
-    .latest-track:hover .track-thumb {
-      transform: rotate(0deg) scale(1.05);
-    }
+/* Foto de INCRIFE - protagonista */
+.artist-image {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 480px;
+  background: url("https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, .6));
+  z-index: 5;
+  animation: heroFloat 7s ease-in-out infinite alternate;
+}
 
-    /*=========================================
-    TÍTULO
-    =========================================*/
-    h1 {
-      font-size: 82px;
-      font-weight: 900;
-      letter-spacing: -5px;
-      text-align: center;
-      text-transform: uppercase;
-      color: white;
-      text-shadow: 0 20px 70px rgba(0, 0, 0, .70);
-      position: relative;
-      z-index: 20;
-    }
+@keyframes heroFloat {
+  0% { transform: translateX(-50%) translateY(0) scale(1); }
+  100% { transform: translateX(-50%) translateY(-12px) scale(1.02); }
+}
 
-    .sub-headline {
-      margin-top: 12px;
-      font-size: .85rem;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      color: #d8d8d8;
-      position: relative;
-      z-index: 20;
-    }
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-top: auto;
+}
 
-    /*==================================================
-    BOTONES PREMIUM
-    ==================================================*/
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin-top: 40px;
-    }
+.verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #b8b8b8;
+  background: rgba(255, 255, 255, .06);
+  padding: 6px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  backdrop-filter: blur(10px);
+  margin-bottom: 16px;
+}
 
-    .link-btn {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 24px;
-      border-radius: 24px;
-      background: linear-gradient(rgba(255, 255, 255, .12), rgba(255, 255, 255, .06));
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, .12);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, .18);
-      overflow: hidden;
-      transition: all .55s cubic-bezier(.22, 1, .36, 1);
-      text-decoration: none;
-      color: #fff;
-    }
+.verified i {
+  color: #1DB954;
+  font-size: .85rem;
+}
 
-    .link-btn::before {
-      content: "";
-      position: absolute;
-      left: -150%;
-      top: 0;
-      width: 120%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .18), transparent);
-      transition: 1s;
-    }
+.hero h1 {
+  font-size: 92px;
+  font-weight: 900;
+  letter-spacing: -6px;
+  line-height: 1;
+  text-shadow: 0 20px 70px rgba(0, 0, 0, .7);
+  text-transform: uppercase;
+}
 
-    .link-btn:hover::before {
-      left: 120%;
-    }
+.hero-subtitle {
+  font-size: .9rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #d0d0d0;
+  margin-top: 8px;
+  font-weight: 300;
+}
 
-    .link-btn:hover {
-      transform: translateY(-6px) scale(1.02);
-      background: rgba(255, 255, 255, .18);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .40);
-    }
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 24px;
+}
 
-    .link-left {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 1rem;
-      font-weight: 600;
-    }
+.stat {
+  text-align: center;
+}
 
-    .link-left i,
-    .link-left .custom-icon {
-      width: 36px;
-      text-align: center;
-      font-size: 1.3rem;
-    }
+.stat span {
+  display: block;
+  font-size: .6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: .45;
+  margin-bottom: 4px;
+}
 
-    .custom-tidal-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-    }
-    .custom-tidal-icon svg {
-      width: 26px;
-      height: auto;
-      fill: #fff;
-    }
-    .custom-qobuz-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-    }
-    .custom-qobuz-icon svg {
-      width: 24px;
-      height: auto;
-      fill: #0095F5;
-    }
+.stat strong {
+  font-size: .85rem;
+  font-weight: 600;
+}
 
-    .arrow {
-      opacity: .6;
-      transition: .4s;
-    }
+/* ============================================================
+   LATEST RELEASE - ÁLBUM FLOTANTE
+   ============================================================ */
+.latest-release {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px 14px 14px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .10);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+  z-index: 15;
+  transition: .45s;
+}
 
-    .link-btn:hover .arrow {
-      transform: translateX(8px);
-      opacity: 1;
-    }
+.latest-release:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: rgba(255, 255, 255, .16);
+}
 
-    /* Colores específicos */
-    .spotify i { color: #1DB954; }
-    .apple i { color: #fc6bcb; }
-    .deezer i { color: #A238FF; }
-    .amazon i { color: #ff9900; }
-    .youtube-music i { color: #FF0000; }
-    .tidal-link .custom-tidal-icon svg { fill: #00ffff; }
-    .tidal-link:hover .custom-tidal-icon svg { filter: drop-shadow(0 0 12px #00ffff); }
-    .qobuz-link:hover .custom-qobuz-icon svg { filter: drop-shadow(0 0 12px #0095F5); }
-    .genius-link i { color: #ffff66; }
-    .genius-link:hover i { text-shadow: 0 0 20px #ffff66; }
+.release-cover {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  background: url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2026%20jun%202026%2C%2016_53_38_1.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .4);
+  flex-shrink: 0;
+}
 
-    .official-btn {
-      justify-content: center;
-      background: rgba(255, 255, 255, .14);
-    }
-    .official-btn .link-left {
-      flex: 1;
-      justify-content: center;
-    }
-    .official-btn .arrow { display: none; }
+.release-info .release-label {
+  font-size: .55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .5;
+  display: block;
+}
 
-    /*==================================================
-    EVENTOS
-    ==================================================*/
-    .events-section {
-      margin-top: 40px;
-      padding: 30px;
-      border-radius: 30px;
-      background: linear-gradient(rgba(255, 255, 255, .10), rgba(255, 255, 255, .05));
-      backdrop-filter: blur(22px);
-      border: 1px solid rgba(255, 255, 255, .12);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .20);
-      text-align: center;
-    }
+.release-info h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 4px 0 2px;
+}
 
-    .events-header h3 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
+.release-info p {
+  font-size: .75rem;
+  opacity: .7;
+}
 
-    .events-header p {
-      margin-top: 8px;
-      color: #d7d7d7;
-    }
+/* ============================================================
+   SECCIÓN STREAMING
+   ============================================================ */
+.streaming-section {
+  padding: 50px 35px;
+}
 
-    .events-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 25px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+.section-label {
+  font-size: .75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: .65;
+  margin-bottom: 25px;
+  text-align: center;
+}
 
-    .event-btn {
-      padding: 14px 22px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .10);
-      text-decoration: none;
-      color: white;
-      transition: .4s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-    }
+.platform-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
 
-    .event-btn:hover {
-      background: rgba(255, 255, 255, .18);
-      transform: translateY(-4px);
-    }
+.platform-card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-radius: 28px;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .05));
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, .10);
+  transition: .45s cubic-bezier(.22, 1, .36, 1);
+}
 
-    .event-note {
-      margin-top: 16px;
-      font-size: .8rem;
-      color: rgba(255, 255, 255, .6);
-    }
+.platform-card::before {
+  content: "";
+  position: absolute;
+  left: -120%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .15), transparent);
+  transition: 1s;
+}
 
-    /*==================================================
-    SOCIAL
-    ==================================================*/
-    .social-dock {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 26px;
-      padding: 18px 30px;
-      border-radius: 100px;
-      background: rgba(255, 255, 255, .08);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, .10);
-    }
+.platform-card:hover::before {
+  left: 120%;
+}
 
-    .social-icon {
-      font-size: 1.45rem;
-      color: white;
-      opacity: .75;
-      transition: .4s;
-      text-decoration: none;
-    }
+.platform-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+  border-color: rgba(255, 255, 255, .18);
+}
 
-    .social-icon:hover {
-      opacity: 1;
-      transform: translateY(-5px) scale(1.18);
-    }
+.platform-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    /*==================================================
-    FOOTER
-    ==================================================*/
-    .footer-bottom {
-      margin-top: 30px;
-      text-align: center;
-      font-size: .7rem;
-      color: #cfcfcf;
-      letter-spacing: 2px;
-      opacity: .8;
-    }
+.platform-left i {
+  font-size: 2rem;
+  width: 40px;
+  text-align: center;
+}
 
-    /*==================================================
-    ANIMACIONES
-    ==================================================*/
-    .animate-item {
-      opacity: 0;
-      transform: translateY(35px);
-      animation: fadeUp .8s forwards;
-    }
+.platform-left h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
 
-    .d1 { animation-delay: .1s; }
-    .d2 { animation-delay: .2s; }
-    .d3 { animation-delay: .3s; }
-    .d4 { animation-delay: .4s; }
-    .d5 { animation-delay: .5s; }
-    .d6 { animation-delay: .6s; }
-    .d7 { animation-delay: .7s; }
-    .d8 { animation-delay: .8s; }
-    .d9 { animation-delay: .9s; }
+.platform-left p {
+  margin-top: 4px;
+  font-size: .85rem;
+  opacity: .65;
+}
 
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.platform-card > i {
+  opacity: .5;
+  transition: .3s;
+}
 
-    /*==================================================
-    SCROLLBAR
-    ==================================================*/
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, .18);
-      border-radius: 20px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #060606;
-    }
+.platform-card:hover > i {
+  opacity: 1;
+  transform: translateX(6px);
+}
 
-    /*==================================================
-    RESPONSIVE
-    ==================================================*/
-    @media(max-width: 900px) {
-      .header {
-        height: 560px;
-      }
-      .header::before {
-        width: 360px;
-        height: 440px;
-        bottom: 130px;
-      }
-      .latest-track {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        width: 100%;
-        margin-top: 20px;
-      }
-      .track-thumb {
-        width: 130px;
-        height: 130px;
-      }
-      h1 {
-        font-size: 58px;
-      }
-    }
+/* Colores plataformas */
+.spotify .platform-left i { color: #1DB954; }
+.apple .platform-left i { color: #ff7ed6; }
+.deezer .platform-left i { color: #A238FF; }
+.amazon .platform-left i { color: #ff9900; }
+.youtube .platform-left i { color: #ff0000; }
+.tidal .platform-left i { color: #00ffff; }
+.qobuz .platform-left i { color: #2f9cff; }
+.genius .platform-left i { color: #ffe600; }
 
-    @media(max-width: 650px) {
-      body {
-        padding: 0;
-      }
-      .hub {
-        border-radius: 0;
-        min-height: 100vh;
-        padding: 22px;
-      }
-      .header {
-        height: 480px;
-      }
-      .header::before {
-        width: 290px;
-        height: 360px;
-      }
-      h1 {
-        font-size: 44px;
-        letter-spacing: -2px;
-      }
-      .sub-headline {
-        font-size: .7rem;
-        letter-spacing: 5px;
-      }
-      .link-btn {
-        padding: 16px 18px;
-      }
-      .track-thumb {
-        width: 110px;
-        height: 110px;
-      }
-      .social-dock {
-        gap: 18px;
-        padding: 14px 20px;
-      }
-      .events-section {
-        padding: 20px 16px;
-      }
-      .events-header h3 {
-        font-size: 1.3rem;
-      }
-    }
+/* ============================================================
+   ARTIST PROFILE
+   ============================================================ */
+.artist-profile {
+  padding: 60px 35px;
+}
 
-    @media(max-width: 400px) {
-      .header {
-        height: 380px;
-      }
-      .header::before {
-        width: 220px;
-        height: 280px;
-        bottom: 100px;
-      }
-      h1 {
-        font-size: 34px;
-        letter-spacing: -1px;
-      }
-      .link-btn {
-        padding: 12px 14px;
-        font-size: .85rem;
-      }
-      .link-left {
-        gap: 12px;
-      }
-      .link-left i {
-        width: 28px;
-        font-size: 1rem;
-      }
-      .latest-track {
-        padding: 12px;
-      }
-      .track-thumb {
-        width: 80px;
-        height: 80px;
-      }
-      .social-dock {
-        gap: 14px;
-        padding: 10px 14px;
-      }
-      .social-icon {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+.profile-header {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.section-kicker {
+  display: block;
+  font-size: .75rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  opacity: .55;
+  margin-bottom: 15px;
+}
+
+.profile-header h2 {
+  font-size: 58px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  margin-bottom: 18px;
+}
+
+.profile-header p {
+  line-height: 1.8;
+  color: #cfcfcf;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.profile-card {
+  padding: 30px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .05));
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, .10);
+  transition: .4s;
+}
+
+.profile-card:hover {
+  transform: translateY(-6px);
+}
+
+.profile-card span {
+  display: block;
+  font-size: .7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: .55;
+  margin-bottom: 10px;
+}
+
+.profile-card h3 {
+  font-size: 1.15rem;
+}
+
+/* ============================================================
+   INDUSTRY SECTION
+   ============================================================ */
+.industry-section {
+  padding: 0 35px 50px;
+}
+
+.industry-box {
+  padding: 40px;
+  border-radius: 35px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .05));
+  border: 1px solid rgba(255, 255, 255, .10);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+.industry-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+.industry-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  border-radius: 100px;
+  background: white;
+  color: black;
+  font-weight: 800;
+  text-decoration: none;
+  transition: .4s;
+}
+
+.industry-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(255, 255, 255, .15);
+}
+
+/* ============================================================
+   SOCIAL SECTION
+   ============================================================ */
+.social-section {
+  padding: 30px 35px 60px;
+}
+
+.social-title {
+  text-align: center;
+  font-size: .75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: .55;
+  margin-bottom: 25px;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-row a {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: white;
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .10);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: .4s;
+}
+
+.social-row a:hover {
+  transform: translateY(-8px) scale(1.08);
+  background: rgba(255, 255, 255, .18);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.premium-footer {
+  padding: 40px 35px 60px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.footer-line {
+  width: 120px;
+  height: 1px;
+  background: rgba(255, 255, 255, .20);
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.premium-footer p {
+  font-size: .75rem;
+  letter-spacing: 3px;
+  opacity: .5;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 480px;
+    padding: 40px 30px;
+  }
+  .artist-image {
+    width: 300px;
+    height: 360px;
+    bottom: 100px;
+  }
+  .hero h1 {
+    font-size: 62px;
+    letter-spacing: -4px;
+  }
+  .hero-stats {
+    gap: 24px;
+  }
+  .latest-release {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 20px;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding: 16px;
+  }
+  .card {
+    border-radius: 28px;
+  }
+  .hero {
+    min-height: 400px;
+    padding: 30px 20px;
+  }
+  .artist-watermark {
+    font-size: 6rem;
+    letter-spacing: -8px;
+    top: 10px;
+    right: 15px;
+  }
+  .artist-image {
+    width: 220px;
+    height: 280px;
+    bottom: 80px;
+  }
+  .hero h1 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+  .hero-subtitle {
+    font-size: .7rem;
+    letter-spacing: 4px;
+  }
+  .hero-stats {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .stat strong {
+    font-size: .75rem;
+  }
+  .streaming-section {
+    padding: 30px 20px;
+  }
+  .platform-card {
+    padding: 18px 16px;
+    border-radius: 20px;
+  }
+  .platform-left {
+    gap: 14px;
+  }
+  .platform-left i {
+    font-size: 1.4rem;
+    width: 30px;
+  }
+  .platform-left h3 {
+    font-size: .95rem;
+  }
+  .platform-left p {
+    font-size: .7rem;
+  }
+  .artist-profile {
+    padding: 40px 20px;
+  }
+  .profile-header h2 {
+    font-size: 38px;
+  }
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .industry-section {
+    padding: 0 20px 30px;
+  }
+  .industry-box {
+    padding: 28px 20px;
+  }
+  .social-section {
+    padding: 20px 20px 40px;
+  }
+  .social-row a {
+    width: 56px;
+    height: 56px;
+    font-size: 1.2rem;
+  }
+  .premium-footer {
+    padding: 30px 20px 40px;
+  }
+  .latest-release {
+    padding: 12px 16px 12px 12px;
+    border-radius: 20px;
+  }
+  .release-cover {
+    width: 60px;
+    height: 60px;
+  }
+  .release-info h3 {
+    font-size: .85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    min-height: 340px;
+  }
+  .artist-image {
+    width: 170px;
+    height: 220px;
+    bottom: 60px;
+  }
+  .hero h1 {
+    font-size: 34px;
+  }
+  .hero-stats {
+    gap: 12px;
+  }
+  .platform-card {
+    padding: 14px 12px;
+    border-radius: 16px;
+  }
+  .platform-left i {
+    font-size: 1.2rem;
+    width: 26px;
+  }
+  .platform-left h3 {
+    font-size: .8rem;
+  }
+  .release-cover {
+    width: 50px;
+    height: 50px;
+  }
+}
+</style>
+
 </head>
 <body>
 
-  <!-- LUCES -->
-  <div class="light1"></div>
-  <div class="light2"></div>
+<!-- Luces decorativas -->
+<div class="light-left"></div>
+<div class="light-right"></div>
 
-  <div class="hub">
-    <!-- HEADER -->
-    <div class="header animate-item d1">
-      <h1>INCRIFE</h1>
-      <div class="sub-headline">NUEVO ÁLBUM · PRÓXIMAMENTE</div>
+<div class="container">
+  <div class="card">
 
-      <!-- ALBUM -->
-      <div class="latest-track">
-        <div class="track-thumb"></div>
-      </div>
-    </div>
+    <!-- HERO -->
+    <div class="hero">
 
-    <!-- ENLACES -->
-    <div class="links">
-      <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://www.deezer.com/en/artist/352025722" class="link-btn deezer animate-item d4" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fa-brands fa-deezer"></i><span>Deezer</span></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="link-btn amazon animate-item d5" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fa-brands fa-amazon"></i><span>Amazon Music</span></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer">
-        <div class="link-left">
-          <span class="custom-tidal-icon"><svg viewBox="0 0 24 24"><path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/></svg></span>
-          <span>TIDAL</span>
+      <div class="artist-watermark">INCRIFE</div>
+      <div class="hero-glow"></div>
+
+      <div class="artist-image"></div>
+
+      <div class="hero-content">
+        <div class="verified">
+          <i class="fa-solid fa-circle-check"></i>
+          Official Artist
         </div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="link-btn qobuz-link animate-item d8" target="_blank" rel="noopener noreferrer">
-        <div class="link-left">
-          <span class="custom-qobuz-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5-7.5-3.358-7.5-7.5 3.358-7.5 7.5-7.5z"/><circle cx="12" cy="12" r="3"/></svg></span>
-          <span>Qobuz · Hi-Res</span>
+        <h1>INCRIFE</h1>
+        <p class="hero-subtitle">Urban Artist · Barcelona</p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span>Genre</span>
+            <strong>Urban</strong>
+          </div>
+          <div class="stat">
+            <span>Origin</span>
+            <strong>Spain</strong>
+          </div>
+          <div class="stat">
+            <span>Status</span>
+            <strong>Official</strong>
+          </div>
         </div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://genius.com/artists/Incrife" class="link-btn genius-link animate-item d9" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fa-regular fa-message"></i><span>Genius · Letras</span></div>
-        <i class="fa-solid fa-chevron-right arrow"></i>
-      </a>
-      <a href="https://incrife.com" class="link-btn official-btn animate-item d9" target="_blank" rel="noopener noreferrer">
-        <div class="link-left"><i class="fa-solid fa-globe"></i><span>Página oficial · incrife.com</span><i class="fa-solid fa-arrow-up-right-from-squares"></i></div>
-      </a>
-    </div>
-
-    <!-- EVENTOS -->
-    <div class="events-section animate-item d5">
-      <div class="events-header">
-        <h3>PRÓXIMOS EVENTOS</h3>
-        <p>Conciertos · Sesiones · Novedades</p>
       </div>
-      <div class="events-buttons">
-        <a href="https://www.bandsintown.com/a/15650903-incrife" class="event-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-ticket-alt"></i> Bandsintown</a>
-        <a href="https://www.songkick.com/artists/10407628-incrife" class="event-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-bell"></i> Songkick · Alertas</a>
+
+      <!-- ÁLBUM FLOTANTE -->
+      <div class="latest-release">
+        <div class="release-cover"></div>
+        <div class="release-info">
+          <span class="release-label">LATEST RELEASE</span>
+          <h3>NUEVO ÁLBUM</h3>
+          <p>Próximamente</p>
+        </div>
       </div>
-      <div class="event-note"><i class="fa-regular fa-clock"></i> Próximas fechas muy pronto. ¡Suscríbete!</div>
+
     </div>
 
-    <!-- SOCIAL DOCK -->
-    <div class="social-dock animate-item d6">
-      <a href="https://x.com/Incrife" class="social-icon" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-twitter"></i></a>
-      <a href="https://www.tiktok.com/@incrife" class="social-icon" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/incrife/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.facebook.com/incrifeoficial" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    </div>
+    <!-- STREAMING PLATFORMS -->
+    <section class="streaming-section">
 
-    <div class="footer-bottom animate-item d7">© 2026 INCRIFE · Todos los derechos reservados</div>
+      <div class="section-label">STREAMING PLATFORMS</div>
+
+      <div class="platform-grid">
+
+        <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="platform-card spotify" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-brands fa-spotify"></i>
+            <div>
+              <h3>Spotify</h3>
+              <p>Listen now</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://music.apple.com/es/artist/incrife/1848003000" class="platform-card apple" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-brands fa-apple"></i>
+            <div>
+              <h3>Apple Music</h3>
+              <p>Official profile</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://www.deezer.com/en/artist/352025722" class="platform-card deezer" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-brands fa-deezer"></i>
+            <div>
+              <h3>Deezer</h3>
+              <p>Streaming worldwide</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="platform-card amazon" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-brands fa-amazon"></i>
+            <div>
+              <h3>Amazon Music</h3>
+              <p>Official artist page</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://music.youtube.com/@incrife" class="platform-card youtube" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-brands fa-youtube"></i>
+            <div>
+              <h3>YouTube Music</h3>
+              <p>Videos & releases</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://tidal.com/artist/68789425" class="platform-card tidal" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-solid fa-wave-square"></i>
+            <div>
+              <h3>TIDAL</h3>
+              <p>HiFi streaming</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="platform-card qobuz" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-solid fa-compact-disc"></i>
+            <div>
+              <h3>Qobuz</h3>
+              <p>Hi-Res Audio</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+        <a href="https://genius.com/artists/Incrife" class="platform-card genius" target="_blank" rel="noopener">
+          <div class="platform-left">
+            <i class="fa-solid fa-pen"></i>
+            <div>
+              <h3>Genius</h3>
+              <p>Lyrics & annotations</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ARTIST PROFILE -->
+    <section class="artist-profile">
+
+      <div class="profile-header">
+        <span class="section-kicker">ARTIST PROFILE</span>
+        <h2>INCRIFE</h2>
+        <p>
+          Artista urbano de Barcelona. Fusionando trap, hip hop y nuevas corrientes sonoras.
+          Disponible en todas las plataformas digitales.
+        </p>
+      </div>
+
+      <div class="profile-grid">
+        <div class="profile-card">
+          <span>Genre</span>
+          <h3>Urban · Trap · Hip Hop</h3>
+        </div>
+        <div class="profile-card">
+          <span>Origin</span>
+          <h3>Barcelona, Spain</h3>
+        </div>
+        <div class="profile-card">
+          <span>Distribution</span>
+          <h3>Worldwide Digital</h3>
+        </div>
+        <div class="profile-card">
+          <span>Status</span>
+          <h3>Official Artist</h3>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- INDUSTRY SECTION -->
+    <section class="industry-section">
+
+      <div class="industry-box">
+        <div class="industry-title">PRESS · BOOKINGS · MANAGEMENT</div>
+        <a href="mailto:contact@incrife.com" class="industry-button">
+          <i class="fa-solid fa-envelope"></i>
+          CONTACT
+        </a>
+      </div>
+
+    </section>
+
+    <!-- SOCIAL SECTION -->
+    <section class="social-section">
+
+      <div class="social-title">FOLLOW INCRIFE</div>
+
+      <div class="social-row">
+        <a href="https://instagram.com/incrife" target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@incrife" target="_blank" rel="noopener">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://x.com/incrife" target="_blank" rel="noopener">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://facebook.com/incrifeoficial" target="_blank" rel="noopener">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://youtube.com/@incrife" target="_blank" rel="noopener">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer">
+      <div class="footer-logo">INCRIFE</div>
+      <div class="footer-line"></div>
+      <p>© 2026 INCRIFE · ALL RIGHTS RESERVED</p>
+    </footer>
+
   </div>
+</div>
 
-  <script>
-    // SCHEMA.ORG DATOS ARTISTA
-    const artistSchema = {
-      "@context": "https://schema.org",
-      "@type": "MusicGroup",
-      "name": "INCRIFE",
-      "alternateName": "Ángel Córdoba El Hannouti",
-      "description": "Artista urbano nacido en Barcelona el 28 de septiembre de 2006. Música urbana, latin trap y hip hop. Disponible en todas las plataformas digitales, incluyendo Qobuz Hi-Res.",
-      "url": "https://incrife.com",
-      "image": "https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png",
-      "genre": ["Urban", "Latin Trap", "Hip Hop", "Reggaeton"],
-      "foundingDate": "2006-09-28",
-      "founder": {
-        "@type": "Person",
-        "name": "Ángel Córdoba El Hannouti",
-        "birthDate": "2006-09-28",
-        "birthPlace": { "@type": "City", "name": "Barcelona", "addressCountry": "ES" },
-        "nationality": "Española"
-      },
-      "sameAs": [
-        "https://musicbrainz.org/artist/5a6c46a4-ab6b-4bca-96e3-58f24d11b55d",
-        "https://www.shazam.com/es-es/artist/incrife/1848003000",
-        "https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi",
-        "https://music.apple.com/es/artist/incrife/1848003000",
-        "https://www.deezer.com/en/artist/352025722",
-        "https://music.amazon.in/artists/B0FX5XCGKP",
-        "https://music.youtube.com/@incrife",
-        "https://tidal.com/artist/68789425",
-        "https://www.qobuz.com/es-es/interpreter/incrife/29103217",
-        "https://genius.com/artists/Incrife",
-        "https://x.com/Incrife",
-        "https://www.instagram.com/incrife/",
-        "https://www.tiktok.com/@incrife",
-        "https://www.facebook.com/incrifeoficial",
-        "https://www.bandsintown.com/a/15650903-incrife",
-        "https://www.songkick.com/artists/10407628-incrife"
-      ],
-      "email": "contact@incrife.com",
-      "telephone": "+34624170204",
-      "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" }
-    };
-
-    const personSchema = {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ángel Córdoba El Hannouti",
-      "alternateName": "INCRIFE",
-      "birthDate": "2006-09-28",
-      "birthPlace": { "@type": "City", "name": "Barcelona", "addressCountry": "ES" },
-      "nationality": "Española",
-      "jobTitle": "Artista musical · Compositor · Productor",
-      "url": "https://incrife.com",
-      "sameAs": artistSchema.sameAs
-    };
-
-    const scriptArtist = document.createElement('script');
-    scriptArtist.type = 'application/ld+json';
-    scriptArtist.textContent = JSON.stringify(artistSchema);
-    const scriptPerson = document.createElement('script');
-    scriptPerson.type = 'application/ld+json';
-    scriptPerson.textContent = JSON.stringify(personSchema);
-    document.head.appendChild(scriptArtist);
-    document.head.appendChild(scriptPerson);
-  </script>
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "INCRIFE",
+  "alternateName": "Ángel Córdoba El Hannouti",
+  "description": "Artista urbano de Barcelona. Música urbana, trap y hip hop.",
+  "url": "https://incrife.com",
+  "image": "https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png",
+  "genre": ["Urban", "Trap", "Hip Hop"],
+  "foundingDate": "2006-09-28",
+  "founder": {
+    "@type": "Person",
+    "name": "Ángel Córdoba El Hannouti",
+    "birthDate": "2006-09-28",
+    "birthPlace": {
+      "@type": "City",
+      "name": "Barcelona",
+      "addressCountry": "ES"
+    }
+  },
+  "sameAs": [
+    "https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi",
+    "https://music.apple.com/es/artist/incrife/1848003000",
+    "https://www.deezer.com/en/artist/352025722",
+    "https://music.amazon.in/artists/B0FX5XCGKP",
+    "https://music.youtube.com/@incrife",
+    "https://tidal.com/artist/68789425",
+    "https://www.qobuz.com/es-es/interpreter/incrife/29103217",
+    "https://genius.com/artists/Incrife"
+  ]
+}
+</script>
 
 </body>
 </html>
