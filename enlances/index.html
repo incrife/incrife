@@ -59,43 +59,44 @@ body {
 }
 
 /* ============================================================
-   FONDO CINEMÁTICO CON LA FOTO DE ELLA
+   FONDO CINEMÁTICO CON LA FOTO DE ELLA - MÁS PEQUEÑO Y VISIBLE
    ============================================================ */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, .15), rgba(0, 0, 0, .78)),
+    linear-gradient(180deg, rgba(0, 0, 0, .20), rgba(0, 0, 0, .70)),
     url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2028%20jun%202026%2C%2000_46_57.jpg");
-  background-size: cover;
-  background-position: center;
+  background-size: 70% auto;
+  background-position: center 30%;
+  background-repeat: no-repeat;
   z-index: -20;
-  transform: scale(1.08);
+  transform: scale(1.2);
   animation: bgDrift 28s ease-in-out infinite alternate;
 }
 
 @keyframes bgDrift {
-  0% { transform: scale(1.08) translateX(0); }
-  100% { transform: scale(1.18) translateX(-2%); }
+  0% { transform: scale(1.15) translateX(0); }
+  100% { transform: scale(1.25) translateX(-2%); }
 }
 
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   z-index: -19;
 }
 
 /* Luces decorativas */
 .light-left {
   position: fixed;
-  width: 900px;
-  height: 900px;
-  left: -400px;
-  top: -300px;
+  width: 600px;
+  height: 600px;
+  left: -200px;
+  top: -200px;
   background: radial-gradient(circle, rgba(255, 255, 255, .10), transparent 70%);
   filter: blur(50px);
   pointer-events: none;
@@ -104,10 +105,10 @@ body::after {
 
 .light-right {
   position: fixed;
-  width: 900px;
-  height: 900px;
-  right: -400px;
-  bottom: -400px;
+  width: 600px;
+  height: 600px;
+  right: -200px;
+  bottom: -200px;
   background: radial-gradient(circle, rgba(255, 255, 255, .06), transparent 70%);
   filter: blur(60px);
   pointer-events: none;
@@ -119,9 +120,9 @@ body::after {
    ============================================================ */
 .container {
   width: 100%;
-  max-width: 840px;
+  max-width: 780px;
   margin: auto;
-  padding: 30px;
+  padding: 20px;
   animation: fadeIn 1s cubic-bezier(.22, 1, .36, 1) forwards;
 }
 
@@ -142,41 +143,65 @@ body::after {
 }
 
 /* ============================================================
-   HERO - REDISEÑADO Y CORREGIDO
+   HERO - CON AVATAR CIRCULAR ARRIBA
    ============================================================ */
 .hero {
   position: relative;
-  height: 700px;
+  min-height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: center;
   overflow: hidden;
-  padding: 40px 40px 30px;
+  padding: 30px 30px 25px;
+  text-align: center;
 }
 
-/* Foto de INCRIFE - protagonista principal */
-.artist-image {
-  position: absolute;
-  inset: 0;
+/* Avatar circular - VERSIÓN MEJORADA */
+.hero-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
   background-image: url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png");
-  background-repeat: no-repeat;
-  background-position: center 55%;
-  background-size: 70% auto;
-  filter: drop-shadow(0 40px 100px rgba(0, 0, 0, .65));
-  z-index: 3;
-  animation: none;
+  background-size: cover;
+  background-position: center 20%;
+  border: 3px solid rgba(255, 255, 255, .20);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, .5),
+    0 0 80px rgba(255, 255, 255, .04);
+  transition: .4s;
+  position: relative;
+  z-index: 5;
+  flex-shrink: 0;
 }
 
-/* Glow más elegante */
+.hero-avatar:hover {
+  transform: scale(1.04);
+  border-color: rgba(255, 255, 255, .35);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, .6), 0 0 100px rgba(255, 255, 255, .06);
+}
+
+/* Glow detrás del avatar */
+.hero-avatar::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .05), transparent 70%);
+  filter: blur(20px);
+  z-index: -1;
+}
+
 .hero-glow {
   position: absolute;
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   left: 50%;
-  bottom: 100px;
+  bottom: 60px;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(255, 255, 255, .06), transparent 70%);
-  filter: blur(50px);
+  background: radial-gradient(ellipse, rgba(255, 255, 255, .05), transparent 70%);
+  filter: blur(40px);
   pointer-events: none;
   z-index: 1;
 }
@@ -184,8 +209,7 @@ body::after {
 .hero-content {
   position: relative;
   z-index: 10;
-  text-align: center;
-  margin-top: auto;
+  width: 100%;
 }
 
 .verified {
@@ -202,7 +226,7 @@ body::after {
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, .08);
   backdrop-filter: blur(10px);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .verified i {
@@ -211,10 +235,10 @@ body::after {
 }
 
 .hero h1 {
-  font-size: 72px;
+  font-size: 52px;
   font-weight: 900;
-  letter-spacing: -4px;
-  line-height: 1;
+  letter-spacing: -3px;
+  line-height: 1.05;
   text-shadow: 0 20px 70px rgba(0, 0, 0, .7);
   text-transform: uppercase;
 }
@@ -224,15 +248,15 @@ body::after {
   letter-spacing: 5px;
   text-transform: uppercase;
   color: #d0d0d0;
-  margin-top: 6px;
+  margin-top: 4px;
   font-weight: 300;
 }
 
 .hero-stats {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 18px;
+  gap: 24px;
+  margin-top: 14px;
 }
 
 .stat {
@@ -245,7 +269,7 @@ body::after {
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: .45;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .stat strong {
@@ -254,18 +278,18 @@ body::after {
 }
 
 /* ============================================================
-   LATEST RELEASE - PORTADA DERECHA (AJUSTADA)
+   LATEST RELEASE - PORTADA DERECHA
    ============================================================ */
 .latest-release {
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
   bottom: auto;
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 14px 18px 14px 14px;
-  border-radius: 24px;
+  gap: 12px;
+  padding: 12px 16px 12px 12px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, .12);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
@@ -281,13 +305,13 @@ body::after {
 }
 
 .release-cover {
-  width: 75px;
-  height: 75px;
-  border-radius: 18px;
+  width: 65px;
+  height: 65px;
+  border-radius: 16px;
   background-image: url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2026%20jun%202026%2C%2016_53_38_1.jpg");
   background-size: cover;
   background-position: center;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, .50);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .50);
   flex-shrink: 0;
 }
 
@@ -300,14 +324,14 @@ body::after {
 }
 
 .release-info h3 {
-  font-size: .9rem;
+  font-size: .85rem;
   font-weight: 800;
   letter-spacing: -0.3px;
-  margin: 3px 0 1px;
+  margin: 2px 0 1px;
 }
 
 .release-info p {
-  font-size: .7rem;
+  font-size: .65rem;
   opacity: .7;
 }
 
@@ -315,7 +339,7 @@ body::after {
    SECCIÓN STREAMING
    ============================================================ */
 .streaming-section {
-  padding: 40px 35px 30px;
+  padding: 30px 30px 25px;
 }
 
 .section-label {
@@ -323,14 +347,14 @@ body::after {
   letter-spacing: 4px;
   text-transform: uppercase;
   opacity: .65;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   text-align: center;
 }
 
 .platform-grid {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .platform-card {
@@ -338,8 +362,8 @@ body::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 22px;
-  border-radius: 24px;
+  padding: 16px 20px;
+  border-radius: 22px;
   text-decoration: none;
   color: white;
   overflow: hidden;
@@ -366,7 +390,7 @@ body::after {
 }
 
 .platform-card:hover {
-  transform: translateY(-6px) scale(1.015);
+  transform: translateY(-5px) scale(1.015);
   box-shadow: 0 25px 70px rgba(0, 0, 0, .40);
   border-color: rgba(255, 255, 255, .18);
 }
@@ -374,23 +398,23 @@ body::after {
 .platform-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .platform-left i {
-  font-size: 1.6rem;
-  width: 34px;
+  font-size: 1.5rem;
+  width: 32px;
   text-align: center;
 }
 
 .platform-left h3 {
-  font-size: 1rem;
+  font-size: .95rem;
   font-weight: 700;
 }
 
 .platform-left p {
   margin-top: 2px;
-  font-size: .75rem;
+  font-size: .7rem;
   opacity: .6;
 }
 
@@ -415,10 +439,10 @@ body::after {
 .genius .platform-left i { color: #ffe600; }
 
 /* ============================================================
-   ARTIST PROFILE - CON AVATAR CIRCULAR
+   ARTIST PROFILE
    ============================================================ */
 .artist-profile {
-  padding: 40px 35px 30px;
+  padding: 25px 30px 20px;
 }
 
 .profile-header {
@@ -427,51 +451,32 @@ body::after {
   margin: auto;
 }
 
-/* Avatar circular arriba */
-.profile-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0 auto 16px;
-  background-image: url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png");
-  background-size: cover;
-  background-position: center 20%;
-  border: 2px solid rgba(255, 255, 255, .15);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
-  transition: .4s;
-}
-
-.profile-avatar:hover {
-  transform: scale(1.04);
-  border-color: rgba(255, 255, 255, .30);
-}
-
 .section-kicker {
   display: block;
   font-size: .7rem;
   letter-spacing: 5px;
   text-transform: uppercase;
   opacity: .55;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .profile-header h2 {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 900;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   margin-bottom: 0;
 }
 
 .profile-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  margin-top: 30px;
+  gap: 12px;
+  margin-top: 22px;
 }
 
 .profile-card {
-  padding: 24px;
-  border-radius: 24px;
+  padding: 20px;
+  border-radius: 22px;
   background: linear-gradient(180deg, rgba(255, 255, 255, .10), rgba(255, 255, 255, .05));
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
@@ -485,27 +490,27 @@ body::after {
 
 .profile-card span {
   display: block;
-  font-size: .65rem;
+  font-size: .6rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   opacity: .5;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .profile-card h3 {
-  font-size: 1rem;
+  font-size: .95rem;
 }
 
 /* ============================================================
    INDUSTRY SECTION
    ============================================================ */
 .industry-section {
-  padding: 0 35px 40px;
+  padding: 0 30px 30px;
 }
 
 .industry-box {
-  padding: 32px;
-  border-radius: 30px;
+  padding: 28px;
+  border-radius: 28px;
   text-align: center;
   background: linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .05));
   border: 1px solid rgba(255, 255, 255, .10);
@@ -514,24 +519,24 @@ body::after {
 }
 
 .industry-title {
-  font-size: .9rem;
+  font-size: .85rem;
   font-weight: 700;
   letter-spacing: 3px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .industry-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 12px 26px;
   border-radius: 100px;
   background: white;
   color: black;
   font-weight: 800;
   text-decoration: none;
   transition: .4s;
-  font-size: .9rem;
+  font-size: .85rem;
 }
 
 .industry-button:hover {
@@ -543,7 +548,7 @@ body::after {
    SOCIAL SECTION - SIN YOUTUBE
    ============================================================ */
 .social-section {
-  padding: 20px 35px 40px;
+  padding: 15px 30px 30px;
 }
 
 .social-title {
@@ -552,26 +557,26 @@ body::after {
   letter-spacing: 4px;
   text-transform: uppercase;
   opacity: .55;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .social-row {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .social-row a {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   text-decoration: none;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   background: rgba(255, 255, 255, .08);
   border: 1px solid rgba(255, 255, 255, .10);
   backdrop-filter: blur(20px);
@@ -588,27 +593,27 @@ body::after {
    FOOTER
    ============================================================ */
 .premium-footer {
-  padding: 30px 35px 50px;
+  padding: 20px 30px 40px;
   text-align: center;
 }
 
 .footer-logo {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: -2px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .footer-line {
-  width: 100px;
+  width: 80px;
   height: 1px;
   background: rgba(255, 255, 255, .20);
   margin: auto;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .premium-footer p {
-  font-size: .7rem;
+  font-size: .65rem;
   letter-spacing: 3px;
   opacity: .5;
 }
@@ -617,31 +622,32 @@ body::after {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
-  .hero {
-    height: 580px;
-    padding: 30px 30px 25px;
+  body::before {
+    background-size: 80% auto;
+    background-position: center 25%;
   }
-  .artist-image {
-    background-size: 75% auto;
-    background-position: center 50%;
+  .hero {
+    min-height: 360px;
+    padding: 25px 25px 20px;
+  }
+  .hero-avatar {
+    width: 130px;
+    height: 130px;
   }
   .hero h1 {
-    font-size: 56px;
-    letter-spacing: -3px;
-  }
-  .hero-stats {
-    gap: 20px;
+    font-size: 42px;
+    letter-spacing: -2px;
   }
   .latest-release {
-    top: 20px;
-    right: 20px;
-    padding: 12px 14px 12px 12px;
-    border-radius: 20px;
-    gap: 12px;
+    top: 16px;
+    right: 16px;
+    padding: 10px 14px 10px 10px;
+    border-radius: 18px;
+    gap: 10px;
   }
   .release-cover {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
   }
 }
 
@@ -652,17 +658,22 @@ body::after {
   .card {
     border-radius: 28px;
   }
-  .hero {
-    height: 500px;
-    padding: 20px 16px 20px;
+  body::before {
+    background-size: 90% auto;
+    background-position: center 20%;
   }
-  .artist-image {
-    background-size: 85% auto;
-    background-position: center 55%;
+  .hero {
+    min-height: 300px;
+    padding: 20px 16px 18px;
+  }
+  .hero-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
   }
   .hero h1 {
-    font-size: 38px;
-    letter-spacing: -2px;
+    font-size: 32px;
+    letter-spacing: -1px;
   }
   .hero-subtitle {
     font-size: .65rem;
@@ -670,7 +681,7 @@ body::after {
   }
   .hero-stats {
     gap: 14px;
-    margin-top: 12px;
+    margin-top: 10px;
   }
   .stat strong {
     font-size: .7rem;
@@ -679,142 +690,130 @@ body::after {
     font-size: .5rem;
   }
   .latest-release {
-    top: 14px;
-    right: 14px;
-    transform: scale(.82);
-    padding: 10px 12px 10px 10px;
-    gap: 10px;
+    top: 12px;
+    right: 12px;
+    transform: scale(.78);
+    padding: 8px 12px 8px 8px;
+    gap: 8px;
   }
   .release-cover {
-    width: 55px;
-    height: 55px;
-    border-radius: 14px;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
   }
   .release-info h3 {
-    font-size: .75rem;
+    font-size: .7rem;
   }
   .release-info p {
-    font-size: .6rem;
+    font-size: .55rem;
   }
   .release-info .release-label {
-    font-size: .45rem;
+    font-size: .4rem;
   }
   .streaming-section {
-    padding: 25px 16px 20px;
+    padding: 20px 16px 18px;
   }
   .platform-card {
-    padding: 14px 16px;
+    padding: 12px 14px;
     border-radius: 18px;
   }
   .platform-left {
-    gap: 12px;
+    gap: 10px;
   }
   .platform-left i {
-    font-size: 1.3rem;
-    width: 28px;
+    font-size: 1.2rem;
+    width: 26px;
   }
   .platform-left h3 {
-    font-size: .85rem;
+    font-size: .8rem;
   }
   .platform-left p {
-    font-size: .65rem;
+    font-size: .6rem;
   }
   .artist-profile {
-    padding: 30px 16px 20px;
-  }
-  .profile-avatar {
-    width: 80px;
-    height: 80px;
+    padding: 18px 16px 15px;
   }
   .profile-header h2 {
-    font-size: 34px;
+    font-size: 30px;
   }
   .profile-grid {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 16px;
   }
   .profile-card {
-    padding: 18px 14px;
+    padding: 16px 14px;
     border-radius: 18px;
   }
   .profile-card h3 {
-    font-size: .85rem;
+    font-size: .8rem;
   }
   .profile-card span {
-    font-size: .55rem;
+    font-size: .5rem;
   }
   .industry-section {
-    padding: 0 16px 25px;
+    padding: 0 16px 20px;
   }
   .industry-box {
-    padding: 24px 18px;
-    border-radius: 24px;
+    padding: 20px 16px;
+    border-radius: 22px;
   }
   .industry-title {
-    font-size: .8rem;
+    font-size: .75rem;
   }
   .industry-button {
-    padding: 12px 22px;
-    font-size: .8rem;
+    padding: 10px 20px;
+    font-size: .75rem;
   }
   .social-section {
-    padding: 15px 16px 30px;
+    padding: 10px 16px 20px;
   }
   .social-row a {
-    width: 50px;
-    height: 50px;
-    font-size: 1.1rem;
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
   }
   .premium-footer {
-    padding: 20px 16px 30px;
+    padding: 16px 16px 30px;
   }
   .footer-logo {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 400px) {
-  .hero {
-    height: 420px;
-  }
-  .artist-image {
-    background-size: 95% auto;
-    background-position: center 50%;
+  .hero-avatar {
+    width: 80px;
+    height: 80px;
   }
   .hero h1 {
-    font-size: 30px;
-    letter-spacing: -1px;
+    font-size: 26px;
   }
   .hero-stats {
     gap: 10px;
   }
   .latest-release {
-    transform: scale(.7);
+    transform: scale(.68);
     top: 8px;
     right: 8px;
-    padding: 8px 10px 8px 8px;
+    padding: 6px 10px 6px 6px;
   }
   .release-cover {
-    width: 45px;
-    height: 45px;
+    width: 38px;
+    height: 38px;
   }
   .profile-grid {
     grid-template-columns: 1fr;
   }
-  .profile-avatar {
-    width: 70px;
-    height: 70px;
-  }
   .platform-card {
-    padding: 12px 14px;
+    padding: 10px 12px;
   }
   .platform-left i {
-    font-size: 1.1rem;
-    width: 24px;
+    font-size: 1rem;
+    width: 22px;
   }
   .platform-left h3 {
-    font-size: .75rem;
+    font-size: .7rem;
   }
 }
 </style>
@@ -834,7 +833,8 @@ body::after {
 
       <div class="hero-glow"></div>
 
-      <div class="artist-image"></div>
+      <!-- AVATAR CIRCULAR - FOTO PRINCIPAL ARRIBA -->
+      <div class="hero-avatar"></div>
 
       <div class="hero-content">
         <div class="verified">
@@ -975,9 +975,6 @@ body::after {
     <section class="artist-profile">
 
       <div class="profile-header">
-        <!-- Avatar circular arriba -->
-        <div class="profile-avatar"></div>
-
         <span class="section-kicker">ARTIST PROFILE</span>
         <h2>INCRIFE</h2>
       </div>
