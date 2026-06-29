@@ -10,20 +10,20 @@
     <priority>1.0</priority>
   </url>
         
-<!-- ENLACES OFICIALES DEL ARTISTA (incrife.com/enlances) -->
+  <!-- ENLACES OFICIALES DEL ARTISTA (incrife.com/enlances) -->
   <url>
     <loc>https://incrife.com/enlances</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- SERVICIOS / TIENDA -->
+
+  <!-- PÁGINA DEL LIBRO (NUEVO) -->
   <url>
-    <loc>https://incrife.com/tienda/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <loc>https://incrife.com/book/</loc>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
   
   <!-- FOTOGRAFÍA / PORTAFOLIO -->
@@ -50,13 +50,6 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- TRUE CRIME / INCRIFED -->
-  <url>
-    <loc>https://incrife.com/incrifed/</loc>
-    <lastmod>2026-05-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
   
   <!-- CONTACTO -->
   <url>
