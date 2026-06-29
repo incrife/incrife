@@ -27,6 +27,87 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+/* ==========================
+   INCRIFE PRELOADER PRO
+========================== */
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(120, 120, 120, .20);
+    backdrop-filter: blur(35px) saturate(180%);
+    -webkit-backdrop-filter: blur(35px) saturate(180%);
+    transition: opacity .65s cubic-bezier(.22, 1, .36, 1), visibility .65s;
+}
+
+#preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.glass-loader {
+    width: 260px;
+    height: 180px;
+    border-radius: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .05));
+    border: 1px solid rgba(255, 255, 255, .18);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .22), inset 0 1px 1px rgba(255, 255, 255, .35), inset 0 -1px 1px rgba(255, 255, 255, .08);
+    overflow: hidden;
+    position: relative;
+}
+
+.glass-loader::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 220px;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .22), transparent);
+    transform: translateX(-340px);
+    animation: shine 3s infinite;
+}
+
+.glass-loader h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 44px;
+    letter-spacing: 10px;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    animation: breathing 2.5s infinite ease-in-out;
+}
+
+.glass-loader span {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, .70);
+    letter-spacing: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+@keyframes breathing {
+    0% { opacity: .55; transform: scale(.98); text-shadow: 0 0 0 transparent; }
+    50% { opacity: 1; transform: scale(1.03); text-shadow: 0 0 16px rgba(255, 255, 255, .35); }
+    100% { opacity: .55; transform: scale(.98); }
+}
+
+@keyframes shine {
+    to { transform: translateX(340px); }
+}
+
+/* ============================================================
+   RESTO DEL DISEÑO
+   ============================================================ */
 :root {
   --bg: #050505;
   --glass: rgba(255, 255, 255, .10);
@@ -58,9 +139,6 @@ body {
   position: relative;
 }
 
-/* ============================================================
-   FONDO GLOBAL
-   ============================================================ */
 body::before {
   content: "";
   position: fixed;
@@ -88,7 +166,6 @@ body::after {
   pointer-events: none;
 }
 
-/* Luces ambientales */
 .light-ambient-1 {
   position: fixed;
   width: 700px;
@@ -125,9 +202,6 @@ body::after {
   z-index: -10;
 }
 
-/* ============================================================
-   CONTENEDOR PRINCIPAL
-   ============================================================ */
 .container {
   width: 100%;
   max-width: 780px;
@@ -154,9 +228,6 @@ body::after {
   position: relative;
 }
 
-/* ============================================================
-   HERO - CON AVATAR CIRCULAR
-   ============================================================ */
 .hero {
   position: relative;
   min-height: 440px;
@@ -178,9 +249,7 @@ body::after {
   background-size: cover;
   background-position: center 20%;
   border: 2px solid rgba(255, 255, 255, .20);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, .4),
-    0 0 80px rgba(255, 215, 140, .06);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .4), 0 0 80px rgba(255, 215, 140, .06);
   transition: .4s;
   position: relative;
   z-index: 5;
@@ -194,7 +263,6 @@ body::after {
   box-shadow: 0 25px 80px rgba(0, 0, 0, .5), 0 0 100px rgba(255, 215, 140, .10);
 }
 
-/* Modal para foto en grande */
 .avatar-modal {
   display: none;
   position: fixed;
@@ -231,7 +299,6 @@ body::after {
   letter-spacing: 2px;
 }
 
-/* Glow alrededor del avatar */
 .hero-avatar::after {
   content: "";
   position: absolute;
@@ -335,9 +402,6 @@ body::after {
   color: rgba(255, 255, 255, .9);
 }
 
-/* ============================================================
-   LATEST RELEASE - MÁS PEQUEÑO
-   ============================================================ */
 .latest-release {
   position: absolute;
   top: 25px;
@@ -396,33 +460,8 @@ body::after {
   opacity: .7;
 }
 
-/* ============================================================
-   SECCIÓN STREAMING - CON VÍDEO EN BUCLE ARTÍSTICO
-   ============================================================ */
 .streaming-section {
   padding: 30px 30px 25px;
-  position: relative;
-}
-
-/* Contenedor del vídeo en bucle */
-.video-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 40px;
-  overflow: hidden;
-  z-index: -1;
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-.video-backdrop video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(0.3) brightness(0.4);
 }
 
 .section-label {
@@ -433,16 +472,12 @@ body::after {
   margin-bottom: 18px;
   text-align: center;
   color: rgba(255, 255, 255, .7);
-  position: relative;
-  z-index: 1;
 }
 
 .platform-grid {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  position: relative;
-  z-index: 1;
 }
 
 .platform-card {
@@ -491,7 +526,6 @@ body::after {
   width: 32px;
   text-align: center;
   flex-shrink: 0;
-  /* Todos los iconos en gris */
   color: #aaaaaa !important;
 }
 
@@ -527,9 +561,6 @@ body::after {
   color: #ffffff !important;
 }
 
-/* ============================================================
-   ARTIST PROFILE
-   ============================================================ */
 .artist-profile {
   padding: 25px 30px 20px;
 }
@@ -592,9 +623,6 @@ body::after {
   font-size: .95rem;
 }
 
-/* ============================================================
-   INDUSTRY SECTION - BOTÓN CONTACT A GMAIL
-   ============================================================ */
 .industry-section {
   padding: 0 30px 30px;
 }
@@ -637,9 +665,6 @@ body::after {
   background: #fff;
 }
 
-/* ============================================================
-   SOCIAL SECTION
-   ============================================================ */
 .social-section {
   padding: 15px 30px 30px;
 }
@@ -684,9 +709,6 @@ body::after {
   color: #fff;
 }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 .premium-footer {
   padding: 20px 30px 40px;
   text-align: center;
@@ -881,8 +903,13 @@ body::after {
     max-width: 100%;
     max-height: 80%;
   }
-  .video-backdrop {
-    border-radius: 28px;
+  .glass-loader {
+    width: 220px;
+    height: 150px;
+  }
+  .glass-loader h1 {
+    font-size: 36px;
+    letter-spacing: 8px;
   }
 }
 
@@ -915,11 +942,33 @@ body::after {
   .profile-grid {
     grid-template-columns: 1fr;
   }
+  .glass-loader {
+    width: 180px;
+    height: 130px;
+  }
+  .glass-loader h1 {
+    font-size: 28px;
+    letter-spacing: 6px;
+  }
+  .glass-loader span {
+    font-size: 9px;
+    letter-spacing: 4px;
+  }
 }
 </style>
 
 </head>
 <body>
+
+<!-- ==========================
+     PRELOADER
+========================== -->
+<div id="preloader">
+    <div class="glass-loader">
+        <h1>INCRIFE</h1>
+        <span>FIRMA</span>
+    </div>
+</div>
 
 <!-- FONDO GLOBAL -->
 <div class="light-ambient-1"></div>
@@ -940,7 +989,6 @@ body::after {
 
       <div class="hero-glow"></div>
 
-      <!-- AVATAR CIRCULAR -->
       <div class="hero-avatar" id="avatarTrigger"></div>
 
       <div class="hero-content">
@@ -967,7 +1015,6 @@ body::after {
         </div>
       </div>
 
-      <!-- ÁLBUM PORTADA DERECHA - MÁS PEQUEÑO -->
       <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener" class="latest-release">
         <div class="release-cover"></div>
         <div class="release-info">
@@ -979,16 +1026,8 @@ body::after {
 
     </div>
 
-    <!-- STREAMING PLATFORMS CON VÍDEO EN BUCLE -->
+    <!-- STREAMING PLATFORMS -->
     <section class="streaming-section">
-
-      <!-- VÍDEO EN BUCLE ARTÍSTICO -->
-      <div class="video-backdrop">
-        <video autoplay muted loop playsinline>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          <!-- Fallback: si no carga, se muestra el fondo estático -->
-        </video>
-      </div>
 
       <div class="section-label">STREAMING PLATFORMS</div>
 
@@ -1081,7 +1120,7 @@ body::after {
 
     </section>
 
-    <!-- INDUSTRY SECTION - BOTÓN CONTACT A GMAIL -->
+    <!-- INDUSTRY SECTION -->
     <section class="industry-section">
 
       <div class="industry-box">
@@ -1128,27 +1167,47 @@ body::after {
 
 <script>
   // ============================================================
+  // PRELOADER - se oculta al cargar la página
+  // ============================================================
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.classList.add('hide');
+    }
+  });
+
+  // Fallback: si el evento load ya ocurrió (por si el script se ejecuta después)
+  if (document.readyState === 'complete') {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.classList.add('hide');
+    }
+  }
+
+  // ============================================================
   // MODAL PARA FOTO EN GRANDE AL HACER CLICK EN EL AVATAR
   // ============================================================
   const avatarTrigger = document.getElementById('avatarTrigger');
   const avatarModal = document.getElementById('avatarModal');
 
-  avatarTrigger.addEventListener('click', () => {
-    avatarModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
+  if (avatarTrigger && avatarModal) {
+    avatarTrigger.addEventListener('click', () => {
+      avatarModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
 
-  avatarModal.addEventListener('click', () => {
-    avatarModal.classList.remove('active');
-    document.body.style.overflow = '';
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && avatarModal.classList.contains('active')) {
+    avatarModal.addEventListener('click', () => {
       avatarModal.classList.remove('active');
       document.body.style.overflow = '';
-    }
-  });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && avatarModal.classList.contains('active')) {
+        avatarModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
 </script>
 
 <!-- Schema.org JSON-LD -->
