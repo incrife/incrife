@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -155,7 +156,7 @@ body::after {
 }
 
 /* ============================================================
-   HERO - CON AVATAR CIRCULAR (NUEVA FOTO)
+   HERO - CON AVATAR CIRCULAR
    ============================================================ */
 .hero {
   position: relative;
@@ -267,6 +268,7 @@ body::after {
   width: 100%;
 }
 
+/* Verified - sin logo de Spotify */
 .verified {
   display: inline-flex;
   align-items: center;
@@ -285,7 +287,7 @@ body::after {
 }
 
 .verified i {
-  color: #1DB954;
+  color: #fff;
   font-size: .8rem;
 }
 
@@ -336,7 +338,7 @@ body::after {
 }
 
 /* ============================================================
-   LATEST RELEASE - CLICK A SPOTIFY
+   LATEST RELEASE - MÁS PEQUEÑO
    ============================================================ */
 .latest-release {
   position: absolute;
@@ -345,9 +347,9 @@ body::after {
   bottom: auto;
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 14px 18px 14px 14px;
-  border-radius: 22px;
+  gap: 10px;
+  padding: 10px 14px 10px 10px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, .10);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -366,38 +368,38 @@ body::after {
 }
 
 .release-cover {
-  width: 70px;
-  height: 70px;
-  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
   background-image: url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2026%20jun%202026%2C%2016_53_38_1.jpg");
   background-size: cover;
   background-position: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, .40);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .40);
   flex-shrink: 0;
 }
 
 .release-info .release-label {
-  font-size: .5rem;
-  letter-spacing: 2.5px;
+  font-size: .45rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
   opacity: .5;
   display: block;
 }
 
 .release-info h3 {
-  font-size: .9rem;
+  font-size: .75rem;
   font-weight: 800;
-  letter-spacing: -0.3px;
-  margin: 3px 0 1px;
+  letter-spacing: -0.2px;
+  margin: 2px 0 1px;
 }
 
 .release-info p {
-  font-size: .7rem;
+  font-size: .6rem;
   opacity: .7;
 }
 
 /* ============================================================
-   SECCIÓN STREAMING - CON LOGOS OFICIALES
+   SECCIÓN STREAMING
    ============================================================ */
 .streaming-section {
   padding: 30px 30px 25px;
@@ -615,64 +617,6 @@ body::after {
 }
 
 /* ============================================================
-   SECCIÓN EVENTOS
-   ============================================================ */
-.events-section {
-  padding: 0 30px 30px;
-}
-
-.events-box {
-  padding: 28px;
-  border-radius: 28px;
-  text-align: center;
-  background: rgba(255, 255, 255, .06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, .08);
-}
-
-.events-title {
-  font-size: .85rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 18px;
-  opacity: .8;
-}
-
-.events-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.events-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, .12);
-  backdrop-filter: blur(10px);
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  transition: .4s;
-  font-size: .8rem;
-  border: 1px solid rgba(255, 255, 255, .10);
-}
-
-.events-button:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, .20);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, .20);
-}
-
-.events-button i {
-  font-size: 1rem;
-}
-
-/* ============================================================
    SOCIAL SECTION
    ============================================================ */
 .social-section {
@@ -771,13 +715,13 @@ body::after {
   .latest-release {
     top: 18px;
     right: 18px;
-    padding: 10px 14px 10px 10px;
-    border-radius: 18px;
-    gap: 10px;
+    padding: 8px 12px 8px 8px;
+    border-radius: 16px;
+    gap: 8px;
   }
   .release-cover {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -824,19 +768,19 @@ body::after {
     top: 12px;
     right: 12px;
     transform: scale(.78);
-    padding: 8px 12px 8px 8px;
-    gap: 8px;
+    padding: 6px 10px 6px 6px;
+    gap: 6px;
   }
   .release-cover {
-    width: 45px;
-    height: 45px;
-    border-radius: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
   }
   .release-info h3 {
-    font-size: .7rem;
+    font-size: .65rem;
   }
   .release-info p {
-    font-size: .55rem;
+    font-size: .5rem;
   }
   .release-info .release-label {
     font-size: .4rem;
@@ -895,20 +839,6 @@ body::after {
     padding: 10px 20px;
     font-size: .75rem;
   }
-  .events-section {
-    padding: 0 16px 20px;
-  }
-  .events-box {
-    padding: 20px 16px;
-    border-radius: 22px;
-  }
-  .events-title {
-    font-size: .75rem;
-  }
-  .events-button {
-    padding: 10px 18px;
-    font-size: .7rem;
-  }
   .social-section {
     padding: 10px 16px 20px;
   }
@@ -949,14 +879,14 @@ body::after {
     gap: 10px;
   }
   .latest-release {
-    transform: scale(.68);
+    transform: scale(.65);
     top: 8px;
     right: 8px;
-    padding: 6px 10px 6px 6px;
+    padding: 5px 8px 5px 5px;
   }
   .release-cover {
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
   }
   .profile-grid {
     grid-template-columns: 1fr;
@@ -986,12 +916,12 @@ body::after {
 
       <div class="hero-glow"></div>
 
-      <!-- AVATAR CIRCULAR - NUEVA FOTO -->
+      <!-- AVATAR CIRCULAR -->
       <div class="hero-avatar" id="avatarTrigger"></div>
 
       <div class="hero-content">
         <div class="verified">
-          <i class="fa-solid fa-circle-check"></i>
+          <i class="fa-regular fa-circle-check"></i>
           Official Artist
         </div>
         <h1>INCRIFE</h1>
@@ -1013,13 +943,13 @@ body::after {
         </div>
       </div>
 
-      <!-- ÁLBUM PORTADA DERECHA - CLICK A SPOTIFY -->
+      <!-- ÁLBUM PORTADA DERECHA - MÁS PEQUEÑO -->
       <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" rel="noopener" class="latest-release">
         <div class="release-cover"></div>
         <div class="release-info">
-          <span class="release-label">LATEST RELEASE</span>
+          <span class="release-label">LATEST</span>
           <h3>NUEVO ÁLBUM</h3>
-          <p>Escuchar en Spotify →</p>
+          <p>Spotify →</p>
         </div>
       </a>
 
@@ -1137,25 +1067,6 @@ body::after {
           <i class="fa-solid fa-envelope"></i>
           CONTACT
         </a>
-      </div>
-
-    </section>
-
-    <!-- SECCIÓN EVENTOS -->
-    <section class="events-section">
-
-      <div class="events-box">
-        <div class="events-title">PRÓXIMOS EVENTOS</div>
-        <div class="events-buttons">
-          <a href="https://www.songkick.com/artists/10407628-incrife" class="events-button" target="_blank" rel="noopener">
-            <i class="fa-solid fa-ticket"></i>
-            Songkick
-          </a>
-          <a href="https://www.bandsintown.com/a/15650903-incrife" class="events-button" target="_blank" rel="noopener">
-            <i class="fa-solid fa-calendar-days"></i>
-            Bandsintown
-          </a>
-        </div>
       </div>
 
     </section>
