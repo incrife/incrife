@@ -29,7 +29,7 @@
   <meta name="twitter:description" content="Escucha a INCRIFE en todas las plataformas y lee sus letras en Genius.">
   <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
   
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png">
   
@@ -41,8 +41,8 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #ffffff; /* Fondo blanco */
-      color: #1a1a1a;
+      background: #0a0a0a;
+      color: #ffffff;
       font-family: 'Inter', sans-serif;
       min-height: 100vh;
       display: flex;
@@ -52,79 +52,69 @@
       position: relative;
       overflow-x: hidden;
     }
-    
-    /* Fondo con blur de la foto principal (efecto portada) */
-    .bg-blur-artist {
-      position: fixed;
-      top: -10%;
-      left: -10%;
-      width: 120%;
-      height: 120%;
-      z-index: 0;
-      background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png');
-      background-size: cover;
-      background-position: center 30%;
-      background-repeat: no-repeat;
-      filter: blur(60px) brightness(1.1) saturate(0.8);
-      transform: scale(1.05);
-      animation: slowPan 30s infinite alternate ease-in-out;
-      pointer-events: none;
-      opacity: 0.6;
-    }
-    @keyframes slowPan {
-      0% { transform: scale(1.05) translateX(0%) translateY(0%); filter: blur(60px) brightness(1.1) saturate(0.8);}
-      100% { transform: scale(1.12) translateX(2%) translateY(1%); filter: blur(70px) brightness(1.0) saturate(0.9);}
-    }
-    
-    /* Capa blanca translúcida para suavizar */
-    .overlay-white {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255,255,255,0.75);
-      z-index: 1;
-      pointer-events: none;
-    }
-    
-    /* Líneas dinámicas sutiles */
-    .dynamic-lines {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 2;
-      background: repeating-linear-gradient(115deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 14px);
-      animation: driftLines 20s linear infinite;
-    }
-    @keyframes driftLines { 0% { background-position: 0 0; } 100% { background-position: 120px 120px; } }
-    
+
+    /* =========================
+       HUB PREMIUM
+    ========================= */
     .hub {
+      position: relative;
+      overflow: hidden;
       width: 100%;
-      max-width: min(700px, 95%);
-      position: relative;
-      z-index: 15;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      border-radius: 48px;
-      padding: clamp(24px, 5vw, 40px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+      max-width: 760px;
+      border-radius: 42px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+      isolation: isolate;
+      z-index: 10;
+      transition: all 0.3s ease;
     }
-    
-    /* HEADER CON DISEÑO DE PORTADA DE ÁLBUM */
+
+    /* FOTO DE ELLA - como fondo con blur */
+    .hub::before {
+      content: "";
+      position: absolute;
+      inset: -10%;
+      background: 
+        linear-gradient(
+          rgba(10, 10, 10, 0.20),
+          rgba(10, 10, 10, 0.60)
+        ),
+        url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2028%20jun%202026%2C%2000_46_57.jpg");
+      background-size: cover;
+      background-position: center 25%;
+      background-repeat: no-repeat;
+      filter: blur(38px) saturate(1.15) brightness(0.95);
+      transform: scale(1.18);
+      z-index: -3;
+    }
+
+    /* LUCES / REFLEJOS */
+    .hub::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.15), transparent 45%),
+        radial-gradient(circle at 80% 25%, rgba(255, 255, 255, 0.10), transparent 40%),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.35));
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
     .header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
-      margin-bottom: clamp(20px, 4vh, 32px);
+      margin-bottom: clamp(24px, 5vh, 38px);
       position: relative;
+      z-index: 5;
     }
-    
-    /* Contenedor de las dos fotos (artista + chica) */
+
     .album-cover {
       display: flex;
       flex-direction: row;
@@ -132,43 +122,67 @@
       align-items: stretch;
       gap: 12px;
       width: 100%;
-      max-width: 480px;
+      max-width: 420px;
       margin: 0 auto 20px;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    
+
     .artist-photo {
       flex: 2;
       aspect-ratio: 1 / 1;
       background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png');
       background-size: cover;
       background-position: center 30%;
-      min-height: 180px;
+      min-height: 160px;
     }
-    
+
     .girl-photo {
       flex: 1.2;
       aspect-ratio: 1 / 1;
       background-image: url('https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2028%20jun%202026%2C%2000_46_57.jpg');
       background-size: cover;
       background-position: center 20%;
-      min-height: 180px;
+      min-height: 160px;
     }
-    
-    /* Badge del último tema */
+
+    h1 {
+      font-size: clamp(2.4rem, 10vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      color: white;
+      text-shadow: 0 10px 35px rgba(0, 0, 0, 0.50);
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 8px;
+    }
+
+    .sub-headline {
+      font-size: clamp(0.7rem, 3vw, 0.85rem);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.80);
+      letter-spacing: 3px;
+      margin-top: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.30);
+    }
+
+    /* Último tema destacado */
     .latest-track {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 14px;
-      background: rgba(0,0,0,0.04);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
       border-radius: 60px;
       padding: 8px 20px 8px 8px;
-      margin-top: 16px;
-      border: 1px solid rgba(0,0,0,0.06);
-      backdrop-filter: blur(4px);
+      margin-top: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
     }
     .track-thumb {
       width: 48px;
@@ -178,6 +192,7 @@
       background-size: cover;
       background-position: center;
       flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.10);
     }
     .track-info {
       text-align: left;
@@ -185,192 +200,312 @@
     }
     .track-info .title {
       font-weight: 700;
-      color: #1a1a1a;
+      color: #fff;
     }
     .track-info .artist {
       font-size: 0.7rem;
-      color: #666;
+      color: rgba(255, 255, 255, 0.60);
     }
     .track-info .play-btn {
       display: inline-block;
-      background: #000;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
       color: #fff;
       border-radius: 30px;
-      padding: 2px 14px;
+      padding: 2px 16px;
       font-size: 0.65rem;
       font-weight: 600;
       margin-top: 4px;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .track-info .play-btn:hover {
-      background: #333;
-      transform: scale(1.02);
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.03);
     }
-    
-    h1 {
-      font-size: clamp(2.4rem, 10vw, 3.6rem);
-      font-weight: 900;
-      letter-spacing: -1.5px;
-      margin-top: 10px;
-      background: linear-gradient(135deg, #1a1a1a, #555);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      font-family: 'Montserrat', sans-serif;
+
+    /* =========================
+       BOTONES
+    ========================= */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(12px, 2.5vh, 16px);
+      margin: 24px 0 20px;
+      position: relative;
+      z-index: 5;
     }
-    .sub-headline {
-      font-size: clamp(0.7rem, 3vw, 0.85rem);
-      font-weight: 400;
-      color: #666;
-      letter-spacing: 3px;
-      margin-top: 2px;
-      text-transform: uppercase;
-    }
-    
-    /* ENLACES MODERNOS */
-    .links { display: flex; flex-direction: column; gap: clamp(12px, 2.5vh, 16px); margin: 24px 0 20px; }
+
     .link-btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(245,245,245,0.7);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 70px;
       padding: clamp(12px, 2.5vw, 16px) clamp(20px, 4vw, 28px);
       text-decoration: none;
-      color: #1a1a1a;
+      color: #ffffff;
       font-weight: 600;
       font-size: clamp(0.85rem, 3.6vw, 1rem);
-      transition: all 0.3s cubic-bezier(0.15, 0.9, 0.3, 1.2);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      transition: 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.20);
     }
+
     .link-btn:hover {
-      background: rgba(235,235,235,0.9);
-      border-color: rgba(0,0,0,0.12);
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      transform: translateY(-4px) scale(1.02);
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.30);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.30);
     }
-    .link-left { display: flex; align-items: center; gap: clamp(14px, 4vw, 22px); }
-    .link-left i, .link-left .custom-icon { font-size: clamp(1.1rem, 4.5vw, 1.4rem); width: clamp(28px, 6vw, 36px); text-align: center; }
-    .custom-tidal-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(28px, 6vw, 36px); }
-    .custom-tidal-icon svg { width: clamp(20px, 4vw, 26px); height: auto; fill: #000; }
-    .custom-qobuz-icon { display: inline-flex; align-items: center; justify-content: center; width: clamp(28px, 6vw, 36px); }
-    .custom-qobuz-icon svg { width: clamp(18px, 3.5vw, 24px); height: auto; fill: #0095F5; }
-    .arrow { font-size: 0.8rem; color: #999; transition: transform 0.3s; }
-    .link-btn:hover .arrow { transform: translateX(6px); color: #000; }
-    
-    /* Colores específicos para cada plataforma */
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 4vw, 22px);
+    }
+    .link-left i,
+    .link-left .custom-icon {
+      font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+      width: clamp(28px, 6vw, 36px);
+      text-align: center;
+    }
+
+    .custom-tidal-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(28px, 6vw, 36px);
+    }
+    .custom-tidal-icon svg {
+      width: clamp(20px, 4vw, 26px);
+      height: auto;
+      fill: #ffffff;
+    }
+    .custom-qobuz-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(28px, 6vw, 36px);
+    }
+    .custom-qobuz-icon svg {
+      width: clamp(18px, 3.5vw, 24px);
+      height: auto;
+      fill: #0095F5;
+    }
+
+    .arrow {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.50);
+      transition: transform 0.3s, color 0.3s;
+    }
+    .link-btn:hover .arrow {
+      transform: translateX(6px);
+      color: #fff;
+    }
+
     .spotify i { color: #1DB954; }
     .apple i { color: #fc6bcb; }
     .deezer i { color: #A238FF; }
     .amazon i { color: #ff9900; }
     .youtube-music i { color: #FF0000; }
-    .tidal-link .custom-tidal-icon svg { fill: #000; transition: fill 0.3s; }
-    .tidal-link:hover .custom-tidal-icon svg { fill: #00ffff; }
+    .tidal-link .custom-tidal-icon svg { fill: #00ffff; transition: filter 0.3s; }
+    .tidal-link:hover .custom-tidal-icon svg { filter: drop-shadow(0 0 10px #00ffff); }
     .qobuz-link .custom-qobuz-icon svg { fill: #0095F5; transition: filter 0.3s; }
-    .qobuz-link:hover .custom-qobuz-icon svg { filter: drop-shadow(0 0 6px #0095F5); }
-    .genius-link i { color: #000; }
-    .genius-link:hover i { color: #ffff66; text-shadow: 0 0 10px #000; }
-    
+    .qobuz-link:hover .custom-qobuz-icon svg { filter: drop-shadow(0 0 10px #0095F5); }
+    .genius-link i { color: #ffff66; }
+    .genius-link:hover i { text-shadow: 0 0 14px #ffff66; }
+
     .official-btn {
-      background: #1a1a1a;
-      border: none;
-      color: #fff;
+      background: rgba(255, 255, 255, 0.18);
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border-color: rgba(255, 255, 255, 0.20);
     }
-    .official-btn .link-left { flex: 1; justify-content: center; gap: 12px; }
+    .official-btn .link-left {
+      flex: 1;
+      justify-content: center;
+      gap: 12px;
+    }
     .official-btn .link-left i { color: #fff; }
     .official-btn .arrow { display: none; }
-    .official-btn:hover { background: #333; transform: translateY(-2px) scale(1.01); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
-    
-    /* SECCIÓN EVENTOS */
+    .official-btn:hover {
+      background: rgba(255, 255, 255, 0.28);
+      border-color: rgba(255, 255, 255, 0.40);
+    }
+
+    /* =========================
+       EVENTOS
+    ========================= */
     .events-section {
-      background: rgba(245,245,245,0.5);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(0,0,0,0.04);
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 40px;
       padding: 1.5rem 1.2rem;
       margin: 1.5rem 0;
       text-align: center;
       position: relative;
+      z-index: 5;
     }
-    .events-header h3 { font-size: 1.2rem; font-weight: 800; color: #1a1a1a; }
-    .events-header p { font-size: 0.7rem; opacity: 0.6; margin-top: 4px; }
-    .events-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 1rem 0; }
+    .events-header h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.20);
+    }
+    .events-header p {
+      font-size: 0.7rem;
+      opacity: 0.60;
+      margin-top: 4px;
+    }
+    .events-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 1rem 0;
+    }
     .event-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(0,0,0,0.04);
-      border: 1px solid rgba(0,0,0,0.06);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.10);
       border-radius: 60px;
       padding: 10px 22px;
       text-decoration: none;
-      color: #1a1a1a;
+      color: #ffffff;
       font-size: 0.75rem;
       font-weight: 600;
       transition: all 0.3s;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
-    .event-btn:hover { background: #000; color: #fff; border-color: #000; transform: translateY(-2px); }
-    .event-note { font-size: 0.65rem; color: #666; margin-top: 8px; }
-    
-    /* SOCIAL DOCK */
+    .event-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
+    }
+    .event-note {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.60);
+      margin-top: 8px;
+    }
+
+    /* =========================
+       SOCIAL DOCK
+    ========================= */
     .social-dock {
       display: flex;
       justify-content: center;
       gap: clamp(28px, 8vw, 42px);
-      background: rgba(245,245,245,0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(0,0,0,0.04);
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: 100px;
       padding: clamp(8px, 2vh, 12px) clamp(24px, 6vw, 40px);
       width: fit-content;
       margin: 0 auto 16px;
+      position: relative;
+      z-index: 5;
     }
     .social-icon {
-      color: #555 !important;
+      color: rgba(255, 255, 255, 0.70) !important;
       font-size: clamp(1.2rem, 5vw, 1.5rem);
       text-decoration: none;
       transition: all 0.3s ease;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
     }
-    .social-icon:hover { transform: translateY(-4px) scale(1.1); color: #000 !important; }
-    .footer-bottom { text-align: center; font-size: 0.6rem; color: #999; padding-top: 4px; }
-    
-    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(16px);} 100% { opacity: 1; transform: translateY(0);} }
-    .animate-item { animation: fadeUp 0.5s ease forwards; opacity: 0; }
-    .d1 { animation-delay: 0.05s; } .d2 { animation-delay: 0.1s; } .d3 { animation-delay: 0.15s; }
-    .d4 { animation-delay: 0.2s; } .d5 { animation-delay: 0.25s; } .d6 { animation-delay: 0.3s; }
-    .d7 { animation-delay: 0.35s; } .d8 { animation-delay: 0.4s; } .d9 { animation-delay: 0.45s; }
-    
-    @media (max-width: 480px) {
-      .album-cover { flex-direction: column; max-width: 100%; }
-      .artist-photo, .girl-photo { aspect-ratio: 16 / 9; min-height: 120px; }
+    .social-icon:hover {
+      transform: translateY(-4px) scale(1.10);
+      color: #ffffff !important;
+      text-shadow: 0 0 25px rgba(255, 255, 255, 0.30);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.6rem;
+      color: rgba(255, 255, 255, 0.35);
+      padding-top: 4px;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* =========================
+       ANIMACIONES
+    ========================= */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-item {
+      animation: fadeUp 0.6s ease forwards;
+      opacity: 0;
+    }
+    .d1 { animation-delay: 0.05s; }
+    .d2 { animation-delay: 0.10s; }
+    .d3 { animation-delay: 0.15s; }
+    .d4 { animation-delay: 0.20s; }
+    .d5 { animation-delay: 0.25s; }
+    .d6 { animation-delay: 0.30s; }
+    .d7 { animation-delay: 0.35s; }
+    .d8 { animation-delay: 0.40s; }
+    .d9 { animation-delay: 0.45s; }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 600px) {
+      .hub {
+        padding: 24px 16px;
+        border-radius: 28px;
+      }
+      .album-cover {
+        flex-direction: column;
+        max-width: 100%;
+      }
+      .artist-photo,
+      .girl-photo {
+        aspect-ratio: 16 / 9;
+        min-height: 120px;
+      }
       .girl-photo { flex: 1; }
-      .latest-track { flex-wrap: wrap; padding: 8px 16px; }
-      .hub { padding: 16px; border-radius: 32px; }
+      .latest-track {
+        flex-wrap: wrap;
+        padding: 8px 16px;
+        width: 100%;
+        justify-content: center;
+      }
+      .track-info { text-align: center; }
+    }
+    @media (max-width: 400px) {
+      .hub { padding: 16px 12px; }
+      .link-btn { padding: 10px 14px; font-size: 0.75rem; }
+      .social-dock { gap: 18px; padding: 6px 16px; }
     }
   </style>
 </head>
 <body>
-<div class="bg-blur-artist"></div>
-<div class="overlay-white"></div>
-<div class="dynamic-lines"></div>
 
 <div class="hub">
-  <!-- CABECERA TIPO PORTADA DE ÁLBUM -->
+  <!-- HEADER -->
   <div class="header animate-item d1">
     <div class="album-cover">
       <div class="artist-photo"></div>
       <div class="girl-photo"></div>
     </div>
-    
+
     <h1>INCRIFE</h1>
     <div class="sub-headline">NUEVO ÁLBUM · PRÓXIMAMENTE</div>
-    
-    <!-- Último tema destacado -->
+
+    <!-- Último tema -->
     <div class="latest-track">
       <div class="track-thumb"></div>
       <div class="track-info">
@@ -381,23 +516,57 @@
     </div>
   </div>
 
-  <!-- ENLACES PRINCIPALES -->
+  <!-- ENLACES -->
   <div class="links">
-    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://www.deezer.com/en/artist/352025722" class="link-btn deezer animate-item d4" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-deezer"></i><span>Deezer</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="link-btn amazon animate-item d5" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-amazon"></i><span>Amazon Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer"><div class="link-left"><span class="custom-tidal-icon"><svg viewBox="0 0 24 24"><path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/></svg></span><span>TIDAL</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
+    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="link-btn spotify animate-item d2" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-spotify"></i><span>Spotify</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://music.apple.com/es/artist/incrife/1848003000" class="link-btn apple animate-item d3" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-apple"></i><span>Apple Music</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://www.deezer.com/en/artist/352025722" class="link-btn deezer animate-item d4" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-deezer"></i><span>Deezer</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="link-btn amazon animate-item d5" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-amazon"></i><span>Amazon Music</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://music.youtube.com/@incrife" class="link-btn youtube-music animate-item d6" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-brands fa-youtube"></i><span>YouTube Music</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://tidal.com/artist/68789425" class="link-btn tidal-link animate-item d7" target="_blank" rel="noopener noreferrer">
+      <div class="link-left">
+        <span class="custom-tidal-icon"><svg viewBox="0 0 24 24"><path d="M12.015 6.042L8.07 9.987 4.125 6.042 0 10.167l4.125 4.125 3.945-3.945 3.945 3.945 4.125-4.125-3.945-3.945 3.945-3.945L24 10.167l-4.125 4.125-3.945-3.945-3.915 3.945z"/></svg></span>
+        <span>TIDAL</span>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
     <a href="https://www.qobuz.com/es-es/interpreter/incrife/29103217" class="link-btn qobuz-link animate-item d8" target="_blank" rel="noopener noreferrer">
-      <div class="link-left"><span class="custom-qobuz-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5-7.5-3.358-7.5-7.5 3.358-7.5 7.5-7.5z"/><circle cx="12" cy="12" r="3"/></svg></span><span>Qobuz · Hi-Res</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://genius.com/artists/Incrife" class="link-btn genius-link animate-item d9" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-regular fa-message"></i><span>Genius · Letras</span></div><i class="fa-solid fa-chevron-right arrow"></i></a>
-    <a href="https://incrife.com" class="link-btn official-btn animate-item d9" target="_blank" rel="noopener noreferrer"><div class="link-left"><i class="fa-solid fa-globe"></i><span>Página oficial · incrife.com</span><i class="fa-solid fa-arrow-up-right-from-squares"></i></div></a>
+      <div class="link-left">
+        <span class="custom-qobuz-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c4.142 0 7.5 3.358 7.5 7.5s-3.358 7.5-7.5 7.5-7.5-3.358-7.5-7.5 3.358-7.5 7.5-7.5z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <span>Qobuz · Hi-Res</span>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://genius.com/artists/Incrife" class="link-btn genius-link animate-item d9" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-regular fa-message"></i><span>Genius · Letras</span></div>
+      <i class="fa-solid fa-chevron-right arrow"></i>
+    </a>
+    <a href="https://incrife.com" class="link-btn official-btn animate-item d9" target="_blank" rel="noopener noreferrer">
+      <div class="link-left"><i class="fa-solid fa-globe"></i><span>Página oficial · incrife.com</span><i class="fa-solid fa-arrow-up-right-from-squares"></i></div>
+    </a>
   </div>
 
-  <!-- SECCIÓN EVENTOS -->
+  <!-- EVENTOS -->
   <div class="events-section animate-item d5">
-    <div class="events-header"><h3>PRÓXIMOS EVENTOS</h3><p>Conciertos · Sesiones · Novedades</p></div>
+    <div class="events-header">
+      <h3>PRÓXIMOS EVENTOS</h3>
+      <p>Conciertos · Sesiones · Novedades</p>
+    </div>
     <div class="events-buttons">
       <a href="https://www.bandsintown.com/a/15650903-incrife" class="event-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-ticket-alt"></i> Bandsintown</a>
       <a href="https://www.songkick.com/artists/10407628-incrife" class="event-btn" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-bell"></i> Songkick · Alertas</a>
