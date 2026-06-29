@@ -59,25 +59,22 @@ body {
 }
 
 /* ============================================================
-   FONDO PRINCIPAL - NUEVA FOTO PROTAGONISTA
+   FONDO PRINCIPAL - FOTO FIJA CON BLUR
    ============================================================ */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, .10), rgba(0, 0, 0, .20)),
+    linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .18)),
     url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2013_35_20.png");
   background-size: cover;
   background-position: center 35%;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* FOTO FIJA */
   z-index: -20;
-  animation: cinematicZoom 30s ease-in-out infinite alternate;
-}
-
-@keyframes cinematicZoom {
-  0% { transform: scale(1.02) translateX(0); }
-  100% { transform: scale(1.08) translateX(-1.5%); }
+  filter: blur(4px) brightness(1.02); /* Blur suave al fondo */
+  transform: scale(1.02);
 }
 
 /* Overlay mínimo para legibilidad */
@@ -86,8 +83,8 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse at 30% 20%, rgba(255, 180, 100, .08), transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(180, 100, 255, .06), transparent 50%);
+    radial-gradient(ellipse at 30% 20%, rgba(255, 180, 100, .06), transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(180, 100, 255, .04), transparent 50%);
   backdrop-filter: blur(1px);
   z-index: -19;
   pointer-events: none;
@@ -100,7 +97,7 @@ body::after {
   height: 700px;
   left: -200px;
   top: -100px;
-  background: radial-gradient(circle, rgba(200, 140, 80, .12), transparent 70%);
+  background: radial-gradient(circle, rgba(200, 140, 80, .10), transparent 70%);
   filter: blur(60px);
   pointer-events: none;
   z-index: -10;
@@ -112,7 +109,7 @@ body::after {
   height: 600px;
   right: -150px;
   bottom: -100px;
-  background: radial-gradient(circle, rgba(120, 80, 200, .08), transparent 70%);
+  background: radial-gradient(circle, rgba(120, 80, 200, .06), transparent 70%);
   filter: blur(60px);
   pointer-events: none;
   z-index: -10;
@@ -124,7 +121,7 @@ body::after {
   height: 400px;
   left: 40%;
   top: 20%;
-  background: radial-gradient(circle, rgba(255, 200, 120, .06), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 200, 120, .05), transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: -10;
@@ -139,6 +136,8 @@ body::after {
   margin: auto;
   padding: 20px;
   animation: fadeIn 1.2s cubic-bezier(.22, 1, .36, 1) forwards;
+  position: relative;
+  z-index: 5;
 }
 
 @keyframes fadeIn {
@@ -692,6 +691,7 @@ body::after {
   body::before {
     background-position: center 25%;
     background-size: cover;
+    filter: blur(3px);
   }
   .hero {
     min-height: 320px;
@@ -813,6 +813,9 @@ body::after {
 }
 
 @media (max-width: 400px) {
+  body::before {
+    filter: blur(2px);
+  }
   .hero-avatar {
     width: 80px;
     height: 80px;
