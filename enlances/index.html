@@ -737,36 +737,51 @@ body::after {
 }
 
 /* ============================================================
-   ELEMENTO LATERAL DECORATIVO (MODELO)
+   MODELO LATERAL DECORATIVO
    ============================================================ */
 .hero-side-model {
     position: absolute;
-    right: -15%;
-    bottom: 0;
-    height: 110%;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 85%;
     width: auto;
-    z-index: 5;
-    opacity: 0.7;
+    z-index: 2;
+    opacity: 0.25;
+    filter: grayscale(1) drop-shadow(0 10px 40px rgba(0,0,0,0.2));
     pointer-events: none;
     object-fit: contain;
-    filter: drop-shadow(0 10px 40px rgba(0,0,0,0.3));
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, transparent 100%);
     transition: opacity 0.6s ease;
 }
 
-/* En móvil, reducir opacidad y tamaño */
+/* Ajustes para que no solape el contenido */
+.hero-content,
+.hero-avatar,
+.latest-release {
+    position: relative;
+    z-index: 10;
+}
+
+/* En móvil, reducir tamaño y opacidad */
 @media (max-width: 768px) {
     .hero-side-model {
-        right: -25%;
-        height: 90%;
-        opacity: 0.4;
+        right: -15%;
+        height: 70%;
+        opacity: 0.15;
+        mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);
     }
 }
 
 @media (max-width: 480px) {
     .hero-side-model {
-        right: -35%;
-        height: 70%;
-        opacity: 0.3;
+        right: -20%;
+        height: 60%;
+        opacity: 0.10;
+        mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, transparent 100%);
     }
 }
 
@@ -1021,7 +1036,7 @@ body::after {
     <!-- HERO -->
     <div class="hero">
 
-      <!-- MODELO LATERAL (fuera del contenido principal) -->
+      <!-- MODELO LATERAL (decorativo, detrás del contenido) -->
       <img 
         src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2030%20jun%202026%2C%2001_35_18.png" 
         alt="Modelo lateral" 
