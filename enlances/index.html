@@ -142,65 +142,43 @@ body::after {
 }
 
 /* ============================================================
-   HERO
+   HERO - REDISEÑADO
    ============================================================ */
 .hero {
   position: relative;
-  padding: 60px 40px 50px;
-  min-height: 580px;
+  height: 850px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
+  padding: 60px 40px 50px;
 }
 
-.artist-watermark {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 10rem;
-  font-weight: 900;
-  letter-spacing: -12px;
-  color: rgba(255, 255, 255, .04);
-  pointer-events: none;
-  line-height: 1;
-  user-select: none;
-  z-index: 1;
-}
-
-.hero-glow {
-  position: absolute;
-  bottom: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 300px;
-  background: radial-gradient(ellipse, rgba(255, 255, 255, .08), transparent 70%);
-  filter: blur(40px);
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Foto de INCRIFE - protagonista */
+/* Foto de INCRIFE - protagonista principal */
 .artist-image {
   position: absolute;
-  left: 50%;
-  bottom: 100px;
-  transform: translateX(-50%);
-  width: 420px;
-  height: 480px;
-  background: url("https://raw.githubusercontent.com/incrife/incrife/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png");
-  background-size: contain;
+  inset: 0;
+  background-image: url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/73D85246-4628-47A3-A92F-38CD72CF7EAF.png");
   background-repeat: no-repeat;
   background-position: center bottom;
-  filter: drop-shadow(0 40px 80px rgba(0, 0, 0, .6));
-  z-index: 5;
-  animation: heroFloat 7s ease-in-out infinite alternate;
+  background-size: 78% auto;
+  filter: drop-shadow(0 40px 100px rgba(0, 0, 0, .65));
+  z-index: 3;
+  animation: none;
 }
 
-@keyframes heroFloat {
-  0% { transform: translateX(-50%) translateY(0) scale(1); }
-  100% { transform: translateX(-50%) translateY(-12px) scale(1.02); }
+/* Glow más elegante */
+.hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 250px;
+  left: 50%;
+  bottom: 120px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgba(255, 255, 255, .05), transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-content {
@@ -276,38 +254,40 @@ body::after {
 }
 
 /* ============================================================
-   LATEST RELEASE - ÁLBUM FLOTANTE
+   LATEST RELEASE - PORTADA DERECHA
    ============================================================ */
 .latest-release {
   position: absolute;
-  right: 30px;
-  bottom: 30px;
+  top: 35px;
+  right: 35px;
+  bottom: auto;
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 14px 20px 14px 14px;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, .10);
-  backdrop-filter: blur(24px);
+  padding: 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .12);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, .12);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
-  z-index: 15;
-  transition: .45s;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .45);
+  z-index: 20;
+  transition: .4s;
 }
 
 .latest-release:hover {
-  transform: translateY(-6px) scale(1.02);
-  background: rgba(255, 255, 255, .16);
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 255, 255, .18);
 }
 
 .release-cover {
-  width: 80px;
-  height: 80px;
-  border-radius: 18px;
-  background: url("https://raw.githubusercontent.com/incrife/incrife/main/ChatGPT%20Image%2026%20jun%202026%2C%2016_53_38_1.jpg");
+  width: 95px;
+  height: 95px;
+  border-radius: 22px;
+  background-image: url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2026%20jun%202026%2C%2016_53_38_1.jpg");
   background-size: cover;
   background-position: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, .4);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, .50);
   flex-shrink: 0;
 }
 
@@ -623,13 +603,11 @@ body::after {
    ============================================================ */
 @media (max-width: 900px) {
   .hero {
-    min-height: 480px;
+    height: 720px;
     padding: 40px 30px;
   }
   .artist-image {
-    width: 300px;
-    height: 360px;
-    bottom: 100px;
+    background-size: 85% auto;
   }
   .hero h1 {
     font-size: 62px;
@@ -639,11 +617,14 @@ body::after {
     gap: 24px;
   }
   .latest-release {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin-top: 20px;
-    width: fit-content;
+    top: 25px;
+    right: 25px;
+    padding: 14px;
+    border-radius: 24px;
+  }
+  .release-cover {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -655,19 +636,11 @@ body::after {
     border-radius: 28px;
   }
   .hero {
-    min-height: 400px;
+    height: 650px;
     padding: 30px 20px;
   }
-  .artist-watermark {
-    font-size: 6rem;
-    letter-spacing: -8px;
-    top: 10px;
-    right: 15px;
-  }
   .artist-image {
-    width: 220px;
-    height: 280px;
-    bottom: 80px;
+    background-size: 95% auto;
   }
   .hero h1 {
     font-size: 44px;
@@ -683,6 +656,20 @@ body::after {
   }
   .stat strong {
     font-size: .75rem;
+  }
+  .latest-release {
+    top: 20px;
+    right: 20px;
+    transform: scale(.88);
+    padding: 12px;
+    gap: 12px;
+  }
+  .release-cover {
+    width: 70px;
+    height: 70px;
+  }
+  .release-info h3 {
+    font-size: .85rem;
   }
   .streaming-section {
     padding: 30px 20px;
@@ -730,33 +717,30 @@ body::after {
   .premium-footer {
     padding: 30px 20px 40px;
   }
-  .latest-release {
-    padding: 12px 16px 12px 12px;
-    border-radius: 20px;
-  }
-  .release-cover {
-    width: 60px;
-    height: 60px;
-  }
-  .release-info h3 {
-    font-size: .85rem;
-  }
 }
 
 @media (max-width: 400px) {
   .hero {
-    min-height: 340px;
+    height: 550px;
   }
   .artist-image {
-    width: 170px;
-    height: 220px;
-    bottom: 60px;
+    background-size: 100% auto;
   }
   .hero h1 {
     font-size: 34px;
   }
   .hero-stats {
     gap: 12px;
+  }
+  .latest-release {
+    transform: scale(.75);
+    top: 12px;
+    right: 12px;
+    padding: 10px;
+  }
+  .release-cover {
+    width: 60px;
+    height: 60px;
   }
   .platform-card {
     padding: 14px 12px;
@@ -768,10 +752,6 @@ body::after {
   }
   .platform-left h3 {
     font-size: .8rem;
-  }
-  .release-cover {
-    width: 50px;
-    height: 50px;
   }
 }
 </style>
@@ -789,7 +769,6 @@ body::after {
     <!-- HERO -->
     <div class="hero">
 
-      <div class="artist-watermark">INCRIFE</div>
       <div class="hero-glow"></div>
 
       <div class="artist-image"></div>
@@ -818,7 +797,7 @@ body::after {
         </div>
       </div>
 
-      <!-- ÁLBUM FLOTANTE -->
+      <!-- ÁLBUM PORTADA DERECHA -->
       <div class="latest-release">
         <div class="release-cover"></div>
         <div class="release-info">
