@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -645,7 +646,7 @@
             font-size: .95rem;
         }
 
-        /* INDUSTRY SECTION */
+        /* INDUSTRY SECTION - CONTACT A GMAIL */
         .industry-section {
             padding: 0 30px 30px;
         }
@@ -1229,21 +1230,6 @@
                 }
             });
         }
-
-        // ============================================================
-        // SCROLL SUAVE PARA ANCLAS
-        // ============================================================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === "#") return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
     </script>
 
     <!-- SCHEMA.ORG JSON-LD -->
