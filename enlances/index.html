@@ -155,7 +155,7 @@ body::after {
 }
 
 /* ============================================================
-   HERO - CON AVATAR CIRCULAR (NUEVA FOTO)
+   HERO - CON AVATAR CIRCULAR
    ============================================================ */
 .hero {
   position: relative;
@@ -267,7 +267,6 @@ body::after {
   width: 100%;
 }
 
-/* Verified - sin logo de Spotify */
 .verified {
   display: inline-flex;
   align-items: center;
@@ -398,10 +397,32 @@ body::after {
 }
 
 /* ============================================================
-   SECCIÓN STREAMING - SIN TIDAL
+   SECCIÓN STREAMING - CON VÍDEO EN BUCLE ARTÍSTICO
    ============================================================ */
 .streaming-section {
   padding: 30px 30px 25px;
+  position: relative;
+}
+
+/* Contenedor del vídeo en bucle */
+.video-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.video-backdrop video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.3) brightness(0.4);
 }
 
 .section-label {
@@ -412,12 +433,16 @@ body::after {
   margin-bottom: 18px;
   text-align: center;
   color: rgba(255, 255, 255, .7);
+  position: relative;
+  z-index: 1;
 }
 
 .platform-grid {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 .platform-card {
@@ -466,6 +491,8 @@ body::after {
   width: 32px;
   text-align: center;
   flex-shrink: 0;
+  /* Todos los iconos en gris */
+  color: #aaaaaa !important;
 }
 
 .platform-card .platform-text {
@@ -477,32 +504,28 @@ body::after {
 .platform-card .platform-text h3 {
   font-size: .95rem;
   font-weight: 700;
+  color: #dddddd;
 }
 
 .platform-card .platform-text p {
   font-size: .7rem;
-  opacity: .6;
+  opacity: .5;
   margin-top: 2px;
+  color: #aaaaaa;
 }
 
 .platform-card > .arrow-icon {
   opacity: .4;
   transition: .3s;
   margin-left: auto;
+  color: #888888 !important;
 }
 
 .platform-card:hover > .arrow-icon {
   opacity: 1;
   transform: translateX(6px);
+  color: #ffffff !important;
 }
-
-/* Colores plataformas */
-.spotify i { color: #1DB954; }
-.apple i { color: #ff7ed6; }
-.deezer i { color: #A238FF; }
-.amazon i { color: #ff9900; }
-.youtube i { color: #ff0000; }
-.genius i { color: #ffe600; }
 
 /* ============================================================
    ARTIST PROFILE
@@ -858,6 +881,9 @@ body::after {
     max-width: 100%;
     max-height: 80%;
   }
+  .video-backdrop {
+    border-radius: 28px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -914,7 +940,7 @@ body::after {
 
       <div class="hero-glow"></div>
 
-      <!-- AVATAR CIRCULAR - NUEVA FOTO -->
+      <!-- AVATAR CIRCULAR -->
       <div class="hero-avatar" id="avatarTrigger"></div>
 
       <div class="hero-content">
@@ -953,8 +979,16 @@ body::after {
 
     </div>
 
-    <!-- STREAMING PLATFORMS - SIN TIDAL -->
+    <!-- STREAMING PLATFORMS CON VÍDEO EN BUCLE -->
     <section class="streaming-section">
+
+      <!-- VÍDEO EN BUCLE ARTÍSTICO -->
+      <div class="video-backdrop">
+        <video autoplay muted loop playsinline>
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+          <!-- Fallback: si no carga, se muestra el fondo estático -->
+        </video>
+      </div>
 
       <div class="section-label">STREAMING PLATFORMS</div>
 
