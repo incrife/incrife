@@ -397,7 +397,7 @@ body::after {
 }
 
 /* ============================================================
-   SECCIÓN STREAMING - CON LOGOS OFICIALES Y TEXTO CENTRADO
+   SECCIÓN STREAMING - CON LOGOS OFICIALES
    ============================================================ */
 .streaming-section {
   padding: 30px 30px 25px;
@@ -422,7 +422,7 @@ body::after {
 .platform-card {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 16px 20px;
   border-radius: 22px;
@@ -459,7 +459,8 @@ body::after {
   background: rgba(255, 255, 255, .12);
 }
 
-.platform-card i {
+.platform-card i,
+.platform-card .custom-icon {
   font-size: 1.5rem;
   width: 32px;
   text-align: center;
@@ -469,8 +470,7 @@ body::after {
 .platform-card .platform-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex: 1;
 }
 
 .platform-card .platform-text h3 {
@@ -487,7 +487,7 @@ body::after {
 .platform-card > .arrow-icon {
   opacity: .4;
   transition: .3s;
-  margin-left: 8px;
+  margin-left: auto;
 }
 
 .platform-card:hover > .arrow-icon {
@@ -615,7 +615,7 @@ body::after {
 }
 
 /* ============================================================
-   SECCIÓN EVENTOS - NUEVA
+   SECCIÓN EVENTOS
    ============================================================ */
 .events-section {
   padding: 0 30px 30px;
@@ -849,7 +849,8 @@ body::after {
     border-radius: 18px;
     gap: 12px;
   }
-  .platform-card i {
+  .platform-card i,
+  .platform-card .custom-icon {
     font-size: 1.2rem;
     width: 26px;
   }
