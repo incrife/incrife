@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -59,7 +60,7 @@ body {
 }
 
 /* ============================================================
-   FONDO GLOBAL - LA FOTO COMO ESCENARIO DE TODA LA WEB
+   FONDO GLOBAL - NUEVA IMAGEN VERTICAL TRANSPARENTE
    ============================================================ */
 body::before {
   content: "";
@@ -67,9 +68,9 @@ body::before {
   inset: 0;
   background:
     linear-gradient(180deg, rgba(0, 0, 0, .10), rgba(0, 0, 0, .20)),
-    url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2013_35_20.png");
-  background-size: cover;
-  background-position: center 30%;
+    url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2014_11_12.png");
+  background-size: contain;
+  background-position: center 40%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   z-index: -20;
@@ -694,6 +695,10 @@ body::after {
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
+  body::before {
+    background-position: center 35%;
+    background-size: 75% auto;
+  }
   .hero {
     min-height: 380px;
     padding: 30px 25px 25px;
@@ -726,7 +731,8 @@ body::after {
     border-radius: 28px;
   }
   body::before {
-    background-position: center 25%;
+    background-position: center 30%;
+    background-size: 85% auto;
     filter: blur(1.5px);
   }
   .hero {
@@ -857,6 +863,8 @@ body::after {
 
 @media (max-width: 400px) {
   body::before {
+    background-position: center 25%;
+    background-size: 95% auto;
     filter: blur(1px);
   }
   .hero-avatar {
@@ -888,7 +896,7 @@ body::after {
 </head>
 <body>
 
-<!-- FONDO GLOBAL - LA FOTO ES EL ESCENARIO DE TODA LA WEB -->
+<!-- FONDO GLOBAL - NUEVA IMAGEN VERTICAL TRANSPARENTE -->
 <!-- La imagen está en body::before, visible siempre -->
 
 <!-- Luces ambientales -->
