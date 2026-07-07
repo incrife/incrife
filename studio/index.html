@@ -48,7 +48,7 @@
     
     <style>
         /* ============================================================
-           DISEÑO GRIS/BLUR DE LA PÁGINA PRINCIPAL
+           DISEÑO GRIS/BLUR DE LA PÁGINA PRINCIPAL (MISMO TAMAÑO)
         ============================================================ */
         
         * {
@@ -166,9 +166,9 @@
 
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 780px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px;
         }
 
         section {
@@ -393,7 +393,7 @@
             cursor: pointer;
         }
 
-        /* ===== HERO ===== */
+        /* ===== HERO (MISMO TAMAÑO QUE LA PÁGINA PRINCIPAL) ===== */
         .hero {
             min-height: 60vh;
             display: flex;
@@ -452,12 +452,20 @@
             margin-left: auto;
             margin-right: auto;
         }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
         @keyframes fadeUp {
             from { opacity:0; transform:translateY(30px); }
             to { opacity:1; transform:translateY(0); }
         }
 
-        /* ===== BOTONES ===== */
+        /* ===== BOTONES (MISMO TAMAÑO) ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -496,6 +504,7 @@
             color: #ffffff;
             transform: translateY(-2px);
         }
+        .btn-lg { padding: 1rem 2.2rem; font-size: 0.8rem; }
 
         /* ===== CARDS ===== */
         .card-glass {
@@ -512,7 +521,7 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
         }
 
-        /* ===== SECCIONES INTERNAS ===== */
+        /* ===== SECCIONES INTERNAS (MISMO TAMAÑO) ===== */
         .section-padding {
             padding: 4rem 0;
         }
@@ -963,7 +972,7 @@
         }
 
         /* ==========================
-           RESPONSIVE
+           RESPONSIVE (MISMO QUE PRINCIPAL)
         ========================== */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -982,6 +991,8 @@
         @media (max-width: 480px) {
             .hero h1 { font-size: 2rem; }
             .hero .tagline { font-size: 0.8rem; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; }
             .contact-buttons { flex-direction: column; align-items: center; }
             .contact-btn { width: 80%; justify-content: center; }
             body::before {
