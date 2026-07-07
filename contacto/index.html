@@ -39,7 +39,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a0505; font-family: 'Inter', sans-serif; color: #f0f0f0; overflow-x: hidden; }
     
-    /* Fondo rojo/negro */
+    /* ===== Fondo rojo/blur (igual que incrife.com) ===== */
     .animated-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
     .bg-blur-layer { position: absolute; width: 150%; height: 150%; top: -25%; left: -25%; background: radial-gradient(circle at 30% 40%, #cc0000, #4a0000, #1a0101); filter: blur(60px); animation: moveBlur 12s ease-in-out infinite alternate; }
     .bg-blur-layer2 { position: absolute; width: 130%; height: 130%; top: -15%; left: -15%; background: radial-gradient(circle at 70% 60%, #ff4444, #660000, #1a0000); filter: blur(80px); opacity: 0.7; animation: moveBlur2 15s ease-in-out infinite alternate; }
@@ -47,7 +47,7 @@
     @keyframes moveBlur { 0% { transform: scale(1) rotate(0deg); opacity: 0.8; } 100% { transform: scale(1.2) rotate(5deg); opacity: 1; } }
     @keyframes moveBlur2 { 0% { transform: scale(1) rotate(0deg) translateX(-5%); opacity: 0.5; } 100% { transform: scale(1.3) rotate(-3deg) translateX(5%); opacity: 0.9; } }
     
-    /* Menú superior */
+    /* ===== Menú superior (igual que incrife.com) ===== */
     .top-nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(10,5,5,0.95); backdrop-filter: blur(12px); z-index: 1000; padding: 0.8rem 2rem; border-bottom: 1px solid rgba(255,68,68,0.3); }
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .logo a { font-size: 1.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff6666); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; font-family: 'Montserrat', sans-serif; }
@@ -64,7 +64,7 @@
     .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: none; }
     .overlay.active { display: block; }
     
-    /* Animación de entrada */
+    /* ===== Animación de entrada (igual que incrife.com) ===== */
     .page-wrapper { animation: entranceSpin 0.9s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards; margin-top: 70px; position: relative; z-index: 10; }
     @keyframes entranceSpin { 0% { opacity: 0; transform: perspective(800px) rotateY(90deg) scale(0.95); filter: blur(8px); } 100% { opacity: 1; transform: perspective(800px) rotateY(0deg) scale(1); filter: blur(0); } }
     
@@ -72,12 +72,12 @@
     .fade-up-item { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s ease; }
     .fade-up-item.visible { opacity: 1; transform: translateY(0); }
     
-    /* Hero */
+    /* ===== Hero ===== */
     .hero-contact { text-align: center; margin-bottom: 2rem; padding: 1rem; }
     .hero-contact h1 { font-size: 2.8rem; font-weight: 800; background: linear-gradient(135deg, #fff, #ff8888); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Montserrat', sans-serif; margin-bottom: 0.5rem; }
     .hero-contact p { color: #ccaaaa; max-width: 500px; margin: 0 auto; font-size: 0.95rem; }
     
-    /* Grid de dos columnas: info + mapa */
+    /* ===== Grid de dos columnas: info + mapa ===== */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -85,14 +85,16 @@
       margin: 2rem 0;
     }
     
-    /* Tarjeta de información */
+    /* ===== Tarjeta de información (estilo incrife.com) ===== */
     .info-card {
       background: rgba(10,5,5,0.75);
       backdrop-filter: blur(16px);
       border-radius: 32px;
       padding: 2rem;
       border: 1px solid rgba(255,68,68,0.6);
+      transition: all 0.3s;
     }
+    .info-card:hover { border-color: #ff5555; box-shadow: 0 0 20px rgba(204,0,0,0.2); }
     .info-card h2 {
       color: #ff8888;
       font-size: 1.4rem;
@@ -151,7 +153,7 @@
       color: #ff8888;
     }
     
-    /* Botones de acción rápidos */
+    /* ===== Botones de acción ===== */
     .action-buttons {
       display: flex;
       gap: 1rem;
@@ -188,7 +190,7 @@
       color: white;
     }
     
-    /* Mapa */
+    /* ===== Mapa ===== */
     .map-card {
       background: rgba(10,5,5,0.75);
       backdrop-filter: blur(16px);
@@ -196,7 +198,9 @@
       padding: 1rem;
       border: 1px solid rgba(255,68,68,0.6);
       overflow: hidden;
+      transition: all 0.3s;
     }
+    .map-card:hover { border-color: #ff5555; }
     .map-card h2 {
       color: #ff8888;
       font-size: 1.2rem;
@@ -228,7 +232,7 @@
     }
     .map-address i { margin-right: 0.5rem; color: #ff5555; }
     
-    /* Formulario */
+    /* ===== Formulario ===== */
     .form-card {
       background: rgba(10,5,5,0.75);
       backdrop-filter: blur(16px);
@@ -236,7 +240,9 @@
       padding: 2rem;
       margin: 2rem 0;
       border: 1px solid rgba(255,68,68,0.6);
+      transition: all 0.3s;
     }
+    .form-card:hover { border-color: #ff5555; }
     .form-card h2 {
       color: #ff8888;
       font-size: 1.4rem;
@@ -286,7 +292,7 @@
       transform: scale(1.01);
     }
     
-    /* Sección de prensa */
+    /* ===== Sección de prensa ===== */
     .press-section {
       background: rgba(10,5,5,0.75);
       backdrop-filter: blur(16px);
@@ -295,7 +301,9 @@
       margin: 2rem 0;
       text-align: center;
       border: 1px solid rgba(255,68,68,0.6);
+      transition: all 0.3s;
     }
+    .press-section:hover { border-color: #ff5555; }
     .press-section h2 {
       color: #ff8888;
       font-size: 1.4rem;
@@ -326,7 +334,7 @@
       transform: translateY(-2px);
     }
     
-    /* Redes sociales y footer */
+    /* ===== Redes sociales y footer ===== */
     .social-modern { display: flex; justify-content: center; gap: 1.2rem; margin: 2rem 0 1.2rem; }
     .social-circle { width: 52px; height: 52px; background: rgba(30, 15, 15, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ff8888; font-size: 1.4rem; transition: all 0.25s ease; border: 1px solid rgba(255, 68, 68, 0.5); }
     .social-circle:hover { background: #cc0000; color: white; transform: translateY(-4px); }
@@ -381,15 +389,12 @@
 <div class="page-wrapper">
 <div class="container">
   
-  <!-- HERO -->
   <div class="hero-contact fade-up-item">
     <h1><i class="fas fa-envelope"></i> Contacto</h1>
     <p>¿Hablamos? Cuéntame tu proyecto y te responderé lo antes posible.</p>
   </div>
   
-  <!-- GRID: Información + Mapa -->
   <div class="contact-grid fade-up-item">
-    <!-- Columna izquierda: Información de contacto -->
     <div class="info-card">
       <h2><i class="fas fa-info-circle"></i> Información de contacto</h2>
       <div class="contact-details">
@@ -428,7 +433,6 @@
       </div>
     </div>
     
-    <!-- Columna derecha: Mapa -->
     <div class="map-card">
       <h2><i class="fas fa-map-marked-alt"></i> Dónde estamos</h2>
       <div class="map-container">
@@ -445,7 +449,6 @@
     </div>
   </div>
   
-  <!-- FORMULARIO -->
   <div class="form-card fade-up-item">
     <h2><i class="fas fa-paper-plane"></i> Escríbeme directamente</h2>
     <form action="https://formspree.io/f/xgvazgva" method="POST">
@@ -462,22 +465,18 @@
     </form>
   </div>
   
-  <!-- SECCIÓN DE PRENSA - EPK -->
   <div class="press-section fade-up-item">
     <h2><i class="fas fa-newspaper"></i> ¿Eres prensa?</h2>
     <p>Descarga mi presskit oficial con toda la información profesional, biografía, imágenes y datos de contacto para medios.</p>
     <a href="https://incrife.com/epk" target="_blank" class="press-btn"><i class="fas fa-download"></i> Ver Presskit · incrife.com/epk</a>
   </div>
   
-  <!-- REDES SOCIALES -->
   <div class="social-modern fade-up-item">
     <a href="https://www.instagram.com/incrife/" class="social-circle"><i class="fab fa-instagram"></i></a>
     <a href="https://www.youtube.com/@incrife" class="social-circle"><i class="fab fa-youtube"></i></a>
     <a href="https://www.tiktok.com/@incrife" class="social-circle"><i class="fab fa-tiktok"></i></a>
     <a href="https://x.com/Incrife" class="social-circle"><i class="fab fa-twitter"></i></a>
   </div>
-  
-  <!-- FOOTER -->
   <div class="footer-modern fade-up-item">INCRIFE · AKA STUDIO · Mezcla, Master y Grabación Profesional · Sant Adrià del Besòs (Barcelona)<br>© 2026 · contact@incrife.com · Tel: +34 624 17 02 04</div>
 </div>
 </div>
