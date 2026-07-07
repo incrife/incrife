@@ -48,8 +48,9 @@
     
     <style>
         /* ============================================================
-           DISEÑO FUSIONADO: Fondo gris/negro + glassmorphism + blur
-           Manteniendo toda la estructura del segundo código
+           DISEÑO COMPLETO DEL PRIMER CÓDIGO (CSS ORIGINAL)
+           Fondo gris con blur, glassmorphism, todo en gris/negro
+           Manteniendo toda la estructura HTML del segundo código
         ============================================================ */
         
         * {
@@ -67,7 +68,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0a0a0a;
+            background: #050505;
             color: #f0f0f0;
             overflow-x: hidden;
             line-height: 1.7;
@@ -76,20 +77,20 @@
             position: relative;
         }
 
-        /* ===== FONDO CON BLUR Y GRADIENTES ===== */
+        /* ===== FONDO CON BLUR DEL PRIMER CÓDIGO ===== */
         body::before {
             content: "";
             position: fixed;
             inset: 0;
             background:
-                linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.92)),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.20)),
                 url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2014_11_12.png");
-            background-size: cover;
+            background-size: contain;
             background-position: center 40%;
             background-repeat: no-repeat;
             background-attachment: fixed;
             z-index: -20;
-            filter: blur(3px) brightness(0.6);
+            filter: blur(2px) brightness(1.02);
         }
 
         body::after {
@@ -99,20 +100,20 @@
             background:
                 radial-gradient(ellipse at 30% 20%, rgba(180, 180, 180, 0.04), transparent 50%),
                 radial-gradient(ellipse at 70% 80%, rgba(120, 120, 120, 0.03), transparent 50%);
-            backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
             z-index: -19;
             pointer-events: none;
         }
 
-        /* Luces ambientales sutiles en gris */
+        /* ===== LUCES AMBIENTALES DEL PRIMER CÓDIGO ===== */
         .light-ambient-1 {
             position: fixed;
             width: 700px;
             height: 700px;
             left: -200px;
             top: -100px;
-            background: radial-gradient(circle, rgba(200, 200, 200, 0.05), transparent 70%);
+            background: radial-gradient(circle, rgba(200, 200, 200, 0.06), transparent 70%);
             filter: blur(60px);
             pointer-events: none;
             z-index: -10;
@@ -145,7 +146,6 @@
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #0a0a0a; }
         ::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #777; }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
@@ -177,8 +177,8 @@
             position: relative;
             overflow: hidden;
         }
-        section.dark { background: rgba(0, 0, 0, 0.50); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-        section.darker { background: rgba(0, 0, 0, 0.65); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        section.dark { background: rgba(0, 0, 0, 0.30); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        section.darker { background: rgba(0, 0, 0, 0.45); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
         .section-header { text-align: center; margin-bottom: 3.5rem; }
         .section-tag {
@@ -198,17 +198,17 @@
             content: '';
             width: 25px;
             height: 1px;
-            background: #666;
+            background: #555;
         }
         .section-subtitle {
-            color: #999;
+            color: #888;
             font-size: 0.9rem;
             max-width: 550px;
             margin: 0.5rem auto 0;
             font-weight: 300;
         }
 
-        /* ===== PRELOADER ===== */
+        /* ===== PRELOADER DEL PRIMER CÓDIGO ===== */
         #preloader {
             position: fixed;
             inset: 0;
@@ -216,7 +216,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(120, 120, 120, 0.15);
             backdrop-filter: blur(35px) saturate(180%);
             -webkit-backdrop-filter: blur(35px) saturate(180%);
             transition: opacity 0.65s cubic-bezier(.22, 1, .36, 1), visibility 0.65s;
@@ -234,11 +234,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(28px);
             -webkit-backdrop-filter: blur(28px);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.40), inset 0 1px 1px rgba(255, 255, 255, 0.10);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30), inset 0 1px 1px rgba(255, 255, 255, 0.20);
             overflow: hidden;
             position: relative;
         }
@@ -247,7 +247,7 @@
             position: absolute;
             width: 320px;
             height: 220px;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
             transform: translateX(-340px);
             animation: shine 3s infinite;
         }
@@ -270,21 +270,21 @@
         }
         @keyframes breathing {
             0% { opacity: .55; transform: scale(.98); text-shadow: 0 0 0 transparent; }
-            50% { opacity: 1; transform: scale(1.03); text-shadow: 0 0 16px rgba(255, 255, 255, 0.20); }
+            50% { opacity: 1; transform: scale(1.03); text-shadow: 0 0 16px rgba(255, 255, 255, 0.25); }
             100% { opacity: .55; transform: scale(.98); }
         }
         @keyframes shine {
             to { transform: translateX(340px); }
         }
 
-        /* ===== NAVBAR ===== */
+        /* ===== NAVBAR DEL PRIMER CÓDIGO ===== */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.75);
+            background: rgba(10, 10, 10, 0.70);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -315,7 +315,7 @@
         .nav-logo:hover { color: #aaaaaa; }
         .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
         .nav-links a {
-            color: #999;
+            color: #888;
             text-decoration: none;
             font-size: 0.72rem;
             font-weight: 500;
@@ -393,7 +393,7 @@
             cursor: pointer;
         }
 
-        /* ===== HERO ===== */
+        /* ===== HERO DEL PRIMER CÓDIGO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -408,8 +408,8 @@
             inset: 0;
             z-index: 0;
             background:
-                radial-gradient(ellipse at 50% 30%, rgba(150, 150, 150, 0.08) 0%, transparent 65%),
-                radial-gradient(ellipse at 80% 70%, rgba(100, 100, 100, 0.04) 0%, transparent 50%);
+                radial-gradient(ellipse at 50% 30%, rgba(180, 180, 180, 0.05) 0%, transparent 65%),
+                radial-gradient(ellipse at 80% 70%, rgba(100, 100, 100, 0.03) 0%, transparent 50%);
         }
         .hero-grid {
             position: absolute;
@@ -430,7 +430,7 @@
         }
         .hero-badge {
             display: inline-block;
-            border: 1px solid rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 0.5rem 1.5rem;
             border-radius: 9999px;
             font-size: 0.7rem;
@@ -451,7 +451,7 @@
         }
         .hero .tagline {
             font-size: 1.05rem;
-            color: #999;
+            color: #888;
             margin-bottom: 2.5rem;
             animation: fadeUp 0.8s ease 0.4s forwards;
             opacity: 0;
@@ -494,7 +494,7 @@
             50% { transform:translateX(-50%) translateY(8px); }
         }
 
-        /* ===== BOTONES ===== */
+        /* ===== BOTONES DEL PRIMER CÓDIGO ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -512,41 +512,41 @@
             font-family: 'Inter', sans-serif;
         }
         .btn-primary {
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.10);
             color: #ffffff;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.18);
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.30);
         }
         .btn-outline {
             background: transparent;
             color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .btn-outline:hover {
-            border-color: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.20);
             color: #ffffff;
             transform: translateY(-2px);
         }
         .btn-light {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             color: #ffffff;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         .btn-light:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.22);
             transform: translateY(-2px);
         }
         .btn-lg { padding: 1rem 2.2rem; font-size: 0.8rem; }
 
-        /* ===== CARDS / GLASS ===== */
+        /* ===== CARDS / GLASS DEL PRIMER CÓDIGO ===== */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
@@ -575,7 +575,7 @@
             z-index: -1;
         }
         .about-story {
-            color: #999;
+            color: #888;
             font-size: 0.85rem;
             line-height: 1.8;
             font-weight: 300;
@@ -627,11 +627,11 @@
         }
         .timeline-text {
             font-size: 0.8rem;
-            color: #999;
+            color: #888;
             font-weight: 300;
         }
 
-        /* ===== VIDEOCLIPS ===== */
+        /* ===== VIDEOCLIPS DEL PRIMER CÓDIGO ===== */
         .videoclips-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -682,7 +682,7 @@
         }
         .videoclip-link:hover { color: #cccccc; }
 
-        /* ===== RELEASE CARD ===== */
+        /* ===== RELEASE CARD DEL PRIMER CÓDIGO ===== */
         .release-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -743,12 +743,12 @@
             -webkit-backdrop-filter: blur(8px);
         }
         .platform-link:hover {
-            border-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.12);
             color: #ffffff;
             background: rgba(255, 255, 255, 0.06);
         }
 
-        /* ===== PROJECTS ===== */
+        /* ===== PROJECTS DEL PRIMER CÓDIGO ===== */
         .projects-grid {
             max-width: 800px;
             margin: 0 auto;
@@ -805,7 +805,7 @@
         }
         .project-info p {
             font-size: 0.8rem;
-            color: #999;
+            color: #888;
             margin-bottom: 0.5rem;
             font-weight: 300;
         }
@@ -817,7 +817,7 @@
             text-transform: uppercase;
         }
 
-        /* ===== VEVO ===== */
+        /* ===== VEVO DEL PRIMER CÓDIGO ===== */
         .vevo-section {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -858,7 +858,7 @@
             margin-bottom: 1rem;
         }
         .vevo-section p {
-            color: #999;
+            color: #888;
             font-weight: 300;
             max-width: 600px;
             margin: 0 auto 1.5rem;
@@ -866,7 +866,7 @@
         }
         .vevo-section .vevo-bio {
             font-size: 0.85rem;
-            color: #999;
+            color: #888;
             max-width: 600px;
             margin: 0 auto 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -877,7 +877,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            background: rgba(255, 0, 0, 0.85);
+            background: rgba(255, 0, 0, 0.80);
             color: white;
             padding: 0.8rem 2rem;
             border-radius: 3px;
@@ -968,9 +968,9 @@
             text-transform: uppercase;
         }
 
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER DEL PRIMER CÓDIGO ===== */
         .footer {
-            background: rgba(0, 0, 0, 0.50);
+            background: rgba(0, 0, 0, 0.40);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             text-align: center;
@@ -1017,7 +1017,7 @@
             z-index: 999;
             width: 42px;
             height: 42px;
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -1034,12 +1034,12 @@
         }
         .back-to-top.visible { opacity: 1; visibility: visible; }
         .back-to-top:hover {
-            background: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.10);
             color: #ffffff;
         }
 
         /* ============================================================
-           RESPONSIVE
+           RESPONSIVE DEL PRIMER CÓDIGO
         ============================================================ */
         @media (max-width: 1024px) {
             .videoclips-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1056,6 +1056,10 @@
             .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
             .videoclips-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
+            body::before {
+                background-position: center 35%;
+                background-size: 75% auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1070,13 +1074,46 @@
             .platform-links { flex-direction: column; align-items: center; }
             .platform-link { width: 100%; justify-content: center; }
             .back-to-top { bottom: 20px; left: 20px; }
+            body::before {
+                background-position: center 30%;
+                background-size: 85% auto;
+                filter: blur(1.5px);
+            }
+            .glass-loader {
+                width: 220px;
+                height: 150px;
+            }
+            .glass-loader h1 {
+                font-size: 36px;
+                letter-spacing: 8px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body::before {
+                background-position: center 25%;
+                background-size: 95% auto;
+                filter: blur(1px);
+            }
+            .glass-loader {
+                width: 180px;
+                height: 130px;
+            }
+            .glass-loader h1 {
+                font-size: 28px;
+                letter-spacing: 6px;
+            }
+            .glass-loader span {
+                font-size: 9px;
+                letter-spacing: 4px;
+            }
         }
     </style>
 
 </head>
 <body>
 
-    <!-- ===== PRELOADER ===== -->
+    <!-- ===== PRELOADER DEL PRIMER CÓDIGO ===== -->
     <div id="preloader">
         <div class="glass-loader">
             <h1>INCRIFE</h1>
@@ -1084,7 +1121,7 @@
         </div>
     </div>
 
-    <!-- Luces ambientales -->
+    <!-- Luces ambientales del primer código -->
     <div class="light-ambient-1"></div>
     <div class="light-ambient-2"></div>
     <div class="light-ambient-3"></div>
