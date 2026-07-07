@@ -629,58 +629,9 @@
             font-size: 0.8rem;
             color: #888;
             font-weight: 300;
+            line-height: 1.8;
         }
-
-        /* ===== VIDEOCLIPS DEL PRIMER CÓDIGO ===== */
-        .videoclips-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .videoclip-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .videoclip-card:hover {
-            border-color: rgba(255, 255, 255, 0.12);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
-        }
-        .videoclip-thumb {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-        .videoclip-info { padding: 1rem; text-align: center; }
-        .videoclip-info h4 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
-            color: #ffffff;
-        }
-        .videoclip-info p {
-            font-size: 0.65rem;
-            color: #aaaaaa;
-            margin-bottom: 0.5rem;
-        }
-        .videoclip-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.7rem;
-            color: #888;
-            text-decoration: none;
-        }
-        .videoclip-link:hover { color: #cccccc; }
+        .timeline-text strong { color: #ffffff; font-weight: 500; }
 
         /* ===== RELEASE CARD DEL PRIMER CÓDIGO ===== */
         .release-card {
@@ -817,85 +768,6 @@
             text-transform: uppercase;
         }
 
-        /* ===== VEVO DEL PRIMER CÓDIGO ===== */
-        .vevo-section {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 2.5rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .vevo-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(150, 150, 150, 0.03), transparent 70%);
-            pointer-events: none;
-        }
-        .vevo-section:hover {
-            border-color: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
-        }
-        .vevo-section .vevo-icon { font-size: 3.5rem; color: #FF0000; margin-bottom: 1.2rem; position: relative; }
-        .vevo-section h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-        }
-        .vevo-section .vevo-sub {
-            color: #aaaaaa;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-        .vevo-section p {
-            color: #888;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.8;
-        }
-        .vevo-section .vevo-bio {
-            font-size: 0.85rem;
-            color: #888;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 1.5rem;
-        }
-        .vevo-section .vevo-bio strong { color: #ffffff; font-weight: 400; }
-        .vevo-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            background: rgba(255, 0, 0, 0.80);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 3px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-        .vevo-btn:hover {
-            background: #cc0000;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.15);
-        }
-
         /* ===== COLLABORATIONS ===== */
         .collab-grid {
             display: grid;
@@ -966,6 +838,50 @@
             color: #aaaaaa;
             letter-spacing: 2px;
             text-transform: uppercase;
+        }
+
+        /* ===== ENLACES SECTION ===== */
+        .enlaces-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .enlace-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .enlace-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .enlace-card i {
+            font-size: 1.5rem;
+            color: #aaaaaa;
+        }
+        .enlace-card .enlace-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #ffffff;
+        }
+        .enlace-card .enlace-desc {
+            font-size: 0.6rem;
+            color: #666;
         }
 
         /* ===== FOOTER DEL PRIMER CÓDIGO ===== */
@@ -1042,8 +958,8 @@
            RESPONSIVE DEL PRIMER CÓDIGO
         ============================================================ */
         @media (max-width: 1024px) {
-            .videoclips-grid { grid-template-columns: repeat(2, 1fr); }
             .collab-grid { grid-template-columns: repeat(2, 1fr); }
+            .enlaces-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
@@ -1054,7 +970,7 @@
             .about-grid { grid-template-columns: 1fr; }
             .about-image-wrapper { max-width: 350px; margin: 0 auto; }
             .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-            .videoclips-grid { grid-template-columns: 1fr; }
+            .enlaces-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
             .hero h1 { font-size: 2.5rem; }
             body::before {
                 background-position: center 35%;
@@ -1071,6 +987,7 @@
             .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
             .collab-card { padding: 1rem 0.5rem; }
             .collab-card img { width: 55px; height: 55px; }
+            .enlaces-grid { grid-template-columns: 1fr; gap: 0.5rem; }
             .platform-links { flex-direction: column; align-items: center; }
             .platform-link { width: 100%; justify-content: center; }
             .back-to-top { bottom: 20px; left: 20px; }
@@ -1132,11 +1049,11 @@
             <a href="#home" class="nav-logo">INCRIFE</a>
             <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="https://incrife.com/agency" target="_blank">Agency</a></li>
-                <li><a href="https://incrife.com/studio" target="_blank">Portafolio</a></li>
-                <li><a href="https://incrife.com/studio" target="_blank">Studio musical</a></li>
-                <li><a href="https://incrife.com/book" target="_blank">Book</a></li>
-                <li><a href="#vevo">VEVO</a></li>
+                <li><a href="#about">Bio</a></li>
+                <li><a href="#story">Historia</a></li>
+                <li><a href="#musica">Música</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#enlaces">Enlaces</a></li>
             </ul>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
@@ -1146,11 +1063,11 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileClose">&times;</button>
         <a href="#home">Inicio</a>
-        <a href="https://incrife.com/agency" target="_blank">Agency</a>
-        <a href="https://incrife.com/studio" target="_blank">Portafolio</a>
-        <a href="https://incrife.com/studio" target="_blank">Studio musical</a>
-        <a href="https://incrife.com/book" target="_blank">Book</a>
-        <a href="#vevo">VEVO</a>
+        <a href="#about">Bio</a>
+        <a href="#story">Historia</a>
+        <a href="#musica">Música</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#enlaces">Enlaces</a>
     </div>
 
     <!-- ===== HERO ===== -->
@@ -1160,9 +1077,10 @@
         <div class="hero-content">
             <span class="hero-badge">Artista</span>
             <h1>IN<span class="text-gradient">CRIFE</span></h1>
-            <p class="tagline">Música · Videoclips · Narrativa Audiovisual · Barcelona</p>
+            <p class="tagline">Música · Imagen · Creatividad · Barcelona</p>
             <div class="hero-actions">
-                <a href="#proyectos" class="btn btn-primary btn-lg">Ver Proyectos</a>
+                <a href="#musica" class="btn btn-primary btn-lg">Escuchar</a>
+                <a href="#about" class="btn btn-outline btn-lg">Conocer más</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -1171,13 +1089,12 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== ABOUT (NUEVA BIO) ===== -->
     <section id="about" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <div class="section-tag">Biografía</div>
-                <h2 class="section-title">Ángel Córdoba <span class="accent">El Hannouti</span></h2>
-                <p class="section-subtitle">Artista, músico y creador de contenido. Nacido en La Mina, Barcelona.</p>
+                <h2 class="section-title">Sobre <span class="accent">Incrife</span></h2>
             </div>
             <div class="about-grid">
                 <div class="about-image-wrapper" data-aos="fade-right">
@@ -1186,16 +1103,23 @@
                 </div>
                 <div class="about-text" data-aos="fade-left">
                     <p class="about-story">
-                        <strong>Nacido en el barrio de La Mina, Barcelona.</strong> De ascendencia española e italiana. La diversidad cultural de mi entorno influyó profundamente en mi visión artística y musical.<br><br>
-                        Desde temprana edad mostré un gran interés por la música, inspirándome en artistas como <strong>Ne-Yo</strong> y <strong>MHD</strong>. Soy artista de <strong>afrotrap, afrobeat, trap, reggaetón y Latin Urban</strong>. También me especializo en la creación de <strong>videoclips y narrativa audiovisual</strong>.<br><br>
-                        Mi curiosidad creativa y carácter autodidacta me llevaron a explorar diferentes disciplinas: <strong>producción musical, marketing digital, diseño, vídeo y desarrollo artístico</strong>. He superado problemas de audición y hoy fusiono imagen, sonido y narrativa para crear contenido audiovisual único.
+                        <strong>Incrife</strong> es un artista musical y audiovisual nacido en Barcelona el <strong>28 de septiembre de 2006</strong>. De descendencia española e italiana, creció en el barrio de <strong>La Mina (Barcelona)</strong>, un lugar que forma parte de su identidad y de su visión creativa.<br><br>
+                        Su proyecto comenzó en 2022 con la intención de unir música e imagen dentro de un mismo universo artístico. Su sonido combina influencias del <strong>afro, tekno y afrotrap</strong>, desarrollando una propuesta propia donde la energía musical y la identidad visual tienen el mismo protagonismo.<br><br>
+                        Durante su evolución artística se enfrentó al miedo de ser juzgado por explorar nuevos caminos creativos y mostrar una identidad diferente, pero decidió dejar esas limitaciones atrás para centrarse en crear y expresar su visión personal.<br><br>
+                        En 2025 lanzó <strong>"The Death of the Flock"</strong> junto a <strong>Ouxxox</strong>, un proyecto que supuso una etapa diferente dentro de su trayectoria. Se trataba de un género que Incrife nunca imaginó trabajar y que no formaba parte de su escucha habitual, pero durante el proceso descubrió que crear música no siempre está ligado a lo que uno escucha, sino a la capacidad de experimentar, aprender y adaptarse a nuevos sonidos.<br><br>
+                        En este lanzamiento, Ouxxox tuvo un papel destacado en la producción musical y la mezcla, mientras que Incrife se centró en la parte creativa, las melodías y la construcción de la identidad del tema.<br><br>
+                        Además de su carrera musical, Incrife desarrolla proyectos relacionados con la imagen y la creatividad. En 2026 fundó <strong>Kurtusinc</strong>, un proyecto enfocado en el desarrollo de modelos y la creación de nuevas oportunidades dentro del ámbito audiovisual y de la moda.<br><br>
+                        Mantiene una conexión activa con su entorno, colaborando y apoyando a personas de su barrio, <strong>La Mina</strong>, impulsando la creatividad y buscando generar oportunidades a través de sus proyectos.<br><br>
+                        Incrife escribe sus canciones y participa en el desarrollo visual de sus obras, desde la idea inicial hasta elementos como el vestuario, la planificación de planos, la edición de color y el ritmo de sus videoclips.<br><br>
+                        Tras superar problemas de audición en 2025, encontró en la creatividad una forma de expresión y una nueva manera de conectar con la música. Cada lanzamiento busca representar una identidad propia, combinando sonido, emoción e imagen.<br><br>
+                        Actualmente continúa desarrollando su proyecto artístico, explorando nuevos sonidos y construyendo un universo donde la música, lo audiovisual y la comunidad forman parte de una misma experiencia.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== STORY ===== -->
+    <!-- ===== STORY (NUEVA TIMELINE) ===== -->
     <section id="story">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -1204,46 +1128,42 @@
                 <p class="section-subtitle">El camino que me ha llevado hasta aquí.</p>
             </div>
             <div class="timeline" data-aos="fade-up">
-                <div class="timeline-item"><div class="timeline-year">2006</div><div class="timeline-title">Nacimiento</div><p class="timeline-text">28 de septiembre. Barcelona, España. Barrio de La Mina. Ascendencia española e italiana.</p></div>
-                <div class="timeline-item"><div class="timeline-year">Infancia</div><div class="timeline-title">Primeras Inspiraciones</div><p class="timeline-text">Descubrimiento de Ne-Yo y MHD. Interés por la música urbana, el canto y la composición.</p></div>
-                <div class="timeline-item"><div class="timeline-year">Adolescencia</div><div class="timeline-title">Exploración Artística</div><p class="timeline-text">Formación autodidacta en producción musical, marketing digital, diseño, vídeo y desarrollo artístico. Etapa en la escena techno y rave.</p></div>
-                <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-title">INCRIFE Oficial</div><p class="timeline-text">Fundación del proyecto INCRIFE. Inicio como creador de contenido y artista.</p></div>
-                <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-title">Regreso a la Música</div><p class="timeline-text">Superación de problemas de audición. Clases de canto. Aprendizaje de francés. Nuevo álbum en preparación.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== VIDEOCLIPS ===== -->
-    <section id="videoclips" class="dark">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Últimos Lanzamientos</div>
-                <h2 class="section-title">Videoclips <span class="accent">Recientes</span></h2>
-                <p class="section-subtitle">Dirección y producción de videoclips para artistas.</p>
-            </div>
-            <div class="videoclips-grid">
-                <div class="videoclip-card" data-aos="fade-up">
-                    <img class="videoclip-thumb" src="https://img.youtube.com/vi/Du64WQoyopE/maxresdefault.jpg" alt="RASSAM - GALOU MERYOULE" onerror="this.src='https://img.youtube.com/vi/Du64WQoyopE/hqdefault.jpg'">
-                    <div class="videoclip-info">
-                        <h4>RASSAM - GALOU MERYOULE</h4>
-                        <p>PROD & MIX: AKA STUDIO · FILM: INCRIFE</p>
-                        <a href="https://www.youtube.com/watch?v=Du64WQoyopE" target="_blank" class="videoclip-link"><i class="fab fa-youtube"></i> Ver en YouTube</a>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2006</div>
+                    <div class="timeline-title">Nacimiento</div>
+                    <p class="timeline-text"><strong>Ángel Córdoba El Hannouti</strong> nace el <strong>28 de septiembre de 2006 en Barcelona</strong>. De descendencia española e italiana, crece en <strong>La Mina</strong>, un barrio que con el tiempo formaría parte de su identidad y visión artística.</p>
                 </div>
-                <div class="videoclip-card" data-aos="fade-up" data-aos-delay="100">
-                    <img class="videoclip-thumb" src="https://img.youtube.com/vi/Du64WQoyopE/maxresdefault.jpg" alt="RASSAM - GALOU MERYOULE" onerror="this.src='https://img.youtube.com/vi/Du64WQoyopE/hqdefault.jpg'">
-                    <div class="videoclip-info">
-                        <h4>RASSAM - GALOU MERYOULE</h4>
-                        <p>PROD & MIX: AKA STUDIO · FILM: INCRIFE</p>
-                        <a href="https://www.youtube.com/watch?v=Du64WQoyopE" target="_blank" class="videoclip-link"><i class="fab fa-youtube"></i> Ver en YouTube</a>
-                    </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-title">Nace Incrife</div>
+                    <p class="timeline-text">Comienza el proyecto <strong>Incrife</strong> con la intención de crear una identidad propia que una música, imagen y creatividad en un mismo universo.<br><br>Empieza a experimentar con diferentes sonidos y a desarrollar su propia forma de crear, explorando la producción musical y el apartado visual.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-title">Primer lanzamiento: "The Death of the Flock"</div>
+                    <p class="timeline-text">Publica <strong>"The Death of the Flock"</strong> junto a <strong>Ouxxox</strong>, un lanzamiento que marca una nueva etapa en su evolución artística.<br><br>El proyecto nace desde un género que Incrife nunca imaginó trabajar y que no formaba parte de su escucha habitual. A través del proceso descubre que crear música no depende únicamente de lo que escuchas, sino de la capacidad de experimentar y adaptarse a nuevos estilos.<br><br>En este tema, Ouxxox participa de forma destacada en la producción y mezcla, mientras Incrife desarrolla la parte creativa, las melodías y la identidad del concepto.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-title">Evolución artística</div>
+                    <p class="timeline-text">Tras superar problemas de audición, Incrife continúa desarrollando su relación con la música y encuentra en la creatividad una forma de expresión.<br><br>Empieza a reforzar una visión donde la música y la imagen funcionan como una misma experiencia.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-title">Expansión del universo Incrife</div>
+                    <p class="timeline-text">Continúa desarrollando su proyecto musical y audiovisual, publicando nuevos trabajos y explorando sonidos como el <strong>afro, tekno y afrotrap</strong>.<br><br>Funda <strong>Kurtusinc</strong>, un proyecto enfocado en modelos, imagen y creación audiovisual, ampliando su visión más allá de la música.<br><br>También mantiene una conexión activa con su entorno, apoyando y dando oportunidades a personas de <strong>La Mina</strong> mediante proyectos creativos.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">Presente</div>
+                    <div class="timeline-title">Construyendo una identidad propia</div>
+                    <p class="timeline-text">Incrife continúa creando música, desarrollando conceptos visuales y construyendo un universo artístico donde sonido, estética y narrativa forman parte de una misma identidad.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== MÚSICA ===== -->
-    <section id="musica">
+    <!-- ===== MÚSICA (CON NUEVO LANZAMIENTO) ===== -->
+    <section id="musica" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <div class="section-tag">Producción Musical</div>
@@ -1252,7 +1172,7 @@
             </div>
             <div class="release-card" data-aos="fade-up">
                 <div class="release-header"><i class="fab fa-spotify"></i><h3>INCRIFE · Escucha mi música</h3></div>
-                <iframe src="https://open.spotify.com/embed/track/20VgqLfhBxMl8jxoCyp9Mf?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <iframe src="https://open.spotify.com/embed/track/6X2ye2Cr629c5BvDWr7Srb?utm_source=generator" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 <div class="platform-links">
                     <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="platform-link"><i class="fab fa-spotify"></i> Spotify</a>
                     <a href="https://www.deezer.com/es/artist/352025722" target="_blank" class="platform-link"><i class="fab fa-deezer"></i> Deezer</a>
@@ -1264,7 +1184,7 @@
     </section>
 
     <!-- ===== PROJECTS ===== -->
-    <section id="proyectos" class="dark">
+    <section id="proyectos">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <div class="section-tag">Portfolio</div>
@@ -1272,33 +1192,24 @@
                 <p class="section-subtitle">Producción audiovisual y colaboraciones profesionales activas.</p>
             </div>
             <div class="projects-grid">
-                <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card" data-aos="fade-up"><div class="project-icon"><i class="fas fa-video"></i></div><div class="project-info"><h4>Proyectos Visuales · Incrife</h4><div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2024</span><span>+4 Videoclips</span></div><p>Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales.</p><span class="project-arrow">Ver en YouTube <i class="fas fa-arrow-right"></i></span></div></a>
-                <a href="https://www.instagram.com/kurtusinc/" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="project-icon"><i class="fas fa-camera-retro"></i></div><div class="project-info"><h4>Agencia Kurtusinc</h4><div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2025</span><span>+30 Models</span></div><p>Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos.</p><span class="project-arrow">Ver en Instagram <i class="fas fa-arrow-right"></i></span></div></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== VEVO ===== -->
-    <section id="vevo">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">VEVO</div>
-                <h2 class="section-title">Mira mi <span class="accent">canal</span></h2>
-                <p class="section-subtitle">Videoclips oficiales y contenido visual exclusivo.</p>
-            </div>
-            <div class="vevo-section" data-aos="fade-up">
-                <div class="vevo-icon"><i class="fab fa-youtube"></i></div>
-                <h3>INCRIFE · VEVO</h3>
-                <div class="vevo-sub">VIDEOCLIPS OFICIALES</div>
-                <p>
-                    Mi canal VEVO es el espacio donde la música se encuentra con la imagen.
-                    Cada videoclip es una extensión visual de mi sonido, una narrativa que trasciende la canción para convertirse en una experiencia completa.
-                </p>
-                <div class="vevo-bio">
-                    <strong>No es solo un videoclip, es una historia.</strong> La dirección, la fotografía, el montaje y la narrativa están pensados para que cada plano cuente algo más allá de la letra.
-                    La música no se escucha, se ve. Y cada uno de mis proyectos audiovisuales busca eso: que el espectador <strong>viva</strong> la canción.
-                </div>
-                <a href="https://www.youtube.com/@incrife" target="_blank" class="vevo-btn"><i class="fab fa-youtube"></i> Ver todos los videoclips</a>
+                <a href="https://www.youtube.com/@incrife" target="_blank" class="project-card" data-aos="fade-up">
+                    <div class="project-icon"><i class="fas fa-video"></i></div>
+                    <div class="project-info">
+                        <h4>Proyectos Visuales · Incrife</h4>
+                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2024</span><span>+4 Videoclips</span></div>
+                        <p>Dirección y producción de videoclips para artistas. Narrativas visuales únicas con estándares profesionales.</p>
+                        <span class="project-arrow">Ver en YouTube <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/kurtusinc/" target="_blank" class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-icon"><i class="fas fa-camera-retro"></i></div>
+                    <div class="project-info">
+                        <h4>Agencia Kurtusinc</h4>
+                        <div class="project-meta"><span><i class="far fa-calendar-alt"></i> Fundado 2025</span><span>+30 Models</span></div>
+                        <p>Agencia de modelos. Colaboración oficial. Talento profesional para fotografía, publicidad y eventos.</p>
+                        <span class="project-arrow">Ver en Instagram <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -1306,19 +1217,103 @@
     <!-- ===== COLLABORATIONS ===== -->
     <section id="colaboraciones" class="dark">
         <div class="container">
-            <div class="section-header" data-aos="fade-up"><div class="section-tag">Network</div><h2 class="section-title">Colaboraciones <span class="accent">Profesionales</span></h2><p class="section-subtitle">Artistas, modelos y creativos con los que he trabajado.</p></div>
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Network</div>
+                <h2 class="section-title">Colaboraciones <span class="accent">Profesionales</span></h2>
+                <p class="section-subtitle">Artistas, modelos y creativos con los que he trabajado.</p>
+            </div>
             <div class="collab-grid">
-                <a href="https://www.instagram.com/amine_grafi" target="_blank" class="collab-card" data-aos="fade-up"><img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_616350453_18335348698209010_3207213954587758104_n.jpg" alt="Kingsla"><div class="collab-name">Kingsla</div><div class="collab-ig"><i class="fab fa-instagram"></i> @amine_grafi</div></a>
-                <a href="https://www.instagram.com/maruu_king/" target="_blank" class="collab-card" data-aos="fade-up" data-aos-delay="100"><img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Maruuking"><div class="collab-name">Maruuking</div><div class="collab-ig"><i class="fab fa-instagram"></i> @maruu_king</div></a>
-                <a href="https://www.instagram.com/therassam/" target="_blank" class="collab-card" data-aos="fade-up" data-aos-delay="200"><img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_651251130_18116188027712847_544541923891260297_n.jpg" alt="Rassam"><div class="collab-name">Rassam</div><div class="collab-ig"><i class="fab fa-instagram"></i> @therassam</div></a>
-                <a href="https://www.instagram.com/rafa930_oficial/" target="_blank" class="collab-card" data-aos="fade-up" data-aos-delay="300"><img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_670152063_18013529003844485_7891764818375528431_n.jpg" alt="Rafa930"><div class="collab-name">Rafa930</div><div class="collab-ig"><i class="fab fa-instagram"></i> @rafa930_oficial</div></a>
+                <a href="https://www.instagram.com/amine_grafi" target="_blank" class="collab-card" data-aos="fade-up">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_616350453_18335348698209010_3207213954587758104_n.jpg" alt="Kingsla">
+                    <div class="collab-name">Kingsla</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @amine_grafi</div>
+                </a>
+                <a href="https://www.instagram.com/maruu_king/" target="_blank" class="collab-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/P1013921.jpg" alt="Maruuking">
+                    <div class="collab-name">Maruuking</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @maruu_king</div>
+                </a>
+                <a href="https://www.instagram.com/therassam/" target="_blank" class="collab-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_651251130_18116188027712847_544541923891260297_n.jpg" alt="Rassam">
+                    <div class="collab-name">Rassam</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @therassam</div>
+                </a>
+                <a href="https://www.instagram.com/rafa930_oficial/" target="_blank" class="collab-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://raw.githubusercontent.com/incrife/incrife/main/SaveClip.App_670152063_18013529003844485_7891764818375528431_n.jpg" alt="Rafa930">
+                    <div class="collab-name">Rafa930</div>
+                    <div class="collab-ig"><i class="fab fa-instagram"></i> @rafa930_oficial</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ENLACES (NUEVA SECCIÓN) ===== -->
+    <section id="enlaces">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Enlaces</div>
+                <h2 class="section-title">Todos mis <span class="accent">enlaces</span></h2>
+                <p class="section-subtitle">Encuéntrame en todas las plataformas.</p>
+            </div>
+            <div class="enlaces-grid" data-aos="fade-up">
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="enlace-card">
+                    <i class="fab fa-spotify"></i>
+                    <span class="enlace-name">Spotify</span>
+                    <span class="enlace-desc">Escucha mi música</span>
+                </a>
+                <a href="https://music.apple.com/es/artist/incrife/1848003000" target="_blank" class="enlace-card">
+                    <i class="fab fa-apple"></i>
+                    <span class="enlace-name">Apple Music</span>
+                    <span class="enlace-desc">Perfil oficial</span>
+                </a>
+                <a href="https://www.deezer.com/es/artist/352025722" target="_blank" class="enlace-card">
+                    <i class="fab fa-deezer"></i>
+                    <span class="enlace-name">Deezer</span>
+                    <span class="enlace-desc">Streaming mundial</span>
+                </a>
+                <a href="https://music.amazon.in/artists/B0FX5XCGKP" target="_blank" class="enlace-card">
+                    <i class="fab fa-amazon"></i>
+                    <span class="enlace-name">Amazon Music</span>
+                    <span class="enlace-desc">Página oficial</span>
+                </a>
+                <a href="https://music.youtube.com/@incrife" target="_blank" class="enlace-card">
+                    <i class="fab fa-youtube"></i>
+                    <span class="enlace-name">YouTube Music</span>
+                    <span class="enlace-desc">Videos y lanzamientos</span>
+                </a>
+                <a href="https://genius.com/artists/Incrife" target="_blank" class="enlace-card">
+                    <i class="fa-regular fa-message"></i>
+                    <span class="enlace-name">Genius</span>
+                    <span class="enlace-desc">Letras y anotaciones</span>
+                </a>
+                <a href="https://www.instagram.com/incrife/" target="_blank" class="enlace-card">
+                    <i class="fab fa-instagram"></i>
+                    <span class="enlace-name">Instagram</span>
+                    <span class="enlace-desc">Sigue mi día a día</span>
+                </a>
+                <a href="https://www.tiktok.com/@incrife" target="_blank" class="enlace-card">
+                    <i class="fab fa-tiktok"></i>
+                    <span class="enlace-name">TikTok</span>
+                    <span class="enlace-desc">Contenido visual</span>
+                </a>
+                <a href="https://x.com/Incrife" target="_blank" class="enlace-card">
+                    <i class="fab fa-x-twitter"></i>
+                    <span class="enlace-name">X (Twitter)</span>
+                    <span class="enlace-desc">Actualizaciones</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- ===== QUOTE ===== -->
-    <section id="quote">
-        <div class="container"><div class="quote-section" data-aos="fade-up"><div class="quote-icon"><i class="fas fa-quote-right"></i></div><p class="quote-text">"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer una experiencia audiovisual única."</p><p class="quote-author">— INCRIFE</p></div></div>
+    <section id="quote" class="dark">
+        <div class="container">
+            <div class="quote-section" data-aos="fade-up">
+                <div class="quote-icon"><i class="fas fa-quote-right"></i></div>
+                <p class="quote-text">"Mi objetivo es llevar mi música a todo el mundo y, al mismo tiempo, ofrecer una experiencia audiovisual única."</p>
+                <p class="quote-author">— INCRIFE</p>
+            </div>
+        </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
@@ -1329,10 +1324,12 @@
                 <a href="https://www.instagram.com/incrife/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@incrife" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <a href="https://x.com/Incrife" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.youtube.com/@incrife" target="_blank"><i class="fab fa-youtube"></i></a>
             </div>
             <p class="footer-text">
                 <strong>INCRIFE</strong><br>
-                © 2026 Incrife Record· España · <a href="mailto:contact@incrife.com">contact@incrife.com</a> · <span>+34 624 17 02 04</span><br>
+                © 2026 Incrife Record · España · <a href="mailto:contact@incrife.com">contact@incrife.com</a> · <span>+34 624 17 02 04</span><br>
                 <a href="https://incrife.com">incrife.com</a> · Todos los derechos reservados
             </p>
         </div>
