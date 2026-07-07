@@ -287,16 +287,230 @@
     .soon-card h4 { color: #ffaa88; font-size: 1rem; }
     .soon-card p { color: #886666; font-size: 0.7rem; margin-top: 0.3rem; }
     
-    /* Contacto */
-    .contact-section { background: rgba(10,5,5,0.85); backdrop-filter: blur(10px); border-radius: 32px; padding: 2rem; margin: 2rem 0; text-align: center; border: 1px solid #ff4444; }
-    .contact-section h2 { font-size: 1.6rem; color: #ff8888; margin-bottom: 1.5rem; font-family: 'Montserrat', sans-serif; }
-    .contact-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-    .contact-btn { display: inline-flex; align-items: center; gap: 0.8rem; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s; font-size: 1rem; }
-    .contact-btn.email { background: #cc0000; color: white; border: none; }
-    .contact-btn.email:hover { background: #ff3333; transform: scale(1.02); }
-    .contact-btn.whatsapp { background: #25D366; color: white; border: none; }
-    .contact-btn.whatsapp:hover { background: #20b359; transform: scale(1.02); }
-    .contact-btn i { font-size: 1.2rem; }
+    /* ============================================================
+       NUEVA ESTRUCTURA PROFESIONAL DE CONTACTO (DE contacto.html)
+    ============================================================ */
+    
+    /* ===== SECCIÓN DE CONTACTO (3 columnas elegantes) ===== */
+    .contact-section {
+      padding: 0 0 20px 0;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px 12px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, .08);
+      transition: .4s ease;
+      text-decoration: none;
+      color: white;
+    }
+    .contact-item:hover {
+      transform: translateY(-6px);
+      background: rgba(255, 255, 255, .12);
+      border-color: rgba(255, 255, 255, .20);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .30);
+    }
+    .contact-item i {
+      font-size: 1.4rem;
+      color: #aaaaaa;
+      margin-bottom: 8px;
+      transition: .3s;
+    }
+    .contact-item:hover i {
+      color: #ffffff;
+    }
+    .contact-item h4 {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #dddddd;
+      margin-bottom: 2px;
+    }
+    .contact-item p {
+      font-size: .7rem;
+      opacity: .5;
+      color: #aaaaaa;
+    }
+    
+    /* ===== FORMULARIO ===== */
+    .form-box {
+      padding: 28px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, .08);
+      margin-bottom: 1.5rem;
+    }
+    .form-box .form-title {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: .7;
+      text-align: center;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .08);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      transition: .4s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: rgba(255, 255, 255, .25);
+      background: rgba(255, 255, 255, .10);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, .9);
+      color: #0a0a0a;
+      font-weight: 800;
+      font-size: .8rem;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: .4s;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .submit-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .20);
+      background: #fff;
+    }
+    
+    /* ===== MANAGEMENT / BOOKING ===== */
+    .management-box {
+      padding: 24px 28px;
+      border-radius: 24px;
+      text-align: center;
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, .08);
+      margin-bottom: 1.5rem;
+    }
+    .management-box .management-title {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: .5;
+      margin-bottom: 6px;
+    }
+    .management-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .management-box p {
+      font-size: .8rem;
+      opacity: .5;
+      margin-bottom: 14px;
+    }
+    .management-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, .9);
+      color: #0a0a0a;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .4s;
+      font-size: .75rem;
+    }
+    .management-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .20);
+      background: #fff;
+    }
+    
+    /* ===== PRENSA / MEDIA ===== */
+    .press-box {
+      padding: 24px 28px;
+      border-radius: 24px;
+      text-align: center;
+      background: rgba(255, 255, 255, .06);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+    .press-box .press-title {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: .5;
+      margin-bottom: 6px;
+    }
+    .press-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .press-box p {
+      font-size: .8rem;
+      opacity: .5;
+      margin-bottom: 14px;
+    }
+    .press-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, .9);
+      color: #0a0a0a;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .4s;
+      font-size: .75rem;
+    }
+    .press-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .20);
+      background: #fff;
+    }
     
     /* Ubicación */
     .location-footer { text-align: center; margin: 1rem 0 2rem; padding: 1rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(5px); border-radius: 28px; }
@@ -316,11 +530,15 @@
       .container { padding: 1.5rem 1rem; } 
       .hero-studio h1 { font-size: 2rem; }
       .hero-studio { padding: 2rem 1rem; }
-      .contact-buttons { flex-direction: column; align-items: center; }
-      .contact-btn { width: 80%; justify-content: center; }
       .song-card { flex-direction: column; text-align: center; }
       audio { max-width: 100%; }
       .eq-bar { width: 3px; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    
+    @media (max-width: 400px) {
+      .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -499,12 +717,71 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       NUEVA SECCIÓN DE CONTACTO PROFESIONAL
+       ============================================================ -->
   <div id="contacto" class="contact-section fade-up-item">
-    <h2><i class="fas fa-paper-plane"></i> ¿Hablamos de tu proyecto?</h2>
-    <div class="contact-buttons">
-      <a href="mailto:contact@incrife.com" class="contact-btn email"><i class="fas fa-envelope"></i> contact@incrife.com</a>
-      <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%20Studio%2C%20me%20interesa%20un%20presupuesto" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    
+    <!-- 3 columnas elegantes: Email, Teléfono, WhatsApp -->
+    <div class="contact-grid">
+      <a href="mailto:contact@incrife.com" class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>Email</h4>
+        <p>contact@incrife.com</p>
+      </a>
+      <a href="tel:+34624170204" class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Teléfono</h4>
+        <p>+34 624 17 02 04</p>
+      </a>
+      <a href="https://wa.me/34624170204?text=Hola%20INCRIFE%2C%20me%20interesa%20trabajar%20contigo" target="_blank" class="contact-item">
+        <i class="fa-brands fa-whatsapp"></i>
+        <h4>WhatsApp</h4>
+        <p>Respuesta rápida</p>
+      </a>
     </div>
+
+    <!-- Formulario -->
+    <div class="form-box">
+      <div class="form-title">Envíame un mensaje</div>
+      <form action="https://formspree.io/f/xgvazgva" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Nombre" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+        </div>
+        <div class="form-group full-width">
+          <textarea name="message" placeholder="Cuéntame tu proyecto..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">
+          <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+        </button>
+      </form>
+    </div>
+
+    <!-- Management / Booking -->
+    <div class="management-box">
+      <div class="management-title">Management &amp; Booking</div>
+      <h3>¿Quieres trabajar conmigo?</h3>
+      <p>Para contrataciones, conciertos, colaboraciones o producción musical.</p>
+      <a href="mailto:contact@incrife.com?subject=Booking%20/%20Management" class="management-btn">
+        <i class="fa-solid fa-calendar-check"></i> Solicitar booking
+      </a>
+    </div>
+
+    <!-- Prensa / Media -->
+    <div class="press-box">
+      <div class="press-title">Prensa &amp; Media</div>
+      <h3>¿Eres periodista o medio?</h3>
+      <p>Descarga mi presskit oficial con biografía, imágenes y datos de contacto.</p>
+      <a href="https://incrife.com/epk" target="_blank" class="press-btn">
+        <i class="fa-solid fa-download"></i> Presskit · incrife.com/epk
+      </a>
+    </div>
+
   </div>
 
   <div class="location-footer fade-up-item">
