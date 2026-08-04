@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INCRIFE | Dualidad Creativa</title>
+    <title>INCRIFE · Lucky · VEVO</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="INCRIFE - Explorando la dualidad creativa. Artista multidisciplinar entre el caos y el orden, la luz y la sombra.">
-    <meta name="keywords" content="INCRIFE, dualidad, arte, creación, música, visual, caos, orden, expresión">
+    <!-- SEO Meta Tags actualizadas con videoclip, VEVO y canal -->
+    <meta name="description" content="Videoclip oficial de Lucky · INCRIFE. Explora la dualidad creativa, el caos y el orden. Disponible en VEVO y Apple Music.">
+    <meta name="keywords" content="INCRIFE, Lucky, VEVO, videoclip, música, dualidad, arte, Apple Music, @IncrifeVEVO">
     <meta name="author" content="INCRIFE">
+    <link rel="canonical" href="https://www.youtube.com/watch?v=4L8_xSX5cu8">
+    
+    <!-- Open Graph para compartir en redes -->
+    <meta property="og:title" content="INCRIFE · Lucky · VEVO">
+    <meta property="og:description" content="Videoclip oficial de Lucky. Entre el caos y el orden, la dualidad creativa.">
+    <meta property="og:image" content="https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg">
+    <meta property="og:url" content="https://www.youtube.com/watch?v=4L8_xSX5cu8">
+    <meta property="og:type" content="video.movie">
+    <meta name="twitter:card" content="summary_large_image">
     
     <!-- Fonts Artísticas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -202,7 +211,7 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== HERO SECTION con videoclip ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -240,27 +249,30 @@
             padding: 0 20px;
             position: relative;
             z-index: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin-left: 10%;
+            max-width: 100%;
         }
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: 96px;
+            font-size: 72px;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             line-height: 1;
             letter-spacing: -1px;
         }
 
         .hero-subtitle {
             font-family: var(--font-serif);
-            font-size: 20px;
+            font-size: 18px;
             color: var(--gray);
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             font-weight: 300;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -270,10 +282,11 @@
             font-family: var(--font-mono);
             font-size: 14px;
             color: var(--gray);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .divider {
@@ -285,21 +298,87 @@
 
         .quote {
             font-family: var(--font-serif);
-            font-size: 24px;
+            font-size: 20px;
             font-style: italic;
             color: var(--text-light);
-            margin: 60px 0;
-            padding-left: 40px;
+            margin: 30px 0;
+            padding-left: 30px;
             border-left: 2px solid var(--border-light);
-            max-width: 600px;
+            max-width: 100%;
             line-height: 1.4;
             font-weight: 300;
+        }
+
+        /* ===== VIDEOCLIP EMBED ===== */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+            border: 1px solid var(--border-light);
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-caption {
+            text-align: center;
+            margin-top: 16px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--gray);
+            letter-spacing: 1px;
+        }
+
+        .video-caption a {
+            color: var(--light);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gray);
+        }
+
+        .video-caption a:hover {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+
+        .apple-music-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--border-light);
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .apple-music-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+
+        .apple-music-badge i {
+            color: #fa233b;
         }
 
         .social-hero {
             display: flex;
             gap: 15px;
-            margin-top: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .social-hero a {
@@ -697,15 +776,17 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 72px;
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-            
+            .hero h1 {
+                font-size: 56px;
+            }
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
-            
             .footer-content {
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
@@ -743,11 +824,10 @@
             }
             
             .hero h1 {
-                font-size: 48px;
+                font-size: 40px;
             }
             
             .hero-content {
-                margin-left: 0;
                 text-align: center;
             }
             
@@ -758,7 +838,7 @@
             
             .quote {
                 padding-left: 20px;
-                margin-left: 20px;
+                margin-left: 0;
                 text-align: left;
             }
             
@@ -782,21 +862,20 @@
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 36px;
+                font-size: 32px;
             }
             
             .hero-subtitle {
-                font-size: 16px;
+                font-size: 14px;
             }
             
             .quote {
-                font-size: 20px;
+                font-size: 18px;
                 padding-left: 15px;
-                margin-left: 15px;
             }
             
             .section-title {
-                font-size: 32px;
+                font-size: 28px;
             }
             
             .about-text {
@@ -805,6 +884,9 @@
             
             .philosophy-text {
                 font-size: 20px;
+            }
+            .video-wrapper {
+                border-radius: 8px;
             }
         }
     </style>
@@ -835,34 +917,34 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Videoclip -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="dual-text" data-text="INCRIFE">
-                    INCRIFE
-                </h1>
+                <h1 class="dual-text" data-text="LUCKY">LUCKY</h1>
                 
                 <p class="hero-subtitle">
-                    Explorando la dualidad creativa
+                    Videoclip Oficial · VEVO
                 </p>
                 
                 <div class="channel-info">
-                    <span><i class="fas fa-user"></i> @Incrife</span>
+                    <span><i class="fab fa-youtube"></i> @IncrifeVEVO</span>
                     <div class="divider"></div>
-                    <span>20 suscriptores</span>
+                    <span><i class="fas fa-music"></i> Lucky</span>
                     <div class="divider"></div>
-                    <span>3 vídeos</span>
+                    <span><i class="fas fa-film"></i> 2024</span>
                 </div>
                 
                 <div class="quote">
                     "Nadie puede decirte de lo que eres capaz de hacer, ni siquiera tú..."
                 </div>
-                
-                <div class="channel-links">
-                    <a href="https://linktr.ee/incrife" target="_blank" class="contact-link" style="display: inline-flex; width: auto; padding: 15px 30px;">
-                        <i class="fas fa-link"></i>
-                        linktr.ee/incrife
+
+                <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 10px;">
+                    <a href="https://music.apple.com/es/music-video/lucky/6797592022" target="_blank" class="apple-music-badge">
+                        <i class="fab fa-apple"></i> Escuchar en Apple Music
+                    </a>
+                    <a href="https://www.youtube.com/@IncrifeVEVO" target="_blank" class="apple-music-badge" style="background: rgba(255,0,0,0.08); border-color: rgba(255,0,0,0.2);">
+                        <i class="fab fa-youtube"></i> @IncrifeVEVO
                     </a>
                 </div>
                 
@@ -884,10 +966,28 @@
                     </a>
                 </div>
             </div>
+
+            <!-- Videoclip Embed -->
+            <div>
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/4L8_xSX5cu8?autoplay=0&rel=0" 
+                        title="INCRIFE - Lucky (Videoclip Oficial)"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-caption">
+                    <i class="fab fa-youtube" style="color: #ff0000;"></i> 
+                    <a href="https://www.youtube.com/watch?v=4L8_xSX5cu8" target="_blank">Ver en YouTube</a> · 
+                    <a href="https://music.apple.com/es/music-video/lucky/6797592022" target="_blank">Apple Music</a> · 
+                    <a href="https://www.youtube.com/@IncrifeVEVO" target="_blank">@IncrifeVEVO</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (sin firma ni intro) -->
     <section id="about" class="about">
         <div class="section-container">
             <div class="section-header">
@@ -1132,19 +1232,16 @@
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Update active nav link
                     document.querySelectorAll('.nav-link').forEach(link => {
                         link.classList.remove('active');
                     });
                     this.classList.add('active');
                     
-                    // Scroll to section
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
                     navLinks.classList.remove('active');
                     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 }
@@ -1174,7 +1271,6 @@
                 }
             });
             
-            // Add subtle effect to navbar on scroll
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
                 navbar.style.background = 'rgba(0, 0, 0, 0.95)';
@@ -1196,34 +1292,28 @@
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                    
-                    // Add subtle fade-in effect
                     entry.target.style.transition = 'all 0.6s ease-out';
                 }
             });
         }, observerOptions);
 
-        // Observe elements for animation
         document.querySelectorAll('.content-card, .concept-item, .about-text p, .manifesto-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             observer.observe(el);
         });
 
-        // Initialize with subtle effects
         window.addEventListener('load', () => {
-            console.log('%cINCRIFE | Dualidad Creativa', 
+            console.log('%cINCRIFE · Lucky · VEVO', 
                 'color: #FFFFFF; font-size: 18px; font-family: monospace;');
-            console.log('%cEntre el caos y el orden hay un símbolo', 
+            console.log('%cVideoclip oficial · Entre el caos y el orden', 
                 'color: #8A8A8A; font-size: 12px; font-family: monospace;');
             
-            // Add subtle grain animation
             const grain = document.querySelector('.grain-overlay');
             setInterval(() => {
                 grain.style.opacity = (0.12 + Math.random() * 0.06).toFixed(2);
             }, 1000);
             
-            // Subtle title animation
             const dualTexts = document.querySelectorAll('.dual-text');
             dualTexts.forEach(text => {
                 setInterval(() => {
@@ -1232,54 +1322,45 @@
             });
         });
 
-        // Contact link hover effects
         document.querySelectorAll('.contact-link').forEach(link => {
             link.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateX(10px)';
             });
-            
             link.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateX(0)';
             });
         });
 
-        // Content card interaction
         document.querySelectorAll('.content-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 const preview = this.querySelector('.content-preview');
                 preview.style.transform = 'scale(1.02)';
                 preview.style.transition = 'transform 0.3s ease';
             });
-            
             card.addEventListener('mouseleave', function() {
                 const preview = this.querySelector('.content-preview');
                 preview.style.transform = 'scale(1)';
             });
         });
 
-        // Philosophy text reveal
         const philosophyText = document.querySelector('.philosophy-text');
         if (philosophyText) {
             const text = philosophyText.textContent;
             philosophyText.textContent = '';
-            
             let i = 0;
             const typeWriter = () => {
                 if (i < text.length) {
                     philosophyText.textContent += text.charAt(i);
                     i++;
-                    setTimeout(typeWriter, 30);
+                    setTimeout(typeWriter, 25);
                 }
             };
-            
-            // Start typing effect when in view
             const philosophyObserver = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
-                    setTimeout(typeWriter, 500);
+                    setTimeout(typeWriter, 400);
                     philosophyObserver.disconnect();
                 }
             }, { threshold: 0.5 });
-            
             philosophyObserver.observe(philosophyText);
         }
     </script>
