@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -38,15 +37,8 @@
         :root {
             --light: #FFFFFF;
             --dark: #000000;
-            --shadow: #2A2A2A;
             --gray: #8A8A8A;
-            --accent-light: #E8E8E8;
-            --accent-dark: #1A1A1A;
-            --text-light: rgba(255, 255, 255, 0.9);
-            --text-dark: rgba(0, 0, 0, 0.9);
             --border-light: rgba(255, 255, 255, 0.1);
-            --border-dark: rgba(0, 0, 0, 0.1);
-            
             --font-serif: 'Cormorant Garamond', serif;
             --font-display: 'Playfair Display', serif;
             --font-mono: 'Space Mono', monospace;
@@ -60,67 +52,12 @@
         body {
             font-family: var(--font-serif);
             background: var(--dark);
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.9);
             overflow-x: hidden;
-            position: relative;
             line-height: 1.6;
         }
 
-        /* ===== DUALITY EFFECTS ===== */
-        .duality-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, 
-                    transparent 49.5%, 
-                    rgba(255, 255, 255, 0.02) 50%, 
-                    rgba(255, 255, 255, 0.02) 50.5%, 
-                    transparent 51%
-                ),
-                linear-gradient(-45deg, 
-                    transparent 49.5%, 
-                    rgba(255, 255, 255, 0.02) 50%, 
-                    rgba(255, 255, 255, 0.02) 50.5%, 
-                    transparent 51%
-                );
-            background-size: 60px 60px;
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.3;
-            mix-blend-mode: overlay;
-        }
-
-        .grain-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0.15;
-        }
-
-        .dual-text {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dual-text::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 1px;
-            color: rgba(255, 255, 255, 0.1);
-            z-index: -1;
-            transform: translate(2px, 2px);
-        }
-
-        /* ===== NAVIGATION ===== */
+        /* NAVEGACIÓN */
         .navbar {
             position: fixed;
             top: 0;
@@ -130,7 +67,6 @@
             z-index: 1000;
             padding: 15px 0;
             border-bottom: 1px solid var(--border-light);
-            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -147,7 +83,6 @@
             font-size: 28px;
             font-weight: 400;
             letter-spacing: 2px;
-            position: relative;
             color: var(--light);
         }
 
@@ -162,16 +97,14 @@
         }
 
         .nav-link {
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-family: var(--font-serif);
             font-size: 14px;
-            font-weight: 400;
             letter-spacing: 1px;
             transition: all 0.3s;
-            position: relative;
             padding: 5px 0;
-            opacity: 0.8;
+            position: relative;
         }
 
         .nav-link::before {
@@ -204,55 +137,26 @@
             border-radius: 50%;
             font-size: 18px;
             cursor: pointer;
-            transition: all 0.3s;
         }
 
-        .mobile-menu-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* ===== HERO SECTION con videoclip ===== */
+        /* HERO - VIDEOCLIP VISIBLE */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
-            position: relative;
-            background: linear-gradient(
-                135deg,
-                var(--dark) 0%,
-                #111111 100%
-            );
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 80%;
-            background: 
-                radial-gradient(circle at 30% 30%, 
-                    rgba(255, 255, 255, 0.03) 0%, 
-                    transparent 50%),
-                radial-gradient(circle at 70% 70%, 
-                    rgba(255, 255, 255, 0.03) 0%, 
-                    transparent 50%);
-            pointer-events: none;
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
         }
 
         .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            position: relative;
-            z-index: 3;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+            width: 100%;
         }
 
         .hero-content {
@@ -265,7 +169,6 @@
             font-weight: 300;
             margin-bottom: 10px;
             line-height: 1;
-            letter-spacing: -1px;
         }
 
         .hero-subtitle {
@@ -300,33 +203,29 @@
             font-family: var(--font-serif);
             font-size: 20px;
             font-style: italic;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.9);
             margin: 30px 0;
             padding-left: 30px;
             border-left: 2px solid var(--border-light);
-            max-width: 100%;
             line-height: 1.4;
             font-weight: 300;
         }
 
-        /* ===== VIDEOCLIP EMBED ===== */
+        /* VIDEOCLIP - AHORA SÍ VISIBLE */
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
+            width: 100%;
             border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.8);
             border: 1px solid var(--border-light);
             background: #000;
+            position: relative;
         }
 
         .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+            display: block;
             width: 100%;
-            height: 100%;
+            height: 400px;
             border: 0;
         }
 
@@ -370,7 +269,7 @@
             transform: scale(1.02);
         }
 
-        .apple-music-badge i {
+        .apple-music-badge i.fa-apple {
             color: #fa233b;
         }
 
@@ -401,21 +300,28 @@
             transform: translateY(-3px);
         }
 
-        /* ===== ABOUT SECTION ===== */
-        .about {
-            padding: 120px 0;
-            position: relative;
-            background: var(--dark);
-        }
-
+        /* SECCIONES */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
+        .about, .content, .philosophy, .contact {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .content {
+            background: linear-gradient(to bottom, var(--dark) 0%, #0a0a0a 100%);
+        }
+
+        .contact {
+            background: linear-gradient(to bottom, var(--dark) 0%, #111111 100%);
+        }
+
         .section-header {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             text-align: center;
         }
 
@@ -424,7 +330,6 @@
             font-size: 48px;
             font-weight: 300;
             margin-bottom: 20px;
-            letter-spacing: -0.5px;
         }
 
         .section-subtitle {
@@ -447,7 +352,6 @@
             font-family: var(--font-serif);
             font-size: 18px;
             line-height: 1.8;
-            color: var(--text-light);
             font-weight: 300;
         }
 
@@ -459,7 +363,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-top: 50px;
         }
 
         .concept-item {
@@ -488,17 +391,6 @@
             margin-bottom: 10px;
         }
 
-        /* ===== CONTENT SECTION ===== */
-        .content {
-            padding: 120px 0;
-            background: linear-gradient(
-                to bottom,
-                var(--dark) 0%,
-                #0a0a0a 100%
-            );
-            position: relative;
-        }
-
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -512,8 +404,7 @@
             border-radius: 10px;
             overflow: hidden;
             transition: all 0.3s;
-            height: 400px;
-            position: relative;
+            height: 350px;
         }
 
         .content-card:hover {
@@ -522,12 +413,8 @@
         }
 
         .content-preview {
-            height: 200px;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.05) 0%,
-                rgba(0, 0, 0, 0.2) 100%
-            );
+            height: 150px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -537,8 +424,6 @@
 
         .content-info {
             padding: 30px;
-            position: relative;
-            z-index: 2;
         }
 
         .content-number {
@@ -564,13 +449,6 @@
             font-weight: 300;
         }
 
-        /* ===== PHILOSOPHY SECTION ===== */
-        .philosophy {
-            padding: 120px 0;
-            background: var(--dark);
-            position: relative;
-        }
-
         .philosophy-content {
             max-width: 800px;
             margin: 0 auto;
@@ -581,10 +459,9 @@
             font-family: var(--font-serif);
             font-size: 24px;
             line-height: 1.6;
-            color: var(--text-light);
-            margin-bottom: 40px;
             font-weight: 300;
             font-style: italic;
+            margin-bottom: 40px;
         }
 
         .duality-manifesto {
@@ -618,24 +495,10 @@
             opacity: 0.5;
         }
 
-        /* ===== CONTACT SECTION ===== */
-        .contact {
-            padding: 120px 0;
-            background: linear-gradient(
-                to bottom,
-                var(--dark) 0%,
-                #111111 100%
-            );
-            position: relative;
-        }
-
         .contact-container {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        .contact-content {
             text-align: center;
         }
 
@@ -655,7 +518,7 @@
             border: 1px solid var(--border-light);
             border-radius: 10px;
             text-decoration: none;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.9);
             font-family: var(--font-serif);
             font-size: 18px;
             transition: all 0.3s;
@@ -670,11 +533,36 @@
             transform: translateX(5px);
         }
 
-        /* ===== FOOTER ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* FOOTER */
         .footer {
             padding: 80px 0 40px;
             background: var(--dark);
-            color: var(--text-light);
             border-top: 1px solid var(--border-light);
         }
 
@@ -739,31 +627,6 @@
             padding-left: 5px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 16px;
-        }
-
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
         .copyright {
             text-align: center;
             padding-top: 40px;
@@ -774,7 +637,7 @@
             letter-spacing: 1px;
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* RESPONSIVE */
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -787,9 +650,8 @@
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
+            .video-wrapper iframe {
+                height: 350px;
             }
         }
 
@@ -833,12 +695,10 @@
             
             .channel-info {
                 justify-content: center;
-                flex-wrap: wrap;
             }
             
             .quote {
                 padding-left: 20px;
-                margin-left: 0;
                 text-align: left;
             }
             
@@ -858,55 +718,33 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+            
+            .video-wrapper iframe {
+                height: 250px;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 32px;
             }
-            
-            .hero-subtitle {
-                font-size: 14px;
+            .video-wrapper iframe {
+                height: 200px;
             }
-            
-            .quote {
-                font-size: 18px;
-                padding-left: 15px;
-            }
-            
             .section-title {
                 font-size: 28px;
-            }
-            
-            .about-text {
-                font-size: 16px;
-            }
-            
-            .philosophy-text {
-                font-size: 20px;
-            }
-            .video-wrapper {
-                border-radius: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Duality Effects -->
-    <div class="duality-overlay"></div>
-    <div class="grain-overlay"></div>
-
-    <!-- Navigation -->
+    <!-- NAVEGACIÓN -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
-                INC<span>RIFE</span>
-            </div>
-            
+            <div class="logo">INC<span>RIFE</span></div>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
-            
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Inicio</a>
                 <a href="#about" class="nav-link">Dualidad</a>
@@ -917,21 +755,18 @@
         </div>
     </nav>
 
-    <!-- Hero Section con Videoclip -->
+    <!-- HERO CON VIDEOCLIP -->
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="dual-text" data-text="LUCKY">LUCKY</h1>
-                
-                <p class="hero-subtitle">
-                    Videoclip Oficial · VEVO
-                </p>
+                <h1>LUCKY</h1>
+                <p class="hero-subtitle">Videoclip Oficial · VEVO</p>
                 
                 <div class="channel-info">
                     <span><i class="fab fa-youtube"></i> @IncrifeVEVO</span>
-                    <div class="divider"></div>
+                    <span class="divider"></span>
                     <span><i class="fas fa-music"></i> Lucky</span>
-                    <div class="divider"></div>
+                    <span class="divider"></span>
                     <span><i class="fas fa-film"></i> 2024</span>
                 </div>
                 
@@ -949,25 +784,15 @@
                 </div>
                 
                 <div class="social-hero">
-                    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" title="Spotify">
-                        <i class="fab fa-spotify"></i>
-                    </a>
-                    <a href="https://x.com/incrife" target="_blank" title="X">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/incrife/" target="_blank" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@incrife" target="_blank" title="TikTok">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Incrife" target="_blank" title="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank"><i class="fab fa-spotify"></i></a>
+                    <a href="https://x.com/incrife" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/incrife/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@incrife" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@Incrife" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
 
-            <!-- Videoclip Embed -->
+            <!-- VIDEOCLIP - AHORA VISIBLE -->
             <div>
                 <div class="video-wrapper">
                     <iframe 
@@ -987,45 +812,25 @@
         </div>
     </section>
 
-    <!-- About Section (sin firma ni intro) -->
+    <!-- ABOUT -->
     <section id="about" class="about">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">La <span class="dual-text" data-text="Dualidad">Dualidad</span></h2>
-                <p class="section-subtitle">
-                    Entre el caos y el orden existe la creación
-                </p>
+                <h2 class="section-title">La Dualidad</h2>
+                <p class="section-subtitle">Entre el caos y el orden existe la creación</p>
             </div>
-            
             <div class="about-content">
                 <div class="about-text">
-                    <p>
-                        INCRIFE es la manifestación de la dualidad creativa. 
-                        Un espacio donde coexisten los opuestos: luz y sombra, 
-                        orden y caos, silencio y sonido, forma y vacío.
-                    </p>
-                    
-                    <p>
-                        Como artista multidisciplinar, exploro los límites donde 
-                        estos conceptos se encuentran, se entrelazan y se transforman. 
-                        Cada pieza, cada sonido, cada imagen es un diálogo entre 
-                        lo conocido y lo por descubrir.
-                    </p>
-                    
-                    <p>
-                        No se trata de elegir un lado, sino de abrazar la tensión 
-                        que existe en el punto medio. Es en ese equilibrio inestable 
-                        donde surge la verdadera expresión.
-                    </p>
+                    <p>INCRIFE es la manifestación de la dualidad creativa. Un espacio donde coexisten los opuestos: luz y sombra, orden y caos, silencio y sonido, forma y vacío.</p>
+                    <p>Como artista multidisciplinar, exploro los límites donde estos conceptos se encuentran, se entrelazan y se transforman. Cada pieza, cada sonido, cada imagen es un diálogo entre lo conocido y lo por descubrir.</p>
+                    <p>No se trata de elegir un lado, sino de abrazar la tensión que existe en el punto medio. Es en ese equilibrio inestable donde surge la verdadera expresión.</p>
                 </div>
-                
                 <div class="dual-concept">
                     <div class="concept-item">
                         <div class="concept-icon">⚫</div>
                         <div class="concept-title">Caos</div>
                         <p>La energía bruta, el impulso creativo, lo inesperado</p>
                     </div>
-                    
                     <div class="concept-item">
                         <div class="concept-icon">⚪</div>
                         <div class="concept-title">Orden</div>
@@ -1036,76 +841,52 @@
         </div>
     </section>
 
-    <!-- Content Section -->
+    <!-- CONTENT -->
     <section id="content" class="content">
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">Expresiones</h2>
-                <p class="section-subtitle">
-                    Manifestaciones de la dualidad creativa
-                </p>
+                <p class="section-subtitle">Manifestaciones de la dualidad creativa</p>
             </div>
-            
             <div class="content-grid">
                 <div class="content-card">
-                    <div class="content-preview">
-                        🎵
-                    </div>
+                    <div class="content-preview">🎵</div>
                     <div class="content-info">
                         <div class="content-number">01 / Música</div>
                         <h3 class="content-title">Sonidos de la Dualidad</h3>
-                        <p class="content-description">
-                            Composiciones que exploran la tensión entre armonía 
-                            y disonancia, ritmo y silencio.
-                        </p>
+                        <p class="content-description">Composiciones que exploran la tensión entre armonía y disonancia, ritmo y silencio.</p>
                     </div>
                 </div>
-                
                 <div class="content-card">
-                    <div class="content-preview">
-                        🎨
-                    </div>
+                    <div class="content-preview">🎨</div>
                     <div class="content-info">
                         <div class="content-number">02 / Visual</div>
                         <h3 class="content-title">Imágenes del Umbral</h3>
-                        <p class="content-description">
-                            Creaciones visuales en la frontera entre lo figurativo 
-                            y lo abstracto, lo reconocible y lo enigmático.
-                        </p>
+                        <p class="content-description">Creaciones visuales en la frontera entre lo figurativo y lo abstracto.</p>
                     </div>
                 </div>
-                
                 <div class="content-card">
-                    <div class="content-preview">
-                        📹
-                    </div>
+                    <div class="content-preview">📹</div>
                     <div class="content-info">
                         <div class="content-number">03 / Vídeo</div>
                         <h3 class="content-title">Narrativas Duales</h3>
-                        <p class="content-description">
-                            Historias que se desarrollan en múltiples capas, 
-                            invitando a diferentes lecturas y percepciones.
-                        </p>
+                        <p class="content-description">Historias que se desarrollan en múltiples capas, invitando a diferentes lecturas.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Philosophy Section -->
+    <!-- PHILOSOPHY -->
     <section id="philosophy" class="philosophy">
         <div class="section-container">
             <div class="philosophy-content">
                 <div class="section-header">
-                    <h2 class="section-title">Filosofía <span class="dual-text" data-text="Creativa">Creativa</span></h2>
+                    <h2 class="section-title">Filosofía Creativa</h2>
                 </div>
-                
                 <div class="philosophy-text">
-                    "Entre el caos y el orden hay un símbolo. 
-                    En ese punto intermedio, la belleza. 
-                    Dentro de esa belleza, la libertad."
+                    "Entre el caos y el orden hay un símbolo. En ese punto intermedio, la belleza. Dentro de esa belleza, la libertad."
                 </div>
-                
                 <div class="duality-manifesto">
                     <h3 class="manifesto-title">Manifiesto Dual</h3>
                     <div class="manifesto-item">Crear desde la tensión, no desde la comodidad</div>
@@ -1118,72 +899,45 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section id="contact" class="contact">
         <div class="contact-container">
-            <div class="contact-content">
-                <div class="section-header">
-                    <h2 class="section-title">Conexión</h2>
-                    <p class="section-subtitle">
-                        La dualidad se completa en el encuentro
-                    </p>
-                </div>
-                
-                <div class="contact-links">
-                    <a href="https://linktr.ee/incrife" target="_blank" class="contact-link">
-                        <i class="fas fa-link"></i>
-                        Todos los enlaces
-                    </a>
-                    <a href="mailto:contact@incrife.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        contact@incrife.com
-                    </a>
-                    <a href="https://www.youtube.com/@Incrife" target="_blank" class="contact-link">
-                        <i class="fab fa-youtube"></i>
-                        Canal de YouTube
-                    </a>
-                </div>
-                
-                <div class="social-links" style="margin-top: 60px; justify-content: center;">
-                    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="social-link">
-                        <i class="fab fa-spotify"></i>
-                    </a>
-                    <a href="https://x.com/incrife" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://www.instagram.com/incrife/" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@incrife" target="_blank" class="social-link">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">Conexión</h2>
+                <p class="section-subtitle">La dualidad se completa en el encuentro</p>
+            </div>
+            <div class="contact-links">
+                <a href="https://linktr.ee/incrife" target="_blank" class="contact-link">
+                    <i class="fas fa-link"></i> Todos los enlaces
+                </a>
+                <a href="mailto:contact@incrife.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> contact@incrife.com
+                </a>
+                <a href="https://www.youtube.com/@Incrife" target="_blank" class="contact-link">
+                    <i class="fab fa-youtube"></i> Canal de YouTube
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="social-link"><i class="fab fa-spotify"></i></a>
+                <a href="https://x.com/incrife" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/incrife/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@incrife" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-about">
                 <div class="footer-logo">INC<span>RIFE</span></div>
-                <p class="footer-text">
-                    Espacio creativo dedicado a explorar la dualidad en todas 
-                    sus formas. Un viaje continuo entre opuestos que se complementan.
-                </p>
+                <p class="footer-text">Espacio creativo dedicado a explorar la dualidad en todas sus formas. Un viaje continuo entre opuestos que se complementan.</p>
                 <div class="social-links">
-                    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="social-link">
-                        <i class="fab fa-spotify"></i>
-                    </a>
-                    <a href="https://www.instagram.com/incrife/" target="_blank" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@Incrife" target="_blank" class="social-link">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="social-link"><i class="fab fa-spotify"></i></a>
+                    <a href="https://www.instagram.com/incrife/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@Incrife" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
             <div class="footer-links">
                 <h4>Explorar</h4>
                 <ul>
@@ -1193,7 +947,6 @@
                     <li><a href="#philosophy">Filosofía</a></li>
                 </ul>
             </div>
-            
             <div class="footer-links">
                 <h4>Conectar</h4>
                 <ul>
@@ -1204,14 +957,11 @@
                 </ul>
             </div>
         </div>
-        
-        <div class="copyright">
-            © 2024 INCRIFE. Entre el caos y el orden.
-        </div>
+        <div class="copyright">© 2024 INCRIFE. Entre el caos y el orden.</div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
         
@@ -1222,147 +972,42 @@
                 : '<i class="fas fa-bars"></i>';
         });
 
-        // Smooth Scrolling for Navigation
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                    });
+                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
                     this.classList.add('active');
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
                     navLinks.classList.remove('active');
                     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 }
             });
         });
 
-        // Update active nav on scroll
+        // Active nav on scroll
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollPos = window.scrollY + 100;
-            
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                const sectionId = section.getAttribute('id');
-                
                 if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    current = sectionId;
+                    current = section.getAttribute('id');
                 }
             });
-            
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
                 }
             });
-            
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-            } else {
-                navbar.style.background = 'rgba(0, 0, 0, 0.9)';
-                navbar.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
-            }
         });
-
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    entry.target.style.transition = 'all 0.6s ease-out';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.content-card, .concept-item, .about-text p, .manifesto-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            observer.observe(el);
-        });
-
-        window.addEventListener('load', () => {
-            console.log('%cINCRIFE · Lucky · VEVO', 
-                'color: #FFFFFF; font-size: 18px; font-family: monospace;');
-            console.log('%cVideoclip oficial · Entre el caos y el orden', 
-                'color: #8A8A8A; font-size: 12px; font-family: monospace;');
-            
-            const grain = document.querySelector('.grain-overlay');
-            setInterval(() => {
-                grain.style.opacity = (0.12 + Math.random() * 0.06).toFixed(2);
-            }, 1000);
-            
-            const dualTexts = document.querySelectorAll('.dual-text');
-            dualTexts.forEach(text => {
-                setInterval(() => {
-                    text.style.transform = `translateX(${Math.random() * 2 - 1}px)`;
-                }, 3000);
-            });
-        });
-
-        document.querySelectorAll('.contact-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(10px)';
-            });
-            link.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateX(0)';
-            });
-        });
-
-        document.querySelectorAll('.content-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                const preview = this.querySelector('.content-preview');
-                preview.style.transform = 'scale(1.02)';
-                preview.style.transition = 'transform 0.3s ease';
-            });
-            card.addEventListener('mouseleave', function() {
-                const preview = this.querySelector('.content-preview');
-                preview.style.transform = 'scale(1)';
-            });
-        });
-
-        const philosophyText = document.querySelector('.philosophy-text');
-        if (philosophyText) {
-            const text = philosophyText.textContent;
-            philosophyText.textContent = '';
-            let i = 0;
-            const typeWriter = () => {
-                if (i < text.length) {
-                    philosophyText.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 25);
-                }
-            };
-            const philosophyObserver = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    setTimeout(typeWriter, 400);
-                    philosophyObserver.disconnect();
-                }
-            }, { threshold: 0.5 });
-            philosophyObserver.observe(philosophyText);
-        }
     </script>
 </body>
 </html>
