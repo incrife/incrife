@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INCRIFE · Lucky · VEVO</title>
     
-    <!-- SEO Meta Tags actualizadas con videoclip, VEVO y canal -->
+    <!-- SEO -->
     <meta name="description" content="Videoclip oficial de Lucky · INCRIFE. Explora la dualidad creativa, el caos y el orden. Disponible en VEVO y Apple Music.">
     <meta name="keywords" content="INCRIFE, Lucky, VEVO, videoclip, música, dualidad, arte, Apple Music, @IncrifeVEVO">
     <meta name="author" content="INCRIFE">
     <link rel="canonical" href="https://www.youtube.com/watch?v=4L8_xSX5cu8">
     
-    <!-- Open Graph para compartir en redes -->
+    <!-- Open Graph -->
     <meta property="og:title" content="INCRIFE · Lucky · VEVO">
     <meta property="og:description" content="Videoclip oficial de Lucky. Entre el caos y el orden, la dualidad creativa.">
     <meta property="og:image" content="https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg">
     <meta property="og:url" content="https://www.youtube.com/watch?v=4L8_xSX5cu8">
     <meta property="og:type" content="video.movie">
-    <meta name="twitter:card" content="summary_large_image">
     
-    <!-- Fonts Artísticas -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -28,45 +27,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* ===== RESET ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --light: #FFFFFF;
-            --dark: #000000;
-            --gray: #8A8A8A;
-            --border-light: rgba(255, 255, 255, 0.1);
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-display: 'Playfair Display', serif;
-            --font-mono: 'Space Mono', monospace;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            background: var(--dark);
-        }
-
         body {
-            font-family: var(--font-serif);
-            background: var(--dark);
-            color: rgba(255, 255, 255, 0.9);
-            overflow-x: hidden;
+            font-family: 'Cormorant Garamond', serif;
+            background: #000000;
+            color: #ffffff;
             line-height: 1.6;
         }
 
-        /* NAVEGACIÓN */
+        /* ===== NAVBAR ===== */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 15px 0;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .nav-container {
@@ -79,11 +63,11 @@
         }
 
         .logo {
-            font-family: var(--font-display);
+            font-family: 'Playfair Display', serif;
             font-size: 28px;
             font-weight: 400;
             letter-spacing: 2px;
-            color: var(--light);
+            color: #ffffff;
         }
 
         .logo span {
@@ -99,7 +83,6 @@
         .nav-link {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-family: var(--font-serif);
             font-size: 14px;
             letter-spacing: 1px;
             transition: all 0.3s;
@@ -114,12 +97,11 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--light);
+            background: #ffffff;
             transition: width 0.3s ease;
         }
 
-        .nav-link:hover::before,
-        .nav-link.active::before {
+        .nav-link:hover::before {
             width: 100%;
         }
 
@@ -130,8 +112,8 @@
         .mobile-menu-btn {
             display: none;
             background: none;
-            border: 1px solid var(--border-light);
-            color: var(--light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -139,7 +121,7 @@
             cursor: pointer;
         }
 
-        /* HERO - VIDEOCLIP VISIBLE */
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -159,22 +141,17 @@
             width: 100%;
         }
 
-        .hero-content {
-            max-width: 100%;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: 72px;
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
             font-weight: 300;
             margin-bottom: 10px;
             line-height: 1;
         }
 
         .hero-subtitle {
-            font-family: var(--font-serif);
             font-size: 18px;
-            color: var(--gray);
+            color: #8A8A8A;
             margin-bottom: 20px;
             font-weight: 300;
             letter-spacing: 2px;
@@ -182,9 +159,9 @@
         }
 
         .channel-info {
-            font-family: var(--font-mono);
+            font-family: 'Space Mono', monospace;
             font-size: 14px;
-            color: var(--gray);
+            color: #8A8A8A;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -195,53 +172,51 @@
         .divider {
             width: 1px;
             height: 15px;
-            background: var(--gray);
+            background: #8A8A8A;
             opacity: 0.3;
         }
 
         .quote {
-            font-family: var(--font-serif);
-            font-size: 20px;
+            font-size: 22px;
             font-style: italic;
             color: rgba(255, 255, 255, 0.9);
             margin: 30px 0;
             padding-left: 30px;
-            border-left: 2px solid var(--border-light);
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
             line-height: 1.4;
             font-weight: 300;
         }
 
-        /* VIDEOCLIP - AHORA SÍ VISIBLE */
+        /* ===== VIDEOCLIP ===== */
         .video-wrapper {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             background: #000;
-            position: relative;
         }
 
         .video-wrapper iframe {
             display: block;
             width: 100%;
-            height: 400px;
+            height: 420px;
             border: 0;
         }
 
         .video-caption {
             text-align: center;
             margin-top: 16px;
-            font-family: var(--font-mono);
+            font-family: 'Space Mono', monospace;
             font-size: 13px;
-            color: var(--gray);
+            color: #8A8A8A;
             letter-spacing: 1px;
         }
 
         .video-caption a {
-            color: var(--light);
+            color: #ffffff;
             text-decoration: none;
-            border-bottom: 1px dotted var(--gray);
+            border-bottom: 1px dotted #8A8A8A;
         }
 
         .video-caption a:hover {
@@ -249,30 +224,44 @@
             border-bottom-color: #fff;
         }
 
-        .apple-music-badge {
+        /* ===== BADGES ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             background: rgba(255, 255, 255, 0.05);
             padding: 8px 18px;
             border-radius: 30px;
-            border: 1px solid var(--border-light);
-            margin-top: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 14px;
-            color: var(--light);
+            color: #ffffff;
             text-decoration: none;
             transition: all 0.3s;
         }
 
-        .apple-music-badge:hover {
+        .badge:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: scale(1.02);
         }
 
-        .apple-music-badge i.fa-apple {
+        .badge-vevo {
+            background: rgba(255, 0, 0, 0.08);
+            border-color: rgba(255, 0, 0, 0.2);
+        }
+
+        .badge-apple i {
             color: #fa233b;
         }
 
+        /* ===== SOCIAL ===== */
         .social-hero {
             display: flex;
             gap: 15px;
@@ -284,12 +273,12 @@
             width: 50px;
             height: 50px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
+            color: #ffffff;
             font-size: 18px;
             text-decoration: none;
             transition: all 0.3s;
@@ -300,7 +289,7 @@
             transform: translateY(-3px);
         }
 
-        /* SECCIONES */
+        /* ===== SECCIONES ===== */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -309,15 +298,15 @@
 
         .about, .content, .philosophy, .contact {
             padding: 100px 0;
-            background: var(--dark);
+            background: #000000;
         }
 
         .content {
-            background: linear-gradient(to bottom, var(--dark) 0%, #0a0a0a 100%);
+            background: linear-gradient(to bottom, #000000 0%, #0a0a0a 100%);
         }
 
         .contact {
-            background: linear-gradient(to bottom, var(--dark) 0%, #111111 100%);
+            background: linear-gradient(to bottom, #000000 0%, #111111 100%);
         }
 
         .section-header {
@@ -326,16 +315,15 @@
         }
 
         .section-title {
-            font-family: var(--font-display);
+            font-family: 'Playfair Display', serif;
             font-size: 48px;
             font-weight: 300;
             margin-bottom: 20px;
         }
 
         .section-subtitle {
-            font-family: var(--font-serif);
             font-size: 18px;
-            color: var(--gray);
+            color: #8A8A8A;
             font-weight: 300;
             max-width: 600px;
             margin: 0 auto;
@@ -349,7 +337,6 @@
         }
 
         .about-text {
-            font-family: var(--font-serif);
             font-size: 18px;
             line-height: 1.8;
             font-weight: 300;
@@ -369,7 +356,7 @@
             text-align: center;
             padding: 30px;
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             transition: all 0.3s;
         }
@@ -386,7 +373,7 @@
         }
 
         .concept-title {
-            font-family: var(--font-display);
+            font-family: 'Playfair Display', serif;
             font-size: 20px;
             margin-bottom: 10px;
         }
@@ -400,7 +387,7 @@
 
         .content-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             overflow: hidden;
             transition: all 0.3s;
@@ -427,24 +414,23 @@
         }
 
         .content-number {
-            font-family: var(--font-mono);
+            font-family: 'Space Mono', monospace;
             font-size: 14px;
-            color: var(--gray);
+            color: #8A8A8A;
             margin-bottom: 10px;
             letter-spacing: 1px;
         }
 
         .content-title {
-            font-family: var(--font-display);
+            font-family: 'Playfair Display', serif;
             font-size: 24px;
             margin-bottom: 15px;
             font-weight: 400;
         }
 
         .content-description {
-            font-family: var(--font-serif);
             font-size: 16px;
-            color: var(--gray);
+            color: #8A8A8A;
             line-height: 1.6;
             font-weight: 300;
         }
@@ -456,7 +442,6 @@
         }
 
         .philosophy-text {
-            font-family: var(--font-serif);
             font-size: 24px;
             line-height: 1.6;
             font-weight: 300;
@@ -466,24 +451,23 @@
 
         .duality-manifesto {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             padding: 40px;
             margin-top: 60px;
         }
 
         .manifesto-title {
-            font-family: var(--font-display);
+            font-family: 'Playfair Display', serif;
             font-size: 20px;
             margin-bottom: 20px;
             font-weight: 400;
         }
 
         .manifesto-item {
-            font-family: var(--font-serif);
             font-size: 16px;
             margin-bottom: 15px;
-            color: var(--gray);
+            color: #8A8A8A;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -491,7 +475,7 @@
 
         .manifesto-item:before {
             content: '→';
-            color: var(--light);
+            color: #ffffff;
             opacity: 0.5;
         }
 
@@ -515,11 +499,10 @@
         .contact-link {
             padding: 20px;
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             text-decoration: none;
             color: rgba(255, 255, 255, 0.9);
-            font-family: var(--font-serif);
             font-size: 18px;
             transition: all 0.3s;
             display: flex;
@@ -544,12 +527,12 @@
             width: 40px;
             height: 40px;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--light);
+            color: #ffffff;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 16px;
@@ -559,11 +542,11 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* FOOTER */
+        /* ===== FOOTER ===== */
         .footer {
             padding: 80px 0 40px;
-            background: var(--dark);
-            border-top: 1px solid var(--border-light);
+            background: #000000;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content {
@@ -583,26 +566,25 @@
         }
 
         .footer-logo {
-            font-family: var(--font-display);
+            font-family: 'Playfair Display', serif;
             font-size: 24px;
             letter-spacing: 1px;
-            color: var(--light);
+            color: #ffffff;
         }
 
         .footer-text {
-            font-family: var(--font-serif);
             font-size: 14px;
-            color: var(--gray);
+            color: #8A8A8A;
             line-height: 1.6;
             font-weight: 300;
         }
 
         .footer-links h4 {
-            font-family: var(--font-display);
+            font-family: 'Playfair Display', serif;
             font-size: 16px;
             margin-bottom: 25px;
             font-weight: 400;
-            color: var(--light);
+            color: #ffffff;
         }
 
         .footer-links ul {
@@ -614,36 +596,35 @@
         }
 
         .footer-links a {
-            font-family: var(--font-serif);
             font-size: 14px;
-            color: var(--gray);
+            color: #8A8A8A;
             text-decoration: none;
             transition: all 0.3s;
             font-weight: 300;
         }
 
         .footer-links a:hover {
-            color: var(--light);
+            color: #ffffff;
             padding-left: 5px;
         }
 
         .copyright {
             text-align: center;
             padding-top: 40px;
-            border-top: 1px solid var(--border-light);
-            font-family: var(--font-mono);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-family: 'Space Mono', monospace;
             font-size: 12px;
-            color: var(--gray);
+            color: #8A8A8A;
             letter-spacing: 1px;
         }
 
-        /* RESPONSIVE */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 56px;
             }
             .about-content {
@@ -651,7 +632,7 @@
                 gap: 60px;
             }
             .video-wrapper iframe {
-                height: 350px;
+                height: 380px;
             }
         }
 
@@ -675,7 +656,7 @@
                 transform: translateY(-100%);
                 opacity: 0;
                 transition: all 0.3s;
-                border-bottom: 1px solid var(--border-light);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 backdrop-filter: blur(10px);
                 z-index: 1000;
             }
@@ -685,7 +666,7 @@
                 opacity: 1;
             }
             
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 40px;
             }
             
@@ -720,12 +701,20 @@
             }
             
             .video-wrapper iframe {
-                height: 250px;
+                height: 280px;
+            }
+
+            .badge-group {
+                justify-content: center;
+            }
+
+            .social-hero {
+                justify-content: center;
             }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
+            .hero-content h1 {
                 font-size: 32px;
             }
             .video-wrapper iframe {
@@ -734,11 +723,14 @@
             .section-title {
                 font-size: 28px;
             }
+            .quote {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- NAVEGACIÓN -->
+    <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">INC<span>RIFE</span></div>
@@ -755,9 +747,10 @@
         </div>
     </nav>
 
-    <!-- HERO CON VIDEOCLIP -->
+    <!-- ===== HERO CON VIDEOCLIP ===== -->
     <section id="home" class="hero">
         <div class="hero-container">
+            <!-- COLUMNA IZQUIERDA: INFORMACIÓN -->
             <div class="hero-content">
                 <h1>LUCKY</h1>
                 <p class="hero-subtitle">Videoclip Oficial · VEVO</p>
@@ -774,11 +767,11 @@
                     "Nadie puede decirte de lo que eres capaz de hacer, ni siquiera tú..."
                 </div>
 
-                <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 10px;">
-                    <a href="https://music.apple.com/es/music-video/lucky/6797592022" target="_blank" class="apple-music-badge">
+                <div class="badge-group">
+                    <a href="https://music.apple.com/es/music-video/lucky/6797592022" target="_blank" class="badge badge-apple">
                         <i class="fab fa-apple"></i> Escuchar en Apple Music
                     </a>
-                    <a href="https://www.youtube.com/@IncrifeVEVO" target="_blank" class="apple-music-badge" style="background: rgba(255,0,0,0.08); border-color: rgba(255,0,0,0.2);">
+                    <a href="https://www.youtube.com/@IncrifeVEVO" target="_blank" class="badge badge-vevo">
                         <i class="fab fa-youtube"></i> @IncrifeVEVO
                     </a>
                 </div>
@@ -792,7 +785,7 @@
                 </div>
             </div>
 
-            <!-- VIDEOCLIP - AHORA VISIBLE -->
+            <!-- COLUMNA DERECHA: VIDEOCLIP -->
             <div>
                 <div class="video-wrapper">
                     <iframe 
@@ -812,7 +805,7 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ===== ABOUT ===== -->
     <section id="about" class="about">
         <div class="section-container">
             <div class="section-header">
@@ -841,7 +834,7 @@
         </div>
     </section>
 
-    <!-- CONTENT -->
+    <!-- ===== CONTENT ===== -->
     <section id="content" class="content">
         <div class="section-container">
             <div class="section-header">
@@ -877,7 +870,7 @@
         </div>
     </section>
 
-    <!-- PHILOSOPHY -->
+    <!-- ===== PHILOSOPHY ===== -->
     <section id="philosophy" class="philosophy">
         <div class="section-container">
             <div class="philosophy-content">
@@ -899,7 +892,7 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="contact">
         <div class="contact-container">
             <div class="section-header">
@@ -926,7 +919,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-about">
@@ -960,6 +953,7 @@
         <div class="copyright">© 2024 INCRIFE. Entre el caos y el orden.</div>
     </footer>
 
+    <!-- ===== SCRIPTS ===== -->
     <script>
         // Mobile Menu
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
