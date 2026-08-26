@@ -25,9 +25,10 @@
     <meta property="og:description" content="Videoclip oficial de 'LUCKY' de INCRIFE. Artista urbano español, productor musical y director de videos musicales.">
     <meta property="og:url" content="https://incrife.com">
     <meta property="og:type" content="video.movie">
-    <meta property="og:image" content="https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="720">
+    <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="INCRIFE Logo oficial">
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="INCRIFE">
     <meta property="og:email" content="contact@incrife.com">
@@ -37,12 +38,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="INCRIFE · LUCKY · Videoclip Oficial VEVO">
     <meta name="twitter:description" content="Videoclip oficial de 'LUCKY' de INCRIFE. Disponible en VEVO y Apple Music.">
-    <meta name="twitter:image" content="https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg">
     <meta name="twitter:creator" content="@Incrife">
     
     <!-- Enlaces -->
     <link rel="canonical" href="https://incrife.com">
     <link rel="me" href="https://www.wikidata.org/wiki/Q140475306">
+    <link rel="me" href="https://es.pinterest.com/Incrife/">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(58).png">
     <link rel="apple-touch-icon" href="https://commons.wikimedia.org/wiki/Special:FilePath/Incrife_Artist.jpg">
     
@@ -57,7 +59,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- ============================================================
-         SCHEMA.ORG / JSON-LD (Optimizado con videoclip)
+         SCHEMA.ORG / JSON-LD (Optimizado con videoclip y Pinterest)
     ============================================================ -->
     <script type="application/ld+json">
     {
@@ -87,7 +89,10 @@
         },
         "jobTitle": ["Artista", "Compositor", "Director de videoclips"],
         "genre": "Techno",
-        "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Incrife_Artist.jpg",
+        "image": [
+          "https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg",
+          "https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260826_131809_ef42c321-6c83-4cf7-be07-91203d40e40a.png"
+        ],
         "url": "https://incrife.com",
         "sameAs": [
           "https://www.wikidata.org/wiki/Q140475306",
@@ -98,7 +103,8 @@
           "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi",
           "https://www.deezer.com/es/artist/352025722",
           "https://tidal.com/artist/68789425",
-          "https://music.apple.com/artist/1848003000"
+          "https://music.apple.com/artist/1848003000",
+          "https://es.pinterest.com/Incrife/"
         ],
         "identifier": [
           {
@@ -138,7 +144,10 @@
       "alternateName": "Ángel Córdoba El Hannouti",
       "description": "Artista urbano español, productor musical y director de videos musicales.",
       "url": "https://incrife.com",
-      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Incrife_Artist.jpg",
+      "image": [
+        "https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg",
+        "https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260826_131809_ef42c321-6c83-4cf7-be07-91203d40e40a.png"
+      ],
       "genre": "Techno",
       "sameAs": [
         "https://www.wikidata.org/wiki/Q140475306",
@@ -147,7 +156,8 @@
         "https://www.qobuz.com/us-en/interpreter/incrife/29103217",
         "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi",
         "https://music.apple.com/artist/1848003000",
-        "https://www.amazon.com/music/artist/B0FX5X4PRC"
+        "https://www.amazon.com/music/artist/B0FX5X4PRC",
+        "https://es.pinterest.com/Incrife/"
       ]
     }
     </script>
@@ -325,67 +335,6 @@
             max-width: 550px;
             margin: 0.5rem auto 0;
             font-weight: 300;
-        }
-
-        /* ===== PRELOADER (SIN FIRMA) ===== */
-        #preloader {
-            position: fixed;
-            inset: 0;
-            z-index: 999999999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(120, 120, 120, 0.15);
-            backdrop-filter: blur(35px) saturate(180%);
-            -webkit-backdrop-filter: blur(35px) saturate(180%);
-            transition: opacity 0.65s cubic-bezier(.22, 1, .36, 1), visibility 0.65s;
-        }
-        #preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        .glass-loader {
-            width: 260px;
-            height: 180px;
-            border-radius: 34px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(28px);
-            -webkit-backdrop-filter: blur(28px);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30), inset 0 1px 1px rgba(255, 255, 255, 0.20);
-            overflow: hidden;
-            position: relative;
-        }
-        .glass-loader::before {
-            content: "";
-            position: absolute;
-            width: 320px;
-            height: 220px;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transform: translateX(-340px);
-            animation: shine 3s infinite;
-        }
-        .glass-loader h1 {
-            margin: 0;
-            color: #fff;
-            font-size: 44px;
-            letter-spacing: 10px;
-            font-weight: 700;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-            animation: breathing 2.5s infinite ease-in-out;
-        }
-        @keyframes breathing {
-            0% { opacity: .55; transform: scale(.98); text-shadow: 0 0 0 transparent; }
-            50% { opacity: 1; transform: scale(1.03); text-shadow: 0 0 16px rgba(255, 255, 255, 0.25); }
-            100% { opacity: .55; transform: scale(.98); }
-        }
-        @keyframes shine {
-            to { transform: translateX(340px); }
         }
 
         /* ===== NAVBAR ===== */
@@ -676,8 +625,6 @@
             height: 500px;
             border: 0;
         }
-
-        /* ELIMINADO: .video-caption, .video-badges, .badge-vevo, .badge-apple, .badge-youtube */
 
         /* ===== CARDS / GLASS ===== */
         .about-grid {
@@ -1132,14 +1079,6 @@
                 background-size: 85% auto;
                 filter: blur(1.5px);
             }
-            .glass-loader {
-                width: 220px;
-                height: 150px;
-            }
-            .glass-loader h1 {
-                font-size: 36px;
-                letter-spacing: 8px;
-            }
         }
 
         @media (max-width: 400px) {
@@ -1148,25 +1087,42 @@
                 background-size: 95% auto;
                 filter: blur(1px);
             }
-            .glass-loader {
-                width: 180px;
-                height: 130px;
-            }
-            .glass-loader h1 {
-                font-size: 28px;
-                letter-spacing: 6px;
-            }
         }
     </style>
 
 </head>
 <body>
 
-    <!-- ===== PRELOADER ===== -->
-    <div id="preloader">
-        <div class="glass-loader">
-            <h1>INCRIFE</h1>
-        </div>
+    <!-- ===== IMÁGENES SEO OCULTAS ===== -->
+    <!-- Estas imágenes son leídas por Google pero no visibles para usuarios -->
+    <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;" aria-hidden="true">
+        <!-- Logo principal -->
+        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" 
+             alt="INCRIFE Logo oficial del artista musical" 
+             width="1200" height="630" 
+             loading="eager" 
+             decoding="async">
+        
+        <!-- Imagen secundaria para SEO -->
+        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260826_131809_ef42c321-6c83-4cf7-be07-91203d40e40a.png" 
+             alt="INCRIFE Ángel Córdoba El Hannouti - imagen promocional" 
+             width="1200" height="1200" 
+             loading="eager" 
+             decoding="async">
+        
+        <!-- Videoclip LUCKY -->
+        <img src="https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg" 
+             alt="INCRIFE LUCKY Videoclip Oficial VEVO" 
+             width="1280" height="720" 
+             loading="eager" 
+             decoding="async">
+        
+        <!-- Imagen de fondo -->
+        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2014_11_12.png" 
+             alt="INCRIFE fondo visual del artista" 
+             width="1920" height="1080" 
+             loading="eager" 
+             decoding="async">
     </div>
 
     <!-- Luces ambientales -->
@@ -1373,13 +1329,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
-
-            let preloader = document.getElementById('preloader');
-            window.addEventListener('load', function() {
-                setTimeout(function() {
-                    if (preloader) preloader.classList.add('hidden');
-                }, 600);
-            });
 
             let navbar = document.getElementById('navbar');
             let backToTop = document.getElementById('backToTop');
