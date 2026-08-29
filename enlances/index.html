@@ -573,8 +573,6 @@ body::after {
   border: 0;
 }
 
-/* ELIMINADOS: video-label y textos debajo del video */
-
 /* ===== STREAMING SECTION ===== */
 .streaming-section {
   padding: 10px 30px 25px;
@@ -828,6 +826,29 @@ body::after {
   color: #fff;
 }
 
+/* ===== BANDSINTOWN CARD ===== */
+.platform-card.bandsintown {
+  background: rgba(255, 255, 255, .08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 22px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: white;
+  transition: .45s cubic-bezier(.22, 1, .36, 1);
+}
+
+.platform-card.bandsintown:hover {
+  transform: translateY(-5px) scale(1.015);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .30);
+  border-color: rgba(255, 255, 255, .16);
+  background: rgba(255, 255, 255, .12);
+}
+
 /* ===== FOOTER ===== */
 .premium-footer {
   padding: 20px 30px 40px;
@@ -1040,6 +1061,11 @@ body::after {
     font-size: 36px;
     letter-spacing: 8px;
   }
+  .platform-card.bandsintown {
+    padding: 12px 14px;
+    border-radius: 18px;
+    gap: 12px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1158,12 +1184,10 @@ body::after {
 
     </div>
 
-    <!-- ===== VIDEOCLIP SECTION (SOLO EL VIDEO, SIN TEXTOS) ===== -->
+    <!-- ===== VIDEOCLIP SECTION ===== -->
     <section class="videoclip-section">
 
-         
       <div class="section-label">ULTIMO LANZAMIENTO</div>
-
 
       <div class="video-wrapper">
         <iframe 
@@ -1174,8 +1198,6 @@ body::after {
         </iframe>
       </div>
 
-      <!-- ELIMINADOS: todos los textos debajo del video -->
-
     </section>
 
     <!-- ===== STREAMING PLATFORMS ===== -->
@@ -1185,7 +1207,7 @@ body::after {
 
       <div class="platform-grid">
 
-        <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="platform-card spotify" target="_blank" rel="noopener">
+        <a href="https://open.spotify.com/intl-es/artist/42euHjlNEF6gE3zuWrAJBi" class="platform-card" target="_blank" rel="noopener">
           <i class="fa-brands fa-spotify"></i>
           <div class="platform-text">
             <h3>Spotify</h3>
@@ -1194,7 +1216,7 @@ body::after {
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
         </a>
 
-        <a href="https://music.apple.com/es/artist/incrife/1848003000" class="platform-card apple" target="_blank" rel="noopener">
+        <a href="https://music.apple.com/es/artist/incrife/1848003000" class="platform-card" target="_blank" rel="noopener">
           <i class="fa-brands fa-apple"></i>
           <div class="platform-text">
             <h3>Apple Music</h3>
@@ -1203,7 +1225,7 @@ body::after {
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
         </a>
 
-        <a href="https://www.deezer.com/en/artist/352025722" class="platform-card deezer" target="_blank" rel="noopener">
+        <a href="https://www.deezer.com/en/artist/352025722" class="platform-card" target="_blank" rel="noopener">
           <i class="fa-brands fa-deezer"></i>
           <div class="platform-text">
             <h3>Deezer</h3>
@@ -1212,7 +1234,7 @@ body::after {
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
         </a>
 
-        <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="platform-card amazon" target="_blank" rel="noopener">
+        <a href="https://music.amazon.in/artists/B0FX5XCGKP" class="platform-card" target="_blank" rel="noopener">
           <i class="fa-brands fa-amazon"></i>
           <div class="platform-text">
             <h3>Amazon Music</h3>
@@ -1221,7 +1243,7 @@ body::after {
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
         </a>
 
-        <a href="https://music.youtube.com/@incrife" class="platform-card youtube" target="_blank" rel="noopener">
+        <a href="https://music.youtube.com/@incrife" class="platform-card" target="_blank" rel="noopener">
           <i class="fa-brands fa-youtube"></i>
           <div class="platform-text">
             <h3>YouTube Music</h3>
@@ -1230,11 +1252,21 @@ body::after {
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
         </a>
 
-        <a href="https://genius.com/artists/Incrife" class="platform-card genius" target="_blank" rel="noopener">
+        <a href="https://genius.com/artists/Incrife" class="platform-card" target="_blank" rel="noopener">
           <i class="fa-regular fa-message"></i>
           <div class="platform-text">
             <h3>Genius</h3>
             <p>Lyrics & annotations</p>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+        </a>
+
+        <!-- ===== BANDSINTOWN CARD (ARREGLADA) ===== -->
+        <a href="https://www.bandsintown.com/a/15650903-incrife" class="platform-card bandsintown" target="_blank" rel="noopener">
+          <i class="fa-solid fa-calendar-days"></i>
+          <div class="platform-text">
+            <h3>Events</h3>
+            <p>Upcoming shows</p>
           </div>
           <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
         </a>
@@ -1269,15 +1301,8 @@ body::after {
           <h3>Vevo artist</h3>
         </div>
       </div>
-               <a href="https://www.bandsintown.com/a/15650903-incrife" class="platform-card bandsintown" target="_blank" rel="noopener">
-          <i class="fa-brands fa-youtube"></i>
-          <div class="platform-text">
-            <h3>Events</h3>
-            <p>Videos & releases</p>
-          </div>
 
-    </section
-
+    </section>
 
     <!-- ===== INDUSTRY SECTION ===== -->
     <section class="industry-section">
