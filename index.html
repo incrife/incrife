@@ -45,7 +45,6 @@
     <link rel="canonical" href="https://incrife.com">
     <link rel="me" href="https://www.wikidata.org/wiki/Q140475306">
     <link rel="me" href="https://es.pinterest.com/Incrife/">
-    <!-- FAVICON ACTUALIZADO -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_220703_9dd953bc-9b42-4435-9dd9-a6411e7b3098.jpg">
     <link rel="apple-touch-icon" href="https://commons.wikimedia.org/wiki/Special:FilePath/Incrife_Artist.jpg">
     
@@ -179,9 +178,32 @@
     }
     </script>
 
+    <!-- Schema para SocialMedia (nuevo) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://incrife.com/#person",
+      "name": "Ángel Córdoba El Hannouti",
+      "alternateName": "INCRIFE",
+      "url": "https://incrife.com",
+      "sameAs": [
+        "https://www.instagram.com/incrife/",
+        "https://www.tiktok.com/@incrife",
+        "https://x.com/Incrife",
+        "https://www.youtube.com/@incrife",
+        "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi",
+        "https://www.deezer.com/es/artist/352025722",
+        "https://tidal.com/artist/68789425",
+        "https://music.apple.com/artist/1848003000",
+        "https://es.pinterest.com/Incrife/"
+      ]
+    }
+    </script>
+
     <style>
         /* ============================================================
-           DISEÑO COMPLETO (CSS ORIGINAL CON MODIFICACIONES)
+           DISEÑO COMPLETO
         ============================================================ */
         
         * {
@@ -222,6 +244,29 @@
             background-attachment: fixed;
             z-index: -20;
             filter: blur(2px) brightness(1.02);
+        }
+
+        /* ===== FONDO PARA MÓVIL (NUEVO) ===== */
+        @media (max-width: 768px) {
+            body::before {
+                background-image: 
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),
+                    url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg");
+                background-size: cover;
+                background-position: center center;
+                filter: blur(0.5px) brightness(0.9);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body::before {
+                background-image: 
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.30)),
+                    url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg");
+                background-size: cover;
+                background-position: center 30%;
+                filter: blur(0.3px) brightness(0.85);
+            }
         }
 
         body::after {
@@ -664,56 +709,6 @@
         .about-story strong { color: #ffffff; font-weight: 600; }
         .about-story .highlight { color: #aaaaaa; font-weight: 500; }
 
-        /* ===== TIMELINE ===== */
-        .timeline {
-            max-width: 700px;
-            margin: 0 auto;
-            position: relative;
-            padding-left: 40px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: rgba(255, 255, 255, 0.06);
-        }
-        .timeline-item { position: relative; margin-bottom: 2.5rem; }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -31px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            background: #666;
-            border-radius: 50%;
-            border: 2px solid #0a0a0a;
-        }
-        .timeline-year {
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            color: #aaaaaa;
-            margin-bottom: 0.3rem;
-            text-transform: uppercase;
-        }
-        .timeline-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
-        }
-        .timeline-text {
-            font-size: 0.8rem;
-            color: #888;
-            font-weight: 300;
-            line-height: 1.8;
-        }
-        .timeline-text strong { color: #ffffff; font-weight: 500; }
-
         /* ===== RELEASE CARD ===== */
         .release-card {
             background: rgba(255, 255, 255, 0.04);
@@ -894,76 +889,61 @@
             color: #aaaaaa;
         }
 
-        /* ===== QUOTE ===== */
-        .quote-section {
-            text-align: center;
+        /* ===== REDES SOCIALES (NUEVO APARTADO) ===== */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             max-width: 700px;
             margin: 0 auto;
         }
-        .quote-icon {
-            font-size: 3rem;
-            color: #666;
-            opacity: 0.3;
-            margin-bottom: 1.5rem;
-        }
-        .quote-text {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.3rem, 3vw, 1.8rem);
-            font-style: italic;
-            color: #ffffff;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
-        }
-        .quote-author {
-            font-size: 0.85rem;
-            color: #aaaaaa;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* ===== ENLACES SECTION ===== */
-        .enlaces-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .enlace-card {
+        .social-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: 10px;
-            padding: 1.2rem 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
         }
-        .enlace-card:hover {
+        .social-card:hover {
             border-color: rgba(255, 255, 255, 0.12);
             transform: translateY(-5px);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
             background: rgba(255, 255, 255, 0.06);
         }
-        .enlace-card i {
-            font-size: 1.5rem;
-            color: #aaaaaa;
+        .social-card i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: transform 0.3s ease;
         }
-        .enlace-card .enlace-name {
-            font-size: 0.8rem;
+        .social-card:hover i {
+            transform: scale(1.1);
+        }
+        .social-card .social-name {
+            font-size: 0.7rem;
             font-weight: 500;
             color: #ffffff;
+            letter-spacing: 1px;
         }
-        .enlace-card .enlace-desc {
+        .social-card .social-handle {
             font-size: 0.6rem;
             color: #666;
+            margin-top: 0.2rem;
         }
+        /* Colores específicos para cada red */
+        .social-card.instagram i { color: #E4405F; }
+        .social-card.tiktok i { color: #ffffff; }
+        .social-card.twitter i { color: #1DA1F2; }
+        .social-card.youtube i { color: #FF0000; }
+        .social-card.spotify i { color: #1DB954; }
+        .social-card.deezer i { color: #A238FF; }
+        .social-card.tidal i { color: #000000; }
+        .social-card.pinterest i { color: #E60023; }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -971,7 +951,7 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             text-align: center;
-            padding: 3rem 0;
+            padding: 3rem 0 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
         .footer-logo {
@@ -993,18 +973,123 @@
             text-decoration: none;
         }
         .footer-text a:hover { color: #ffffff !important; }
-        .footer-social {
+
+        /* ===== FOOTER LEGAL LINKS ===== */
+        .footer-legal {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin: 1.5rem 0;
+            flex-wrap: wrap;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
-        .footer-social a {
-            color: #666 !important;
-            font-size: 1.1rem;
+        .footer-legal a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
             transition: color 0.2s;
         }
-        .footer-social a:hover { color: #ffffff !important; }
+        .footer-legal a:hover {
+            color: #aaaaaa;
+        }
+        .footer-legal span {
+            color: #333;
+            font-size: 0.65rem;
+        }
+
+        /* ===== COOKIES BANNER ===== */
+        .cookies-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 1.2rem 2rem;
+            transform: translateY(100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 -10px 60px rgba(0, 0, 0, 0.6);
+        }
+        .cookies-banner.show {
+            transform: translateY(0);
+        }
+        .cookies-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .cookies-text {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex: 1;
+            min-width: 200px;
+        }
+        .cookies-text i {
+            color: #aaaaaa;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .cookies-text p {
+            color: #888;
+            font-size: 0.78rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        .cookies-text p a {
+            color: #aaaaaa;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: color 0.2s;
+        }
+        .cookies-text p a:hover {
+            color: #ffffff;
+        }
+        .cookies-buttons {
+            display: flex;
+            gap: 0.8rem;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+        }
+        .cookie-btn {
+            padding: 0.55rem 1.5rem;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+        .cookie-btn-accept {
+            background: rgba(255, 255, 255, 0.10);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .cookie-btn-accept:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+        }
+        .cookie-btn-reject {
+            background: transparent;
+            color: #666;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .cookie-btn-reject:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            color: #aaaaaa;
+        }
 
         /* ===== BACK TO TOP ===== */
         .back-to-top {
@@ -1040,7 +1125,7 @@
         ============================================================ */
         @media (max-width: 1024px) {
             .collab-grid { grid-template-columns: repeat(2, 1fr); }
-            .enlaces-grid { grid-template-columns: repeat(2, 1fr); }
+            .social-grid { grid-template-columns: repeat(3, 1fr); }
             .video-wrapper iframe { height: 400px; }
         }
 
@@ -1052,12 +1137,38 @@
             .about-grid { grid-template-columns: 1fr; }
             .about-image-wrapper { max-width: 350px; margin: 0 auto; }
             .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-            .enlaces-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .social-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
             .hero h1 { font-size: 2.5rem; }
             .video-wrapper iframe { height: 280px; }
-            body::before {
-                background-position: center 35%;
-                background-size: 75% auto;
+
+            .cookies-banner {
+                padding: 1rem 1.2rem;
+            }
+            .cookies-banner-inner {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+            .cookies-text {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            .cookies-text p {
+                font-size: 0.7rem;
+            }
+            .cookies-buttons {
+                justify-content: center;
+            }
+            .cookie-btn {
+                padding: 0.45rem 1.2rem;
+                font-size: 0.6rem;
+            }
+            .footer-legal {
+                gap: 0.8rem;
+            }
+            .footer-legal a {
+                font-size: 0.55rem;
             }
         }
 
@@ -1070,24 +1181,40 @@
             .collab-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
             .collab-card { padding: 1rem 0.5rem; }
             .collab-card img { width: 55px; height: 55px; }
-            .enlaces-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+            .social-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+            .social-card { padding: 1rem 0.5rem; }
+            .social-card i { font-size: 1.5rem; }
             .platform-links { flex-direction: column; align-items: center; }
             .platform-link { width: 100%; justify-content: center; }
             .back-to-top { bottom: 20px; left: 20px; }
             .video-wrapper iframe { height: 200px; }
-            body::before {
-                background-position: center 30%;
-                background-size: 85% auto;
-                filter: blur(1.5px);
+
+            .cookies-banner {
+                padding: 0.8rem 1rem;
+            }
+            .cookies-text p {
+                font-size: 0.65rem;
+            }
+            .cookies-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .cookie-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-legal {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .footer-legal span {
+                display: none;
             }
         }
 
         @media (max-width: 400px) {
-            body::before {
-                background-position: center 25%;
-                background-size: 95% auto;
-                filter: blur(1px);
-            }
+            .social-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 
@@ -1118,10 +1245,17 @@
              loading="eager" 
              decoding="async">
         
-        <!-- Imagen de fondo -->
+        <!-- Imagen de fondo escritorio -->
         <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2014_11_12.png" 
              alt="INCRIFE fondo visual del artista" 
              width="1920" height="1080" 
+             loading="eager" 
+             decoding="async">
+
+        <!-- Imagen de fondo móvil (nueva) -->
+        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg" 
+             alt="INCRIFE fondo móvil del artista" 
+             width="1080" height="1920" 
              loading="eager" 
              decoding="async">
     </div>
@@ -1140,7 +1274,7 @@
                 <li><a href="#video">Videoclip</a></li>
                 <li><a href="#about">Biografía</a></li>
                 <li><a href="#musica">Música</a></li>
-                <li><a href="https://incrife.com/studio/">Proyectos</a></li>
+                <li><a href="#redes">Redes</a></li>
                 <li><a href="#colaboraciones">Colaboraciones</a></li>
             </ul>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
@@ -1154,7 +1288,7 @@
         <a href="#video">Videoclip</a>
         <a href="#about">Biografía</a>
         <a href="#musica">Música</a>
-        <a href="#proyectos">Proyectos</a>
+        <a href="#redes">Redes</a>
         <a href="#colaboraciones">Colaboraciones</a>
     </div>
 
@@ -1207,7 +1341,6 @@
             <div class="about-grid">
                 <div class="about-image-wrapper" data-aos="fade-right">
                     <div class="about-image-accent"></div>
-                    <!-- IMAGEN DE BIOGRAFÍA ACTUALIZADA -->
                     <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_220703_9dd953bc-9b42-4435-9dd9-a6411e7b3098.jpg" alt="INCRIFE - Ángel Córdoba" class="about-image" loading="lazy">
                 </div>
                 <div class="about-text" data-aos="fade-left">
@@ -1276,8 +1409,61 @@
         </div>
     </section>
 
-    <!-- ===== COLLABORATIONS (MODIFICADO) ===== -->
-    <section id="colaboraciones" class="dark">
+    <!-- ===== REDES SOCIALES (NUEVO APARTADO) ===== -->
+    <section id="redes" class="dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Conéctate</div>
+                <h2 class="section-title">Mis <span class="accent">Redes Sociales</span></h2>
+                <p class="section-subtitle">Sígueme en todas las plataformas para estar al día.</p>
+            </div>
+            <div class="social-grid">
+                <a href="https://www.instagram.com/incrife/" target="_blank" class="social-card instagram" data-aos="fade-up">
+                    <i class="fab fa-instagram"></i>
+                    <div class="social-name">Instagram</div>
+                    <div class="social-handle">@incrife</div>
+                </a>
+                <a href="https://www.tiktok.com/@incrife" target="_blank" class="social-card tiktok" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-tiktok"></i>
+                    <div class="social-name">TikTok</div>
+                    <div class="social-handle">@incrife</div>
+                </a>
+                <a href="https://x.com/Incrife" target="_blank" class="social-card twitter" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-twitter"></i>
+                    <div class="social-name">Twitter / X</div>
+                    <div class="social-handle">@Incrife</div>
+                </a>
+                <a href="https://www.youtube.com/@incrife" target="_blank" class="social-card youtube" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-youtube"></i>
+                    <div class="social-name">YouTube</div>
+                    <div class="social-handle">@incrife</div>
+                </a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="social-card spotify" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-spotify"></i>
+                    <div class="social-name">Spotify</div>
+                    <div class="social-handle">INCRIFE</div>
+                </a>
+                <a href="https://www.deezer.com/es/artist/352025722" target="_blank" class="social-card deezer" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-deezer"></i>
+                    <div class="social-name">Deezer</div>
+                    <div class="social-handle">INCRIFE</div>
+                </a>
+                <a href="https://tidal.com/artist/68789425" target="_blank" class="social-card tidal" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-headphones"></i>
+                    <div class="social-name">TIDAL</div>
+                    <div class="social-handle">INCRIFE</div>
+                </a>
+                <a href="https://es.pinterest.com/Incrife/" target="_blank" class="social-card pinterest" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fab fa-pinterest"></i>
+                    <div class="social-name">Pinterest</div>
+                    <div class="social-handle">Incrife</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COLLABORATIONS ===== -->
+    <section id="colaboraciones">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <div class="section-tag">Network</div>
@@ -1308,21 +1494,41 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-logo">INCRIFE</div>
-            <div class="footer-social">
-                <a href="https://www.instagram.com/incrife/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@incrife" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://x.com/Incrife" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank"><i class="fab fa-spotify"></i></a>
-                <a href="https://www.youtube.com/@incrife" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.wikidata.org/wiki/Q140475306" target="_blank" title="Ver entrada en Wikidata"><i class="fas fa-database"></i></a>
-            </div>
             <p class="footer-text">
                 <strong>INCRIFE</strong><br>
-                © 2026 Incrife Record · España · <a href="mailto:contact@incrife.com">contact@incrife.com</a> · <span>+34 624 17 02 04</span><br>
-                <a href="https://incrife.com">incrife.com</a> · Todos los derechos reservados
+                © 2026 Incrife Record · España · <a href="mailto:contact@incrife.com">contact@incrife.com</a> · <span>+34 624 17 02 04</span>
             </p>
+            
+            <!-- ===== FOOTER LEGAL LINKS ===== -->
+            <div class="footer-legal">
+                <a href="#"><i class="fas fa-shield-alt" style="margin-right: 4px;"></i> Política de Privacidad</a>
+                <span>|</span>
+                <a href="#"><i class="fas fa-gavel" style="margin-right: 4px;"></i> Aviso Legal</a>
+                <span>|</span>
+                <a href="#"><i class="fas fa-cookie-bite" style="margin-right: 4px;"></i> Política de Cookies</a>
+                <span>|</span>
+                <a href="mailto:contact@incrife.com"><i class="fas fa-envelope" style="margin-right: 4px;"></i> Contacto</a>
+            </div>
         </div>
     </footer>
+
+    <!-- ===== COOKIES BANNER ===== -->
+    <div class="cookies-banner" id="cookiesBanner">
+        <div class="cookies-banner-inner">
+            <div class="cookies-text">
+                <i class="fas fa-cookie-bite"></i>
+                <p>
+                    Utilizamos cookies propias y de terceros para mejorar tu experiencia en nuestra web. 
+                    Puedes aceptar todas o rechazar las no esenciales. 
+                    <a href="#">Más información</a>
+                </p>
+            </div>
+            <div class="cookies-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="rejectCookies">Rechazar</button>
+                <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Aceptar todas</button>
+            </div>
+        </div>
+    </div>
 
     <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
@@ -1330,8 +1536,10 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // AOS
             if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
 
+            // Navbar scroll
             let navbar = document.getElementById('navbar');
             let backToTop = document.getElementById('backToTop');
             window.addEventListener('scroll', function() {
@@ -1339,6 +1547,7 @@
                 if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
             });
 
+            // Mobile menu
             let hamburger = document.getElementById('hamburger');
             let mobileMenu = document.getElementById('mobileMenu');
             let mobileClose = document.getElementById('mobileClose');
@@ -1359,6 +1568,31 @@
             if (mobileClose) mobileClose.addEventListener('click', closeMenu);
             document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', closeMenu));
             if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+            // ===== COOKIES BANNER =====
+            const cookiesBanner = document.getElementById('cookiesBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            const rejectBtn = document.getElementById('rejectCookies');
+
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            if (!cookieConsent) {
+                setTimeout(() => {
+                    if (cookiesBanner) cookiesBanner.classList.add('show');
+                }, 1000);
+            }
+
+            function handleCookieConsent(choice) {
+                localStorage.setItem('cookieConsent', choice);
+                if (cookiesBanner) cookiesBanner.classList.remove('show');
+                if (choice === 'accepted') {
+                    console.log('Cookies aceptadas');
+                } else {
+                    console.log('Cookies rechazadas');
+                }
+            }
+
+            if (acceptBtn) acceptBtn.addEventListener('click', function() { handleCookieConsent('accepted'); });
+            if (rejectBtn) rejectBtn.addEventListener('click', function() { handleCookieConsent('rejected'); });
         });
     </script>
 </body>
