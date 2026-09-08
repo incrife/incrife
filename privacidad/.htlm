@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <title>Política de Privacidad · INCRIFE</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Política de privacidad de INCRIFE. Protección de datos personales, cookies y derechos de los usuarios según RGPD y LOPD.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#333333">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Política de Privacidad · INCRIFE">
+    <meta property="og:description" content="Política de privacidad de INCRIFE. Protección de datos personales, cookies y derechos de los usuarios según RGPD y LOPD.">
+    <meta property="og:url" content="https://incrife.com/politica-privacidad">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="INCRIFE">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Política de Privacidad · INCRIFE">
+    <meta name="twitter:description" content="Política de privacidad de INCRIFE. Protección de datos personales, cookies y derechos de los usuarios según RGPD y LOPD.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://incrife.com/politica-privacidad">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_220703_9dd953bc-9b42-4435-9dd9-a6411e7b3098.jpg">
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Política de Privacidad · INCRIFE",
+      "description": "Política de privacidad de INCRIFE. Protección de datos personales, cookies y derechos de los usuarios según RGPD y LOPD.",
+      "url": "https://incrife.com/politica-privacidad",
+      "publisher": {
+        "@type": "Person",
+        "name": "Ángel Córdoba El Hannouti",
+        "alternateName": "INCRIFE"
+      }
+    }
+    </script>
+
+    <style>
+        /* ============================================================
+           DISEÑO COMPLETO (Mismo estilo que la web principal)
+        ============================================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #050505;
+            color: #f0f0f0;
+            overflow-x: hidden;
+            line-height: 1.8;
+            font-weight: 400;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* ===== FONDO ===== */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),
+                url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2014_11_12.png");
+            background-size: contain;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            z-index: -20;
+            filter: blur(2px) brightness(0.95);
+        }
+
+        @media (max-width: 768px) {
+            body::before {
+                background-image: 
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.35)),
+                    url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg");
+                background-size: cover;
+                background-position: center center;
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                filter: blur(0.8px) brightness(0.9);
+            }
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(180, 180, 180, 0.04), transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(120, 120, 120, 0.03), transparent 50%);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            z-index: -19;
+            pointer-events: none;
+        }
+
+        .light-ambient-1 {
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            left: -200px;
+            top: -100px;
+            background: radial-gradient(circle, rgba(200, 200, 200, 0.06), transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: -10;
+        }
+
+        .light-ambient-2 {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            right: -150px;
+            bottom: -100px;
+            background: radial-gradient(circle, rgba(150, 150, 150, 0.04), transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: -10;
+        }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #555; border-radius: 3px; }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); margin: 2rem 0 1rem; }
+        h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); margin: 1.5rem 0 0.8rem; }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 30%, #aaaaaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .accent { color: #aaaaaa; }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.70);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .navbar.scrolled {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.30);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 72px;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-decoration: none;
+            letter-spacing: 3px;
+            transition: color 0.2s ease;
+        }
+        .nav-logo:hover { color: #aaaaaa; }
+        .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 0.3rem 0;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #888;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover { color: #ffffff; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 22px;
+            height: 1.5px;
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(40px) saturate(180%);
+            -webkit-backdrop-filter: blur(40px) saturate(180%);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.8rem;
+            transform: translateY(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-menu.active { transform: translateY(0); }
+        .mobile-menu a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .mobile-menu a:hover { color: #aaaaaa; }
+        .mobile-menu-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 50% 30%, rgba(180, 180, 180, 0.05) 0%, transparent 65%),
+                radial-gradient(ellipse at 80% 70%, rgba(100, 100, 100, 0.03) 0%, transparent 50%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 850px;
+            padding: 3rem 2rem;
+        }
+        .hero-badge {
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #aaaaaa;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hero h1 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 300;
+        }
+
+        /* ===== CONTENIDO LEGAL ===== */
+        .legal-content {
+            background: rgba(0, 0, 0, 0.30);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .legal-content .container {
+            padding: 0 2rem;
+        }
+
+        .legal-content p {
+            color: #aaa;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .legal-content ul {
+            list-style: none;
+            padding-left: 1.5rem;
+            margin: 1rem 0 1.5rem;
+        }
+        .legal-content ul li {
+            color: #aaa;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.9;
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .legal-content ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #666;
+        }
+
+        .legal-content .highlight-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .legal-content .highlight-box p {
+            margin-bottom: 0.5rem;
+        }
+        .legal-content .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-content .divider {
+            width: 60px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 2rem 0;
+        }
+
+        .legal-content .last-updated {
+            color: #555;
+            font-size: 0.75rem;
+            font-style: italic;
+            margin-top: 2rem;
+            text-align: right;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 1.5rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: rgba(0, 0, 0, 0.40);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            text-align: center;
+            padding: 2.5rem 0 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            letter-spacing: 3px;
+        }
+        .footer-text {
+            color: #555;
+            font-size: 0.72rem;
+            line-height: 1.8;
+        }
+        .footer-text a {
+            color: #aaaaaa !important;
+            text-decoration: none;
+        }
+        .footer-text a:hover { color: #ffffff !important; }
+
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .footer-legal a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .footer-legal a:hover {
+            color: #aaaaaa;
+        }
+        .footer-legal span {
+            color: #333;
+            font-size: 0.6rem;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 999;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #aaaaaa;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.9rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover {
+            background: rgba(255, 255, 255, 0.10);
+            color: #ffffff;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media (max-width: 768px) {
+            .container { padding: 0 1.2rem; }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .hero { min-height: 40vh; }
+            .hero h1 { font-size: 2.2rem; }
+            .legal-content { padding: 2rem 0; }
+            .legal-content p { font-size: 0.85rem; }
+            .legal-content ul li { font-size: 0.85rem; }
+            .legal-content .highlight-box { padding: 1rem 1.2rem; }
+            .footer-legal { gap: 0.8rem; }
+            .footer-legal a { font-size: 0.55rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero .subtitle { font-size: 0.85rem; }
+            .legal-content p { font-size: 0.8rem; }
+            .legal-content ul li { font-size: 0.8rem; }
+            .legal-content h2 { font-size: 1.5rem; }
+            .legal-content h3 { font-size: 1.1rem; }
+            .back-to-top { bottom: 20px; left: 20px; width: 36px; height: 36px; font-size: 0.8rem; }
+            .footer-legal { flex-direction: column; align-items: center; gap: 0.4rem; }
+            .footer-legal span { display: none; }
+        }
+
+        @media (max-width: 400px) {
+            body::before {
+                background-position: center 25%;
+                background-size: 95% auto;
+                filter: blur(1px);
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- ===== IMÁGENES SEO OCULTAS ===== -->
+    <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;" aria-hidden="true">
+        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" 
+             alt="INCRIFE Logo oficial" 
+             width="1200" height="630" 
+             loading="eager" 
+             decoding="async">
+        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg" 
+             alt="INCRIFE fondo" 
+             width="1080" height="1920" 
+             loading="eager" 
+             decoding="async">
+    </div>
+
+    <!-- Luces ambientales -->
+    <div class="light-ambient-1"></div>
+    <div class="light-ambient-2"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="https://incrife.com" class="nav-logo">Incrife</a>
+            <ul class="nav-links">
+                <li><a href="https://incrife.com#home">Inicio</a></li>
+                <li><a href="https://incrife.com#video">Videoclip</a></li>
+                <li><a href="https://incrife.com#about">Biografía</a></li>
+                <li><a href="https://incrife.com#musica">Música</a></li>
+                <li><a href="https://incrife.com#redes">Redes</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose">&times;</button>
+        <a href="https://incrife.com#home">Inicio</a>
+        <a href="https://incrife.com#video">Videoclip</a>
+        <a href="https://incrife.com#about">Biografía</a>
+        <a href="https://incrife.com#musica">Música</a>
+        <a href="https://incrife.com#redes">Redes</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <span class="hero-badge">Legal</span>
+            <h1>Política de <span class="text-gradient">Privacidad</span></h1>
+            <p class="subtitle">INCRIFE · Protección de datos personales</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO LEGAL ===== -->
+    <section class="legal-content">
+        <div class="container">
+
+            <div data-aos="fade-up">
+                <p><strong>INCRIFE</strong> (en adelante, "el Titular"), con domicilio en Barcelona, España, y correo electrónico de contacto <strong>contact@incrife.com</strong>, es el responsable del tratamiento de los datos personales de los usuarios de este sitio web.</p>
+                <p>La presente Política de Privacidad tiene por objeto informar a los usuarios sobre el tratamiento de sus datos personales, de conformidad con lo establecido en el <strong>Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016</strong> (RGPD), la <strong>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales</strong> (LOPD) y la <strong>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico</strong> (LSSI).</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2 data-aos="fade-up">1. ¿Quién es el responsable del tratamiento de tus datos?</h2>
+            <div data-aos="fade-up">
+                <div class="highlight-box">
+                    <p><strong>Responsable:</strong> Ángel Córdoba El Hannouti (INCRIFE)</p>
+                    <p><strong>Teléfono:</strong> <a href="tel:+34624170204" style="color:#aaaaaa;text-decoration:none;">+34 624 17 02 04</a></p>
+                    <p><strong>Correo electrónico:</strong> <a href="mailto:contact@incrife.com" style="color:#aaaaaa;text-decoration:none;">contact@incrife.com</a></p>
+                    <p><strong>Ubicación:</strong> Barcelona, España</p>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">2. ¿Qué datos personales recogemos?</h2>
+            <div data-aos="fade-up">
+                <p>En INCRIFE recogemos los siguientes datos personales a través de los formularios de contacto, suscripción o cualquier otra interacción del usuario con nuestro sitio web:</p>
+                <ul>
+                    <li><strong>Datos identificativos:</strong> nombre, apellidos, dirección de correo electrónico, número de teléfono.</li>
+                    <li><strong>Datos de navegación:</strong> dirección IP, tipo de navegador, dispositivo, páginas visitadas, tiempo de navegación, origen de la visita (a través de cookies y tecnologías similares).</li>
+                    <li><strong>Datos de redes sociales:</strong> en caso de interacción a través de perfiles oficiales de INCRIFE en Instagram, TikTok, Twitter, YouTube u otras plataformas.</li>
+                </ul>
+            </div>
+
+            <h2 data-aos="fade-up">3. ¿Con qué finalidad tratamos tus datos personales?</h2>
+            <div data-aos="fade-up">
+                <p>Los datos personales recogidos a través de este sitio web serán tratados por INCRIFE con las siguientes finalidades:</p>
+                <ul>
+                    <li>Gestionar la relación con los usuarios, atender sus consultas y solicitudes.</li>
+                    <li>Enviar comunicaciones comerciales y promociones sobre los proyectos musicales de INCRIFE, siempre que el usuario haya prestado su consentimiento previo.</li>
+                    <li>Analizar el uso del sitio web para mejorar la experiencia del usuario y la calidad de nuestros servicios.</li>
+                    <li>Cumplir con las obligaciones legales derivadas de la normativa aplicable.</li>
+                </ul>
+            </div>
+
+            <h2 data-aos="fade-up">4. ¿Cuál es la base legal para el tratamiento de tus datos?</h2>
+            <div data-aos="fade-up">
+                <p>La base legal para el tratamiento de los datos personales de los usuarios es la siguiente:</p>
+                <ul>
+                    <li><strong>Consentimiento del usuario:</strong> cuando el usuario marca las casillas correspondientes en los formularios de contacto o suscripción, o cuando facilita sus datos voluntariamente.</li>
+                    <li><strong>Interés legítimo:</strong> para la mejora continua de nuestros servicios, la personalización de la experiencia del usuario y la seguridad del sitio web.</li>
+                    <li><strong>Cumplimiento de una obligación legal:</strong> para dar cumplimiento a las obligaciones tributarias, contables y legales que nos son aplicables.</li>
+                </ul>
+            </div>
+
+            <h2 data-aos="fade-up">5. ¿Por cuánto tiempo conservamos tus datos?</h2>
+            <div data-aos="fade-up">
+                <p>Los datos personales proporcionados por los usuarios se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recogidos, y posteriormente durante los plazos legalmente establecidos para el cumplimiento de obligaciones fiscales, contables y legales.</p>
+                <p>En el caso de datos de navegación a través de cookies, la conservación se regirá por lo establecido en nuestra <a href="#" style="color:#aaaaaa;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);">Política de Cookies</a>.</p>
+            </div>
+
+            <h2 data-aos="fade-up">6. ¿A qué destinatarios se comunicarán tus datos?</h2>
+            <div data-aos="fade-up">
+                <p>INCRIFE no cederá ni comunicará los datos personales de los usuarios a terceros, salvo en los siguientes supuestos:</p>
+                <ul>
+                    <li>Cuando sea necesario para cumplir con una obligación legal.</li>
+                    <li>Cuando el usuario haya prestado su consentimiento expreso para dicha comunicación.</li>
+                    <li>Cuando sea necesario para la prestación del servicio contratado, en cuyo caso se garantizará la confidencialidad y seguridad de los datos a través de acuerdos de encargo de tratamiento.</li>
+                </ul>
+                <p>En cualquier caso, INCRIFE garantiza que todas las comunicaciones de datos se realizarán de acuerdo con la normativa vigente y con las máximas garantías de seguridad.</p>
+            </div>
+
+            <h2 data-aos="fade-up">7. ¿Cuáles son tus derechos?</h2>
+            <div data-aos="fade-up">
+                <p>Los usuarios tienen reconocidos los siguientes derechos sobre sus datos personales, que podrán ejercer dirigiéndose a INCRIFE a través del correo electrónico <strong>contact@incrife.com</strong> o mediante el teléfono <strong>+34 624 17 02 04</strong>:</p>
+                <ul>
+                    <li><strong>Derecho de acceso:</strong> saber qué datos personales estamos tratando.</li>
+                    <li><strong>Derecho de rectificación:</strong> modificar datos inexactos o incompletos.</li>
+                    <li><strong>Derecho de supresión:</strong> solicitar la eliminación de los datos personales.</li>
+                    <li><strong>Derecho de oposición:</strong> oponerse al tratamiento de tus datos para determinadas finalidades.</li>
+                    <li><strong>Derecho de limitación del tratamiento:</strong> solicitar que se suspenda el tratamiento de tus datos en determinados supuestos.</li>
+                    <li><strong>Derecho a la portabilidad:</strong> recibir los datos en un formato estructurado y legible.</li>
+                    <li><strong>Derecho a retirar el consentimiento:</strong> en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada.</li>
+                </ul>
+                <p>Asimismo, los usuarios tienen derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos</strong> (www.aepd.es) si consideran que el tratamiento de sus datos no se ajusta a la normativa.</p>
+            </div>
+
+            <h2 data-aos="fade-up">8. Seguridad de los datos</h2>
+            <div data-aos="fade-up">
+                <p>INCRIFE adopta las medidas de seguridad técnicas y organizativas necesarias para garantizar la confidencialidad, integridad y disponibilidad de los datos personales, de acuerdo con el estado de la tecnología y la normativa aplicable.</p>
+                <p>Entre estas medidas se incluyen el cifrado de las comunicaciones, el acceso restringido a los datos por parte del personal autorizado, y la implementación de protocolos de seguridad para prevenir accesos no autorizados, alteraciones o pérdidas de datos.</p>
+            </div>
+
+            <h2 data-aos="fade-up">9. Enlaces a otros sitios web</h2>
+            <div data-aos="fade-up">
+                <p>Este sitio web puede contener enlaces a otros sitios web de terceros. INCRIFE no se hace responsable de las políticas de privacidad de dichos sitios web, por lo que se recomienda a los usuarios que revisen las políticas de privacidad de cada sitio web que visiten.</p>
+            </div>
+
+            <h2 data-aos="fade-up">10. Uso de Cookies</h2>
+            <div data-aos="fade-up">
+                <p>Este sitio web utiliza cookies para mejorar la experiencia del usuario, analizar el tráfico y personalizar el contenido. Para más información, consulte nuestra <a href="#" style="color:#aaaaaa;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);">Política de Cookies</a>.</p>
+            </div>
+
+            <h2 data-aos="fade-up">11. Modificaciones de la Política de Privacidad</h2>
+            <div data-aos="fade-up">
+                <p>INCRIFE se reserva el derecho de modificar la presente Política de Privacidad para adaptarla a futuros cambios normativos o a las nuevas prácticas de la organización. Cualquier modificación será publicada en esta misma página, y se notificará a los usuarios cuando sea necesario.</p>
+            </div>
+
+            <div class="last-updated" data-aos="fade-up">
+                <i class="fas fa-clock" style="color:#555;margin-right:0.5rem;"></i> Última actualización: septiembre de 2026
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">INCRIFE</div>
+            <p class="footer-text">
+                © 2026 Incrife Record · España · <a href="mailto:contact@incrife.com">contact@incrife.com</a> · <span>+34 624 17 02 04</span>
+            </p>
+            <div class="footer-legal">
+                <a href="https://incrife.com/politica-privacidad"><i class="fas fa-shield-alt" style="margin-right:4px;"></i> Política de Privacidad</a>
+                <span>|</span>
+                <a href="#"><i class="fas fa-gavel" style="margin-right:4px;"></i> Aviso Legal</a>
+                <span>|</span>
+                <a href="#"><i class="fas fa-cookie-bite" style="margin-right:4px;"></i> Política de Cookies</a>
+                <span>|</span>
+                <a href="mailto:contact@incrife.com"><i class="fas fa-envelope" style="margin-right:4px;"></i> Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
+
+            let navbar = document.getElementById('navbar');
+            let backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+                if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 400);
+            });
+
+            let hamburger = document.getElementById('hamburger');
+            let mobileMenu = document.getElementById('mobileMenu');
+            let mobileClose = document.getElementById('mobileClose');
+
+            function closeMenu() {
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                if (hamburger) hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (hamburger) hamburger.addEventListener('click', function() {
+                let isOpen = mobileMenu && mobileMenu.classList.contains('active');
+                if (mobileMenu) mobileMenu.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                document.body.style.overflow = isOpen ? '' : 'hidden';
+            });
+
+            if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+            document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', closeMenu));
+            if (backToTop) backToTop.addEventListener('click', function(e) { 
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
