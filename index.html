@@ -178,7 +178,7 @@
     }
     </script>
 
-    <!-- Schema para SocialMedia (nuevo) -->
+    <!-- Schema para SocialMedia -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -230,7 +230,7 @@
             position: relative;
         }
 
-        /* ===== FONDO CON BLUR ===== */
+        /* ===== FONDO POR DEFECTO (ESCRITORIO) ===== */
         body::before {
             content: "";
             position: fixed;
@@ -246,26 +246,30 @@
             filter: blur(2px) brightness(1.02);
         }
 
-        /* ===== FONDO PARA MÓVIL (NUEVO) ===== */
+        /* ===== FONDO PARA MÓVIL (CORREGIDO) ===== */
         @media (max-width: 768px) {
             body::before {
                 background-image: 
-                    linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.35)),
                     url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg");
                 background-size: cover;
                 background-position: center center;
-                filter: blur(0.5px) brightness(0.9);
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                filter: blur(0.8px) brightness(0.9);
             }
         }
 
         @media (max-width: 480px) {
             body::before {
                 background-image: 
-                    linear-gradient(180deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.30)),
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.40)),
                     url("https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg");
                 background-size: cover;
                 background-position: center 30%;
-                filter: blur(0.3px) brightness(0.85);
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+                filter: blur(0.5px) brightness(0.85);
             }
         }
 
@@ -844,52 +848,7 @@
             text-transform: uppercase;
         }
 
-        /* ===== COLLABORATIONS ===== */
-        .collab-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .collab-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .collab-card:hover {
-            border-color: rgba(255, 255, 255, 0.12);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
-            background: rgba(255, 255, 255, 0.06);
-        }
-        .collab-card img {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 0.8rem;
-            border: 2px solid rgba(255, 255, 255, 0.06);
-        }
-        .collab-name {
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #ffffff;
-            margin-bottom: 0.2rem;
-        }
-        .collab-ig {
-            font-size: 0.7rem;
-            color: #aaaaaa;
-        }
-
-        /* ===== REDES SOCIALES (NUEVO APARTADO) ===== */
+        /* ===== REDES SOCIALES ===== */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -944,6 +903,51 @@
         .social-card.deezer i { color: #A238FF; }
         .social-card.tidal i { color: #000000; }
         .social-card.pinterest i { color: #E60023; }
+
+        /* ===== COLLABORATIONS ===== */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .collab-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .collab-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.30);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .collab-card img {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.8rem;
+            border: 2px solid rgba(255, 255, 255, 0.06);
+        }
+        .collab-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
+        }
+        .collab-ig {
+            font-size: 0.7rem;
+            color: #aaaaaa;
+        }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -1222,37 +1226,27 @@
 <body>
 
     <!-- ===== IMÁGENES SEO OCULTAS ===== -->
-    <!-- Estas imágenes son leídas por Google pero no visibles para usuarios -->
     <div style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;" aria-hidden="true">
-        <!-- Logo principal -->
         <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" 
              alt="INCRIFE Logo oficial del artista musical" 
              width="1200" height="630" 
              loading="eager" 
              decoding="async">
-        
-        <!-- Imagen secundaria para SEO -->
         <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260826_131809_ef42c321-6c83-4cf7-be07-91203d40e40a.png" 
              alt="INCRIFE Ángel Córdoba El Hannouti - imagen promocional" 
              width="1200" height="1200" 
              loading="eager" 
              decoding="async">
-        
-        <!-- Videoclip LUCKY -->
         <img src="https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg" 
              alt="INCRIFE LUCKY Videoclip Oficial VEVO" 
              width="1280" height="720" 
              loading="eager" 
              decoding="async">
-        
-        <!-- Imagen de fondo escritorio -->
         <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2014_11_12.png" 
              alt="INCRIFE fondo visual del artista" 
              width="1920" height="1080" 
              loading="eager" 
              decoding="async">
-
-        <!-- Imagen de fondo móvil (nueva) -->
         <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg" 
              alt="INCRIFE fondo móvil del artista" 
              width="1080" height="1920" 
@@ -1409,7 +1403,7 @@
         </div>
     </section>
 
-    <!-- ===== REDES SOCIALES (NUEVO APARTADO) ===== -->
+    <!-- ===== REDES SOCIALES ===== -->
     <section id="redes" class="dark">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -1499,7 +1493,6 @@
                 © 2026 Incrife Record · España · <a href="mailto:contact@incrife.com">contact@incrife.com</a> · <span>+34 624 17 02 04</span>
             </p>
             
-            <!-- ===== FOOTER LEGAL LINKS ===== -->
             <div class="footer-legal">
                 <a href="#"><i class="fas fa-shield-alt" style="margin-right: 4px;"></i> Política de Privacidad</a>
                 <span>|</span>
@@ -1536,10 +1529,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // AOS
             if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
 
-            // Navbar scroll
             let navbar = document.getElementById('navbar');
             let backToTop = document.getElementById('backToTop');
             window.addEventListener('scroll', function() {
@@ -1547,7 +1538,6 @@
                 if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 500);
             });
 
-            // Mobile menu
             let hamburger = document.getElementById('hamburger');
             let mobileMenu = document.getElementById('mobileMenu');
             let mobileClose = document.getElementById('mobileClose');
@@ -1569,7 +1559,6 @@
             document.querySelectorAll('.mobile-menu a').forEach(l => l.addEventListener('click', closeMenu));
             if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            // ===== COOKIES BANNER =====
             const cookiesBanner = document.getElementById('cookiesBanner');
             const acceptBtn = document.getElementById('acceptCookies');
             const rejectBtn = document.getElementById('rejectCookies');
