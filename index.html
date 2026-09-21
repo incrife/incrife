@@ -380,14 +380,44 @@
         },
         
         {
+          "@type": "MusicRecording",
+          "@id": "https://incrife.com/#recording-darkzone",
+          "name": "Dark Zone",
+          "byArtist": { "@id": "https://incrife.com/#person" },
+          "datePublished": "2026",
+          "url": "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi"
+        },
+        
+        {
+          "@type": "MusicRecording",
+          "@id": "https://incrife.com/#recording-noil",
+          "name": "Noil",
+          "byArtist": { "@id": "https://incrife.com/#person" },
+          "datePublished": "2026",
+          "url": "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi"
+        },
+        
+        {
+          "@type": "MusicRecording",
+          "@id": "https://incrife.com/#recording-crazyhouse",
+          "name": "Crazy House",
+          "byArtist": { "@id": "https://incrife.com/#person" },
+          "datePublished": "2026",
+          "url": "https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi"
+        },
+        
+        {
           "@type": "ItemList",
           "@id": "https://incrife.com/#discography",
           "name": "Discografía de Incrife",
           "description": "Lista completa de lanzamientos musicales del artista Incrife.",
-          "numberOfItems": 2,
+          "numberOfItems": 5,
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@id": "https://incrife.com/#recording-lucky" } },
-            { "@type": "ListItem", "position": 2, "item": { "@id": "https://incrife.com/#recording-deathflock" } }
+            { "@type": "ListItem", "position": 1, "item": { "@id": "https://incrife.com/#recording-darkzone" } },
+            { "@type": "ListItem", "position": 2, "item": { "@id": "https://incrife.com/#recording-lucky" } },
+            { "@type": "ListItem", "position": 3, "item": { "@id": "https://incrife.com/#recording-noil" } },
+            { "@type": "ListItem", "position": 4, "item": { "@id": "https://incrife.com/#recording-crazyhouse" } },
+            { "@type": "ListItem", "position": 5, "item": { "@id": "https://incrife.com/#recording-deathflock" } }
           ]
         },
         
@@ -396,9 +426,12 @@
           "@id": "https://incrife.com/#playlist",
           "name": "Incrife - Playlist Oficial",
           "description": "Playlist oficial con los lanzamientos de Incrife.",
-          "numTracks": 2,
+          "numTracks": 5,
           "track": [
+            { "@id": "https://incrife.com/#recording-darkzone" },
             { "@id": "https://incrife.com/#recording-lucky" },
+            { "@id": "https://incrife.com/#recording-noil" },
+            { "@id": "https://incrife.com/#recording-crazyhouse" },
             { "@id": "https://incrife.com/#recording-deathflock" }
           ]
         },
@@ -452,8 +485,8 @@
             { "@type": "ListItem", "position": 3, "name": "Biografía Oficial", "item": "https://incrife.com/#about" },
             { "@type": "ListItem", "position": 4, "name": "Música", "item": "https://incrife.com/#musica" },
             { "@type": "ListItem", "position": 5, "name": "Vídeos", "item": "https://incrife.com/#videos" },
-            { "@type": "ListItem", "position": 6, "name": "Fotos", "item": "https://incrife.com/#fotos" },
-            { "@type": "ListItem", "position": 7, "name": "Discografía", "item": "https://incrife.com/#discografia" },
+            { "@type": "ListItem", "position": 6, "name": "Discografía", "item": "https://incrife.com/#discografia" },
+            { "@type": "ListItem", "position": 7, "name": "Fotos", "item": "https://incrife.com/#fotos" },
             { "@type": "ListItem", "position": 8, "name": "Redes Sociales", "item": "https://incrife.com/#redes" },
             { "@type": "ListItem", "position": 9, "name": "Colaboraciones", "item": "https://incrife.com/#colaboraciones" }
           ]
@@ -573,10 +606,14 @@
         .social-card.youtube i { color: #FF0000; }
         .social-card.snapchat i { color: #FFFC00; }
         .fotos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 900px; margin: 0 auto; }
-        .foto-card { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; overflow: hidden; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); aspect-ratio: 1/1; position: relative; }
+        .foto-card { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; overflow: hidden; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); aspect-ratio: 1/1; position: relative; display: block; }
         .foto-card:hover { border-color: rgba(255, 255, 255, 0.12); transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.40); }
         .foto-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .foto-card:hover img { transform: scale(1.08); }
+        .foto-card.locked { display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.7); }
+        .foto-card.locked i { font-size: 3rem; color: #aaaaaa; transition: transform 0.3s ease; }
+        .foto-card.locked:hover i { transform: scale(1.1); color: #ffffff; }
+        .foto-card.locked .foto-label { position: absolute; bottom: 1rem; left: 0; right: 0; text-align: center; font-size: 0.7rem; color: #888; letter-spacing: 1px; }
         .footer { background: rgba(0, 0, 0, 0.40); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); text-align: center; padding: 3rem 0 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.04); }
         .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; color: #ffffff; margin-bottom: 1rem; letter-spacing: 3px; }
         .footer-text { color: #555; font-size: 0.72rem; line-height: 1.8; }
@@ -614,7 +651,7 @@
         .video-info { padding: 1.2rem 1.5rem; }
         .video-info h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; color: #ffffff; margin-bottom: 0.3rem; }
         .video-info p { font-size: 0.75rem; color: #888; font-weight: 300; }
-        .disco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 700px; margin: 0 auto; }
+        .disco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
         .disco-card { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 10px; overflow: hidden; text-decoration: none; color: inherit; transition: all 0.3s ease; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
         .disco-card:hover { border-color: rgba(255, 255, 255, 0.12); transform: translateY(-5px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.40); }
         .disco-cover { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #000; }
@@ -623,8 +660,8 @@
         .disco-info h4 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.95rem; color: #ffffff; margin-bottom: 0.2rem; }
         .disco-info p { font-size: 0.7rem; color: #888; }
         @media (max-width: 1024px) { .collab-grid { grid-template-columns: repeat(2, 1fr); } .social-grid { grid-template-columns: repeat(3, 1fr); } .fotos-grid { grid-template-columns: repeat(3, 1fr); } .video-wrapper iframe { height: 400px; } }
-        @media (max-width: 768px) { section { padding: 3.5rem 0; } .container { padding: 0 1.2rem; } .nav-links { display: none; } .hamburger { display: flex; } .about-grid { grid-template-columns: 1fr; } .about-image-wrapper { max-width: 350px; margin: 0 auto; } .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } .social-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } .fotos-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } .hero h1 { font-size: 2.5rem; } .video-wrapper iframe { height: 280px; } body::before { background-position: center 35%; background-size: 75% auto; } .cookies-banner { padding: 1rem 1.2rem; } .cookies-banner-inner { flex-direction: column; gap: 1rem; align-items: stretch; } .cookies-text { flex-direction: column; text-align: center; gap: 0.5rem; } .cookies-text p { font-size: 0.7rem; } .cookies-buttons { justify-content: center; } .cookie-btn { padding: 0.45rem 1.2rem; font-size: 0.6rem; } .footer-legal { gap: 0.8rem; } .footer-legal a { font-size: 0.55rem; } }
-        @media (max-width: 480px) { section { padding: 2.5rem 0; } .hero h1 { font-size: 2rem; } .hero .tagline { font-size: 0.8rem; } .hero-actions { flex-direction: column; align-items: center; } .btn { width: 100%; justify-content: center; } .collab-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; } .collab-card { padding: 1rem 0.5rem; } .collab-card img { width: 55px; height: 55px; } .social-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; } .social-card { padding: 1rem 0.5rem; } .social-card i { font-size: 1.8rem; } .fotos-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; } .platform-links { flex-direction: column; align-items: center; } .platform-link { width: 100%; justify-content: center; } .back-to-top { bottom: 20px; left: 20px; } .video-wrapper iframe { height: 200px; } .cookies-banner { padding: 0.8rem 1rem; } .cookies-text p { font-size: 0.65rem; } .cookies-buttons { flex-direction: column; width: 100%; } .cookie-btn { width: 100%; justify-content: center; } .footer-legal { flex-direction: column; align-items: center; gap: 0.5rem; } .footer-legal span { display: none; } }
+        @media (max-width: 768px) { section { padding: 3.5rem 0; } .container { padding: 0 1.2rem; } .nav-links { display: none; } .hamburger { display: flex; } .about-grid { grid-template-columns: 1fr; } .about-image-wrapper { max-width: 350px; margin: 0 auto; } .collab-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } .social-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } .fotos-grid { grid-template-columns: repeat(3, 1fr); gap: 0.8rem; } .hero h1 { font-size: 2.5rem; } .video-wrapper iframe { height: 280px; } body::before { background-position: center 35%; background-size: 75% auto; } .cookies-banner { padding: 1rem 1.2rem; } .cookies-banner-inner { flex-direction: column; gap: 1rem; align-items: stretch; } .cookies-text { flex-direction: column; text-align: center; gap: 0.5rem; } .cookies-text p { font-size: 0.7rem; } .cookies-buttons { justify-content: center; } .cookie-btn { padding: 0.45rem 1.2rem; font-size: 0.6rem; } .footer-legal { gap: 0.8rem; } .footer-legal a { font-size: 0.55rem; } }
+        @media (max-width: 480px) { section { padding: 2.5rem 0; } .hero h1 { font-size: 2rem; } .hero .tagline { font-size: 0.8rem; } .hero-actions { flex-direction: column; align-items: center; } .btn { width: 100%; justify-content: center; } .collab-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; } .collab-card { padding: 1rem 0.5rem; } .collab-card img { width: 55px; height: 55px; } .social-grid { grid-template-columns: 1fr 1fr; gap: 0.5rem; } .social-card { padding: 1rem 0.5rem; } .social-card i { font-size: 1.8rem; } .fotos-grid { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; } .platform-links { flex-direction: column; align-items: center; } .platform-link { width: 100%; justify-content: center; } .back-to-top { bottom: 20px; left: 20px; } .video-wrapper iframe { height: 200px; } .cookies-banner { padding: 0.8rem 1rem; } .cookies-text p { font-size: 0.65rem; } .cookies-buttons { flex-direction: column; width: 100%; } .cookie-btn { width: 100%; justify-content: center; } .footer-legal { flex-direction: column; align-items: center; gap: 0.5rem; } .footer-legal span { display: none; } }
         @media (max-width: 400px) { body::before { background-position: center 25%; background-size: 95% auto; filter: blur(1px); } }
     </style>
 </head>
@@ -653,8 +690,8 @@
                 <li><a href="#about">Biografía</a></li>
                 <li><a href="#musica">Música</a></li>
                 <li><a href="#videos">Vídeos</a></li>
-                <li><a href="#fotos">Fotos</a></li>
                 <li><a href="#discografia">Discografía</a></li>
+                <li><a href="#fotos">Fotos</a></li>
                 <li><a href="#redes">Redes</a></li>
                 <li><a href="#colaboraciones">Colaboraciones</a></li>
             </ul>
@@ -670,8 +707,8 @@
         <a href="#about">Biografía</a>
         <a href="#musica">Música</a>
         <a href="#videos">Vídeos</a>
-        <a href="#fotos">Fotos</a>
         <a href="#discografia">Discografía</a>
+        <a href="#fotos">Fotos</a>
         <a href="#redes">Redes</a>
         <a href="#colaboraciones">Colaboraciones</a>
     </div>
@@ -791,8 +828,66 @@
         </div>
     </section>
 
+    <!-- ===== DISCOGRAFÍA ===== -->
+    <section id="discografia" class="dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-tag">Discografía</div>
+                <h2 class="section-title">Mi <span class="accent">Discografía</span></h2>
+                <p class="section-subtitle">Todos mis lanzamientos disponibles en plataformas digitales.</p>
+            </div>
+            <div class="disco-grid">
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="disco-card" data-aos="fade-up">
+                    <div class="disco-cover">
+                        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" alt="Incrife - Dark Zone" loading="lazy">
+                    </div>
+                    <div class="disco-info">
+                        <h4>Dark Zone</h4>
+                        <p>Single · 2026 · Incrife Record</p>
+                    </div>
+                </a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="disco-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="disco-cover">
+                        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" alt="Incrife - LUCKY" loading="lazy">
+                    </div>
+                    <div class="disco-info">
+                        <h4>LUCKY</h4>
+                        <p>Single · 2024 · Incrife Record</p>
+                    </div>
+                </a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="disco-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="disco-cover">
+                        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" alt="Incrife - Noil" loading="lazy">
+                    </div>
+                    <div class="disco-info">
+                        <h4>Noil</h4>
+                        <p>Single · 2026 · Incrife Record</p>
+                    </div>
+                </a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="disco-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="disco-cover">
+                        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" alt="Incrife - Crazy House" loading="lazy">
+                    </div>
+                    <div class="disco-info">
+                        <h4>Crazy House</h4>
+                        <p>Single · 2026 · Incrife Record</p>
+                    </div>
+                </a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="disco-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="disco-cover">
+                        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" alt="Incrife - The Death of the Flock" loading="lazy">
+                    </div>
+                    <div class="disco-info">
+                        <h4>The Death of the Flock</h4>
+                        <p>Single · 2025 · Incrife Record</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== FOTOS ===== -->
-    <section id="fotos" class="dark">
+    <section id="fotos">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <div class="section-tag">Galería</div>
@@ -809,42 +904,9 @@
                 <div class="foto-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_220703_9dd953bc-9b42-4435-9dd9-a6411e7b3098.jpg" alt="Incrife foto oficial 3" loading="lazy">
                 </div>
-                <div class="foto-card" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260907_230335_da8e5571-4657-4b89-83ac-ceb6a018cb5f.jpg" alt="Incrife foto oficial 4" loading="lazy">
-                </div>
-                <div class="foto-card" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/ChatGPT%20Image%2029%20jun%202026%2C%2014_11_12.png" alt="Incrife foto oficial 5" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== DISCOGRAFÍA ===== -->
-    <section id="discografia">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <div class="section-tag">Discografía</div>
-                <h2 class="section-title">Mi <span class="accent">Discografía</span></h2>
-                <p class="section-subtitle">Todos mis lanzamientos disponibles en plataformas digitales.</p>
-            </div>
-            <div class="disco-grid">
-                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="disco-card" data-aos="fade-up">
-                    <div class="disco-cover">
-                        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/c914a18c-74a6-44ca-b5a9-f287a950467f.jpg" alt="Incrife - LUCKY" loading="lazy">
-                    </div>
-                    <div class="disco-info">
-                        <h4>LUCKY</h4>
-                        <p>Single · 2024 · Incrife Record</p>
-                    </div>
-                </a>
-                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank" class="disco-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="disco-cover">
-                        <img src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/hf_20260826_131809_ef42c321-6c83-4cf7-be07-91203d40e40a.png" alt="Incrife - The Death of the Flock" loading="lazy">
-                    </div>
-                    <div class="disco-info">
-                        <h4>The Death of the Flock</h4>
-                        <p>Single · 2025 · Incrife Record</p>
-                    </div>
+                <a href="https://incrife.com/galery" target="_blank" class="foto-card locked" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-lock"></i>
+                    <span class="foto-label">Ver más fotos</span>
                 </a>
             </div>
         </div>
