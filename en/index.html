@@ -891,6 +891,11 @@ footer{background:linear-gradient(180deg,#0a2a8f,#1546d6);border-top:0}
 .cine::before{top:0}.cine::after{bottom:0}
 .vsplit .vpair{grid-template-columns:1fr;gap:1.2rem;align-items:start}
 @media(max-width:820px){.vsplit{grid-template-columns:.8fr 1.2fr;gap:.8rem}.cine{min-height:300px}.vsplit .vpair{gap:.8rem}}
+
+/* vídeos: la chica de fondo */
+#video{position:relative;overflow:hidden;background:#02050f}
+#video>.vbg{object-position:center 30%;opacity:.65;filter:none}
+#video::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,#0a1a4a 0%,rgba(5,11,26,.3) 22%,rgba(5,11,26,.3) 72%,#02050f 100%)}
 </style>
 </head>
 <body>
@@ -934,10 +939,10 @@ footer{background:linear-gradient(180deg,#0a2a8f,#1546d6);border-top:0}
     <div class="rgrid" id="rgrid"><button class="rc rv on" type="button" data-y="2026" data-n="LUCKY" data-m="Single · 2026" data-c="https://i.scdn.co/image/ab67616d0000b273786678f8a622b11ce34f6f2c" data-e="https://open.spotify.com/embed/track/3RIlT2nQkjneWGVkEbvunh?utm_source=generator&amp;theme=0" data-l="https://open.spotify.com/album/6QlDTg8OopSY0OF4LyCt9N" data-b="Latest · Single"><span class="rcov"><img src="https://i.scdn.co/image/ab67616d0000b273786678f8a622b11ce34f6f2c" alt="LUCKY cover" loading="lazy"></span><b>LUCKY</b><small>Single · 2026</small></button><button class="rc rv" type="button" data-y="2025" data-n="The Death of the Flock" data-m="Song with Ouxxox · 2025" data-c="https://i.scdn.co/image/ab67616d0000b27331fd37844a245f3c159c259a" data-e="https://open.spotify.com/embed/track/0Jia67WhRGtHwJdSV5ckeV?utm_source=generator&amp;theme=0" data-l="https://open.spotify.com/track/0Jia67WhRGtHwJdSV5ckeV" data-b="Collab"><span class="rcov"><img src="https://i.scdn.co/image/ab67616d0000b27331fd37844a245f3c159c259a" alt="The Death of the Flock cover" loading="lazy"></span><b>The Death of the Flock</b><small>Song with Ouxxox · 2025</small></button><button class="rc rv" type="button" data-y="2026" data-n="Crazy House" data-m="Song · 2026" data-c="https://i.scdn.co/image/ab67616d0000b273b51008a5052d551bb7f56a0b" data-e="https://open.spotify.com/embed/track/5eQR13AEKfwAoX6tA27amj?utm_source=generator&amp;theme=0" data-l="https://open.spotify.com/track/5eQR13AEKfwAoX6tA27amj" data-b="Song"><span class="rcov"><img src="https://i.scdn.co/image/ab67616d0000b273b51008a5052d551bb7f56a0b" alt="Crazy House cover" loading="lazy"></span><b>Crazy House</b><small>Song · 2026</small></button></div>
 </div></section>
 
-<section class="sec" id="video"><div class="wrap">
+<section class="sec" id="video"><video class="abv vbg" webkit-playsinline disableremoteplayback data-src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/sf.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video><div class="wrap">
     <p class="num rv">02</p><h2 class="big"><span>Videos</span></h2>
     <p class="lead rv">Official music videos by Incrife. Pick one and press play.</p>
-    <div class="vsplit rv"><figure class="cine"><video class="abv" webkit-playsinline disableremoteplayback data-src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/sf.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></figure><div class="vpair"><figure><div class="yt" style="background-image:url('https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg')"><button class="play" type="button" data-id="4L8_xSX5cu8" aria-label="Play LUCKY"></button></div><figcaption>LUCKY · Official music video</figcaption></figure><figure><div class="yt" style="background-image:url('https://img.youtube.com/vi/AqYj_eZ0VaE/hqdefault.jpg')"><button class="play" type="button" data-id="AqYj_eZ0VaE" aria-label="Play Incrife"></button></div><figcaption>Incrife · Official music video</figcaption></figure></div></div>
+    <div class="vpair rv"><figure><div class="yt" style="background-image:url('https://img.youtube.com/vi/4L8_xSX5cu8/maxresdefault.jpg')"><button class="play" type="button" data-id="4L8_xSX5cu8" aria-label="Play LUCKY"></button></div><figcaption>LUCKY · Official music video</figcaption></figure><figure><div class="yt" style="background-image:url('https://img.youtube.com/vi/AqYj_eZ0VaE/hqdefault.jpg')"><button class="play" type="button" data-id="AqYj_eZ0VaE" aria-label="Play Incrife"></button></div><figcaption>Incrife · Official music video</figcaption></figure></div>
 </div></section>
 
 <section class="sec" id="about"><video class="abv" webkit-playsinline disableremoteplayback data-src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/wcw.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video><div class="wrap">
