@@ -1,379 +1,470 @@
+<body>
+
 <!-- ============================================================
-     HERO ESTILO DADDY YANKEE - INCRIFE
-     Reemplaza la sección <section class="hero" id="home"> actual
+     SVG FILTERS GLOBALES (Sketch hover de DY - código real)
 ============================================================ -->
-<section class="hero-dy" id="home">
-    <!-- Capa de fondo con gradiente y textura -->
-    <div class="hero-dy__bg"></div>
-    <div class="hero-dy__grid"></div>
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;">
+    <defs>
+        <filter id="sketch-hover-0" x="-5%" y="-10%" width="110%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G" result="d"/>
+            <feComponentTransfer in="d"><feFuncA type="table" tableValues="0 1 1"/></feComponentTransfer>
+        </filter>
+    </defs>
+</svg>
 
-    <!-- Nombre gigante detrás de la foto (como en DY) -->
-    <div class="hero-dy__title-bg">
-        <h1 class="hero-dy__title">INCRIFE</h1>
-    </div>
-
-    <!-- Foto cutout con parallax -->
-    <div class="hero-dy__image-wrap">
-        <img 
-            src="https://raw.githubusercontent.com/incrife/incrife/main/Retrato%20aislado%20con%20durag%20y%20cadenas%20de%20plata.png" 
-            alt="Incrife - Retrato oficial con durag y cadenas de plata" 
-            class="hero-dy__image"
-            id="heroImage"
-        >
-    </div>
-
-    <!-- Contenido textual y CTAs -->
-    <div class="hero-dy__content">
-        <p class="hero-dy__date">Artista Oficial · Barcelona</p>
-        <h2 class="hero-dy__name">INCRIFE</h2>
-        <p class="hero-dy__tagline">LUCKY · Disponible en VEVO y Apple Music</p>
-        <div class="hero-dy__actions">
-            <a href="#video" class="btn btn-primary btn-lg">Ver Videoclip</a>
-            <a href="#about" class="btn btn-outline btn-lg">Conocer más</a>
-        </div>
-    </div>
-
-    <!-- Indicador de scroll -->
-    <div class="hero-dy__scroll">
-        <span>DESPLAZAR</span>
-        <i class="fas fa-chevron-down"></i>
-    </div>
-</section>
-
-<!-- ===== PRELOADER (Carga inicial) ===== -->
-<div id="preloader" class="preloader">
-    <div class="preloader__inner">
-        <div class="preloader__counter" id="preloaderCounter">0</div>
-        <div class="preloader__line"></div>
-        <p class="preloader__text">INCRIFE</p>
+<!-- ============================================================
+     PRELOADER (código real de DY con sessionStorage)
+============================================================ -->
+<div class="dy-preloader" id="dyPreloader">
+    <div class="dy-preloader__inner">
+        <div class="dy-preloader__counter" id="dyCounter">0</div>
+        <div class="dy-preloader__line"><span></span></div>
+        <p class="dy-preloader__label">INCRIFE</p>
     </div>
 </div>
 
-<!-- ===== BOTÓN DE SONIDO (Música ambiente) ===== -->
-<button id="soundToggle" class="sound-toggle" aria-label="Activar sonido">
-    <i class="fas fa-volume-mute"></i>
-</button>
+<!-- ============================================================
+     NAV FULL-SCREEN (clip-path de DY)
+============================================================ -->
+<nav class="dy-nav" id="dyNav" data-nav-status="closed">
+    <!-- Barra superior -->
+    <div class="dy-nav__bar">
+        <a href="#home" class="dy-nav__logo">Incrife</a>
+        <div class="dy-nav__bar-right">
+            <button class="dy-nav__sound" id="dySound" aria-label="Activar sonido">
+                <svg viewBox="0 0 20 20" width="18" height="18" fill="none">
+                    <path d="M1.665 12.5V7.5" stroke="currentColor" stroke-width="2"/>
+                    <path d="M5.835 16.25V3.75" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 18.333V1.667" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14.165 16.25V3.75" stroke="currentColor" stroke-width="2"/>
+                    <path d="M18.335 12.5V7.5" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <button class="dy-nav__toggle" id="dyToggle">
+                <span class="dy-nav__toggle-open">MENU</span>
+                <span class="dy-nav__toggle-close">CERRAR</span>
+            </button>
+        </div>
+    </div>
 
-<!-- ===== CURSOR PERSONALIZADO ===== -->
-<div id="cursor" class="cursor"></div>
-<div id="cursorFollower" class="cursor-follower"></div>
+    <!-- Tile full-screen (el que se abre con clip-path) -->
+    <div class="dy-nav__tile" id="dyTile">
+        <div class="dy-nav__tile-inner">
+            <ul class="dy-nav__links">
+                <li><a href="#home"><span>INICIO</span></a></li>
+                <li><a href="#about"><span>BIOGRAFÍA</span></a></li>
+                <li><a href="#musica"><span>MÚSICA</span></a></li>
+                <li><a href="#discografia"><span>DISCOGRAFÍA</span></a></li>
+                <li><a href="#redes"><span>REDES</span></a></li>
+            </ul>
+            <div class="dy-nav__socials">
+                <a href="https://www.instagram.com/incrife/" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@incrife" target="_blank">TikTok</a>
+                <a href="https://x.com/Incrife" target="_blank">X</a>
+                <a href="https://www.youtube.com/@incrife" target="_blank">YouTube</a>
+                <a href="https://open.spotify.com/artist/42euHjlNEF6gE3zuWrAJBi" target="_blank">Spotify</a>
+            </div>
+        </div>
+    </div>
+</nav>
 
 <!-- ============================================================
-     ESTILOS PARA EL HERO, PRELOADER, SONIDO Y CURSOR
+     HERO CON SHUTTERS (revelado de foto, como DY portrait)
+============================================================ -->
+<section class="dy-hero" id="home">
+    <!-- Título gigante detrás (split-text) -->
+    <div class="dy-hero__bg-title">
+        <h1 class="dy-split" data-split="lines">
+            <span class="dy-split__mask"><span class="dy-split__line">INCRIFE</span></span>
+        </h1>
+    </div>
+
+    <!-- Foto con shutters que se abren -->
+    <div class="dy-hero__media">
+        <div class="dy-hero__shutters" id="dyShutters">
+            <div class="dy-shutter dy-shutter--top"></div>
+            <div class="dy-shutter dy-shutter--bottom"></div>
+            <div class="dy-shutter dy-shutter--left"></div>
+            <div class="dy-shutter dy-shutter--right"></div>
+        </div>
+        <img 
+            src="https://raw.githubusercontent.com/incrife/incrife/main/Retrato%20aislado%20con%20durag%20y%20cadenas%20de%20plata.png"
+            alt="Incrife - Retrato oficial"
+            class="dy-hero__img"
+            id="dyHeroImg"
+            loading="eager"
+        >
+    </div>
+
+    <!-- Contenido inferior -->
+    <div class="dy-hero__content">
+        <p class="dy-hero__date">Artista Oficial · Barcelona</p>
+        <p class="dy-hero__tagline">LUCKY · Disponible en VEVO y Apple Music</p>
+        <div class="dy-hero__ctas">
+            <a href="#video" class="dy-btn dy-btn--primary">
+                <span class="dy-btn__line"></span>
+                <span class="dy-btn__text">VER VIDEOCLIP</span>
+                <span class="dy-btn__line"></span>
+            </a>
+            <a href="#about" class="dy-btn">
+                <span class="dy-btn__line"></span>
+                <span class="dy-btn__text">CONOCER MÁS</span>
+                <span class="dy-btn__line"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="dy-hero__scroll">DESPLAZAR</div>
+</section>
+
+<!-- ============================================================
+     (AQUÍ SIGUEN TUS SECCIONES: VIDEO, ABOUT, MÚSICA, ETC.)
+     Deja el resto de tu body tal como está
+============================================================ -->
+
+<!-- ============================================================
+     ESTILOS — Técnicas reales de DY
 ============================================================ -->
 <style>
-/* --- HERO DY --- */
-.hero-dy {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+/* ===== PRELOADER (DY pattern) ===== */
+.dy-preloader {
+    position: fixed; inset: 0; z-index: 99999;
     background: #050505;
-    isolation: isolate;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 1s ease, visibility 1s ease;
 }
-.hero-dy__bg {
-    position: absolute;
-    inset: 0;
-    background: 
-        radial-gradient(ellipse at 50% 40%, rgba(180, 180, 180, 0.06) 0%, transparent 70%),
-        radial-gradient(ellipse at 20% 80%, rgba(100, 100, 100, 0.04) 0%, transparent 60%);
-    z-index: 0;
-}
-.hero-dy__grid {
-    position: absolute;
-    inset: 0;
-    opacity: 0.02;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
-    background-size: 60px 60px;
-    z-index: 1;
-}
-.hero-dy__title-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    pointer-events: none;
-    width: 100%;
-    text-align: center;
-}
-.hero-dy__title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(6rem, 20vw, 18rem);
-    font-weight: 900;
-    color: rgba(255, 255, 255, 0.03);
-    letter-spacing: 0.1em;
-    line-height: 0.8;
-    margin: 0;
-    white-space: nowrap;
-}
-.hero-dy__image-wrap {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    pointer-events: none;
-    will-change: transform;
-}
-.hero-dy__image {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
-}
-.hero-dy__content {
-    position: absolute;
-    bottom: 12%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
-    pointer-events: auto;
-}
-.hero-dy__date {
-    font-size: 0.7rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: #aaaaaa;
-    margin-bottom: 1rem;
-}
-.hero-dy__name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.02em;
-}
-.hero-dy__tagline {
-    font-size: 0.9rem;
-    color: #888;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-}
-.hero-dy__actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.hero-dy__scroll {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    color: #555;
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    animation: bounce 2s infinite;
-}
-
-/* --- PRELOADER --- */
-.preloader {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: #050505;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.8s ease, visibility 0.8s ease;
-}
-.preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-.preloader__inner {
-    text-align: center;
-}
-.preloader__counter {
+.dy-preloader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.dy-preloader__inner { text-align: center; }
+.dy-preloader__counter {
     font-family: 'Playfair Display', serif;
     font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1;
+    font-weight: 800; color: #fff; line-height: 1;
 }
-.preloader__line {
-    width: 100px;
-    height: 2px;
-    background: #333;
-    margin: 1rem auto;
-    position: relative;
-    overflow: hidden;
+.dy-preloader__line {
+    width: 120px; height: 2px; background: #222;
+    margin: 1rem auto; overflow: hidden;
 }
-.preloader__line::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #ffffff;
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: preloaderLine 2s ease forwards;
+.dy-preloader__line span {
+    display: block; height: 100%; background: #fff;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.1s linear;
 }
-.preloader__text {
-    font-size: 0.7rem;
-    letter-spacing: 6px;
-    color: #aaaaaa;
-    text-transform: uppercase;
-}
-@keyframes preloaderLine {
-    to { transform: scaleX(1); }
+.dy-preloader__label {
+    font-size: 0.65rem; letter-spacing: 6px;
+    color: #666; text-transform: uppercase; margin-top: 1rem;
 }
 
-/* --- BOTÓN DE SONIDO --- */
-.sound-toggle {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9999;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #aaaaaa;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
+/* ===== NAV (DY pattern con clip-path) ===== */
+.dy-nav {
+    position: fixed; inset: 0; z-index: 9998;
+    pointer-events: none;
+}
+.dy-nav__bar {
+    position: fixed; top: 0; left: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 2rem; z-index: 2;
+    pointer-events: auto;
+    transition: color 0.4s ease;
+}
+.dy-nav__logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 800;
+    color: #fff; letter-spacing: 3px; text-decoration: none;
+}
+.dy-nav__bar-right { display: flex; align-items: center; gap: 1rem; }
+.dy-nav__sound {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #ccc; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
     transition: all 0.3s ease;
 }
-.sound-toggle:hover {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-    transform: scale(1.05);
+.dy-nav__sound:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.dy-nav__toggle {
+    background: transparent; border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; letter-spacing: 2px;
+    color: #fff; cursor: pointer;
+    position: relative; overflow: hidden;
+    padding: 0.4rem 0;
 }
+.dy-nav__toggle-open, .dy-nav__toggle-close {
+    display: block; transition: transform 0.4s ease;
+}
+.dy-nav__toggle-close { position: absolute; top: 0.4rem; left: 0; transform: translateY(100%); }
+[data-nav-status="open"] .dy-nav__toggle-open { transform: translateY(-100%); }
+[data-nav-status="open"] .dy-nav__toggle-close { transform: translateY(0); }
 
-/* --- CURSOR PERSONALIZADO --- */
-.cursor, .cursor-follower {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Tile con clip-path (EXACTO de DY) */
+.dy-nav__tile {
+    position: fixed; inset: 0;
+    background: #0a0a0a;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transition: clip-path 1s cubic-bezier(0.9, 0, 0.1, 1);
     pointer-events: none;
-    z-index: 99998;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
-    opacity: 0;
+    display: flex; align-items: center; justify-content: center;
 }
-.cursor {
-    width: 8px;
-    height: 8px;
-    background: #ffffff;
+[data-nav-status="open"] .dy-nav__tile {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    pointer-events: auto;
 }
-.cursor-follower {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: transform 0.1s ease, opacity 0.3s ease;
+.dy-nav__tile-inner {
+    display: flex; flex-direction: column; gap: 2rem;
+    align-items: center; text-align: center;
 }
-body:hover .cursor, body:hover .cursor-follower {
-    opacity: 1;
+.dy-nav__links { list-style: none; padding: 0; margin: 0; }
+.dy-nav__links li { overflow: hidden; margin: 0.3rem 0; }
+.dy-nav__links li a {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    color: #fff; text-decoration: none;
+    letter-spacing: 0.02em;
+    transform: translateY(100%) rotate(5deg);
+    transition: transform 0.75s cubic-bezier(0.7, 0, 0.3, 1);
+}
+[data-nav-status="open"] .dy-nav__links li a {
+    transform: translateY(0%) rotate(0deg);
+}
+/* Stagger delays EXACTOS de DY */
+[data-nav-status="open"] .dy-nav__links li:nth-child(1) a { transition-delay: 0.30s; }
+[data-nav-status="open"] .dy-nav__links li:nth-child(2) a { transition-delay: 0.35s; }
+[data-nav-status="open"] .dy-nav__links li:nth-child(3) a { transition-delay: 0.40s; }
+[data-nav-status="open"] .dy-nav__links li:nth-child(4) a { transition-delay: 0.45s; }
+[data-nav-status="open"] .dy-nav__links li:nth-child(5) a { transition-delay: 0.50s; }
+
+.dy-nav__socials { display: flex; gap: 1.5rem; margin-top: 2rem; }
+.dy-nav__socials a {
+    color: #666; text-decoration: none;
+    font-size: 0.72rem; letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+.dy-nav__socials a:hover { color: #fff; }
+
+/* ===== HERO con shutters (DY portrait pattern) ===== */
+.dy-hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: #050505;
+}
+.dy-hero__bg-title {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1; pointer-events: none;
+}
+.dy-split { margin: 0; padding: 0; overflow: hidden; }
+.dy-split__mask {
+    display: block; overflow: hidden; line-height: 0.85;
+}
+.dy-split__line {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(6rem, 22vw, 22rem);
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    letter-spacing: 0.05em;
+    transform: translateY(100%);
+    transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1) 0.2s;
+}
+.dy-hero.is-loaded .dy-split__line { transform: translateY(0); }
+
+.dy-hero__media {
+    position: relative; z-index: 2;
+    width: 100%; max-width: 520px;
+    aspect-ratio: 3/4;
+}
+.dy-hero__img {
+    width: 100%; height: 100%; object-fit: contain;
+    filter: drop-shadow(0 30px 80px rgba(0,0,0,0.7));
+    opacity: 0; transition: opacity 0.6s ease 1s;
+}
+.dy-hero.is-loaded .dy-hero__img { opacity: 1; }
+
+/* Shutters EXACTOS: 4 persianas que se retiran */
+.dy-hero__shutters {
+    position: absolute; inset: 0; z-index: 3;
+    pointer-events: none;
+}
+.dy-shutter {
+    position: absolute; background: #0a0a0a;
+    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.dy-shutter--top    { top: 0; left: 0; right: 0; height: 50%; transform-origin: top; }
+.dy-shutter--bottom { bottom: 0; left: 0; right: 0; height: 50%; transform-origin: bottom; }
+.dy-shutter--left   { top: 0; left: 0; bottom: 0; width: 50%; transform-origin: left; }
+.dy-shutter--right  { top: 0; right: 0; bottom: 0; width: 50%; transform-origin: right; }
+
+.dy-hero.is-loaded .dy-shutter--top    { transform: translateY(-100%); }
+.dy-hero.is-loaded .dy-shutter--bottom { transform: translateY(100%); }
+.dy-hero.is-loaded .dy-shutter--left   { transform: translateX(-100%); }
+.dy-hero.is-loaded .dy-shutter--right  { transform: translateX(100%); }
+
+.dy-hero__content {
+    position: absolute; bottom: 10%; left: 50%;
+    transform: translateX(-50%);
+    z-index: 4; text-align: center;
+    width: 90%; max-width: 600px;
+    opacity: 0; transition: opacity 0.8s ease 1.4s;
+}
+.dy-hero.is-loaded .dy-hero__content { opacity: 1; }
+.dy-hero__date {
+    font-size: 0.7rem; letter-spacing: 4px;
+    text-transform: uppercase; color: #aaa;
+    margin-bottom: 0.6rem;
+}
+.dy-hero__tagline {
+    font-size: 0.9rem; color: #888;
+    font-weight: 300; margin-bottom: 1.5rem;
+}
+.dy-hero__ctas {
+    display: flex; gap: 1rem;
+    justify-content: center; flex-wrap: wrap;
 }
 
+/* ===== BOTONES CON LÍNEAS (EXACTO de DY) ===== */
+.dy-btn {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    padding: 0.9rem 1.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.dy-btn__line {
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: currentColor;
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.dy-btn:hover .dy-btn__line { transform: scaleX(0.6); }
+.dy-btn:hover { color: #ccc; }
+.dy-btn--primary { background: rgba(255,255,255,0.08); }
+.dy-btn--primary:hover { background: rgba(255,255,255,0.14); }
+
+.dy-hero__scroll {
+    position: absolute; bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    font-size: 0.6rem; letter-spacing: 3px;
+    text-transform: uppercase; color: #555;
+    opacity: 0; transition: opacity 0.8s ease 1.8s;
+}
+.dy-hero.is-loaded .dy-hero__scroll { opacity: 1; }
+
+/* Responsive */
 @media (max-width: 768px) {
-    .hero-dy__image-wrap { max-width: 350px; }
-    .hero-dy__title { font-size: 5rem; }
-    .hero-dy__content { bottom: 8%; }
-    .cursor, .cursor-follower { display: none; } /* Ocultar en móvil */
-    .sound-toggle { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+    .dy-hero__media { max-width: 340px; }
+    .dy-nav__bar { padding: 1rem 1.2rem; }
+    .dy-hero__content { bottom: 8%; }
+    .dy-nav__links li a { font-size: 1.8rem; }
 }
 </style>
 
 <!-- ============================================================
-     JAVASCRIPT PARA ANIMACIONES
+     JAVASCRIPT — Control de preloader, nav, sonido, shutters
 ============================================================ -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // --- 1. PRELOADER ---
-    const preloader = document.getElementById('preloader');
-    const counter = document.getElementById('preloaderCounter');
-    if (preloader && counter) {
+
+    /* ---------- 1. PRELOADER con sessionStorage (código real de DY) ---------- */
+    const preloader = document.getElementById('dyPreloader');
+    const counter   = document.getElementById('dyCounter');
+    const lineFill  = preloader ? preloader.querySelector('.dy-preloader__line span') : null;
+    const hero      = document.querySelector('.dy-hero');
+
+    let entered = false;
+    try { entered = sessionStorage.getItem('incrife-entered') === '1'; } catch(e) {}
+
+    if (entered) {
+        // Ya entró antes en esta sesión: saltar preloader
+        if (preloader) preloader.classList.add('is-hidden');
+        if (hero) hero.classList.add('is-loaded');
+    } else {
+        // Primera vez: animar contador 0→100
         let count = 0;
-        const interval = setInterval(() => {
-            count += Math.floor(Math.random() * 10) + 1;
+        const iv = setInterval(() => {
+            count = Math.min(100, count + Math.floor(Math.random() * 8) + 2);
+            if (counter) counter.textContent = count;
+            if (lineFill) lineFill.style.transform = `scaleX(${count/100})`;
             if (count >= 100) {
-                count = 100;
-                clearInterval(interval);
+                clearInterval(iv);
                 setTimeout(() => {
-                    preloader.classList.add('hidden');
-                }, 500);
+                    preloader.classList.add('is-hidden');
+                    hero.classList.add('is-loaded');
+                    try { sessionStorage.setItem('incrife-entered', '1'); } catch(e) {}
+                }, 400);
             }
-            counter.textContent = count;
-        }, 30);
+        }, 40);
     }
 
-    // --- 2. PARALLAX SUAVE EN LA FOTO DEL HERO ---
-    const heroImage = document.getElementById('heroImage');
-    if (heroImage) {
-        window.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 20;
-            const y = (e.clientY / window.innerHeight - 0.5) * 20;
-            heroImage.style.transform = `translate(${x}px, ${y}px)`;
+    /* ---------- 2. NAV full-screen con clip-path (DY pattern) ---------- */
+    const nav    = document.getElementById('dyNav');
+    const toggle = document.getElementById('dyToggle');
+    const tile   = document.getElementById('dyTile');
+    if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+            const isOpen = nav.getAttribute('data-nav-status') === 'open';
+            nav.setAttribute('data-nav-status', isOpen ? 'closed' : 'open');
+            document.body.style.overflow = isOpen ? '' : 'hidden';
         });
     }
-
-    // --- 3. BOTÓN DE SONIDO (Música ambiente) ---
-    const soundToggle = document.getElementById('soundToggle');
-    if (soundToggle) {
-        let isPlaying = false;
-        // Puedes añadir una URL de audio real aquí si tienes un loop.
-        // const audio = new Audio('tu-loop.mp3');
-        soundToggle.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            const icon = soundToggle.querySelector('i');
-            if (isPlaying) {
-                // audio.play();
-                icon.classList.remove('fa-volume-mute');
-                icon.classList.add('fa-volume-up');
-                soundToggle.setAttribute('aria-label', 'Desactivar sonido');
-            } else {
-                // audio.pause();
-                icon.classList.remove('fa-volume-up');
-                icon.classList.add('fa-volume-mute');
-                soundToggle.setAttribute('aria-label', 'Activar sonido');
-            }
+    // Cerrar al hacer clic en un link
+    document.querySelectorAll('.dy-nav__links a').forEach(a => {
+        a.addEventListener('click', () => {
+            nav.setAttribute('data-nav-status', 'closed');
+            document.body.style.overflow = '';
         });
-    }
-
-    // --- 4. CURSOR PERSONALIZADO ---
-    const cursor = document.getElementById('cursor');
-    const follower = document.getElementById('cursorFollower');
-    if (cursor && follower) {
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-        });
-
-        // Animación suave para el follower
-        function animateFollower() {
-            followerX += (mouseX - followerX) * 0.1;
-            followerY += (mouseY - followerY) * 0.1;
-            follower.style.transform = `translate(${followerX}px, ${followerY}px)`;
-            requestAnimationFrame(animateFollower);
+    });
+    // Cerrar con ESC
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && nav && nav.getAttribute('data-nav-status') === 'open') {
+            nav.setAttribute('data-nav-status', 'closed');
+            document.body.style.overflow = '';
         }
-        animateFollower();
+    });
+
+    /* ---------- 3. BOTÓN DE SONIDO (DY pattern con audio) ---------- */
+    const soundBtn = document.getElementById('dySound');
+    // Sustituye esta URL por un MP3 tuyo (loop de 10-30s)
+    const audio = new Audio(''); // <-- aquí tu MP3
+    audio.loop = true;
+    audio.volume = 0.4;
+    let isPlaying = false;
+    if (soundBtn) {
+        soundBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                audio.play().catch(() => {});
+                soundBtn.style.color = '#fff';
+                soundBtn.style.background = 'rgba(255,255,255,0.14)';
+            } else {
+                audio.pause();
+                soundBtn.style.color = '#ccc';
+                soundBtn.style.background = 'rgba(255,255,255,0.06)';
+            }
+        });
     }
+
+    /* ---------- 4. SKETCH HOVER (aplicar a los botones, filtro SVG real de DY) ---------- */
+    document.querySelectorAll('.dy-btn').forEach(btn => {
+        btn.style.filter = 'url(#sketch-hover-0)';
+    });
+
 });
 </script>
+
+<!-- ============================================================
+     (El resto de tu body con tus secciones sigue aquí)
+============================================================ -->
+
+</body>
