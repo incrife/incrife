@@ -60,14 +60,14 @@ svg{width:1.35em;height:1.35em;fill:currentColor;flex:none}
 .cl{height:100%;width:max(220vw,300svh);background-repeat:repeat-x;background-size:50% 100%;animation:drift calc(var(--t)*var(--k,1)) linear infinite;will-change:transform}
 @keyframes drift{to{transform:translate3d(-50%,0,0)}}
 .l1{top:2svh;height:36svh;opacity:.55}.l1 .cl{--t:190s}
-.l2{top:20svh;height:44svh;opacity:.7}.l2 .cl{--t:120s;animation-direction:reverse}
+.l2{top:20svh;height:44svh;opacity:.6}.l2 .cl{--t:120s;animation-direction:reverse}
 .l3{bottom:-6svh;height:52svh;opacity:.95}.l3 .cl{--t:70s}
-.l4{bottom:-14svh;height:44svh;opacity:.85}.l4 .cl{--t:42s;animation-direction:reverse}
+.l4{bottom:-14svh;height:44svh;opacity:.6}.l4 .cl{--t:42s;animation-direction:reverse}
 /* humo que sube tipo videoclip */
 .smoke{position:absolute;bottom:-30svh;width:90vmax;height:70svh;left:50%;margin-left:-45vmax;background-size:contain;background-repeat:no-repeat;background-position:center;opacity:0;animation:rise var(--t) ease-in-out var(--d) infinite;will-change:transform,opacity}
 @keyframes rise{0%{opacity:0;transform:translate3d(-8%,10%,0) scale(.7)}25%{opacity:.75}100%{opacity:0;transform:translate3d(10%,-70%,0) scale(1.5) rotate(4deg)}}
-.flash{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(190,220,255,.5),transparent 55%);opacity:0;animation:flash 9s ease-in-out infinite}
-@keyframes flash{0%,86%,100%{opacity:0}90%{opacity:.9}93%{opacity:.25}96%{opacity:.6}}
+.flash{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 28%,rgba(205,228,255,.8),rgba(120,170,255,.28) 40%,transparent 72%);opacity:0;mix-blend-mode:screen;animation:flash 7s linear infinite}
+@keyframes flash{0%,80%,100%{opacity:0}82%{opacity:1}84%{opacity:.15}86%{opacity:.85}92%{opacity:0}}
 .vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,transparent 40%,rgba(0,0,8,.8) 100%)}
 .spk{position:absolute;color:#fff;font-style:normal;text-shadow:0 0 14px var(--gold),0 0 30px var(--acc);opacity:.2;animation:twk var(--d) ease-in-out infinite alternate}
 @keyframes twk{to{opacity:1;transform:translateY(-14px) scale(1.2) rotate(45deg)}}
@@ -90,15 +90,15 @@ svg{width:1.35em;height:1.35em;fill:currentColor;flex:none}
 .lang button[aria-pressed=true]{background:#fff;color:#06142e}
 
 /* ===== PÁGINA ===== */
-main{width:min(560px,100% - 2rem);margin:0 auto;padding:calc(4.5rem + env(safe-area-inset-top)) 0 calc(2rem + env(safe-area-inset-bottom));text-align:center}
+main{width:min(560px,100% - 2rem);margin:0 auto;padding:calc(6.5rem + env(safe-area-inset-top)) 0 calc(3.5rem + env(safe-area-inset-bottom));text-align:center}
 .mark{display:inline-block;font:400 clamp(4.4rem,24vw,8.5rem)/1 var(--disp);letter-spacing:.05em;text-transform:uppercase;padding-left:.05em;color:transparent;-webkit-text-fill-color:transparent;background-image:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.95) 50%,transparent 62%),linear-gradient(180deg,#fff 0,#e8f2ff 32%,#8fbcff 52%,#e1efff 66%,#a8ccff 100%);background-size:260% 100%,100% 100%;background-position:100% 0,0 0;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 8px 30px rgba(47,123,255,.6));animation:title 2.4s var(--ease) 1.6s both,sheen 7s ease-in-out 4.5s infinite}
 @keyframes title{from{opacity:0;filter:blur(24px);transform:scale(1.25) translateY(20px);letter-spacing:.3em}to{opacity:1;filter:blur(0) drop-shadow(0 8px 30px rgba(47,123,255,.6));transform:none;letter-spacing:.05em}}
 @keyframes sheen{0%,45%{background-position:100% 0,0 0}100%{background-position:0 0,0 0}}
 .float{animation:float 8s ease-in-out infinite}@keyframes float{50%{transform:translateY(-9px)}}
-.tag{margin-top:.4rem;font-size:.8rem;letter-spacing:.45em;padding-left:.45em;text-transform:uppercase;color:#d6e5ff;opacity:0;animation:up .9s var(--ease) 3.4s forwards}
+.tag{margin-top:.9rem;font-size:.8rem;letter-spacing:.45em;padding-left:.45em;text-transform:uppercase;color:#d6e5ff;opacity:0;animation:up .9s var(--ease) 3.4s forwards}
 @keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
-.list{display:grid;gap:.8rem;margin-top:1.8rem;list-style:none}
+.list{display:grid;gap:1.05rem;margin-top:2.6rem;list-style:none}
 .list li{opacity:0;animation:up .8s var(--ease) calc(3.5s + var(--i)*.08s) forwards}
 .lk{position:relative;overflow:hidden;display:flex;align-items:center;gap:1rem;min-height:60px;padding:.8rem 1.1rem;border:1px solid var(--line);border-radius:16px;text-align:left;background:rgba(6,16,40,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .4s var(--ease),border-color .3s,box-shadow .4s}
 .lk::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);transition:left .8s var(--ease)}
@@ -115,12 +115,12 @@ main{width:min(560px,100% - 2rem);margin:0 auto;padding:calc(4.5rem + env(safe-a
 .big .cap{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1.1rem;text-align:left}
 .ev{border-color:rgba(124,196,255,.6);background:linear-gradient(120deg,rgba(47,123,255,.4),rgba(6,16,40,.6))}
 .dot{width:9px;height:9px;border-radius:50%;background:#ff4d6d;flex:none;animation:pulse 2s infinite}
-h2{margin:1.8rem 0 -.2rem;font:600 .72rem/1 'Inter',sans-serif;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
-.soc{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
+h2{margin:2.6rem 0 -.1rem;font:600 .72rem/1 'Inter',sans-serif;letter-spacing:.4em;text-transform:uppercase;color:var(--gold)}
+.soc{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
 .soc a{display:grid;place-items:center;width:52px;height:52px;border:1px solid var(--line);border-radius:50%;background:rgba(6,16,40,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .4s var(--ease),background .3s,color .3s}
 .soc a:hover,.soc a:active{background:#fff;color:#0a2a8f;transform:translateY(-5px)}
 .mail{display:inline-block;margin-top:1.4rem;padding:.5rem 0;border-bottom:1px solid var(--line);font-size:.9rem;letter-spacing:.06em;color:#cddcf5}
-footer{margin-top:1.8rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#9db0cf}
+footer{margin-top:2.8rem;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#9db0cf}
 
 .soc a i{font-size:1.25rem}
 .av{position:relative;width:104px;height:104px;margin:0 auto 1rem;border-radius:50%;opacity:0;animation:up .9s var(--ease) 1.2s forwards}
@@ -162,12 +162,9 @@ body::after{content:"";position:fixed;inset:0;z-index:49;pointer-events:none;bac
 <div class="bgv" id="bgv" aria-hidden="true"><video src="https://raw.githubusercontent.com/incrife/incrife/refs/heads/main/rg.mp4" autoplay muted loop playsinline webkit-playsinline preload="metadata" disablepictureinpicture disableremoteplayback tabindex="-1"></video></div>
 <div class="scene" aria-hidden="true">
   <div class="glow"></div>
-  <div class="layer l1"><div class="cl" data-c="far"></div></div>
   <div class="layer l2"><div class="cl" data-c="mid"></div></div>
   <div class="smoke" data-c="smoke" style="--t:16s;--d:0s"></div>
   <div class="smoke" data-c="smoke" style="--t:20s;--d:-9s"></div>
-  <div class="smoke" data-c="smoke" style="--t:24s;--d:-15s"></div>
-  <div class="layer l3"><div class="cl" data-c="near"></div></div>
   <div class="layer l4"><div class="cl" data-c="fg"></div></div>
   <div class="flash"></div>
   <i class="spk" style="left:10%;top:16%;--d:2.6s">✦</i><i class="spk" style="left:86%;top:24%;--d:3.4s;font-size:.9rem">✦</i><i class="spk" style="left:20%;top:62%;--d:3s;font-size:.8rem">✦</i><i class="spk" style="left:80%;top:70%;--d:3.8s;font-size:1.4rem">✦</i>
@@ -235,7 +232,9 @@ var mk3=function(o){var W=o.w||2048,Hh=o.h||512,c=D.createElement('canvas');c.wi
 var mix=function(a,b,t){return a.map(function(v,i){return v+(b[i]-v)*t|0})};
 var sph=function(cx,cy,R,t,al){var col=t<.5?mix(o.sh,o.bd,t*2):mix(o.bd,o.hi,(t-.5)*2),g=x.createRadialGradient(cx-R*.28,cy-R*.38,R*.04,cx,cy,R);
  g.addColorStop(0,'rgba('+mix(col,o.hi,.55)+','+al+')');g.addColorStop(.4,'rgba('+col+','+al*.85+')');g.addColorStop(.78,'rgba('+mix(col,o.sh,.5)+','+al*.4+')');g.addColorStop(1,'rgba('+o.sh+',0)');x.fillStyle=g;x.fillRect(cx-R,cy-R,R*2,R*2)};
-for(var i=0;i<o.n;i++){var cx=r()*W,by=Hh*(o.y0+r()*(o.y1-o.y0)),R=o.r0+r()*(o.r1-o.r0),Wc=R*(2.6+r()*1.4),Hc=R*(1+r()*.6),k=14+(r()*10|0),b=[],j;by=Math.max(Hc*1.25,Math.min(Hh-R*.7,by));
+if(o.smk){for(var i=0;i<o.n;i++){var cx=r()*W,by=Hh*(o.y0+r()*(o.y1-o.y0)),R=o.r0+r()*(o.r1-o.r0),k=30+(r()*14|0);
+ [-W,0,W].forEach(function(dx){var r2=rng(o.s+i*7);for(var j=0;j<k;j++){var px=cx+dx+(r2()+r2()-1)*R*2,py=by+(r2()+r2()-1)*R*.5,pr=R*(.3+r2()*.55),al=o.a*(.3+r2()*.6),col=mix(o.bd,o.sh,r2()*.6);
+  x.save();x.translate(px,py);x.scale(2,1);var gg=x.createRadialGradient(0,0,0,0,0,pr);gg.addColorStop(0,'rgba('+col+','+al+')');gg.addColorStop(.55,'rgba('+col+','+al*.4+')');gg.addColorStop(1,'rgba('+col+',0)');x.fillStyle=gg;x.fillRect(-pr,-pr,pr*2,pr*2);x.restore()}})}}else for(var i=0;i<o.n;i++){var cx=r()*W,by=Hh*(o.y0+r()*(o.y1-o.y0)),R=o.r0+r()*(o.r1-o.r0),Wc=R*(2.6+r()*1.4),Hc=R*(1+r()*.6),k=14+(r()*10|0),b=[],j;by=Math.max(Hc*1.25,Math.min(Hh-R*.7,by));
  for(j=0;j<k;j++){var u=r()+r()-1,q=Math.pow(1-u*u,.8);b.push([u*Wc/2,-q*Hc*(.25+.75*r()),R*(.3+.45*q*r()+.12)])}
  for(j=0;j<5;j++){b.push([(r()*1.6-.8)*Wc/2,R*.04,R*(.28+.12*r())])}
  b.sort(function(m,n){return n[1]-m[1]});
@@ -248,9 +247,9 @@ for(var i=0;i<o.n;i++){var cx=r()*W,by=Hh*(o.y0+r()*(o.y1-o.y0)),R=o.r0+r()*(o.r
 var eg=x.createLinearGradient(0,0,0,Hh);eg.addColorStop(0,'rgba(0,0,0,0)');eg.addColorStop(.1,'#000');eg.addColorStop(.82,'#000');eg.addColorStop(1,'rgba(0,0,0,0)');x.globalCompositeOperation='destination-in';x.fillStyle=eg;x.fillRect(0,0,W,Hh);
 return 'url('+c.toDataURL('image/png')+')'};
 var B='214,230,255',S='86,120,200',HI='255,255,255';
-var V=function(s,n,r0,r1,y0,y1,a,bd,sh,hi,w,h){return{v3:1,s:s,n:n,r0:r0,r1:r1,y0:y0,y1:y1,a:a,bd:bd,sh:sh,hi:hi,w:w,h:h}};
-var P={far:V(11,18,30,70,.35,.8,.45,[150,185,245],[60,90,170],[225,238,255]),mid:V(23,14,55,110,.35,.85,.6,[200,222,255],[65,98,185],[255,255,255]),near:V(37,11,90,150,.5,.95,.8,[230,242,255],[60,92,178],[255,255,255]),fg:V(51,7,110,165,.55,1,.65,[170,200,255],[38,70,160],[235,245,255]),
-smoke:V(77,6,70,130,.3,.8,.35,[205,225,255],[110,150,225],[255,255,255],1024,512),
+var V=function(s,n,r0,r1,y0,y1,a,bd,sh,hi,w,h){return{v3:1,smk:1,s:s,n:n,r0:r0,r1:r1,y0:y0,y1:y1,a:a,bd:bd,sh:sh,hi:hi,w:w,h:h}};
+var P={far:V(11,18,30,70,.35,.8,.45,[150,185,245],[60,90,170],[225,238,255]),mid:V(23,5,70,130,.35,.8,.3,[125,155,220],[35,60,125],[255,255,255]),near:V(37,11,90,150,.5,.95,.8,[230,242,255],[60,92,178],[255,255,255]),fg:V(51,4,80,140,.4,.8,.3,[110,140,210],[30,52,115],[235,245,255]),
+smoke:V(77,4,60,120,.3,.75,.3,[135,165,225],[45,75,140],[255,255,255],1024,512),
 curtain:{s:61,n:34,r0:130,r1:270,y0:0,y1:1,a:.85,bd:'210,226,252',sh:'92,122,190',hi:HI,base:['#16336e','#0b1a3d'],w:640,h:640}};
 var ca={},Q=[];D.querySelectorAll('[data-c]').forEach(function(e){var k=e.dataset.c;if(!P[k])return;var f=function(){e.style.backgroundImage=ca[k]||(ca[k]=P[k].v3?mk3(P[k]):mk(P[k]))};k=='curtain'?f():Q.push(f)});
 var nx=function(){var f=Q.shift();if(f){f();setTimeout(nx,70)}};setTimeout(nx,250);
